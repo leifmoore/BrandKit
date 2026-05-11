@@ -30,11 +30,8 @@ export function Overview() {
     <div>
       {/* Hero */}
       <div className="mb-14">
-        <img
-          src="/logos/logo-navy.svg"
-          alt="Scudamore's"
-          className="h-14 w-auto mb-8 dark:invert"
-        />
+        <img src="/logos/logo-navy.svg" alt="Scudamore's" className="h-14 w-auto mb-8 dark:hidden" />
+        <img src="/logos/logo-white.svg" alt="Scudamore's" className="h-14 w-auto mb-8 hidden dark:block" />
         <p className="font-sans text-xs font-medium uppercase tracking-caps text-gold-500 dark:text-gold-300 mb-4 accent-line">
           Est. 1910
         </p>
@@ -63,7 +60,7 @@ export function Overview() {
       {/* Brand purpose */}
       <div className="rounded-xl bg-navy-900 dark:bg-navy-1000 p-8 mb-14">
         <div className="max-w-xl">
-          <p className="font-sans text-xs uppercase tracking-caps text-gold-300 mb-4">Mission</p>
+          <p className="font-sans text-xs uppercase tracking-caps text-cream-300 mb-4">Mission</p>
           <p className="font-display font-bold text-2xl text-cream-50 mb-4 leading-snug">
             To create timeless Cambridge memories.
           </p>
@@ -82,13 +79,13 @@ export function Overview() {
             <Link
               key={item.path}
               to={item.path}
-              className="group flex items-start gap-4 rounded-xl border border-border bg-card hover:border-gold-500 dark:hover:border-gold-300 hover:shadow-sm p-5 transition-all"
+              className="group flex items-start gap-4 rounded-xl border border-border bg-card hover:border-navy-500 dark:hover:border-cream-200 hover:shadow-sm p-5 transition-all"
             >
-              <div className="w-10 h-10 rounded-lg bg-navy-900 dark:bg-cream-50 text-cream-50 dark:text-navy-900 flex items-center justify-center shrink-0 group-hover:bg-gold-500 dark:group-hover:bg-gold-300 transition-colors">
+              <div className="w-10 h-10 rounded-lg bg-navy-900 dark:bg-cream-50 text-cream-50 dark:text-navy-900 flex items-center justify-center shrink-0 group-hover:bg-navy-700 dark:group-hover:bg-cream-200 transition-colors">
                 <NavIcon name={item.icon} />
               </div>
               <div>
-                <p className="font-sans font-semibold text-sm text-foreground group-hover:text-gold-500 dark:group-hover:text-gold-300 transition-colors">{item.label}</p>
+                <p className="font-sans font-semibold text-sm text-foreground transition-colors">{item.label}</p>
                 <p className="font-sans text-xs text-muted-foreground mt-0.5">{item.description}</p>
               </div>
             </Link>

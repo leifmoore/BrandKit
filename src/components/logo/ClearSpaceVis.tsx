@@ -36,13 +36,13 @@ export function ClearSpaceVis() {
         <div className="relative bg-cream-100 dark:bg-navy-700 rounded-xl p-4 border-2 border-dashed border-cream-300 dark:border-navy-500">
           {/* Clear space zone */}
           <div
-            className="relative bg-gold-500/10 border border-gold-500/30 rounded flex items-center justify-center transition-all duration-300"
+            className="relative bg-navy-900/5 dark:bg-cream-50/10 border border-navy-900/20 dark:border-cream-50/25 rounded flex items-center justify-center transition-all duration-300"
             style={{
               padding: `${clearSpace}px`,
             }}
           >
             {/* Clear space label */}
-            <div className="absolute -top-5 left-1/2 -translate-x-1/2 text-xs font-sans text-gold-500 dark:text-gold-300 whitespace-nowrap">
+            <div className="absolute -top-5 left-1/2 -translate-x-1/2 text-xs font-sans text-navy-700 dark:text-cream-300 whitespace-nowrap">
               {clearSpace}px clear space
             </div>
             {/* Logo */}
@@ -50,7 +50,13 @@ export function ClearSpaceVis() {
               src="/logos/logo-navy.svg"
               alt="Scudamore's"
               style={{ height: `${logoHeight}px`, width: 'auto' }}
-              className="dark:invert"
+              className="dark:hidden"
+            />
+            <img
+              src="/logos/logo-white.svg"
+              alt="Scudamore's"
+              style={{ height: `${logoHeight}px`, width: 'auto' }}
+              className="hidden dark:block"
             />
           </div>
         </div>

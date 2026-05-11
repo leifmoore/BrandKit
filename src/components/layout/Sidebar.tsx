@@ -63,7 +63,7 @@ export function Sidebar({ onSearch, onClose }: SidebarProps) {
                 className={cn(
                   'flex items-center gap-3 rounded-md px-3 py-2 text-sm font-sans transition-colors',
                   isActive
-                    ? 'bg-gold-500 text-navy-900 font-medium'
+                    ? 'bg-navy-700 text-cream-50 font-medium border-l-2 border-cream-50 pl-[10px] pr-3'
                     : 'text-navy-100 hover:text-cream-50 hover:bg-navy-700',
                 )}
               >

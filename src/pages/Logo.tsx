@@ -51,7 +51,8 @@ function DontCard({ title, description, style, logoStyle }: DontCardProps) {
   return (
     <div className="border border-red-200 dark:border-red-900 rounded-xl overflow-hidden">
       <div className="h-28 flex items-center justify-center bg-cream-50 dark:bg-navy-700 relative" style={style}>
-        <img src="/logos/logo-navy.svg" alt="logo dont" className="h-12 w-auto dark:invert" style={logoStyle} />
+        <img src="/logos/logo-navy.svg" alt="logo dont" className="h-12 w-auto dark:hidden" style={logoStyle} />
+        <img src="/logos/logo-white.svg" alt="logo dont" className="h-12 w-auto hidden dark:block" style={logoStyle} />
         <div className="absolute top-2 left-2 bg-red-600 text-white text-xs font-sans font-medium px-2 py-0.5 rounded">✗ Don't</div>
       </div>
       <div className="p-3 bg-red-50 dark:bg-red-950">
@@ -125,7 +126,8 @@ export function Logo() {
         <div className="mb-6">
           <div className="border border-green-200 dark:border-green-900 rounded-xl overflow-hidden">
             <div className="h-28 flex items-center justify-center bg-cream-50 dark:bg-navy-700">
-              <img src="/logos/logo-navy.svg" alt="logo correct" className="h-12 w-auto dark:invert" />
+              <img src="/logos/logo-navy.svg" alt="logo correct" className="h-12 w-auto dark:hidden" />
+              <img src="/logos/logo-white.svg" alt="logo correct" className="h-12 w-auto hidden dark:block" />
             </div>
             <div className="p-3 bg-green-50 dark:bg-green-950">
               <p className="font-sans font-medium text-xs text-green-700 dark:text-green-400">✓ Do — use the approved colour on an appropriate background</p>
@@ -157,7 +159,7 @@ export function Logo() {
           <DontCard
             title="Don't place on busy photography"
             description="Use the white outline version on photographic backgrounds"
-            style={{ backgroundImage: 'repeating-linear-gradient(45deg, #3d68b0 0px, #3d68b0 10px, #c9a24a 10px, #c9a24a 20px)' }}
+            style={{ backgroundImage: 'repeating-linear-gradient(45deg, #2d6a4f 0px, #2d6a4f 10px, #5ba4cf 10px, #5ba4cf 20px)' }}
           />
           <DontCard
             title="Don't reproduce below minimum size"

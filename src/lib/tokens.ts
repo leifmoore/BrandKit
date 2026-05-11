@@ -236,7 +236,6 @@ export const GOLD_RAMP: ColorToken[] = [
 export const PRIMARY_TOKENS: ColorToken[] = [
   NAVY_RAMP[1], // Deep Navy
   CREAM_RAMP[0], // Off-White
-  GOLD_RAMP[1],  // Lantern Gold
 ]
 
 export const ALL_TOKENS: ColorToken[] = [...NAVY_RAMP, ...CREAM_RAMP, ...GOLD_RAMP]
@@ -425,7 +424,7 @@ export const NAV_ITEMS: NavItem[] = [
       { label: 'Primary', anchor: 'primary' },
       { label: 'Navy Ramp', anchor: 'navy-ramp' },
       { label: 'Cream Ramp', anchor: 'cream-ramp' },
-      { label: 'Gold Accent', anchor: 'gold-accent' },
+      { label: 'Accent Colours', anchor: 'accent-colours' },
       { label: 'WCAG Checker', anchor: 'wcag-checker' },
       { label: 'Mood Explorer', anchor: 'mood-explorer' },
     ],

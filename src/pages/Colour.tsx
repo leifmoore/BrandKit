@@ -12,7 +12,7 @@ const SUB_NAV = [
   { label: 'Primary', anchor: 'primary' },
   { label: 'Navy Ramp', anchor: 'navy-ramp' },
   { label: 'Cream Ramp', anchor: 'cream-ramp' },
-  { label: 'Gold Accent', anchor: 'gold-accent' },
+  { label: 'Accent Colours', anchor: 'accent-colours' },
   { label: 'WCAG Pairs', anchor: 'wcag-pairs' },
   { label: 'WCAG Checker', anchor: 'wcag-checker' },
   { label: 'Mood Explorer', anchor: 'mood-explorer' },
@@ -40,7 +40,7 @@ export function Colour() {
 
       {/* Primary */}
       <SubSection id="primary" title="Primary Colours">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
           {PRIMARY_TOKENS.map(token => (
             <div key={token.alias} className="flex flex-col gap-3">
               <ColourSwatch token={token} size="lg" />
@@ -55,7 +55,35 @@ export function Colour() {
           ))}
         </div>
         <p className="font-sans text-sm text-navy-700 dark:text-cream-300">
-          Deep Navy is the primary brand colour. Off-White is the primary light surface. Lantern Gold is the accent — use for CTAs, links, and key interactive states.
+          Deep Navy is the primary brand colour. Off-White is the primary light surface. See Accent Colours below for Lantern Gold usage.
+        </p>
+      </SubSection>
+
+      <Separator className="mb-14" />
+
+      {/* Accent Colours */}
+      <SubSection id="accent-colours" title="Accent Colours">
+        <div className="flex flex-col sm:flex-row gap-6 mb-6">
+          <div className="flex flex-col gap-3">
+            <ColourSwatch token={GOLD_RAMP[1]} size="lg" />
+            <div>
+              <p className="font-sans font-semibold text-sm text-navy-900 dark:text-cream-50">{GOLD_RAMP[1].name}</p>
+              <p className="font-mono text-xs text-navy-500 dark:text-navy-300">{GOLD_RAMP[1].hex} · {GOLD_RAMP[1].alias}</p>
+              <span className="inline-block mt-2 px-2 py-0.5 rounded-full bg-gold-500/10 dark:bg-gold-300/10 text-gold-700 dark:text-gold-300 text-xs font-sans font-medium">
+                Accent — use sparingly
+              </span>
+            </div>
+          </div>
+          <div className="flex-1">
+            <ColourRamp
+              title=""
+              tokens={GOLD_RAMP}
+              description=""
+            />
+          </div>
+        </div>
+        <p className="font-sans text-sm text-navy-700 dark:text-cream-300">
+          Lantern Gold is the one accent colour — for CTAs, interactive highlights, and key brand moments. Honey (#e3c277) for use on dark/navy backgrounds. Brass (#9c7a2f) for visited links and heritage moments.
         </p>
       </SubSection>
 
@@ -78,17 +106,6 @@ export function Colour() {
           title=""
           tokens={CREAM_RAMP}
           description="Six warm cream shades from Off-White (#fefefd) to Stone (#d4c8a6). Paper-like warmth — evokes print, heritage, the river at dawn."
-        />
-      </SubSection>
-
-      <Separator className="mb-14" />
-
-      {/* Gold Accent */}
-      <SubSection id="gold-accent" title="Gold Accent">
-        <ColourRamp
-          title=""
-          tokens={GOLD_RAMP}
-          description="Three gold shades. Lantern Gold (#c9a24a) is the primary accent. Honey (#e3c277) is for use on dark/navy backgrounds. Brass (#9c7a2f) for visited links and heritage moments."
         />
       </SubSection>
 

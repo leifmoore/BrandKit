@@ -8,15 +8,32 @@ const SUB_NAV = [
   { label: 'Composition', anchor: 'composition' },
   { label: 'Subjects', anchor: 'subjects' },
   { label: 'Aspect Ratios', anchor: 'aspect-ratios' },
+  { label: 'Product Heroes', anchor: 'product-heroes' },
   { label: 'Consent', anchor: 'consent' },
 ]
 
 const ASPECT_RATIOS = [
-  { use: 'Web hero, banner, YouTube thumbnail', ratio: '16:9', w: 16, h: 9, notes: 'Shoot wide, crop after' },
+  { use: 'Web hero, YouTube thumbnail', ratio: '16:9', w: 16, h: 9, notes: 'Shoot wide, crop after' },
   { use: 'Instagram feed, square posts', ratio: '1:1', w: 1, h: 1, notes: 'Often a centre-crop of horizontal' },
   { use: 'Instagram Stories, Reels, TikTok, posters', ratio: '9:16', w: 9, h: 16, notes: 'Shoot deliberately, not by rotating horizontal' },
-  { use: 'Print poster (A-series)', ratio: '√2 vertical', w: 7, h: 10, notes: 'Shoot vertical with crop margin' },
+  { use: 'Print poster (A-series)', ratio: '√2:1', w: 1000, h: 1414, notes: 'Shoot vertical with crop margin' },
   { use: 'Email header', ratio: '3:1', w: 3, h: 1, notes: 'Crop from widest take' },
+  { use: 'Website / digital banner', ratio: '2:1', w: 2, h: 1, notes: 'Primary digital banner crop' },
+  { use: 'Print banner (242.49 × 62.49 cm)', ratio: '~3.9:1', w: 39, h: 10, notes: 'Large format outdoor / event print' },
+]
+
+const PRODUCT_HEROES = [
+  { name: 'Shared College Backs Punt Tours', ratio: '16:9', note: 'Wide group shot on the Backs, King\'s Chapel in frame' },
+  { name: 'Private College Backs Punt Tours', ratio: '16:9', note: 'Intimate couple or small group, golden hour' },
+  { name: 'Grantchester Punt Tours', ratio: '16:9', note: 'Open meadow stretch, punts in motion' },
+  { name: 'Punt Hire (College Backs)', ratio: '4:5', note: 'Self-hire moment — customers with pole, candid' },
+  { name: 'Punt Hire (Grantchester)', ratio: '4:5', note: 'Open water, relaxed self-hire feel' },
+  { name: 'Afternoon Tea Punt Tours', ratio: '16:9', note: 'Tea tray in punt, pastel tones, Backs backdrop' },
+  { name: 'Champagne Punt Tours', ratio: '16:9', note: 'Flutes raised, evening light on the Cam' },
+  { name: 'Bat Safari Punting', ratio: '16:9', note: 'Dusk on the river, silhouette, low light' },
+  { name: 'Fireworks Punt Tours', ratio: '16:9', note: 'Night on the Cam, fireworks or anticipation' },
+  { name: 'Gin Punting Tours', ratio: '16:9', note: 'G&T detail shot on punt, social and relaxed' },
+  { name: 'Romantic & Wedding Tours', ratio: '4:5', note: 'Couple close-up, flowers, soft tones' },
 ]
 
 function AspectPreview({ w, h, ratio }: { w: number; h: number; ratio: string }) {
@@ -157,6 +174,35 @@ export function Photography() {
               ))}
             </tbody>
           </table>
+        </div>
+      </section>
+
+      <Separator className="mb-14" />
+
+      {/* Product Heroes */}
+      <section id="product-heroes" className="scroll-mt-6 mb-14">
+        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-2">Product Hero Images</h2>
+        <p className="font-sans text-sm text-muted-foreground mb-6">
+          Each product line needs a dedicated hero image. Placeholder cards mark what's still to be photographed — replace with the master file once shot.
+        </p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {PRODUCT_HEROES.map(product => (
+            <div key={product.name} className="rounded-xl border border-border overflow-hidden">
+              <div
+                className="bg-navy-900 dark:bg-navy-1000 flex items-center justify-center"
+                style={{ aspectRatio: product.ratio.replace(':', '/') }}
+              >
+                <div className="text-center p-4">
+                  <p className="font-mono text-xs text-navy-300 mb-1">{product.ratio}</p>
+                  <p className="font-sans text-xs text-navy-400 italic">Photo placeholder</p>
+                </div>
+              </div>
+              <div className="p-3">
+                <p className="font-sans font-semibold text-sm text-foreground">{product.name}</p>
+                <p className="font-sans text-xs text-muted-foreground mt-0.5">{product.note}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

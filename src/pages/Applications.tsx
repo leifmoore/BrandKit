@@ -47,6 +47,8 @@ const PRINT_APPS = [
   { application: 'Posters — event / seasonal', needed: 'May Bumps, Fireworks, Bat Safari, Champagne, Christmas vouchers', status: 'to-produce' as AppStatus },
   { application: 'Signage — boatyard & Mill Lane', needed: 'Wayfinding, pricing boards, opening times', status: 'needs-review' as AppStatus },
   { application: 'Visitor brochures / leaflets', needed: 'A5 or DL, product overview, map of the Backs, opening times', status: 'to-produce' as AppStatus },
+  { application: 'Flyers / postcards (A6)', needed: 'Tour promotions, events, takeaway menus. 105 × 148mm.', status: 'to-produce' as AppStatus },
+  { application: 'Print banner — large format (242.49 × 62.49 cm)', needed: '~3.9:1. Outdoor events, regattas, festivals. CMYK, 3mm bleed, 300 dpi.', status: 'to-produce' as AppStatus },
   { application: 'B2B partnership materials', needed: 'A4 portrait, products + group offers + case studies', status: 'to-produce' as AppStatus },
   { application: 'Certificates', needed: 'A4, watermark, Gill Sans display, room for handwritten name and date', status: 'to-produce' as AppStatus },
 ]
@@ -58,7 +60,7 @@ const SOCIAL_SPECS = [
   { platform: 'YouTube Thumbnail', format: '16:9', size: '1280 × 720px', notes: 'Strong hero photography, large legible Gill Sans title' },
   { platform: 'YouTube Channel Art', format: '16:9', size: '2560 × 1440px', notes: 'Design safe area: 1546 × 423px centre' },
   { platform: 'Email Header', format: '3:1', size: '600 × 200px', notes: 'Crop from widest take; consider dark mode rendering' },
-  { platform: 'Print Poster (A2)', format: '√2 vertical', size: '420 × 594mm', notes: 'Shoot vertical with crop margin for bleeds' },
+  { platform: 'Print Poster (A2)', format: '√2:1', size: '420 × 594mm', notes: 'Shoot vertical with crop margin for bleeds' },
   { platform: 'Google Display Ad', format: 'Various', size: '300×250, 728×90, 300×600', notes: 'Brand mark, photography, single clear headline, Gold CTA' },
 ]
 

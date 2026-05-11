@@ -52,7 +52,7 @@ const VOICE_TRAITS = [
 
 const CHANNEL_TONES = [
   { channel: 'Website hero', tone: 'Anchored, evocative, declarative', example: 'Where Cambridge goes punting. Founded 1910, family-run since.' },
-  { channel: 'Tour product page', tone: 'Warm, knowledgeable, specific', example: 'Two hours on the Cam with a chauffeur who knows the river. We\'ll start at Mill Lane and turn at the Bridge of Sighs — by then the colleges are catching the light.' },
+  { channel: 'Tour product page', tone: 'Warm, knowledgeable, specific', example: 'Two hours on the Cam with a chauffeur who knows the river. Mill Lane departure, along the Backs past King\'s Chapel, the Wren Library, the Bridge of Sighs. Book late afternoon — that\'s when the colleges are catching the light.' },
   { channel: 'Booking confirmation', tone: 'Quietly confident, useful, friendly', example: 'You\'re booked. Saturday 14 June, 6pm, Mill Lane. Wrap up warm — the Cam holds the cold long after the air\'s turned. Any questions, just reply.' },
   { channel: 'Newsletter', tone: 'Warm, slow, evocative', example: 'The May Balls have started. From the river, you can see the marquee lights catching on the water before you can hear the music.' },
   { channel: 'Instagram caption', tone: 'Playful, specific, light', example: 'Punt no. 17, taken out for her first run of the season this morning. She\'s been with us since 1962 and she\'s still the prettiest in the yard.' },

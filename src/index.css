@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ── Light mode (Scudamore's: Cream bg, Navy text, Gold accent) ── */
+  :root {
+    --background:         46 61% 93%;   /* cream-100 #f8f3e3 */
+    --foreground:         218 58% 19%;  /* navy-900  #14284b */
+
+    --card:               46 59% 97%;   /* cream-75  #fcfaf3 */
+    --card-foreground:    218 58% 19%;
+
+    --popover:            60 33% 99%;   /* cream-50  #fefefd */
+    --popover-foreground: 218 58% 19%;
+
+    --primary:            218 58% 19%;  /* navy-900 */
+    --primary-foreground: 46 61% 93%;   /* cream-100 */
+
+    --secondary:          45 51% 80%;   /* cream-300 #e6d9b3 */
+    --secondary-foreground: 218 58% 19%;
+
+    --muted:              46 52% 88%;   /* cream-200 #f0e8cf */
+    --muted-foreground:   218 53% 32%;  /* navy-700  #26467d */
+
+    --accent:             42 54% 54%;   /* gold-500  #c9a24a */
+    --accent-foreground:  218 58% 19%;
+
+    --destructive:        0 84% 60%;
+    --destructive-foreground: 60 33% 99%;
+
+    --border:             44 35% 74%;   /* cream-400 #d4c8a6 */
+    --input:              44 35% 74%;
+    --ring:               42 54% 54%;   /* gold-500 */
+
+    --radius: 0.375rem;
+  }
+
+  /* ── Dark mode (Scudamore's: Navy bg, Cream text, Honey gold accent) ── */
+  .dark {
+    --background:         218 58% 19%;  /* navy-900  #14284b */
+    --foreground:         60 33% 99%;   /* cream-50  #fefefd */
+
+    --card:               218 53% 32%;  /* navy-700  #26467d */
+    --card-foreground:    60 33% 99%;
+
+    --popover:            218 58% 19%;
+    --popover-foreground: 60 33% 99%;
+
+    --primary:            60 33% 99%;   /* cream-50 */
+    --primary-foreground: 218 58% 19%;  /* navy-900 */
+
+    --secondary:          218 53% 32%;  /* navy-700 */
+    --secondary-foreground: 60 33% 99%;
+
+    --muted:              218 53% 32%;  /* navy-700 */
+    --muted-foreground:   45 51% 80%;   /* cream-300 */
+
+    --accent:             42 66% 68%;   /* gold-300  #e3c277 (Honey) */
+    --accent-foreground:  218 58% 19%;
+
+    --destructive:        0 62% 50%;
+    --destructive-foreground: 60 33% 99%;
+
+    --border:             218 53% 32%;  /* navy-700 */
+    --input:              218 53% 32%;
+    --ring:               42 66% 68%;   /* gold-300 */
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Brand typography utilities */
+  .font-display {
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Lato', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  /* Lantern Gold link style (light mode) */
+  .prose a {
+    color: #c9a24a;
+    text-decoration: none;
+  }
+  .prose a:hover {
+    text-decoration: underline;
+  }
+  .dark .prose a {
+    color: #e3c277;
+  }
+
+  /* Smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar (subtle, brand-tinted) */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-cream-300 dark:bg-navy-700 rounded-full;
+  }
+}
+
+@layer utilities {
+  /* Brand tracking utilities */
+  .tracking-display { letter-spacing: -0.02em; }
+  .tracking-mid     { letter-spacing: -0.01em; }
+  .tracking-caps    { letter-spacing: 0.15em; }
+
+  /* Gold accent line (decorative, per brand guidelines) */
+  .accent-line::before {
+    content: '';
+    display: block;
+    width: 2.5rem;
+    height: 2px;
+    background: #c9a24a;
+    margin-bottom: 0.75rem;
+  }
+  .dark .accent-line::before {
+    background: #e3c277;
+  }
+}

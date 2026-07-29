@@ -1,0 +1,138 @@
+{
+  "$schema": "../component.schema.json",
+  "schemaVersion": "1.0.0",
+  "id": "avatar",
+  "title": "Avatar",
+  "description": "An image with a resilient initials or text fallback.",
+  "category": "data-display",
+  "maturity": "beta",
+  "searchTerms": [
+    "avatar",
+    "profile",
+    "initials",
+    "react",
+    "blade"
+  ],
+  "react": {
+    "files": [
+      "react/components/ui/avatar.tsx"
+    ],
+    "exports": [
+      "Avatar",
+      "AvatarImage",
+      "AvatarFallback"
+    ],
+    "props": [
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Additional consumer layout or spacing classes."
+      }
+    ],
+    "internalDependencies": [],
+    "npmDependencies": [
+      {
+        "name": "@radix-ui/react-avatar",
+        "version": "1.1.3",
+        "purpose": "Direct component import"
+      }
+    ],
+    "exampleFiles": [
+      "react/examples/avatar/basic.tsx"
+    ]
+  },
+  "blade": {
+    "files": [
+      "blade/library/resources/views/components/ui/avatar.blade.php",
+      "blade/library/resources/views/components/ui/avatar/fallback.blade.php",
+      "blade/library/resources/views/components/ui/avatar/image.blade.php"
+    ],
+    "canonicalTag": "<x-ui.avatar>",
+    "legacyTags": [],
+    "props": [],
+    "slots": [
+      "default",
+      "image",
+      "fallback"
+    ],
+    "events": [],
+    "phpDependencies": [],
+    "runtimeDependencies": [],
+    "installTargets": [
+      "app/View/Components/Ui",
+      "resources/views/components/ui",
+      "resources/js/ui",
+      "resources/css"
+    ],
+    "exampleFiles": [
+      "blade/examples/avatar/basic.blade.php"
+    ]
+  },
+  "shared": {
+    "variants": [
+      {
+        "name": "default",
+        "default": true
+      }
+    ],
+    "sizes": [],
+    "states": [
+      "default",
+      "disabled",
+      "focus-visible"
+    ],
+    "responsiveBehavior": [
+      "Retains touch targets and usable wrapping at 360px."
+    ],
+    "tokens": [
+      "--background",
+      "--foreground",
+      "--primary",
+      "--primary-foreground",
+      "--muted",
+      "--muted-foreground",
+      "--border",
+      "--input",
+      "--ring",
+      "--radius"
+    ],
+    "iconMappings": []
+  },
+  "previews": [
+    {
+      "id": "basic",
+      "title": "Basic",
+      "reactExample": "react/examples/avatar/basic.tsx",
+      "bladeExample": "blade/examples/avatar/basic.blade.php",
+      "states": [
+        "default",
+        "disabled",
+        "focus-visible"
+      ],
+      "supportsDirection": false
+    }
+  ],
+  "parity": {
+    "classification": "framework-equivalent",
+    "intentionalDifferences": []
+  },
+  "accessibility": {
+    "wcagTarget": "WCAG 2.2 AA",
+    "auditStatus": "passed",
+    "findings": []
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/ui/avatar.tsx",
+        "sha256": "d40b1cbabe71c094c6bcf089ac5702ec77623dbc75c770ca9f86530e03d6fea1"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#component-scope"
+    ]
+  }
+}

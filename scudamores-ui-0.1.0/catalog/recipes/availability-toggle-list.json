@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "availability-toggle-list",
+  "title": "Availability Toggle List",
+  "description": "Availability switches with one default item.",
+  "category": "channels",
+  "maturity": "stable",
+  "kind": "recipe",
+  "searchTerms": [
+    "availability",
+    "toggle",
+    "channel"
+  ],
+  "fixture": "recipes/availability-toggle-list/fixtures/basic.json",
+  "documentation": "recipes/availability-toggle-list/README.md",
+  "react": {
+    "files": [
+      "recipes/availability-toggle-list/react/AvailabilityToggleListRecipe.tsx"
+    ],
+    "exampleData": "recipes/availability-toggle-list/fixtures/basic.json"
+  },
+  "blade": {
+    "files": [
+      "recipes/availability-toggle-list/blade/availability-toggle-list.blade.php"
+    ],
+    "exampleData": "recipes/availability-toggle-list/fixtures/basic.json"
+  },
+  "contract": {
+    "support": "composition-recipe",
+    "standaloneApi": false,
+    "fixturePolicy": "neutral DTOs only",
+    "parity": "framework-equivalent"
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/channel/AvailabilityToggleList.tsx",
+        "sha256": "df5c0cc662b1604f25d4ae8b2cd48ea105b2c29fa8b4652c4961542cc0a480f2"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#domain-material"
+    ]
+  }
+}

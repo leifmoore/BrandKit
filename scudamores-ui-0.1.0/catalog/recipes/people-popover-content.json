@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "people-popover-content",
+  "title": "People Popover Content",
+  "description": "Party quantities and accessibility selection.",
+  "category": "people",
+  "maturity": "stable",
+  "kind": "recipe",
+  "searchTerms": [
+    "people",
+    "popover",
+    "participants"
+  ],
+  "fixture": "recipes/people-popover-content/fixtures/basic.json",
+  "documentation": "recipes/people-popover-content/README.md",
+  "react": {
+    "files": [
+      "recipes/people-popover-content/react/PeoplePopoverContentRecipe.tsx"
+    ],
+    "exampleData": "recipes/people-popover-content/fixtures/basic.json"
+  },
+  "blade": {
+    "files": [
+      "recipes/people-popover-content/blade/people-popover-content.blade.php"
+    ],
+    "exampleData": "recipes/people-popover-content/fixtures/basic.json"
+  },
+  "contract": {
+    "support": "composition-recipe",
+    "standaloneApi": false,
+    "fixturePolicy": "neutral DTOs only",
+    "parity": "framework-equivalent"
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/people-popover.tsx",
+        "sha256": "5dbe6a66940f7d43979862651791452682f3758c1dc2805015f1464aa9ec3ca5"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#domain-material"
+    ]
+  }
+}

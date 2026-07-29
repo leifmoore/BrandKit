@@ -1,0 +1,211 @@
+{
+  "$schema": "../component.schema.json",
+  "schemaVersion": "1.0.0",
+  "id": "radio-group",
+  "title": "Radio Group",
+  "description": "Mutually exclusive options with keyboard navigation.",
+  "category": "forms",
+  "maturity": "stable",
+  "searchTerms": [
+    "radio",
+    "choice",
+    "group",
+    "radio group",
+    "react",
+    "blade"
+  ],
+  "react": {
+    "files": [
+      "react/components/ui/radio-group.tsx"
+    ],
+    "exports": [
+      "RadioGroup",
+      "RadioGroupItem"
+    ],
+    "props": [
+      {
+        "name": "value",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "defaultValue",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "onValueChange",
+        "type": "(value: string) => void",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Additional consumer layout or spacing classes."
+      }
+    ],
+    "internalDependencies": [],
+    "npmDependencies": [
+      {
+        "name": "@radix-ui/react-radio-group",
+        "version": "1.2.3",
+        "purpose": "Direct component import"
+      },
+      {
+        "name": "lucide-react",
+        "version": "0.487.0",
+        "purpose": "Direct component import"
+      }
+    ],
+    "exampleFiles": [
+      "react/examples/radio-group/basic.tsx"
+    ]
+  },
+  "blade": {
+    "files": [
+      "blade/library/resources/views/components/ui/radio-group.blade.php",
+      "blade/library/resources/views/components/ui/radio-group/item.blade.php"
+    ],
+    "canonicalTag": "<x-ui.radio-group>",
+    "legacyTags": [
+      "<x-radio>"
+    ],
+    "props": [
+      {
+        "name": "label",
+        "type": "string | null",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "required": true,
+        "description": "Required on each <x-ui.radio-group.item>."
+      },
+      {
+        "name": "value",
+        "type": "mixed",
+        "required": false,
+        "default": "",
+        "description": "Item value."
+      },
+      {
+        "name": "bag",
+        "type": "string",
+        "required": false,
+        "default": "default",
+        "description": "Item validation error bag."
+      },
+      {
+        "name": "checked",
+        "type": "bool",
+        "required": false,
+        "default": false,
+        "description": "Item fallback checked state."
+      }
+    ],
+    "slots": [
+      "default"
+    ],
+    "events": [],
+    "phpDependencies": [
+      "App\\View\\Components\\Ui\\Radio"
+    ],
+    "runtimeDependencies": [],
+    "installTargets": [
+      "app/View/Components/Ui",
+      "resources/views/components/ui",
+      "resources/js/ui",
+      "resources/css"
+    ],
+    "exampleFiles": [
+      "blade/examples/radio-group/basic.blade.php"
+    ]
+  },
+  "shared": {
+    "variants": [
+      {
+        "name": "default",
+        "default": true
+      }
+    ],
+    "sizes": [],
+    "states": [
+      "default",
+      "disabled",
+      "focus-visible",
+      "controlled",
+      "uncontrolled",
+      "checked",
+      "invalid"
+    ],
+    "responsiveBehavior": [
+      "Retains touch targets and usable wrapping at 360px."
+    ],
+    "tokens": [
+      "--background",
+      "--foreground",
+      "--primary",
+      "--primary-foreground",
+      "--muted",
+      "--muted-foreground",
+      "--border",
+      "--input",
+      "--ring",
+      "--radius"
+    ],
+    "iconMappings": [
+      {
+        "meaning": "selected",
+        "react": "Circle",
+        "blade": "circle",
+        "size": "8px",
+        "weight": "fill"
+      }
+    ]
+  },
+  "previews": [
+    {
+      "id": "basic",
+      "title": "Basic",
+      "reactExample": "react/examples/radio-group/basic.tsx",
+      "bladeExample": "blade/examples/radio-group/basic.blade.php",
+      "states": [
+        "default",
+        "disabled",
+        "focus-visible",
+        "controlled",
+        "uncontrolled",
+        "checked",
+        "invalid"
+      ],
+      "supportsDirection": false
+    }
+  ],
+  "parity": {
+    "classification": "framework-equivalent",
+    "intentionalDifferences": [
+      "React uses Lucide and Blade uses Phosphor; semantic glyph, rendered size, weight, colour and alignment match while path shapes may differ."
+    ]
+  },
+  "accessibility": {
+    "wcagTarget": "WCAG 2.2 AA",
+    "auditStatus": "passed",
+    "findings": []
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/ui/radio-group.tsx",
+        "sha256": "3bd663b3c91237f264469ba500109f502e587468b4f77390af8877a8e9974c3f"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#component-scope"
+    ]
+  }
+}

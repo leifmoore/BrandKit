@@ -1,0 +1,2479 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-28",
+  "algorithm": "sha256",
+  "count": 494,
+  "aggregate": "9fd4659c133a1058f49fb21393d173b898e493d7527168915adee6c2bde43f72",
+  "items": [
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 921,
+      "sha256": "bdb6a0baa42b82e18ec559e649ab08ea5cf5e26bb8acbf76a3d71396392a09a2"
+    },
+    {
+      "path": "START-HERE.md",
+      "bytes": 2376,
+      "sha256": "ac1cd5bba1b38551dced785ab91179e254ae719185b40be32e76ffb7bba41b03"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 1636,
+      "sha256": "1061a132e30be37e5dae24de54bd9a8cafc6f36e0e1777dea260d0d37b6dec23"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "blade/ACCESSIBILITY.md",
+      "bytes": 1768,
+      "sha256": "11aa73d9127bf908c21d4bb875175c09ca80c9bfedf3a0f8cb487818b2ea37ab"
+    },
+    {
+      "path": "blade/INSTALL.md",
+      "bytes": 3132,
+      "sha256": "77344f55edfb2dbdf2692e039b6a5e4c2c8dae3cda07b11c1cf68584d08a8e0c"
+    },
+    {
+      "path": "blade/compatibility/resources/views/components/action-message.blade.php",
+      "bytes": 304,
+      "sha256": "c94d695ed941cdfd0626fe6f37eca38aba06ae6494960b699bb4898851358de7"
+    },
+    {
+      "path": "blade/compatibility/resources/views/components/auth-session-status.blade.php",
+      "bytes": 172,
+      "sha256": "c5b46af012e37c001642d99b2bcdc667985e3ff6c26f513e47af6a3bce00d175"
+    },
+    {
+      "path": "blade/compatibility/resources/views/components/button/action.blade.php",
+      "bytes": 225,
+      "sha256": "3d1573b37d475aad22d3f418b93243200ef5ea514faa15d3d4844fc6a10fa413"
+    },
+    {
+      "path": "blade/compatibility/resources/views/components/button/link.blade.php",
+      "bytes": 124,
+      "sha256": "107cb21a7ced75f870651f65d6f6f40d3e5eee9ba90483a4c4582f629cdd8e74"
+    },
+    {
+      "path": "blade/compatibility/resources/views/components/icons/bin.blade.php",
+      "bytes": 92,
+      "sha256": "e2da7fc1649bf2fe457fe90445444f643466c4f1eea2e45c85261f0d5c7346cc"
+    },
+    {
+      "path": "blade/compatibility/resources/views/components/icons/edit.blade.php",
+      "bytes": 100,
+      "sha256": "baffd81e744a72dbcc253da2e57a33c8ab2ebdda6d107e2669cfb5ea03d19f2f"
+    },
+    {
+      "path": "blade/compatibility/resources/views/components/icons/eye.blade.php",
+      "bytes": 90,
+      "sha256": "c3b17af032c4a34d774e9f86e8232ad9b60f91b171b678eb5ecec73785fb1379"
+    },
+    {
+      "path": "blade/compatibility/resources/views/components/icons/reschedule.blade.php",
+      "bytes": 103,
+      "sha256": "ab73ab2c58c5b6833ddbfb43cfccc3140e853a423ad207106e47c54cd6026b7d"
+    },
+    {
+      "path": "blade/compatibility/resources/views/components/layouts/admin/page.blade.php",
+      "bytes": 287,
+      "sha256": "943f13b6f5c564c7f2a884793e8d3b2b471ee1b092adc80156ae9ecb39b2d77c"
+    },
+    {
+      "path": "blade/compatibility/resources/views/components/layouts/app/page.blade.php",
+      "bytes": 287,
+      "sha256": "943f13b6f5c564c7f2a884793e8d3b2b471ee1b092adc80156ae9ecb39b2d77c"
+    },
+    {
+      "path": "blade/compatibility/resources/views/components/ref-badge.blade.php",
+      "bytes": 123,
+      "sha256": "d2828e1cd055e294a84345cd6851deac37b01833deaed6b08e0b943f8309d9bd"
+    },
+    {
+      "path": "blade/compatibility/resources/views/components/session-status.blade.php",
+      "bytes": 151,
+      "sha256": "e4a01eb17817d4b33713262d2c0c48cbeb9a7a17b0dc95bcbb6183a9a1d331df"
+    },
+    {
+      "path": "blade/compatibility/resources/views/components/source-badge.blade.php",
+      "bytes": 73,
+      "sha256": "4c4703374bdf702b7dd9debcf3c7347e7abb794a2194df82e53689500382f077"
+    },
+    {
+      "path": "blade/compatibility/resources/views/components/spacer.blade.php",
+      "bytes": 66,
+      "sha256": "0caa6ca5494b04345b33e64b5016485a03fbd579cd80275a90a3a1a6a2ee8c96"
+    },
+    {
+      "path": "blade/compatibility/resources/views/components/table/dash-td.blade.php",
+      "bytes": 65,
+      "sha256": "5b0007c0beb87afbf0a5584e984721797c944ffb7bd3bf026cf758ff06623549"
+    },
+    {
+      "path": "blade/compatibility/resources/views/components/table/dash-th.blade.php",
+      "bytes": 65,
+      "sha256": "a925e36e7bb7076a6ace719b25ebb29bd7833babd26a6f29952448fc31149fb9"
+    },
+    {
+      "path": "blade/compatibility/resources/views/components/table/responsive/table.blade.php",
+      "bytes": 87,
+      "sha256": "2b608a888d78b8b98725e07da60d1e3de622a4d8843e1f60e0f304eee64c0b80"
+    },
+    {
+      "path": "blade/compatibility/resources/views/components/table/responsive/td.blade.php",
+      "bytes": 450,
+      "sha256": "5e6e149c6ed2d250b4655de9d269c8e7427730620df59bd0ae0645aaa285bfa8"
+    },
+    {
+      "path": "blade/compatibility/resources/views/components/table/responsive/tr.blade.php",
+      "bytes": 144,
+      "sha256": "d24f99133e316b3304964ab92fb97d86e7d977629cb5d6795475f6e552646954"
+    },
+    {
+      "path": "blade/compatibility/resources/views/components/toggle-button.blade.php",
+      "bytes": 454,
+      "sha256": "a80c28c17fde4feed0465e4c272100eb347cf32d25a6d01a159a467577a63b17"
+    },
+    {
+      "path": "blade/compatibility/resources/views/components/users/status-badge.blade.php",
+      "bytes": 160,
+      "sha256": "4c271b96539b7f0aa6a55e7d1d23edf46bb6baa926b3a9a071cd37d76b3b71bf"
+    },
+    {
+      "path": "blade/dependencies.json",
+      "bytes": 455,
+      "sha256": "7b40d74f99825bb0cce4ef2037a7388af90cbef3f0e2e2d8e0e4aeb3ebe60386"
+    },
+    {
+      "path": "blade/examples/accordion/basic.blade.php",
+      "bytes": 574,
+      "sha256": "67899f0084e499fc6ad52e3554da25bf110a6486e494009e07602d3255030edd"
+    },
+    {
+      "path": "blade/examples/alert-dialog/basic.blade.php",
+      "bytes": 749,
+      "sha256": "55ea5bc51e7c2c5ae0c77d381b02c4b3ef4d21ad93f4b3b669bacf405392f4a3"
+    },
+    {
+      "path": "blade/examples/alert/basic.blade.php",
+      "bytes": 187,
+      "sha256": "531433edca9e7042f8c6a0cd434c75e9909b9cbbb671d97a6f6e57e779df6fda"
+    },
+    {
+      "path": "blade/examples/aspect-ratio/basic.blade.php",
+      "bytes": 178,
+      "sha256": "a0231908b2b810b7068fc16abe7933f03cf057486980f6818dd24b0f330e09cb"
+    },
+    {
+      "path": "blade/examples/avatar/basic.blade.php",
+      "bytes": 75,
+      "sha256": "cf5f4b57f20db9d951f3f51a8d72fe4b8eb4c6c219eb6783cd701d1ed0d4681d"
+    },
+    {
+      "path": "blade/examples/badge/basic.blade.php",
+      "bytes": 279,
+      "sha256": "7ab5b196849bc6a7c0bf1b40496e9348e815c097760395d50f6fd0199a18bc0f"
+    },
+    {
+      "path": "blade/examples/breadcrumb/basic.blade.php",
+      "bytes": 311,
+      "sha256": "33292ffd0f7ab43c407cb6f97cc0b55a636bbd7e170317104d413ce93761123e"
+    },
+    {
+      "path": "blade/examples/button/basic.blade.php",
+      "bytes": 323,
+      "sha256": "f0d25aa229cde2186374f4f4a21872e580004b67cba31dd789e8d5032982ca5c"
+    },
+    {
+      "path": "blade/examples/calendar/basic.blade.php",
+      "bytes": 98,
+      "sha256": "44fb26fa795c01a7e2e6e31be5b85badfdbeaefc7b946dcd70c2cd4682f87a1f"
+    },
+    {
+      "path": "blade/examples/card/basic.blade.php",
+      "bytes": 443,
+      "sha256": "316e4f7a21998d0a8d43c3759881089abc0c9eebbdd3606d7d97aaa7109962ed"
+    },
+    {
+      "path": "blade/examples/checkbox/basic.blade.php",
+      "bytes": 72,
+      "sha256": "d7b2376b636677511deb5446dd0906d60a8d4dfffd10c419d7a7a87c18ac3621"
+    },
+    {
+      "path": "blade/examples/collapsible/basic.blade.php",
+      "bytes": 280,
+      "sha256": "60c96b859bb019e131f45975d43adf89965a0654b3e9372d3c6e3fdcbcc9326f"
+    },
+    {
+      "path": "blade/examples/dialog/basic.blade.php",
+      "bytes": 723,
+      "sha256": "fb9e4e11a98aa95a92ce559449cdc290809671af21c6c40729d24645a77a532d"
+    },
+    {
+      "path": "blade/examples/dropdown-menu/basic.blade.php",
+      "bytes": 588,
+      "sha256": "74b54e2e63e4bcb0d45e1f159bef7548cdb95946f1f28f4ec5a5aa5f680cf4e0"
+    },
+    {
+      "path": "blade/examples/form/basic.blade.php",
+      "bytes": 371,
+      "sha256": "1b8827f16f642a34569462a5c98e84c592a9e9d9f595a5d8f0f04fe10451f21d"
+    },
+    {
+      "path": "blade/examples/input-otp/basic.blade.php",
+      "bytes": 197,
+      "sha256": "bc9102849f6297df990ec86d39f744589e2ca3d04beb4179c396d8ad6c3b308c"
+    },
+    {
+      "path": "blade/examples/input/basic.blade.php",
+      "bytes": 115,
+      "sha256": "41bc9805ecf410c9e09ef781d7d4e2ba15bb4cebf3063ac6d8681e9c41f940f4"
+    },
+    {
+      "path": "blade/examples/label/basic.blade.php",
+      "bytes": 173,
+      "sha256": "d9f4bcda4ba42f33af11f8bc8d25e1aae13113522fabe2f4c504897b7a167054"
+    },
+    {
+      "path": "blade/examples/page-container/basic.blade.php",
+      "bytes": 162,
+      "sha256": "b831a3f1f955720634e6b91fc0374dd78f62f11fdd81060c118250b350dbb13d"
+    },
+    {
+      "path": "blade/examples/page-header/basic.blade.php",
+      "bytes": 167,
+      "sha256": "839f65c026c9893c9ead43b9f193ee65b9d58473501f4a578cf9ba37c8b29ee4"
+    },
+    {
+      "path": "blade/examples/pagination/basic.blade.php",
+      "bytes": 527,
+      "sha256": "9bc0689d0dd73478886252b2f747dd0337537b16a50c967f5e75bc489fcbed9e"
+    },
+    {
+      "path": "blade/examples/popover/basic.blade.php",
+      "bytes": 304,
+      "sha256": "58ac508ac730957a03a404ffac75c7874100bd29046ad74888275003d3c22f27"
+    },
+    {
+      "path": "blade/examples/progress/basic.blade.php",
+      "bytes": 54,
+      "sha256": "91869e39e9e48c7bb1cefc0aec72e27441f891608e492fee591746e7bf60f9d5"
+    },
+    {
+      "path": "blade/examples/radio-group/basic.blade.php",
+      "bytes": 219,
+      "sha256": "3a77bccce9b219346bd3da735ae6f38673924e3b3ff564ff9ea29d33f6d473c1"
+    },
+    {
+      "path": "blade/examples/scroll-area/basic.blade.php",
+      "bytes": 188,
+      "sha256": "7cd4ed6299d990dc66c89d7a19e83b33fbfbff347f06e4e0134053e5a54b6000"
+    },
+    {
+      "path": "blade/examples/select/basic.blade.php",
+      "bytes": 167,
+      "sha256": "9016c05bb145f78ff9a632d0795ad30238f3c4748fc1c1830d807bdfa7cd5ae3"
+    },
+    {
+      "path": "blade/examples/separator/basic.blade.php",
+      "bytes": 152,
+      "sha256": "85cc6ee855ade51854aff7eeeed36318c646696d2b6807ee3d4cd8feac09527f"
+    },
+    {
+      "path": "blade/examples/sheet/basic.blade.php",
+      "bytes": 546,
+      "sha256": "7c4e6a5b5caf13ae5977b140b8f793ea6c342c0fd7179080bb1d19c894eac486"
+    },
+    {
+      "path": "blade/examples/skeleton/basic.blade.php",
+      "bytes": 187,
+      "sha256": "6b87dd67a0e54331d786148ff084612d54f12da4ffe0cea5d1b0a859ae7f8051"
+    },
+    {
+      "path": "blade/examples/slider/basic.blade.php",
+      "bytes": 57,
+      "sha256": "3e255d23bbe4fce5216c7d5bcb3828d57b1531851bddc48340c70c414e9840e8"
+    },
+    {
+      "path": "blade/examples/stepper/basic.blade.php",
+      "bytes": 80,
+      "sha256": "e587232e193e16e0d4cb050dee4c95e8d49dfd293b904c9f251b45c181f2407a"
+    },
+    {
+      "path": "blade/examples/switch/basic.blade.php",
+      "bytes": 73,
+      "sha256": "7e9f808d0f750c5cf95aa4ba5f70fdcfdb3db23755b71302dc3b5e2f7c2bfadd"
+    },
+    {
+      "path": "blade/examples/table/basic.blade.php",
+      "bytes": 440,
+      "sha256": "4b873fa846301a34de9917f306b0e9b94408704df24602015164788e3d403279"
+    },
+    {
+      "path": "blade/examples/tabs/basic.blade.php",
+      "bytes": 357,
+      "sha256": "7812bd7986a7e62e7f0c7e63a49e0ba35e7cbe5f8e681c2381ff6a0adcfefc52"
+    },
+    {
+      "path": "blade/examples/textarea/basic.blade.php",
+      "bytes": 89,
+      "sha256": "76d2519f1be13d5379115e0e71af875084e1d0347700e2531f463dbd19837d00"
+    },
+    {
+      "path": "blade/examples/toast/basic.blade.php",
+      "bytes": 152,
+      "sha256": "0c71abbc8ca7e83139f588932b6e2d38524bd66a9dc507267c11cb9d7bbd3d34"
+    },
+    {
+      "path": "blade/examples/toggle-group/basic.blade.php",
+      "bytes": 556,
+      "sha256": "2d8462a10429b98f0b021ccbf7d53b9b0cbbb38ff05a3f0d32b83bfadfc85810"
+    },
+    {
+      "path": "blade/examples/toggle/basic.blade.php",
+      "bytes": 98,
+      "sha256": "18a9d2f69e499592f507efa273bef07e9685d22798cbd2bf514c010435fdc6c2"
+    },
+    {
+      "path": "blade/examples/tooltip/basic.blade.php",
+      "bytes": 316,
+      "sha256": "c420ac79aa300a4a710b6835b178c820b7e0e4bf4aa18d9b41bd5cdf5d4d9412"
+    },
+    {
+      "path": "blade/library/app/View/Components/Ui/Checkbox.php",
+      "bytes": 792,
+      "sha256": "2e942ec6958dfb9321b57939f85dbe31e04268a8d9914dfea263964f2fa2077c"
+    },
+    {
+      "path": "blade/library/app/View/Components/Ui/Error.php",
+      "bytes": 575,
+      "sha256": "f3fecd8b8e3da3f1c1d04fe8e17ea76fdf1991a3c67fe6210e28454c904a8061"
+    },
+    {
+      "path": "blade/library/app/View/Components/Ui/FormControl.php",
+      "bytes": 1746,
+      "sha256": "24469ce978510816daa72dd72c66e66bbc0e44ebbf61e868e6d34f0522b3961c"
+    },
+    {
+      "path": "blade/library/app/View/Components/Ui/Input.php",
+      "bytes": 588,
+      "sha256": "d4efee886fa85a6fa404772619baf571d3c1f3b983c3b06e46e98abf577e7770"
+    },
+    {
+      "path": "blade/library/app/View/Components/Ui/Radio.php",
+      "bytes": 696,
+      "sha256": "bdabb2f97d50da2c42578099e2fdc52e39a26f3f93a12a5e4703f8f3f24fed03"
+    },
+    {
+      "path": "blade/library/app/View/Components/Ui/Select.php",
+      "bytes": 1606,
+      "sha256": "8a626ddcdc81507b41c00c778b20834d9bafc1386ef2bcf33b9ba02b3bf66e6c"
+    },
+    {
+      "path": "blade/library/app/View/Components/Ui/Textarea.php",
+      "bytes": 212,
+      "sha256": "b94fab7f2120e33865c5d9577ff2c42ee826271c5ea60d1eac0c08e5d672d4a7"
+    },
+    {
+      "path": "blade/library/resources/css/index.css",
+      "bytes": 2343,
+      "sha256": "39771d270de9dcb93fc2950697d5de210287302905b250ec562bf00e7bec6b18"
+    },
+    {
+      "path": "blade/library/resources/css/tailwind.css",
+      "bytes": 100,
+      "sha256": "afc5c77ecfa82187b36fe487ad972b0be5eb7892a31e267ad04538028e553ddc"
+    },
+    {
+      "path": "blade/library/resources/js/ui/index.js",
+      "bytes": 7045,
+      "sha256": "24b96dcbc686d30c27f18a51afea249c897cbbbd73073ee64e04200743b51828"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/accordion.blade.php",
+      "bytes": 710,
+      "sha256": "a4add83a24fd8fcf1e5d9e8ff4e3f74057ec9e6903838d6b8eb25b6593a55b43"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/accordion/content.blade.php",
+      "bytes": 200,
+      "sha256": "658676d7deebc211a388281b2211f1e963425cf9a87a6d857ee551249e1386cc"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/accordion/item.blade.php",
+      "bytes": 155,
+      "sha256": "7f760f5ab8f843b907c721774ae985e61bc3d7612634513c417d2b6fb5511978"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/accordion/trigger.blade.php",
+      "bytes": 696,
+      "sha256": "92145b09d865e463d53e71cb14d209c65dec50d54cf8cff83229343d2aed809e"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/alert-dialog.blade.php",
+      "bytes": 181,
+      "sha256": "5e570924831d8c3b081792de8050ecf927206f1167613aa23e6de907568e7d97"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/alert-dialog/action.blade.php",
+      "bytes": 129,
+      "sha256": "1b566bc95c38ddfd5ce47cc0e3fef6fb976abd5c594a0fb118d18b496b336854"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/alert-dialog/cancel.blade.php",
+      "bytes": 109,
+      "sha256": "6e4276e40f0a70943ba1d10d1cdab41e60709800641eaff04eb769b68caa31ff"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/alert-dialog/content.blade.php",
+      "bytes": 477,
+      "sha256": "4a51cd56dd22162f2238318a1ec1f648ecf27d371165b55780ec5ac0c794a9dd"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/alert-dialog/description.blade.php",
+      "bytes": 77,
+      "sha256": "359b5492d7a42f557d260746b5992cfd6b756966bd6509b723666037b3a73038"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/alert-dialog/footer.blade.php",
+      "bytes": 112,
+      "sha256": "b78a46e69a3142aa13a76174455f14178074ebc0f41f026dfcac7c0ee2ce23ab"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/alert-dialog/header.blade.php",
+      "bytes": 102,
+      "sha256": "cd9d8f61f0c3e899bfc88a86287ea839a5407bbc3a8186e5b01c9b64d6a3414d"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/alert-dialog/title.blade.php",
+      "bytes": 71,
+      "sha256": "5e1493d7502bbc724d13f4adc2507cadbc811491e2ae825f27099efa093e6c1b"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/alert-dialog/trigger.blade.php",
+      "bytes": 133,
+      "sha256": "21910453580cc94123d3e2360a15a3e21d1d47a204eb6f5b5ae3c12a2776e5d2"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/alert.blade.php",
+      "bytes": 417,
+      "sha256": "8fa2925e9af226383a704e1e9faf617041381defd43feefac5ba512f68bcd921"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/alert/description.blade.php",
+      "bytes": 176,
+      "sha256": "c948f47f46385cb5c7e1d4475219b87cd18bf3c9fd674298695781f5a1570cb9"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/alert/title.blade.php",
+      "bytes": 135,
+      "sha256": "8692a3aef472350f30337ed88052e81ba92640c7d23c127e416f019db8e2cc7a"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/aspect-ratio.blade.php",
+      "bytes": 173,
+      "sha256": "74b94faa0e8aa535915f551de1e5ac3c010302f0d1f6cd9bbfaec4bd1f8603a1"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/avatar.blade.php",
+      "bytes": 132,
+      "sha256": "4791ddae43ebf4d27ede2b5a4ca41e8672df23c34a805d9ee42d135ad819e695"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/avatar/fallback.blade.php",
+      "bytes": 146,
+      "sha256": "ebdc16c214958532067b32ed91f0c082428c8a8e565ebc49d8a72180a7756b26"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/avatar/image.blade.php",
+      "bytes": 159,
+      "sha256": "f3a88752ceb14303fb1c7ac7f09b2b336b9b2d0795d624c6b27cee72127c9147"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/badge.blade.php",
+      "bytes": 1526,
+      "sha256": "37342fd0a413b0bed7b9d8f7db05d8eb2a1ea5d346555b83921d65ed156aafdc"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/breadcrumb.blade.php",
+      "bytes": 88,
+      "sha256": "8ef23e4a66c1b1efa48397ad1f7516d0a68333cd4101d0d9283d10fcd6a61ad2"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/breadcrumb/ellipsis.blade.php",
+      "bytes": 245,
+      "sha256": "dbbe162d5636a41b01cf4784f98ca5154f9242fbbfde056a0e63e1a05a3dd333"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/breadcrumb/item.blade.php",
+      "bytes": 110,
+      "sha256": "4e004deec535cd19dfd64d65f9a04045515b92e82cce36a61e22423a91538405"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/breadcrumb/link.blade.php",
+      "bytes": 151,
+      "sha256": "b9894869f1506802e9d8014c113b001743f60bd5de43fa956255b50967ab839e"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/breadcrumb/list.blade.php",
+      "bytes": 166,
+      "sha256": "bc1d74899b4ffbdc197a41e70d4fd30ab73935a6faf8b5903a61c5317db00160"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/breadcrumb/page.blade.php",
+      "bytes": 162,
+      "sha256": "44d009e705045068cda39d24697cdaf5436cac48e0dc6658bad9d3a03915fb89"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/breadcrumb/separator.blade.php",
+      "bytes": 215,
+      "sha256": "060882e870dfeb5554833945e24cc2ef45cfcd50bef1848fdaf24f22f125578e"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/button.blade.php",
+      "bytes": 1893,
+      "sha256": "64e018fdeaafa8d683fee6b8bf91d68d56dff589fa2cfb585903f871a5b637bf"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/button/group.blade.php",
+      "bytes": 209,
+      "sha256": "a6a6fe3547a59506dd54b5fb73cb8465a834f9d5f9171e5d8956b1da4b9c5923"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/calendar.blade.php",
+      "bytes": 2470,
+      "sha256": "a1432a16f35b183f06571175490f4bc3f3007f9e21c8f5c19d11e3982e7efa1f"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/card.blade.php",
+      "bytes": 135,
+      "sha256": "909d8be52cf64fb46fe6f3cfcee6f73f282424cc9640df05566e3007bb234da7"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/card/action.blade.php",
+      "bytes": 138,
+      "sha256": "249374d57104024e72ffa59bd8196769f660d2652f6a2bba0f7c3c064447c8e9"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/card/content.blade.php",
+      "bytes": 101,
+      "sha256": "7e5f27625a9283522e2ee103d96e611384dc4c83b309e9b1faa6fb854ce65f38"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/card/description.blade.php",
+      "bytes": 98,
+      "sha256": "d8443e494ff0d9f49418684089b147db38457335a59bb8387b7cb2ee2a80ffa2"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/card/footer.blade.php",
+      "bytes": 120,
+      "sha256": "5fc09ef4cf5b75409153d818999ed8afdaff87675a5930a92ce386388e2754b3"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/card/header.blade.php",
+      "bytes": 235,
+      "sha256": "fdd6b49e94ede7431ed7061605d2a1fa1673797fcea1df8e83d796085d1f185c"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/card/title.blade.php",
+      "bytes": 85,
+      "sha256": "273f8fc9a6a882ddc4ff6d21c5d1571a5f0cf9a5d79d0b065acc4f8daef1b173"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/checkbox.blade.php",
+      "bytes": 984,
+      "sha256": "94970a07b02236965e9653c21848f10045788bf8a0d63ec1dff3aeeef2f77a53"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/collapsible.blade.php",
+      "bytes": 146,
+      "sha256": "b43984c592cbe62bbbaabea3231939a348a84c5dd0e8c2d4b6dc0e4f773734a5"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/collapsible/content.blade.php",
+      "bytes": 106,
+      "sha256": "4b4679b35e20ab0563130541142ea46f166ca04afcaab54a2b556ad563810421"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/collapsible/trigger.blade.php",
+      "bytes": 143,
+      "sha256": "053e4a7c2a75dfc183678863f2abd9e731eefb9bc1a1aab38a908756a97c0e78"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/container.blade.php",
+      "bytes": 73,
+      "sha256": "c0fccfa0041a3c3065e8faf06f6864eb02b7b32316ffa532aeaafb59e45b2614"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/dialog.blade.php",
+      "bytes": 169,
+      "sha256": "a56d26d6f021783d7aee966b205dcc57cf0fabe67822449c38c3cba61b36c5ad"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/dialog/close.blade.php",
+      "bytes": 106,
+      "sha256": "24f017919a93b7ed20c64faf4eac8239c8a953f997e38a83f5e3157ed2b22066"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/dialog/content.blade.php",
+      "bytes": 1023,
+      "sha256": "15da25d04ed48617b2460eddf6c397315734d4c01aa223406af666699e2e6ae7"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/dialog/description.blade.php",
+      "bytes": 108,
+      "sha256": "ac3230948d9410e131a96f94171ab04a8f5cec448bfc315c533d8dbfd9835356"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/dialog/footer.blade.php",
+      "bytes": 138,
+      "sha256": "be3374002f63b6907ab1401d14c6c38ad343d22c909d1359d28cb8dc9be62dea"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/dialog/header.blade.php",
+      "bytes": 128,
+      "sha256": "26a8f9e3db64f0a16c5e1d439b0714c93dce73ee887bfa887b8fb16695f54509"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/dialog/title.blade.php",
+      "bytes": 109,
+      "sha256": "9153f210fd1c935615e2ddaf15c5830b43474063841b7420bb7dea1ef2f9c80f"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/dialog/trigger.blade.php",
+      "bytes": 127,
+      "sha256": "717c4197e6ba8edae5d803680fae261a2b3d8e42e93e2e6a70f1a9e86522edc0"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/dropdown-menu.blade.php",
+      "bytes": 252,
+      "sha256": "83e721ecf333615ed464301ba615a6fa5d36b6d4ffdf13ca55da5371bd2a8c56"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/dropdown-menu/checkbox-item.blade.php",
+      "bytes": 629,
+      "sha256": "850a4d9c2cbfd0aff86e4798753a530dc46f2d1d8ee7bfd9c0f6dd1fc1af264d"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/dropdown-menu/content.blade.php",
+      "bytes": 516,
+      "sha256": "a879270585f94ce8675dcb6e109a99aa9998deda2da24804ee8071ae443b300f"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/dropdown-menu/group.blade.php",
+      "bytes": 86,
+      "sha256": "a3f6dbee454c5e6f906e7befd1fcc6e01b546762d85630d3ed6a2cc27850d4a4"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/dropdown-menu/item.blade.php",
+      "bytes": 904,
+      "sha256": "d1224e7ae1b81da59d62e7bf209f4a27df45c6b5f41c071becdaa4fdaae2a758"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/dropdown-menu/label.blade.php",
+      "bytes": 166,
+      "sha256": "7054e6de89f778f779029a11ef518a79b41b0cf9e539608fb7ffca4a4b79695c"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/dropdown-menu/radio-group.blade.php",
+      "bytes": 115,
+      "sha256": "48df22e1429702cdce9e67d45b153fffc80321fad5ab160d6d6635ecbc2c4061"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/dropdown-menu/radio-item.blade.php",
+      "bytes": 662,
+      "sha256": "e2b054e63c81378cd7d545525d8d04f2972012a039ed5e858729ffeca72cd66d"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/dropdown-menu/separator.blade.php",
+      "bytes": 119,
+      "sha256": "5cc04c814a2c349f75b905dcff6337909a416f161334f06a118688d21e115b17"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/dropdown-menu/shortcut.blade.php",
+      "bytes": 142,
+      "sha256": "d448c57dc6b9f42494f8decca99659df926b3140a78c4e3e6f091424265b0c29"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/dropdown-menu/sub-content.blade.php",
+      "bytes": 244,
+      "sha256": "d5e6b15ee591342a1f67a3dae575ee30f1990f048759b8bcc210b6837466caab"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/dropdown-menu/sub-trigger.blade.php",
+      "bytes": 459,
+      "sha256": "4d8702698a79cee2850b5f15146d55829b3c81db97ac7a038ac55388658d436a"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/dropdown-menu/sub.blade.php",
+      "bytes": 159,
+      "sha256": "a3f9237807b6c843cf1c7eecee6ea433a945151915bc7c931beeb47961f59b6b"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/dropdown-menu/trigger.blade.php",
+      "bytes": 326,
+      "sha256": "97809581ecaf90db709dd850b12f2686595ad8d104128ef9ba570044c157a23e"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/error.blade.php",
+      "bytes": 189,
+      "sha256": "b04652ebf20e410d801f0ff665771733a06c7916ba81de6389aa0ffffab95aed"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/field.blade.php",
+      "bytes": 75,
+      "sha256": "82e86554af118f2a4a6293c1fba51691aace61cf15baf0e1de02338a7768f494"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/form.blade.php",
+      "bytes": 390,
+      "sha256": "79ce9b7777c9622ab26c63edebe7f4efcba85816daec8cd31498d71741b1c37b"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/form/control.blade.php",
+      "bytes": 66,
+      "sha256": "94f07424aa973aab81d547da30dd5b1c5a9dbda60cf12c11728c9b8eddcd01a3"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/form/description.blade.php",
+      "bytes": 106,
+      "sha256": "f603fbeb332476da73baf38adf56f9003b637fc5f3574e16d7884a1fe3d3cde2"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/form/item.blade.php",
+      "bytes": 84,
+      "sha256": "7e0d25d275d110935c02e2bd2159df3236d856679760ee11e87c3e4f829df003"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/form/label.blade.php",
+      "bytes": 55,
+      "sha256": "a18fe210a60089f32a0c93aa7fbc77c3966f0700047d11fbb7a0cff8f45d366c"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/form/message.blade.php",
+      "bytes": 115,
+      "sha256": "2cc4e9cbb8d94cd099071d383e04665c9ed73a2a5a99bbbcaf8b77d7939654a3"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/heading.blade.php",
+      "bytes": 365,
+      "sha256": "8a04cadb0291c21d31bd1a24d8a77e02bfeb87d60170f84028fcfd1beb6a39a2"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/input-otp.blade.php",
+      "bytes": 339,
+      "sha256": "49203708245c196c7674713f9752cb3e79fbabf089d34a1abbe69b11862f317d"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/input-otp/group.blade.php",
+      "bytes": 103,
+      "sha256": "dd9b1f0c46c4d5512aafd32b36e9d3cf0ada9243a5fc046e80d37ccb4ef36c75"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/input-otp/separator.blade.php",
+      "bytes": 191,
+      "sha256": "29ef91abdbb1da89950987fe8ce35619fda9d8a948a212d325042011d18e5510"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/input-otp/slot.blade.php",
+      "bytes": 568,
+      "sha256": "63e64b380dc8d0f8d31ac477d4ced8b2b8375fb028a03aec95aefe9a50b1b40e"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/input.blade.php",
+      "bytes": 901,
+      "sha256": "bc93dc1726f154606f7034f23162b134f6edac0cb62cb7555db89910971a1515"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/label.blade.php",
+      "bytes": 238,
+      "sha256": "351cd952a4dba06b77c1a6148007b4968698d91fc9b257ed131cfe4dbab9df2e"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/link.blade.php",
+      "bytes": 220,
+      "sha256": "eeba0305b8022b3bdda5f179e4db8d51530b90c4e0ec0ea06494fea3e0cbc9cf"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/navlist.blade.php",
+      "bytes": 177,
+      "sha256": "67a79de63564fdee0e0031a32b450b716c9c9fb88db2f646098ad6cc0486858d"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/navlist/group.blade.php",
+      "bytes": 244,
+      "sha256": "32ff7f7b140a00dc6adae7725732938057750a52beb02f594e93dda26e16300d"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/navlist/item.blade.php",
+      "bytes": 491,
+      "sha256": "f4a642ae4e4e5273f214b9eb587b9bfff6bf870ed4abf6b79ee483cf2cb94473"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/page-container.blade.php",
+      "bytes": 131,
+      "sha256": "9c503669f63cfd752b844ebdc156dbdde20ced0fb57bd903f6fda3daf84784da"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/page-header.blade.php",
+      "bytes": 512,
+      "sha256": "a8c6c7b16511268ca4dc336beaf911a738e4577e0445d052cee2334587026985"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/pagination.blade.php",
+      "bytes": 151,
+      "sha256": "335afbc90aef1a86f961148b36c9665e5ec0a7ab28538e13e681eccb5b68a47f"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/pagination/content.blade.php",
+      "bytes": 113,
+      "sha256": "30d449937e028e7ffd273ea00195cd270cec612354ad4ff6fefd3aa20c3114ec"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/pagination/ellipsis.blade.php",
+      "bytes": 231,
+      "sha256": "820f57de45279e71fb3a620981bd99d35ae071344eafa7e1b30311e453525564"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/pagination/item.blade.php",
+      "bytes": 67,
+      "sha256": "1d73c86ac77dc99cde3d9a1c65daecf5e07289f2e426ca581eed2dc3afb96d7b"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/pagination/link.blade.php",
+      "bytes": 432,
+      "sha256": "9aa3de2b1635bb5ef0db1c802dafda9a0dc08004023eeafc1c09f1368ca43dfb"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/pagination/next.blade.php",
+      "bytes": 250,
+      "sha256": "996dac4d6d9a452a9b6aa0e938be2215d4c85036bf37fba2f51ace7af794a6fb"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/pagination/previous.blade.php",
+      "bytes": 257,
+      "sha256": "d74b68b039f73ac7b0e7939ec786bff8562121c2aee9a7457a6d4e0ef7a19948"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/popover.blade.php",
+      "bytes": 240,
+      "sha256": "550daa83fe3b8320da82606d9e8534d02d549c94f80b0f5fd2f8cf06a88e7d91"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/popover/anchor.blade.php",
+      "bytes": 70,
+      "sha256": "fd633a1495868ab70a840a92bd85392f29c105c573468b78caf751669909fead"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/popover/content.blade.php",
+      "bytes": 298,
+      "sha256": "a77c3c58ab5680c086928087bcaa6843dec36c82ceebe8efc511f3cdb0ad551c"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/popover/trigger.blade.php",
+      "bytes": 155,
+      "sha256": "65ce4a17492b0de9c7b3ce8b5fd9df0f5c136e3a3434dd4f6a74b3ee911accd1"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/progress.blade.php",
+      "bytes": 310,
+      "sha256": "2d6778ded36f905f05b0c9050d95cc5fc90ca68a2fd961d56ac22d95c7fe3445"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/radio-group.blade.php",
+      "bytes": 212,
+      "sha256": "a1a700bf9dcead3d007e45d5b4be5b00a5326d14510aaf93b4ac27f43e262f56"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/radio-group/item.blade.php",
+      "bytes": 244,
+      "sha256": "6e05eec6cd5e73c26fe7e0ae72f2bb27c06519bc744addb50fb4912034b347d3"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/radio.blade.php",
+      "bytes": 657,
+      "sha256": "21b601ab199831b9b499b8b706aee8752d7580431ba52da84f44acefc9a411ef"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/scroll-area.blade.php",
+      "bytes": 270,
+      "sha256": "c32663ec590999d1e573be635f846dc41bbd3c3390e30a43472cf6a31f235d05"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/scroll-area/bar.blade.php",
+      "bytes": 534,
+      "sha256": "2a1c548af0ebc2bbbd6c1d7be5a4c9287150947a5f83139e780119628e9c2056"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/search.blade.php",
+      "bytes": 386,
+      "sha256": "c82cdc793186d252b75fe1ab93b8c39d8558388ea5f29d8606064f004acf84ac"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/select.blade.php",
+      "bytes": 937,
+      "sha256": "4f9e5aea65d03b0fc7e29bff606589b8fd633adb6a85b6b73fdbaf9331da72bb"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/separator.blade.php",
+      "bytes": 406,
+      "sha256": "d691378a56b7f130ab54dbde6d0ce5debbe1e0e56b17b719fa28888e0afde8fd"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/sheet.blade.php",
+      "bytes": 167,
+      "sha256": "072517bd959ec53e600616bda14323315df14728eb622f59d6d4044b61e08dbb"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/sheet/close.blade.php",
+      "bytes": 105,
+      "sha256": "a6c72d238ab51081644f907410868664fba43774cae5a3e2c7fd157b9698cc6b"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/sheet/content.blade.php",
+      "bytes": 1016,
+      "sha256": "7919699b4eb3369a5ea8982980895330f0a3feb6f3a26e005d873e4905caa753"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/sheet/description.blade.php",
+      "bytes": 107,
+      "sha256": "2d300be7a4634042691bd9f096fdee401cc6884038a72aaceec4d5b0042b763b"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/sheet/footer.blade.php",
+      "bytes": 114,
+      "sha256": "802c49e0202449f2b6e06134faa613601a57093b939fb3eb648bc48eb683f836"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/sheet/header.blade.php",
+      "bytes": 108,
+      "sha256": "68922e13c38c1ea583d87518418735eb807ccebc098e87e777b57e138c8b134e"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/sheet/title.blade.php",
+      "bytes": 103,
+      "sha256": "32b13308cfbf41cd3492b1e23e2aef602fec8cdd409a5f2c792a317b6f9e0330"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/sheet/trigger.blade.php",
+      "bytes": 126,
+      "sha256": "b7700e2f1929b492c133fbef37655bd44c314943c88d7abd86c4f723d55af2f2"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/skeleton.blade.php",
+      "bytes": 115,
+      "sha256": "a9e0fce5fb67a74858ef16d83fd46f065b6f05377c46c495a9cd54003b028158"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/slider.blade.php",
+      "bytes": 802,
+      "sha256": "03d7aecba12db5efb32e3dbeb6d0269ea05d4f856a22740cc7346af6b907048c"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/sonner.blade.php",
+      "bytes": 296,
+      "sha256": "9760e35c382027da4d212189d4b71c4915e4adbc41fa110333731ab407b188ab"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/sonner/toast.blade.php",
+      "bytes": 1058,
+      "sha256": "8295c77b368d8783d8b09f5132a48023a92719aeb4868e7f546a398cfc20301e"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/stats-card.blade.php",
+      "bytes": 397,
+      "sha256": "a0b2b86e8b345da7aca47b5dbf2f4a1d2503707e0077a41b98dd4e8213786599"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/stepper.blade.php",
+      "bytes": 1137,
+      "sha256": "2c57ff6ffa2bb59aa875e6ca249d2285ee32063ee24e3b6afe7f8d2a359cb052"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/subheading.blade.php",
+      "bytes": 82,
+      "sha256": "95c22cb0dec785ec99b2418c23276fcd85e937ac19a131d586128f8f3b43f0ef"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/switch.blade.php",
+      "bytes": 1165,
+      "sha256": "0b6ad6c971c704e34ef35a83abef03a2118c5d63b43f6985132b0c419c980277"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/table.blade.php",
+      "bytes": 182,
+      "sha256": "cc50d3ad0effc2bd5b98182465cba33e6cef9f18e76dbcd99830cd1732083036"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/table/body.blade.php",
+      "bytes": 105,
+      "sha256": "db88d701e5e6e1ff80d16af721389621cfc63cb3615c525842502b57bac939c3"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/table/caption.blade.php",
+      "bytes": 120,
+      "sha256": "dead0c21848d4808ab0a37c1361db635d1b389440910cdd003594522ef90abdf"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/table/cell.blade.php",
+      "bytes": 137,
+      "sha256": "c9e2345d0240063cf8d4e07944fbdc7e772e1f8e8100dbf9b9dd09d619b0a574"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/table/footer.blade.php",
+      "bytes": 136,
+      "sha256": "865c8ba8047d7d8d6b81cb0a18c9ac5bc68fb9d06e34ef7eebd8cb184bf71004"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/table/head.blade.php",
+      "bytes": 189,
+      "sha256": "0816e7f87671956162f7eefc4b6448359ce636ed800ecd33ab559a0feb6d71e7"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/table/header.blade.php",
+      "bytes": 96,
+      "sha256": "a0f9ae482bf741772a8eadc7ae77446b942655b1c21ac39ef66a690a59e5179e"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/table/row.blade.php",
+      "bytes": 147,
+      "sha256": "26d249c200a8b85db0369159be8ad7d0bf187a07e2faa640d6efa9aa7ae3ca2d"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/tabs.blade.php",
+      "bytes": 149,
+      "sha256": "a3d697e3014f0d98122a2dad98f951a3d2b989b51739d0ec6bd2bd135977b5d0"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/tabs/content.blade.php",
+      "bytes": 178,
+      "sha256": "143fcff08d7a5fbda4c866affaa7be69537a806e0cfc0c570dc688153540e5df"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/tabs/list.blade.php",
+      "bytes": 188,
+      "sha256": "be0f1b3d6aa4edbf3eba0266341f54f1a047d61c95ab1b656d5dc636be27f1e5"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/tabs/trigger.blade.php",
+      "bytes": 829,
+      "sha256": "b84b7e20f99aa7ad87bfe8ecf332f7837b75c02369f0f14c87bac1d2c7b03f5b"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/text.blade.php",
+      "bytes": 229,
+      "sha256": "341a610133f678160c6a7fedc388c06a1113a2dd2083af6315261292841735f8"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/textarea.blade.php",
+      "bytes": 698,
+      "sha256": "121bb3a610dc3727fb83b004d9fa9d46144f0cef71f94c024a887dc308335103"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/toast.blade.php",
+      "bytes": 69,
+      "sha256": "3fc6b95fe0df41c4aa4c994b6496f8f0d66796c6cbb99dd4aacd11bb362a2e19"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/toggle-group.blade.php",
+      "bytes": 834,
+      "sha256": "dbfc85fe998eb25925c0460e3d69df00dd79db9bc341308eaf908395657326e1"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/toggle-group/item.blade.php",
+      "bytes": 1135,
+      "sha256": "c91b411cb735df44da59e1d6b7ce31007bfdcde040468618eb20e278f93a0e22"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/toggle.blade.php",
+      "bytes": 1180,
+      "sha256": "5e0e335fc48bdfceb97c34f30e521860a4941c930234bdd373a82c59cd60e505"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/tooltip.blade.php",
+      "bytes": 209,
+      "sha256": "3d7a3f043178398ff05d1b5ecd20fce57fb97ad7c383395d843a1496fbed018b"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/tooltip/content.blade.php",
+      "bytes": 293,
+      "sha256": "28a63eb48505f8f624373ef01d67c9629b55856ba1114c2cafecef4d1eeb9f03"
+    },
+    {
+      "path": "blade/library/resources/views/components/ui/tooltip/trigger.blade.php",
+      "bytes": 282,
+      "sha256": "d8e3be0c2b02a0a8a0ecee76b68c4a2b0e786bd4e2242bd74d05c5f7a699d536"
+    },
+    {
+      "path": "catalog/blade-crosswalk.json",
+      "bytes": 26814,
+      "sha256": "b05ea03c4842ebcb70356b4cbdc104b4e25d9fe48406b3833461a090906b7253"
+    },
+    {
+      "path": "catalog/catalog.json",
+      "bytes": 20887,
+      "sha256": "80fafb70bd560439343a958813c2db0fe9764b324111e01ec0657c148fe24fcc"
+    },
+    {
+      "path": "catalog/catalog.schema.json",
+      "bytes": 3286,
+      "sha256": "685859073c5c6faafb02e0d9bd12be66d09928f131422a113a6a81cc6bad3d21"
+    },
+    {
+      "path": "catalog/component.schema.json",
+      "bytes": 8036,
+      "sha256": "723e9949b14347a90e210899de45ef03857750aa4aee0e6bb6579d81a618c3f1"
+    },
+    {
+      "path": "catalog/components/accordion.json",
+      "bytes": 4877,
+      "sha256": "bda55c7b00bae9f62ecf5edfd642155a9b1a02888131694f5ed4cabeb2a668f9"
+    },
+    {
+      "path": "catalog/components/alert-dialog.json",
+      "bytes": 6229,
+      "sha256": "2b9a2453fcbb5192cd279233b982d557ea3dee139047c00d966eb9035527f208"
+    },
+    {
+      "path": "catalog/components/alert.json",
+      "bytes": 3519,
+      "sha256": "03848b5941921ed4cff911229cb207bdf1fde7bf6f543da2e4122e3f0ab367e9"
+    },
+    {
+      "path": "catalog/components/aspect-ratio.json",
+      "bytes": 4662,
+      "sha256": "6bfc069dc0bfd3ba4fb0d2d43c67d1df773427ca0cf7724c39b6c49d317853c1"
+    },
+    {
+      "path": "catalog/components/avatar.json",
+      "bytes": 3105,
+      "sha256": "8a459330da9fa57a73c2473fa7e06c23acc1151b7728761ce3087b70f579e891"
+    },
+    {
+      "path": "catalog/components/badge.json",
+      "bytes": 4112,
+      "sha256": "e3252793cf717ab6a568ad360ac79272d913ceb22c3d484ef2e0362a065a494d"
+    },
+    {
+      "path": "catalog/components/breadcrumb.json",
+      "bytes": 4153,
+      "sha256": "0cde93d097f1c90337c22851c67167dbc6d5f547044966c304c2562fa2895fc2"
+    },
+    {
+      "path": "catalog/components/button.json",
+      "bytes": 6000,
+      "sha256": "5bdf27d9383dee4392180444a41aa346a0e0d987af99f005e5496c126b5e1177"
+    },
+    {
+      "path": "catalog/components/calendar.json",
+      "bytes": 5280,
+      "sha256": "1f86604ad2b725bf27d1f0c2654181b4529b83dfed6816c0d4ae49480bc4595c"
+    },
+    {
+      "path": "catalog/components/card.json",
+      "bytes": 3376,
+      "sha256": "dabe7a01972c64db1d342a784d4f16c7b20a8c78c789c150eb1cd8544838a9e7"
+    },
+    {
+      "path": "catalog/components/checkbox.json",
+      "bytes": 4712,
+      "sha256": "1a201f840f82a631773d3f27ee4ea73134944d7767b3ce04fa74ffa41d2ca29e"
+    },
+    {
+      "path": "catalog/components/collapsible.json",
+      "bytes": 4077,
+      "sha256": "d4c20b27a58ab21e08c1c11ec306c47ab24360f3876775e872558b64ba6b8793"
+    },
+    {
+      "path": "catalog/components/dialog.json",
+      "bytes": 5084,
+      "sha256": "3cf7fae8baf35e1a6c283865a9637ba31cde3c98979095c0553e69c187271026"
+    },
+    {
+      "path": "catalog/components/dropdown-menu.json",
+      "bytes": 6260,
+      "sha256": "ed53e2ef9f23f5ee6445155bad09a46cfdd8694a41bbe5a1b9b33cb57140843a"
+    },
+    {
+      "path": "catalog/components/form.json",
+      "bytes": 4510,
+      "sha256": "3aef633650aff08f01ae59c269cd2d530821522931e4c0b472f776e022bd3e2e"
+    },
+    {
+      "path": "catalog/components/input-otp.json",
+      "bytes": 4822,
+      "sha256": "2e066617fb3a70baf5018b33b4a18c7062fc66735dd603329e70e1d4248f6a45"
+    },
+    {
+      "path": "catalog/components/input.json",
+      "bytes": 3946,
+      "sha256": "933b2d369d8c9deeaa39731d8bdc10902f31606dc7e373c2b3b76a5c81f71cb0"
+    },
+    {
+      "path": "catalog/components/label.json",
+      "bytes": 3207,
+      "sha256": "605cbc6d9ca30627fd4bc05f405cac8ca84c9df7684167543058065fbf912396"
+    },
+    {
+      "path": "catalog/components/page-container.json",
+      "bytes": 3000,
+      "sha256": "c92bf93c728c44f42c4080a4fb5a3a35cfb80d64ddfb28998e149fdcbc89ecdb"
+    },
+    {
+      "path": "catalog/components/page-header.json",
+      "bytes": 3487,
+      "sha256": "83be38da92614d581ec1d4e7f3e69d7841359a336a5365a989a4362107c91be1"
+    },
+    {
+      "path": "catalog/components/pagination.json",
+      "bytes": 4175,
+      "sha256": "623d1ab3fed13f3e5f47d88d8acba4c167513cb34264040ad57fade6e8faf44d"
+    },
+    {
+      "path": "catalog/components/popover.json",
+      "bytes": 4286,
+      "sha256": "650aa5f2633229a3288323abf7eecf53246f1b97991b4b6626e7ac9bb95fd606"
+    },
+    {
+      "path": "catalog/components/progress.json",
+      "bytes": 3477,
+      "sha256": "1a2d1642024b6ba738f251028047d0de7b9605223128a8fed46ec6f0c15d926e"
+    },
+    {
+      "path": "catalog/components/radio-group.json",
+      "bytes": 4811,
+      "sha256": "48d923eacfe55f9eae5aea256e13d5c0c8ade5de664f1ceaa2278f93b7df4cb8"
+    },
+    {
+      "path": "catalog/components/scroll-area.json",
+      "bytes": 3524,
+      "sha256": "1b3521fd0d22f9e02ccd121658cb2810cbdc08582b86a85c2859a5e10aef90f2"
+    },
+    {
+      "path": "catalog/components/select.json",
+      "bytes": 5326,
+      "sha256": "34847171b9503b10b7f9707ca541381f1b7835351594d5f0b4939e0baf521171"
+    },
+    {
+      "path": "catalog/components/separator.json",
+      "bytes": 3481,
+      "sha256": "720fe1969b4b8270583e1dbb2ea14fbe2661b939c2592840b1a31a4bd0a310f7"
+    },
+    {
+      "path": "catalog/components/sheet.json",
+      "bytes": 5506,
+      "sha256": "6685b200303159cdf87bc5e96770ce25ca49af2b78ad244684cb6ac290991ad5"
+    },
+    {
+      "path": "catalog/components/skeleton.json",
+      "bytes": 2747,
+      "sha256": "b378994334cacfdbbc12555fec867f52cfdb3c54988cfafa5ddcb9b2fb2cf245"
+    },
+    {
+      "path": "catalog/components/slider.json",
+      "bytes": 4301,
+      "sha256": "1b87084caa032761696c1371852ded7c24df88e84e83775d9cdb6f77b31c8710"
+    },
+    {
+      "path": "catalog/components/stepper.json",
+      "bytes": 4379,
+      "sha256": "2bad93fbed2aa106b7c88f1b0744047e5a965add63f15755b956081f997ebeb9"
+    },
+    {
+      "path": "catalog/components/switch.json",
+      "bytes": 4145,
+      "sha256": "928527cdc29da3d71754e799aff45aabe802d904f7e2cd95ac61f1e792560292"
+    },
+    {
+      "path": "catalog/components/table.json",
+      "bytes": 3670,
+      "sha256": "f668f04073762aa30b3c4e8b4bca06b420703f958d210e6142c928069bc932e3"
+    },
+    {
+      "path": "catalog/components/tabs.json",
+      "bytes": 4020,
+      "sha256": "2c31dd78d307619064fbba3eff24c0652f7a9fc0a8963ccdbbe57e58a15dd5f3"
+    },
+    {
+      "path": "catalog/components/textarea.json",
+      "bytes": 3760,
+      "sha256": "d1aef056dee900fc4f108c154f218a2041e04247be831fd494ba775acb2c7a2e"
+    },
+    {
+      "path": "catalog/components/toast.json",
+      "bytes": 4030,
+      "sha256": "be915b4097a11a0d40c21370fad4eeb6154d34b91ff919c61cdd59c40ad28cef"
+    },
+    {
+      "path": "catalog/components/toggle-group.json",
+      "bytes": 4690,
+      "sha256": "1165a6d0669fcca1e285840caa8b3a590828a662b4afc1ca8461d30a3fa001a9"
+    },
+    {
+      "path": "catalog/components/toggle.json",
+      "bytes": 4332,
+      "sha256": "65b77554047c9d928d5531cbeda5851cc5d5977c9137252c0efca547ae042f22"
+    },
+    {
+      "path": "catalog/components/tooltip.json",
+      "bytes": 4335,
+      "sha256": "b6682c7d9a3f8b4b6af387bcc693f4ee1bde6afc3cf59845d0f99b000b5be221"
+    },
+    {
+      "path": "catalog/recipes/availability-toggle-list.json",
+      "bytes": 1389,
+      "sha256": "6c6c7a2b7c66bfae161f5a700de770786f6031d64de8901e1149bd651f52b7bb"
+    },
+    {
+      "path": "catalog/recipes/booking-card.json",
+      "bytes": 1250,
+      "sha256": "79bb4a08e8bfd708e797e362f1e0cfe7bb48c9f1d8c0b86296bc915523e75ffc"
+    },
+    {
+      "path": "catalog/recipes/booking-details-dialog.json",
+      "bytes": 1362,
+      "sha256": "091ec3b8408b607fa273f62884b855346ed61059182a41bbde8c5c8be4973c6b"
+    },
+    {
+      "path": "catalog/recipes/channel-logo-picker.json",
+      "bytes": 1321,
+      "sha256": "cb565367a621af7d6d44e4934a68402f78d523dca1d63f54527f3f77a45e2046"
+    },
+    {
+      "path": "catalog/recipes/people-popover-content.json",
+      "bytes": 1352,
+      "sha256": "a1eefd675868e358c12df3f1fda13d63aaddea3bebf21508a99c623c5062b878"
+    },
+    {
+      "path": "catalog/recipes/quick-launch.json",
+      "bytes": 1256,
+      "sha256": "05cc1cd498df263e653503b83398689a7ff655fb537fc55aaf76eafbc0644ea4"
+    },
+    {
+      "path": "catalog/source-inventory.json",
+      "bytes": 10861,
+      "sha256": "eaa8900361e39e31a55d7fe61e0c95472512a02252cf51fd31833e1e536e0eec"
+    },
+    {
+      "path": "docs/AUTHORING.md",
+      "bytes": 1448,
+      "sha256": "328e0cb757fda9e1d28b267a008a1d6073fef2c208700d34cf76073b21bfbf00"
+    },
+    {
+      "path": "docs/DEVELOPER-SECTION-CONTRACT.md",
+      "bytes": 2109,
+      "sha256": "c1966d153a760f37414fde0d6d833d54a37a456d47fa391f520c5f7f6f0f0f16"
+    },
+    {
+      "path": "docs/MIGRATION.md",
+      "bytes": 1308,
+      "sha256": "c4ac2f3f58963a65c27b81b0ac96ff3cc4a5d95d9ed52c52f5cd11a0a9b3e053"
+    },
+    {
+      "path": "docs/RELEASES.md",
+      "bytes": 922,
+      "sha256": "33f303a8e4b3796ecb34dc56cc8f4d67cc646b4f12a7e473f1872c8c238fc94f"
+    },
+    {
+      "path": "docs/components/accordion.md",
+      "bytes": 2908,
+      "sha256": "213ea52fb0d51fe476c03ad61d79df9963861aac32ded10223e761e7802f490f"
+    },
+    {
+      "path": "docs/components/alert-dialog.md",
+      "bytes": 3420,
+      "sha256": "eb05654df3d4caf1226686a42f348adc46dc3527db49993ef1d420892c3eb21e"
+    },
+    {
+      "path": "docs/components/alert.md",
+      "bytes": 2455,
+      "sha256": "85a05b7c9c0adb0ecfe63d4ab1f96daae94461416d274cf0e6322daf9881e579"
+    },
+    {
+      "path": "docs/components/aspect-ratio.md",
+      "bytes": 2381,
+      "sha256": "9d52c518b51b6d6484b3bfdb5978dcb77b67c047085370299b16e239ea8614c0"
+    },
+    {
+      "path": "docs/components/avatar.md",
+      "bytes": 2291,
+      "sha256": "c73cce235a45c994aab310ff1fb03ce3e36e8074cd8cca44973e5d74bc71e2f9"
+    },
+    {
+      "path": "docs/components/badge.md",
+      "bytes": 2490,
+      "sha256": "75e109b2cc5386afc232a6783b5bf43cf91db19a9630d81b97d75c9c42267f03"
+    },
+    {
+      "path": "docs/components/breadcrumb.md",
+      "bytes": 2792,
+      "sha256": "afe8972e5c201998582b8214b1aa784c910c04da07cab2485c824f2332e67117"
+    },
+    {
+      "path": "docs/components/button.md",
+      "bytes": 2821,
+      "sha256": "5a4959cba2e4a9a6477e6eac5b19175a9c80e697aac20ca381b77559de4de7f3"
+    },
+    {
+      "path": "docs/components/calendar.md",
+      "bytes": 2855,
+      "sha256": "640d00151369be6d0a7194a55d806d19e3eb634269068142ec243cdaeeb79f42"
+    },
+    {
+      "path": "docs/components/card.md",
+      "bytes": 2659,
+      "sha256": "4b669ce3fa37ccc565ccea9348e4181da6d73b1b7cabba67a93394b6f1f4ae55"
+    },
+    {
+      "path": "docs/components/carousel.md",
+      "bytes": 541,
+      "sha256": "775688d1e494ff3937039b04d5a766feec392e8cdf96aad70001dffc454c3105"
+    },
+    {
+      "path": "docs/components/chart.md",
+      "bytes": 581,
+      "sha256": "bb8b21a6daa8cb51573bf45603ee0742e46dedf57c498db5db1d5e435aff1dbc"
+    },
+    {
+      "path": "docs/components/checkbox.md",
+      "bytes": 2665,
+      "sha256": "61a929fbd76247480991b1e6108943ae413dd76b73919561790f484fcd80f4ee"
+    },
+    {
+      "path": "docs/components/collapsible.md",
+      "bytes": 2601,
+      "sha256": "05971ffaefa074d585968c8eb519705c1698c3ab08d22486c15b8a8f45623d73"
+    },
+    {
+      "path": "docs/components/command-palette.md",
+      "bytes": 542,
+      "sha256": "e5c545f7a319d61fee3738404add876860483ff3712c6c63c5072b9d422e88a5"
+    },
+    {
+      "path": "docs/components/context-menu.md",
+      "bytes": 551,
+      "sha256": "8b0129ed74260b1e07aa253f68eac2e3f6059988d4e3e230c94c67d458b6e0f4"
+    },
+    {
+      "path": "docs/components/dialog.md",
+      "bytes": 3157,
+      "sha256": "f264883dffb42d90d46374837e2d8f25a2e96b3fbf66c97af03d1043e7d995d9"
+    },
+    {
+      "path": "docs/components/drawer.md",
+      "bytes": 540,
+      "sha256": "a0fbad474f9edede7891b557ba92012da0d806b94f4be7152f3072439630121d"
+    },
+    {
+      "path": "docs/components/dropdown-menu.md",
+      "bytes": 4006,
+      "sha256": "d290c9793aaddaf56eacc070e582fac7813b0c4a991d484d3b7ee471840b6d52"
+    },
+    {
+      "path": "docs/components/form.md",
+      "bytes": 2875,
+      "sha256": "b446d6fdd9d0048d3c1822df6c11551505df49b836ab1c6a45302e83e325198b"
+    },
+    {
+      "path": "docs/components/hover-card.md",
+      "bytes": 551,
+      "sha256": "f8a685f1fc7bdc9547233cd035cb65c825ebe5e9b121e305f750fb7cdc00e7cf"
+    },
+    {
+      "path": "docs/components/input-otp.md",
+      "bytes": 2891,
+      "sha256": "e70035aafc84d1a602cc38d623a78a24398f5397a04dcc2b55c0232bc5c2b5ab"
+    },
+    {
+      "path": "docs/components/input.md",
+      "bytes": 2491,
+      "sha256": "55d71d238167464d6292d9d5b9b91a0e8a00907886803e790bbaedce862a79ec"
+    },
+    {
+      "path": "docs/components/label.md",
+      "bytes": 2164,
+      "sha256": "2deb9fc6b3823a9e1e1c3dac06c843140873cec4d9a8d53bfc612ac56a8611f0"
+    },
+    {
+      "path": "docs/components/menubar.md",
+      "bytes": 542,
+      "sha256": "1ee170b86e0f719682e9802fb811ddd7644213565a7a6c6c0fe9e68c4b972bdc"
+    },
+    {
+      "path": "docs/components/navigation-menu.md",
+      "bytes": 560,
+      "sha256": "c94fb6fdf0a17e27e681116e162d246882244064b5a3fe98f9fe4990f54e60e7"
+    },
+    {
+      "path": "docs/components/page-container.md",
+      "bytes": 2215,
+      "sha256": "1f45502d980a2ad713d0408016c16808cf303cb8695eaeefbaffdb86c27f8280"
+    },
+    {
+      "path": "docs/components/page-header.md",
+      "bytes": 2389,
+      "sha256": "b23963c3a56f62bd96ce13e023779ffd55cb814d8b1b01f9b40a08ebc32c1e9c"
+    },
+    {
+      "path": "docs/components/pagination.md",
+      "bytes": 2823,
+      "sha256": "32d95b61a98e5d752c6daf0a7ed6d59ece34f33db3ff20d4991c3ad19e038e84"
+    },
+    {
+      "path": "docs/components/popover.md",
+      "bytes": 2672,
+      "sha256": "2a622eaf751902be03cc89ba71dafb6b0f688301c9ee6e9ff13182e67fdc6e19"
+    },
+    {
+      "path": "docs/components/progress.md",
+      "bytes": 2252,
+      "sha256": "a0ca1260585a30930973ed02bbe74563a78d7f77aa3f22cb49a07670ff4e095a"
+    },
+    {
+      "path": "docs/components/radio-group.md",
+      "bytes": 2694,
+      "sha256": "708d90691b6cdba74c1bd0be2828ab769658040894ac7b1fff0a7ceabc6aa719"
+    },
+    {
+      "path": "docs/components/resizable-panels.md",
+      "bytes": 546,
+      "sha256": "366c7b0ce6f677539c25e5f32b94e3e31f2c80ee877469500482f0148e555c14"
+    },
+    {
+      "path": "docs/components/scroll-area.md",
+      "bytes": 2404,
+      "sha256": "d990d60ac4f4f2f6bca91913fbef88fdbb068c2dde403e74e79941803059f563"
+    },
+    {
+      "path": "docs/components/select.md",
+      "bytes": 3050,
+      "sha256": "32d2ddf7d0238b92872f18acd6ac88e718929f13ba4f9e93958381b8ce38a87b"
+    },
+    {
+      "path": "docs/components/separator.md",
+      "bytes": 2318,
+      "sha256": "b6c2a21c51aa4078a1ca2ea0ace9d71f6a52a8d4f73c6e34eef7e347b9d39698"
+    },
+    {
+      "path": "docs/components/sheet.md",
+      "bytes": 3307,
+      "sha256": "568fdb41522141e1556bbf077907a57bf8efd6c792ee7837b5fba650819cf1d7"
+    },
+    {
+      "path": "docs/components/sidebar.md",
+      "bytes": 572,
+      "sha256": "0382cdc1c3545e0f9fa7c1f3dd6cc89ea74671ec04df7315fa9f3b8a37a2c1f7"
+    },
+    {
+      "path": "docs/components/skeleton.md",
+      "bytes": 2106,
+      "sha256": "0a515b3925ac2cf8d34a0c42cafa9be0fddc569cda88ad98250be70f3509b305"
+    },
+    {
+      "path": "docs/components/slider.md",
+      "bytes": 2474,
+      "sha256": "264d724f8b3a5032aa68a67dfa93b9ddcd87bedaaa48225f3cd06b4815db400f"
+    },
+    {
+      "path": "docs/components/stepper.md",
+      "bytes": 2607,
+      "sha256": "ed513bbdbb11cc71fe27c83cdab251a21a79ca68f38f085c2bd3c1f59364bd64"
+    },
+    {
+      "path": "docs/components/switch.md",
+      "bytes": 2477,
+      "sha256": "1e95115a7ba01dc3f53b188ffc25b97b710faad6b1ac257e2db0a2217f6948b8"
+    },
+    {
+      "path": "docs/components/table.md",
+      "bytes": 2860,
+      "sha256": "57436f1c3e56dab43fd1196841041bee858bc5ad1d9ede6d8a5bb7cf487a0a81"
+    },
+    {
+      "path": "docs/components/tabs.md",
+      "bytes": 2643,
+      "sha256": "01c619089e3a42d7ab80cdd8dbe1c22d3edd65e59b00ae97ad616966eadb30a8"
+    },
+    {
+      "path": "docs/components/textarea.md",
+      "bytes": 2400,
+      "sha256": "d6a4714ebe6b7ab288e77c0d4dd7dfe70604b4d8b21505e9de9f77b687e0a3bc"
+    },
+    {
+      "path": "docs/components/toast.md",
+      "bytes": 2510,
+      "sha256": "a5b81797258c66355835c05831be6b663f9d9ee8bc6d7e42bf81fcd19599a732"
+    },
+    {
+      "path": "docs/components/toggle-group.md",
+      "bytes": 2756,
+      "sha256": "48f3007aa80854e7a87e7807c50ce8269399453faf2fbd69a92ed199161421f3"
+    },
+    {
+      "path": "docs/components/toggle.md",
+      "bytes": 2514,
+      "sha256": "b534dcd3a30ef00ae2077bf9f3d8130a4d0536d3684b78ebb5338d467e2069ee"
+    },
+    {
+      "path": "docs/components/tooltip.md",
+      "bytes": 2645,
+      "sha256": "584af884415f36205f8b606adf77618f56d318614ba1821d3be01dcf9482dc1a"
+    },
+    {
+      "path": "docs/playground/DevicePreviewFrame.tsx",
+      "bytes": 1151,
+      "sha256": "54c88ebb61f2d9053502f2728b63ee1ca92c421cb1dc260b45dd942230d2d020"
+    },
+    {
+      "path": "export-manifest.json",
+      "bytes": 1119,
+      "sha256": "829695aa735ba3c2d879c07ecea2d4eab696036a1e0d78a348a1d2dae4adde80"
+    },
+    {
+      "path": "foundations/css/base.css",
+      "bytes": 883,
+      "sha256": "3437d3ab1f44fb1657e1fe438685d33816576783ae5eb967eaf8419c0fabe815"
+    },
+    {
+      "path": "foundations/css/brands.css",
+      "bytes": 1462,
+      "sha256": "6c63c65d10c10f40a2f8e35d3d3def02fa1d099d10cac0aa44c905e8791bbe7b"
+    },
+    {
+      "path": "foundations/css/fonts.css",
+      "bytes": 247,
+      "sha256": "5263803bf0528d8197284908fc3726bf77e60f833fd01a9a1ae0b8b70c77885e"
+    },
+    {
+      "path": "foundations/css/tailwind-theme.css",
+      "bytes": 2526,
+      "sha256": "18158b82911f95883d1ee11ee35ba1a15fd6c0b60db59dfbd037912f4d1b380e"
+    },
+    {
+      "path": "foundations/css/tokens.css",
+      "bytes": 3596,
+      "sha256": "edbb874ef693730cbb254cc7a0b3ddb9f48630d8a335922239360aeeb38a2491"
+    },
+    {
+      "path": "foundations/data/brands.json",
+      "bytes": 2465,
+      "sha256": "96e2d61d5212491ea9232d27ba0d71c0e4570abb7b52123c1149840680d0a992"
+    },
+    {
+      "path": "foundations/data/tokens.json",
+      "bytes": 8523,
+      "sha256": "0abe15ab7a57a359be7892ba3115e249bae4f21fe35c522a71dfee4728e9f88f"
+    },
+    {
+      "path": "foundations/docs/exceptions.md",
+      "bytes": 2411,
+      "sha256": "fd0df90b57b055e7036024b095598e621c7eef1619c3d8b87ed510f3ec4a8b8f"
+    },
+    {
+      "path": "foundations/docs/icons.md",
+      "bytes": 1384,
+      "sha256": "18c071375867deb422f3edb9ed00f181d9fa79189c15ab93d9149ffcf82e6153"
+    },
+    {
+      "path": "foundations/docs/layout.md",
+      "bytes": 2344,
+      "sha256": "7b85367b007182c091ae25e82fcb49e6a46796a66fde361095a609e1472acea3"
+    },
+    {
+      "path": "foundations/docs/theming.md",
+      "bytes": 1979,
+      "sha256": "e2911368b735923cc3f45a76ab8a8d300a5c68849df7367875bef202e4a9d605"
+    },
+    {
+      "path": "foundations/docs/tokens.md",
+      "bytes": 3722,
+      "sha256": "061b41465f38dd06d0ee50578aeeeb64724daa6f96c9601f5ee83f24281ee5ec"
+    },
+    {
+      "path": "foundations/docs/typography.md",
+      "bytes": 2147,
+      "sha256": "2b71ce1f65e62a64ae3f2f9be24e539c931dc7a2586513bb4a7285318b5d1e99"
+    },
+    {
+      "path": "foundations/licenses/OFL-1.1.txt",
+      "bytes": 4401,
+      "sha256": "d2556858da50acdf7dc6dced87b53cc15b2f3ce04ffd6ee5f2add2613b34c99c"
+    },
+    {
+      "path": "foundations/scripts/generate-css.mjs",
+      "bytes": 2847,
+      "sha256": "6fb1c59ac5925e6ed1d5948ac0c343bee7fca103e16c656c2887243847392627"
+    },
+    {
+      "path": "provenance/as-built.md",
+      "bytes": 2588,
+      "sha256": "7d29ce69ad602cf16bff5c33ce5d9e3fbf4201998469183b2932a6943f763fc6"
+    },
+    {
+      "path": "provenance/blade-remediation.json",
+      "bytes": 2775,
+      "sha256": "02571c3649deab462b03b3186c077a9504c061295f1033de3bdc0560f94a5375"
+    },
+    {
+      "path": "provenance/decisions.md",
+      "bytes": 2729,
+      "sha256": "73d31df60ebec8cadf554c9fc4930e58135ce479bbbd7df5eaae03357e366b2d"
+    },
+    {
+      "path": "provenance/excluded.json",
+      "bytes": 2592,
+      "sha256": "4fe9f5a5da20e7ee078d2d2730adb58f1ff961075e0a50cc9e01923c3c4e19a4"
+    },
+    {
+      "path": "provenance/source-lock.json",
+      "bytes": 32578,
+      "sha256": "35583973c6e4ffbf0a0b5fa1e234e21c1e0646b05c86ba7122114e0df993cdcc"
+    },
+    {
+      "path": "react/README.md",
+      "bytes": 1568,
+      "sha256": "fbee0b700ecd6810586028619058e80920b7bca9212e76b201766823326fd485"
+    },
+    {
+      "path": "react/components/layout/index.ts",
+      "bytes": 31,
+      "sha256": "d42e36b304ec5e40ef650fc9965076adb483e932b81d2d78e9de071af69c07d3"
+    },
+    {
+      "path": "react/components/layout/page-header.tsx",
+      "bytes": 1695,
+      "sha256": "e8e923175b1fa331eda60bc8522b44248fbd0b06b1208582b73f6e049912747a"
+    },
+    {
+      "path": "react/components/ui/accordion.tsx",
+      "bytes": 2110,
+      "sha256": "527699aabcfbacb66f9844d73c87847582003e098c9f3e13b242c1d3284a2100"
+    },
+    {
+      "path": "react/components/ui/alert-dialog.tsx",
+      "bytes": 3914,
+      "sha256": "53e7bc25ab21cea0bc7ad131ce200befb446803761ddfd91dbd4e97893dee898"
+    },
+    {
+      "path": "react/components/ui/alert.tsx",
+      "bytes": 1661,
+      "sha256": "a8ae7f73f3e95ca545c6af8de56b8b974435cb9bf3aeee09e73b0fd59b3640e8"
+    },
+    {
+      "path": "react/components/ui/aspect-ratio.tsx",
+      "bytes": 338,
+      "sha256": "796bcba0ff57d3adffbca537f6108553f606c42fa0600280c1a8a730bcf66b6d"
+    },
+    {
+      "path": "react/components/ui/avatar.tsx",
+      "bytes": 1144,
+      "sha256": "9ffb6247e4e37e166f7e36d2e97bf20389816f7546085bbb0585ab1a152eb2d6"
+    },
+    {
+      "path": "react/components/ui/badge.tsx",
+      "bytes": 2884,
+      "sha256": "5ffbae52f941ddb821bfa34807bb67b9f53e4f119f56abe5df507dbe2b50a3b4"
+    },
+    {
+      "path": "react/components/ui/breadcrumb.tsx",
+      "bytes": 2416,
+      "sha256": "9210ff13d2422ff1dadb0f14b91b4b0f059b65608c98c4560176e081149bc42c"
+    },
+    {
+      "path": "react/components/ui/button.tsx",
+      "bytes": 2328,
+      "sha256": "f770d7dda765f2dc07b420ce8406be28ec7982b663e81166a83c2aa6f2781218"
+    },
+    {
+      "path": "react/components/ui/calendar.tsx",
+      "bytes": 5894,
+      "sha256": "f11ef53c92eb7166e17aafe5ab46182f368f833a6a4157a7f2510b6c0f5bb3ac"
+    },
+    {
+      "path": "react/components/ui/card.tsx",
+      "bytes": 2024,
+      "sha256": "f4225fe9aadd3a9ea34f23923bbce64a5d4ec2e5753af4508f8b28a560a5af1b"
+    },
+    {
+      "path": "react/components/ui/checkbox.tsx",
+      "bytes": 1654,
+      "sha256": "6c70875c9407e49dc8ead87e51297497df9dba2af181e46d3c6aa45527d33dc8"
+    },
+    {
+      "path": "react/components/ui/collapsible.tsx",
+      "bytes": 860,
+      "sha256": "6fa760620cb15bdd806681164539fb9dda78924cfb7a132f921dec0c51e7d543"
+    },
+    {
+      "path": "react/components/ui/dialog.tsx",
+      "bytes": 4154,
+      "sha256": "024ffd1b154fa31dff4aac71225f3ba8822d35cbdd532273ab6c5766cc767c60"
+    },
+    {
+      "path": "react/components/ui/dropdown-menu.tsx",
+      "bytes": 8427,
+      "sha256": "4f6977c1922696af405048564f8465f0ff75a3856760ef367a3e351d996b4ea3"
+    },
+    {
+      "path": "react/components/ui/form.tsx",
+      "bytes": 3853,
+      "sha256": "89e10392a819d82ac992bd36587238480746a0a2578adf112f0483be237896c6"
+    },
+    {
+      "path": "react/components/ui/index.ts",
+      "bytes": 1020,
+      "sha256": "e9603aa7cae45d194579cf1176c02ef606fcbedd361591eabb61f7cc08fdb72d"
+    },
+    {
+      "path": "react/components/ui/input-otp.tsx",
+      "bytes": 2326,
+      "sha256": "d7862814ae9c9ecd77fb54d058c828fda41e1eea494985e90fb76862d6772c90"
+    },
+    {
+      "path": "react/components/ui/input.tsx",
+      "bytes": 1137,
+      "sha256": "c88f2d00ac37da54af3ad4719d8a0dddab4dd7d830fc183d25bf77aedf18d22c"
+    },
+    {
+      "path": "react/components/ui/label.tsx",
+      "bytes": 811,
+      "sha256": "f504c1921579025462a34b82745d3969ac52e0418b12b3ac7f3f2bdafce66062"
+    },
+    {
+      "path": "react/components/ui/pagination.tsx",
+      "bytes": 2764,
+      "sha256": "0ff47d074a6a40d5caa09bff2a056dba85f08ddc1c8eb3f86ca94c49a1bc16ad"
+    },
+    {
+      "path": "react/components/ui/popover.tsx",
+      "bytes": 1696,
+      "sha256": "e46881a3a42accca1abee22152988ec5aacddbd1f1ba67503578acce8fdabd80"
+    },
+    {
+      "path": "react/components/ui/progress.tsx",
+      "bytes": 807,
+      "sha256": "52746f69105b5e6428fe436d4c06983639e0bd2658fb3b8175acfeadf14eb0b6"
+    },
+    {
+      "path": "react/components/ui/radio-group.tsx",
+      "bytes": 1524,
+      "sha256": "9591ccf958c88b41388db183c6e1e771ae393d81dbf04928dafd587c10a5897f"
+    },
+    {
+      "path": "react/components/ui/scroll-area.tsx",
+      "bytes": 1722,
+      "sha256": "826ff6899051701df02130e35e66a0738367d1180583ac6346ce19163265da3c"
+    },
+    {
+      "path": "react/components/ui/select.tsx",
+      "bytes": 6340,
+      "sha256": "9cd5bb16725bf9d51270e066b54bd66dc98ce169f71f16df7f10fd9700c765a2"
+    },
+    {
+      "path": "react/components/ui/separator.tsx",
+      "bytes": 757,
+      "sha256": "6581d0c88faa0a29b70b6746642c1cd6847009b5d1896900107ba3505dc9ba35"
+    },
+    {
+      "path": "react/components/ui/sheet.tsx",
+      "bytes": 4377,
+      "sha256": "638806888d05a7005d3976508311a42eb52e3b684a1fad908c8c5dcb9f9f988b"
+    },
+    {
+      "path": "react/components/ui/skeleton.tsx",
+      "bytes": 319,
+      "sha256": "b905890eb7ccfbef22a0f852c5f19078ff6d1d27a5dd2a264e4cb0086b682306"
+    },
+    {
+      "path": "react/components/ui/slider.tsx",
+      "bytes": 2229,
+      "sha256": "e22a1bd90e445ca13074cf9f72945a582d4f290c18157fa31329378673740b5b"
+    },
+    {
+      "path": "react/components/ui/sonner.tsx",
+      "bytes": 1043,
+      "sha256": "8fddb40912564f6ad4b0fab95d83b13b7b339cbd74d57b8cd9f3c5052ba6f72c"
+    },
+    {
+      "path": "react/components/ui/stepper.tsx",
+      "bytes": 1297,
+      "sha256": "7c32909c9775bd5180610428e457c47d4467999be413b2368aa7975d85f66832"
+    },
+    {
+      "path": "react/components/ui/switch.tsx",
+      "bytes": 1222,
+      "sha256": "9ccd7ea1ef8e9916aa5eca83c3f03efc2d3d64e17918da6cb9c7f036571fb82c"
+    },
+    {
+      "path": "react/components/ui/table.tsx",
+      "bytes": 2634,
+      "sha256": "56e649e4937e2ce5e88f58ccc2962a7995ebd06eb6f08dd9ac6935899e72e007"
+    },
+    {
+      "path": "react/components/ui/tabs.tsx",
+      "bytes": 1981,
+      "sha256": "9920c8934603f7460d625c29e2bf032ee9247bc2d3366c3155f2e07d08ba8170"
+    },
+    {
+      "path": "react/components/ui/textarea.tsx",
+      "bytes": 950,
+      "sha256": "8676971e676b45e69595002dcd4e9c2c6383c9d92250b7086a81908d16fb9c78"
+    },
+    {
+      "path": "react/components/ui/toggle-group.tsx",
+      "bytes": 1974,
+      "sha256": "c8a020f3e27689a4b0f519418e250d1f6c8bd31c0bc2710aa93c827bf3877004"
+    },
+    {
+      "path": "react/components/ui/toggle.tsx",
+      "bytes": 1607,
+      "sha256": "9de241c8c274f0319ebb63eb17faebcbf4d04b8858d60194122dc4362cb1ba9c"
+    },
+    {
+      "path": "react/components/ui/tooltip.tsx",
+      "bytes": 1939,
+      "sha256": "9cc4853334d76d531ed6a0fdca8336ac7d286d503e73c404903968f22873d652"
+    },
+    {
+      "path": "react/components/ui/utils.ts",
+      "bytes": 246,
+      "sha256": "96fa1863c3c313a6c10d586c42a36229d04fb15e3219ededcc3255ca46b42d62"
+    },
+    {
+      "path": "react/dependencies.json",
+      "bytes": 9084,
+      "sha256": "21dcf4ca6040c3d1d037af5a464ae7597eeee37e4c21ee7de0dadadef49cc662"
+    },
+    {
+      "path": "react/examples/accordion/basic.tsx",
+      "bytes": 761,
+      "sha256": "e30a63c5b64abbb77916162023b988505e8347bf137f27f15f4affc831e159d0"
+    },
+    {
+      "path": "react/examples/alert-dialog/basic.tsx",
+      "bytes": 949,
+      "sha256": "3b88de7a6a9b7c2dfe45f11b4ec226f3962d866251799a1d689ddcf885fadfcf"
+    },
+    {
+      "path": "react/examples/alert/basic.tsx",
+      "bytes": 391,
+      "sha256": "c0835d6f47f7c87189616ef5d104e0dc916fe237fada9a52a1c5d4d780976481"
+    },
+    {
+      "path": "react/examples/aspect-ratio/basic.tsx",
+      "bytes": 405,
+      "sha256": "19f13e88e858077e372b5cb8bbc936ce07872a2c02350b33a5956374003c73af"
+    },
+    {
+      "path": "react/examples/avatar/basic.tsx",
+      "bytes": 541,
+      "sha256": "72dc3888eb667c7b4d5e18572c0e48101ed9ba49418906a778d8a320220335d1"
+    },
+    {
+      "path": "react/examples/badge/basic.tsx",
+      "bytes": 346,
+      "sha256": "11538bbe12b6ea0f4c8004ecb236fe0592991e91e1909e1349279e6aa4e7d5fb"
+    },
+    {
+      "path": "react/examples/breadcrumb/basic.tsx",
+      "bytes": 517,
+      "sha256": "66eb927006ef27c04e1a279c2f9759dbcd5a9ce40f08e749d6aafd2db8ee1cd6"
+    },
+    {
+      "path": "react/examples/button/basic.tsx",
+      "bytes": 351,
+      "sha256": "139759105ca3f5154a15e7a12dab908fd230928e3774927d3883004c56a5251d"
+    },
+    {
+      "path": "react/examples/calendar/basic.tsx",
+      "bytes": 386,
+      "sha256": "3869367c7b24e44f24784dc5c37a541b668f39f23ee5cca1b8e9c49028b36140"
+    },
+    {
+      "path": "react/examples/card/basic.tsx",
+      "bytes": 592,
+      "sha256": "7564201d52e5e548e79e0a8f7e27d86e152d195606b7708b277b231f4f57e599"
+    },
+    {
+      "path": "react/examples/checkbox/basic.tsx",
+      "bytes": 343,
+      "sha256": "b3e66d07df579ae24f3edf649f2f2d6cae72370c0237ad38b1186f5f50ee1b40"
+    },
+    {
+      "path": "react/examples/collapsible/basic.tsx",
+      "bytes": 961,
+      "sha256": "ead2daca3e2daef0341edce4bd2fa96fabc2361a3bc4d4ff56d00d543870aca9"
+    },
+    {
+      "path": "react/examples/dialog/basic.tsx",
+      "bytes": 731,
+      "sha256": "84c8aee8586b870ee4921e9defc806a4a78e094a68d179ffe94020c4638baf8f"
+    },
+    {
+      "path": "react/examples/dropdown-menu/basic.tsx",
+      "bytes": 778,
+      "sha256": "f5f8bf8b76da6b077d720a59f5d1b7404879e04bda9ccebd2cda19836c507467"
+    },
+    {
+      "path": "react/examples/form/basic.tsx",
+      "bytes": 1153,
+      "sha256": "9af39ab3e03de3c9716a8094cbcfe80ee33f0110cd66c96eee3c71bfd1d92d06"
+    },
+    {
+      "path": "react/examples/input-otp/basic.tsx",
+      "bytes": 553,
+      "sha256": "d4448953a66b95ec9127271a3ad6a3d430aa210289fec45e127894bff8ded8e6"
+    },
+    {
+      "path": "react/examples/input/basic.tsx",
+      "bytes": 328,
+      "sha256": "4bc7d918e27160668c58ab89cf5553b68d163c28afd007e0eacdd78fecfea98a"
+    },
+    {
+      "path": "react/examples/label/basic.tsx",
+      "bytes": 301,
+      "sha256": "f85684d0f04d0a1a1463cbb261a9d893e1ac480cb633456a00746d150df67bc1"
+    },
+    {
+      "path": "react/examples/page-container/basic.tsx",
+      "bytes": 289,
+      "sha256": "d6d5012dd4e5ff74ffc37f86a8a8d3e9e2fcb7482563d766617c4db49fbe993e"
+    },
+    {
+      "path": "react/examples/page-header/basic.tsx",
+      "bytes": 322,
+      "sha256": "8ac606104c23e64863c44bacc06709116aed428a4fe955ae741e5d01ab6ccd8d"
+    },
+    {
+      "path": "react/examples/pagination/basic.tsx",
+      "bytes": 651,
+      "sha256": "813830f83c2c6c05c11a09d3c6535fd4f62f442b1c3c0fcb475b705640c8b39a"
+    },
+    {
+      "path": "react/examples/popover/basic.tsx",
+      "bytes": 540,
+      "sha256": "552415308b1e466bb7fe8352201f5a160b4bf59d67099e3afa2de38c78d89cb9"
+    },
+    {
+      "path": "react/examples/progress/basic.tsx",
+      "bytes": 327,
+      "sha256": "e615b7f1dd79babfec5c8a42abcc7d419e0c9c860965cc22f6ef1c44c1835c02"
+    },
+    {
+      "path": "react/examples/radio-group/basic.tsx",
+      "bytes": 624,
+      "sha256": "2e3c8a750ec9dd270e2c8bba7858ec816ccbacd9a25b34a326a6822db16af047"
+    },
+    {
+      "path": "react/examples/scroll-area/basic.tsx",
+      "bytes": 363,
+      "sha256": "4be505a4c27570a10c83e87255e475010a3d92c1e7096960d19f374a4bf23d7c"
+    },
+    {
+      "path": "react/examples/select/basic.tsx",
+      "bytes": 727,
+      "sha256": "705ec76e7ed3d032b7653edd4f480fdac73793668e1882860690aa410c202935"
+    },
+    {
+      "path": "react/examples/separator/basic.tsx",
+      "bytes": 412,
+      "sha256": "987cee9788a5887f6b9884b3b3548b14d637ac229607a4d0b6a63e6855d62f25"
+    },
+    {
+      "path": "react/examples/sheet/basic.tsx",
+      "bytes": 646,
+      "sha256": "52fd62c9094bdd939e29c18b565d891bd19e8fada3d8f2755221562614a9f6ae"
+    },
+    {
+      "path": "react/examples/skeleton/basic.tsx",
+      "bytes": 352,
+      "sha256": "c6aa252b5306e15c03cc9bef12d4f8259a9ad0744ac2b78fbf9a95e7b4b602e0"
+    },
+    {
+      "path": "react/examples/slider/basic.tsx",
+      "bytes": 442,
+      "sha256": "2b2576703e0c2597b56aa0d3d0e78846ccd4f20ae1dc8ac0f2b4fe00a425420d"
+    },
+    {
+      "path": "react/examples/stepper/basic.tsx",
+      "bytes": 261,
+      "sha256": "f212a406707dfb1feb95ee27c82c429d1b3be456b0a004ecab139dbdfdb3e1f1"
+    },
+    {
+      "path": "react/examples/switch/basic.tsx",
+      "bytes": 346,
+      "sha256": "25323015d276cf929a46dddb30087dd9d9a0d6daaf3e639dbcea97162562d86e"
+    },
+    {
+      "path": "react/examples/table/basic.tsx",
+      "bytes": 599,
+      "sha256": "c50c25e033462057bd2d89c8f3532d366c555b686fef196aa208df3d5365c5ac"
+    },
+    {
+      "path": "react/examples/tabs/basic.tsx",
+      "bytes": 556,
+      "sha256": "1ac1aecbe13607285a60372697f69bd74f94a6fc5133ad16d7bcad8950350ff8"
+    },
+    {
+      "path": "react/examples/textarea/basic.tsx",
+      "bytes": 332,
+      "sha256": "67c15c908c19092b5fedb8e7e397063308cbf793801e6a96a72effeb0673ad9e"
+    },
+    {
+      "path": "react/examples/toast/basic.tsx",
+      "bytes": 345,
+      "sha256": "ebcca1eab01ed4fafaad748895626f4426ba4a90c7385e4bb816863e754884c1"
+    },
+    {
+      "path": "react/examples/toggle-group/basic.tsx",
+      "bytes": 444,
+      "sha256": "e0d3dc82632eafa76088ef6c4688f7e646648ecb270d0b70572315d37c97aca6"
+    },
+    {
+      "path": "react/examples/toggle/basic.tsx",
+      "bytes": 209,
+      "sha256": "4e772ab687f80427c1ce06167d4462087048d6c403b2d16153ce0c1104ab0570"
+    },
+    {
+      "path": "react/examples/tooltip/basic.tsx",
+      "bytes": 544,
+      "sha256": "5de86084da63a29489bad9fa3a664087c69dfe8fa0a85c3fc047d7acfc446d75"
+    },
+    {
+      "path": "react/index.ts",
+      "bytes": 103,
+      "sha256": "45fab02653ed0e2d8fdfc90116d333da12114d9f32b649787b3166f1f2d1a6e2"
+    },
+    {
+      "path": "react/lib/utils.ts",
+      "bytes": 45,
+      "sha256": "eabca64490b05dbf1944449b8fb00bfce72a3c3935e9fda1a1466945b81c0581"
+    },
+    {
+      "path": "react/registry.json",
+      "bytes": 31484,
+      "sha256": "20bf160c30458cb5b3e6e7fb6b45099a7d60b879080a13dadffb2652441d1252"
+    },
+    {
+      "path": "react/runtime/theme.tsx",
+      "bytes": 1294,
+      "sha256": "f0ec127a40aead85a094240f520fb30e5dd887fa26b8e7b9ad891816cb85f761"
+    },
+    {
+      "path": "react/styles/index.css",
+      "bytes": 151,
+      "sha256": "8ede0c2ca2f4515dcb5bcb45e7213784eba3a67f99e8365058d8b0647abf30e3"
+    },
+    {
+      "path": "react/styles/tailwind.css",
+      "bytes": 292,
+      "sha256": "1b207cd21c34a4b914417822a2eaafe238b67ca8314cf418eb262e86bdb7a430"
+    },
+    {
+      "path": "recipes/README.md",
+      "bytes": 2044,
+      "sha256": "0e6a4ea1796d080de5db56cd7d3e914a9c9df3defae5b643955f46cc53e704ee"
+    },
+    {
+      "path": "recipes/availability-toggle-list/README.md",
+      "bytes": 642,
+      "sha256": "30162ab652c08cd9d4a66fa676c0b6ebaf69d5c80b4d7c86f767ef12a07d483d"
+    },
+    {
+      "path": "recipes/availability-toggle-list/blade/availability-toggle-list.blade.php",
+      "bytes": 1774,
+      "sha256": "4660f9d052cc2b587c5121f9bdba8a68949338fdde14e17d553c898b9a7a003e"
+    },
+    {
+      "path": "recipes/availability-toggle-list/fixtures/basic.json",
+      "bytes": 332,
+      "sha256": "d76afa79f8f214ccf000ec883cb3439dc5f6138468f593fef04d998c5fdc81a5"
+    },
+    {
+      "path": "recipes/availability-toggle-list/react/AvailabilityToggleListRecipe.tsx",
+      "bytes": 2059,
+      "sha256": "69d64e21b1852c34405b3b2982b6a829e8ba37f984f7fed4bd554bce6991dae7"
+    },
+    {
+      "path": "recipes/booking-card/README.md",
+      "bytes": 439,
+      "sha256": "bddebc8d81922726cb52bfe7b04e16792b8204c5dc66ec7cba754d316485d99d"
+    },
+    {
+      "path": "recipes/booking-card/blade/booking-card.blade.php",
+      "bytes": 907,
+      "sha256": "6de312064bdf703653cec925c549d5696f761fd68f37e6282c4093c60001a0c5"
+    },
+    {
+      "path": "recipes/booking-card/fixtures/basic.json",
+      "bytes": 117,
+      "sha256": "9e2b8150baba7ad20a6f5b3b22c83212b6ead0c75bf76b61cd3a616a1133f059"
+    },
+    {
+      "path": "recipes/booking-card/react/BookingCardRecipe.tsx",
+      "bytes": 1334,
+      "sha256": "de56eec1973a3e9cf59d7e05fc610d0528415ab4f9a6c233bf1afa00460edaa2"
+    },
+    {
+      "path": "recipes/booking-details-dialog/README.md",
+      "bytes": 748,
+      "sha256": "8b1336b1b2c6ccb706143790664de694da2c24d2cd2738685a104d2ce7e6a3cb"
+    },
+    {
+      "path": "recipes/booking-details-dialog/blade/booking-details-dialog.blade.php",
+      "bytes": 2552,
+      "sha256": "7d6f3091abc2cd074e7675537e22ca8d0bb5b9f6e5d2a2a35a1c145d82e641f3"
+    },
+    {
+      "path": "recipes/booking-details-dialog/fixtures/basic.json",
+      "bytes": 222,
+      "sha256": "116e3453df3d3552669e2186ecb29f03afc8c91c3b6cdc80e69cb7d9a302962a"
+    },
+    {
+      "path": "recipes/booking-details-dialog/react/BookingDetailsDialogRecipe.tsx",
+      "bytes": 2526,
+      "sha256": "839a75420f421665cb98affa16ad36437798c94735fd52efb0aec14bb998bf56"
+    },
+    {
+      "path": "recipes/channel-logo-picker/README.md",
+      "bytes": 827,
+      "sha256": "8eee61f4ca99c1313ab83cdf36eb1fff760c8b9b8e3124dac7b10aa6b75b15f6"
+    },
+    {
+      "path": "recipes/channel-logo-picker/blade/channel-logo-picker.blade.php",
+      "bytes": 2256,
+      "sha256": "119c5da5a0cd3827a79562df74457d788ab7a5fcf98e347ae121652f6392a784"
+    },
+    {
+      "path": "recipes/channel-logo-picker/fixtures/basic.json",
+      "bytes": 171,
+      "sha256": "76161f98eb91d0c33c3fabc0257688f76fab52214ef56d3a9739ee396c299e2a"
+    },
+    {
+      "path": "recipes/channel-logo-picker/react/ChannelLogoPickerRecipe.tsx",
+      "bytes": 2780,
+      "sha256": "825ba50bb3d5ef0052e8fa5e8b41d3db1b3369c488bcdd569139f59c198460db"
+    },
+    {
+      "path": "recipes/people-popover-content/README.md",
+      "bytes": 777,
+      "sha256": "7079eaa7fc642ff95a0aa0584ac4d910b1043740cfbc9d94f56db24949a1fc1b"
+    },
+    {
+      "path": "recipes/people-popover-content/blade/people-popover-content.blade.php",
+      "bytes": 2368,
+      "sha256": "ff4414eb4e2f944431a2f50d2d6d62790acbccdfeb258f1a32827c6bb6b44cf1"
+    },
+    {
+      "path": "recipes/people-popover-content/fixtures/basic.json",
+      "bytes": 96,
+      "sha256": "43f286deef79a3d1df1ee02debfc1a5f94deedc848873fb510c9032940cd4f58"
+    },
+    {
+      "path": "recipes/people-popover-content/react/PeoplePopoverContentRecipe.tsx",
+      "bytes": 2548,
+      "sha256": "a5a44f8fd585a9548909a12de8a4d5eefc18be3d09367db9b3fa739118360646"
+    },
+    {
+      "path": "recipes/quick-launch/README.md",
+      "bytes": 601,
+      "sha256": "8aa75ed3a150ec57dc10a450843234b18d33e10550b358d073d877282d45827b"
+    },
+    {
+      "path": "recipes/quick-launch/blade/quick-launch.blade.php",
+      "bytes": 1334,
+      "sha256": "a32029a5043774c60b16ac241e8fc7ea8937a1f4e7e21f3a4f6147591e58dc27"
+    },
+    {
+      "path": "recipes/quick-launch/fixtures/basic.json",
+      "bytes": 250,
+      "sha256": "8e570b0530e356a044fd0dd6b710fa90c530b88f198de760318ed039cc507b09"
+    },
+    {
+      "path": "recipes/quick-launch/react/QuickLaunchRecipe.tsx",
+      "bytes": 1772,
+      "sha256": "d1f83dff0717b68071cb346e269414dc38e26c5ef34bc25df88aa47d7ca61454"
+    },
+    {
+      "path": "validation/README.md",
+      "bytes": 825,
+      "sha256": "46ad6268936290b9667776f79c31fb5edb4c5402e1733758c629667ea6ca13c0"
+    },
+    {
+      "path": "validation/TRANSFER-CHECKLIST.md",
+      "bytes": 1243,
+      "sha256": "6e87562703b338ae20f3f744d9c651b1f4febf45ba38f42176873adffb5b071c"
+    },
+    {
+      "path": "validation/baselines/README.md",
+      "bytes": 260,
+      "sha256": "06aa9e37afaf877c0b38c968436ed04f1d32998c8ff4b72cc011f6c5413b7682"
+    },
+    {
+      "path": "validation/baselines/blade/1280-dark.png",
+      "bytes": 267184,
+      "sha256": "4a3645e156aba551d94918b7c654af9dafed13426e04496d1a7d0e56e019057d"
+    },
+    {
+      "path": "validation/baselines/blade/1280-light.png",
+      "bytes": 265216,
+      "sha256": "e8aabaee33ddd3fbcfae2e1df2c6816f3d3bc9f05772af9c4559a8015170191f"
+    },
+    {
+      "path": "validation/baselines/blade/360-dark.png",
+      "bytes": 234172,
+      "sha256": "a3c896ae4668215f5f5b8ac8035e9c98f9619c5e489f346e1de77ce10a7db90c"
+    },
+    {
+      "path": "validation/baselines/blade/360-light.png",
+      "bytes": 232040,
+      "sha256": "b064b21c8a7cca06f176e3bef0b74550e7c5858a72e020a9db554c716115a470"
+    },
+    {
+      "path": "validation/baselines/blade/768-dark.png",
+      "bytes": 249782,
+      "sha256": "4eb9ef452f83296dc0924ad55f6cee174f8181d27fe14f379c8833120154bd94"
+    },
+    {
+      "path": "validation/baselines/blade/768-light-rtl.png",
+      "bytes": 247096,
+      "sha256": "cf8896a9dc459548da74fad7349b6d9a414e01c963b33441927c76d2ba9cf654"
+    },
+    {
+      "path": "validation/baselines/blade/768-light.png",
+      "bytes": 247624,
+      "sha256": "0828acdccdca7b75b72c2bbd965ca0f7d019ffa63b485302b3a319dd6c324afc"
+    },
+    {
+      "path": "validation/baselines/react/1280-dark.png",
+      "bytes": 254286,
+      "sha256": "6219cfd1d65976ef010ddb8c395b2bd422c70dcb132defe0939fe0cc61bfdf26"
+    },
+    {
+      "path": "validation/baselines/react/1280-light.png",
+      "bytes": 256358,
+      "sha256": "3f30be85766911633cb70317fc44dd97eb6722080a4ceb18e2e0b8497fb9ea10"
+    },
+    {
+      "path": "validation/baselines/react/360-dark.png",
+      "bytes": 223853,
+      "sha256": "f74e1dd9ae92997ec90d7412aa0e64aee89385c9c97e9de28e67d83efc16f4ca"
+    },
+    {
+      "path": "validation/baselines/react/360-light.png",
+      "bytes": 223212,
+      "sha256": "08d618e245fe4ea03a4136f4c2bb596610269c8533a66f98138fe46cca93cf78"
+    },
+    {
+      "path": "validation/baselines/react/768-dark.png",
+      "bytes": 240297,
+      "sha256": "4576fd71355422944caad21eaf5100e24460f034bdc2d19f429d49bf2eecf798"
+    },
+    {
+      "path": "validation/baselines/react/768-light-rtl.png",
+      "bytes": 240451,
+      "sha256": "f0096472423d120eaa5841cd01683790fd8e1bf1f0cb917bb17eccece9c24b76"
+    },
+    {
+      "path": "validation/baselines/react/768-light.png",
+      "bytes": 239549,
+      "sha256": "8a23811e4735e2927fc992c12b2092abcbe91bbe486a2848e2f2d684ff3eff92"
+    },
+    {
+      "path": "validation/package.json",
+      "bytes": 201,
+      "sha256": "73d18f67cf7ae0ebec1e1b52fa3ebeb116e0fe5672099fe6fceeb2444fd027e1"
+    },
+    {
+      "path": "validation/reports/README.md",
+      "bytes": 1686,
+      "sha256": "e76610db3f372fa17c1ecf995ef57988096f609f316529fc116625a564158b7a"
+    },
+    {
+      "path": "validation/reports/blade-browser.json",
+      "bytes": 6011,
+      "sha256": "a40940f8c802bf5b7413c15ca2f2ec92953bd9f58c74b37bae0016a4d4c67a3e"
+    },
+    {
+      "path": "validation/reports/blade-validation.json",
+      "bytes": 930,
+      "sha256": "94afd80aee262199923490eece48a1a4cbfe824d8bac03abd7d9dbd76e1cf5e9"
+    },
+    {
+      "path": "validation/reports/react-browser.json",
+      "bytes": 5838,
+      "sha256": "132e6fdc0e0a3b69c6e43e9ef8a52e74f5002fae8266f5fa8e2fc2f435710baa"
+    },
+    {
+      "path": "validation/reports/react-build.json",
+      "bytes": 933,
+      "sha256": "356063a539b9c9899810f53d0046e0566caa70d3596a8b4c10de9631f75ac7b3"
+    },
+    {
+      "path": "validation/reports/recipe-validation.json",
+      "bytes": 919,
+      "sha256": "92bca7a5a0092e91dcf2e5aac6cfb2b39621e1997011f58027c8779408430349"
+    },
+    {
+      "path": "validation/reports/structural-validation.json",
+      "bytes": 126265,
+      "sha256": "82a76da26261f31e60d7e0667a465b854371e96571a7a60985c407f46473343e"
+    },
+    {
+      "path": "validation/reports/validation-summary.json",
+      "bytes": 2092,
+      "sha256": "3fc5606555fd193ebd6dbdd2495846f36a021445c52d74ef0976c073d5183188"
+    },
+    {
+      "path": "validation/scripts/generate-catalog.mjs",
+      "bytes": 43605,
+      "sha256": "b4740a7c7476d5f8ea065acddaa33329138a79087053133fd96269256b4a4644"
+    },
+    {
+      "path": "validation/scripts/generate-docs.mjs",
+      "bytes": 5239,
+      "sha256": "dae11a67cb3cbff6907e625f991b1024f5a2207ea44196ff3fd9a3ed752492b8"
+    },
+    {
+      "path": "validation/scripts/generate-file-inventory.mjs",
+      "bytes": 1587,
+      "sha256": "d7c9f6debdf972f800b13954818a49bfe791a906964887b98941ce3b238e7dc5"
+    },
+    {
+      "path": "validation/scripts/release.sh",
+      "bytes": 1033,
+      "sha256": "cb3bebad5e9b9a41f290c74a197ef0d3af94c4e5b214c46db2953205568d1830"
+    },
+    {
+      "path": "validation/scripts/validate-blade-browser.mjs",
+      "bytes": 12207,
+      "sha256": "76e062a2a930d2f9fced4571b5121c06ec3ffac63060d503fdb02129a8790656"
+    },
+    {
+      "path": "validation/scripts/validate-react-browser.mjs",
+      "bytes": 11154,
+      "sha256": "dcb4a00c9d3bee77207196bb0bfbd6c11f2339af63aa822e07c4b8de58691acd"
+    },
+    {
+      "path": "validation/scripts/validate-recipes-browser.mjs",
+      "bytes": 3599,
+      "sha256": "d56ab6e09f3bf14e6db2e3a00da2dd897d177674460aa19c6e754da1f3f288b3"
+    },
+    {
+      "path": "validation/scripts/validate-recipes.mjs",
+      "bytes": 4227,
+      "sha256": "ca8400c7d80c3e094553a0d35ce0ff72e049b71477735eda5003ac2ab91a7050"
+    },
+    {
+      "path": "validation/scripts/validate-structure.mjs",
+      "bytes": 15161,
+      "sha256": "e9d122e8c8051febfa4ff9a2fd2a4258e3cfd72606e0851167a9e4b46d7ca326"
+    },
+    {
+      "path": "validation/scripts/verify-boundary.sh",
+      "bytes": 1246,
+      "sha256": "918a3e6e0b1ae6ecae1c9d16d4d743feb72630fd6d54173672eb7d94e004c206"
+    }
+  ]
+}

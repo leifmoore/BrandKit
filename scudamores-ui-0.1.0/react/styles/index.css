@@ -1,0 +1,4 @@
+@import "../../foundations/css/fonts.css";
+@import "./tailwind.css";
+
+/* Opt into global typography/reset separately with foundations/css/base.css. */

@@ -1,0 +1,921 @@
+{
+  "$schema": "./catalog.schema.json",
+  "schemaVersion": "1.0.0",
+  "version": "0.1.0",
+  "name": "Scudamore's UI",
+  "components": [
+    {
+      "id": "accordion",
+      "title": "Accordion",
+      "category": "disclosure",
+      "kind": "component",
+      "maturity": "beta",
+      "manifest": "catalog/components/accordion.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "accordion",
+        "disclosure",
+        "expand"
+      ]
+    },
+    {
+      "id": "alert",
+      "title": "Alert",
+      "category": "feedback",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/alert.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "alert",
+        "message",
+        "feedback"
+      ]
+    },
+    {
+      "id": "alert-dialog",
+      "title": "Alert Dialog",
+      "category": "overlays",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/alert-dialog.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "alert dialog",
+        "confirm",
+        "modal"
+      ]
+    },
+    {
+      "id": "aspect-ratio",
+      "title": "Aspect Ratio",
+      "category": "layout",
+      "kind": "component",
+      "maturity": "beta",
+      "manifest": "catalog/components/aspect-ratio.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "aspect ratio",
+        "media",
+        "responsive"
+      ]
+    },
+    {
+      "id": "avatar",
+      "title": "Avatar",
+      "category": "data-display",
+      "kind": "component",
+      "maturity": "beta",
+      "manifest": "catalog/components/avatar.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "avatar",
+        "profile",
+        "initials"
+      ]
+    },
+    {
+      "id": "badge",
+      "title": "Badge",
+      "category": "data-display",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/badge.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "badge",
+        "status",
+        "pill"
+      ]
+    },
+    {
+      "id": "breadcrumb",
+      "title": "Breadcrumb",
+      "category": "navigation",
+      "kind": "component",
+      "maturity": "beta",
+      "manifest": "catalog/components/breadcrumb.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "breadcrumb",
+        "navigation",
+        "hierarchy"
+      ]
+    },
+    {
+      "id": "button",
+      "title": "Button",
+      "category": "actions",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/button.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "button",
+        "action",
+        "link"
+      ]
+    },
+    {
+      "id": "calendar",
+      "title": "Calendar",
+      "category": "forms",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/calendar.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "calendar",
+        "date",
+        "range"
+      ]
+    },
+    {
+      "id": "card",
+      "title": "Card",
+      "category": "data-display",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/card.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "card",
+        "surface",
+        "panel"
+      ]
+    },
+    {
+      "id": "checkbox",
+      "title": "Checkbox",
+      "category": "forms",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/checkbox.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "checkbox",
+        "checked",
+        "indeterminate"
+      ]
+    },
+    {
+      "id": "collapsible",
+      "title": "Collapsible",
+      "category": "disclosure",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/collapsible.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "collapsible",
+        "disclosure",
+        "expand"
+      ]
+    },
+    {
+      "id": "dialog",
+      "title": "Dialog",
+      "category": "overlays",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/dialog.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "dialog",
+        "modal",
+        "overlay"
+      ]
+    },
+    {
+      "id": "dropdown-menu",
+      "title": "Dropdown Menu",
+      "category": "overlays",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/dropdown-menu.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "dropdown",
+        "menu",
+        "actions"
+      ]
+    },
+    {
+      "id": "form",
+      "title": "Form",
+      "category": "forms",
+      "kind": "component",
+      "maturity": "beta",
+      "manifest": "catalog/components/form.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "form",
+        "validation",
+        "field"
+      ]
+    },
+    {
+      "id": "input",
+      "title": "Input",
+      "category": "forms",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/input.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "input",
+        "field",
+        "text"
+      ]
+    },
+    {
+      "id": "input-otp",
+      "title": "Input OTP",
+      "category": "forms",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/input-otp.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "otp",
+        "verification",
+        "code"
+      ]
+    },
+    {
+      "id": "label",
+      "title": "Label",
+      "category": "forms",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/label.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "label",
+        "form",
+        "caption"
+      ]
+    },
+    {
+      "id": "page-container",
+      "title": "Page Container",
+      "category": "layout",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/page-container.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "page container",
+        "layout",
+        "gutter"
+      ]
+    },
+    {
+      "id": "page-header",
+      "title": "Page Header",
+      "category": "layout",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/page-header.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "page header",
+        "title",
+        "actions"
+      ]
+    },
+    {
+      "id": "pagination",
+      "title": "Pagination",
+      "category": "navigation",
+      "kind": "component",
+      "maturity": "beta",
+      "manifest": "catalog/components/pagination.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "pagination",
+        "pages",
+        "navigation"
+      ]
+    },
+    {
+      "id": "popover",
+      "title": "Popover",
+      "category": "overlays",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/popover.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "popover",
+        "floating",
+        "overlay"
+      ]
+    },
+    {
+      "id": "progress",
+      "title": "Progress",
+      "category": "feedback",
+      "kind": "component",
+      "maturity": "beta",
+      "manifest": "catalog/components/progress.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "progress",
+        "completion",
+        "loading"
+      ]
+    },
+    {
+      "id": "radio-group",
+      "title": "Radio Group",
+      "category": "forms",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/radio-group.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "radio",
+        "choice",
+        "group"
+      ]
+    },
+    {
+      "id": "scroll-area",
+      "title": "Scroll Area",
+      "category": "layout",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/scroll-area.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "scroll area",
+        "overflow",
+        "viewport"
+      ]
+    },
+    {
+      "id": "select",
+      "title": "Select",
+      "category": "forms",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/select.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "select",
+        "option",
+        "dropdown"
+      ]
+    },
+    {
+      "id": "separator",
+      "title": "Separator",
+      "category": "layout",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/separator.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "separator",
+        "divider",
+        "rule"
+      ]
+    },
+    {
+      "id": "sheet",
+      "title": "Sheet",
+      "category": "overlays",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/sheet.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "sheet",
+        "panel",
+        "drawer"
+      ]
+    },
+    {
+      "id": "skeleton",
+      "title": "Skeleton",
+      "category": "feedback",
+      "kind": "component",
+      "maturity": "beta",
+      "manifest": "catalog/components/skeleton.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "skeleton",
+        "loading",
+        "placeholder"
+      ]
+    },
+    {
+      "id": "slider",
+      "title": "Slider",
+      "category": "forms",
+      "kind": "component",
+      "maturity": "beta",
+      "manifest": "catalog/components/slider.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "slider",
+        "range",
+        "value"
+      ]
+    },
+    {
+      "id": "toast",
+      "title": "Toast / Sonner",
+      "category": "feedback",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/toast.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "toast",
+        "sonner",
+        "notification"
+      ]
+    },
+    {
+      "id": "stepper",
+      "title": "Stepper",
+      "category": "navigation",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/stepper.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "stepper",
+        "steps",
+        "number"
+      ]
+    },
+    {
+      "id": "switch",
+      "title": "Switch",
+      "category": "forms",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/switch.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "switch",
+        "toggle",
+        "boolean"
+      ]
+    },
+    {
+      "id": "table",
+      "title": "Table",
+      "category": "data-display",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/table.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "table",
+        "data",
+        "rows"
+      ]
+    },
+    {
+      "id": "tabs",
+      "title": "Tabs",
+      "category": "navigation",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/tabs.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "tabs",
+        "navigation",
+        "panel"
+      ]
+    },
+    {
+      "id": "textarea",
+      "title": "Textarea",
+      "category": "forms",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/textarea.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "textarea",
+        "multiline",
+        "form"
+      ]
+    },
+    {
+      "id": "toggle",
+      "title": "Toggle",
+      "category": "actions",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/toggle.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "toggle",
+        "pressed",
+        "button"
+      ]
+    },
+    {
+      "id": "toggle-group",
+      "title": "Toggle Group",
+      "category": "actions",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/toggle-group.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "toggle group",
+        "segmented",
+        "selection"
+      ]
+    },
+    {
+      "id": "tooltip",
+      "title": "Tooltip",
+      "category": "overlays",
+      "kind": "component",
+      "maturity": "stable",
+      "manifest": "catalog/components/tooltip.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "tooltip",
+        "hint",
+        "hover"
+      ]
+    }
+  ],
+  "recipes": [
+    {
+      "id": "quick-launch",
+      "title": "Quick Launch",
+      "category": "dashboard",
+      "kind": "recipe",
+      "maturity": "stable",
+      "manifest": "catalog/recipes/quick-launch.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "quick launch",
+        "dashboard",
+        "shortcut"
+      ]
+    },
+    {
+      "id": "availability-toggle-list",
+      "title": "Availability Toggle List",
+      "category": "channels",
+      "kind": "recipe",
+      "maturity": "stable",
+      "manifest": "catalog/recipes/availability-toggle-list.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "availability",
+        "toggle",
+        "channel"
+      ]
+    },
+    {
+      "id": "channel-logo-picker",
+      "title": "Channel Logo Picker",
+      "category": "channels",
+      "kind": "recipe",
+      "maturity": "stable",
+      "manifest": "catalog/recipes/channel-logo-picker.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "logo",
+        "upload",
+        "channel"
+      ]
+    },
+    {
+      "id": "booking-card",
+      "title": "Booking Card",
+      "category": "bookings",
+      "kind": "recipe",
+      "maturity": "stable",
+      "manifest": "catalog/recipes/booking-card.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "booking",
+        "card",
+        "summary"
+      ]
+    },
+    {
+      "id": "booking-details-dialog",
+      "title": "Booking Details Dialog",
+      "category": "bookings",
+      "kind": "recipe",
+      "maturity": "stable",
+      "manifest": "catalog/recipes/booking-details-dialog.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "booking",
+        "details",
+        "dialog"
+      ]
+    },
+    {
+      "id": "people-popover-content",
+      "title": "People Popover Content",
+      "category": "people",
+      "kind": "recipe",
+      "maturity": "stable",
+      "manifest": "catalog/recipes/people-popover-content.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "people",
+        "popover",
+        "participants"
+      ]
+    }
+  ],
+  "foundations": [
+    {
+      "id": "tokens",
+      "title": "Tokens",
+      "data": [
+        "foundations/data/tokens.json",
+        "foundations/css/tokens.css",
+        "foundations/css/tailwind-theme.css"
+      ],
+      "documentation": "foundations/docs/tokens.md"
+    },
+    {
+      "id": "brands",
+      "title": "Brands",
+      "data": [
+        "foundations/data/brands.json",
+        "foundations/css/brands.css"
+      ],
+      "documentation": "foundations/docs/theming.md"
+    },
+    {
+      "id": "typography",
+      "title": "Typography",
+      "data": [
+        "foundations/css/fonts.css"
+      ],
+      "documentation": "foundations/docs/typography.md"
+    },
+    {
+      "id": "layout",
+      "title": "Layout",
+      "data": [],
+      "documentation": "foundations/docs/layout.md"
+    },
+    {
+      "id": "icons",
+      "title": "Icons",
+      "data": [],
+      "documentation": "foundations/docs/icons.md"
+    },
+    {
+      "id": "exceptions",
+      "title": "Exceptions",
+      "data": [],
+      "documentation": "foundations/docs/exceptions.md"
+    }
+  ],
+  "utilities": [
+    {
+      "id": "device-preview-frame",
+      "title": "Device Preview Frame",
+      "category": "documentation",
+      "kind": "utility",
+      "maturity": "infrastructure",
+      "manifest": "catalog/source-inventory.json",
+      "frameworks": [
+        "react"
+      ],
+      "searchTerms": [
+        "device",
+        "preview",
+        "viewport",
+        "playground"
+      ]
+    }
+  ],
+  "deferredComponents": [
+    {
+      "id": "carousel",
+      "title": "Carousel",
+      "source": "src/app/components/ui/carousel.tsx",
+      "reason": "Unused complex primitive with no Blade counterpart or product evidence.",
+      "revisitWhen": "A product flow requires ordered, horizontally paged content."
+    },
+    {
+      "id": "chart",
+      "title": "Chart",
+      "source": "src/app/components/ui/chart.tsx",
+      "reason": "Unused wrapper whose API is coupled to a charting dependency and has no Blade rendering counterpart.",
+      "revisitWhen": "Shared data-visualisation requirements and Blade parity expectations are agreed."
+    },
+    {
+      "id": "command-palette",
+      "title": "Command Palette",
+      "source": "src/app/components/ui/command.tsx",
+      "reason": "Unused complex keyboard interaction with no production Blade basis.",
+      "revisitWhen": "Global search or command navigation is commissioned."
+    },
+    {
+      "id": "context-menu",
+      "title": "Context Menu",
+      "source": "src/app/components/ui/context-menu.tsx",
+      "reason": "Unused pointer-specific overlay with no production Blade basis.",
+      "revisitWhen": "A validated use case also defines touch and keyboard alternatives."
+    },
+    {
+      "id": "drawer",
+      "title": "Drawer",
+      "source": "src/app/components/ui/drawer.tsx",
+      "reason": "Unused Vaul dependency overlaps the approved Sheet component.",
+      "revisitWhen": "A drag-driven mobile bottom sheet is required rather than a standard Sheet."
+    },
+    {
+      "id": "hover-card",
+      "title": "Hover Card",
+      "source": "src/app/components/ui/hover-card.tsx",
+      "reason": "Unused hover-first overlay with no production Blade basis.",
+      "revisitWhen": "A non-essential preview interaction with equivalent focus behavior is needed."
+    },
+    {
+      "id": "menubar",
+      "title": "Menubar",
+      "source": "src/app/components/ui/menubar.tsx",
+      "reason": "Unused application-menu primitive with no production Blade basis.",
+      "revisitWhen": "A desktop application menubar is part of an approved navigation model."
+    },
+    {
+      "id": "navigation-menu",
+      "title": "Navigation Menu",
+      "source": "src/app/components/ui/navigation-menu.tsx",
+      "reason": "Unused scaffold; the only comparable production navbar is dead code.",
+      "revisitWhen": "A public-site mega-menu or equivalent navigation is required."
+    },
+    {
+      "id": "resizable-panels",
+      "title": "Resizable Panels",
+      "source": "src/app/components/ui/resizable.tsx",
+      "reason": "Unused dependency-backed layout with no Blade counterpart.",
+      "revisitWhen": "A persistent split-pane workflow is approved for both stacks."
+    },
+    {
+      "id": "sidebar",
+      "title": "Sidebar",
+      "source": "src/app/components/ui/sidebar.tsx",
+      "reason": "Unused reusable scaffold while live production sidebars remain application-bound shells.",
+      "revisitWhen": "A host-neutral navigation data model and shell ownership boundary are agreed."
+    }
+  ],
+  "counts": {
+    "stable": 30,
+    "beta": 9,
+    "paired": 39,
+    "deferred": 10,
+    "recipes": 6,
+    "utilities": 1
+  }
+}

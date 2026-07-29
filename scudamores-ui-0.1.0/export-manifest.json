@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0.0",
+  "name": "scudamores-ui",
+  "version": "0.1.0",
+  "status": "handoff",
+  "sourceCommit": "d1511e224305585680723101a0b76be93eb9f2f0",
+  "sourceLock": "provenance/source-lock.json",
+  "catalog": "catalog/catalog.json",
+  "entrypoints": {
+    "tokens": "foundations/data/tokens.json",
+    "brands": "foundations/data/brands.json",
+    "css": "foundations/css/tokens.css",
+    "react": "react/registry.json",
+    "blade": "blade/INSTALL.md",
+    "developerSection": "docs/DEVELOPER-SECTION-CONTRACT.md"
+  },
+  "release": {
+    "archive": "releases/scudamores-ui-0.1.0.zip",
+    "checksum": "releases/scudamores-ui-0.1.0.zip.sha256",
+    "algorithm": "sha256",
+    "exclude": [
+      "releases/**",
+      "**/node_modules/**",
+      "**/vendor/**",
+      "**/.cache/**",
+      "**/dist/**",
+      "**/build/**",
+      "**/tmp/**"
+    ]
+  },
+  "expectedCoverage": {
+    "pairedComponents": 39,
+    "stableComponents": 30,
+    "betaComponents": 9,
+    "deferredComponents": 10,
+    "pairedRecipes": 6,
+    "playgroundUtilities": 1,
+    "bladeSourceFiles": 80,
+    "phpComponentClasses": 7
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "$schema": "../component.schema.json",
+  "schemaVersion": "1.0.0",
+  "id": "accordion",
+  "title": "Accordion",
+  "description": "Expandable sections with optional single or multiple open items.",
+  "category": "disclosure",
+  "maturity": "beta",
+  "searchTerms": [
+    "accordion",
+    "disclosure",
+    "expand",
+    "react",
+    "blade"
+  ],
+  "react": {
+    "files": [
+      "react/components/ui/accordion.tsx"
+    ],
+    "exports": [
+      "Accordion",
+      "AccordionItem",
+      "AccordionTrigger",
+      "AccordionContent"
+    ],
+    "props": [
+      {
+        "name": "type",
+        "type": "\"single\" | \"multiple\"",
+        "required": true
+      },
+      {
+        "name": "collapsible",
+        "type": "boolean",
+        "required": false,
+        "default": false
+      },
+      {
+        "name": "defaultValue",
+        "type": "string | string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Additional consumer layout or spacing classes."
+      }
+    ],
+    "internalDependencies": [],
+    "npmDependencies": [
+      {
+        "name": "@radix-ui/react-accordion",
+        "version": "1.2.3",
+        "purpose": "Direct component import"
+      },
+      {
+        "name": "lucide-react",
+        "version": "0.487.0",
+        "purpose": "Direct component import"
+      }
+    ],
+    "exampleFiles": [
+      "react/examples/accordion/basic.tsx"
+    ]
+  },
+  "blade": {
+    "files": [
+      "blade/library/resources/views/components/ui/accordion.blade.php",
+      "blade/library/resources/views/components/ui/accordion/content.blade.php",
+      "blade/library/resources/views/components/ui/accordion/item.blade.php",
+      "blade/library/resources/views/components/ui/accordion/trigger.blade.php"
+    ],
+    "canonicalTag": "<x-ui.accordion>",
+    "legacyTags": [],
+    "props": [
+      {
+        "name": "type",
+        "type": "\"single\" | \"multiple\"",
+        "required": false,
+        "default": "single"
+      },
+      {
+        "name": "collapsible",
+        "type": "bool",
+        "required": false,
+        "default": true
+      },
+      {
+        "name": "defaultValue",
+        "type": "string | array | null",
+        "required": false,
+        "default": null
+      }
+    ],
+    "slots": [
+      "default"
+    ],
+    "events": [
+      "ui:accordion:change"
+    ],
+    "phpDependencies": [],
+    "runtimeDependencies": [
+      {
+        "name": "alpinejs",
+        "version": "3.15.8",
+        "purpose": "Blade interaction runtime"
+      },
+      {
+        "name": "@alpinejs/collapse",
+        "version": "3.15.8",
+        "purpose": "Blade interaction runtime"
+      }
+    ],
+    "installTargets": [
+      "app/View/Components/Ui",
+      "resources/views/components/ui",
+      "resources/js/ui",
+      "resources/css"
+    ],
+    "exampleFiles": [
+      "blade/examples/accordion/basic.blade.php"
+    ]
+  },
+  "shared": {
+    "variants": [
+      {
+        "name": "default",
+        "default": true
+      }
+    ],
+    "sizes": [],
+    "states": [
+      "default",
+      "disabled",
+      "focus-visible",
+      "controlled",
+      "uncontrolled",
+      "open",
+      "closed"
+    ],
+    "responsiveBehavior": [
+      "Retains touch targets and usable wrapping at 360px."
+    ],
+    "tokens": [
+      "--background",
+      "--foreground",
+      "--primary",
+      "--primary-foreground",
+      "--muted",
+      "--muted-foreground",
+      "--border",
+      "--input",
+      "--ring",
+      "--radius"
+    ],
+    "iconMappings": [
+      {
+        "meaning": "expand",
+        "react": "ChevronDown",
+        "blade": "caret-down",
+        "size": "16px",
+        "weight": "regular"
+      }
+    ]
+  },
+  "previews": [
+    {
+      "id": "basic",
+      "title": "Basic",
+      "reactExample": "react/examples/accordion/basic.tsx",
+      "bladeExample": "blade/examples/accordion/basic.blade.php",
+      "states": [
+        "default",
+        "disabled",
+        "focus-visible",
+        "controlled",
+        "uncontrolled",
+        "open",
+        "closed"
+      ],
+      "supportsDirection": true
+    }
+  ],
+  "parity": {
+    "classification": "framework-equivalent",
+    "intentionalDifferences": [
+      "React uses Lucide and Blade uses Phosphor; semantic glyph, rendered size, weight, colour and alignment match while path shapes may differ."
+    ]
+  },
+  "accessibility": {
+    "wcagTarget": "WCAG 2.2 AA",
+    "auditStatus": "passed",
+    "findings": []
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/ui/accordion.tsx",
+        "sha256": "0ff6fadd3560c21aa67911d817f89d206188fd07bd57244ba59a117bd4ff9cb4"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#component-scope"
+    ]
+  }
+}

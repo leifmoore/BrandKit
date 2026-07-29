@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "booking-card",
+  "title": "Booking Card",
+  "description": "Compact booking identity and status card.",
+  "category": "bookings",
+  "maturity": "stable",
+  "kind": "recipe",
+  "searchTerms": [
+    "booking",
+    "card",
+    "summary"
+  ],
+  "fixture": "recipes/booking-card/fixtures/basic.json",
+  "documentation": "recipes/booking-card/README.md",
+  "react": {
+    "files": [
+      "recipes/booking-card/react/BookingCardRecipe.tsx"
+    ],
+    "exampleData": "recipes/booking-card/fixtures/basic.json"
+  },
+  "blade": {
+    "files": [
+      "recipes/booking-card/blade/booking-card.blade.php"
+    ],
+    "exampleData": "recipes/booking-card/fixtures/basic.json"
+  },
+  "contract": {
+    "support": "composition-recipe",
+    "standaloneApi": false,
+    "fixturePolicy": "neutral DTOs only",
+    "parity": "framework-equivalent"
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/bookings/BookingCard.tsx",
+        "sha256": "9dbc1078ebf1f31b517d3368ba1cec0efcf253e84714574f7b0326cbfc1be5d0"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#domain-material"
+    ]
+  }
+}

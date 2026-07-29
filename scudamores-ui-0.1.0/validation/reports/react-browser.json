@@ -1,0 +1,179 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-28",
+  "framework": "react",
+  "environment": {
+    "browser": "Chromium",
+    "font": "Instrument Sans 400/500/600",
+    "url": "http://127.0.0.1:39583"
+  },
+  "status": "passed-with-findings",
+  "renderedExamples": 39,
+  "interactions": [
+    {
+      "name": "Accordion opens and closes",
+      "passed": true
+    },
+    {
+      "name": "Alert Dialog traps Escape and returns focus",
+      "passed": true
+    },
+    {
+      "name": "Dialog opens, closes with Escape, and returns focus",
+      "passed": true
+    },
+    {
+      "name": "Dropdown Menu opens and closes with Escape",
+      "passed": true
+    },
+    {
+      "name": "Checkbox changes checked state",
+      "passed": true
+    },
+    {
+      "name": "Collapsible toggles content",
+      "passed": true
+    },
+    {
+      "name": "Popover opens and closes with Escape",
+      "passed": true
+    },
+    {
+      "name": "Select opens and closes with Escape",
+      "passed": true
+    },
+    {
+      "name": "Sheet opens and closes with Escape",
+      "passed": true
+    },
+    {
+      "name": "Stepper respects lower bound",
+      "passed": true
+    },
+    {
+      "name": "Switch changes state",
+      "passed": true
+    },
+    {
+      "name": "Tabs change active panel",
+      "passed": true
+    },
+    {
+      "name": "Toggle changes pressed state",
+      "passed": true
+    }
+  ],
+  "captures": [
+    {
+      "viewport": 360,
+      "theme": "light",
+      "brand": "default",
+      "direction": "ltr",
+      "path": "validation/baselines/react/360-light.png"
+    },
+    {
+      "viewport": 360,
+      "theme": "dark",
+      "brand": "default",
+      "direction": "ltr",
+      "path": "validation/baselines/react/360-dark.png"
+    },
+    {
+      "viewport": 768,
+      "theme": "light",
+      "brand": "default",
+      "direction": "ltr",
+      "path": "validation/baselines/react/768-light.png"
+    },
+    {
+      "viewport": 768,
+      "theme": "dark",
+      "brand": "default",
+      "direction": "ltr",
+      "path": "validation/baselines/react/768-dark.png"
+    },
+    {
+      "viewport": 1280,
+      "theme": "light",
+      "brand": "default",
+      "direction": "ltr",
+      "path": "validation/baselines/react/1280-light.png"
+    },
+    {
+      "viewport": 1280,
+      "theme": "dark",
+      "brand": "default",
+      "direction": "ltr",
+      "path": "validation/baselines/react/1280-dark.png"
+    },
+    {
+      "viewport": 768,
+      "theme": "light",
+      "brand": "default",
+      "direction": "rtl",
+      "path": "validation/baselines/react/768-light-rtl.png"
+    }
+  ],
+  "accessibility": {
+    "standard": "WCAG 2.2 AA",
+    "engine": "axe-core 4.11.0",
+    "status": "passed-with-findings",
+    "auditedExamples": 39,
+    "violations": [
+      {
+        "component": "alert-dialog",
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "target": [
+              "button[data-slot=\"alert-dialog-trigger\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.8 (foreground color: #ffffff, background color: #fb2c36, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<button data-slot=\"alert-dialog-trigger\" class=\"inline-flex items-ce...\" type=\"button\" aria-haspopup=\"dialog\" aria-expanded=\"false\" aria-controls=\"radix-:r4:\" data-state=\"closed\">"
+          }
+        ]
+      },
+      {
+        "component": "aspect-ratio",
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "target": [
+              ".size-full.bg-muted.text-muted-foreground"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.39 (foreground color: #6a7282, background color: #f3f4f6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<div class=\"flex size-full items-center justify-center bg-muted text-sm text-muted-foreground\">16:9 media</div>"
+          }
+        ]
+      },
+      {
+        "component": "button",
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "target": [
+              ".flex-wrap.flex.gap-2 > .bg-destructive.text-destructive-foreground.hover\\:bg-destructive\\/90"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.8 (foreground color: #ffffff, background color: #fb2c36, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<button data-slot=\"button\" class=\"inline-flex items-ce...\" type=\"button\">"
+          }
+        ]
+      }
+    ],
+    "timeouts": []
+  },
+  "consoleErrors": [],
+  "pageErrors": []
+}

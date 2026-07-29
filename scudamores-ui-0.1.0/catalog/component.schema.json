@@ -1,0 +1,199 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scudamores.example/schemas/component.schema.json",
+  "title": "Scudamore's UI component manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema", "schemaVersion", "id", "title", "description", "category", "maturity",
+    "searchTerms", "react", "blade", "shared", "previews", "parity", "accessibility", "source"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": "1.0.0" },
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "title": { "type": "string", "minLength": 1 },
+    "description": { "type": "string", "minLength": 1 },
+    "category": {
+      "enum": ["actions", "data-display", "disclosure", "feedback", "forms", "layout", "navigation", "overlays"]
+    },
+    "maturity": { "enum": ["stable", "beta"] },
+    "searchTerms": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "react": { "$ref": "#/$defs/reactEdition" },
+    "blade": { "$ref": "#/$defs/bladeEdition" },
+    "shared": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["variants", "sizes", "states", "responsiveBehavior", "tokens", "iconMappings"],
+      "properties": {
+        "variants": { "type": "array", "items": { "$ref": "#/$defs/namedOption" } },
+        "sizes": { "type": "array", "items": { "$ref": "#/$defs/namedOption" } },
+        "states": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "responsiveBehavior": { "type": "array", "items": { "type": "string" } },
+        "tokens": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^--[a-z0-9-]+$" },
+          "uniqueItems": true
+        },
+        "iconMappings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["meaning", "react", "blade"],
+            "properties": {
+              "meaning": { "type": "string" },
+              "react": { "type": "string" },
+              "blade": { "type": "string" },
+              "size": { "type": "string" },
+              "weight": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "previews": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "title", "reactExample", "bladeExample", "states"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "title": { "type": "string" },
+          "reactExample": { "$ref": "#/$defs/path" },
+          "bladeExample": { "$ref": "#/$defs/path" },
+          "states": { "type": "array", "items": { "type": "string" } },
+          "supportsDirection": { "type": "boolean", "default": false }
+        }
+      },
+      "minItems": 1
+    },
+    "parity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classification", "intentionalDifferences"],
+      "properties": {
+        "classification": { "enum": ["exact", "framework-equivalent", "documented-exception"] },
+        "intentionalDifferences": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "accessibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["wcagTarget", "auditStatus", "findings"],
+      "properties": {
+        "wcagTarget": { "const": "WCAG 2.2 AA" },
+        "auditStatus": { "enum": ["pending", "passed", "passed-with-findings", "failed"] },
+        "findings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "severity", "status", "summary"],
+            "properties": {
+              "id": { "type": "string" },
+              "severity": { "enum": ["minor", "moderate", "serious", "critical"] },
+              "status": { "enum": ["open", "accepted", "fixed"] },
+              "summary": { "type": "string" },
+              "detail": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["commit", "verifiedAt", "files", "decisionReferences"],
+      "properties": {
+        "commit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "verifiedAt": { "type": "string", "format": "date" },
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": { "type": "string", "minLength": 1 },
+              "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+            }
+          },
+          "minItems": 1
+        },
+        "decisionReferences": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  },
+  "$defs": {
+    "path": { "type": "string", "pattern": "^(react|blade|recipes|docs|foundations)/" },
+    "namedOption": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "default": { "type": "boolean" }
+      }
+    },
+    "prop": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "type", "required"],
+      "properties": {
+        "name": { "type": "string" },
+        "type": { "type": "string" },
+        "required": { "type": "boolean" },
+        "default": {},
+        "description": { "type": "string" }
+      }
+    },
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version"],
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "purpose": { "type": "string" }
+      }
+    },
+    "reactEdition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["files", "exports", "props", "internalDependencies", "npmDependencies", "exampleFiles"],
+      "properties": {
+        "files": { "type": "array", "items": { "$ref": "#/$defs/path" }, "minItems": 1 },
+        "exports": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
+        "props": { "type": "array", "items": { "$ref": "#/$defs/prop" } },
+        "internalDependencies": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "npmDependencies": { "type": "array", "items": { "$ref": "#/$defs/dependency" } },
+        "exampleFiles": { "type": "array", "items": { "$ref": "#/$defs/path" }, "minItems": 1 }
+      }
+    },
+    "bladeEdition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["files", "canonicalTag", "legacyTags", "props", "slots", "events", "phpDependencies", "runtimeDependencies", "installTargets", "exampleFiles"],
+      "properties": {
+        "files": { "type": "array", "items": { "$ref": "#/$defs/path" }, "minItems": 1 },
+        "canonicalTag": { "type": "string", "pattern": "^<x-ui\\.[a-z0-9.-]+>$" },
+        "legacyTags": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "props": { "type": "array", "items": { "$ref": "#/$defs/prop" } },
+        "slots": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "events": { "type": "array", "items": { "type": "string", "pattern": "^ui:[a-z0-9-]+(?::[a-z0-9-]+)*$" } },
+        "phpDependencies": { "type": "array", "items": { "type": "string" } },
+        "runtimeDependencies": { "type": "array", "items": { "$ref": "#/$defs/dependency" } },
+        "installTargets": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "exampleFiles": { "type": "array", "items": { "$ref": "#/$defs/path" }, "minItems": 1 }
+      }
+    }
+  }
+}

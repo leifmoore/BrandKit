@@ -1,0 +1,1 @@
+<x-ui.collapsible><x-ui.collapsible.trigger class="rounded-md border px-3 py-2 text-sm">Show details</x-ui.collapsible.trigger><x-ui.collapsible.content class="pt-3 text-sm text-muted-foreground">Additional details are revealed here.</x-ui.collapsible.content></x-ui.collapsible>

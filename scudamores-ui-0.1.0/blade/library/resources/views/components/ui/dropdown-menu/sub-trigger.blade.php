@@ -1,0 +1,2 @@
+@props(['inset' => false])
+<button type="button" role="menuitem" aria-haspopup="menu" x-on:click.stop="toggle()" x-on:mouseenter="open = true" x-bind:aria-expanded="open" {{ $attributes->class(['flex w-full cursor-default select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none hover:bg-accent hover:text-accent-foreground', $inset ? 'pl-8' : '']) }}>{{ $slot }}<x-phosphor-caret-right aria-hidden="true" class="ml-auto size-4" /></button>

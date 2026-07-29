@@ -1,0 +1,2 @@
+@props(['id' => 'toggle-content-'.uniqid(), 'buttonText' => 'Toggle Content', 'initiallyVisible' => false, 'buttonClass' => '', 'contentClass' => 'mt-4'])
+<x-ui.collapsible :open="$initiallyVisible" {{ $attributes }}><x-ui.collapsible.trigger aria-controls="{{ $id }}" @class([$buttonClass])>{{ $buttonText }}</x-ui.collapsible.trigger><x-ui.collapsible.content :id="$id" @class([$contentClass])>{{ $slot }}</x-ui.collapsible.content></x-ui.collapsible>

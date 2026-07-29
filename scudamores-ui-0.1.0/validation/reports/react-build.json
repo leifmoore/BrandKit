@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-28",
+  "status": "passed",
+  "sourceCommit": "d1511e224305585680723101a0b76be93eb9f2f0",
+  "environment": {
+    "node": "24.14.0",
+    "npm": "11.9.0",
+    "react": "18.3.1",
+    "typescript": "5.9.3",
+    "vite": "6.3.5",
+    "tailwindcss": "4.1.12"
+  },
+  "fixture": {
+    "kind": "clean disposable Vite application",
+    "retainedInRelease": false,
+    "dependencySource": "react/dependencies.json"
+  },
+  "checks": {
+    "declaredDependenciesInstalled": true,
+    "typecheck": "passed",
+    "productionBuild": "passed",
+    "componentExamplesImported": 39,
+    "recipeModulesImported": 6,
+    "allPublicExportsResolved": true
+  },
+  "notes": [
+    "The single validation bundle intentionally imports the entire catalogue; its chunk-size warning is not a distributable-library failure.",
+    "The destination Developer section may route-split previews independently."
+  ]
+}

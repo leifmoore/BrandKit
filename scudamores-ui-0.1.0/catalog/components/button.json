@@ -1,0 +1,242 @@
+{
+  "$schema": "../component.schema.json",
+  "schemaVersion": "1.0.0",
+  "id": "button",
+  "title": "Button",
+  "description": "Primary action primitive with semantic variants and sizes.",
+  "category": "actions",
+  "maturity": "stable",
+  "searchTerms": [
+    "button",
+    "action",
+    "link",
+    "react",
+    "blade"
+  ],
+  "react": {
+    "files": [
+      "react/components/ui/button.tsx"
+    ],
+    "exports": [
+      "Button",
+      "buttonVariants"
+    ],
+    "props": [
+      {
+        "name": "variant",
+        "type": "ButtonVariant",
+        "required": false,
+        "default": "default"
+      },
+      {
+        "name": "size",
+        "type": "ButtonSize",
+        "required": false,
+        "default": "default"
+      },
+      {
+        "name": "asChild",
+        "type": "boolean",
+        "required": false,
+        "default": false
+      },
+      {
+        "name": "type",
+        "type": "ButtonHTMLType",
+        "required": false,
+        "default": "button"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Additional consumer layout or spacing classes."
+      }
+    ],
+    "internalDependencies": [],
+    "npmDependencies": [
+      {
+        "name": "@radix-ui/react-slot",
+        "version": "1.1.2",
+        "purpose": "Direct component import"
+      },
+      {
+        "name": "class-variance-authority",
+        "version": "0.7.1",
+        "purpose": "Direct component import"
+      }
+    ],
+    "exampleFiles": [
+      "react/examples/button/basic.tsx"
+    ]
+  },
+  "blade": {
+    "files": [
+      "blade/library/resources/views/components/ui/button.blade.php",
+      "blade/library/resources/views/components/ui/button/group.blade.php"
+    ],
+    "canonicalTag": "<x-ui.button>",
+    "legacyTags": [
+      "<x-button>",
+      "<x-button.action>",
+      "<x-button.link>"
+    ],
+    "props": [
+      {
+        "name": "variant",
+        "type": "string",
+        "required": false,
+        "default": "default"
+      },
+      {
+        "name": "size",
+        "type": "string",
+        "required": false,
+        "default": "default"
+      },
+      {
+        "name": "type",
+        "type": "string",
+        "required": false,
+        "default": "button"
+      },
+      {
+        "name": "href",
+        "type": "string | null",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "disabled",
+        "type": "bool",
+        "required": false,
+        "default": false
+      }
+    ],
+    "slots": [
+      "default"
+    ],
+    "events": [],
+    "phpDependencies": [],
+    "runtimeDependencies": [],
+    "installTargets": [
+      "app/View/Components/Ui",
+      "resources/views/components/ui",
+      "resources/js/ui",
+      "resources/css"
+    ],
+    "exampleFiles": [
+      "blade/examples/button/basic.blade.php"
+    ]
+  },
+  "shared": {
+    "variants": [
+      {
+        "name": "default",
+        "default": true
+      },
+      {
+        "name": "destructive"
+      },
+      {
+        "name": "outline"
+      },
+      {
+        "name": "secondary"
+      },
+      {
+        "name": "ghost"
+      },
+      {
+        "name": "link"
+      }
+    ],
+    "sizes": [
+      {
+        "name": "default",
+        "default": true
+      },
+      {
+        "name": "sm"
+      },
+      {
+        "name": "lg"
+      },
+      {
+        "name": "icon"
+      }
+    ],
+    "states": [
+      "default",
+      "disabled",
+      "focus-visible"
+    ],
+    "responsiveBehavior": [
+      "Retains touch targets and usable wrapping at 360px."
+    ],
+    "tokens": [
+      "--background",
+      "--foreground",
+      "--primary",
+      "--primary-foreground",
+      "--muted",
+      "--muted-foreground",
+      "--border",
+      "--input",
+      "--ring",
+      "--radius"
+    ],
+    "iconMappings": []
+  },
+  "previews": [
+    {
+      "id": "basic",
+      "title": "Basic",
+      "reactExample": "react/examples/button/basic.tsx",
+      "bladeExample": "blade/examples/button/basic.blade.php",
+      "states": [
+        "default",
+        "disabled",
+        "focus-visible"
+      ],
+      "supportsDirection": false
+    }
+  ],
+  "parity": {
+    "classification": "framework-equivalent",
+    "intentionalDifferences": []
+  },
+  "accessibility": {
+    "wcagTarget": "WCAG 2.2 AA",
+    "auditStatus": "passed-with-findings",
+    "findings": [
+      {
+        "id": "react-color-contrast",
+        "severity": "serious",
+        "status": "accepted",
+        "summary": "React — Elements must meet minimum color contrast ratio thresholds",
+        "detail": "Fix any of the following:\n  Element has insufficient color contrast of 3.8 (foreground color: #ffffff, background color: #fb2c36, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1 https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright Retained for the approved visual-parity-first release and explicitly flagged for later token/design remediation."
+      },
+      {
+        "id": "blade-color-contrast",
+        "severity": "serious",
+        "status": "accepted",
+        "summary": "Blade — Elements must meet minimum color contrast ratio thresholds",
+        "detail": "Fix any of the following:\n  Element has insufficient color contrast of 3.8 (foreground color: #ffffff, background color: #fb2c36, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1 https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright Retained for the approved visual-parity-first release and explicitly flagged for later token/design remediation."
+      }
+    ]
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/ui/button.tsx",
+        "sha256": "b6a630aad6ccd5f8d5584ba2a1769b652b8e10455cece233eb59fc68954460a2"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#component-scope"
+    ]
+  }
+}

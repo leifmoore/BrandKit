@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "1.0.0",
+  "verifiedAt": "2026-07-28",
+  "sourceCommit": "d1511e224305585680723101a0b76be93eb9f2f0",
+  "sourceAggregateSha256": "82b55ce6513ce99a55146a1fcc81533b7ecf5e53200a088135b0e8313afc1b6d",
+  "policy": "Source paths are provenance only. Distributable files must not import or read outside _comp-lib.",
+  "reactComponents": [
+    { "id": "accordion", "source": "src/app/components/ui/accordion.tsx", "disposition": "paired", "maturity": "beta" },
+    { "id": "alert", "source": "src/app/components/ui/alert.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "alert-dialog", "source": "src/app/components/ui/alert-dialog.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "aspect-ratio", "source": "src/app/components/ui/aspect-ratio.tsx", "disposition": "paired", "maturity": "beta" },
+    { "id": "avatar", "source": "src/app/components/ui/avatar.tsx", "disposition": "paired", "maturity": "beta" },
+    { "id": "badge", "source": "src/app/components/ui/badge.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "breadcrumb", "source": "src/app/components/ui/breadcrumb.tsx", "disposition": "paired", "maturity": "beta" },
+    { "id": "button", "source": "src/app/components/ui/button.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "calendar", "source": "src/app/components/ui/calendar.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "card", "source": "src/app/components/ui/card.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "checkbox", "source": "src/app/components/ui/checkbox.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "collapsible", "source": "src/app/components/ui/collapsible.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "dialog", "source": "src/app/components/ui/dialog.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "dropdown-menu", "source": "src/app/components/ui/dropdown-menu.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "form", "source": "src/app/components/ui/form.tsx", "disposition": "paired", "maturity": "beta" },
+    { "id": "input", "source": "src/app/components/ui/input.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "input-otp", "source": "src/app/components/ui/input-otp.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "label", "source": "src/app/components/ui/label.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "page-container", "source": "src/app/components/PageHeader.tsx", "disposition": "paired", "maturity": "stable", "sourceExport": "PageContainer" },
+    { "id": "page-header", "source": "src/app/components/PageHeader.tsx", "disposition": "paired", "maturity": "stable", "sourceExport": "PageHeader" },
+    { "id": "pagination", "source": "src/app/components/ui/pagination.tsx", "disposition": "paired", "maturity": "beta" },
+    { "id": "popover", "source": "src/app/components/ui/popover.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "progress", "source": "src/app/components/ui/progress.tsx", "disposition": "paired", "maturity": "beta" },
+    { "id": "radio-group", "source": "src/app/components/ui/radio-group.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "scroll-area", "source": "src/app/components/ui/scroll-area.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "select", "source": "src/app/components/ui/select.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "separator", "source": "src/app/components/ui/separator.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "sheet", "source": "src/app/components/ui/sheet.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "skeleton", "source": "src/app/components/ui/skeleton.tsx", "disposition": "paired", "maturity": "beta" },
+    { "id": "slider", "source": "src/app/components/ui/slider.tsx", "disposition": "paired", "maturity": "beta" },
+    { "id": "toast", "source": "src/app/components/ui/sonner.tsx", "disposition": "paired", "maturity": "stable", "notes": "Remove AppContext coupling and accept host theme state." },
+    { "id": "stepper", "source": "src/app/components/ui/stepper.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "switch", "source": "src/app/components/ui/switch.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "table", "source": "src/app/components/ui/table.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "tabs", "source": "src/app/components/ui/tabs.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "textarea", "source": "src/app/components/ui/textarea.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "toggle", "source": "src/app/components/ui/toggle.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "toggle-group", "source": "src/app/components/ui/toggle-group.tsx", "disposition": "paired", "maturity": "stable" },
+    { "id": "tooltip", "source": "src/app/components/ui/tooltip.tsx", "disposition": "paired", "maturity": "stable" }
+  ],
+  "deferredReactComponents": [
+    { "id": "carousel", "source": "src/app/components/ui/carousel.tsx", "disposition": "inventory-only" },
+    { "id": "chart", "source": "src/app/components/ui/chart.tsx", "disposition": "inventory-only" },
+    { "id": "command-palette", "source": "src/app/components/ui/command.tsx", "disposition": "inventory-only" },
+    { "id": "context-menu", "source": "src/app/components/ui/context-menu.tsx", "disposition": "inventory-only" },
+    { "id": "drawer", "source": "src/app/components/ui/drawer.tsx", "disposition": "inventory-only" },
+    { "id": "hover-card", "source": "src/app/components/ui/hover-card.tsx", "disposition": "inventory-only" },
+    { "id": "menubar", "source": "src/app/components/ui/menubar.tsx", "disposition": "inventory-only" },
+    { "id": "navigation-menu", "source": "src/app/components/ui/navigation-menu.tsx", "disposition": "inventory-only" },
+    { "id": "resizable-panels", "source": "src/app/components/ui/resizable.tsx", "disposition": "inventory-only" },
+    { "id": "sidebar", "source": "src/app/components/ui/sidebar.tsx", "disposition": "inventory-only", "relatedUtility": "src/app/components/ui/use-mobile.ts" }
+  ],
+  "domainComponents": {
+    "recipes": [
+      { "id": "quick-launch", "source": "src/app/components/dashboard/QuickLaunch.tsx", "treatment": "Replace app navigation with neutral href/action fixtures." },
+      { "id": "availability-toggle-list", "source": "src/app/components/channel/AvailabilityToggleList.tsx", "treatment": "Replace app records with a neutral availability fixture." },
+      { "id": "channel-logo-picker", "source": "src/app/components/channel/ChannelLogoPicker.tsx", "treatment": "Inject file-selection/upload callbacks; do not simulate persistence." },
+      { "id": "booking-card", "source": "src/app/components/bookings/BookingCard.tsx", "treatment": "Replace product DTOs with a local example DTO." },
+      { "id": "booking-details-dialog", "source": "src/app/components/bookings/BookingDetailsDialog.tsx", "treatment": "Compose approved primitives over local booking fixtures." },
+      { "id": "people-popover-content", "source": "src/app/components/people-popover.tsx", "treatment": "Extract only PeoplePopoverContent; exclude database-backed AuditLogPanel behavior." }
+    ],
+    "playgroundUtilities": [
+      { "id": "device-preview-frame", "source": "src/app/components/channel/DevicePreviewFrame.tsx", "disposition": "developer-section-only" }
+    ],
+    "referenceOnly": [
+      { "id": "header", "source": "src/app/components/Header.tsx" },
+      { "id": "desktop-nav", "source": "src/app/components/navigation/DesktopNav.tsx" },
+      { "id": "mobile-nav", "source": "src/app/components/navigation/MobileNav.tsx" },
+      { "id": "step-up-auth-gate", "source": "src/app/components/StepUpAuthGate.tsx" },
+      { "id": "quote-card", "source": "src/app/components/quotes/QuoteCard.tsx" },
+      { "id": "quote-details-dialog", "source": "src/app/components/quotes/QuoteDetailsDialog.tsx" },
+      { "id": "quote-redemption-portal", "source": "src/app/components/quotes/QuoteRedemptionPortal.tsx" },
+      { "id": "user-management", "source": "src/app/components/user-management/UserManagement.tsx" },
+      { "id": "roles-tab", "source": "src/app/components/user-management/RolesTab.tsx" },
+      { "id": "users-tab", "source": "src/app/components/user-management/UsersTab.tsx" },
+      { "id": "audit-log-panel", "source": "src/app/components/people-popover.tsx" }
+    ],
+    "excluded": [
+      { "id": "image-with-fallback", "source": "src/app/components/figma/ImageWithFallback.tsx", "reason": "Generated Figma scaffold duplicated elsewhere and not canonical library source." }
+    ]
+  },
+  "blade": {
+    "componentRoot": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components",
+    "sourceFileCount": 80,
+    "phpClassRoot": "_style-reference/multi-channel-sales-platform-main 2/app/View/Components",
+    "phpClasses": ["FormControl", "Input", "Checkbox", "Radio", "Select", "Textarea", "Error"],
+    "crosswalk": "catalog/blade-crosswalk.json",
+    "authority": "Legacy tags and Laravel form behavior only; copied handoff artifacts are restyled to the React visual target."
+  },
+  "foundationSources": [
+    { "path": "src/styles/theme.css", "use": "Canonical current token values and base rules" },
+    { "path": "src/styles/fonts.css", "use": "Canonical font weights and offline package strategy" },
+    { "path": "docs/design-system/tokens.md", "use": "Curated token rationale and production provenance" },
+    { "path": "docs/design-system/typography.md", "use": "Curated typography guidance" },
+    { "path": "docs/design-system/layout.md", "use": "Curated layout guidance" },
+    { "path": "docs/design-system/exceptions.md", "use": "Curated intentional exceptions only" },
+    { "path": "HANDOFF.md", "use": "Later intentional decisions; never redistributed wholesale" }
+  ],
+  "excludedHistoricalMaterial": [
+    { "path": "docs/design-system/extraction/*.json", "reason": "Raw snapshots contain stale counts and superseded conclusions." },
+    { "path": "docs/design-system/audit/**", "reason": "Completed audit backlog rather than current consumer documentation." },
+    { "path": "docs/design-system/restyle-backlog.md", "reason": "Completed internal work queue." },
+    { "path": "_style-reference/**/resources/css/epos.css", "reason": "Dead, unimported compiled stylesheet." },
+    { "path": ".restyle-artifacts/**", "reason": "Page-level historical screenshots; component baselines are generated afresh." },
+    { "path": "brand-kit website", "reason": "Destination context only; no source or styling is taken from it." }
+  ]
+}

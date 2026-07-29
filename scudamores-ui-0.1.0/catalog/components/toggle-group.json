@@ -1,0 +1,217 @@
+{
+  "$schema": "../component.schema.json",
+  "schemaVersion": "1.0.0",
+  "id": "toggle-group",
+  "title": "Toggle Group",
+  "description": "Single- or multiple-selection group of pressed actions.",
+  "category": "actions",
+  "maturity": "stable",
+  "searchTerms": [
+    "toggle group",
+    "segmented",
+    "selection",
+    "react",
+    "blade"
+  ],
+  "react": {
+    "files": [
+      "react/components/ui/toggle-group.tsx"
+    ],
+    "exports": [
+      "ToggleGroup",
+      "ToggleGroupItem"
+    ],
+    "props": [
+      {
+        "name": "type",
+        "type": "\"single\" | \"multiple\"",
+        "required": true
+      },
+      {
+        "name": "variant",
+        "type": "ToggleVariant",
+        "required": false,
+        "default": "default"
+      },
+      {
+        "name": "size",
+        "type": "ToggleSize",
+        "required": false,
+        "default": "default"
+      },
+      {
+        "name": "value",
+        "type": "string | string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Additional consumer layout or spacing classes."
+      }
+    ],
+    "internalDependencies": [
+      "toggle"
+    ],
+    "npmDependencies": [
+      {
+        "name": "@radix-ui/react-toggle-group",
+        "version": "1.1.2",
+        "purpose": "Direct component import"
+      },
+      {
+        "name": "class-variance-authority",
+        "version": "0.7.1",
+        "purpose": "Direct component import"
+      }
+    ],
+    "exampleFiles": [
+      "react/examples/toggle-group/basic.tsx"
+    ]
+  },
+  "blade": {
+    "files": [
+      "blade/library/resources/views/components/ui/toggle-group.blade.php",
+      "blade/library/resources/views/components/ui/toggle-group/item.blade.php"
+    ],
+    "canonicalTag": "<x-ui.toggle-group>",
+    "legacyTags": [
+      "<x-button.group>"
+    ],
+    "props": [
+      {
+        "name": "type",
+        "type": "\"single\" | \"multiple\"",
+        "required": false,
+        "default": "single"
+      },
+      {
+        "name": "value",
+        "type": "string | array",
+        "required": false
+      },
+      {
+        "name": "variant",
+        "type": "string",
+        "required": false,
+        "default": "default"
+      },
+      {
+        "name": "size",
+        "type": "string",
+        "required": false,
+        "default": "default"
+      }
+    ],
+    "slots": [
+      "default"
+    ],
+    "events": [
+      "ui:toggle-group:change"
+    ],
+    "phpDependencies": [],
+    "runtimeDependencies": [
+      {
+        "name": "alpinejs",
+        "version": "3.15.8",
+        "purpose": "Blade interaction runtime"
+      }
+    ],
+    "installTargets": [
+      "app/View/Components/Ui",
+      "resources/views/components/ui",
+      "resources/js/ui",
+      "resources/css"
+    ],
+    "exampleFiles": [
+      "blade/examples/toggle-group/basic.blade.php"
+    ]
+  },
+  "shared": {
+    "variants": [
+      {
+        "name": "default",
+        "default": true
+      },
+      {
+        "name": "outline"
+      }
+    ],
+    "sizes": [
+      {
+        "name": "default",
+        "default": true
+      },
+      {
+        "name": "sm"
+      },
+      {
+        "name": "lg"
+      }
+    ],
+    "states": [
+      "default",
+      "disabled",
+      "focus-visible",
+      "controlled",
+      "uncontrolled",
+      "checked"
+    ],
+    "responsiveBehavior": [
+      "Retains touch targets and usable wrapping at 360px."
+    ],
+    "tokens": [
+      "--background",
+      "--foreground",
+      "--primary",
+      "--primary-foreground",
+      "--muted",
+      "--muted-foreground",
+      "--border",
+      "--input",
+      "--ring",
+      "--radius"
+    ],
+    "iconMappings": []
+  },
+  "previews": [
+    {
+      "id": "basic",
+      "title": "Basic",
+      "reactExample": "react/examples/toggle-group/basic.tsx",
+      "bladeExample": "blade/examples/toggle-group/basic.blade.php",
+      "states": [
+        "default",
+        "disabled",
+        "focus-visible",
+        "controlled",
+        "uncontrolled",
+        "checked"
+      ],
+      "supportsDirection": false
+    }
+  ],
+  "parity": {
+    "classification": "framework-equivalent",
+    "intentionalDifferences": []
+  },
+  "accessibility": {
+    "wcagTarget": "WCAG 2.2 AA",
+    "auditStatus": "passed",
+    "findings": []
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/ui/toggle-group.tsx",
+        "sha256": "43e56c5487ed93a2e0d418dcf944a646c716b8c8c55d050fcda1d5cd1248cce6"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#component-scope"
+    ]
+  }
+}

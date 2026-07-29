@@ -1,0 +1,190 @@
+{
+  "$schema": "../component.schema.json",
+  "schemaVersion": "1.0.0",
+  "id": "popover",
+  "title": "Popover",
+  "description": "Anchored non-modal floating content.",
+  "category": "overlays",
+  "maturity": "stable",
+  "searchTerms": [
+    "popover",
+    "floating",
+    "overlay",
+    "react",
+    "blade"
+  ],
+  "react": {
+    "files": [
+      "react/components/ui/popover.tsx"
+    ],
+    "exports": [
+      "Popover",
+      "PopoverTrigger",
+      "PopoverContent",
+      "PopoverAnchor"
+    ],
+    "props": [
+      {
+        "name": "open",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "defaultOpen",
+        "type": "boolean",
+        "required": false,
+        "default": false
+      },
+      {
+        "name": "onOpenChange",
+        "type": "(open: boolean) => void",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Additional consumer layout or spacing classes."
+      }
+    ],
+    "internalDependencies": [],
+    "npmDependencies": [
+      {
+        "name": "@radix-ui/react-popover",
+        "version": "1.1.6",
+        "purpose": "Direct component import"
+      }
+    ],
+    "exampleFiles": [
+      "react/examples/popover/basic.tsx"
+    ]
+  },
+  "blade": {
+    "files": [
+      "blade/library/resources/views/components/ui/popover.blade.php",
+      "blade/library/resources/views/components/ui/popover/anchor.blade.php",
+      "blade/library/resources/views/components/ui/popover/content.blade.php",
+      "blade/library/resources/views/components/ui/popover/trigger.blade.php"
+    ],
+    "canonicalTag": "<x-ui.popover>",
+    "legacyTags": [],
+    "props": [
+      {
+        "name": "open",
+        "type": "bool",
+        "required": false,
+        "default": false
+      },
+      {
+        "name": "placement",
+        "type": "string",
+        "required": false,
+        "default": "bottom-start"
+      }
+    ],
+    "slots": [
+      "default",
+      "trigger"
+    ],
+    "events": [
+      "ui:popover:change"
+    ],
+    "phpDependencies": [],
+    "runtimeDependencies": [
+      {
+        "name": "alpinejs",
+        "version": "3.15.8",
+        "purpose": "Blade interaction runtime"
+      },
+      {
+        "name": "@floating-ui/dom",
+        "version": "1.7.4",
+        "purpose": "Blade interaction runtime"
+      }
+    ],
+    "installTargets": [
+      "app/View/Components/Ui",
+      "resources/views/components/ui",
+      "resources/js/ui",
+      "resources/css"
+    ],
+    "exampleFiles": [
+      "blade/examples/popover/basic.blade.php"
+    ]
+  },
+  "shared": {
+    "variants": [
+      {
+        "name": "default",
+        "default": true
+      }
+    ],
+    "sizes": [],
+    "states": [
+      "default",
+      "disabled",
+      "focus-visible",
+      "controlled",
+      "uncontrolled",
+      "open",
+      "closed"
+    ],
+    "responsiveBehavior": [
+      "Retains touch targets and usable wrapping at 360px.",
+      "Floating or modal content is constrained to the viewport."
+    ],
+    "tokens": [
+      "--background",
+      "--foreground",
+      "--primary",
+      "--primary-foreground",
+      "--muted",
+      "--muted-foreground",
+      "--border",
+      "--input",
+      "--ring",
+      "--radius"
+    ],
+    "iconMappings": []
+  },
+  "previews": [
+    {
+      "id": "basic",
+      "title": "Basic",
+      "reactExample": "react/examples/popover/basic.tsx",
+      "bladeExample": "blade/examples/popover/basic.blade.php",
+      "states": [
+        "default",
+        "disabled",
+        "focus-visible",
+        "controlled",
+        "uncontrolled",
+        "open",
+        "closed"
+      ],
+      "supportsDirection": true
+    }
+  ],
+  "parity": {
+    "classification": "framework-equivalent",
+    "intentionalDifferences": []
+  },
+  "accessibility": {
+    "wcagTarget": "WCAG 2.2 AA",
+    "auditStatus": "passed",
+    "findings": []
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/ui/popover.tsx",
+        "sha256": "0acc8ef7974cb132c8ed9226eb6a26fa12d66f76ba55dcfd07d39c99d9d5d21c"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#component-scope"
+    ]
+  }
+}

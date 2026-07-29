@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-28",
+  "status": "passed",
+  "sourceCommit": "d1511e224305585680723101a0b76be93eb9f2f0",
+  "recipes": [
+    "quick-launch",
+    "availability-toggle-list",
+    "channel-logo-picker",
+    "booking-card",
+    "booking-details-dialog",
+    "people-popover-content"
+  ],
+  "checks": {
+    "neutralFixturesValidated": 6,
+    "reactModulesTypecheckedAndBuilt": 6,
+    "reactRecipesBrowserRendered": 6,
+    "reactFixtureInteractionsPassed": 6,
+    "bladeRecipesRendered": 6,
+    "tailwindEntrypointsScanRecipeSources": true,
+    "recipeOnlyUtilitiesPresentInCompiledCss": true,
+    "fixtureAdapterContractsDocumented": true
+  },
+  "notes": [
+    "Recipes are composition examples, not supported standalone component APIs.",
+    "Blade behavior is validated offline; the external Developer section displays Blade source and documentation without a Laravel iframe."
+  ]
+}

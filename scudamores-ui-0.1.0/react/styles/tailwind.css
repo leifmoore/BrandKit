@@ -1,0 +1,8 @@
+@import "tailwindcss" source(none);
+@source "../**/*.{js,ts,jsx,tsx}";
+@source "../../recipes/*/react/**/*.{js,ts,jsx,tsx}";
+
+@import "tw-animate-css";
+@import "../../foundations/css/tokens.css";
+@import "../../foundations/css/brands.css";
+@import "../../foundations/css/tailwind-theme.css";

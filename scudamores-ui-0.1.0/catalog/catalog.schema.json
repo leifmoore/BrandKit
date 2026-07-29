@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scudamores.example/schemas/catalog.schema.json",
+  "title": "Scudamore's UI catalogue index",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schemaVersion", "version", "name", "components", "recipes", "foundations", "utilities", "deferredComponents", "counts"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": "1.0.0" },
+    "version": { "type": "string", "pattern": "^0\\.1\\.0$" },
+    "name": { "type": "string", "minLength": 1 },
+    "components": {
+      "type": "array",
+      "minItems": 39,
+      "maxItems": 39,
+      "items": { "$ref": "#/$defs/catalogueEntry" }
+    },
+    "recipes": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": { "$ref": "#/$defs/catalogueEntry" }
+    },
+    "foundations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/foundationEntry" },
+      "minItems": 5
+    },
+    "utilities": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/catalogueEntry" },
+      "minItems": 1,
+      "maxItems": 1
+    },
+    "deferredComponents": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": { "$ref": "#/$defs/deferredEntry" }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stable", "beta", "paired", "deferred", "recipes", "utilities"],
+      "properties": {
+        "stable": { "const": 30 },
+        "beta": { "const": 9 },
+        "paired": { "const": 39 },
+        "deferred": { "const": 10 },
+        "recipes": { "const": 6 },
+        "utilities": { "const": 1 }
+      }
+    }
+  },
+  "$defs": {
+    "catalogueEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "category", "kind", "maturity", "manifest", "frameworks", "searchTerms"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "kind": { "enum": ["component", "recipe", "utility"] },
+        "maturity": { "enum": ["stable", "beta", "infrastructure"] },
+        "manifest": { "type": "string" },
+        "frameworks": { "type": "array", "items": { "enum": ["react", "blade"] }, "uniqueItems": true },
+        "searchTerms": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+      }
+    },
+    "foundationEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "data", "documentation"],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "data": { "type": "array", "items": { "type": "string" } },
+        "documentation": { "type": "string" }
+      }
+    },
+    "deferredEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "source", "reason", "revisitWhen"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "title": { "type": "string" },
+        "source": { "type": "string" },
+        "reason": { "type": "string" },
+        "revisitWhen": { "type": "string" }
+      }
+    }
+  }
+}

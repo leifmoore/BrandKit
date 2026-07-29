@@ -1,0 +1,582 @@
+{
+  "schemaVersion": "1.0.0",
+  "sourceCommit": "d1511e224305585680723101a0b76be93eb9f2f0",
+  "verifiedAt": "2026-07-28",
+  "counts": {
+    "canonical": 34,
+    "alias": 21,
+    "reference": 18,
+    "exclude": 7
+  },
+  "phpClasses": [
+    "FormControl",
+    "Input",
+    "Checkbox",
+    "Radio",
+    "Select",
+    "Textarea",
+    "Error"
+  ],
+  "items": [
+    {
+      "path": "action-message.blade.php",
+      "disposition": "alias",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/action-message.blade.php",
+      "target": "<x-ui.alert>",
+      "migration": "Existing tag remains a thin wrapper; migrate opportunistically."
+    },
+    {
+      "path": "app-logo-icon.blade.php",
+      "disposition": "reference",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/app-logo-icon.blade.php",
+      "target": null,
+      "migration": "Retain in the production application; no distributable source is shipped."
+    },
+    {
+      "path": "app-logo.blade.php",
+      "disposition": "reference",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/app-logo.blade.php",
+      "target": null,
+      "migration": "Retain in the production application; no distributable source is shipped."
+    },
+    {
+      "path": "auth-header.blade.php",
+      "disposition": "reference",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/auth-header.blade.php",
+      "target": null,
+      "migration": "Retain in the production application; no distributable source is shipped."
+    },
+    {
+      "path": "auth-session-status.blade.php",
+      "disposition": "alias",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/auth-session-status.blade.php",
+      "target": "<x-ui.alert>",
+      "migration": "Existing tag remains a thin wrapper; migrate opportunistically."
+    },
+    {
+      "path": "badge.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/badge.blade.php",
+      "target": "<x-ui.badge>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "button/action.blade.php",
+      "disposition": "alias",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/button/action.blade.php",
+      "target": "<x-ui.button>",
+      "migration": "Existing tag remains a thin wrapper; migrate opportunistically."
+    },
+    {
+      "path": "button/dashboard-link.blade.php",
+      "disposition": "reference",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/button/dashboard-link.blade.php",
+      "target": null,
+      "migration": "Retain in the production application; no distributable source is shipped."
+    },
+    {
+      "path": "button/group.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/button/group.blade.php",
+      "target": "<x-ui.button>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "button/index.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/button/index.blade.php",
+      "target": "<x-ui.button>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "button/link.blade.php",
+      "disposition": "alias",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/button/link.blade.php",
+      "target": "<x-ui.button>",
+      "migration": "Existing tag remains a thin wrapper; migrate opportunistically."
+    },
+    {
+      "path": "checkbox.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/checkbox.blade.php",
+      "target": "<x-ui.checkbox>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "container.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/container.blade.php",
+      "target": "<x-ui.page-container>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "epos/new-trackables.blade.php",
+      "disposition": "reference",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/epos/new-trackables.blade.php",
+      "target": null,
+      "migration": "Retain in the production application; no distributable source is shipped."
+    },
+    {
+      "path": "error.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/error.blade.php",
+      "target": "<x-ui.form.message>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "field.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/field.blade.php",
+      "target": "<x-ui.form>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "form.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/form.blade.php",
+      "target": "<x-ui.form>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "header.blade.php",
+      "disposition": "reference",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/header.blade.php",
+      "target": null,
+      "migration": "Retain in the production application; no distributable source is shipped."
+    },
+    {
+      "path": "heading.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/heading.blade.php",
+      "target": "Compatibility primitive documented in blade/INSTALL.md",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "icons/bin.blade.php",
+      "disposition": "alias",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/icons/bin.blade.php",
+      "target": "Phosphor Blade icon",
+      "migration": "Existing tag remains a thin wrapper; migrate opportunistically."
+    },
+    {
+      "path": "icons/edit.blade.php",
+      "disposition": "alias",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/icons/edit.blade.php",
+      "target": "Phosphor Blade icon",
+      "migration": "Existing tag remains a thin wrapper; migrate opportunistically."
+    },
+    {
+      "path": "icons/eye.blade.php",
+      "disposition": "alias",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/icons/eye.blade.php",
+      "target": "Phosphor Blade icon",
+      "migration": "Existing tag remains a thin wrapper; migrate opportunistically."
+    },
+    {
+      "path": "icons/reschedule.blade.php",
+      "disposition": "alias",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/icons/reschedule.blade.php",
+      "target": "Phosphor Blade icon",
+      "migration": "Existing tag remains a thin wrapper; migrate opportunistically."
+    },
+    {
+      "path": "input.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/input.blade.php",
+      "target": "<x-ui.input>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "label.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/label.blade.php",
+      "target": "<x-ui.label>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "layouts/admin.blade.php",
+      "disposition": "reference",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/layouts/admin.blade.php",
+      "target": null,
+      "migration": "Retain in the production application; no distributable source is shipped."
+    },
+    {
+      "path": "layouts/admin/header.blade.php",
+      "disposition": "exclude",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/layouts/admin/header.blade.php",
+      "target": null,
+      "migration": "Remove or leave unused; this source is intentionally outside the handoff."
+    },
+    {
+      "path": "layouts/admin/page.blade.php",
+      "disposition": "alias",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/layouts/admin/page.blade.php",
+      "target": "<x-ui.page-container>",
+      "migration": "Existing tag remains a thin wrapper; migrate opportunistically."
+    },
+    {
+      "path": "layouts/admin/sidebar.blade.php",
+      "disposition": "reference",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/layouts/admin/sidebar.blade.php",
+      "target": null,
+      "migration": "Retain in the production application; no distributable source is shipped."
+    },
+    {
+      "path": "layouts/app.blade.php",
+      "disposition": "reference",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/layouts/app.blade.php",
+      "target": null,
+      "migration": "Retain in the production application; no distributable source is shipped."
+    },
+    {
+      "path": "layouts/app/header.blade.php",
+      "disposition": "exclude",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/layouts/app/header.blade.php",
+      "target": null,
+      "migration": "Remove or leave unused; this source is intentionally outside the handoff."
+    },
+    {
+      "path": "layouts/app/page.blade.php",
+      "disposition": "alias",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/layouts/app/page.blade.php",
+      "target": "<x-ui.page-container>",
+      "migration": "Existing tag remains a thin wrapper; migrate opportunistically."
+    },
+    {
+      "path": "layouts/app/sidebar.blade.php",
+      "disposition": "reference",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/layouts/app/sidebar.blade.php",
+      "target": null,
+      "migration": "Retain in the production application; no distributable source is shipped."
+    },
+    {
+      "path": "layouts/auth.blade.php",
+      "disposition": "reference",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/layouts/auth.blade.php",
+      "target": null,
+      "migration": "Retain in the production application; no distributable source is shipped."
+    },
+    {
+      "path": "layouts/auth/card.blade.php",
+      "disposition": "exclude",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/layouts/auth/card.blade.php",
+      "target": null,
+      "migration": "Remove or leave unused; this source is intentionally outside the handoff."
+    },
+    {
+      "path": "layouts/auth/simple.blade.php",
+      "disposition": "reference",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/layouts/auth/simple.blade.php",
+      "target": null,
+      "migration": "Retain in the production application; no distributable source is shipped."
+    },
+    {
+      "path": "layouts/auth/split.blade.php",
+      "disposition": "exclude",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/layouts/auth/split.blade.php",
+      "target": null,
+      "migration": "Remove or leave unused; this source is intentionally outside the handoff."
+    },
+    {
+      "path": "link.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/link.blade.php",
+      "target": "Compatibility primitive documented in blade/INSTALL.md",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "modal.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/modal.blade.php",
+      "target": "<x-ui.dialog>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "navbar/index.blade.php",
+      "disposition": "exclude",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/navbar/index.blade.php",
+      "target": null,
+      "migration": "Remove or leave unused; this source is intentionally outside the handoff."
+    },
+    {
+      "path": "navbar/item.blade.php",
+      "disposition": "exclude",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/navbar/item.blade.php",
+      "target": null,
+      "migration": "Remove or leave unused; this source is intentionally outside the handoff."
+    },
+    {
+      "path": "navlist/group.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/navlist/group.blade.php",
+      "target": "Compatibility primitive documented in blade/INSTALL.md",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "navlist/index.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/navlist/index.blade.php",
+      "target": "Compatibility primitive documented in blade/INSTALL.md",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "navlist/item.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/navlist/item.blade.php",
+      "target": "Compatibility primitive documented in blade/INSTALL.md",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "placeholder-pattern.blade.php",
+      "disposition": "exclude",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/placeholder-pattern.blade.php",
+      "target": null,
+      "migration": "Remove or leave unused; this source is intentionally outside the handoff."
+    },
+    {
+      "path": "popover/index.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/popover/index.blade.php",
+      "target": "<x-ui.dropdown-menu>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "popover/item.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/popover/item.blade.php",
+      "target": "<x-ui.dropdown-menu>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "popover/separator.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/popover/separator.blade.php",
+      "target": "<x-ui.separator>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "radio.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/radio.blade.php",
+      "target": "<x-ui.radio-group>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "ref-badge.blade.php",
+      "disposition": "alias",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/ref-badge.blade.php",
+      "target": "<x-ui.badge>",
+      "migration": "Existing tag remains a thin wrapper; migrate opportunistically."
+    },
+    {
+      "path": "search.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/search.blade.php",
+      "target": "<x-ui.input>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "select.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/select.blade.php",
+      "target": "<x-ui.select>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "separator.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/separator.blade.php",
+      "target": "<x-ui.separator>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "session-status.blade.php",
+      "disposition": "alias",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/session-status.blade.php",
+      "target": "<x-ui.alert>",
+      "migration": "Existing tag remains a thin wrapper; migrate opportunistically."
+    },
+    {
+      "path": "settings/layout.blade.php",
+      "disposition": "reference",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/settings/layout.blade.php",
+      "target": null,
+      "migration": "Retain in the production application; no distributable source is shipped."
+    },
+    {
+      "path": "sidebar/index.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/sidebar/index.blade.php",
+      "target": "<x-ui.sheet>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "sidebar/toggle.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/sidebar/toggle.blade.php",
+      "target": "<x-ui.sheet>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "source-badge.blade.php",
+      "disposition": "alias",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/source-badge.blade.php",
+      "target": "<x-ui.badge>",
+      "migration": "Existing tag remains a thin wrapper; migrate opportunistically."
+    },
+    {
+      "path": "spacer.blade.php",
+      "disposition": "alias",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/spacer.blade.php",
+      "target": "<x-ui.separator>",
+      "migration": "Existing tag remains a thin wrapper; migrate opportunistically."
+    },
+    {
+      "path": "stats-card.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/stats-card.blade.php",
+      "target": "Compatibility primitive documented in blade/INSTALL.md",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "subheading.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/subheading.blade.php",
+      "target": "Compatibility primitive documented in blade/INSTALL.md",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "tab-panel.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/tab-panel.blade.php",
+      "target": "<x-ui.tabs>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "table/dash-td.blade.php",
+      "disposition": "alias",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/table/dash-td.blade.php",
+      "target": "<x-ui.tabs>",
+      "migration": "Existing tag remains a thin wrapper; migrate opportunistically."
+    },
+    {
+      "path": "table/dash-th.blade.php",
+      "disposition": "alias",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/table/dash-th.blade.php",
+      "target": "<x-ui.tabs>",
+      "migration": "Existing tag remains a thin wrapper; migrate opportunistically."
+    },
+    {
+      "path": "table/org-td.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/table/org-td.blade.php",
+      "target": "<x-ui.tabs>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "table/org-th.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/table/org-th.blade.php",
+      "target": "<x-ui.tabs>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "table/responsive/table.blade.php",
+      "disposition": "alias",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/table/responsive/table.blade.php",
+      "target": "<x-ui.tabs>",
+      "migration": "Existing tag remains a thin wrapper; migrate opportunistically."
+    },
+    {
+      "path": "table/responsive/td.blade.php",
+      "disposition": "alias",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/table/responsive/td.blade.php",
+      "target": "<x-ui.tabs>",
+      "migration": "Existing tag remains a thin wrapper; migrate opportunistically."
+    },
+    {
+      "path": "table/responsive/tr.blade.php",
+      "disposition": "alias",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/table/responsive/tr.blade.php",
+      "target": "<x-ui.tabs>",
+      "migration": "Existing tag remains a thin wrapper; migrate opportunistically."
+    },
+    {
+      "path": "table/wrapper.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/table/wrapper.blade.php",
+      "target": "<x-ui.tabs>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "tabs.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/tabs.blade.php",
+      "target": "<x-ui.tabs>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "text.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/text.blade.php",
+      "target": "Compatibility primitive documented in blade/INSTALL.md",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "textarea.blade.php",
+      "disposition": "canonical",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/textarea.blade.php",
+      "target": "<x-ui.textarea>",
+      "migration": "Replace with the canonical target when touching the call site."
+    },
+    {
+      "path": "toggle-button.blade.php",
+      "disposition": "alias",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/toggle-button.blade.php",
+      "target": "<x-ui.button>",
+      "migration": "Existing tag remains a thin wrapper; migrate opportunistically."
+    },
+    {
+      "path": "users/card.blade.php",
+      "disposition": "reference",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/users/card.blade.php",
+      "target": null,
+      "migration": "Retain in the production application; no distributable source is shipped."
+    },
+    {
+      "path": "users/group-selector.blade.php",
+      "disposition": "reference",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/users/group-selector.blade.php",
+      "target": null,
+      "migration": "Retain in the production application; no distributable source is shipped."
+    },
+    {
+      "path": "users/org-role-badge.blade.php",
+      "disposition": "reference",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/users/org-role-badge.blade.php",
+      "target": null,
+      "migration": "Retain in the production application; no distributable source is shipped."
+    },
+    {
+      "path": "users/role-card.blade.php",
+      "disposition": "reference",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/users/role-card.blade.php",
+      "target": null,
+      "migration": "Retain in the production application; no distributable source is shipped."
+    },
+    {
+      "path": "users/seller-commission-rate-field.blade.php",
+      "disposition": "reference",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/users/seller-commission-rate-field.blade.php",
+      "target": null,
+      "migration": "Retain in the production application; no distributable source is shipped."
+    },
+    {
+      "path": "users/status-badge.blade.php",
+      "disposition": "alias",
+      "source": "_style-reference/multi-channel-sales-platform-main 2/resources/views/components/users/status-badge.blade.php",
+      "target": "<x-ui.badge>",
+      "migration": "Existing tag remains a thin wrapper; migrate opportunistically."
+    }
+  ]
+}

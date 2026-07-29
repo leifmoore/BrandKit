@@ -1,0 +1,2 @@
+@props(['index'])
+<input type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="1" aria-label="Digit {{ (int)$index + 1 }}" data-slot="input-otp-slot" x-on:input="input($event, @js((int)$index))" x-on:keydown="keydown($event, @js((int)$index))" {{ $attributes->class('relative flex size-9 items-center justify-center border-y border-r border-input bg-input-background text-center text-sm shadow-xs outline-none first:rounded-l-md first:border-l last:rounded-r-md focus:z-10 focus:border-ring focus:ring-[3px] focus:ring-ring/50 dark:bg-input/30') }}>

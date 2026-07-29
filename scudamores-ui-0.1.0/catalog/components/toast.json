@@ -1,0 +1,179 @@
+{
+  "$schema": "../component.schema.json",
+  "schemaVersion": "1.0.0",
+  "id": "toast",
+  "title": "Toast / Sonner",
+  "description": "Host-neutral toast viewport and notification surface.",
+  "category": "feedback",
+  "maturity": "stable",
+  "searchTerms": [
+    "toast",
+    "sonner",
+    "notification",
+    "toast / sonner",
+    "react",
+    "blade"
+  ],
+  "react": {
+    "files": [
+      "react/components/ui/sonner.tsx"
+    ],
+    "exports": [
+      "Toaster"
+    ],
+    "props": [
+      {
+        "name": "theme",
+        "type": "\"light\" | \"dark\" | \"system\"",
+        "required": false,
+        "default": "system"
+      },
+      {
+        "name": "position",
+        "type": "ToasterPosition",
+        "required": false,
+        "default": "bottom-right"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Additional consumer layout or spacing classes."
+      }
+    ],
+    "internalDependencies": [
+      "theme"
+    ],
+    "npmDependencies": [
+      {
+        "name": "sonner",
+        "version": "2.0.3",
+        "purpose": "Direct component import"
+      }
+    ],
+    "exampleFiles": [
+      "react/examples/toast/basic.tsx"
+    ]
+  },
+  "blade": {
+    "files": [
+      "blade/library/resources/views/components/ui/sonner.blade.php",
+      "blade/library/resources/views/components/ui/sonner/toast.blade.php",
+      "blade/library/resources/views/components/ui/toast.blade.php"
+    ],
+    "canonicalTag": "<x-ui.toast>",
+    "legacyTags": [],
+    "props": [
+      {
+        "name": "variant",
+        "type": "\"default\" | \"destructive\"",
+        "required": false,
+        "default": "default"
+      },
+      {
+        "name": "duration",
+        "type": "int",
+        "required": false,
+        "default": 5000
+      },
+      {
+        "name": "title",
+        "type": "string | null",
+        "required": false,
+        "default": null
+      }
+    ],
+    "slots": [
+      "default"
+    ],
+    "events": [
+      "ui:toast:change"
+    ],
+    "phpDependencies": [],
+    "runtimeDependencies": [
+      {
+        "name": "alpinejs",
+        "version": "3.15.8",
+        "purpose": "Blade interaction runtime"
+      }
+    ],
+    "installTargets": [
+      "app/View/Components/Ui",
+      "resources/views/components/ui",
+      "resources/js/ui",
+      "resources/css"
+    ],
+    "exampleFiles": [
+      "blade/examples/toast/basic.blade.php"
+    ]
+  },
+  "shared": {
+    "variants": [
+      {
+        "name": "default",
+        "default": true
+      }
+    ],
+    "sizes": [],
+    "states": [
+      "default",
+      "disabled",
+      "focus-visible"
+    ],
+    "responsiveBehavior": [
+      "Retains touch targets and usable wrapping at 360px."
+    ],
+    "tokens": [
+      "--background",
+      "--foreground",
+      "--primary",
+      "--primary-foreground",
+      "--muted",
+      "--muted-foreground",
+      "--border",
+      "--input",
+      "--ring",
+      "--radius"
+    ],
+    "iconMappings": []
+  },
+  "previews": [
+    {
+      "id": "basic",
+      "title": "Basic",
+      "reactExample": "react/examples/toast/basic.tsx",
+      "bladeExample": "blade/examples/toast/basic.blade.php",
+      "states": [
+        "default",
+        "disabled",
+        "focus-visible"
+      ],
+      "supportsDirection": false
+    }
+  ],
+  "parity": {
+    "classification": "documented-exception",
+    "intentionalDifferences": [
+      "React uses Sonner; Blade uses the library-owned Alpine toast store and event lifecycle."
+    ]
+  },
+  "accessibility": {
+    "wcagTarget": "WCAG 2.2 AA",
+    "auditStatus": "passed",
+    "findings": []
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/ui/sonner.tsx",
+        "sha256": "cb523ee7ca1b933a9ed30f7bcbe5c5ce7fec73157b07ac4abcf15ed533ebbbca"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#component-scope",
+      "foundations/docs/exceptions.md"
+    ]
+  }
+}

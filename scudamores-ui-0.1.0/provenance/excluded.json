@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0.0",
+  "sourceCommit": "d1511e224305585680723101a0b76be93eb9f2f0",
+  "items": [
+    { "kind": "react-component", "source": "src/app/components/figma/ImageWithFallback.tsx", "disposition": "excluded", "reason": "Generated Figma scaffold, duplicated and not canonical." },
+    { "kind": "react-components", "source": "Carousel, Chart, Command Palette, Context Menu, Drawer, Hover Card, Menubar, Navigation Menu, Resizable Panels, Sidebar", "disposition": "deferred-inventory", "reason": "Unused complex primitives without sufficient cross-framework product evidence; retained in catalogue inventory but no source is distributed." },
+    { "kind": "domain-source", "source": "Header, DesktopNav, MobileNav, StepUpAuthGate, Quote components, User Management, Roles Tab, Users Tab, Audit Log Panel", "disposition": "reference-only", "reason": "Application context, routes, auth, database, permissions, or business workflow coupling." },
+    { "kind": "blade-source", "source": "placeholder-pattern; layouts/admin/header; layouts/app/header; layouts/auth/card; layouts/auth/split; navbar/index; navbar/item", "disposition": "excluded", "reason": "Confirmed dead production files or unrelated starter-kit decoration." },
+    { "kind": "style", "source": "Existing production CSS", "disposition": "historical-summary", "reason": "Provenance only; it must never compile into the handoff." },
+    { "kind": "style", "source": "Unimported 2,371-line EPOS compiled stylesheet", "disposition": "excluded", "reason": "Dead compiled output rather than maintained source." },
+    { "kind": "documentation", "source": "docs/design-system/extraction/*.json", "disposition": "excluded", "reason": "Raw extraction snapshots contain stale counts and superseded claims." },
+    { "kind": "documentation", "source": "docs/design-system/audit/** and restyle-backlog.md", "disposition": "excluded", "reason": "Completed internal remediation work, not current consumer guidance." },
+    { "kind": "documentation", "source": "Functional parity, RBAC, sql.js, demo data, and product README material", "disposition": "excluded", "reason": "Application behavior is outside component-library scope." },
+    { "kind": "visual", "source": "Historical page screenshot corpus", "disposition": "excluded", "reason": "Stale page-level evidence; release validation creates atomic component baselines." },
+    { "kind": "external-application", "source": "https://brand-kit-ashen.vercel.app/", "disposition": "context-only", "reason": "WIP destination shell; no source or styling is taken from it." }
+  ]
+}

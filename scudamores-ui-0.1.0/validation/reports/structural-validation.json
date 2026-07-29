@@ -1,0 +1,4493 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-28",
+  "status": "passed",
+  "summary": {
+    "checks": 1117,
+    "passed": 1117,
+    "failures": 0,
+    "warnings": 0
+  },
+  "scope": {
+    "paired": 39,
+    "stable": 30,
+    "beta": 9,
+    "deferred": 10,
+    "recipes": 6,
+    "playgroundUtilities": 1,
+    "bladeDispositions": 80,
+    "phpClasses": 7
+  },
+  "failures": [],
+  "warnings": [],
+  "checks": [
+    {
+      "passed": true,
+      "message": "catalogue schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "catalogue contains exactly 39 paired component entries"
+    },
+    {
+      "passed": true,
+      "message": "catalogue contains exactly six recipe entries"
+    },
+    {
+      "passed": true,
+      "message": "catalogue contains exactly ten deferred inventory entries"
+    },
+    {
+      "passed": true,
+      "message": "catalogue contains one Device Preview Frame utility"
+    },
+    {
+      "passed": true,
+      "message": "catalogue records 30 stable and nine beta components"
+    },
+    {
+      "passed": true,
+      "message": "catalogue component IDs are unique"
+    },
+    {
+      "passed": true,
+      "message": "catalogue contains every approved paired component ID"
+    },
+    {
+      "passed": true,
+      "message": "catalogue contains every approved deferred ID"
+    },
+    {
+      "passed": true,
+      "message": "exactly 39 per-component manifests exist"
+    },
+    {
+      "passed": true,
+      "message": "every paired component has a manifest"
+    },
+    {
+      "passed": true,
+      "message": "source lock records a matching approved commit"
+    },
+    {
+      "passed": true,
+      "message": "source lock records a matching approved aggregate"
+    },
+    {
+      "passed": true,
+      "message": "source lock records all 253 baseline files"
+    },
+    {
+      "passed": true,
+      "message": "accordion: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "accordion: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "accordion: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "accordion: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "accordion: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "accordion: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "accordion: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "accordion: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "accordion: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "accordion: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "accordion: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "accordion: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "accordion: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "accordion: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "accordion: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "accordion: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "accordion: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "accordion: declared handoff path exists (react/components/ui/accordion.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "accordion: declared handoff path exists (blade/library/resources/views/components/ui/accordion.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "accordion: declared handoff path exists (blade/library/resources/views/components/ui/accordion/content.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "accordion: declared handoff path exists (blade/library/resources/views/components/ui/accordion/item.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "accordion: declared handoff path exists (blade/library/resources/views/components/ui/accordion/trigger.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "accordion: declared handoff path exists (react/examples/accordion/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "accordion: declared handoff path exists (blade/examples/accordion/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "accordion: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "alert: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "alert: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "alert: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "alert: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "alert: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "alert: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "alert: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "alert: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "alert: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "alert: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "alert: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "alert: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "alert: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "alert: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "alert: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "alert: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "alert: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "alert: declared handoff path exists (react/components/ui/alert.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "alert: declared handoff path exists (blade/library/resources/views/components/ui/alert.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "alert: declared handoff path exists (blade/library/resources/views/components/ui/alert/description.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "alert: declared handoff path exists (blade/library/resources/views/components/ui/alert/title.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "alert: declared handoff path exists (react/examples/alert/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "alert: declared handoff path exists (blade/examples/alert/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "alert: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: declared handoff path exists (react/components/ui/alert-dialog.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: declared handoff path exists (blade/library/resources/views/components/ui/alert-dialog.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: declared handoff path exists (blade/library/resources/views/components/ui/alert-dialog/action.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: declared handoff path exists (blade/library/resources/views/components/ui/alert-dialog/cancel.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: declared handoff path exists (blade/library/resources/views/components/ui/alert-dialog/content.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: declared handoff path exists (blade/library/resources/views/components/ui/alert-dialog/description.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: declared handoff path exists (blade/library/resources/views/components/ui/alert-dialog/footer.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: declared handoff path exists (blade/library/resources/views/components/ui/alert-dialog/header.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: declared handoff path exists (blade/library/resources/views/components/ui/alert-dialog/title.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: declared handoff path exists (blade/library/resources/views/components/ui/alert-dialog/trigger.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: declared handoff path exists (react/examples/alert-dialog/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: declared handoff path exists (blade/examples/alert-dialog/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "alert-dialog: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "aspect-ratio: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "aspect-ratio: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "aspect-ratio: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "aspect-ratio: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "aspect-ratio: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "aspect-ratio: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "aspect-ratio: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "aspect-ratio: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "aspect-ratio: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "aspect-ratio: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "aspect-ratio: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "aspect-ratio: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "aspect-ratio: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "aspect-ratio: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "aspect-ratio: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "aspect-ratio: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "aspect-ratio: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "aspect-ratio: declared handoff path exists (react/components/ui/aspect-ratio.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "aspect-ratio: declared handoff path exists (blade/library/resources/views/components/ui/aspect-ratio.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "aspect-ratio: declared handoff path exists (react/examples/aspect-ratio/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "aspect-ratio: declared handoff path exists (blade/examples/aspect-ratio/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "aspect-ratio: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "avatar: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "avatar: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "avatar: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "avatar: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "avatar: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "avatar: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "avatar: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "avatar: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "avatar: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "avatar: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "avatar: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "avatar: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "avatar: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "avatar: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "avatar: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "avatar: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "avatar: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "avatar: declared handoff path exists (react/components/ui/avatar.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "avatar: declared handoff path exists (blade/library/resources/views/components/ui/avatar.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "avatar: declared handoff path exists (blade/library/resources/views/components/ui/avatar/fallback.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "avatar: declared handoff path exists (blade/library/resources/views/components/ui/avatar/image.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "avatar: declared handoff path exists (react/examples/avatar/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "avatar: declared handoff path exists (blade/examples/avatar/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "avatar: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "badge: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "badge: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "badge: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "badge: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "badge: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "badge: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "badge: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "badge: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "badge: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "badge: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "badge: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "badge: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "badge: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "badge: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "badge: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "badge: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "badge: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "badge: declared handoff path exists (react/components/ui/badge.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "badge: declared handoff path exists (blade/library/resources/views/components/ui/badge.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "badge: declared handoff path exists (react/examples/badge/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "badge: declared handoff path exists (blade/examples/badge/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "badge: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: declared handoff path exists (react/components/ui/breadcrumb.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: declared handoff path exists (blade/library/resources/views/components/ui/breadcrumb.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: declared handoff path exists (blade/library/resources/views/components/ui/breadcrumb/ellipsis.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: declared handoff path exists (blade/library/resources/views/components/ui/breadcrumb/item.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: declared handoff path exists (blade/library/resources/views/components/ui/breadcrumb/link.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: declared handoff path exists (blade/library/resources/views/components/ui/breadcrumb/list.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: declared handoff path exists (blade/library/resources/views/components/ui/breadcrumb/page.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: declared handoff path exists (blade/library/resources/views/components/ui/breadcrumb/separator.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: declared handoff path exists (react/examples/breadcrumb/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: declared handoff path exists (blade/examples/breadcrumb/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "breadcrumb: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "button: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "button: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "button: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "button: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "button: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "button: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "button: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "button: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "button: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "button: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "button: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "button: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "button: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "button: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "button: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "button: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "button: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "button: declared handoff path exists (react/components/ui/button.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "button: declared handoff path exists (blade/library/resources/views/components/ui/button.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "button: declared handoff path exists (blade/library/resources/views/components/ui/button/group.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "button: declared handoff path exists (react/examples/button/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "button: declared handoff path exists (blade/examples/button/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "button: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "calendar: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "calendar: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "calendar: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "calendar: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "calendar: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "calendar: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "calendar: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "calendar: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "calendar: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "calendar: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "calendar: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "calendar: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "calendar: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "calendar: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "calendar: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "calendar: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "calendar: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "calendar: declared handoff path exists (react/components/ui/calendar.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "calendar: declared handoff path exists (blade/library/resources/views/components/ui/calendar.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "calendar: declared handoff path exists (react/examples/calendar/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "calendar: declared handoff path exists (blade/examples/calendar/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "calendar: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "card: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "card: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "card: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "card: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "card: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "card: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "card: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "card: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "card: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "card: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "card: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "card: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "card: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "card: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "card: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "card: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "card: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "card: declared handoff path exists (react/components/ui/card.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "card: declared handoff path exists (blade/library/resources/views/components/ui/card.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "card: declared handoff path exists (blade/library/resources/views/components/ui/card/action.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "card: declared handoff path exists (blade/library/resources/views/components/ui/card/content.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "card: declared handoff path exists (blade/library/resources/views/components/ui/card/description.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "card: declared handoff path exists (blade/library/resources/views/components/ui/card/footer.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "card: declared handoff path exists (blade/library/resources/views/components/ui/card/header.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "card: declared handoff path exists (blade/library/resources/views/components/ui/card/title.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "card: declared handoff path exists (react/examples/card/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "card: declared handoff path exists (blade/examples/card/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "card: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "checkbox: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "checkbox: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "checkbox: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "checkbox: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "checkbox: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "checkbox: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "checkbox: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "checkbox: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "checkbox: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "checkbox: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "checkbox: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "checkbox: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "checkbox: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "checkbox: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "checkbox: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "checkbox: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "checkbox: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "checkbox: declared handoff path exists (react/components/ui/checkbox.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "checkbox: declared handoff path exists (blade/library/resources/views/components/ui/checkbox.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "checkbox: declared handoff path exists (react/examples/checkbox/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "checkbox: declared handoff path exists (blade/examples/checkbox/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "checkbox: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "collapsible: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "collapsible: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "collapsible: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "collapsible: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "collapsible: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "collapsible: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "collapsible: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "collapsible: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "collapsible: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "collapsible: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "collapsible: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "collapsible: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "collapsible: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "collapsible: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "collapsible: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "collapsible: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "collapsible: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "collapsible: declared handoff path exists (react/components/ui/collapsible.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "collapsible: declared handoff path exists (blade/library/resources/views/components/ui/collapsible.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "collapsible: declared handoff path exists (blade/library/resources/views/components/ui/collapsible/content.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "collapsible: declared handoff path exists (blade/library/resources/views/components/ui/collapsible/trigger.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "collapsible: declared handoff path exists (react/examples/collapsible/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "collapsible: declared handoff path exists (blade/examples/collapsible/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "collapsible: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "dialog: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "dialog: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "dialog: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "dialog: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "dialog: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "dialog: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "dialog: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "dialog: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "dialog: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "dialog: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "dialog: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "dialog: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "dialog: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "dialog: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "dialog: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "dialog: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "dialog: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "dialog: declared handoff path exists (react/components/ui/dialog.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "dialog: declared handoff path exists (blade/library/resources/views/components/ui/dialog.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "dialog: declared handoff path exists (blade/library/resources/views/components/ui/dialog/close.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "dialog: declared handoff path exists (blade/library/resources/views/components/ui/dialog/content.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "dialog: declared handoff path exists (blade/library/resources/views/components/ui/dialog/description.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "dialog: declared handoff path exists (blade/library/resources/views/components/ui/dialog/footer.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "dialog: declared handoff path exists (blade/library/resources/views/components/ui/dialog/header.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "dialog: declared handoff path exists (blade/library/resources/views/components/ui/dialog/title.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "dialog: declared handoff path exists (blade/library/resources/views/components/ui/dialog/trigger.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "dialog: declared handoff path exists (react/examples/dialog/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "dialog: declared handoff path exists (blade/examples/dialog/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "dialog: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: declared handoff path exists (react/components/ui/dropdown-menu.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: declared handoff path exists (blade/library/resources/views/components/ui/dropdown-menu.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: declared handoff path exists (blade/library/resources/views/components/ui/dropdown-menu/checkbox-item.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: declared handoff path exists (blade/library/resources/views/components/ui/dropdown-menu/content.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: declared handoff path exists (blade/library/resources/views/components/ui/dropdown-menu/group.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: declared handoff path exists (blade/library/resources/views/components/ui/dropdown-menu/item.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: declared handoff path exists (blade/library/resources/views/components/ui/dropdown-menu/label.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: declared handoff path exists (blade/library/resources/views/components/ui/dropdown-menu/radio-group.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: declared handoff path exists (blade/library/resources/views/components/ui/dropdown-menu/radio-item.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: declared handoff path exists (blade/library/resources/views/components/ui/dropdown-menu/separator.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: declared handoff path exists (blade/library/resources/views/components/ui/dropdown-menu/shortcut.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: declared handoff path exists (blade/library/resources/views/components/ui/dropdown-menu/sub-content.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: declared handoff path exists (blade/library/resources/views/components/ui/dropdown-menu/sub-trigger.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: declared handoff path exists (blade/library/resources/views/components/ui/dropdown-menu/sub.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: declared handoff path exists (blade/library/resources/views/components/ui/dropdown-menu/trigger.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: declared handoff path exists (react/examples/dropdown-menu/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: declared handoff path exists (blade/examples/dropdown-menu/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "dropdown-menu: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "form: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "form: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "form: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "form: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "form: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "form: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "form: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "form: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "form: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "form: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "form: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "form: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "form: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "form: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "form: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "form: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "form: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "form: declared handoff path exists (react/components/ui/form.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "form: declared handoff path exists (blade/library/resources/views/components/ui/form.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "form: declared handoff path exists (blade/library/resources/views/components/ui/form/control.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "form: declared handoff path exists (blade/library/resources/views/components/ui/form/description.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "form: declared handoff path exists (blade/library/resources/views/components/ui/form/item.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "form: declared handoff path exists (blade/library/resources/views/components/ui/form/label.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "form: declared handoff path exists (blade/library/resources/views/components/ui/form/message.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "form: declared handoff path exists (react/examples/form/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "form: declared handoff path exists (blade/examples/form/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "form: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "input: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "input: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "input: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "input: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "input: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "input: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "input: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "input: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "input: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "input: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "input: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "input: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "input: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "input: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "input: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "input: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "input: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "input: declared handoff path exists (react/components/ui/input.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "input: declared handoff path exists (blade/library/resources/views/components/ui/input.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "input: declared handoff path exists (react/examples/input/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "input: declared handoff path exists (blade/examples/input/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "input: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: declared handoff path exists (react/components/ui/input-otp.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: declared handoff path exists (blade/library/resources/views/components/ui/input-otp.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: declared handoff path exists (blade/library/resources/views/components/ui/input-otp/group.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: declared handoff path exists (blade/library/resources/views/components/ui/input-otp/separator.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: declared handoff path exists (blade/library/resources/views/components/ui/input-otp/slot.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: declared handoff path exists (react/examples/input-otp/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: declared handoff path exists (blade/examples/input-otp/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "input-otp: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "label: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "label: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "label: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "label: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "label: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "label: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "label: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "label: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "label: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "label: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "label: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "label: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "label: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "label: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "label: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "label: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "label: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "label: declared handoff path exists (react/components/ui/label.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "label: declared handoff path exists (blade/library/resources/views/components/ui/label.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "label: declared handoff path exists (react/examples/label/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "label: declared handoff path exists (blade/examples/label/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "label: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "page-container: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "page-container: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "page-container: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "page-container: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "page-container: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "page-container: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "page-container: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "page-container: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "page-container: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "page-container: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "page-container: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "page-container: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "page-container: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "page-container: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "page-container: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "page-container: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "page-container: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "page-container: declared handoff path exists (react/components/layout/page-header.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "page-container: declared handoff path exists (blade/library/resources/views/components/ui/page-container.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "page-container: declared handoff path exists (react/examples/page-container/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "page-container: declared handoff path exists (blade/examples/page-container/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "page-container: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "page-header: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "page-header: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "page-header: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "page-header: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "page-header: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "page-header: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "page-header: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "page-header: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "page-header: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "page-header: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "page-header: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "page-header: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "page-header: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "page-header: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "page-header: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "page-header: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "page-header: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "page-header: declared handoff path exists (react/components/layout/page-header.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "page-header: declared handoff path exists (blade/library/resources/views/components/ui/page-header.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "page-header: declared handoff path exists (react/examples/page-header/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "page-header: declared handoff path exists (blade/examples/page-header/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "page-header: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "pagination: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "pagination: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "pagination: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "pagination: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "pagination: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "pagination: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "pagination: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "pagination: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "pagination: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "pagination: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "pagination: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "pagination: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "pagination: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "pagination: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "pagination: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "pagination: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "pagination: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "pagination: declared handoff path exists (react/components/ui/pagination.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "pagination: declared handoff path exists (blade/library/resources/views/components/ui/pagination.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "pagination: declared handoff path exists (blade/library/resources/views/components/ui/pagination/content.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "pagination: declared handoff path exists (blade/library/resources/views/components/ui/pagination/ellipsis.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "pagination: declared handoff path exists (blade/library/resources/views/components/ui/pagination/item.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "pagination: declared handoff path exists (blade/library/resources/views/components/ui/pagination/link.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "pagination: declared handoff path exists (blade/library/resources/views/components/ui/pagination/next.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "pagination: declared handoff path exists (blade/library/resources/views/components/ui/pagination/previous.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "pagination: declared handoff path exists (react/examples/pagination/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "pagination: declared handoff path exists (blade/examples/pagination/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "pagination: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "popover: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "popover: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "popover: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "popover: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "popover: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "popover: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "popover: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "popover: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "popover: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "popover: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "popover: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "popover: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "popover: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "popover: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "popover: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "popover: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "popover: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "popover: declared handoff path exists (react/components/ui/popover.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "popover: declared handoff path exists (blade/library/resources/views/components/ui/popover.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "popover: declared handoff path exists (blade/library/resources/views/components/ui/popover/anchor.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "popover: declared handoff path exists (blade/library/resources/views/components/ui/popover/content.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "popover: declared handoff path exists (blade/library/resources/views/components/ui/popover/trigger.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "popover: declared handoff path exists (react/examples/popover/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "popover: declared handoff path exists (blade/examples/popover/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "popover: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "progress: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "progress: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "progress: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "progress: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "progress: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "progress: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "progress: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "progress: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "progress: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "progress: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "progress: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "progress: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "progress: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "progress: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "progress: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "progress: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "progress: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "progress: declared handoff path exists (react/components/ui/progress.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "progress: declared handoff path exists (blade/library/resources/views/components/ui/progress.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "progress: declared handoff path exists (react/examples/progress/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "progress: declared handoff path exists (blade/examples/progress/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "progress: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "radio-group: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "radio-group: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "radio-group: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "radio-group: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "radio-group: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "radio-group: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "radio-group: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "radio-group: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "radio-group: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "radio-group: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "radio-group: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "radio-group: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "radio-group: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "radio-group: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "radio-group: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "radio-group: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "radio-group: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "radio-group: declared handoff path exists (react/components/ui/radio-group.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "radio-group: declared handoff path exists (blade/library/resources/views/components/ui/radio-group.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "radio-group: declared handoff path exists (blade/library/resources/views/components/ui/radio-group/item.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "radio-group: declared handoff path exists (react/examples/radio-group/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "radio-group: declared handoff path exists (blade/examples/radio-group/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "radio-group: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "scroll-area: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "scroll-area: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "scroll-area: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "scroll-area: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "scroll-area: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "scroll-area: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "scroll-area: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "scroll-area: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "scroll-area: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "scroll-area: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "scroll-area: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "scroll-area: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "scroll-area: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "scroll-area: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "scroll-area: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "scroll-area: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "scroll-area: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "scroll-area: declared handoff path exists (react/components/ui/scroll-area.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "scroll-area: declared handoff path exists (blade/library/resources/views/components/ui/scroll-area.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "scroll-area: declared handoff path exists (blade/library/resources/views/components/ui/scroll-area/bar.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "scroll-area: declared handoff path exists (react/examples/scroll-area/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "scroll-area: declared handoff path exists (blade/examples/scroll-area/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "scroll-area: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "select: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "select: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "select: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "select: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "select: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "select: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "select: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "select: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "select: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "select: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "select: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "select: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "select: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "select: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "select: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "select: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "select: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "select: declared handoff path exists (react/components/ui/select.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "select: declared handoff path exists (blade/library/resources/views/components/ui/select.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "select: declared handoff path exists (react/examples/select/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "select: declared handoff path exists (blade/examples/select/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "select: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "separator: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "separator: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "separator: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "separator: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "separator: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "separator: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "separator: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "separator: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "separator: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "separator: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "separator: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "separator: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "separator: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "separator: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "separator: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "separator: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "separator: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "separator: declared handoff path exists (react/components/ui/separator.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "separator: declared handoff path exists (blade/library/resources/views/components/ui/separator.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "separator: declared handoff path exists (react/examples/separator/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "separator: declared handoff path exists (blade/examples/separator/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "separator: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "sheet: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "sheet: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "sheet: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "sheet: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "sheet: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "sheet: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "sheet: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "sheet: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "sheet: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "sheet: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "sheet: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "sheet: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "sheet: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "sheet: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "sheet: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "sheet: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "sheet: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "sheet: declared handoff path exists (react/components/ui/sheet.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "sheet: declared handoff path exists (blade/library/resources/views/components/ui/sheet.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "sheet: declared handoff path exists (blade/library/resources/views/components/ui/sheet/close.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "sheet: declared handoff path exists (blade/library/resources/views/components/ui/sheet/content.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "sheet: declared handoff path exists (blade/library/resources/views/components/ui/sheet/description.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "sheet: declared handoff path exists (blade/library/resources/views/components/ui/sheet/footer.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "sheet: declared handoff path exists (blade/library/resources/views/components/ui/sheet/header.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "sheet: declared handoff path exists (blade/library/resources/views/components/ui/sheet/title.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "sheet: declared handoff path exists (blade/library/resources/views/components/ui/sheet/trigger.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "sheet: declared handoff path exists (react/examples/sheet/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "sheet: declared handoff path exists (blade/examples/sheet/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "sheet: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "skeleton: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "skeleton: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "skeleton: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "skeleton: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "skeleton: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "skeleton: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "skeleton: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "skeleton: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "skeleton: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "skeleton: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "skeleton: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "skeleton: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "skeleton: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "skeleton: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "skeleton: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "skeleton: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "skeleton: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "skeleton: declared handoff path exists (react/components/ui/skeleton.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "skeleton: declared handoff path exists (blade/library/resources/views/components/ui/skeleton.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "skeleton: declared handoff path exists (react/examples/skeleton/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "skeleton: declared handoff path exists (blade/examples/skeleton/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "skeleton: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "slider: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "slider: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "slider: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "slider: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "slider: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "slider: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "slider: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "slider: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "slider: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "slider: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "slider: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "slider: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "slider: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "slider: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "slider: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "slider: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "slider: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "slider: declared handoff path exists (react/components/ui/slider.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "slider: declared handoff path exists (blade/library/resources/views/components/ui/slider.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "slider: declared handoff path exists (react/examples/slider/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "slider: declared handoff path exists (blade/examples/slider/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "slider: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "toast: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "toast: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "toast: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "toast: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "toast: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "toast: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "toast: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "toast: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "toast: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "toast: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "toast: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "toast: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "toast: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "toast: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "toast: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "toast: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "toast: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "toast: declared handoff path exists (react/components/ui/sonner.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "toast: declared handoff path exists (blade/library/resources/views/components/ui/sonner.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "toast: declared handoff path exists (blade/library/resources/views/components/ui/sonner/toast.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "toast: declared handoff path exists (blade/library/resources/views/components/ui/toast.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "toast: declared handoff path exists (react/examples/toast/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "toast: declared handoff path exists (blade/examples/toast/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "toast: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "stepper: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "stepper: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "stepper: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "stepper: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "stepper: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "stepper: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "stepper: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "stepper: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "stepper: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "stepper: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "stepper: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "stepper: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "stepper: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "stepper: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "stepper: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "stepper: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "stepper: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "stepper: declared handoff path exists (react/components/ui/stepper.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "stepper: declared handoff path exists (blade/library/resources/views/components/ui/stepper.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "stepper: declared handoff path exists (react/examples/stepper/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "stepper: declared handoff path exists (blade/examples/stepper/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "stepper: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "switch: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "switch: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "switch: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "switch: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "switch: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "switch: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "switch: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "switch: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "switch: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "switch: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "switch: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "switch: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "switch: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "switch: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "switch: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "switch: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "switch: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "switch: declared handoff path exists (react/components/ui/switch.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "switch: declared handoff path exists (blade/library/resources/views/components/ui/switch.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "switch: declared handoff path exists (react/examples/switch/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "switch: declared handoff path exists (blade/examples/switch/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "switch: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "table: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "table: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "table: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "table: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "table: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "table: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "table: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "table: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "table: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "table: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "table: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "table: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "table: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "table: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "table: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "table: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "table: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "table: declared handoff path exists (react/components/ui/table.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "table: declared handoff path exists (blade/library/resources/views/components/ui/table.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "table: declared handoff path exists (blade/library/resources/views/components/ui/table/body.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "table: declared handoff path exists (blade/library/resources/views/components/ui/table/caption.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "table: declared handoff path exists (blade/library/resources/views/components/ui/table/cell.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "table: declared handoff path exists (blade/library/resources/views/components/ui/table/footer.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "table: declared handoff path exists (blade/library/resources/views/components/ui/table/head.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "table: declared handoff path exists (blade/library/resources/views/components/ui/table/header.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "table: declared handoff path exists (blade/library/resources/views/components/ui/table/row.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "table: declared handoff path exists (react/examples/table/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "table: declared handoff path exists (blade/examples/table/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "table: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "tabs: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "tabs: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "tabs: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "tabs: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "tabs: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "tabs: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "tabs: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "tabs: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "tabs: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "tabs: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "tabs: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "tabs: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "tabs: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "tabs: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "tabs: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "tabs: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "tabs: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "tabs: declared handoff path exists (react/components/ui/tabs.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "tabs: declared handoff path exists (blade/library/resources/views/components/ui/tabs.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "tabs: declared handoff path exists (blade/library/resources/views/components/ui/tabs/content.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "tabs: declared handoff path exists (blade/library/resources/views/components/ui/tabs/list.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "tabs: declared handoff path exists (blade/library/resources/views/components/ui/tabs/trigger.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "tabs: declared handoff path exists (react/examples/tabs/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "tabs: declared handoff path exists (blade/examples/tabs/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "tabs: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "textarea: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "textarea: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "textarea: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "textarea: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "textarea: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "textarea: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "textarea: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "textarea: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "textarea: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "textarea: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "textarea: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "textarea: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "textarea: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "textarea: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "textarea: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "textarea: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "textarea: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "textarea: declared handoff path exists (react/components/ui/textarea.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "textarea: declared handoff path exists (blade/library/resources/views/components/ui/textarea.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "textarea: declared handoff path exists (react/examples/textarea/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "textarea: declared handoff path exists (blade/examples/textarea/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "textarea: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "toggle: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "toggle: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "toggle: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "toggle: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "toggle: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "toggle: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "toggle: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "toggle: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "toggle: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "toggle: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "toggle: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "toggle: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "toggle: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "toggle: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "toggle: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "toggle: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "toggle: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "toggle: declared handoff path exists (react/components/ui/toggle.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "toggle: declared handoff path exists (blade/library/resources/views/components/ui/toggle.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "toggle: declared handoff path exists (react/examples/toggle/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "toggle: declared handoff path exists (blade/examples/toggle/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "toggle: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "toggle-group: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "toggle-group: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "toggle-group: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "toggle-group: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "toggle-group: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "toggle-group: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "toggle-group: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "toggle-group: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "toggle-group: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "toggle-group: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "toggle-group: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "toggle-group: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "toggle-group: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "toggle-group: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "toggle-group: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "toggle-group: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "toggle-group: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "toggle-group: declared handoff path exists (react/components/ui/toggle-group.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "toggle-group: declared handoff path exists (blade/library/resources/views/components/ui/toggle-group.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "toggle-group: declared handoff path exists (blade/library/resources/views/components/ui/toggle-group/item.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "toggle-group: declared handoff path exists (react/examples/toggle-group/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "toggle-group: declared handoff path exists (blade/examples/toggle-group/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "toggle-group: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "tooltip: all required component-manifest fields exist"
+    },
+    {
+      "passed": true,
+      "message": "tooltip: manifest ID matches its filename"
+    },
+    {
+      "passed": true,
+      "message": "tooltip: schema version is 1.0.0"
+    },
+    {
+      "passed": true,
+      "message": "tooltip: approved maturity is recorded"
+    },
+    {
+      "passed": true,
+      "message": "tooltip: complete React contract exists"
+    },
+    {
+      "passed": true,
+      "message": "tooltip: complete Blade contract exists"
+    },
+    {
+      "passed": true,
+      "message": "tooltip: canonical Blade tag is consistent"
+    },
+    {
+      "passed": true,
+      "message": "tooltip: React props are structured"
+    },
+    {
+      "passed": true,
+      "message": "tooltip: Blade props are structured"
+    },
+    {
+      "passed": true,
+      "message": "tooltip: exact React dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "tooltip: exact Blade runtime dependencies are declared"
+    },
+    {
+      "passed": true,
+      "message": "tooltip: shared variants, sizes, and states exist"
+    },
+    {
+      "passed": true,
+      "message": "tooltip: shared token references use CSS custom-property names"
+    },
+    {
+      "passed": true,
+      "message": "tooltip: parity classification is valid"
+    },
+    {
+      "passed": true,
+      "message": "tooltip: WCAG target and audit state are explicit"
+    },
+    {
+      "passed": true,
+      "message": "tooltip: approved source commit is recorded"
+    },
+    {
+      "passed": true,
+      "message": "tooltip: source paths and hashes match the centralized lock"
+    },
+    {
+      "passed": true,
+      "message": "tooltip: declared handoff path exists (react/components/ui/tooltip.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "tooltip: declared handoff path exists (blade/library/resources/views/components/ui/tooltip.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "tooltip: declared handoff path exists (blade/library/resources/views/components/ui/tooltip/content.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "tooltip: declared handoff path exists (blade/library/resources/views/components/ui/tooltip/trigger.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "tooltip: declared handoff path exists (react/examples/tooltip/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "tooltip: declared handoff path exists (blade/examples/tooltip/basic.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "tooltip: generated documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "approved stable scope contains exactly 30 components"
+    },
+    {
+      "passed": true,
+      "message": "approved beta scope contains exactly nine components"
+    },
+    {
+      "passed": true,
+      "message": "carousel: deferred documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "chart: deferred documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "command-palette: deferred documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "context-menu: deferred documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "drawer: deferred documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "hover-card: deferred documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "menubar: deferred documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "navigation-menu: deferred documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "resizable-panels: deferred documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "sidebar: deferred documentation exists"
+    },
+    {
+      "passed": true,
+      "message": "quick-launch: recipe manifest exists and identifies itself"
+    },
+    {
+      "passed": true,
+      "message": "quick-launch: recipe is not advertised as a standalone component API"
+    },
+    {
+      "passed": true,
+      "message": "quick-launch: recipe path exists (recipes/quick-launch/fixtures/basic.json)"
+    },
+    {
+      "passed": true,
+      "message": "quick-launch: recipe path exists (recipes/quick-launch/README.md)"
+    },
+    {
+      "passed": true,
+      "message": "quick-launch: recipe path exists (recipes/quick-launch/react/QuickLaunchRecipe.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "quick-launch: recipe path exists (recipes/quick-launch/blade/quick-launch.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "quick-launch: recipe provenance matches the source lock"
+    },
+    {
+      "passed": true,
+      "message": "availability-toggle-list: recipe manifest exists and identifies itself"
+    },
+    {
+      "passed": true,
+      "message": "availability-toggle-list: recipe is not advertised as a standalone component API"
+    },
+    {
+      "passed": true,
+      "message": "availability-toggle-list: recipe path exists (recipes/availability-toggle-list/fixtures/basic.json)"
+    },
+    {
+      "passed": true,
+      "message": "availability-toggle-list: recipe path exists (recipes/availability-toggle-list/README.md)"
+    },
+    {
+      "passed": true,
+      "message": "availability-toggle-list: recipe path exists (recipes/availability-toggle-list/react/AvailabilityToggleListRecipe.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "availability-toggle-list: recipe path exists (recipes/availability-toggle-list/blade/availability-toggle-list.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "availability-toggle-list: recipe provenance matches the source lock"
+    },
+    {
+      "passed": true,
+      "message": "channel-logo-picker: recipe manifest exists and identifies itself"
+    },
+    {
+      "passed": true,
+      "message": "channel-logo-picker: recipe is not advertised as a standalone component API"
+    },
+    {
+      "passed": true,
+      "message": "channel-logo-picker: recipe path exists (recipes/channel-logo-picker/fixtures/basic.json)"
+    },
+    {
+      "passed": true,
+      "message": "channel-logo-picker: recipe path exists (recipes/channel-logo-picker/README.md)"
+    },
+    {
+      "passed": true,
+      "message": "channel-logo-picker: recipe path exists (recipes/channel-logo-picker/react/ChannelLogoPickerRecipe.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "channel-logo-picker: recipe path exists (recipes/channel-logo-picker/blade/channel-logo-picker.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "channel-logo-picker: recipe provenance matches the source lock"
+    },
+    {
+      "passed": true,
+      "message": "booking-card: recipe manifest exists and identifies itself"
+    },
+    {
+      "passed": true,
+      "message": "booking-card: recipe is not advertised as a standalone component API"
+    },
+    {
+      "passed": true,
+      "message": "booking-card: recipe path exists (recipes/booking-card/fixtures/basic.json)"
+    },
+    {
+      "passed": true,
+      "message": "booking-card: recipe path exists (recipes/booking-card/README.md)"
+    },
+    {
+      "passed": true,
+      "message": "booking-card: recipe path exists (recipes/booking-card/react/BookingCardRecipe.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "booking-card: recipe path exists (recipes/booking-card/blade/booking-card.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "booking-card: recipe provenance matches the source lock"
+    },
+    {
+      "passed": true,
+      "message": "booking-details-dialog: recipe manifest exists and identifies itself"
+    },
+    {
+      "passed": true,
+      "message": "booking-details-dialog: recipe is not advertised as a standalone component API"
+    },
+    {
+      "passed": true,
+      "message": "booking-details-dialog: recipe path exists (recipes/booking-details-dialog/fixtures/basic.json)"
+    },
+    {
+      "passed": true,
+      "message": "booking-details-dialog: recipe path exists (recipes/booking-details-dialog/README.md)"
+    },
+    {
+      "passed": true,
+      "message": "booking-details-dialog: recipe path exists (recipes/booking-details-dialog/react/BookingDetailsDialogRecipe.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "booking-details-dialog: recipe path exists (recipes/booking-details-dialog/blade/booking-details-dialog.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "booking-details-dialog: recipe provenance matches the source lock"
+    },
+    {
+      "passed": true,
+      "message": "people-popover-content: recipe manifest exists and identifies itself"
+    },
+    {
+      "passed": true,
+      "message": "people-popover-content: recipe is not advertised as a standalone component API"
+    },
+    {
+      "passed": true,
+      "message": "people-popover-content: recipe path exists (recipes/people-popover-content/fixtures/basic.json)"
+    },
+    {
+      "passed": true,
+      "message": "people-popover-content: recipe path exists (recipes/people-popover-content/README.md)"
+    },
+    {
+      "passed": true,
+      "message": "people-popover-content: recipe path exists (recipes/people-popover-content/react/PeoplePopoverContentRecipe.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "people-popover-content: recipe path exists (recipes/people-popover-content/blade/people-popover-content.blade.php)"
+    },
+    {
+      "passed": true,
+      "message": "people-popover-content: recipe provenance matches the source lock"
+    },
+    {
+      "passed": true,
+      "message": "the Device Preview Frame utility exists"
+    },
+    {
+      "passed": true,
+      "message": "Blade crosswalk contains exactly 80 source dispositions"
+    },
+    {
+      "passed": true,
+      "message": "Blade crosswalk paths are unique"
+    },
+    {
+      "passed": true,
+      "message": "Blade crosswalk has exactly 34 canonical dispositions"
+    },
+    {
+      "passed": true,
+      "message": "Blade crosswalk has exactly 21 alias dispositions"
+    },
+    {
+      "passed": true,
+      "message": "Blade crosswalk has exactly 18 reference dispositions"
+    },
+    {
+      "passed": true,
+      "message": "Blade crosswalk has exactly 7 exclude dispositions"
+    },
+    {
+      "passed": true,
+      "message": "every Blade disposition includes source, target, and migration guidance"
+    },
+    {
+      "passed": true,
+      "message": "Blade crosswalk records seven supporting PHP classes"
+    },
+    {
+      "passed": true,
+      "message": "exactly seven canonical PHP component classes exist"
+    },
+    {
+      "passed": true,
+      "message": "exactly 21 compatibility alias views exist"
+    },
+    {
+      "passed": true,
+      "message": "exactly 39 canonical Blade examples exist"
+    },
+    {
+      "passed": true,
+      "message": "exactly 39 canonical React examples exist"
+    },
+    {
+      "passed": true,
+      "message": "React registry exposes exactly 39 copyable component entries plus shared library records"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/utils.ts)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (runtime/theme.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/alert.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/alert/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/alert-dialog.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/alert-dialog/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/badge.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/badge/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/button.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/button/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/calendar.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/calendar/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/card.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/card/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/checkbox.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/checkbox/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/collapsible.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/collapsible/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/dialog.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/dialog/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/dropdown-menu.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/dropdown-menu/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/input.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/input/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/input-otp.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/input-otp/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/label.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/label/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/layout/page-header.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/page-container/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/layout/page-header.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/page-header/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/popover.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/popover/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/radio-group.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/radio-group/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/scroll-area.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/scroll-area/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/select.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/select/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/separator.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/separator/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/sheet.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/sheet/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/sonner.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/toast/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/stepper.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/stepper/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/switch.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/switch/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/table.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/table/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/tabs.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/tabs/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/textarea.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/textarea/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/toggle.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/toggle/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/toggle-group.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/toggle-group/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/tooltip.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/tooltip/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/accordion.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/accordion/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/aspect-ratio.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/aspect-ratio/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/avatar.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/avatar/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/breadcrumb.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/breadcrumb/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/form.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/form/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/pagination.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/pagination/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/progress.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/progress/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/skeleton.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/skeleton/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (components/ui/slider.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "React registry path exists (examples/slider/basic.tsx)"
+    },
+    {
+      "passed": true,
+      "message": "tokens contain light and dark semantic modes"
+    },
+    {
+      "passed": true,
+      "message": "tokens contain chart, sidebar, and status roles"
+    },
+    {
+      "passed": true,
+      "message": "exactly seven brand presets are declared"
+    },
+    {
+      "passed": true,
+      "message": "Instrument Sans licence is retained"
+    },
+    {
+      "passed": true,
+      "message": "foundations/data/tokens.json: maintained token input is hashable"
+    },
+    {
+      "passed": true,
+      "message": "foundations/data/brands.json: maintained token input is hashable"
+    }
+  ]
+}

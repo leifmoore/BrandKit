@@ -1,0 +1,1 @@
+<div role="menu" x-cloak x-show="open" x-transition x-on:mouseleave="close()" {{ $attributes->class('absolute left-full top-0 z-50 ml-1 min-w-48 rounded-lg border bg-popover p-[.3125rem] text-popover-foreground shadow-xs') }}>{{ $slot }}</div>

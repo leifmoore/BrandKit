@@ -1,0 +1,7 @@
+{
+  "items": [
+    { "id": "river-desk", "name": "River desk", "subtitle": "Mill Lane" },
+    { "id": "quayside", "name": "Quayside", "subtitle": "Quayside" },
+    { "id": "private-tours", "name": "Private tours", "subtitle": "Partner sales" }
+  ]
+}

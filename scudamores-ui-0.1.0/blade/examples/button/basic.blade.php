@@ -1,0 +1,1 @@
+<div class="flex flex-wrap gap-2"><x-ui.button>Continue</x-ui.button><x-ui.button variant="outline">Cancel</x-ui.button><x-ui.button variant="destructive">Delete</x-ui.button><x-ui.button variant="ghost">More</x-ui.button><x-ui.button size="icon" aria-label="Add"><x-phosphor-plus aria-hidden="true" /></x-ui.button></div>

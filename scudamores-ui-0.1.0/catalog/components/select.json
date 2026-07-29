@@ -1,0 +1,237 @@
+{
+  "$schema": "../component.schema.json",
+  "schemaVersion": "1.0.0",
+  "id": "select",
+  "title": "Select",
+  "description": "Single-option selection with reliable framework-native form semantics.",
+  "category": "forms",
+  "maturity": "stable",
+  "searchTerms": [
+    "select",
+    "option",
+    "dropdown",
+    "react",
+    "blade"
+  ],
+  "react": {
+    "files": [
+      "react/components/ui/select.tsx"
+    ],
+    "exports": [
+      "Select",
+      "SelectTrigger",
+      "SelectValue",
+      "SelectContent",
+      "SelectGroup",
+      "SelectLabel",
+      "SelectItem",
+      "SelectSeparator",
+      "SelectScrollUpButton",
+      "SelectScrollDownButton"
+    ],
+    "props": [
+      {
+        "name": "value",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "defaultValue",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "onValueChange",
+        "type": "(value: string) => void",
+        "required": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "default": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Additional consumer layout or spacing classes."
+      }
+    ],
+    "internalDependencies": [],
+    "npmDependencies": [
+      {
+        "name": "@radix-ui/react-select",
+        "version": "2.1.6",
+        "purpose": "Direct component import"
+      },
+      {
+        "name": "lucide-react",
+        "version": "0.487.0",
+        "purpose": "Direct component import"
+      }
+    ],
+    "exampleFiles": [
+      "react/examples/select/basic.tsx"
+    ]
+  },
+  "blade": {
+    "files": [
+      "blade/library/resources/views/components/ui/select.blade.php"
+    ],
+    "canonicalTag": "<x-ui.select>",
+    "legacyTags": [
+      "<x-select>"
+    ],
+    "props": [
+      {
+        "name": "name",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "id",
+        "type": "string | null",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "options",
+        "type": "array | enum class",
+        "required": false,
+        "default": []
+      },
+      {
+        "name": "value",
+        "type": "mixed",
+        "required": false,
+        "default": ""
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "name": "bag",
+        "type": "string",
+        "required": false,
+        "default": "default"
+      },
+      {
+        "name": "multiple",
+        "type": "bool",
+        "required": false,
+        "default": false
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "required": false,
+        "default": ""
+      }
+    ],
+    "slots": [
+      "default"
+    ],
+    "events": [],
+    "phpDependencies": [
+      "App\\View\\Components\\Ui\\Select"
+    ],
+    "runtimeDependencies": [],
+    "installTargets": [
+      "app/View/Components/Ui",
+      "resources/views/components/ui",
+      "resources/js/ui",
+      "resources/css"
+    ],
+    "exampleFiles": [
+      "blade/examples/select/basic.blade.php"
+    ]
+  },
+  "shared": {
+    "variants": [
+      {
+        "name": "default",
+        "default": true
+      }
+    ],
+    "sizes": [],
+    "states": [
+      "default",
+      "disabled",
+      "focus-visible",
+      "controlled",
+      "uncontrolled",
+      "invalid"
+    ],
+    "responsiveBehavior": [
+      "Retains touch targets and usable wrapping at 360px."
+    ],
+    "tokens": [
+      "--background",
+      "--foreground",
+      "--primary",
+      "--primary-foreground",
+      "--muted",
+      "--muted-foreground",
+      "--border",
+      "--input",
+      "--ring",
+      "--radius"
+    ],
+    "iconMappings": [
+      {
+        "meaning": "open",
+        "react": "ChevronDown",
+        "blade": "caret-down",
+        "size": "16px",
+        "weight": "regular"
+      }
+    ]
+  },
+  "previews": [
+    {
+      "id": "basic",
+      "title": "Basic",
+      "reactExample": "react/examples/select/basic.tsx",
+      "bladeExample": "blade/examples/select/basic.blade.php",
+      "states": [
+        "default",
+        "disabled",
+        "focus-visible",
+        "controlled",
+        "uncontrolled",
+        "invalid"
+      ],
+      "supportsDirection": true
+    }
+  ],
+  "parity": {
+    "classification": "documented-exception",
+    "intentionalDifferences": [
+      "Blade intentionally uses a native select for form reliability. Its operating-system popup and multiple-selection mode do not visually match the React popup.",
+      "React uses Lucide and Blade uses Phosphor; semantic glyph, rendered size, weight, colour and alignment match while path shapes may differ."
+    ]
+  },
+  "accessibility": {
+    "wcagTarget": "WCAG 2.2 AA",
+    "auditStatus": "passed",
+    "findings": []
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/ui/select.tsx",
+        "sha256": "568d45891a7f97b21d8968b4239be49f7fb9beb544c1d5ed0fe31bf87eed8547"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#component-scope",
+      "foundations/docs/exceptions.md"
+    ]
+  }
+}

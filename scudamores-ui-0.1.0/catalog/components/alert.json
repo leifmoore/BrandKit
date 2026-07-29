@@ -1,0 +1,158 @@
+{
+  "$schema": "../component.schema.json",
+  "schemaVersion": "1.0.0",
+  "id": "alert",
+  "title": "Alert",
+  "description": "Persistent contextual feedback with semantic variants.",
+  "category": "feedback",
+  "maturity": "stable",
+  "searchTerms": [
+    "alert",
+    "message",
+    "feedback",
+    "react",
+    "blade"
+  ],
+  "react": {
+    "files": [
+      "react/components/ui/alert.tsx"
+    ],
+    "exports": [
+      "Alert",
+      "AlertTitle",
+      "AlertDescription"
+    ],
+    "props": [
+      {
+        "name": "variant",
+        "type": "\"default\" | \"destructive\"",
+        "required": false,
+        "default": "default"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Additional consumer layout or spacing classes."
+      }
+    ],
+    "internalDependencies": [],
+    "npmDependencies": [
+      {
+        "name": "class-variance-authority",
+        "version": "0.7.1",
+        "purpose": "Direct component import"
+      }
+    ],
+    "exampleFiles": [
+      "react/examples/alert/basic.tsx"
+    ]
+  },
+  "blade": {
+    "files": [
+      "blade/library/resources/views/components/ui/alert.blade.php",
+      "blade/library/resources/views/components/ui/alert/description.blade.php",
+      "blade/library/resources/views/components/ui/alert/title.blade.php"
+    ],
+    "canonicalTag": "<x-ui.alert>",
+    "legacyTags": [
+      "<x-action-message>",
+      "<x-auth-session-status>",
+      "<x-session-status>"
+    ],
+    "props": [
+      {
+        "name": "variant",
+        "type": "string",
+        "required": false,
+        "default": "default"
+      }
+    ],
+    "slots": [
+      "default",
+      "title",
+      "description"
+    ],
+    "events": [],
+    "phpDependencies": [],
+    "runtimeDependencies": [],
+    "installTargets": [
+      "app/View/Components/Ui",
+      "resources/views/components/ui",
+      "resources/js/ui",
+      "resources/css"
+    ],
+    "exampleFiles": [
+      "blade/examples/alert/basic.blade.php"
+    ]
+  },
+  "shared": {
+    "variants": [
+      {
+        "name": "default",
+        "default": true
+      },
+      {
+        "name": "destructive"
+      }
+    ],
+    "sizes": [],
+    "states": [
+      "default",
+      "disabled",
+      "focus-visible"
+    ],
+    "responsiveBehavior": [
+      "Retains touch targets and usable wrapping at 360px."
+    ],
+    "tokens": [
+      "--background",
+      "--foreground",
+      "--primary",
+      "--primary-foreground",
+      "--muted",
+      "--muted-foreground",
+      "--border",
+      "--input",
+      "--ring",
+      "--radius"
+    ],
+    "iconMappings": []
+  },
+  "previews": [
+    {
+      "id": "basic",
+      "title": "Basic",
+      "reactExample": "react/examples/alert/basic.tsx",
+      "bladeExample": "blade/examples/alert/basic.blade.php",
+      "states": [
+        "default",
+        "disabled",
+        "focus-visible"
+      ],
+      "supportsDirection": false
+    }
+  ],
+  "parity": {
+    "classification": "framework-equivalent",
+    "intentionalDifferences": []
+  },
+  "accessibility": {
+    "wcagTarget": "WCAG 2.2 AA",
+    "auditStatus": "passed",
+    "findings": []
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/ui/alert.tsx",
+        "sha256": "19835c5f03b78e8915b5e8900a0681ddfb83e3bcc0c9930e62f31c01e4dfb129"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#component-scope"
+    ]
+  }
+}

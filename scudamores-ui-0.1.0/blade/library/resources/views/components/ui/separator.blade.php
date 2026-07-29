@@ -1,0 +1,2 @@
+@props(['orientation' => 'horizontal', 'decorative' => true])
+<div @if(!$decorative) role="separator" aria-orientation="{{ $orientation }}" @endif data-slot="separator-root" data-orientation="{{ $orientation }}" {{ $attributes->class('shrink-0 bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px') }}></div>

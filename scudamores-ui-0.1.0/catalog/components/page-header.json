@@ -1,0 +1,159 @@
+{
+  "$schema": "../component.schema.json",
+  "schemaVersion": "1.0.0",
+  "id": "page-header",
+  "title": "Page Header",
+  "description": "Page title, subtitle and responsive action region.",
+  "category": "layout",
+  "maturity": "stable",
+  "searchTerms": [
+    "page header",
+    "title",
+    "actions",
+    "react",
+    "blade"
+  ],
+  "react": {
+    "files": [
+      "react/components/layout/page-header.tsx"
+    ],
+    "exports": [
+      "PageHeader"
+    ],
+    "props": [
+      {
+        "name": "title",
+        "type": "ReactNode",
+        "required": true
+      },
+      {
+        "name": "subtitle",
+        "type": "ReactNode",
+        "required": false
+      },
+      {
+        "name": "actions",
+        "type": "ReactNode",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Additional consumer layout or spacing classes."
+      }
+    ],
+    "internalDependencies": [],
+    "npmDependencies": [],
+    "exampleFiles": [
+      "react/examples/page-header/basic.tsx"
+    ]
+  },
+  "blade": {
+    "files": [
+      "blade/library/resources/views/components/ui/page-header.blade.php"
+    ],
+    "canonicalTag": "<x-ui.page-header>",
+    "legacyTags": [
+      "<x-layouts.app.page>",
+      "<x-layouts.admin.page>"
+    ],
+    "props": [
+      {
+        "name": "title",
+        "type": "string | null",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "subtitle",
+        "type": "string | null",
+        "required": false,
+        "default": null
+      }
+    ],
+    "slots": [
+      "default",
+      "actions"
+    ],
+    "events": [],
+    "phpDependencies": [],
+    "runtimeDependencies": [],
+    "installTargets": [
+      "app/View/Components/Ui",
+      "resources/views/components/ui",
+      "resources/js/ui",
+      "resources/css"
+    ],
+    "exampleFiles": [
+      "blade/examples/page-header/basic.blade.php"
+    ]
+  },
+  "shared": {
+    "variants": [
+      {
+        "name": "default",
+        "default": true
+      }
+    ],
+    "sizes": [],
+    "states": [
+      "default",
+      "disabled",
+      "focus-visible"
+    ],
+    "responsiveBehavior": [
+      "Retains touch targets and usable wrapping at 360px.",
+      "Layout adapts at the documented sm and lg breakpoints."
+    ],
+    "tokens": [
+      "--background",
+      "--foreground",
+      "--primary",
+      "--primary-foreground",
+      "--muted",
+      "--muted-foreground",
+      "--border",
+      "--input",
+      "--ring",
+      "--radius"
+    ],
+    "iconMappings": []
+  },
+  "previews": [
+    {
+      "id": "basic",
+      "title": "Basic",
+      "reactExample": "react/examples/page-header/basic.tsx",
+      "bladeExample": "blade/examples/page-header/basic.blade.php",
+      "states": [
+        "default",
+        "disabled",
+        "focus-visible"
+      ],
+      "supportsDirection": false
+    }
+  ],
+  "parity": {
+    "classification": "framework-equivalent",
+    "intentionalDifferences": []
+  },
+  "accessibility": {
+    "wcagTarget": "WCAG 2.2 AA",
+    "auditStatus": "passed",
+    "findings": []
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/PageHeader.tsx",
+        "sha256": "b2054b5f9dafa04493b47fa19c3ebb2e75033a0bd85d563f02cedba115f66529"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#component-scope"
+    ]
+  }
+}

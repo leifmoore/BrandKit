@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "channel-logo-picker",
+  "title": "Channel Logo Picker",
+  "description": "Host-controlled channel logo selection.",
+  "category": "channels",
+  "maturity": "stable",
+  "kind": "recipe",
+  "searchTerms": [
+    "logo",
+    "upload",
+    "channel"
+  ],
+  "fixture": "recipes/channel-logo-picker/fixtures/basic.json",
+  "documentation": "recipes/channel-logo-picker/README.md",
+  "react": {
+    "files": [
+      "recipes/channel-logo-picker/react/ChannelLogoPickerRecipe.tsx"
+    ],
+    "exampleData": "recipes/channel-logo-picker/fixtures/basic.json"
+  },
+  "blade": {
+    "files": [
+      "recipes/channel-logo-picker/blade/channel-logo-picker.blade.php"
+    ],
+    "exampleData": "recipes/channel-logo-picker/fixtures/basic.json"
+  },
+  "contract": {
+    "support": "composition-recipe",
+    "standaloneApi": false,
+    "fixturePolicy": "neutral DTOs only",
+    "parity": "framework-equivalent"
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/channel/ChannelLogoPicker.tsx",
+        "sha256": "a9c1c72afc42d9d6583562d4fa654a24d21ab9cb04c7ab7733bd38bb303d49b2"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#domain-material"
+    ]
+  }
+}

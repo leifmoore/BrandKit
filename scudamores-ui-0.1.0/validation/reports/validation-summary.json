@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-28",
+  "status": "passed-with-findings",
+  "package": "scudamores-ui",
+  "version": "0.1.0",
+  "sourceCommit": "d1511e224305585680723101a0b76be93eb9f2f0",
+  "sourceAggregate": "82b55ce6513ce99a55146a1fcc81533b7ecf5e53200a088135b0e8313afc1b6d",
+  "coverage": {
+    "pairedComponents": 39,
+    "stableComponents": 30,
+    "betaComponents": 9,
+    "deferredInventory": 10,
+    "pairedRecipes": 6,
+    "playgroundUtilities": 1,
+    "bladeDispositions": 80,
+    "phpClasses": 7,
+    "reactBrowserInteractions": "13/13",
+    "bladeBrowserInteractions": "15/15",
+    "reactAxeAudits": 39,
+    "bladeAxeAudits": 39,
+    "responsiveBaselines": 14,
+    "structuralChecks": 1117
+  },
+  "acceptedAccessibilityFindings": [
+    {
+      "id": "destructive-contrast",
+      "standard": "WCAG 2.2 AA",
+      "severity": "serious",
+      "status": "accepted",
+      "components": ["alert-dialog", "button"],
+      "frameworks": ["react", "blade"],
+      "contrast": "3.8:1",
+      "required": "4.5:1",
+      "reason": "The approved visual-parity-first release retains white text on the current destructive red token; change requires design/token approval."
+    },
+    {
+      "id": "muted-preview-contrast",
+      "standard": "WCAG 2.2 AA",
+      "severity": "serious",
+      "status": "accepted",
+      "components": ["aspect-ratio"],
+      "frameworks": ["react", "blade"],
+      "contrast": "4.39:1",
+      "required": "4.5:1",
+      "reason": "The approved muted foreground/background pairing is retained for visual parity; change requires design/token approval."
+    }
+  ],
+  "reports": [
+    "validation/reports/react-build.json",
+    "validation/reports/blade-validation.json",
+    "validation/reports/react-browser.json",
+    "validation/reports/blade-browser.json",
+    "validation/reports/recipe-validation.json",
+    "validation/reports/structural-validation.json",
+    "validation/reports/file-inventory.json"
+  ],
+  "releaseDecision": "Approved for handoff with the listed visual-parity contrast findings explicitly retained and flagged."
+}

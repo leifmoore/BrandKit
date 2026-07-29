@@ -1,0 +1,186 @@
+{
+  "$schema": "../component.schema.json",
+  "schemaVersion": "1.0.0",
+  "id": "input",
+  "title": "Input",
+  "description": "Text and native input types with semantic invalid states.",
+  "category": "forms",
+  "maturity": "stable",
+  "searchTerms": [
+    "input",
+    "field",
+    "text",
+    "react",
+    "blade"
+  ],
+  "react": {
+    "files": [
+      "react/components/ui/input.tsx"
+    ],
+    "exports": [
+      "Input"
+    ],
+    "props": [
+      {
+        "name": "type",
+        "type": "HTMLInputTypeAttribute",
+        "required": false,
+        "default": "text"
+      },
+      {
+        "name": "aria-invalid",
+        "type": "boolean | 'true' | 'false'",
+        "required": false,
+        "default": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Additional consumer layout or spacing classes."
+      }
+    ],
+    "internalDependencies": [],
+    "npmDependencies": [],
+    "exampleFiles": [
+      "react/examples/input/basic.tsx"
+    ]
+  },
+  "blade": {
+    "files": [
+      "blade/library/resources/views/components/ui/input.blade.php"
+    ],
+    "canonicalTag": "<x-ui.input>",
+    "legacyTags": [
+      "<x-input>"
+    ],
+    "props": [
+      {
+        "name": "name",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "id",
+        "type": "string | null",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "type",
+        "type": "string",
+        "required": false,
+        "default": "text"
+      },
+      {
+        "name": "value",
+        "type": "mixed",
+        "required": false,
+        "default": ""
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "name": "bag",
+        "type": "string",
+        "required": false,
+        "default": "default"
+      },
+      {
+        "name": "size",
+        "type": "\"default\" | \"sm\" | \"xs\"",
+        "required": false,
+        "default": "default"
+      }
+    ],
+    "slots": [
+      "default"
+    ],
+    "events": [],
+    "phpDependencies": [
+      "App\\View\\Components\\Ui\\Input"
+    ],
+    "runtimeDependencies": [],
+    "installTargets": [
+      "app/View/Components/Ui",
+      "resources/views/components/ui",
+      "resources/js/ui",
+      "resources/css"
+    ],
+    "exampleFiles": [
+      "blade/examples/input/basic.blade.php"
+    ]
+  },
+  "shared": {
+    "variants": [
+      {
+        "name": "default",
+        "default": true
+      }
+    ],
+    "sizes": [],
+    "states": [
+      "default",
+      "disabled",
+      "focus-visible",
+      "invalid"
+    ],
+    "responsiveBehavior": [
+      "Retains touch targets and usable wrapping at 360px."
+    ],
+    "tokens": [
+      "--background",
+      "--foreground",
+      "--primary",
+      "--primary-foreground",
+      "--muted",
+      "--muted-foreground",
+      "--border",
+      "--input",
+      "--ring",
+      "--radius"
+    ],
+    "iconMappings": []
+  },
+  "previews": [
+    {
+      "id": "basic",
+      "title": "Basic",
+      "reactExample": "react/examples/input/basic.tsx",
+      "bladeExample": "blade/examples/input/basic.blade.php",
+      "states": [
+        "default",
+        "disabled",
+        "focus-visible",
+        "invalid"
+      ],
+      "supportsDirection": false
+    }
+  ],
+  "parity": {
+    "classification": "framework-equivalent",
+    "intentionalDifferences": []
+  },
+  "accessibility": {
+    "wcagTarget": "WCAG 2.2 AA",
+    "auditStatus": "passed",
+    "findings": []
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/ui/input.tsx",
+        "sha256": "e3278294350e1ed7daf843a770688057e488cfbed1df82a9685fc63123441480"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#component-scope"
+    ]
+  }
+}

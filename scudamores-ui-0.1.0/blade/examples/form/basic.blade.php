@@ -1,0 +1,1 @@
+<x-ui.form method="patch" action="/profile" class="grid max-w-md gap-4"><x-ui.input name="profile[name]" label="Name" value="Ada Lovelace" /><x-ui.select name="profile[role]" label="Role" :options="['admin' => 'Administrator', 'member' => 'Member']" /><x-ui.textarea name="profile[notes]" label="Notes" /><x-ui.button type="submit">Save profile</x-ui.button></x-ui.form>

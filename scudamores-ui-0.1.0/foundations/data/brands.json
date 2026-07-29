@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schemaVersion": "1.0.0",
+  "name": "Scudamore's UI brand presets",
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "path": "src/styles/theme.css",
+    "sha256": "c7f52fb71ad2affe53c1e7e517366702aa0c7665d50727761609c5b2d9cc9977"
+  },
+  "default": "default",
+  "selectorContract": {
+    "brand": ".brand-{id}",
+    "dark": ".dark.brand-{id}",
+    "application": "Apply the mode and brand classes to the same host element."
+  },
+  "presets": {
+    "default": {
+      "label": "Default",
+      "light": { "primary": "oklch(0.278 0.033 256.848)", "primary-foreground": "#ffffff", "ring": "oklch(0.278 0.033 256.848)" },
+      "dark": { "primary": "#ffffff", "primary-foreground": "oklch(0.278 0.033 256.848)", "ring": "#ffffff" }
+    },
+    "blue": {
+      "label": "Blue",
+      "light": { "primary": "#2563eb", "primary-foreground": "#ffffff", "ring": "#2563eb" },
+      "dark": { "primary": "#60a5fa", "primary-foreground": "#0b1021", "ring": "#60a5fa" }
+    },
+    "emerald": {
+      "label": "Emerald",
+      "light": { "primary": "#059669", "primary-foreground": "#ffffff", "ring": "#059669" },
+      "dark": { "primary": "#34d399", "primary-foreground": "#0b1021", "ring": "#34d399" }
+    },
+    "red": {
+      "label": "Red",
+      "light": { "primary": "#dc2626", "primary-foreground": "#ffffff", "ring": "#dc2626" },
+      "dark": { "primary": "#f87171", "primary-foreground": "#0b1021", "ring": "#f87171" }
+    },
+    "orange": {
+      "label": "Orange",
+      "light": { "primary": "#ea580c", "primary-foreground": "#ffffff", "ring": "#ea580c" },
+      "dark": { "primary": "#fb923c", "primary-foreground": "#0b1021", "ring": "#fb923c" }
+    },
+    "slate": {
+      "label": "Slate",
+      "light": { "primary": "#0f172a", "primary-foreground": "#ffffff", "ring": "#0f172a" },
+      "dark": { "primary": "#cbd5e1", "primary-foreground": "#0b1021", "ring": "#cbd5e1" }
+    },
+    "violet": {
+      "label": "Violet",
+      "light": { "primary": "#7c3aed", "primary-foreground": "#ffffff", "ring": "#7c3aed" },
+      "dark": { "primary": "#c4b5fd", "primary-foreground": "#0b1021", "ring": "#c4b5fd" }
+    }
+  },
+  "customBrand": {
+    "supported": true,
+    "requiredVariables": ["--primary", "--primary-foreground", "--ring"],
+    "policy": "The host may set these variables inline or in its own class. The library does not persist or infer a custom brand."
+  }
+}

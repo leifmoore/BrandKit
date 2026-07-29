@@ -1,0 +1,216 @@
+{
+  "$schema": "../component.schema.json",
+  "schemaVersion": "1.0.0",
+  "id": "alert-dialog",
+  "title": "Alert Dialog",
+  "description": "A modal confirmation surface for consequential actions.",
+  "category": "overlays",
+  "maturity": "stable",
+  "searchTerms": [
+    "alert dialog",
+    "confirm",
+    "modal",
+    "react",
+    "blade"
+  ],
+  "react": {
+    "files": [
+      "react/components/ui/alert-dialog.tsx"
+    ],
+    "exports": [
+      "AlertDialog",
+      "AlertDialogTrigger",
+      "AlertDialogContent",
+      "AlertDialogHeader",
+      "AlertDialogFooter",
+      "AlertDialogTitle",
+      "AlertDialogDescription",
+      "AlertDialogAction",
+      "AlertDialogCancel"
+    ],
+    "props": [
+      {
+        "name": "open",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "defaultOpen",
+        "type": "boolean",
+        "required": false,
+        "default": false
+      },
+      {
+        "name": "onOpenChange",
+        "type": "(open: boolean) => void",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Additional consumer layout or spacing classes."
+      }
+    ],
+    "internalDependencies": [
+      "button"
+    ],
+    "npmDependencies": [
+      {
+        "name": "@radix-ui/react-alert-dialog",
+        "version": "1.1.6",
+        "purpose": "Direct component import"
+      }
+    ],
+    "exampleFiles": [
+      "react/examples/alert-dialog/basic.tsx"
+    ]
+  },
+  "blade": {
+    "files": [
+      "blade/library/resources/views/components/ui/alert-dialog.blade.php",
+      "blade/library/resources/views/components/ui/alert-dialog/action.blade.php",
+      "blade/library/resources/views/components/ui/alert-dialog/cancel.blade.php",
+      "blade/library/resources/views/components/ui/alert-dialog/content.blade.php",
+      "blade/library/resources/views/components/ui/alert-dialog/description.blade.php",
+      "blade/library/resources/views/components/ui/alert-dialog/footer.blade.php",
+      "blade/library/resources/views/components/ui/alert-dialog/header.blade.php",
+      "blade/library/resources/views/components/ui/alert-dialog/title.blade.php",
+      "blade/library/resources/views/components/ui/alert-dialog/trigger.blade.php"
+    ],
+    "canonicalTag": "<x-ui.alert-dialog>",
+    "legacyTags": [],
+    "props": [
+      {
+        "name": "open",
+        "type": "bool",
+        "required": false,
+        "default": false
+      }
+    ],
+    "slots": [
+      "default",
+      "trigger",
+      "header",
+      "title",
+      "description",
+      "footer"
+    ],
+    "events": [
+      "ui:alert-dialog:change",
+      "ui:alert-dialog:confirm"
+    ],
+    "phpDependencies": [],
+    "runtimeDependencies": [
+      {
+        "name": "alpinejs",
+        "version": "3.15.8",
+        "purpose": "Blade interaction runtime"
+      },
+      {
+        "name": "@alpinejs/focus",
+        "version": "3.15.8",
+        "purpose": "Blade interaction runtime"
+      }
+    ],
+    "installTargets": [
+      "app/View/Components/Ui",
+      "resources/views/components/ui",
+      "resources/js/ui",
+      "resources/css"
+    ],
+    "exampleFiles": [
+      "blade/examples/alert-dialog/basic.blade.php"
+    ]
+  },
+  "shared": {
+    "variants": [
+      {
+        "name": "default",
+        "default": true
+      }
+    ],
+    "sizes": [],
+    "states": [
+      "default",
+      "disabled",
+      "focus-visible",
+      "controlled",
+      "uncontrolled",
+      "open",
+      "closed"
+    ],
+    "responsiveBehavior": [
+      "Retains touch targets and usable wrapping at 360px.",
+      "Floating or modal content is constrained to the viewport."
+    ],
+    "tokens": [
+      "--background",
+      "--foreground",
+      "--primary",
+      "--primary-foreground",
+      "--muted",
+      "--muted-foreground",
+      "--border",
+      "--input",
+      "--ring",
+      "--radius"
+    ],
+    "iconMappings": []
+  },
+  "previews": [
+    {
+      "id": "basic",
+      "title": "Basic",
+      "reactExample": "react/examples/alert-dialog/basic.tsx",
+      "bladeExample": "blade/examples/alert-dialog/basic.blade.php",
+      "states": [
+        "default",
+        "disabled",
+        "focus-visible",
+        "controlled",
+        "uncontrolled",
+        "open",
+        "closed"
+      ],
+      "supportsDirection": false
+    }
+  ],
+  "parity": {
+    "classification": "framework-equivalent",
+    "intentionalDifferences": []
+  },
+  "accessibility": {
+    "wcagTarget": "WCAG 2.2 AA",
+    "auditStatus": "passed-with-findings",
+    "findings": [
+      {
+        "id": "react-color-contrast",
+        "severity": "serious",
+        "status": "accepted",
+        "summary": "React — Elements must meet minimum color contrast ratio thresholds",
+        "detail": "Fix any of the following:\n  Element has insufficient color contrast of 3.8 (foreground color: #ffffff, background color: #fb2c36, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1 https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright Retained for the approved visual-parity-first release and explicitly flagged for later token/design remediation."
+      },
+      {
+        "id": "blade-color-contrast",
+        "severity": "serious",
+        "status": "accepted",
+        "summary": "Blade — Elements must meet minimum color contrast ratio thresholds",
+        "detail": "Fix any of the following:\n  Element has insufficient color contrast of 3.8 (foreground color: #ffffff, background color: #fb2c36, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1 https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright Retained for the approved visual-parity-first release and explicitly flagged for later token/design remediation."
+      }
+    ]
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/ui/alert-dialog.tsx",
+        "sha256": "0cb29c237388cf17f30ed7676afbd6b88b484f0600123715622e4e1a12a732a8"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#component-scope"
+    ]
+  }
+}

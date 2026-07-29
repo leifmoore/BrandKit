@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "quick-launch",
+  "title": "Quick Launch",
+  "description": "Frequently used destination cards.",
+  "category": "dashboard",
+  "maturity": "stable",
+  "kind": "recipe",
+  "searchTerms": [
+    "quick launch",
+    "dashboard",
+    "shortcut"
+  ],
+  "fixture": "recipes/quick-launch/fixtures/basic.json",
+  "documentation": "recipes/quick-launch/README.md",
+  "react": {
+    "files": [
+      "recipes/quick-launch/react/QuickLaunchRecipe.tsx"
+    ],
+    "exampleData": "recipes/quick-launch/fixtures/basic.json"
+  },
+  "blade": {
+    "files": [
+      "recipes/quick-launch/blade/quick-launch.blade.php"
+    ],
+    "exampleData": "recipes/quick-launch/fixtures/basic.json"
+  },
+  "contract": {
+    "support": "composition-recipe",
+    "standaloneApi": false,
+    "fixturePolicy": "neutral DTOs only",
+    "parity": "framework-equivalent"
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/dashboard/QuickLaunch.tsx",
+        "sha256": "7f6f85d12e2c9f7fa5e20ccc6c4595deb7ad160a63ab3390de6c52c83e2f91f0"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#domain-material"
+    ]
+  }
+}

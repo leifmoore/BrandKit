@@ -1,0 +1,1 @@
+<div role="group" data-slot="button-group" {{ $attributes->class('inline-flex items-center [&>*]:rounded-none [&>*:first-child]:rounded-l-md [&>*:last-child]:rounded-r-md [&>*+*]:-ml-px') }}>{{ $slot }}</div>

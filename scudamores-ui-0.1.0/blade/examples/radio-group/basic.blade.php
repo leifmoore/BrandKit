@@ -1,0 +1,1 @@
+<x-ui.radio-group label="Notification frequency"><x-ui.radio-group.item name="frequency" value="daily" label="Daily" checked /><x-ui.radio-group.item name="frequency" value="weekly" label="Weekly" /></x-ui.radio-group>

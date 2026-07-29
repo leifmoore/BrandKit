@@ -1,0 +1,144 @@
+{
+  "$schema": "../component.schema.json",
+  "schemaVersion": "1.0.0",
+  "id": "card",
+  "title": "Card",
+  "description": "Composable bordered content surface.",
+  "category": "data-display",
+  "maturity": "stable",
+  "searchTerms": [
+    "card",
+    "surface",
+    "panel",
+    "react",
+    "blade"
+  ],
+  "react": {
+    "files": [
+      "react/components/ui/card.tsx"
+    ],
+    "exports": [
+      "Card",
+      "CardHeader",
+      "CardFooter",
+      "CardTitle",
+      "CardAction",
+      "CardDescription",
+      "CardContent"
+    ],
+    "props": [
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Additional consumer layout or spacing classes."
+      }
+    ],
+    "internalDependencies": [],
+    "npmDependencies": [],
+    "exampleFiles": [
+      "react/examples/card/basic.tsx"
+    ]
+  },
+  "blade": {
+    "files": [
+      "blade/library/resources/views/components/ui/card.blade.php",
+      "blade/library/resources/views/components/ui/card/action.blade.php",
+      "blade/library/resources/views/components/ui/card/content.blade.php",
+      "blade/library/resources/views/components/ui/card/description.blade.php",
+      "blade/library/resources/views/components/ui/card/footer.blade.php",
+      "blade/library/resources/views/components/ui/card/header.blade.php",
+      "blade/library/resources/views/components/ui/card/title.blade.php"
+    ],
+    "canonicalTag": "<x-ui.card>",
+    "legacyTags": [],
+    "props": [],
+    "slots": [
+      "default",
+      "header",
+      "title",
+      "description",
+      "action",
+      "content",
+      "footer"
+    ],
+    "events": [],
+    "phpDependencies": [],
+    "runtimeDependencies": [],
+    "installTargets": [
+      "app/View/Components/Ui",
+      "resources/views/components/ui",
+      "resources/js/ui",
+      "resources/css"
+    ],
+    "exampleFiles": [
+      "blade/examples/card/basic.blade.php"
+    ]
+  },
+  "shared": {
+    "variants": [
+      {
+        "name": "default",
+        "default": true
+      }
+    ],
+    "sizes": [],
+    "states": [
+      "default",
+      "disabled",
+      "focus-visible"
+    ],
+    "responsiveBehavior": [
+      "Retains touch targets and usable wrapping at 360px."
+    ],
+    "tokens": [
+      "--background",
+      "--foreground",
+      "--primary",
+      "--primary-foreground",
+      "--muted",
+      "--muted-foreground",
+      "--border",
+      "--input",
+      "--ring",
+      "--radius"
+    ],
+    "iconMappings": []
+  },
+  "previews": [
+    {
+      "id": "basic",
+      "title": "Basic",
+      "reactExample": "react/examples/card/basic.tsx",
+      "bladeExample": "blade/examples/card/basic.blade.php",
+      "states": [
+        "default",
+        "disabled",
+        "focus-visible"
+      ],
+      "supportsDirection": false
+    }
+  ],
+  "parity": {
+    "classification": "framework-equivalent",
+    "intentionalDifferences": []
+  },
+  "accessibility": {
+    "wcagTarget": "WCAG 2.2 AA",
+    "auditStatus": "passed",
+    "findings": []
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/ui/card.tsx",
+        "sha256": "8a94ee07640a8970cb1c32d4233f921cf337b296d9828ba047fee7ddfa173de9"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#component-scope"
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+<span tabindex="0" data-slot="tooltip-trigger" x-ref="trigger" x-on:mouseenter="show()" x-on:mouseleave="close(false)" x-on:focus="show()" x-on:blur="close(false)" aria-describedby="tooltip-{{ $attributes->get('id', 'content') }}" {{ $attributes->except('id') }}>{{ $slot }}</span>

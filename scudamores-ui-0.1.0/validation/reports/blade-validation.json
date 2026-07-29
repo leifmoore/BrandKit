@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-28",
+  "status": "passed",
+  "sourceCommit": "d1511e224305585680723101a0b76be93eb9f2f0",
+  "environment": {
+    "php": "8.4.15",
+    "composer": "2.9.5",
+    "laravel": "12.64.0",
+    "tailwindcss": "4.1.12",
+    "alpinejs": "3.15.8"
+  },
+  "fixture": {
+    "kind": "clean disposable Laravel 12 application",
+    "retainedInRelease": false,
+    "dependencySource": "blade/dependencies.json"
+  },
+  "checks": {
+    "phpComponentFilesLinted": 7,
+    "canonicalExamplesRendered": 39,
+    "recipesRenderedFromNeutralFixtures": 6,
+    "compatibilityAliasesRendered": 21,
+    "phpunitTestsPassed": 8,
+    "phpunitAssertionsPassed": 83,
+    "viewCache": "passed",
+    "tailwindProductionBuild": "passed",
+    "csrfAndMethodSpoofing": "passed",
+    "multipartUploads": "passed",
+    "nestedOldValuesAndNamedErrorBags": "passed",
+    "enumExpansionAndMultipleSelect": "passed"
+  }
+}

@@ -1,0 +1,1 @@
+<button type="button" data-slot="dropdown-menu-trigger" x-ref="trigger" x-on:click="toggle()" x-on:keydown.arrow-down.prevent="if (!open) toggle(); $nextTick(() => $refs.panel?.querySelector('[role^=menuitem]:not([disabled])')?.focus())" x-bind:aria-expanded="open" aria-haspopup="menu" {{ $attributes }}>{{ $slot }}</button>

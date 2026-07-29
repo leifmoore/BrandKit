@@ -1,0 +1,59 @@
+/* Ready-to-copy Blade stylesheet. Adjust relative paths after installation. */
+@import "../../../../foundations/css/tokens.css";
+@import "../../../../foundations/css/brands.css";
+@import "../../../../foundations/css/tailwind-theme.css";
+@import "../../../../foundations/css/fonts.css";
+@import "tw-animate-css";
+
+@source "../views/**/*.blade.php";
+@source "../../app/View/Components/**/*.php";
+@source "../js/**/*.js";
+@source "../../../compatibility/resources/views/components/**/*.blade.php";
+@source "../../../examples/**/*.blade.php";
+
+[x-cloak] { display: none !important; }
+
+/* Native controls cannot express every state with utilities alone. */
+[data-slot="slider"] {
+  appearance: none;
+  border-radius: 9999px;
+}
+[data-slot="slider"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid var(--primary);
+  border-radius: 9999px;
+  background: var(--background);
+  box-shadow: 0 1px 2px rgb(0 0 0 / .08);
+}
+[data-slot="slider"]::-moz-range-thumb {
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid var(--primary);
+  border-radius: 9999px;
+  background: var(--background);
+  box-shadow: 0 1px 2px rgb(0 0 0 / .08);
+}
+[data-slot="slider"]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 .25rem color-mix(in oklab, var(--ring) 50%, transparent); }
+[data-slot="slider"]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 .25rem color-mix(in oklab, var(--ring) 50%, transparent); }
+[data-slot="progress"]::-webkit-progress-value { background: var(--primary); }
+[data-slot="progress"]::-moz-progress-bar { background: var(--primary); }
+[data-slot="progress"]::-webkit-progress-bar { background: color-mix(in oklab, var(--primary) 20%, transparent); }
+[data-slot="progress"] { appearance: none; border: 0; }
+[data-slot="progress"],
+[data-slot="progress"]::-webkit-progress-bar,
+[data-slot="progress"]::-webkit-progress-value { border-radius: 9999px; }
+
+[data-slot="scroll-area"] {
+  scrollbar-color: var(--border) transparent;
+  scrollbar-width: thin;
+}
+[data-slot="scroll-area"]::-webkit-scrollbar { width: .625rem; height: .625rem; }
+[data-slot="scroll-area"]::-webkit-scrollbar-track { background: transparent; }
+[data-slot="scroll-area"]::-webkit-scrollbar-thumb {
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  background: var(--border);
+  background-clip: padding-box;
+}

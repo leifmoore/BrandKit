@@ -1,0 +1,1 @@
+<div class="flex flex-wrap gap-2"><x-ui.badge>Default</x-ui.badge><x-ui.badge variant="success" dot>Active</x-ui.badge><x-ui.badge variant="warning">Pending</x-ui.badge><x-ui.badge variant="destructive">Failed</x-ui.badge><x-ui.badge variant="outline">Outline</x-ui.badge></div>

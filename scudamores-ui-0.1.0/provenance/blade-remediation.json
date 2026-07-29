@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0.0",
+  "sourceCommit": "d1511e224305585680723101a0b76be93eb9f2f0",
+  "goal": "Preserve production Laravel behavior and legacy call sites while moving copied handoff artifacts to the canonical DesignApp visual contract.",
+  "canonicalNamespace": "x-ui",
+  "interactionRuntime": ["Alpine.js 3", "Alpine Collapse", "Alpine Focus", "Floating UI"],
+  "forbiddenRuntime": ["Livewire", "jQuery"],
+  "expectedDispositionCounts": {
+    "canonicalPairs": 34,
+    "compatibilityAliases": 21,
+    "referenceOnly": 18,
+    "excluded": 7,
+    "totalBladeSourceFiles": 80,
+    "supportingPhpClasses": 7
+  },
+  "crosswalk": "catalog/blade-crosswalk.json",
+  "variantMappings": {
+    "primary": "default",
+    "secondary": "outline",
+    "danger": "destructive",
+    "base": "default"
+  },
+  "behaviorToPreserve": [
+    "CSRF fields",
+    "HTTP method spoofing",
+    "multipart file uploads",
+    "old input restoration",
+    "nested field names",
+    "named validation error bags",
+    "enum option expansion",
+    "multiple-select values",
+    "attribute and slot forwarding"
+  ],
+  "visualRemediationRules": [
+    "Use shared semantic tokens and the approved React component state contract.",
+    "Expose visual variant and size through explicit props; allow consumer classes for layout and spacing only.",
+    "Build stateful components with documented x-model support and ui:<component>:change events where applicable.",
+    "Use Alpine Focus for Dialog, Alert Dialog, and Sheet focus trapping and restoration.",
+    "Use Floating UI for Popover, Dropdown Menu, and Tooltip positioning.",
+    "Keep Select native and document its operating-system-rendered popup as an intentional parity exception.",
+    "Map Phosphor icons to Lucide semantics, size, weight, colour, and alignment rather than SVG path shape."
+  ],
+  "supportingClasses": ["FormControl", "Input", "Checkbox", "Radio", "Select", "Textarea", "Error"],
+  "validatedFixes": [
+    "Accordion icon bindings survive Blade icon-component compilation.",
+    "Stepper min/max bindings compile to executable Alpine expressions.",
+    "Switch supports documented x-model-only usage without a form name.",
+    "Calendar grid roles have valid row and cell relationships.",
+    "Decorative Separator output omits disallowed ARIA attributes.",
+    "Dropdown keyboard navigation and outside dismissal use the shared Alpine controller.",
+    "Tooltip delay and blur dismissal do not steal focus.",
+    "Dialog, Alert Dialog and Sheet close on Escape and restore trigger focus."
+  ],
+  "validation": {
+    "laravel": "12.64.0",
+    "php": "8.4.15",
+    "tests": 8,
+    "assertions": 83,
+    "browserInteractions": "15/15",
+    "axeAuditedComponents": 39,
+    "report": "validation/reports/blade-browser.json"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "showLogo": true,
+  "selectedLogoId": "primary",
+  "logos": [
+    { "id": "primary", "label": "Primary mark" },
+    { "id": "mono", "label": "Monochrome mark" }
+  ]
+}

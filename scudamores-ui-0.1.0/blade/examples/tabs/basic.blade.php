@@ -1,0 +1,1 @@
+<x-ui.tabs default-value="account"><x-ui.tabs.list><x-ui.tabs.trigger value="account">Account</x-ui.tabs.trigger><x-ui.tabs.trigger value="security">Security</x-ui.tabs.trigger></x-ui.tabs.list><x-ui.tabs.content value="account">Account preferences</x-ui.tabs.content><x-ui.tabs.content value="security">Security preferences</x-ui.tabs.content></x-ui.tabs>

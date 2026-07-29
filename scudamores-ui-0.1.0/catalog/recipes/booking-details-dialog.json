@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "booking-details-dialog",
+  "title": "Booking Details Dialog",
+  "description": "Read and action booking-detail composition.",
+  "category": "bookings",
+  "maturity": "stable",
+  "kind": "recipe",
+  "searchTerms": [
+    "booking",
+    "details",
+    "dialog"
+  ],
+  "fixture": "recipes/booking-details-dialog/fixtures/basic.json",
+  "documentation": "recipes/booking-details-dialog/README.md",
+  "react": {
+    "files": [
+      "recipes/booking-details-dialog/react/BookingDetailsDialogRecipe.tsx"
+    ],
+    "exampleData": "recipes/booking-details-dialog/fixtures/basic.json"
+  },
+  "blade": {
+    "files": [
+      "recipes/booking-details-dialog/blade/booking-details-dialog.blade.php"
+    ],
+    "exampleData": "recipes/booking-details-dialog/fixtures/basic.json"
+  },
+  "contract": {
+    "support": "composition-recipe",
+    "standaloneApi": false,
+    "fixturePolicy": "neutral DTOs only",
+    "parity": "framework-equivalent"
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/bookings/BookingDetailsDialog.tsx",
+        "sha256": "dea6187b86e66958bc564f0707b4d080231bb320bcead8b669c04dbd6688d1f4"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#domain-material"
+    ]
+  }
+}

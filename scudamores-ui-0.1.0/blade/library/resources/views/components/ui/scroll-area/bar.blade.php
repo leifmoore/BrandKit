@@ -1,0 +1,2 @@
+@props(['orientation' => 'vertical'])
+<span aria-hidden="true" data-slot="scroll-area-scrollbar" data-orientation="{{ $orientation }}" {{ $attributes->class('pointer-events-none absolute flex touch-none select-none p-px transition-colors data-[orientation=horizontal]:inset-x-0 data-[orientation=horizontal]:bottom-0 data-[orientation=horizontal]:h-2.5 data-[orientation=vertical]:inset-y-0 data-[orientation=vertical]:right-0 data-[orientation=vertical]:w-2.5') }}><span class="relative flex-1 rounded-full bg-border"></span></span>

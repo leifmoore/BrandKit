@@ -1,0 +1,163 @@
+{
+  "$schema": "../component.schema.json",
+  "schemaVersion": "1.0.0",
+  "id": "aspect-ratio",
+  "title": "Aspect Ratio",
+  "description": "Constrains media or content to a stable aspect ratio.",
+  "category": "layout",
+  "maturity": "beta",
+  "searchTerms": [
+    "aspect ratio",
+    "media",
+    "responsive",
+    "react",
+    "blade"
+  ],
+  "react": {
+    "files": [
+      "react/components/ui/aspect-ratio.tsx"
+    ],
+    "exports": [
+      "AspectRatio"
+    ],
+    "props": [
+      {
+        "name": "ratio",
+        "type": "number",
+        "required": false,
+        "default": 1
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Additional consumer layout or spacing classes."
+      }
+    ],
+    "internalDependencies": [],
+    "npmDependencies": [
+      {
+        "name": "@radix-ui/react-aspect-ratio",
+        "version": "1.1.2",
+        "purpose": "Direct component import"
+      }
+    ],
+    "exampleFiles": [
+      "react/examples/aspect-ratio/basic.tsx"
+    ]
+  },
+  "blade": {
+    "files": [
+      "blade/library/resources/views/components/ui/aspect-ratio.blade.php"
+    ],
+    "canonicalTag": "<x-ui.aspect-ratio>",
+    "legacyTags": [],
+    "props": [
+      {
+        "name": "ratio",
+        "type": "string | float",
+        "required": false,
+        "default": "16 / 9"
+      }
+    ],
+    "slots": [
+      "default"
+    ],
+    "events": [],
+    "phpDependencies": [],
+    "runtimeDependencies": [],
+    "installTargets": [
+      "app/View/Components/Ui",
+      "resources/views/components/ui",
+      "resources/js/ui",
+      "resources/css"
+    ],
+    "exampleFiles": [
+      "blade/examples/aspect-ratio/basic.blade.php"
+    ]
+  },
+  "shared": {
+    "variants": [
+      {
+        "name": "default",
+        "default": true
+      }
+    ],
+    "sizes": [],
+    "states": [
+      "default",
+      "disabled",
+      "focus-visible"
+    ],
+    "responsiveBehavior": [
+      "Retains touch targets and usable wrapping at 360px."
+    ],
+    "tokens": [
+      "--background",
+      "--foreground",
+      "--primary",
+      "--primary-foreground",
+      "--muted",
+      "--muted-foreground",
+      "--border",
+      "--input",
+      "--ring",
+      "--radius"
+    ],
+    "iconMappings": []
+  },
+  "previews": [
+    {
+      "id": "basic",
+      "title": "Basic",
+      "reactExample": "react/examples/aspect-ratio/basic.tsx",
+      "bladeExample": "blade/examples/aspect-ratio/basic.blade.php",
+      "states": [
+        "default",
+        "disabled",
+        "focus-visible"
+      ],
+      "supportsDirection": false
+    }
+  ],
+  "parity": {
+    "classification": "documented-exception",
+    "intentionalDifferences": [
+      "React follows Radix's 1:1 default ratio; Blade defaults to 16:9. Pass an explicit ratio when cross-framework output must match."
+    ]
+  },
+  "accessibility": {
+    "wcagTarget": "WCAG 2.2 AA",
+    "auditStatus": "passed-with-findings",
+    "findings": [
+      {
+        "id": "react-color-contrast",
+        "severity": "serious",
+        "status": "accepted",
+        "summary": "React — Elements must meet minimum color contrast ratio thresholds",
+        "detail": "Fix any of the following:\n  Element has insufficient color contrast of 4.39 (foreground color: #6a7282, background color: #f3f4f6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1 https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright Retained for the approved visual-parity-first release and explicitly flagged for later token/design remediation."
+      },
+      {
+        "id": "blade-color-contrast",
+        "severity": "serious",
+        "status": "accepted",
+        "summary": "Blade — Elements must meet minimum color contrast ratio thresholds",
+        "detail": "Fix any of the following:\n  Element has insufficient color contrast of 4.39 (foreground color: #6a7282, background color: #f3f4f6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1 https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright Retained for the approved visual-parity-first release and explicitly flagged for later token/design remediation."
+      }
+    ]
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/ui/aspect-ratio.tsx",
+        "sha256": "7706745e217bebbc2d7bdf6697e9c6d484061146ae771755c9b6f240762c7217"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#component-scope",
+      "foundations/docs/exceptions.md"
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+<div data-slot="popover-content" x-ref="panel" x-cloak x-show="open" x-transition x-on:click.stop x-on:click.outside="close()" {{ $attributes->class('fixed z-50 min-w-48 origin-top-left rounded-lg border bg-popover p-[.3125rem] text-popover-foreground shadow-xs outline-none') }}>{{ $slot }}</div>

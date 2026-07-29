@@ -1,0 +1,2 @@
+@props(['href', 'active' => false, 'label' => null])
+<a href="{{ $href }}" @if($active) aria-current="page" @endif @if($label) aria-label="{{ $label }}" @endif data-slot="pagination-link" {{ $attributes->class(['inline-flex size-9 items-center justify-center rounded-md text-sm font-medium outline-none hover:bg-accent focus-visible:ring-[3px] focus-visible:ring-ring/50', $active ? 'border bg-background' : '']) }}>{{ $slot }}</a>

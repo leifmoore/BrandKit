@@ -1,0 +1,1 @@
+<x-ui.tooltip><x-ui.tooltip.trigger id="add-booking" class="inline-flex size-9 items-center justify-center rounded-md border"><x-phosphor-plus aria-hidden="true" /><span class="sr-only">Add booking</span></x-ui.tooltip.trigger><x-ui.tooltip.content id="add-booking">Add booking</x-ui.tooltip.content></x-ui.tooltip>

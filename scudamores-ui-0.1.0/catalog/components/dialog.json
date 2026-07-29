@@ -1,0 +1,214 @@
+{
+  "$schema": "../component.schema.json",
+  "schemaVersion": "1.0.0",
+  "id": "dialog",
+  "title": "Dialog",
+  "description": "Modal content with focus management and composable regions.",
+  "category": "overlays",
+  "maturity": "stable",
+  "searchTerms": [
+    "dialog",
+    "modal",
+    "overlay",
+    "react",
+    "blade"
+  ],
+  "react": {
+    "files": [
+      "react/components/ui/dialog.tsx"
+    ],
+    "exports": [
+      "Dialog",
+      "DialogTrigger",
+      "DialogClose",
+      "DialogContent",
+      "DialogHeader",
+      "DialogFooter",
+      "DialogTitle",
+      "DialogDescription"
+    ],
+    "props": [
+      {
+        "name": "open",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "defaultOpen",
+        "type": "boolean",
+        "required": false,
+        "default": false
+      },
+      {
+        "name": "onOpenChange",
+        "type": "(open: boolean) => void",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Additional consumer layout or spacing classes."
+      }
+    ],
+    "internalDependencies": [],
+    "npmDependencies": [
+      {
+        "name": "@radix-ui/react-dialog",
+        "version": "1.1.6",
+        "purpose": "Direct component import"
+      },
+      {
+        "name": "lucide-react",
+        "version": "0.487.0",
+        "purpose": "Direct component import"
+      }
+    ],
+    "exampleFiles": [
+      "react/examples/dialog/basic.tsx"
+    ]
+  },
+  "blade": {
+    "files": [
+      "blade/library/resources/views/components/ui/dialog.blade.php",
+      "blade/library/resources/views/components/ui/dialog/close.blade.php",
+      "blade/library/resources/views/components/ui/dialog/content.blade.php",
+      "blade/library/resources/views/components/ui/dialog/description.blade.php",
+      "blade/library/resources/views/components/ui/dialog/footer.blade.php",
+      "blade/library/resources/views/components/ui/dialog/header.blade.php",
+      "blade/library/resources/views/components/ui/dialog/title.blade.php",
+      "blade/library/resources/views/components/ui/dialog/trigger.blade.php"
+    ],
+    "canonicalTag": "<x-ui.dialog>",
+    "legacyTags": [
+      "<x-modal>"
+    ],
+    "props": [
+      {
+        "name": "open",
+        "type": "bool",
+        "required": false,
+        "default": false
+      }
+    ],
+    "slots": [
+      "default",
+      "trigger",
+      "header",
+      "title",
+      "description",
+      "content",
+      "footer"
+    ],
+    "events": [
+      "ui:dialog:change"
+    ],
+    "phpDependencies": [],
+    "runtimeDependencies": [
+      {
+        "name": "alpinejs",
+        "version": "3.15.8",
+        "purpose": "Blade interaction runtime"
+      },
+      {
+        "name": "@alpinejs/focus",
+        "version": "3.15.8",
+        "purpose": "Blade interaction runtime"
+      }
+    ],
+    "installTargets": [
+      "app/View/Components/Ui",
+      "resources/views/components/ui",
+      "resources/js/ui",
+      "resources/css"
+    ],
+    "exampleFiles": [
+      "blade/examples/dialog/basic.blade.php"
+    ]
+  },
+  "shared": {
+    "variants": [
+      {
+        "name": "default",
+        "default": true
+      }
+    ],
+    "sizes": [],
+    "states": [
+      "default",
+      "disabled",
+      "focus-visible",
+      "controlled",
+      "uncontrolled",
+      "open",
+      "closed"
+    ],
+    "responsiveBehavior": [
+      "Retains touch targets and usable wrapping at 360px.",
+      "Floating or modal content is constrained to the viewport."
+    ],
+    "tokens": [
+      "--background",
+      "--foreground",
+      "--primary",
+      "--primary-foreground",
+      "--muted",
+      "--muted-foreground",
+      "--border",
+      "--input",
+      "--ring",
+      "--radius"
+    ],
+    "iconMappings": [
+      {
+        "meaning": "close",
+        "react": "X",
+        "blade": "x",
+        "size": "16px",
+        "weight": "regular"
+      }
+    ]
+  },
+  "previews": [
+    {
+      "id": "basic",
+      "title": "Basic",
+      "reactExample": "react/examples/dialog/basic.tsx",
+      "bladeExample": "blade/examples/dialog/basic.blade.php",
+      "states": [
+        "default",
+        "disabled",
+        "focus-visible",
+        "controlled",
+        "uncontrolled",
+        "open",
+        "closed"
+      ],
+      "supportsDirection": true
+    }
+  ],
+  "parity": {
+    "classification": "framework-equivalent",
+    "intentionalDifferences": [
+      "React uses Lucide and Blade uses Phosphor; semantic glyph, rendered size, weight, colour and alignment match while path shapes may differ."
+    ]
+  },
+  "accessibility": {
+    "wcagTarget": "WCAG 2.2 AA",
+    "auditStatus": "passed",
+    "findings": []
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/ui/dialog.tsx",
+        "sha256": "3a28db523af9e98c44c2606fa1ae54362484e8e8cc3bc8aab2e372ee14986d33"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#component-scope"
+    ]
+  }
+}

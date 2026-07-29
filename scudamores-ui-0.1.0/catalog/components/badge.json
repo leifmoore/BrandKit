@@ -1,0 +1,198 @@
+{
+  "$schema": "../component.schema.json",
+  "schemaVersion": "1.0.0",
+  "id": "badge",
+  "title": "Badge",
+  "description": "Compact semantic status or metadata label.",
+  "category": "data-display",
+  "maturity": "stable",
+  "searchTerms": [
+    "badge",
+    "status",
+    "pill",
+    "react",
+    "blade"
+  ],
+  "react": {
+    "files": [
+      "react/components/ui/badge.tsx"
+    ],
+    "exports": [
+      "Badge",
+      "badgeVariants"
+    ],
+    "props": [
+      {
+        "name": "variant",
+        "type": "BadgeVariant",
+        "required": false,
+        "default": "default"
+      },
+      {
+        "name": "asChild",
+        "type": "boolean",
+        "required": false,
+        "default": false
+      },
+      {
+        "name": "dot",
+        "type": "boolean",
+        "required": false,
+        "default": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Additional consumer layout or spacing classes."
+      }
+    ],
+    "internalDependencies": [],
+    "npmDependencies": [
+      {
+        "name": "@radix-ui/react-slot",
+        "version": "1.1.2",
+        "purpose": "Direct component import"
+      },
+      {
+        "name": "class-variance-authority",
+        "version": "0.7.1",
+        "purpose": "Direct component import"
+      }
+    ],
+    "exampleFiles": [
+      "react/examples/badge/basic.tsx"
+    ]
+  },
+  "blade": {
+    "files": [
+      "blade/library/resources/views/components/ui/badge.blade.php"
+    ],
+    "canonicalTag": "<x-ui.badge>",
+    "legacyTags": [
+      "<x-badge>",
+      "<x-ref-badge>",
+      "<x-source-badge>",
+      "<x-users.status-badge>"
+    ],
+    "props": [
+      {
+        "name": "variant",
+        "type": "string",
+        "required": false,
+        "default": "default"
+      },
+      {
+        "name": "dot",
+        "type": "bool",
+        "required": false,
+        "default": false
+      },
+      {
+        "name": "href",
+        "type": "string | null",
+        "required": false,
+        "default": null
+      }
+    ],
+    "slots": [
+      "default"
+    ],
+    "events": [],
+    "phpDependencies": [],
+    "runtimeDependencies": [],
+    "installTargets": [
+      "app/View/Components/Ui",
+      "resources/views/components/ui",
+      "resources/js/ui",
+      "resources/css"
+    ],
+    "exampleFiles": [
+      "blade/examples/badge/basic.blade.php"
+    ]
+  },
+  "shared": {
+    "variants": [
+      {
+        "name": "default",
+        "default": true
+      },
+      {
+        "name": "secondary"
+      },
+      {
+        "name": "destructive"
+      },
+      {
+        "name": "outline"
+      },
+      {
+        "name": "success"
+      },
+      {
+        "name": "warning"
+      },
+      {
+        "name": "tint"
+      }
+    ],
+    "sizes": [],
+    "states": [
+      "default",
+      "disabled",
+      "focus-visible"
+    ],
+    "responsiveBehavior": [
+      "Retains touch targets and usable wrapping at 360px."
+    ],
+    "tokens": [
+      "--background",
+      "--foreground",
+      "--primary",
+      "--primary-foreground",
+      "--muted",
+      "--muted-foreground",
+      "--border",
+      "--input",
+      "--ring",
+      "--radius"
+    ],
+    "iconMappings": []
+  },
+  "previews": [
+    {
+      "id": "basic",
+      "title": "Basic",
+      "reactExample": "react/examples/badge/basic.tsx",
+      "bladeExample": "blade/examples/badge/basic.blade.php",
+      "states": [
+        "default",
+        "disabled",
+        "focus-visible"
+      ],
+      "supportsDirection": false
+    }
+  ],
+  "parity": {
+    "classification": "framework-equivalent",
+    "intentionalDifferences": []
+  },
+  "accessibility": {
+    "wcagTarget": "WCAG 2.2 AA",
+    "auditStatus": "passed",
+    "findings": []
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/ui/badge.tsx",
+        "sha256": "10bca91ba0519571d0f32eeccab928d93bc1c50f2875c0696c694a763f49302a"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#component-scope"
+    ]
+  }
+}

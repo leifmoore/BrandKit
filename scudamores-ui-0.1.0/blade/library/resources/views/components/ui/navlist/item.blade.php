@@ -1,0 +1,2 @@
+@props(['href', 'active' => false])
+<a href="{{ $href }}" @if($active) aria-current="page" @endif data-slot="navlist-item" {{ $attributes->class(['flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium outline-none transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-[3px] focus-visible:ring-sidebar-ring/50 [&_svg]:size-4', $active ? 'bg-sidebar-accent text-sidebar-accent-foreground' : 'text-sidebar-foreground']) }}>{{ $slot }}</a>

@@ -1,0 +1,208 @@
+{
+  "$schema": "../component.schema.json",
+  "schemaVersion": "1.0.0",
+  "id": "slider",
+  "title": "Slider",
+  "description": "Single or ranged numeric input.",
+  "category": "forms",
+  "maturity": "beta",
+  "searchTerms": [
+    "slider",
+    "range",
+    "value",
+    "react",
+    "blade"
+  ],
+  "react": {
+    "files": [
+      "react/components/ui/slider.tsx"
+    ],
+    "exports": [
+      "Slider"
+    ],
+    "props": [
+      {
+        "name": "value",
+        "type": "number[]",
+        "required": false
+      },
+      {
+        "name": "defaultValue",
+        "type": "number[]",
+        "required": false
+      },
+      {
+        "name": "min",
+        "type": "number",
+        "required": false,
+        "default": 0
+      },
+      {
+        "name": "max",
+        "type": "number",
+        "required": false,
+        "default": 100
+      },
+      {
+        "name": "step",
+        "type": "number",
+        "required": false,
+        "default": 1
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Additional consumer layout or spacing classes."
+      }
+    ],
+    "internalDependencies": [],
+    "npmDependencies": [
+      {
+        "name": "@radix-ui/react-slider",
+        "version": "1.2.3",
+        "purpose": "Direct component import"
+      }
+    ],
+    "exampleFiles": [
+      "react/examples/slider/basic.tsx"
+    ]
+  },
+  "blade": {
+    "files": [
+      "blade/library/resources/views/components/ui/slider.blade.php"
+    ],
+    "canonicalTag": "<x-ui.slider>",
+    "legacyTags": [],
+    "props": [
+      {
+        "name": "name",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "value",
+        "type": "float",
+        "required": false,
+        "default": 0
+      },
+      {
+        "name": "min",
+        "type": "float",
+        "required": false,
+        "default": 0
+      },
+      {
+        "name": "max",
+        "type": "float",
+        "required": false,
+        "default": 100
+      },
+      {
+        "name": "step",
+        "type": "float",
+        "required": false,
+        "default": 1
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "default": "Value"
+      }
+    ],
+    "slots": [
+      "default"
+    ],
+    "events": [
+      "ui:slider:change"
+    ],
+    "phpDependencies": [],
+    "runtimeDependencies": [
+      {
+        "name": "alpinejs",
+        "version": "3.15.8",
+        "purpose": "Blade interaction runtime"
+      }
+    ],
+    "installTargets": [
+      "app/View/Components/Ui",
+      "resources/views/components/ui",
+      "resources/js/ui",
+      "resources/css"
+    ],
+    "exampleFiles": [
+      "blade/examples/slider/basic.blade.php"
+    ]
+  },
+  "shared": {
+    "variants": [
+      {
+        "name": "default",
+        "default": true
+      }
+    ],
+    "sizes": [],
+    "states": [
+      "default",
+      "disabled",
+      "focus-visible",
+      "controlled",
+      "uncontrolled"
+    ],
+    "responsiveBehavior": [
+      "Retains touch targets and usable wrapping at 360px."
+    ],
+    "tokens": [
+      "--background",
+      "--foreground",
+      "--primary",
+      "--primary-foreground",
+      "--muted",
+      "--muted-foreground",
+      "--border",
+      "--input",
+      "--ring",
+      "--radius"
+    ],
+    "iconMappings": []
+  },
+  "previews": [
+    {
+      "id": "basic",
+      "title": "Basic",
+      "reactExample": "react/examples/slider/basic.tsx",
+      "bladeExample": "blade/examples/slider/basic.blade.php",
+      "states": [
+        "default",
+        "disabled",
+        "focus-visible",
+        "controlled",
+        "uncontrolled"
+      ],
+      "supportsDirection": false
+    }
+  ],
+  "parity": {
+    "classification": "framework-equivalent",
+    "intentionalDifferences": []
+  },
+  "accessibility": {
+    "wcagTarget": "WCAG 2.2 AA",
+    "auditStatus": "passed",
+    "findings": []
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/ui/slider.tsx",
+        "sha256": "19dd9d8b758f41fa61967d1a0540ea34ed989727258d23eef9a50cdebcab805b"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#component-scope"
+    ]
+  }
+}

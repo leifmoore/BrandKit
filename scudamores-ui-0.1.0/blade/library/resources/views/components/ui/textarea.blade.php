@@ -1,0 +1,3 @@
+@if($label)<x-ui.field><x-ui.label :for="$id" :value="$label" />@endif
+<textarea {{ $formControlAttributes }} {{ $attributes->class('flex field-sizing-content min-h-16 w-full resize-none rounded-lg border border-input bg-input-background px-3 py-2 text-base outline-none transition-[color,box-shadow] placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-input/30 md:text-sm') }}>{{ is_scalar($value) && $value !== '' ? $value : $slot }}</textarea>
+@if($label)<x-ui.error :for="$name" :bag="$bag" /></x-ui.field>@endif

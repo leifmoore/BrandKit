@@ -1,0 +1,8 @@
+{
+  "defaultId": "mill-lane",
+  "items": [
+    { "id": "mill-lane", "label": "Mill Lane", "sublabel": "Primary location", "available": true },
+    { "id": "quayside", "label": "Quayside", "available": true },
+    { "id": "station", "label": "Station kiosk", "available": false, "lockedReason": "Assigned to another channel" }
+  ]
+}

@@ -1,0 +1,1 @@
+<li role="presentation" aria-hidden="true" data-slot="breadcrumb-separator" {{ $attributes->class('[&>svg]:size-3.5') }}>@if($slot->isEmpty())<x-phosphor-caret-right aria-hidden="true" />@else{{ $slot }}@endif</li>

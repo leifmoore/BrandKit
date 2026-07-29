@@ -1,0 +1,1 @@
+<x-ui.popover><x-ui.popover.trigger class="rounded-md border px-3 py-2 text-sm">Open popover</x-ui.popover.trigger><x-ui.popover.content><h3 class="font-medium">Dimensions</h3><p class="mt-1 text-sm text-muted-foreground">Set the width and height for this item.</p></x-ui.popover.content></x-ui.popover>

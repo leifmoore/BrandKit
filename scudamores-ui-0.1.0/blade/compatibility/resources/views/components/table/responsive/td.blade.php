@@ -1,0 +1,2 @@
+@props(['label' => null])
+<x-ui.table.cell {{ $attributes->class('block w-full whitespace-normal md:table-cell md:w-auto') }}>@if($label)<div class="flex w-full justify-between gap-4 md:block"><span class="mt-1 shrink-0 text-xs font-semibold uppercase tracking-wider text-muted-foreground md:hidden">{{ $label }}</span><div class="min-w-0 flex-grow break-words text-right md:text-left">{{ $slot }}</div></div>@else{{ $slot }}@endif</x-ui.table.cell>

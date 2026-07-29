@@ -1,0 +1,210 @@
+{
+  "$schema": "../component.schema.json",
+  "schemaVersion": "1.0.0",
+  "id": "stepper",
+  "title": "Stepper",
+  "description": "Bounded numeric increment and decrement control.",
+  "category": "navigation",
+  "maturity": "stable",
+  "searchTerms": [
+    "stepper",
+    "steps",
+    "number",
+    "react",
+    "blade"
+  ],
+  "react": {
+    "files": [
+      "react/components/ui/stepper.tsx"
+    ],
+    "exports": [
+      "Stepper"
+    ],
+    "props": [
+      {
+        "name": "value",
+        "type": "number",
+        "required": true
+      },
+      {
+        "name": "onChange",
+        "type": "(value: number) => void",
+        "required": true
+      },
+      {
+        "name": "min",
+        "type": "number",
+        "required": false,
+        "default": 0
+      },
+      {
+        "name": "max",
+        "type": "number | null",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "default": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Additional consumer layout or spacing classes."
+      }
+    ],
+    "internalDependencies": [
+      "button"
+    ],
+    "npmDependencies": [],
+    "exampleFiles": [
+      "react/examples/stepper/basic.tsx"
+    ]
+  },
+  "blade": {
+    "files": [
+      "blade/library/resources/views/components/ui/stepper.blade.php"
+    ],
+    "canonicalTag": "<x-ui.stepper>",
+    "legacyTags": [],
+    "props": [
+      {
+        "name": "name",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "value",
+        "type": "float",
+        "required": false,
+        "default": 0
+      },
+      {
+        "name": "min",
+        "type": "float",
+        "required": false,
+        "default": 0
+      },
+      {
+        "name": "max",
+        "type": "float | null",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "step",
+        "type": "float",
+        "required": false,
+        "default": 1
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "default": "Quantity"
+      },
+      {
+        "name": "disabled",
+        "type": "bool",
+        "required": false,
+        "default": false
+      }
+    ],
+    "slots": [
+      "default"
+    ],
+    "events": [
+      "ui:stepper:change"
+    ],
+    "phpDependencies": [],
+    "runtimeDependencies": [
+      {
+        "name": "alpinejs",
+        "version": "3.15.8",
+        "purpose": "Blade interaction runtime"
+      }
+    ],
+    "installTargets": [
+      "app/View/Components/Ui",
+      "resources/views/components/ui",
+      "resources/js/ui",
+      "resources/css"
+    ],
+    "exampleFiles": [
+      "blade/examples/stepper/basic.blade.php"
+    ]
+  },
+  "shared": {
+    "variants": [
+      {
+        "name": "default",
+        "default": true
+      }
+    ],
+    "sizes": [],
+    "states": [
+      "default",
+      "disabled",
+      "focus-visible",
+      "controlled",
+      "uncontrolled"
+    ],
+    "responsiveBehavior": [
+      "Retains touch targets and usable wrapping at 360px."
+    ],
+    "tokens": [
+      "--background",
+      "--foreground",
+      "--primary",
+      "--primary-foreground",
+      "--muted",
+      "--muted-foreground",
+      "--border",
+      "--input",
+      "--ring",
+      "--radius"
+    ],
+    "iconMappings": []
+  },
+  "previews": [
+    {
+      "id": "basic",
+      "title": "Basic",
+      "reactExample": "react/examples/stepper/basic.tsx",
+      "bladeExample": "blade/examples/stepper/basic.blade.php",
+      "states": [
+        "default",
+        "disabled",
+        "focus-visible",
+        "controlled",
+        "uncontrolled"
+      ],
+      "supportsDirection": false
+    }
+  ],
+  "parity": {
+    "classification": "framework-equivalent",
+    "intentionalDifferences": []
+  },
+  "accessibility": {
+    "wcagTarget": "WCAG 2.2 AA",
+    "auditStatus": "passed",
+    "findings": []
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/ui/stepper.tsx",
+        "sha256": "188fd860cad078aab5119850a8746e0fe3463fd230f4b23bced7fe97ee7d9f5f"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#component-scope"
+    ]
+  }
+}

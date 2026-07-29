@@ -1,0 +1,1 @@
+<span role="presentation" aria-hidden="true" data-slot="breadcrumb-ellipsis" {{ $attributes->class('flex size-9 items-center justify-center') }}><x-phosphor-dots-three aria-hidden="true" class="size-4" /><span class="sr-only">More</span></span>

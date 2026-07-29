@@ -1,0 +1,234 @@
+{
+  "$schema": "../component.schema.json",
+  "schemaVersion": "1.0.0",
+  "id": "calendar",
+  "title": "Calendar",
+  "description": "Single-date and date-range calendar selection.",
+  "category": "forms",
+  "maturity": "stable",
+  "searchTerms": [
+    "calendar",
+    "date",
+    "range",
+    "react",
+    "blade"
+  ],
+  "react": {
+    "files": [
+      "react/components/ui/calendar.tsx"
+    ],
+    "exports": [
+      "Calendar"
+    ],
+    "props": [
+      {
+        "name": "mode",
+        "type": "\"single\" | \"range\"",
+        "required": false
+      },
+      {
+        "name": "selected",
+        "type": "Date | DateRange",
+        "required": false
+      },
+      {
+        "name": "onSelect",
+        "type": "selection callback",
+        "required": false
+      },
+      {
+        "name": "showOutsideDays",
+        "type": "boolean",
+        "required": false,
+        "default": true
+      },
+      {
+        "name": "showYearMonthDropdowns",
+        "type": "boolean",
+        "required": false,
+        "default": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Additional consumer layout or spacing classes."
+      }
+    ],
+    "internalDependencies": [
+      "button",
+      "select"
+    ],
+    "npmDependencies": [
+      {
+        "name": "date-fns",
+        "version": "3.6.0",
+        "purpose": "Direct component import"
+      },
+      {
+        "name": "lucide-react",
+        "version": "0.487.0",
+        "purpose": "Direct component import"
+      },
+      {
+        "name": "react-day-picker",
+        "version": "8.10.1",
+        "purpose": "Direct component import"
+      }
+    ],
+    "exampleFiles": [
+      "react/examples/calendar/basic.tsx"
+    ]
+  },
+  "blade": {
+    "files": [
+      "blade/library/resources/views/components/ui/calendar.blade.php"
+    ],
+    "canonicalTag": "<x-ui.calendar>",
+    "legacyTags": [],
+    "props": [
+      {
+        "name": "name",
+        "type": "string",
+        "required": false,
+        "default": "date"
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      {
+        "name": "min",
+        "type": "string | null",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "max",
+        "type": "string | null",
+        "required": false,
+        "default": null
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "default": "Choose date"
+      }
+    ],
+    "slots": [
+      "default"
+    ],
+    "events": [
+      "ui:calendar:change"
+    ],
+    "phpDependencies": [],
+    "runtimeDependencies": [
+      {
+        "name": "alpinejs",
+        "version": "3.15.8",
+        "purpose": "Blade interaction runtime"
+      }
+    ],
+    "installTargets": [
+      "app/View/Components/Ui",
+      "resources/views/components/ui",
+      "resources/js/ui",
+      "resources/css"
+    ],
+    "exampleFiles": [
+      "blade/examples/calendar/basic.blade.php"
+    ]
+  },
+  "shared": {
+    "variants": [
+      {
+        "name": "default",
+        "default": true
+      }
+    ],
+    "sizes": [],
+    "states": [
+      "default",
+      "disabled",
+      "focus-visible",
+      "controlled",
+      "uncontrolled"
+    ],
+    "responsiveBehavior": [
+      "Retains touch targets and usable wrapping at 360px."
+    ],
+    "tokens": [
+      "--background",
+      "--foreground",
+      "--primary",
+      "--primary-foreground",
+      "--muted",
+      "--muted-foreground",
+      "--border",
+      "--input",
+      "--ring",
+      "--radius"
+    ],
+    "iconMappings": [
+      {
+        "meaning": "previous month",
+        "react": "ChevronLeft",
+        "blade": "caret-left",
+        "size": "16px",
+        "weight": "bold"
+      },
+      {
+        "meaning": "next month",
+        "react": "ChevronRight",
+        "blade": "caret-right",
+        "size": "16px",
+        "weight": "bold"
+      }
+    ]
+  },
+  "previews": [
+    {
+      "id": "basic",
+      "title": "Basic",
+      "reactExample": "react/examples/calendar/basic.tsx",
+      "bladeExample": "blade/examples/calendar/basic.blade.php",
+      "states": [
+        "default",
+        "disabled",
+        "focus-visible",
+        "controlled",
+        "uncontrolled"
+      ],
+      "supportsDirection": false
+    }
+  ],
+  "parity": {
+    "classification": "documented-exception",
+    "intentionalDifferences": [
+      "React uses React DayPicker; Blade uses the library-owned Alpine date-grid controller while preserving the same visible calendar contract.",
+      "React uses Lucide and Blade uses Phosphor; semantic glyph, rendered size, weight, colour and alignment match while path shapes may differ."
+    ]
+  },
+  "accessibility": {
+    "wcagTarget": "WCAG 2.2 AA",
+    "auditStatus": "passed",
+    "findings": []
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-07-28",
+    "files": [
+      {
+        "path": "src/app/components/ui/calendar.tsx",
+        "sha256": "72d2a470dc2e044c97db0c8b28627c4b83ef45f6b7fcaf4535c325c27f23f4fa"
+      }
+    ],
+    "decisionReferences": [
+      "provenance/decisions.md#component-scope",
+      "foundations/docs/exceptions.md"
+    ]
+  }
+}

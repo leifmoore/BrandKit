@@ -15,7 +15,7 @@ const cases = [
 for (const visualCase of cases) {
   test(`button preview matches ${visualCase.name} baseline`, async ({ page }) => {
     await page.setViewportSize(hostViewport)
-    await page.goto('/developer/components/button')
+    await page.goto('/design-system/components/button')
     await expectPreviewReady(page)
     await page.evaluate(async () => {
       await document.fonts.ready
@@ -24,11 +24,16 @@ for (const visualCase of cases) {
     const livePreview = page.locator('section[data-preview-entry="button"]')
     const preview = livePreview.locator('[data-ui-preview="true"]')
 
-    await livePreview.getByLabel('Mode').selectOption(visualCase.mode)
+    await livePreview.getByRole('button', {
+      name: visualCase.mode === 'light' ? 'Light' : 'Dark',
+      exact: true,
+    }).click()
     if (visualCase.direction === 'rtl') {
-      await livePreview.getByRole('button', { name: 'RTL', exact: true }).click()
+      await livePreview.getByRole('button', { name: 'More', exact: true }).click()
+      await page.getByRole('button', { name: 'RTL', exact: true }).click()
+      await page.keyboard.press('Escape')
     }
-    await livePreview.getByLabel('Width').selectOption(visualCase.preset)
+    await livePreview.getByLabel('Viewport').selectOption(visualCase.preset)
 
     await expect(preview).toHaveAttribute('data-ui-width', visualCase.preset)
     await expect(preview).toHaveAttribute('data-ui-theme', visualCase.mode)

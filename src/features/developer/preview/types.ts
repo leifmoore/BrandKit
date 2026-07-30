@@ -12,6 +12,15 @@ export type PreviewBrand =
   | "violet";
 export type PreviewDirection = "ltr" | "rtl";
 export type PreviewWidth = "mobile" | "tablet" | "desktop" | "fluid";
+export type PreviewLayout = "intrinsic" | "fluid";
+export type PreviewAlignment = "start" | "center";
+
+export interface PreviewPresentation {
+  layout: PreviewLayout;
+  alignment?: PreviewAlignment;
+  /** Optional destination-only bound for intrinsically sized previews. */
+  maxWidth?: string;
+}
 
 export interface PreviewSettings {
   mode: PreviewMode;

@@ -28,12 +28,18 @@ requires an explicit copy or adapter decision.
 
 - Existing import paths remain stable (`@/components/ui/*`).
 - Brand-specific appearance belongs at host call sites, not in copied files.
-- The Brand Kit retains its Scudamore navy, cream, gold, Gill/Inter typography,
-  chart data, `scud-dark-mode` storage key, and `.app-dark` ownership.
+- The shared shell and software documentation use the handoff's neutral
+  semantic palette and Instrument Sans. Brand typography and colour remain
+  authored content until the Brand migration gate is approved.
+- Official Navy and Off-White remain Brand identity colours. Cream and Gold
+  application roles are unapproved candidates documented in
+  `docs/brand-colour-review.md` and rendered on the Themes foundation page.
 - Generic semantic variables (`background`, `foreground`, `muted`, `accent`,
-  status colours, and component surface tokens) back canonical utilities.
-- The seven generic handoff brand presets remain isolated to Developer live
-  previews; they do not replace the Brand Kit's identity.
+  status colours, and component surface tokens) back canonical utilities. The
+  destination corrects light and dark `muted-foreground` contrast without
+  altering the immutable handoff or copyable source.
+- The seven generic handoff accent presets remain isolated to Design System
+  live previews; they do not replace the Brand Kit's identity.
 - Dark mode has one module-level reactive store. Sidebar and Toaster observe
   the same persisted state, and canonical Sonner receives an explicit theme.
 - `next-themes` was removed because the app has no ThemeProvider and no longer
@@ -43,8 +49,18 @@ requires an explicit copy or adapter decision.
 
 - Download/copy controls retain their compact Brand Kit typography and spacing
   while composing canonical Button.
-- Developer documentation Tabs use `gap-0` so existing section margins remain
-  authoritative.
+- The preview-first workbench keeps Preview, React, and Blade at the top of
+  component and pattern pages; detailed guidance opens in a URL-addressable
+  documentation sheet.
+- The Components collection defaults to a compact, alphabetized “All
+  Components” index following the structural precedent of shadcn/ui's
+  Components page. Search and List/Card layout are URL-addressable; Card view
+  virtualizes inert compact previews near the viewport to protect host runtime
+  and Codespace compute.
+- Copy and Download actions operate on a selected exact handoff file. Deferred
+  roadmap records expose neither action.
+- The sequential preview-review queue mounts one preview at a time, stores
+  personal Pass/Flag decisions by handoff version, and exports Markdown or JSON.
 - Command Dialog reserves close-button space and keeps a programmatic title,
   description, and input label.
 - Sidebar Scroll Area explicitly retains flex min-size and clipping behavior.
@@ -58,6 +74,32 @@ requires an explicit copy or adapter decision.
 - Colour formats, contrast changes, copy results, downloads, and scrollable code
   samples now expose specific names, live feedback, and keyboard access.
 
+## Shared host patterns
+
+The application shell owns a small set of reusable patterns that are shared by
+Brand and Design System pages without being presented as canonical handoff
+components or framework-parity implementations:
+
+- `PageHeader` provides one semantic, responsive heading hierarchy for both
+  workspaces. Brand's legacy `SectionHeader` and the catalogue's
+  `DeveloperPageHeader` are compatibility wrappers over this host pattern.
+- `SectionSubNav` provides overflow-safe, reduced-motion-aware in-page
+  navigation. It composes the canonical Button and uses only semantic surface,
+  text, border, and focus roles; Brand identity colours remain authored content.
+- `GuidanceTable` preserves captions and every guidance column at narrow widths
+  inside a labelled, keyboard-scrollable region instead of deleting content at
+  responsive breakpoints.
+- Neutral Brand guidance clusters compose the canonical `Card` and
+  `CardContent`. Authored Brand specimens—such as logo canvases, colour fields,
+  and Deep Navy statements—keep their explicitly documented Brand treatment.
+- Pending or coming-soon guidance uses a canonical `Card` with a dashed border,
+  a semantic `Badge` where status text is present, and ordinary document
+  headings. Warning and destructive guidance remains a labelled semantic
+  notice rather than borrowing Brand accent colours.
+
+These patterns may enter the copyable component library only after original
+React and Blade sources plus behavioural contracts are reviewed.
+
 ## Verification gates
 
 Run these serially when Codespace CPU capacity allows:
@@ -65,10 +107,10 @@ Run these serially when Codespace CPU capacity allows:
 1. `npm run verify:canonical`
 2. `npm run typecheck`
 3. `npm run build`
-4. `npm run test:production` for the built root and a direct Developer deep link
+4. `npm run test:production` for the built root and a direct Design System deep link
 5. Focused Brand Kit shell/page interaction and accessibility checks, including
    all original Brand Kit routes at 360px
-6. Developer route, portal, accessibility, and visual suites
+6. Design System route, workbench, review, Calendar, portal, accessibility, and visual suites
 
 The immutable `_comp-lib` directory is never edited during destination
 migration; `npm run verify:handoff` validates its supplied inventory and hashes.

@@ -1,7 +1,9 @@
 import { SectionHeader } from '@/components/shared/SectionHeader'
+import { GuidanceTable } from '@/components/shared/GuidanceTable'
 import { SectionSubNav } from '@/components/layout/SectionSubNav'
 import { ComingSoonBadge } from '@/components/shared/ComingSoonBadge'
 import { Separator } from '@/components/ui/separator'
+import { Card, CardContent } from '@/components/ui/card'
 import { Sparkles } from 'lucide-react'
 
 const SUB_NAV = [
@@ -115,26 +117,26 @@ export function Voice() {
 
       {/* Traits */}
       <section id="traits" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-6">Voice Traits</h2>
+        <h2 className="mb-6 font-sans text-2xl font-semibold text-foreground">Voice Traits</h2>
         <div className="space-y-6">
           {VOICE_TRAITS.map(trait => (
-            <div key={trait.name} className="rounded-xl border border-border overflow-hidden">
+            <Card key={trait.name} className="gap-0 overflow-hidden">
               <div className="px-5 py-4 bg-card">
-                <h3 className="font-display font-bold text-xl text-navy-900 dark:text-cream-50 mb-1">{trait.name}</h3>
-                <p className="font-sans text-sm text-navy-700 dark:text-cream-300">{trait.summary}</p>
+                <h3 className="mb-1 font-sans text-xl font-semibold text-foreground">{trait.name}</h3>
+                <p className="font-sans text-sm text-muted-foreground">{trait.summary}</p>
               </div>
               <div className="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-border">
                 <div className="p-5 bg-green-50 dark:bg-green-950/30">
                   <p className="font-sans text-xs font-medium text-green-700 dark:text-green-400 uppercase tracking-caps mb-2">✓ Do</p>
-                  <p className="font-sans text-sm text-navy-900 dark:text-cream-50 italic">"{trait.doExample}"</p>
+                  <p className="font-sans text-sm italic text-foreground">{trait.doExample}</p>
                 </div>
                 <div className="p-5 bg-red-50 dark:bg-red-950/30">
                   <p className="font-sans text-xs font-medium text-red-600 dark:text-red-400 uppercase tracking-caps mb-2">✗ Don't</p>
-                  <p className="font-sans text-sm text-navy-900 dark:text-cream-50 italic line-through opacity-60">"{trait.dontExample}"</p>
+                  <p className="font-sans text-sm italic text-foreground line-through opacity-60">{trait.dontExample}</p>
                   <p className="font-sans text-xs text-muted-foreground mt-2">{trait.dontReason}</p>
                 </div>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </section>
@@ -143,39 +145,37 @@ export function Voice() {
 
       {/* Channel tones */}
       <section id="channels" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-2">Tone by Channel</h2>
+        <h2 className="mb-2 font-sans text-2xl font-semibold text-foreground">Tone by Channel</h2>
         <p className="font-sans text-sm text-muted-foreground mb-6">Voice stays constant. Tone flexes by context.</p>
-        <div className="rounded-xl border border-border overflow-hidden">
-          <table className="w-full font-sans text-sm">
+        <GuidanceTable label="Tone by channel" tableClassName="min-w-[44rem]">
             <thead className="bg-muted">
               <tr>
-                <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-caps">Channel</th>
-                <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-caps hidden sm:table-cell">Tone</th>
-                <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-caps">Example</th>
+                <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">Channel</th>
+                <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">Tone</th>
+                <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">Example</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
               {CHANNEL_TONES.map(row => (
                 <tr key={row.channel} className="hover:bg-muted/40">
                   <td className="px-4 py-3 font-medium text-foreground whitespace-nowrap">{row.channel}</td>
-                  <td className="px-4 py-3 text-muted-foreground hidden sm:table-cell whitespace-nowrap">{row.tone}</td>
-                  <td className="px-4 py-3 text-muted-foreground italic text-xs">"{row.example}"</td>
+                  <td className="whitespace-nowrap px-4 py-3 text-muted-foreground">{row.tone}</td>
+                  <td className="min-w-72 px-4 py-3 text-xs italic text-muted-foreground">“{row.example}”</td>
                 </tr>
               ))}
             </tbody>
-          </table>
-        </div>
+        </GuidanceTable>
       </section>
 
       <Separator className="mb-14" />
 
       {/* Do's & Don'ts */}
       <section id="dos-donts" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-6">Do's & Don'ts</h2>
+        <h2 className="mb-6 font-sans text-2xl font-semibold text-foreground">Do's & Don'ts</h2>
         <div className="space-y-8">
           {AVOID_PHRASES.map(group => (
             <div key={group.type}>
-              <h3 className="font-sans font-semibold text-base text-navy-900 dark:text-cream-50 mb-3">{group.type}</h3>
+              <h3 className="mb-3 font-sans text-base font-semibold text-foreground">{group.type}</h3>
               <div className="space-y-2">
                 {group.items.map((item, i) => (
                   <div key={i} className="flex gap-4 items-start py-2 border-b border-border last:border-0">
@@ -196,14 +196,13 @@ export function Voice() {
 
       {/* Scudamore's-isms */}
       <section id="isms" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-2">Scudamore's-isms</h2>
+        <h2 className="mb-2 font-sans text-2xl font-semibold text-foreground">Scudamore's-isms</h2>
         <p className="font-sans text-sm text-muted-foreground mb-6">House vocabulary — pending final team alignment.</p>
-        <div className="rounded-xl border border-border overflow-hidden">
-          <table className="w-full font-sans text-sm">
+        <GuidanceTable label="Scudamore’s vocabulary and usage notes">
             <thead className="bg-muted">
               <tr>
-                <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-caps">Term</th>
-                <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-caps">Usage note</th>
+                <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">Term</th>
+                <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">Usage note</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
@@ -214,28 +213,29 @@ export function Voice() {
                 </tr>
               ))}
             </tbody>
-          </table>
-        </div>
+        </GuidanceTable>
       </section>
 
       <Separator className="mb-14" />
 
       {/* AI Brand Checker placeholder */}
       <section id="ai-checker" className="scroll-mt-6 mb-14">
-        <div className="rounded-xl border-2 border-dashed border-gold-500/40 dark:border-gold-300/30 p-8 text-center">
-          <div className="flex justify-center mb-4">
-            <div className="w-12 h-12 rounded-full bg-gold-500/10 flex items-center justify-center">
-              <Sparkles className="w-6 h-6 text-gold-500 dark:text-gold-300" />
+        <Card className="gap-0 border-dashed text-center">
+          <CardContent className="p-8">
+            <div className="flex justify-center mb-4">
+              <div className="w-12 h-12 rounded-full bg-gold-500/10 flex items-center justify-center">
+                <Sparkles className="w-6 h-6 text-gold-500 dark:text-gold-300" />
+              </div>
             </div>
-          </div>
-          <div className="flex items-center justify-center gap-2 mb-3">
-            <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50">AI Brand Checker</h2>
-            <ComingSoonBadge />
-          </div>
-          <p className="font-sans text-sm text-muted-foreground max-w-md mx-auto">
-            Paste your copy and get AI-powered feedback on whether it sounds like Scudamore's. Powered by Claude — it'll know the difference between "glide along the river" and good writing.
-          </p>
-        </div>
+            <div className="flex items-center justify-center gap-2 mb-3">
+              <h2 className="font-sans text-2xl font-semibold text-foreground">AI Brand Checker</h2>
+              <ComingSoonBadge />
+            </div>
+            <p className="font-sans text-sm text-muted-foreground max-w-md mx-auto">
+              Paste your copy and get AI-powered feedback on whether it sounds like Scudamore's. Powered by Claude — it'll know the difference between "glide along the river" and good writing.
+            </p>
+          </CardContent>
+        </Card>
       </section>
     </div>
   )

@@ -25,6 +25,7 @@ export {
   PREVIEW_MODES,
   PREVIEW_WIDTHS,
   createPreviewTheme,
+  getPreviewPresentation,
   getPreviewWidth,
 } from "./theme";
 
@@ -33,9 +34,12 @@ export type {
   PreviewBrand,
   PreviewDirection,
   PreviewKind,
+  PreviewLayout,
+  PreviewAlignment,
   PreviewLoadResult,
   PreviewMode,
   PreviewSettings,
+  PreviewPresentation,
   PreviewTheme,
   PreviewWidth,
 } from "./types";

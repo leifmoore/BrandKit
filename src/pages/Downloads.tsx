@@ -2,6 +2,7 @@ import { SectionHeader } from '@/components/shared/SectionHeader'
 import { Separator } from '@/components/ui/separator'
 import { DownloadButton } from '@/components/shared/DownloadButton'
 import { CopyButton } from '@/components/shared/CopyButton'
+import { Card, CardContent } from '@/components/ui/card'
 
 const CSS_VARIABLES = `/* Scudamore's Brand Colour Tokens — CSS Custom Properties */
 :root {
@@ -74,7 +75,7 @@ $gold-700: #9c7a2f;`.trim()
 
 function CodeBlock({ code, label }: { code: string; label: string }) {
   return (
-    <div className="rounded-xl border border-border overflow-hidden">
+    <Card className="gap-0 overflow-hidden">
       <div className="flex items-center justify-between px-4 py-2 bg-muted border-b border-border">
         <span className="font-mono text-xs text-muted-foreground">{label}</span>
         <CopyButton
@@ -91,7 +92,7 @@ function CodeBlock({ code, label }: { code: string; label: string }) {
       >
         {code}
       </pre>
-    </div>
+    </Card>
   )
 }
 
@@ -106,18 +107,18 @@ export function Downloads() {
 
       {/* Logos */}
       <section className="mb-14">
-        <h2 className="font-display font-bold text-2xl text-foreground mb-6">Logos</h2>
+        <h2 className="mb-6 font-sans text-2xl font-semibold text-foreground">Logos</h2>
         <div className="grid sm:grid-cols-3 gap-4">
           {[
             { title: 'Solid — Deep Navy', file: 'scudamores-logo-navy.svg', src: '/logos/logo-navy.svg', bg: '#fefefd', desc: 'SVG · Light backgrounds' },
             { title: 'White Outline', file: 'scudamores-logo-white.svg', src: '/logos/logo-white.svg', bg: '#14284b', desc: 'SVG · Dark backgrounds' },
             { title: 'Full Colour', file: 'scudamores-logo-full.svg', src: '/logos/logo-full.svg', bg: '#fefefd', desc: 'SVG · Full-colour reproduction' },
           ].map(logo => (
-            <div key={logo.file} className="rounded-xl border border-border overflow-hidden">
+            <Card key={logo.file} className="gap-0 overflow-hidden">
               <div className="h-28 flex items-center justify-center p-4" style={{ backgroundColor: logo.bg }}>
                 <img src={logo.src} alt={logo.title} className="h-12 w-auto max-w-full" />
               </div>
-              <div className="p-4 flex items-start justify-between gap-2">
+              <CardContent className="flex items-start justify-between gap-2 p-4">
                 <div>
                   <p className="font-sans font-semibold text-sm text-foreground">{logo.title}</p>
                   <p className="font-sans text-xs text-muted-foreground">{logo.desc}</p>
@@ -127,8 +128,8 @@ export function Downloads() {
                   filename={logo.file}
                   accessibleLabel={`Download ${logo.title} SVG`}
                 />
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </section>
@@ -137,7 +138,7 @@ export function Downloads() {
 
       {/* Colour tokens */}
       <section className="mb-14">
-        <h2 className="font-display font-bold text-2xl text-foreground mb-2">Colour Tokens</h2>
+        <h2 className="mb-2 font-sans text-2xl font-semibold text-foreground">Colour Tokens</h2>
         <p className="font-sans text-sm text-muted-foreground mb-6">Copy the token format that matches your stack — CSS custom properties, JSON, or SCSS variables.</p>
         <div className="space-y-6">
           <CodeBlock code={CSS_VARIABLES} label="CSS Custom Properties" />
@@ -150,7 +151,7 @@ export function Downloads() {
 
       {/* Typography */}
       <section className="mb-14">
-        <h2 className="font-display font-bold text-2xl text-foreground mb-2">Typography</h2>
+        <h2 className="mb-2 font-sans text-2xl font-semibold text-foreground">Typography</h2>
         <div className="grid sm:grid-cols-2 gap-6">
           {[
             {
@@ -168,29 +169,31 @@ export function Downloads() {
               googleLabel: 'Get Inter from Google Fonts',
             },
           ].map(font => (
-            <div key={font.name} className="rounded-xl border border-border p-5">
-              <p className="font-sans font-semibold text-base text-foreground mb-1">{font.name}</p>
-              <p className="font-sans text-sm text-muted-foreground mb-3">{font.note}</p>
-              <div className="rounded-md bg-muted p-3 mb-3">
-                <p className="font-mono text-xs text-foreground break-all">{font.stack}</p>
-              </div>
-              <div className="flex gap-2">
-                <CopyButton
-                  value={font.stack}
-                  label="Copy stack"
-                  accessibleLabel={`Copy ${font.name} font stack`}
-                  size="sm"
-                />
-                <a
-                  href={font.googleLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-sans text-xs text-navy-700 dark:text-gold-300 hover:underline self-center"
-                >
-                  {font.googleLabel} ↗
-                </a>
-              </div>
-            </div>
+            <Card key={font.name} className="gap-0">
+              <CardContent className="p-5">
+                <h3 className="font-sans font-semibold text-base text-foreground mb-1">{font.name}</h3>
+                <p className="font-sans text-sm text-muted-foreground mb-3">{font.note}</p>
+                <div className="rounded-md bg-muted p-3 mb-3">
+                  <p className="font-mono text-xs text-foreground break-all">{font.stack}</p>
+                </div>
+                <div className="flex gap-2">
+                  <CopyButton
+                    value={font.stack}
+                    label="Copy stack"
+                    accessibleLabel={`Copy ${font.name} font stack`}
+                    size="sm"
+                  />
+                  <a
+                    href={font.googleLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-sans text-xs text-navy-700 dark:text-gold-300 hover:underline self-center"
+                  >
+                    {font.googleLabel} ↗
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </section>

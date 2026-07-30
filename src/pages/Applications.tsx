@@ -1,8 +1,8 @@
 import { SectionHeader } from '@/components/shared/SectionHeader'
+import { GuidanceTable } from '@/components/shared/GuidanceTable'
 import { SectionSubNav } from '@/components/layout/SectionSubNav'
 import { Separator } from '@/components/ui/separator'
 import { Badge } from '@/components/ui/badge'
-import { cn } from '@/lib/utils'
 
 const SUB_NAV = [
   { label: 'Digital', anchor: 'digital' },
@@ -13,14 +13,14 @@ const SUB_NAV = [
 type AppStatus = 'live' | 'to-produce' | 'needs-review' | 'pending'
 
 function StatusBadge({ status }: { status: AppStatus }) {
-  const config: Record<AppStatus, { label: string; className: string }> = {
-    'live':         { label: '✅ Live', className: 'bg-green-100 text-green-700 dark:bg-green-950 dark:text-green-400 border-green-200 dark:border-green-800' },
-    'to-produce':   { label: '🟡 To produce', className: 'bg-yellow-100 text-yellow-700 dark:bg-yellow-950 dark:text-yellow-400 border-yellow-200 dark:border-yellow-800' },
-    'needs-review': { label: '⚠️ Needs review', className: 'bg-orange-100 text-orange-700 dark:bg-orange-950 dark:text-orange-400 border-orange-200 dark:border-orange-800' },
-    'pending':      { label: '🔵 Pending', className: 'bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-400 border-blue-200 dark:border-blue-800' },
+  const config: Record<AppStatus, { label: string; variant: 'success' | 'warning' | 'destructive' | 'outline' }> = {
+    'live':         { label: 'Live', variant: 'success' },
+    'to-produce':   { label: 'To produce', variant: 'warning' },
+    'needs-review': { label: 'Needs review', variant: 'destructive' },
+    'pending':      { label: 'Pending', variant: 'outline' },
   }
-  const { label, className } = config[status]
-  return <Badge variant="outline" className={cn('text-xs whitespace-nowrap', className)}>{label}</Badge>
+  const { label, variant } = config[status]
+  return <Badge variant={variant} dot>{label}</Badge>
 }
 
 const DIGITAL_APPS = [
@@ -64,28 +64,26 @@ const SOCIAL_SPECS = [
   { platform: 'Google Display Ad', format: 'Various', size: '300×250, 728×90, 300×600', notes: 'Brand mark, photography, single clear headline, Gold CTA' },
 ]
 
-function AppTable({ rows }: { rows: { application: string; needed: string; status: AppStatus }[] }) {
+function AppTable({ label, rows }: { label: string; rows: { application: string; needed: string; status: AppStatus }[] }) {
   return (
-    <div className="rounded-xl border border-border overflow-hidden">
-      <table className="w-full font-sans text-sm">
+    <GuidanceTable label={label}>
         <thead className="bg-muted">
           <tr>
-            <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-caps">Application</th>
-            <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-caps hidden md:table-cell">What's needed</th>
-            <th className="px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-caps text-right">Status</th>
+            <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">Application</th>
+            <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">What's needed</th>
+            <th scope="col" className="px-4 py-3 text-right text-xs font-medium uppercase tracking-caps text-muted-foreground">Status</th>
           </tr>
         </thead>
         <tbody className="divide-y divide-border">
           {rows.map(row => (
             <tr key={row.application} className="hover:bg-muted/40">
               <td className="px-4 py-3 font-medium text-foreground">{row.application}</td>
-              <td className="px-4 py-3 text-muted-foreground text-xs hidden md:table-cell">{row.needed}</td>
+              <td className="min-w-72 px-4 py-3 text-xs text-muted-foreground">{row.needed}</td>
               <td className="px-4 py-3 text-right"><StatusBadge status={row.status} /></td>
             </tr>
           ))}
         </tbody>
-      </table>
-    </div>
+    </GuidanceTable>
   )
 }
 
@@ -105,39 +103,39 @@ export function Applications() {
         <StatusBadge status="live" />
         <StatusBadge status="to-produce" />
         <StatusBadge status="needs-review" />
+        <StatusBadge status="pending" />
         <span className="font-sans text-xs text-muted-foreground self-center">— track status as you build or audit assets</span>
       </div>
 
       {/* Digital */}
       <section id="digital" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-6">Digital Applications</h2>
-        <AppTable rows={DIGITAL_APPS} />
+        <h2 className="mb-6 font-sans text-2xl font-semibold text-foreground">Digital Applications</h2>
+        <AppTable label="Digital applications and production status" rows={DIGITAL_APPS} />
       </section>
 
       <Separator className="mb-14" />
 
       {/* Print */}
       <section id="print" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-6">Print Applications</h2>
-        <AppTable rows={PRINT_APPS} />
+        <h2 className="mb-6 font-sans text-2xl font-semibold text-foreground">Print Applications</h2>
+        <AppTable label="Print applications and production status" rows={PRINT_APPS} />
       </section>
 
       <Separator className="mb-14" />
 
       {/* Social specs */}
       <section id="social-specs" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-2">Social Media & Format Specs</h2>
+        <h2 className="mb-2 font-sans text-2xl font-semibold text-foreground">Social Media & Format Specs</h2>
         <p className="font-sans text-sm text-muted-foreground mb-6">
           Every key shot should exist in a horizontal AND vertical master. If it doesn't, schedule a reshoot.
         </p>
-        <div className="rounded-xl border border-border overflow-hidden">
-          <table className="w-full font-sans text-sm">
+        <GuidanceTable label="Social media and format specifications" tableClassName="min-w-[48rem]">
             <thead className="bg-muted">
               <tr>
-                <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-caps">Platform</th>
-                <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-caps">Format</th>
-                <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-caps hidden sm:table-cell">Size</th>
-                <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-caps hidden md:table-cell">Notes</th>
+                <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">Platform</th>
+                <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">Format</th>
+                <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">Size</th>
+                <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">Notes</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
@@ -145,13 +143,12 @@ export function Applications() {
                 <tr key={`${row.platform}-${row.format}`} className="hover:bg-muted/40">
                   <td className="px-4 py-3 font-medium text-foreground">{row.platform}</td>
                   <td className="px-4 py-3 text-muted-foreground">{row.format}</td>
-                  <td className="px-4 py-3 font-mono text-xs text-muted-foreground hidden sm:table-cell">{row.size}</td>
-                  <td className="px-4 py-3 text-xs text-muted-foreground hidden md:table-cell">{row.notes}</td>
+                  <td className="whitespace-nowrap px-4 py-3 font-mono text-xs text-muted-foreground">{row.size}</td>
+                  <td className="min-w-64 px-4 py-3 text-xs text-muted-foreground">{row.notes}</td>
                 </tr>
               ))}
             </tbody>
-          </table>
-        </div>
+        </GuidanceTable>
       </section>
     </div>
   )

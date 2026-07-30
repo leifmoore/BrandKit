@@ -5,6 +5,7 @@ import tokensSource from "@comp-lib/foundations/data/tokens.json";
 
 import type {
   PreviewBrand,
+  PreviewPresentation,
   PreviewDirection,
   PreviewMode,
   PreviewSettings,
@@ -40,12 +41,14 @@ const brandData = brandsSource as BrandData;
 /**
  * Destination-only corrections for known handoff token-pair failures.
  *
- * In 0.1.0, dark `muted-foreground` resolves to #99a1af, which is 3.96:1
- * against the dark popover surface (#364153). The rendered documentation
- * raises it to #b0b8c4 (5.15:1) without altering the immutable copy source.
+ * In 0.1.0, `muted-foreground` misses AA on selected muted/popover surfaces.
+ * The rendered documentation raises light mode to #626b7b (4.88:1 on
+ * #f3f4f6) and dark mode to #b0b8c4 (5.15:1 on #364153) without altering
+ * the immutable copy source.
  */
-const DARK_DESTINATION_OVERRIDES = {
-  "muted-foreground": "#b0b8c4",
+const DESTINATION_OVERRIDES = {
+  light: { "muted-foreground": "#626b7b" },
+  dark: { "muted-foreground": "#b0b8c4" },
 } as const;
 
 export const PREVIEW_MODES: ReadonlyArray<{
@@ -90,6 +93,24 @@ export const DEFAULT_PREVIEW_SETTINGS: PreviewSettings = {
   state: "default",
 };
 
+const DEFAULT_PREVIEW_PRESENTATION: PreviewPresentation = Object.freeze({
+  layout: "fluid",
+  alignment: "center",
+});
+
+const PREVIEW_PRESENTATIONS: Readonly<Record<string, PreviewPresentation>> =
+  Object.freeze({
+    calendar: Object.freeze({
+      layout: "intrinsic",
+      alignment: "center",
+      maxWidth: "22rem",
+    }),
+  });
+
+export function getPreviewPresentation(entryId: string): PreviewPresentation {
+  return PREVIEW_PRESENTATIONS[entryId] ?? DEFAULT_PREVIEW_PRESENTATION;
+}
+
 export function getPreviewWidth(width: PreviewWidth): number | null {
   return PREVIEW_WIDTHS.find((option) => option.id === width)?.pixels ?? null;
 }
@@ -112,10 +133,8 @@ export function createPreviewTheme(
     style[`--${name}`] = value;
   }
 
-  if (mode === "dark") {
-    for (const [name, value] of Object.entries(DARK_DESTINATION_OVERRIDES)) {
-      style[`--${name}`] = value;
-    }
+  for (const [name, value] of Object.entries(DESTINATION_OVERRIDES[mode])) {
+    style[`--${name}`] = value;
   }
 
   // Components consume the font through the semantic Tailwind alias, which is

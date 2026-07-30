@@ -140,7 +140,7 @@ export function ContrastChecker() {
       </p>
       <div className="flex flex-col sm:flex-row items-center gap-4">
         <div className="text-center">
-          <div className="font-display font-bold text-5xl text-navy-900 dark:text-cream-50">
+          <div className="font-sans text-5xl font-semibold tracking-tight text-foreground">
             {result.ratioDisplay}
           </div>
           <p className="font-sans text-xs text-muted-foreground mt-1">contrast ratio</p>

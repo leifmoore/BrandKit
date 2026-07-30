@@ -12,7 +12,7 @@ export function DeferredPage({ item }: DeferredPageProps) {
   return (
     <article>
       <DeveloperPageHeader
-        eyebrow="Developer inventory"
+        eyebrow="Design System roadmap"
         title={item.title}
         description={item.description ?? 'This component is inventoried but is not distributable in the current release.'}
         badges={<StatusBadge status="deferred" />}

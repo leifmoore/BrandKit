@@ -15,7 +15,7 @@ export function ClearSpaceVis() {
           <span id="clear-space-multiplier-label" className="font-sans text-xs font-medium text-muted-foreground uppercase tracking-caps">
             Clear space multiplier
           </span>
-          <span className="font-sans text-sm font-medium text-navy-900 dark:text-cream-50">{label}</span>
+          <span className="font-sans text-sm font-medium text-foreground">{label}</span>
         </div>
         <Slider
           aria-labelledby="clear-space-multiplier-label"
@@ -43,7 +43,7 @@ export function ClearSpaceVis() {
             }}
           >
             {/* Clear space label */}
-            <div className="absolute -top-5 left-1/2 -translate-x-1/2 text-xs font-sans text-navy-700 dark:text-cream-300 whitespace-nowrap">
+            <div className="absolute -top-5 left-1/2 -translate-x-1/2 whitespace-nowrap font-sans text-xs text-muted-foreground">
               {clearSpace}px clear space
             </div>
             {/* Logo */}

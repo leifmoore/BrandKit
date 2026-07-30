@@ -29,48 +29,44 @@ function getFormats(token: ColorToken): SwatchFormat[] {
   ]
 }
 
-function isLight(hex: string) {
-  const r = parseInt(hex.slice(1, 3), 16)
-  const g = parseInt(hex.slice(3, 5), 16)
-  const b = parseInt(hex.slice(5, 7), 16)
-  return (r * 299 + g * 587 + b * 114) / 1000 > 128
-}
-
 interface ColourSwatchProps {
   token: ColorToken
   size?: 'sm' | 'md' | 'lg'
+  className?: string
 }
 
-export function ColourSwatch({ token, size = 'md' }: ColourSwatchProps) {
+export function ColourSwatch({ token, size = 'md', className }: ColourSwatchProps) {
   const [open, setOpen] = useState(false)
   const { copied, copy } = useCopyToClipboard()
   const formats = getFormats(token)
-  const light = isLight(token.hex)
-  const textColor = light ? 'text-navy-900' : 'text-cream-50'
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <button
           type="button"
+          aria-label={`${token.name}, ${token.hex}. View and copy colour formats.`}
           className={cn(
-            'group relative rounded-lg overflow-hidden border border-black/10 transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+            'group relative w-full overflow-hidden rounded-lg border border-black/10 transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
             size === 'sm' && 'h-16',
             size === 'md' && 'h-24',
             size === 'lg' && 'h-32',
+            className,
           )}
           style={{ backgroundColor: token.hex }}
           title={`${token.name} — view and copy formats`}
         >
-          <div className={cn('absolute inset-0 flex flex-col justify-end p-2', textColor)}>
-            <div className="flex items-end justify-between">
+          <div className="absolute inset-0 flex flex-col justify-end p-2 text-[#14284b]">
+            <div className="rounded-md bg-[#fefefd] p-1.5 shadow-sm">
+              <div className="flex items-end justify-between">
               <span className="text-xs font-sans font-medium leading-tight">{token.name}</span>
-              <ChevronDown className={cn(
-                'w-3 h-3 opacity-0 group-hover:opacity-70 transition-opacity',
-                copied && 'opacity-70',
-              )} aria-hidden="true" />
+                <ChevronDown className={cn(
+                  'size-3 opacity-0 transition-opacity group-hover:opacity-70',
+                  copied && 'opacity-70',
+                )} aria-hidden="true" />
+              </div>
+              <span className="block font-mono text-xs opacity-70">{token.hex}</span>
             </div>
-            <span className="text-xs font-mono opacity-70">{token.hex}</span>
           </div>
         </button>
       </PopoverTrigger>

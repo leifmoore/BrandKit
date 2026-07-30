@@ -10,7 +10,11 @@ import {
 } from './developer.helpers'
 
 const auditedRoutes = [
-  { route: '/developer', title: "Scudamore's UI" },
+  { route: '/design-system', title: "Scudamore's UI" },
+  { route: '/design-system/components', title: 'Components' },
+  { route: '/design-system/patterns', title: 'Patterns' },
+  { route: '/design-system/foundations', title: 'Foundations' },
+  { route: '/design-system/roadmap', title: 'Roadmap' },
   ...componentRoutes,
   ...recipeRoutes,
   ...foundationRoutes,
@@ -18,7 +22,7 @@ const auditedRoutes = [
 ]
 
 const livePreviewRoutes = new Set([
-  '/developer',
+  '/design-system',
   ...componentRoutes.map((entry) => entry.route),
   ...recipeRoutes.map((entry) => entry.route),
   ...foundationRoutes
@@ -27,18 +31,18 @@ const livePreviewRoutes = new Set([
 ])
 
 const acceptedContrastText = new Map([
-  ['/developer', 'Delete'],
-  ['/developer/components/alert-dialog', 'Delete record'],
-  ['/developer/components/button', 'Delete'],
-  ['/developer/components/aspect-ratio', '16:9 media'],
+  ['/design-system', 'Delete'],
+  ['/design-system/components/alert-dialog', 'Delete record'],
+  ['/design-system/components/button', 'Delete'],
+  ['/design-system/components/aspect-ratio', '16:9 media'],
   // These foundation pages intentionally reuse the canonical Button example
   // as their theme playground, so the same recorded destructive-token finding
   // appears there rather than representing a separate exception.
-  ['/developer/foundations/tokens', 'Delete'],
-  ['/developer/foundations/brands', 'Delete'],
+  ['/design-system/foundations/tokens', 'Delete'],
+  ['/design-system/foundations/themes', 'Delete'],
 ])
 
-test('all Developer routes have only the exact recorded WCAG A/AA axe findings', async ({ page }) => {
+test('all Design System routes have only the exact recorded WCAG A/AA axe findings', async ({ page }) => {
   test.slow()
   test.setTimeout(300_000)
 
@@ -77,9 +81,9 @@ test('all Developer routes have only the exact recorded WCAG A/AA axe findings',
   }
 })
 
-test('the responsive Developer shell is keyboard-labelled at mobile width', async ({ page }) => {
+test('the responsive Design System shell is keyboard-labelled at mobile width', async ({ page }) => {
   await page.setViewportSize({ width: 360, height: 800 })
-  await page.goto('/developer')
+  await page.goto('/design-system')
   const results = await new AxeBuilder({ page })
     .exclude('[data-ui-preview="true"]')
     .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'])

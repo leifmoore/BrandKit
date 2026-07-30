@@ -1,10 +1,11 @@
 import type { CatalogKind, DeveloperCatalogEntry } from './types'
 
-export const DEVELOPER_ROOT_ROUTE = '/developer' as const
+/** Canonical destination. Legacy `/developer/*` redirects are owned by the app router. */
+export const DEVELOPER_ROOT_ROUTE = '/design-system' as const
 
 const collectionByKind = {
   component: 'components',
-  deferred: 'components',
+  deferred: 'roadmap',
   recipe: 'patterns',
   foundation: 'foundations',
   utility: '',
@@ -15,6 +16,10 @@ export function getDeveloperRoute(kind: CatalogKind, id: string): string {
 
   if (kind === 'utility') {
     return DEVELOPER_ROOT_ROUTE
+  }
+
+  if (kind === 'foundation' && id === 'brands') {
+    return `${DEVELOPER_ROOT_ROUTE}/foundations/themes`
   }
 
   return `${DEVELOPER_ROOT_ROUTE}/${collection}/${encodeURIComponent(id)}`
@@ -37,7 +42,7 @@ export function getFoundationRoute(id: string): string {
 }
 
 export interface ParsedDeveloperRoute {
-  readonly kind: 'root' | 'component' | 'recipe' | 'foundation'
+  readonly kind: 'root' | 'component' | 'recipe' | 'foundation' | 'deferred'
   readonly id?: string
 }
 
@@ -48,7 +53,7 @@ export function parseDeveloperRoute(pathname: string): ParsedDeveloperRoute | un
     return { kind: 'root' }
   }
 
-  const match = path.match(/^\/developer\/(components|patterns|foundations)\/([^/]+)$/)
+  const match = path.match(/^\/design-system\/(components|patterns|foundations|roadmap)\/([^/]+)$/)
   if (!match) return undefined
 
   const collection = match[1]
@@ -66,5 +71,6 @@ export function parseDeveloperRoute(pathname: string): ParsedDeveloperRoute | un
 
   if (collection === 'components') return { kind: 'component', id }
   if (collection === 'patterns') return { kind: 'recipe', id }
-  return { kind: 'foundation', id }
+  if (collection === 'foundations') return { kind: 'foundation', id }
+  return { kind: 'deferred', id }
 }

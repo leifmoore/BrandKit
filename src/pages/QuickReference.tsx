@@ -91,7 +91,7 @@ export function QuickReference() {
             'Never recolour outside approved palette',
           ].map((rule, i) => (
             <p key={i} className="font-sans text-sm text-foreground flex gap-2">
-              <span className="text-accent shrink-0">–</span>{rule}
+              <span className="shrink-0 text-muted-foreground">–</span>{rule}
             </p>
           ))}
         </div>
@@ -138,7 +138,7 @@ export function QuickReference() {
               <p className="font-sans text-xs font-semibold text-foreground mb-2">{group.label}</p>
               {group.items.map((item, i) => (
                 <p key={i} className="font-sans text-sm text-muted-foreground flex gap-2">
-                  <span className="text-accent shrink-0">–</span>{item}
+                  <span className="shrink-0 text-muted-foreground">–</span>{item}
                 </p>
               ))}
             </div>

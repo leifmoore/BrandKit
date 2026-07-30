@@ -13,6 +13,14 @@ import {
   type DialogProps,
 } from "@/components/ui/dialog"
 
+function literalCommandFilter(value: string, search: string, keywords?: string[]) {
+  const terms = search.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean)
+  if (terms.length === 0) return 1
+
+  const searchableText = [value, ...(keywords ?? [])].join(" ").toLocaleLowerCase()
+  return terms.every((term) => searchableText.includes(term)) ? 1 : 0
+}
+
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive>
@@ -34,9 +42,12 @@ const CommandDialog = ({ children, ...props }: DialogProps) => {
       <DialogContent className="gap-0 overflow-hidden p-0">
         <DialogTitle className="sr-only">Search the Brand Kit</DialogTitle>
         <DialogDescription className="sr-only">
-          Search Brand Kit guidance, colour tokens, and Developer library entries.
+          Search Brand guidance, colour tokens, and Design System library entries.
         </DialogDescription>
-        <Command className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5">
+        <Command
+          filter={literalCommandFilter}
+          className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5"
+        >
           {children}
         </Command>
       </DialogContent>

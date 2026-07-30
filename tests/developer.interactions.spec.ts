@@ -9,7 +9,7 @@ test.describe('Developer component interaction contract', () => {
   test('reproduces the handoff 13-component interaction gate', async ({ page }) => {
     test.slow()
 
-    await openDeveloperRoute(page, '/developer/components/accordion', 'Accordion')
+    await openDeveloperRoute(page, '/design-system/components/accordion', 'Accordion')
     let root = preview(page, 'accordion')
     const accordionTrigger = root.getByRole('button', { name: 'How do I install a component?' })
     await accordionTrigger.click()
@@ -17,7 +17,7 @@ test.describe('Developer component interaction contract', () => {
     await accordionTrigger.click()
     await expect(root.getByText('Copy its source and install the dependencies listed in the catalogue.')).toBeHidden()
 
-    await openDeveloperRoute(page, '/developer/components/alert-dialog', 'Alert Dialog')
+    await openDeveloperRoute(page, '/design-system/components/alert-dialog', 'Alert Dialog')
     root = preview(page, 'alert-dialog')
     const alertTrigger = root.getByRole('button', { name: 'Delete record' })
     await alertTrigger.click()
@@ -25,7 +25,7 @@ test.describe('Developer component interaction contract', () => {
     await page.keyboard.press('Escape')
     await expect(alertTrigger).toBeFocused()
 
-    await openDeveloperRoute(page, '/developer/components/dialog', 'Dialog')
+    await openDeveloperRoute(page, '/design-system/components/dialog', 'Dialog')
     root = preview(page, 'dialog')
     const dialogTrigger = root.getByRole('button', { name: 'Open dialog' })
     await dialogTrigger.click()
@@ -33,7 +33,7 @@ test.describe('Developer component interaction contract', () => {
     await page.keyboard.press('Escape')
     await expect(dialogTrigger).toBeFocused()
 
-    await openDeveloperRoute(page, '/developer/components/dropdown-menu', 'Dropdown Menu')
+    await openDeveloperRoute(page, '/design-system/components/dropdown-menu', 'Dropdown Menu')
     root = preview(page, 'dropdown-menu')
     const menuTrigger = root.getByRole('button', { name: 'View options' })
     await menuTrigger.click()
@@ -41,13 +41,13 @@ test.describe('Developer component interaction contract', () => {
     await page.keyboard.press('Escape')
     await expect(menuTrigger).toBeFocused()
 
-    await openDeveloperRoute(page, '/developer/components/checkbox', 'Checkbox')
+    await openDeveloperRoute(page, '/design-system/components/checkbox', 'Checkbox')
     root = preview(page, 'checkbox')
     const checkbox = root.getByRole('checkbox', { name: 'Email me booking updates' })
     await checkbox.click()
     await expect(checkbox).toBeChecked()
 
-    await openDeveloperRoute(page, '/developer/components/collapsible', 'Collapsible')
+    await openDeveloperRoute(page, '/design-system/components/collapsible', 'Collapsible')
     root = preview(page, 'collapsible')
     const collapsibleTrigger = root.getByRole('button', { name: 'Toggle advanced options' })
     await collapsibleTrigger.click()
@@ -55,7 +55,7 @@ test.describe('Developer component interaction contract', () => {
     await collapsibleTrigger.click()
     await expect(root.getByText('Additional configuration appears here.')).toBeHidden()
 
-    await openDeveloperRoute(page, '/developer/components/popover', 'Popover')
+    await openDeveloperRoute(page, '/design-system/components/popover', 'Popover')
     root = preview(page, 'popover')
     const popoverTrigger = root.getByRole('button', { name: 'Open popover' })
     await popoverTrigger.click()
@@ -63,7 +63,7 @@ test.describe('Developer component interaction contract', () => {
     await page.keyboard.press('Escape')
     await expect(popoverTrigger).toBeFocused()
 
-    await openDeveloperRoute(page, '/developer/components/select', 'Select')
+    await openDeveloperRoute(page, '/design-system/components/select', 'Select')
     root = preview(page, 'select')
     const select = root.getByRole('combobox', { name: 'Status' })
     await select.click()
@@ -73,7 +73,7 @@ test.describe('Developer component interaction contract', () => {
     await page.keyboard.press('Escape')
     await expect(select).toBeFocused()
 
-    await openDeveloperRoute(page, '/developer/components/sheet', 'Sheet')
+    await openDeveloperRoute(page, '/design-system/components/sheet', 'Sheet')
     root = preview(page, 'sheet')
     const sheetTrigger = root.getByRole('button', { name: 'Open panel' })
     await sheetTrigger.click()
@@ -81,7 +81,7 @@ test.describe('Developer component interaction contract', () => {
     await page.keyboard.press('Escape')
     await expect(sheetTrigger).toBeFocused()
 
-    await openDeveloperRoute(page, '/developer/components/stepper', 'Stepper')
+    await openDeveloperRoute(page, '/design-system/components/stepper', 'Stepper')
     root = preview(page, 'stepper')
     const decrease = root.getByRole('button', { name: 'Decrease value' })
     await decrease.click()
@@ -89,20 +89,20 @@ test.describe('Developer component interaction contract', () => {
     await expect(decrease).toBeDisabled()
     await expect(root.locator('span').filter({ hasText: /^0$/ })).toBeVisible()
 
-    await openDeveloperRoute(page, '/developer/components/switch', 'Switch')
+    await openDeveloperRoute(page, '/design-system/components/switch', 'Switch')
     root = preview(page, 'switch')
     const switchControl = root.getByRole('switch', { name: 'Available for bookings' })
     await expect(switchControl).toBeChecked()
     await switchControl.click()
     await expect(switchControl).not.toBeChecked()
 
-    await openDeveloperRoute(page, '/developer/components/tabs', 'Tabs')
+    await openDeveloperRoute(page, '/design-system/components/tabs', 'Tabs')
     root = preview(page, 'tabs')
     await root.getByRole('tab', { name: 'Blade' }).click()
     await expect(root.getByRole('tab', { name: 'Blade' })).toHaveAttribute('aria-selected', 'true')
     await expect(root.getByText('Blade source')).toBeVisible()
 
-    await openDeveloperRoute(page, '/developer/components/toggle', 'Toggle')
+    await openDeveloperRoute(page, '/design-system/components/toggle', 'Toggle')
     root = preview(page, 'toggle')
     const toggle = root.getByRole('button', { name: 'Toggle bold' })
     await toggle.click()
@@ -114,12 +114,12 @@ test.describe('Developer recipe fixture interaction contract', () => {
   test('runs all six recipe fixtures and their host callbacks', async ({ page }) => {
     test.slow()
 
-    await openDeveloperRoute(page, '/developer/patterns/quick-launch', 'Quick Launch')
+    await openDeveloperRoute(page, '/design-system/patterns/quick-launch', 'Quick Launch')
     let root = preview(page, 'quick-launch')
     await root.getByRole('button', { name: /River desk/ }).click()
     await expect(root.getByText('Launched River desk.')).toBeVisible()
 
-    await openDeveloperRoute(page, '/developer/patterns/availability-toggle-list', 'Availability Toggle List')
+    await openDeveloperRoute(page, '/design-system/patterns/availability-toggle-list', 'Availability Toggle List')
     root = preview(page, 'availability-toggle-list')
     const millLane = root.getByRole('switch', { name: 'Mill Lane availability' })
     await expect(millLane).toBeChecked()
@@ -133,7 +133,7 @@ test.describe('Developer recipe fixture interaction contract', () => {
     await expect(quaysideRow).toContainText('Default')
     await expect(quayside).toBeDisabled()
 
-    await openDeveloperRoute(page, '/developer/patterns/channel-logo-picker', 'Channel Logo Picker')
+    await openDeveloperRoute(page, '/design-system/patterns/channel-logo-picker', 'Channel Logo Picker')
     root = preview(page, 'channel-logo-picker')
     const monoLogo = root.getByRole('button', { name: 'Select Monochrome mark' })
     await monoLogo.click()
@@ -142,12 +142,12 @@ test.describe('Developer recipe fixture interaction contract', () => {
     await expect(monoLogo).toBeDisabled()
     await expect(root.getByRole('button', { name: 'Select Primary mark' })).toBeDisabled()
 
-    await openDeveloperRoute(page, '/developer/patterns/booking-card', 'Booking Card')
+    await openDeveloperRoute(page, '/design-system/patterns/booking-card', 'Booking Card')
     root = preview(page, 'booking-card')
     await root.getByRole('button', { name: 'View' }).click()
     await expect(root.getByText('Opened booking BK-10482.')).toBeVisible()
 
-    await openDeveloperRoute(page, '/developer/patterns/booking-details-dialog', 'Booking Details Dialog')
+    await openDeveloperRoute(page, '/design-system/patterns/booking-details-dialog', 'Booking Details Dialog')
     root = preview(page, 'booking-details-dialog')
     await root.getByRole('button', { name: 'Open booking details' }).click()
     const details = page.getByRole('dialog', { name: 'Booking details' })
@@ -156,7 +156,7 @@ test.describe('Developer recipe fixture interaction contract', () => {
     await page.keyboard.press('Escape')
     await expect(root.getByText('Reschedule selected')).toBeVisible()
 
-    await openDeveloperRoute(page, '/developer/patterns/people-popover-content', 'People Popover Content')
+    await openDeveloperRoute(page, '/design-system/patterns/people-popover-content', 'People Popover Content')
     root = preview(page, 'people-popover-content')
     const addAdults = root.getByRole('button', { name: 'Add adults' })
     await addAdults.click()

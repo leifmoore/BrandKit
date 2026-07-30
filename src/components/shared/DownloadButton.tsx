@@ -36,7 +36,7 @@ export function DownloadButton({
         download={filename}
         aria-label={accessibleLabel ?? `${label} ${filename}`}
       >
-        <Download className="w-3.5 h-3.5 mr-1.5" aria-hidden="true" />
+        <Download className="size-3.5" aria-hidden="true" />
         {label}
       </a>
     </Button>

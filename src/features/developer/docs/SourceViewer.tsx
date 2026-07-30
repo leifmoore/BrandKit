@@ -148,7 +148,7 @@ function SourceFilePanel({
         </p>
       ) : null}
       <pre
-        className="max-h-[42rem] overflow-auto bg-navy-900 p-4 font-mono text-xs leading-6 text-cream-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-gold-300"
+        className="max-h-[42rem] overflow-auto bg-muted/40 p-4 font-mono text-xs leading-6 text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring"
         tabIndex={0}
         role="region"
         aria-label={`${basename(file.path)} source code`}

@@ -10,9 +10,9 @@ import { cn } from '@/lib/utils'
 
 const SUB_NAV = [
   { label: 'Primary', anchor: 'primary' },
+  { label: 'Accent Colours', anchor: 'accent-colours' },
   { label: 'Navy Ramp', anchor: 'navy-ramp' },
   { label: 'Cream Ramp', anchor: 'cream-ramp' },
-  { label: 'Accent Colours', anchor: 'accent-colours' },
   { label: 'WCAG Pairs', anchor: 'wcag-pairs' },
   { label: 'WCAG Checker', anchor: 'wcag-checker' },
   { label: 'Mood Explorer', anchor: 'mood-explorer' },
@@ -21,7 +21,7 @@ const SUB_NAV = [
 function SubSection({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
     <section id={id} className="scroll-mt-6 mb-14">
-      <h2 className="font-display font-bold text-2xl text-foreground mb-6">{title}</h2>
+      <h2 className="mb-6 font-sans text-2xl font-semibold text-foreground">{title}</h2>
       {children}
     </section>
   )
@@ -46,15 +46,15 @@ export function Colour() {
               <ColourSwatch token={token} size="lg" />
               <div>
                 <p className="font-sans font-semibold text-sm text-foreground">{token.name}</p>
-                <p className="font-mono text-xs text-navy-500 dark:text-navy-300">{token.hex} · {token.alias}</p>
+                <p className="font-mono text-xs text-muted-foreground">{token.hex} · {token.alias}</p>
                 {token.description && (
-                  <p className="font-sans text-xs text-navy-700 dark:text-cream-300 mt-1">{token.description}</p>
+                  <p className="mt-1 font-sans text-xs text-muted-foreground">{token.description}</p>
                 )}
               </div>
             </div>
           ))}
         </div>
-        <p className="font-sans text-sm text-navy-700 dark:text-cream-300">
+        <p className="font-sans text-sm text-muted-foreground">
           Deep Navy is the primary brand colour. Off-White is the primary light surface. See Accent Colours below for Lantern Gold usage.
         </p>
       </SubSection>
@@ -68,7 +68,7 @@ export function Colour() {
             <ColourSwatch token={GOLD_RAMP[1]} size="lg" />
             <div>
               <p className="font-sans font-semibold text-sm text-foreground">{GOLD_RAMP[1].name}</p>
-              <p className="font-mono text-xs text-navy-500 dark:text-navy-300">{GOLD_RAMP[1].hex} · {GOLD_RAMP[1].alias}</p>
+              <p className="font-mono text-xs text-muted-foreground">{GOLD_RAMP[1].hex} · {GOLD_RAMP[1].alias}</p>
               <span className="inline-block mt-2 px-2 py-0.5 rounded-full bg-gold-500/10 dark:bg-gold-300/10 text-gold-700 dark:text-gold-300 text-xs font-sans font-medium">
                 Accent — use sparingly
               </span>
@@ -82,7 +82,7 @@ export function Colour() {
             />
           </div>
         </div>
-        <p className="font-sans text-sm text-navy-700 dark:text-cream-300">
+        <p className="font-sans text-sm text-muted-foreground">
           Lantern Gold is the one accent colour — for CTAs, interactive highlights, and key brand moments. Honey (#e3c277) for use on dark/navy backgrounds. Brass (#9c7a2f) for visited links and heritage moments.
         </p>
       </SubSection>
@@ -174,7 +174,7 @@ export function Colour() {
 
       {/* Mood Explorer */}
       <SubSection id="mood-explorer" title="Mood Explorer">
-        <p className="font-sans text-sm text-navy-700 dark:text-cream-300 mb-6">
+        <p className="mb-6 font-sans text-sm text-muted-foreground">
           The master palette holds across all products and seasons. Filter by context to see the recommended colour combinations for each mood.
         </p>
         <MoodExplorer />

@@ -1,4 +1,4 @@
-import { DocSection, DeveloperPageHeader, MetadataList, PageState } from '../docs/PageScaffold'
+import { DocSection, DeveloperPageHeader } from '../docs/PageScaffold'
 import { SafeMarkdown } from '../docs/SafeMarkdown'
 import { FrameworkBadge, MaturityBadge, StatusBadge } from '../docs/StatusBadges'
 import {
@@ -8,7 +8,7 @@ import {
   OptionsPanel,
   ParityPanel,
 } from '../docs/ContractPanels'
-import { SourceViewer } from '../docs/SourceViewer'
+import { Workbench, type DocumentationSection } from '../docs/Workbench'
 import type { ComponentDetailViewModel, DeveloperPageContentProps } from '../docs/types'
 
 export interface ComponentPageProps extends DeveloperPageContentProps {
@@ -16,12 +16,59 @@ export interface ComponentPageProps extends DeveloperPageContentProps {
 }
 
 export function ComponentPage({ component, preview, sources = [] }: ComponentPageProps) {
+  const documentation: DocumentationSection[] = [
+    {
+      id: 'guidance',
+      label: 'Guidance',
+      description: 'Purpose, usage guidance, and maintained handoff notes.',
+      content: <SafeMarkdown markdown={component.documentation ?? component.description} />,
+    },
+    {
+      id: 'api',
+      label: 'API',
+      description: 'Public APIs for both distributable framework editions.',
+      content: (
+        <>
+          <FrameworkContracts contracts={component.contracts} />
+          <OptionsPanel
+            groups={[
+              { label: 'Variants', values: component.variants ?? [] },
+              { label: 'Sizes', values: component.sizes ?? [] },
+              { label: 'States', values: component.states ?? [] },
+              { label: 'Responsive behaviour', values: component.responsiveBehavior ?? [] },
+              { label: 'Semantic tokens', values: component.tokens ?? [] },
+            ]}
+          />
+        </>
+      ),
+    },
+    {
+      id: 'dependencies',
+      label: 'Dependencies',
+      description: 'Exact package, runtime, and internal requirements declared by the manifest.',
+      content: <DependenciesPanel dependencies={component.dependencies} />,
+    },
+    {
+      id: 'accessibility',
+      label: 'Accessibility',
+      description: 'The target, audit status, and every recorded finding.',
+      content: <AccessibilityPanel accessibility={component.accessibility} />,
+    },
+    {
+      id: 'parity',
+      label: 'Parity',
+      description: 'Intentional React and Blade differences. An unrecorded difference is a defect.',
+      content: <ParityPanel parity={component.parity} />,
+    },
+  ]
+
   return (
     <article>
       <DeveloperPageHeader
-        eyebrow={`Developer · ${component.category}`}
+        eyebrow={`Design System · ${component.category}`}
         title={component.title}
         description={component.description}
+        compact
         badges={
           <>
             <MaturityBadge maturity={component.maturity} />
@@ -31,58 +78,27 @@ export function ComponentPage({ component, preview, sources = [] }: ComponentPag
             ))}
           </>
         }
-        metadata={
-          <MetadataList
-            items={[
-              { label: 'Catalogue ID', value: <code className="font-mono text-xs">{component.id}</code> },
-              { label: 'Category', value: component.category },
-              { label: 'Frameworks', value: component.frameworks.map((framework) => framework === 'react' ? 'React' : 'Blade').join(' + ') },
-            ]}
-          />
-        }
       />
 
-      <DocSection id="overview" title="Overview" description="Purpose, usage guidance, and the maintained handoff notes.">
-        <SafeMarkdown markdown={component.documentation ?? component.description} />
-      </DocSection>
+      <Workbench title={component.title} preview={preview} sources={sources} documentation={documentation} />
 
-      <DocSection id="example" title="Interactive example" description="The React edition is the live visual target. Use the preview controls to inspect supported themes, widths, direction, and states.">
-        {preview ?? (
-          <PageState
-            kind="empty"
-            title="Preview unavailable"
-            description="The live React example could not be mounted. The source and contract remain available below."
-          />
-        )}
-      </DocSection>
-
-      <DocSection id="source" title="Source" description="Displayed source is loaded from the handoff files. Copy and download preserve the supplied text byte-for-byte.">
-        <SourceViewer files={sources} />
-      </DocSection>
-
-      <DocSection id="api" title="Props and contract" description="Public APIs for both distributable framework editions.">
-        <FrameworkContracts contracts={component.contracts} />
-        <OptionsPanel
-          groups={[
-            { label: 'Variants', values: component.variants ?? [] },
-            { label: 'Sizes', values: component.sizes ?? [] },
-            { label: 'States', values: component.states ?? [] },
-            { label: 'Responsive behaviour', values: component.responsiveBehavior ?? [] },
-            { label: 'Semantic tokens', values: component.tokens ?? [] },
-          ]}
-        />
-      </DocSection>
-
-      <DocSection id="dependencies" title="Dependencies" description="Exact package, runtime, and internal requirements declared by the manifest.">
-        <DependenciesPanel dependencies={component.dependencies} />
-      </DocSection>
-
-      <DocSection id="accessibility" title="Accessibility" description="The target, current audit status, and every recorded finding remain visible at the point of use.">
-        <AccessibilityPanel accessibility={component.accessibility} />
-      </DocSection>
-
-      <DocSection id="parity" title="React and Blade parity" description="Intentional differences belong here; an unrecorded difference is a defect.">
-        <ParityPanel parity={component.parity} />
+      <DocSection id="usage" title="Usage" description="The essential contract stays visible below the workbench; open Documentation for the complete record.">
+        <div className="grid gap-4 rounded-xl border border-border bg-card p-5 md:grid-cols-[minmax(0,1fr)_auto]">
+          <div>
+            <h3 className="font-sans text-sm font-semibold text-foreground">Use {component.title} for</h3>
+            <p className="mt-2 max-w-3xl font-sans text-sm leading-6 text-muted-foreground">{component.description}</p>
+            {component.responsiveBehavior?.length ? (
+              <ul className="mt-3 list-disc space-y-1 pl-5 font-sans text-sm leading-6 text-muted-foreground">
+                {component.responsiveBehavior.map((behavior) => <li key={behavior}>{behavior}</li>)}
+              </ul>
+            ) : null}
+          </div>
+          <dl className="grid content-start gap-2 text-xs md:min-w-48">
+            <div className="flex justify-between gap-4"><dt className="text-muted-foreground">Catalogue ID</dt><dd><code className="font-mono">{component.id}</code></dd></div>
+            <div className="flex justify-between gap-4"><dt className="text-muted-foreground">Maturity</dt><dd className="capitalize">{component.maturity}</dd></div>
+            <div className="flex justify-between gap-4"><dt className="text-muted-foreground">Frameworks</dt><dd>React + Blade</dd></div>
+          </dl>
+        </div>
       </DocSection>
     </article>
   )

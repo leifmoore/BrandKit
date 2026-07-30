@@ -33,24 +33,27 @@ export const componentRoutes = catalog.components.map((entry) => {
   const manifest = JSON.parse(readHandoffFile(entry.manifest!)) as ComponentManifest
   return {
     ...entry,
-    route: `/developer/components/${entry.id}`,
+    route: `/design-system/components/${entry.id}`,
     states: manifest.previews[0]?.states ?? [],
   }
 })
 
 export const deferredRoutes = catalog.deferredComponents.map((entry) => ({
   ...entry,
-  route: `/developer/components/${entry.id}`,
+  route: `/design-system/roadmap/${entry.id}`,
 }))
 
 export const recipeRoutes = catalog.recipes.map((entry) => ({
   ...entry,
-  route: `/developer/patterns/${entry.id}`,
+  route: `/design-system/patterns/${entry.id}`,
 }))
 
 export const foundationRoutes = catalog.foundations.map((entry) => ({
   ...entry,
-  route: `/developer/foundations/${entry.id}`,
+  title: entry.id === 'brands' ? 'Themes' : entry.title,
+  route: entry.id === 'brands'
+    ? '/design-system/foundations/themes'
+    : `/design-system/foundations/${entry.id}`,
 }))
 
 export function readHandoffFile(path: string): string {
@@ -76,8 +79,8 @@ export async function openDeveloperRoute(
 ): Promise<void> {
   const response = await page.goto(route, { waitUntil: 'domcontentloaded' })
   expect(response?.ok(), `${route} should return a successful document response`).toBe(true)
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText(title)
-  await expect(page.getByRole('status', { name: 'Loading Developer documentation' })).toHaveCount(0)
+  await expect(page.locator('[data-developer-route-content] h1').first()).toHaveText(title)
+  await expect(page.getByRole('status', { name: 'Loading Design System documentation' })).toHaveCount(0)
 }
 
 export async function expectPreviewReady(page: Page): Promise<void> {

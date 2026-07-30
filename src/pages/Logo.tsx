@@ -1,4 +1,5 @@
 import { SectionHeader } from '@/components/shared/SectionHeader'
+import { GuidanceTable } from '@/components/shared/GuidanceTable'
 import { SectionSubNav } from '@/components/layout/SectionSubNav'
 import { ClearSpaceVis } from '@/components/logo/ClearSpaceVis'
 import { DownloadButton } from '@/components/shared/DownloadButton'
@@ -33,7 +34,7 @@ function LogoVariant({ src, alt, title, usage, bg, dark, filename }: LogoVariant
       </div>
       <div>
         <p className="font-sans font-semibold text-sm text-foreground">{title}</p>
-        <p className="font-sans text-xs text-navy-700 dark:text-cream-300 mt-0.5 mb-2">{usage}</p>
+        <p className="mb-2 mt-0.5 font-sans text-xs text-muted-foreground">{usage}</p>
         <DownloadButton
           href={src}
           filename={filename}
@@ -56,8 +57,8 @@ function DontCard({ title, description, style, logoStyle }: DontCardProps) {
   return (
     <div className="border border-red-200 dark:border-red-900 rounded-xl overflow-hidden">
       <div className="h-28 flex items-center justify-center bg-cream-50 dark:bg-navy-700 relative" style={style}>
-        <img src="/logos/logo-navy.svg" alt="logo dont" className="h-12 w-auto dark:hidden" style={logoStyle} />
-        <img src="/logos/logo-white.svg" alt="logo dont" className="h-12 w-auto hidden dark:block" style={logoStyle} />
+        <img src="/logos/logo-navy.svg" alt={`Incorrect Scudamore's logo example: ${title}`} className="h-12 w-auto dark:hidden" style={logoStyle} />
+        <img src="/logos/logo-white.svg" alt={`Incorrect Scudamore's logo example: ${title}`} className="hidden h-12 w-auto dark:block" style={logoStyle} />
         <div className="absolute top-2 left-2 bg-red-600 text-white text-xs font-sans font-medium px-2 py-0.5 rounded">✗ Don't</div>
       </div>
       <div className="p-3 bg-red-50 dark:bg-red-950">
@@ -81,7 +82,7 @@ export function Logo() {
 
       {/* Variants */}
       <section id="variants" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-foreground mb-6">Logo Variants</h2>
+        <h2 className="mb-6 font-sans text-2xl font-semibold text-foreground">Logo Variants</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <LogoVariant
             src="/logos/logo-navy.svg"
@@ -115,8 +116,8 @@ export function Logo() {
 
       {/* Clear Space */}
       <section id="clear-space" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-foreground mb-6">Clear Space</h2>
-        <p className="font-sans text-sm text-navy-700 dark:text-cream-300 mb-6">
+        <h2 className="mb-6 font-sans text-2xl font-semibold text-foreground">Clear Space</h2>
+        <p className="mb-6 font-sans text-sm text-muted-foreground">
           Maintain a minimum zone of unobstructed space around the logo at all times. This clear space is defined as a fraction of the logo's height.
         </p>
         <ClearSpaceVis />
@@ -126,13 +127,13 @@ export function Logo() {
 
       {/* Do's & Don'ts */}
       <section id="dos-donts" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-foreground mb-6">Do's & Don'ts</h2>
+        <h2 className="mb-6 font-sans text-2xl font-semibold text-foreground">Do's & Don'ts</h2>
 
         <div className="mb-6">
           <div className="border border-green-200 dark:border-green-900 rounded-xl overflow-hidden">
             <div className="h-28 flex items-center justify-center bg-cream-50 dark:bg-navy-700">
-              <img src="/logos/logo-navy.svg" alt="logo correct" className="h-12 w-auto dark:hidden" />
-              <img src="/logos/logo-white.svg" alt="logo correct" className="h-12 w-auto hidden dark:block" />
+              <img src="/logos/logo-navy.svg" alt="Correct Scudamore's logo use on an approved background" className="h-12 w-auto dark:hidden" />
+              <img src="/logos/logo-white.svg" alt="Correct Scudamore's logo use on an approved background" className="hidden h-12 w-auto dark:block" />
             </div>
             <div className="p-3 bg-green-50 dark:bg-green-950">
               <p className="font-sans font-medium text-xs text-green-700 dark:text-green-400">✓ Do — use the approved colour on an appropriate background</p>
@@ -178,15 +179,14 @@ export function Logo() {
 
       {/* Downloads */}
       <section id="downloads" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-foreground mb-6">Downloads</h2>
-        <div className="rounded-xl border border-border overflow-hidden">
-          <table className="w-full font-sans text-sm">
+        <h2 className="mb-6 font-sans text-2xl font-semibold text-foreground">Downloads</h2>
+        <GuidanceTable label="Approved logo downloads" tableClassName="min-w-[42rem]">
             <thead className="bg-muted">
               <tr>
-                <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-caps">File</th>
-                <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-caps">Format</th>
-                <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-caps">Use for</th>
-                <th className="px-4 py-3"></th>
+                <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">File</th>
+                <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">Format</th>
+                <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">Use for</th>
+                <th scope="col" aria-label="Download" className="px-4 py-3" />
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
@@ -211,8 +211,7 @@ export function Logo() {
                 </tr>
               ))}
             </tbody>
-          </table>
-        </div>
+        </GuidanceTable>
       </section>
     </div>
   )

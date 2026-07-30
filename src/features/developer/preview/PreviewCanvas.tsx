@@ -4,7 +4,7 @@ import { ThemeScope } from "@comp-lib/react/runtime/theme";
 
 import { usePreviewPortalBridge } from "./portalBridge";
 import { createPreviewTheme, getPreviewWidth } from "./theme";
-import type { PreviewSettings } from "./types";
+import type { PreviewPresentation, PreviewSettings } from "./types";
 
 export interface PreviewCanvasProps {
   children: React.ReactNode;
@@ -13,6 +13,9 @@ export interface PreviewCanvasProps {
   ready?: boolean;
   label?: string;
   className?: string;
+  presentation?: PreviewPresentation;
+  compact?: boolean;
+  inert?: boolean;
 }
 
 export function PreviewCanvas({
@@ -22,6 +25,9 @@ export function PreviewCanvas({
   ready = false,
   label = "Interactive component preview",
   className = "",
+  presentation = { layout: "fluid", alignment: "center" },
+  compact = false,
+  inert = false,
 }: PreviewCanvasProps) {
   const rootRef = React.useRef<HTMLDivElement>(null);
   const theme = React.useMemo(
@@ -29,37 +35,57 @@ export function PreviewCanvas({
     [settings.brand, settings.direction, settings.mode],
   );
   const width = getPreviewWidth(settings.width);
+  const intrinsic = presentation.layout === "intrinsic";
+  const alignedToStart = presentation.alignment === "start";
 
   usePreviewPortalBridge({ rootRef, sessionKey, theme });
   usePreviewScenarioState({ rootRef, sessionKey, state: settings.state, ready });
 
+  React.useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+    root.inert = inert;
+    return () => {
+      root.inert = false;
+    };
+  }, [inert]);
+
   return (
     <div
-      className={`overflow-x-auto rounded-xl border border-border bg-muted/50 p-3 sm:p-5 ${className}`}
+      className={`${compact ? "h-full overflow-hidden bg-muted/50 p-2" : `overflow-x-auto rounded-xl border border-border bg-muted/50 ${intrinsic ? "p-0 sm:p-5" : "p-3 sm:p-5"}`} ${className}`}
     >
       <div
-        className="mx-auto transition-[width] duration-200"
-        style={{ width: width === null ? "100%" : `${width}px` }}
+        className={compact ? "mx-auto h-full" : "mx-auto transition-[width] duration-200"}
+        style={{ width: compact || width === null ? "100%" : `${width}px` }}
       >
         <div
           ref={rootRef}
           dir={settings.direction}
-          role="region"
+          role={inert ? "presentation" : "region"}
+          aria-hidden={inert || undefined}
           data-ui-preview="true"
           data-ui-theme={settings.mode}
           data-ui-brand={settings.brand}
           data-ui-width={settings.width}
           data-ui-state={settings.state}
-          className={`${theme.className} min-h-56 w-full overflow-hidden rounded-lg border border-border p-6 text-foreground shadow-sm sm:p-8`}
+          data-preview-layout={presentation.layout}
+          className={`${theme.className} ${compact ? "h-full min-h-36 p-3" : `min-h-56 ${intrinsic ? "p-2 sm:p-8" : "p-6 sm:p-8"} shadow-sm`} w-full overflow-hidden rounded-lg border border-border text-foreground`}
           style={theme.style}
-          aria-label={label}
+          aria-label={inert ? undefined : label}
         >
           <ThemeScope
             mode={settings.mode}
             brand={settings.brand}
-            className="flex min-h-40 w-full items-center justify-center"
+            className={`flex ${compact ? "h-full min-h-28 overflow-hidden" : "min-h-40"} w-full items-center ${alignedToStart ? "justify-start" : "justify-center"}`}
           >
-            <div className="w-full max-w-full">{children}</div>
+            <div
+              className={intrinsic ? "w-max max-w-full" : "w-full max-w-full"}
+              style={intrinsic && presentation.maxWidth
+                ? { width: "max-content", maxWidth: `min(100%, ${presentation.maxWidth})` }
+                : undefined}
+            >
+              {children}
+            </div>
           </ThemeScope>
         </div>
       </div>

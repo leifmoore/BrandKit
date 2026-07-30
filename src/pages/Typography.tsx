@@ -3,6 +3,7 @@ import { SectionHeader } from '@/components/shared/SectionHeader'
 import { SectionSubNav } from '@/components/layout/SectionSubNav'
 import { Separator } from '@/components/ui/separator'
 import { Input } from '@/components/ui/input'
+import { Card, CardContent } from '@/components/ui/card'
 import { TYPE_SCALE } from '@/lib/tokens'
 import { cn } from '@/lib/utils'
 
@@ -28,16 +29,17 @@ export function Typography() {
 
       {/* Fonts */}
       <section id="fonts" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-foreground mb-6">Fonts</h2>
+        <h2 className="mb-6 font-sans text-2xl font-semibold text-foreground">Fonts</h2>
         <div className="grid sm:grid-cols-2 gap-6">
           {/* Gill Sans */}
-          <div className="rounded-xl border border-border p-6 space-y-4">
+          <Card className="gap-0">
+            <CardContent className="space-y-4 p-6">
             <div>
               <p className="font-sans text-xs font-medium text-muted-foreground uppercase tracking-caps mb-1">Display / Headlines</p>
               <p className="font-display font-bold text-5xl text-navy-900 dark:text-cream-50 tracking-display">Aa</p>
             </div>
             <div>
-              <p className="font-display font-bold text-xl text-navy-900 dark:text-cream-50">Gill Sans</p>
+              <h3 className="font-display font-bold text-xl text-navy-900 dark:text-cream-50">Gill Sans</h3>
               <p className="font-sans text-sm text-muted-foreground mt-1">
                 Headlines, display, brand name, pull quotes. Humanist warmth — carries the heritage character. Bold weight primary.
               </p>
@@ -56,16 +58,18 @@ export function Typography() {
                 Mac users get native Gill Sans. Windows/Linux get Lato (Google Fonts) as the closest free alternative.
               </p>
             </div>
-          </div>
+            </CardContent>
+          </Card>
 
           {/* Inter */}
-          <div className="rounded-xl border border-border p-6 space-y-4">
+          <Card className="gap-0">
+            <CardContent className="space-y-4 p-6">
             <div>
               <p className="font-sans text-xs font-medium text-muted-foreground uppercase tracking-caps mb-1">Body / Working Type</p>
               <p className="font-sans font-normal text-5xl text-navy-900 dark:text-cream-50">Aa</p>
             </div>
             <div>
-              <p className="font-sans font-semibold text-xl text-navy-900 dark:text-cream-50">Inter</p>
+              <h3 className="font-sans font-semibold text-xl text-navy-900 dark:text-cream-50">Inter</h3>
               <p className="font-sans text-sm text-muted-foreground mt-1">
                 Subheads, body, UI, captions. Contemporary neo-grotesque — excellent on-screen legibility. Free, open-source.
               </p>
@@ -84,7 +88,8 @@ export function Typography() {
                 Loaded from Google Fonts. Free to use across web, Canva, Figma, and Office.
               </p>
             </div>
-          </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
@@ -92,8 +97,8 @@ export function Typography() {
 
       {/* Type Scale */}
       <section id="type-scale" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-foreground mb-6">Type Scale</h2>
-        <div className="space-y-0 divide-y divide-border rounded-xl border border-border overflow-hidden">
+        <h2 className="mb-6 font-sans text-2xl font-semibold text-foreground">Type Scale</h2>
+        <Card className="gap-0 divide-y overflow-hidden">
           {TYPE_SCALE.map((style) => (
             <div key={style.level} className="flex flex-col sm:flex-row sm:items-center gap-3 p-4 hover:bg-muted/40 transition-colors">
               <div className="sm:w-40 shrink-0">
@@ -110,14 +115,14 @@ export function Typography() {
               </div>
             </div>
           ))}
-        </div>
+        </Card>
       </section>
 
       <Separator className="mb-14" />
 
       {/* Live Preview */}
       <section id="live-preview" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-foreground mb-2">Live Preview</h2>
+        <h2 className="mb-2 font-sans text-2xl font-semibold text-foreground">Live Preview</h2>
         <p className="font-sans text-sm text-muted-foreground mb-6">Type below to preview your copy in all brand type styles at once.</p>
         <Input
           aria-label="Typography preview text"
@@ -145,7 +150,7 @@ export function Typography() {
 
       {/* Rules */}
       <section id="rules" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-foreground mb-6">Rules</h2>
+        <h2 className="mb-6 font-sans text-2xl font-semibold text-foreground">Rules</h2>
         <div className="grid sm:grid-cols-2 gap-6">
           {[
             {
@@ -201,17 +206,19 @@ export function Typography() {
               ],
             },
           ].map(group => (
-            <div key={group.title} className="rounded-xl border border-border p-5">
-              <h3 className="font-sans font-semibold text-base text-foreground mb-3">{group.title}</h3>
-              <ul className="space-y-2">
-                {group.rules.map((rule, i) => (
-                  <li key={i} className="font-sans text-sm text-navy-700 dark:text-cream-300 flex gap-2">
-                    <span className="text-accent shrink-0 mt-0.5">–</span>
-                    <span>{rule}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <Card key={group.title} className="gap-0">
+              <CardContent className="p-5">
+                <h3 className="font-sans font-semibold text-base text-foreground mb-3">{group.title}</h3>
+                <ul className="space-y-2">
+                  {group.rules.map((rule, i) => (
+                    <li key={i} className="flex gap-2 font-sans text-sm text-muted-foreground">
+                      <span className="mt-0.5 shrink-0 text-muted-foreground">–</span>
+                      <span>{rule}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </section>

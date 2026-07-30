@@ -272,5 +272,5 @@ export function assertDeveloperCatalogValid(): void {
   const details = catalogValidation.issues
     .map((issue) => `${issue.code}: ${issue.message}`)
     .join('\n')
-  throw new Error(`Developer catalog validation failed:\n${details}`)
+  throw new Error(`Design System catalog validation failed:\n${details}`)
 }

@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test'
 
-test('the production build serves the Brand Kit root and a Developer deep link', async ({ page }) => {
+test('the production build serves the Brand Kit root and a Design System deep link', async ({ page }) => {
   const runtimeErrors: string[] = []
 
   page.on('console', (message) => {
@@ -15,10 +15,13 @@ test('the production build serves the Brand Kit root and a Developer deep link',
 
   const rootResponse = await page.goto('/', { waitUntil: 'domcontentloaded' })
   expect(rootResponse?.ok(), 'The production root document should load').toBe(true)
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('Where Cambridge')
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('goes punting.')
+  await expect(page.getByRole('heading', { level: 1, name: 'Scudamore’s Brand' })).toBeVisible()
+  const brandStatement = page.getByRole('region', { name: 'Brand statement' })
+  await expect(brandStatement.locator('p').filter({ hasText: 'Where Cambridge' })).toHaveText(
+    /Where Cambridge\s*goes punting\./,
+  )
 
-  const deepResponse = await page.goto('/developer/components/button', {
+  const deepResponse = await page.goto('/design-system/components/button', {
     waitUntil: 'domcontentloaded',
   })
   expect(deepResponse?.ok(), 'The production server should serve the SPA deep link').toBe(true)
@@ -28,10 +31,10 @@ test('the production build serves the Brand Kit root and a Developer deep link',
   await expect(livePreview).toHaveAttribute('data-preview-status', 'ready')
   await expect(livePreview.locator('[data-ui-preview="true"]')).toBeVisible()
 
-  const source = page.locator('#source')
-  await expect(source.locator('p[title="react/components/ui/button.tsx"]')).toBeVisible()
-  await expect(source.locator('pre[aria-label="button.tsx source code"] code')).toContainText(
-    'const Button = React.forwardRef',
+  const workbench = page.getByRole('region', { name: 'Button workbench' })
+  await workbench.getByRole('tab', { name: 'React', exact: true }).click()
+  await expect(workbench.locator('pre:visible code').first()).toContainText(
+    'import { Button } from "../../components/ui/button"',
   )
 
   expect(runtimeErrors).toEqual([])

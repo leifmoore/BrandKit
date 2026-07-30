@@ -12,7 +12,7 @@ interface PortalCase {
 const cases: PortalCase[] = [
   {
     id: 'alert-dialog',
-    route: '/developer/components/alert-dialog',
+    route: '/design-system/components/alert-dialog',
     title: 'Alert Dialog',
     open: async (page, preview) => {
       await preview.getByRole('button', { name: 'Delete record' }).click()
@@ -21,7 +21,7 @@ const cases: PortalCase[] = [
   },
   {
     id: 'dialog',
-    route: '/developer/components/dialog',
+    route: '/design-system/components/dialog',
     title: 'Dialog',
     open: async (page, preview) => {
       await preview.getByRole('button', { name: 'Open dialog' }).click()
@@ -30,7 +30,7 @@ const cases: PortalCase[] = [
   },
   {
     id: 'dropdown-menu',
-    route: '/developer/components/dropdown-menu',
+    route: '/design-system/components/dropdown-menu',
     title: 'Dropdown Menu',
     open: async (page, preview) => {
       await preview.getByRole('button', { name: 'View options' }).click()
@@ -39,7 +39,7 @@ const cases: PortalCase[] = [
   },
   {
     id: 'popover',
-    route: '/developer/components/popover',
+    route: '/design-system/components/popover',
     title: 'Popover',
     open: async (page, preview) => {
       await preview.getByRole('button', { name: 'Open popover' }).click()
@@ -48,7 +48,7 @@ const cases: PortalCase[] = [
   },
   {
     id: 'select',
-    route: '/developer/components/select',
+    route: '/design-system/components/select',
     title: 'Select',
     open: async (page, preview) => {
       await preview.getByRole('combobox', { name: 'Status' }).click()
@@ -57,7 +57,7 @@ const cases: PortalCase[] = [
   },
   {
     id: 'sheet',
-    route: '/developer/components/sheet',
+    route: '/design-system/components/sheet',
     title: 'Sheet',
     open: async (page, preview) => {
       await preview.getByRole('button', { name: 'Open panel' }).click()
@@ -66,7 +66,7 @@ const cases: PortalCase[] = [
   },
   {
     id: 'tooltip',
-    route: '/developer/components/tooltip',
+    route: '/design-system/components/tooltip',
     title: 'Tooltip',
     open: async (page, preview) => {
       await preview.getByRole('button', { name: 'More information' }).hover()
@@ -75,7 +75,7 @@ const cases: PortalCase[] = [
   },
   {
     id: 'booking-details-dialog',
-    route: '/developer/patterns/booking-details-dialog',
+    route: '/design-system/patterns/booking-details-dialog',
     title: 'Booking Details Dialog',
     open: async (page, preview) => {
       await preview.getByRole('button', { name: 'Open booking details' }).click()
@@ -84,7 +84,7 @@ const cases: PortalCase[] = [
   },
   {
     id: 'people-popover-content',
-    route: '/developer/patterns/people-popover-content',
+    route: '/design-system/patterns/people-popover-content',
     title: 'People Popover Content',
     open: async (page, preview) => {
       await preview.getByRole('button', { name: 'About accessibility access' }).hover()
@@ -99,9 +99,11 @@ test.describe('Preview portal integration', () => {
       await openDeveloperRoute(page, portalCase.route, portalCase.title)
       const livePreview = page.locator(`section[data-preview-entry="${portalCase.id}"]`)
       const previewRoot = livePreview.locator('[data-ui-preview="true"]')
-      await livePreview.getByLabel('Mode').selectOption('dark')
-      await livePreview.getByLabel('Brand').selectOption('violet')
-      await livePreview.getByRole('button', { name: 'RTL', exact: true }).click()
+      await livePreview.getByRole('button', { name: 'Dark', exact: true }).click()
+      await livePreview.getByRole('button', { name: 'More', exact: true }).click()
+      await page.getByLabel('Accent theme').selectOption('violet')
+      await page.getByRole('button', { name: 'RTL', exact: true }).click()
+      await page.keyboard.press('Escape')
 
       const target = await portalCase.open(page, previewRoot)
       await expect(target).toBeVisible()

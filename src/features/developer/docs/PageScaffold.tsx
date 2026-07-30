@@ -1,16 +1,10 @@
 import type { ReactNode } from 'react'
 import { AlertCircle, FileQuestion, RotateCcw } from 'lucide-react'
+import { PageHeader, type PageHeaderProps } from '@/components/shared/PageHeader'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
-export interface DeveloperPageHeaderProps {
-  eyebrow?: string
-  title: string
-  description?: string
-  badges?: ReactNode
-  metadata?: ReactNode
-  className?: string
-}
+export type DeveloperPageHeaderProps = PageHeaderProps
 
 export function DeveloperPageHeader({
   eyebrow,
@@ -19,33 +13,18 @@ export function DeveloperPageHeader({
   badges,
   metadata,
   className,
+  compact = false,
 }: DeveloperPageHeaderProps) {
   return (
-    <header className={cn('mb-10 border-b border-border pb-8', className)}>
-      {eyebrow ? (
-        <p className="mb-3 font-sans text-xs font-semibold uppercase tracking-caps text-navy-700 dark:text-gold-300">
-          {eyebrow}
-        </p>
-      ) : null}
-      <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-        <div className="min-w-0 max-w-3xl">
-          <h1 className="font-display text-4xl font-bold leading-none tracking-display text-foreground md:text-5xl">
-            {title}
-          </h1>
-          {description ? (
-            <p className="mt-4 max-w-2xl font-sans text-base leading-7 text-muted-foreground md:text-lg">
-              {description}
-            </p>
-          ) : null}
-        </div>
-        {badges ? (
-          <div className="flex shrink-0 flex-wrap items-center gap-2" role="group" aria-label="Entry status">
-            {badges}
-          </div>
-        ) : null}
-      </div>
-      {metadata ? <div className="mt-5">{metadata}</div> : null}
-    </header>
+    <PageHeader
+      eyebrow={eyebrow}
+      title={title}
+      description={description}
+      badges={badges}
+      metadata={metadata}
+      className={className}
+      compact={compact}
+    />
   )
 }
 
@@ -74,7 +53,7 @@ export function DocSection({
     >
       <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div className="max-w-3xl">
-          <h2 id={`${id}-heading`} className="font-display text-2xl font-bold text-foreground">
+          <h2 id={`${id}-heading`} className="font-sans text-2xl font-semibold text-foreground">
             {title}
           </h2>
           {description ? (
@@ -136,7 +115,7 @@ export function PageState({
       role={kind === 'error' ? 'alert' : 'status'}
     >
       <Icon className="mx-auto size-8 text-muted-foreground" aria-hidden="true" />
-      <h2 className="mt-4 font-display text-xl font-bold text-foreground">{title}</h2>
+      <h2 className="mt-4 font-sans text-xl font-semibold text-foreground">{title}</h2>
       <p className="mx-auto mt-2 max-w-xl font-sans text-sm leading-6 text-muted-foreground">
         {description}
       </p>

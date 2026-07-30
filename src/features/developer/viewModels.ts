@@ -204,7 +204,7 @@ export function toDeferredViewModel(
   }
 }
 
-function toCatalogEntry(entry: DeveloperCatalogEntry): CatalogEntryViewModel {
+export function toCatalogEntryViewModel(entry: DeveloperCatalogEntry): CatalogEntryViewModel {
   const kind = entry.kind === 'deferred' ? 'deferred' : entry.kind
   return {
     id: entry.id,
@@ -253,7 +253,7 @@ export function toCatalogOverviewViewModel(
       { label: 'Foundations', value: counts.foundations, description: 'Tokens, brands, typography, layout, icons, and exceptions.' },
       { label: 'Deferred', value: counts.deferred, description: 'Inventoried entries with no preview or copy actions.' },
     ],
-    entries: entries.map(toCatalogEntry),
+    entries: entries.map(toCatalogEntryViewModel),
     installation,
   }
 }

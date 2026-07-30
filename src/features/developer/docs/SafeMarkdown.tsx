@@ -191,7 +191,7 @@ function InlineMarkdown({ value }: { value: string }) {
 
 function MarkdownHeading({ level, children }: { level: 1 | 2 | 3 | 4; children: ReactNode }) {
   const className = cn(
-    'font-display font-bold text-foreground',
+    'font-sans font-semibold text-foreground',
     level === 1 && 'mt-10 text-3xl first:mt-0',
     level === 2 && 'mt-9 text-2xl first:mt-0',
     level === 3 && 'mt-7 text-xl first:mt-0',
@@ -263,9 +263,9 @@ export function SafeMarkdown({ markdown, className, emptyFallback = null }: Safe
         }
         if (block.kind === 'code') {
           return (
-            <div key={key} className="mt-5 overflow-hidden rounded-lg border border-border bg-navy-900 text-cream-50">
+            <div key={key} className="mt-5 overflow-hidden rounded-lg border border-border bg-muted/40 text-foreground">
               {block.language ? (
-                <div className="border-b border-white/10 px-4 py-2 font-mono text-xs text-cream-300">
+                <div className="border-b border-border px-4 py-2 font-mono text-xs text-muted-foreground">
                   {block.language}
                 </div>
               ) : null}

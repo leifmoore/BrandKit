@@ -1,14 +1,16 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
 import { Menu, X } from 'lucide-react'
-import { useLocation } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import { Sidebar } from './Sidebar'
 import { CommandPalette } from '@/components/search/CommandPalette'
 import { Toaster } from '@/components/ui/sonner'
+import { WORKSPACES, getWorkspaceForPath } from '@/config/workspaces'
 import { useDarkMode } from '@/hooks/useDarkMode'
+import { useWorkspaceMemory } from '@/hooks/useWorkspaceMemory'
 import { cn } from '@/lib/utils'
 
 interface MainLayoutProps {
-  children: React.ReactNode
+  children?: React.ReactNode
 }
 
 const DRAWER_FOCUSABLE_SELECTOR = [
@@ -36,7 +38,17 @@ export function MainLayout({ children }: MainLayoutProps) {
   const mainRef = useRef<HTMLElement>(null)
   const { isDark } = useDarkMode()
   const location = useLocation()
-  const isDeveloper = location.pathname.startsWith('/developer')
+  const workspaceId = getWorkspaceForPath(location.pathname) ?? 'brand'
+  const workspace = WORKSPACES[workspaceId]
+  const isDesignSystem = workspaceId === 'design-system'
+  const isHostDesignSystemPage = [
+    '/design-system/foundations/accessibility',
+    '/design-system/foundations/data-visualisation',
+    '/design-system/resources',
+    '/design-system/review/previews',
+  ].includes(location.pathname)
+
+  useWorkspaceMemory(location.pathname)
 
   const openSearch = useCallback(() => setSearchOpen(true), [])
   const openDrawer = useCallback(() => {
@@ -134,39 +146,63 @@ export function MainLayout({ children }: MainLayoutProps) {
   }, [closeDrawer, drawerOpen])
 
   useEffect(() => {
-    if (isDeveloper) return
+    if (isDesignSystem && !isHostDesignSystemPage) return
 
-    const focusFrame = window.requestAnimationFrame(() => {
-      const main = mainRef.current
-      if (!main) return
+    const main = mainRef.current
+    if (!main) return
 
+    let focusedTarget: HTMLElement | null = null
+    let observer: MutationObserver | undefined
+
+    const focusDestination = () => {
       const anchor = location.hash.startsWith('#') ? location.hash.slice(1) : ''
       const candidateAnchorTarget = anchor ? document.getElementById(anchor) : null
       const anchorTarget = candidateAnchorTarget && main.contains(candidateAnchorTarget)
         ? candidateAnchorTarget
         : null
       const target = anchorTarget ?? main.querySelector<HTMLElement>('h1')
-      if (!target) return
+      if (!target) return false
 
+      focusedTarget = target
+      target.setAttribute('data-route-focus', '')
       const addedTabIndex = !target.hasAttribute('tabindex')
       if (addedTabIndex) target.setAttribute('tabindex', '-1')
-      if (addedTabIndex) {
-        target.addEventListener('blur', () => target.removeAttribute('tabindex'), { once: true })
-      }
+      target.addEventListener('blur', () => {
+        target.removeAttribute('data-route-focus')
+        if (addedTabIndex) target.removeAttribute('tabindex')
+      }, { once: true })
 
       target.focus({ preventScroll: Boolean(anchorTarget) })
       if (anchorTarget) {
         anchorTarget.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }
+      return true
+    }
+
+    const focusFrame = window.requestAnimationFrame(() => {
+      if (!focusDestination()) {
+        observer = new MutationObserver(() => {
+          if (focusDestination()) observer?.disconnect()
+        })
+        observer.observe(main, { childList: true, subtree: true })
+      }
     })
 
-    return () => window.cancelAnimationFrame(focusFrame)
-  }, [isDeveloper, location.hash, location.key])
+    return () => {
+      window.cancelAnimationFrame(focusFrame)
+      observer?.disconnect()
+      focusedTarget?.removeAttribute('data-route-focus')
+      if (focusedTarget && document.activeElement === focusedTarget) focusedTarget.blur()
+    }
+  }, [isDesignSystem, isHostDesignSystemPage, location.hash, location.key])
 
   return (
-    <div className="flex h-screen overflow-hidden bg-background">
+    <div className="flex h-screen overflow-hidden bg-background text-foreground">
       {/* ── Desktop sidebar ── */}
-      <aside className="hidden lg:flex w-60 shrink-0 flex-col border-r border-cream-300 dark:border-navy-700">
+      <aside
+        className="hidden w-64 shrink-0 flex-col border-r border-border bg-card lg:flex"
+        aria-label={`${workspace.label} workspace`}
+      >
         <Sidebar onSearch={openSearch} />
       </aside>
 
@@ -174,7 +210,7 @@ export function MainLayout({ children }: MainLayoutProps) {
       {drawerOpen && (
         <div
           aria-hidden="true"
-          className="lg:hidden fixed inset-0 z-40 bg-navy-900/60 backdrop-blur-sm"
+          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm lg:hidden"
           onClick={() => closeDrawer()}
         />
       )}
@@ -183,7 +219,7 @@ export function MainLayout({ children }: MainLayoutProps) {
       <aside
         id="mobile-navigation-drawer"
         role="dialog"
-        aria-label="Brand Kit navigation"
+        aria-label={`${workspace.label} navigation`}
         aria-hidden={!drawerOpen}
         aria-modal={drawerOpen || undefined}
         ref={(element) => {
@@ -191,7 +227,7 @@ export function MainLayout({ children }: MainLayoutProps) {
           if (element) element.inert = !drawerOpen
         }}
         className={cn(
-          'lg:hidden fixed inset-y-0 left-0 z-50 w-72 flex flex-col transition-transform duration-300',
+          'fixed inset-y-0 left-0 z-50 flex w-72 flex-col border-r border-border bg-card shadow-xl transition-transform duration-300 lg:hidden',
           drawerOpen ? 'translate-x-0' : '-translate-x-full',
         )}
       >
@@ -201,7 +237,7 @@ export function MainLayout({ children }: MainLayoutProps) {
             type="button"
             aria-label="Close navigation"
             onClick={() => closeDrawer()}
-            className="text-navy-300 hover:text-cream-50 p-1"
+            className="rounded-md p-1 text-muted-foreground hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             <X className="w-5 h-5" aria-hidden="true" />
           </button>
@@ -210,9 +246,9 @@ export function MainLayout({ children }: MainLayoutProps) {
       </aside>
 
       {/* ── Main content ── */}
-      <main ref={mainRef} className="flex-1 overflow-y-auto">
+      <main id="main-content" ref={mainRef} className="min-w-0 flex-1 overflow-y-auto">
         {/* Mobile top bar */}
-        <div className="lg:hidden flex items-center gap-3 px-4 py-3 border-b border-cream-300 dark:border-navy-700 bg-navy-900">
+        <div className="flex items-center gap-3 border-b border-border bg-card px-4 py-3 lg:hidden">
           <button
             ref={drawerTriggerRef}
             type="button"
@@ -220,27 +256,29 @@ export function MainLayout({ children }: MainLayoutProps) {
             aria-controls="mobile-navigation-drawer"
             aria-expanded={drawerOpen}
             onClick={openDrawer}
-            className="text-cream-50 hover:text-gold-300"
+            className="rounded-md p-1 text-muted-foreground hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             <Menu className="w-5 h-5" aria-hidden="true" />
           </button>
-          <img src="/logos/logo-white.svg" alt="Scudamore's" className="h-7 w-auto" />
+          <img src="/logos/logo-navy.svg" alt="Scudamore's" className="h-7 w-auto dark:hidden" />
+          <img src="/logos/logo-white.svg" alt="Scudamore's" className="hidden h-7 w-auto dark:block" />
+          <span className="ml-auto font-sans text-xs font-medium text-muted-foreground">{workspace.label}</span>
         </div>
 
         <div
           className={cn(
-            'mx-auto px-4 py-10 sm:px-8',
-            isDeveloper ? 'max-w-[1600px]' : 'max-w-5xl',
+            'mx-auto min-w-0 px-4 py-10 sm:px-8',
+            isDesignSystem ? 'max-w-[1600px]' : 'max-w-5xl',
           )}
         >
-          {children}
+          {children ?? <Outlet />}
         </div>
       </main>
 
       {/* ── Command palette ── */}
       <CommandPalette open={searchOpen} onOpenChange={setSearchOpen} />
 
-      {!isDeveloper ? (
+      {!isDesignSystem ? (
         <Toaster
           theme={isDark ? 'dark' : 'light'}
           richColors

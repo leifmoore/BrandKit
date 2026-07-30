@@ -59,7 +59,7 @@ const unassessedParity = Object.freeze<ParitySummary>({
   applicable: false,
   classification: 'unassessed',
   intentionalDifferences: Object.freeze([]),
-  note: 'Framework parity is not declared for developer infrastructure.',
+  note: 'Framework parity is not declared for Design System infrastructure.',
 })
 
 const pairedFrameworks = Object.freeze(['react', 'blade'] as const)
@@ -240,7 +240,7 @@ export const utilities: readonly UtilityCatalogEntry[] = Object.freeze(
       key: `utility:${indexEntry.id}`,
       id: indexEntry.id,
       title: indexEntry.title,
-      description: 'Developer-section preview infrastructure supplied by the handoff.',
+      description: 'Design System preview infrastructure supplied by the handoff.',
       category: indexEntry.category,
       kind: 'utility',
       maturity: 'infrastructure',

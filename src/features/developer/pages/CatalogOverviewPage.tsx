@@ -56,7 +56,7 @@ export function CatalogEntryCard({ entry, onNavigate }: CatalogEntryCardProps) {
       <div className="mt-5 flex items-start justify-between gap-4">
         <div className="min-w-0">
           <p className="font-sans text-xs font-semibold uppercase tracking-caps text-muted-foreground">{entry.category}</p>
-          <h3 className="mt-2 font-display text-xl font-bold text-foreground">{entry.title}</h3>
+          <h3 className="mt-2 font-sans text-xl font-semibold text-foreground">{entry.title}</h3>
         </div>
         <ArrowRight className="mt-1 size-5 shrink-0 text-muted-foreground transition group-hover:translate-x-1 group-hover:text-primary" aria-hidden="true" />
       </div>
@@ -86,7 +86,7 @@ export function CatalogOverviewPage({
   return (
     <article>
       <DeveloperPageHeader
-        eyebrow="Developer"
+        eyebrow="Design System"
         title={catalog.name}
         description={catalog.description}
         badges={
@@ -107,7 +107,7 @@ export function CatalogOverviewPage({
         <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
           {catalog.counts.map((count) => (
             <div key={count.label} className="rounded-xl border border-border bg-card p-5">
-              <p className="font-display text-3xl font-bold text-foreground">{count.value}</p>
+              <p className="font-sans text-3xl font-semibold text-foreground">{count.value}</p>
               <p className="mt-1 font-sans text-sm font-semibold text-foreground">{count.label}</p>
               {count.description ? <p className="mt-2 font-sans text-xs leading-5 text-muted-foreground">{count.description}</p> : null}
             </div>
@@ -119,17 +119,17 @@ export function CatalogOverviewPage({
         <div className="grid gap-4 md:grid-cols-3">
           <div className="rounded-xl border border-border bg-card p-5">
             <Braces className="size-6 text-primary" aria-hidden="true" />
-            <h3 className="mt-4 font-display text-lg font-bold text-foreground">React</h3>
+            <h3 className="mt-4 font-sans text-lg font-semibold text-foreground">React</h3>
             <p className="mt-2 font-sans text-sm leading-6 text-muted-foreground">Live previews, TypeScript source, fixtures, and component APIs.</p>
           </div>
           <div className="rounded-xl border border-border bg-card p-5">
             <Layers3 className="size-6 text-primary" aria-hidden="true" />
-            <h3 className="mt-4 font-display text-lg font-bold text-foreground">Blade</h3>
+            <h3 className="mt-4 font-sans text-lg font-semibold text-foreground">Blade</h3>
             <p className="mt-2 font-sans text-sm leading-6 text-muted-foreground">Source-only examples, canonical tags, slots, events, and Laravel install targets.</p>
           </div>
           <div className="rounded-xl border border-border bg-card p-5">
             <Boxes className="size-6 text-primary" aria-hidden="true" />
-            <h3 className="mt-4 font-display text-lg font-bold text-foreground">Copy-only v1</h3>
+            <h3 className="mt-4 font-sans text-lg font-semibold text-foreground">Copy-only v1</h3>
             <p className="mt-2 font-sans text-sm leading-6 text-muted-foreground">No hosted registry or remote code execution. Review and copy the supplied files into the consumer.</p>
           </div>
         </div>
@@ -153,7 +153,7 @@ export function CatalogOverviewPage({
             {groupedEntries.map((group) => (
               <section key={group.kind} aria-labelledby={`catalog-${group.kind}`}>
                 <div className="mb-4 flex items-baseline justify-between gap-3">
-                  <h3 id={`catalog-${group.kind}`} className="font-display text-xl font-bold text-foreground">
+                  <h3 id={`catalog-${group.kind}`} className="font-sans text-xl font-semibold text-foreground">
                     {kindLabels[group.kind]}
                   </h3>
                   <span className="font-sans text-xs text-muted-foreground">{group.entries.length} entries</span>

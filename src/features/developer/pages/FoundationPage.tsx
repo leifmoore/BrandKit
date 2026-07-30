@@ -1,6 +1,7 @@
 import { DocSection, DeveloperPageHeader, MetadataList, PageState } from '../docs/PageScaffold'
 import { SafeMarkdown } from '../docs/SafeMarkdown'
 import { SourceViewer } from '../docs/SourceViewer'
+import { BrandPaletteCandidates } from '@/components/workspaces/BrandPaletteCandidates'
 import type { DeveloperPageContentProps, FoundationDetailViewModel } from '../docs/types'
 
 export interface FoundationPageProps extends DeveloperPageContentProps {
@@ -11,7 +12,7 @@ export function FoundationPage({ foundation, preview, sources = [] }: Foundation
   return (
     <article>
       <DeveloperPageHeader
-        eyebrow="Developer foundation"
+        eyebrow="Design System foundation"
         title={foundation.title}
         description={foundation.description}
         metadata={
@@ -25,6 +26,16 @@ export function FoundationPage({ foundation, preview, sources = [] }: Foundation
         }
       />
 
+      {foundation.id === 'themes' ? (
+        <DocSection
+          id="brand-workspace-candidates"
+          title="Brand workspace colour candidates"
+          description="Compare proposed Brand-content treatments in an otherwise neutral Design System frame before approving Cream or Gold for the application."
+        >
+          <BrandPaletteCandidates />
+        </DocSection>
+      ) : null}
+
       <DocSection id="overview" title="Overview" description="Canonical guidance from the handoff; raw HTML is displayed as text and is never injected into the Brand Kit.">
         <SafeMarkdown markdown={foundation.documentation ?? foundation.description} />
         {foundation.id === 'tokens' ? (
@@ -33,7 +44,7 @@ export function FoundationPage({ foundation, preview, sources = [] }: Foundation
               Destination accessibility correction
             </h3>
             <p className="mt-1 font-sans text-sm leading-6 text-muted-foreground">
-              The 0.1.0 dark <code className="font-mono text-xs">muted-foreground</code> value is 3.96:1 on the dark popover surface. Live previews use <code className="font-mono text-xs">#b0b8c4</code> for a 5.15:1 ratio. Apply the same override when copying the immutable token data into a consumer.
+              The 0.1.0 <code className="font-mono text-xs">muted-foreground</code> values miss AA on some muted and popover surfaces. This destination uses <code className="font-mono text-xs">#626b7b</code> in light mode for 4.88:1 and <code className="font-mono text-xs">#b0b8c4</code> in dark mode for 5.15:1. Apply equivalent reviewed overrides when copying the immutable token data into a consumer.
             </p>
           </aside>
         ) : null}

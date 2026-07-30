@@ -10,8 +10,11 @@ import {
   assertDeveloperCatalogValid,
   catalogCounts,
   components,
-  getComponentOrDeferred,
+  deferredComponents,
+  foundations,
   getComponent,
+  getComponentOrDeferred,
+  getDeferredComponent,
   getDocumentationSource,
   getEntrySources,
   getFoundation,
@@ -26,14 +29,15 @@ import {
 } from './catalog'
 import {
   CatalogOverviewPage,
+  CollectionPage,
   ComponentPage,
   DeferredPage,
   FoundationPage,
   RecipePage,
 } from './pages'
 import { PageState, type CatalogEntryViewModel } from './docs'
-import { DeveloperNavigation } from './DeveloperNavigation'
 import {
+  toCatalogEntryViewModel,
   toCatalogOverviewViewModel,
   toComponentViewModel,
   toDeferredViewModel,
@@ -65,7 +69,7 @@ function assertPreviewRegistryCoverage() {
 
   if (missing.length || unexpected.length) {
     throw new Error(
-      `Developer preview registry does not match the catalog. Missing: ${missing.join(', ') || 'none'}. Unexpected: ${unexpected.join(', ') || 'none'}.`,
+      `Design System preview registry does not match the catalog. Missing: ${missing.join(', ') || 'none'}. Unexpected: ${unexpected.join(', ') || 'none'}.`,
     )
   }
 }
@@ -74,6 +78,7 @@ assertDeveloperCatalogValid()
 assertPreviewRegistryCoverage()
 
 interface EntryResources {
+  entryKey: string
   loading: boolean
   documentation?: string
   sources: readonly HandoffSource[]
@@ -82,13 +87,14 @@ interface EntryResources {
 
 function useEntryResources(entry: DocumentedEntry): EntryResources {
   const [state, setState] = useState<EntryResources>({
+    entryKey: entry.key,
     loading: true,
     sources: [],
   })
 
   useEffect(() => {
     let active = true
-    setState({ loading: true, sources: [] })
+    setState({ entryKey: entry.key, loading: true, sources: [] })
 
     void Promise.all([
       getDocumentationSource(entry),
@@ -97,6 +103,7 @@ function useEntryResources(entry: DocumentedEntry): EntryResources {
       .then(([documentation, sources]) => {
         if (!active) return
         setState({
+          entryKey: entry.key,
           loading: false,
           documentation: documentation.content,
           sources,
@@ -105,6 +112,7 @@ function useEntryResources(entry: DocumentedEntry): EntryResources {
       .catch((cause: unknown) => {
         if (!active) return
         setState({
+          entryKey: entry.key,
           loading: false,
           sources: [],
           error: cause instanceof Error ? cause : new Error(String(cause)),
@@ -116,7 +124,9 @@ function useEntryResources(entry: DocumentedEntry): EntryResources {
     }
   }, [entry])
 
-  return state
+  return state.entryKey === entry.key
+    ? state
+    : { entryKey: entry.key, loading: true, sources: [] }
 }
 
 function ResourceState({
@@ -128,7 +138,7 @@ function ResourceState({
 }) {
   if (state.loading) {
     return (
-      <div className="space-y-4" role="status" aria-label="Loading Developer documentation">
+      <div className="space-y-4" role="status" aria-label="Loading Design System documentation">
         <div className="h-10 w-2/3 animate-pulse rounded bg-muted" />
         <div className="h-5 w-full animate-pulse rounded bg-muted" />
         <div className="h-5 w-4/5 animate-pulse rounded bg-muted" />
@@ -154,14 +164,25 @@ function ResourceState({
 
 function ComponentRoute() {
   const { componentId = '' } = useParams()
+  const location = useLocation()
   const entry = getComponentOrDeferred(componentId)
 
   if (!entry) return <NotFound />
   if (entry.kind === 'deferred') {
-    return <DeferredPage item={toDeferredViewModel(entry)} />
+    return (
+      <Navigate
+        to={{ pathname: entry.route, search: location.search, hash: location.hash }}
+        replace
+      />
+    )
   }
-
   return <SupportedComponentRoute entry={entry} />
+}
+
+function DeferredRoute() {
+  const { deferredId = '' } = useParams()
+  const entry = getDeferredComponent(deferredId)
+  return entry ? <DeferredPage item={toDeferredViewModel(entry)} /> : <NotFound />
 }
 
 function SupportedComponentRoute({ entry }: { entry: ComponentCatalogEntry }) {
@@ -173,6 +194,7 @@ function SupportedComponentRoute({ entry }: { entry: ComponentCatalogEntry }) {
           component={toComponentViewModel(entry, documentation)}
           preview={
             <LivePreview
+              key={entry.key}
               entryId={entry.id}
               title={entry.title}
               states={entry.manifest.previews[0]?.states}
@@ -199,7 +221,7 @@ function SupportedRecipeRoute({ entry }: { entry: RecipeCatalogEntry }) {
       {({ documentation, sources }) => (
         <RecipePage
           recipe={toRecipeViewModel(entry, documentation)}
-          preview={<LivePreview kind="recipe" entryId={entry.id} title={entry.title} />}
+          preview={<LivePreview key={entry.key} kind="recipe" entryId={entry.id} title={entry.title} />}
           sources={toSourceViewModels(sources, entry.copyable)}
         />
       )}
@@ -209,7 +231,7 @@ function SupportedRecipeRoute({ entry }: { entry: RecipeCatalogEntry }) {
 
 function FoundationRoute() {
   const { foundationId = '' } = useParams()
-  const entry = getFoundation(foundationId)
+  const entry = getFoundation(foundationId === 'themes' ? 'brands' : foundationId)
   if (!entry) return <NotFound />
   return <SupportedFoundationRoute entry={entry} />
 }
@@ -224,7 +246,14 @@ function SupportedFoundationRoute({ entry }: { entry: FoundationCatalogEntry }) 
     <ResourceState state={resources}>
       {({ documentation, sources }) => (
         <FoundationPage
-          foundation={toFoundationViewModel(entry, documentation)}
+          foundation={entry.id === 'brands'
+            ? {
+                ...toFoundationViewModel(entry, documentation),
+                id: 'themes',
+                title: 'Themes',
+                description: 'Theme modes and accent presets for supported Design System components.',
+              }
+            : toFoundationViewModel(entry, documentation)}
           preview={themePreview}
           sources={toSourceViewModels(sources, entry.copyable)}
         />
@@ -272,40 +301,76 @@ function OverviewRoute() {
   )
 }
 
+function CollectionRoute({ kind }: { kind: 'components' | 'patterns' | 'foundations' | 'roadmap' }) {
+  const navigate = useNavigate()
+  const entries = kind === 'components'
+    ? components
+    : kind === 'patterns'
+      ? recipes
+      : kind === 'foundations'
+        ? foundations
+        : deferredComponents
+
+  const content = {
+    components: ['Components', 'Reusable React and Blade primitives with interactive previews and exact source files.'],
+    patterns: ['Patterns', 'Fixture-driven compositions built from supported Design System components.'],
+    foundations: ['Foundations', 'Tokens, themes, typography, layout, icons, accessibility, and implementation guidance.'],
+    roadmap: ['Roadmap', 'Inventoried candidates that remain unavailable until their production and design evidence is complete.'],
+  } as const
+
+  return (
+    <CollectionPage
+      eyebrow={kind === 'roadmap' ? 'Design System roadmap' : 'Design System catalogue'}
+      title={content[kind][0]}
+      description={content[kind][1]}
+      entries={entries.map(toCatalogEntryViewModel)}
+      kind={kind}
+      onEntryNavigate={(entry) => navigate(entry.href)}
+    />
+  )
+}
+
 function NotFound() {
   return (
     <PageState
       kind="empty"
-      title="Developer page not found"
+      title="Design System page not found"
       description="This route does not match a supported component, pattern, foundation, or deferred inventory record."
     />
   )
 }
 
 function ManageDeveloperRouteFocus({ contentRef }: { contentRef: RefObject<HTMLDivElement> }) {
-  const { pathname } = useLocation()
+  const { hash, pathname } = useLocation()
 
   useEffect(() => {
-    document.querySelector('main')?.scrollTo({ top: 0 })
+    if (!hash) document.querySelector('main')?.scrollTo({ top: 0 })
 
-    let focusedHeading: HTMLHeadingElement | null = null
+    let focusedTarget: HTMLElement | null = null
     let previousTabIndex: string | null = null
-    const focusHeading = () => {
-      const heading = contentRef.current?.querySelector('h1')
-      if (!heading) return false
+    const focusDestination = () => {
+      const anchor = hash.startsWith('#') ? hash.slice(1) : ''
+      const candidateAnchorTarget = anchor ? document.getElementById(anchor) : null
+      const anchorTarget = candidateAnchorTarget && contentRef.current?.contains(candidateAnchorTarget)
+        ? candidateAnchorTarget
+        : null
+      const target = anchorTarget ?? contentRef.current?.querySelector<HTMLElement>('h1')
+      if (!target) return false
 
-      focusedHeading = heading
-      previousTabIndex = heading.getAttribute('tabindex')
-      heading.setAttribute('tabindex', '-1')
-      heading.focus({ preventScroll: true })
+      focusedTarget = target
+      previousTabIndex = target.getAttribute('tabindex')
+      target.setAttribute('data-route-focus', '')
+      target.setAttribute('tabindex', '-1')
+      target.focus({ preventScroll: Boolean(anchorTarget) })
+      anchorTarget?.scrollIntoView({ behavior: 'smooth', block: 'start' })
       return true
     }
 
     const observer = new MutationObserver(() => {
-      if (focusHeading()) observer.disconnect()
+      if (focusDestination()) observer.disconnect()
     })
     const frame = window.requestAnimationFrame(() => {
-      if (!focusHeading() && contentRef.current) {
+      if (!focusDestination() && contentRef.current) {
         observer.observe(contentRef.current, { childList: true, subtree: true })
       }
     })
@@ -313,37 +378,38 @@ function ManageDeveloperRouteFocus({ contentRef }: { contentRef: RefObject<HTMLD
     return () => {
       window.cancelAnimationFrame(frame)
       observer.disconnect()
-      if (focusedHeading?.isConnected) {
-        if (previousTabIndex === null) focusedHeading.removeAttribute('tabindex')
-        else focusedHeading.setAttribute('tabindex', previousTabIndex)
+      if (focusedTarget?.isConnected) {
+        focusedTarget.removeAttribute('data-route-focus')
+        if (previousTabIndex === null) focusedTarget.removeAttribute('tabindex')
+        else focusedTarget.setAttribute('tabindex', previousTabIndex)
       }
     }
-  }, [contentRef, pathname])
+  }, [contentRef, hash, pathname])
 
   return null
 }
 
 export default function DeveloperApp() {
-  const [query, setQuery] = useState('')
   const contentRef = useRef<HTMLDivElement>(null)
 
   return (
-    <div className="grid items-start gap-8 lg:grid-cols-[15rem_minmax(0,1fr)]">
+    <div>
       <ManageDeveloperRouteFocus contentRef={contentRef} />
-      <DeveloperNavigation query={query} onQueryChange={setQuery} />
       <div ref={contentRef} className="min-w-0" data-developer-route-content>
         <Routes>
           <Route index element={<OverviewRoute />} />
           <Route path="components/:componentId" element={<ComponentRoute />} />
           <Route path="patterns/:recipeId" element={<RecipeRoute />} />
           <Route path="foundations/:foundationId" element={<FoundationRoute />} />
-          <Route path="components" element={<Navigate to="/developer" replace />} />
-          <Route path="patterns" element={<Navigate to="/developer" replace />} />
-          <Route path="foundations" element={<Navigate to="/developer" replace />} />
+          <Route path="roadmap/:deferredId" element={<DeferredRoute />} />
+          <Route path="components" element={<CollectionRoute kind="components" />} />
+          <Route path="patterns" element={<CollectionRoute kind="patterns" />} />
+          <Route path="foundations" element={<CollectionRoute kind="foundations" />} />
+          <Route path="roadmap" element={<CollectionRoute kind="roadmap" />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <footer className="mt-12 border-t border-border pt-6 font-sans text-xs text-muted-foreground">
-          <Link to="/developer" className="font-medium text-foreground hover:underline">Scudamore&apos;s UI {handoffCatalog.version}</Link>
+          <Link to="/design-system" className="font-medium text-foreground hover:underline">Scudamore&apos;s UI {handoffCatalog.version}</Link>
           {' · '}Copy-only distribution · React previews · Blade source
         </footer>
       </div>

@@ -3,10 +3,18 @@ import * as React from "react";
 import { PreviewCanvas } from "./PreviewCanvas";
 import { PreviewControls } from "./PreviewControls";
 import { hasPreview, loadPreview } from "./registry";
-import { DEFAULT_PREVIEW_SETTINGS } from "./theme";
+import {
+  DEFAULT_PREVIEW_SETTINGS,
+  getPreviewPresentation,
+  PREVIEW_BRANDS,
+  PREVIEW_DIRECTIONS,
+  PREVIEW_MODES,
+  PREVIEW_WIDTHS,
+} from "./theme";
 import type {
   PreviewKind,
   PreviewLoadResult,
+  PreviewPresentation,
   PreviewSettings,
 } from "./types";
 
@@ -20,6 +28,58 @@ export interface LivePreviewProps {
   states?: readonly string[];
   onSettingsChange?: (settings: PreviewSettings) => void;
   className?: string;
+  presentation?: PreviewPresentation;
+  thumbnail?: boolean;
+}
+
+const PREVIEW_PREFERENCES_KEY = "scudamores.design-system.preview.v1";
+
+type StoredPreviewPreferences = Pick<
+  PreviewSettings,
+  "mode" | "brand" | "direction" | "width"
+>;
+
+function readPreviewPreferences(): Partial<StoredPreviewPreferences> {
+  try {
+    const stored = window.localStorage.getItem(PREVIEW_PREFERENCES_KEY);
+    if (!stored) return {};
+    const value = JSON.parse(stored) as Record<string, unknown>;
+    if (!value || typeof value !== "object" || Array.isArray(value)) return {};
+
+    const preferences: Partial<StoredPreviewPreferences> = {};
+    if (PREVIEW_MODES.some((option) => option.id === value.mode)) {
+      preferences.mode = value.mode as PreviewSettings["mode"];
+    }
+    if (PREVIEW_BRANDS.some((option) => option.id === value.brand)) {
+      preferences.brand = value.brand as PreviewSettings["brand"];
+    }
+    if (PREVIEW_DIRECTIONS.some((option) => option.id === value.direction)) {
+      preferences.direction = value.direction as PreviewSettings["direction"];
+    }
+    if (PREVIEW_WIDTHS.some((option) => option.id === value.width)) {
+      preferences.width = value.width as PreviewSettings["width"];
+    }
+    return preferences;
+  } catch {
+    return {};
+  }
+}
+
+function storePreviewPreferences(settings: PreviewSettings) {
+  try {
+    const preferences: StoredPreviewPreferences = {
+      mode: settings.mode,
+      brand: settings.brand,
+      direction: settings.direction,
+      width: settings.width,
+    };
+    window.localStorage.setItem(
+      PREVIEW_PREFERENCES_KEY,
+      JSON.stringify(preferences),
+    );
+  } catch {
+    // Storage can be unavailable in private or hardened browsing contexts.
+  }
 }
 
 interface RenderBoundaryProps {
@@ -163,10 +223,18 @@ export function LivePreview({
   states = [],
   onSettingsChange,
   className = "",
+  presentation,
+  thumbnail = false,
 }: LivePreviewProps) {
   const [internalSettings, setInternalSettings] = React.useState<PreviewSettings>(
-    () => ({ ...DEFAULT_PREVIEW_SETTINGS, ...defaultSettings }),
+    () => ({
+      ...DEFAULT_PREVIEW_SETTINGS,
+      ...readPreviewPreferences(),
+      ...defaultSettings,
+      state: defaultSettings?.state ?? "default",
+    }),
   );
+  const previousEntryRef = React.useRef(entryId);
   const [retryNonce, setRetryNonce] = React.useState(0);
   const settings = controlledSettings ?? internalSettings;
   const result = useLoadedPreview(kind, entryId, retryNonce);
@@ -176,15 +244,30 @@ export function LivePreview({
   );
   const sessionKey = `${kind}:${entryId}:${settings.state}:${retryNonce}`;
 
+  const updateSettings = React.useCallback((next: PreviewSettings) => {
+    if (!controlledSettings) setInternalSettings(next);
+    onSettingsChange?.(next);
+  }, [controlledSettings, onSettingsChange]);
+
+  React.useEffect(() => {
+    if (previousEntryRef.current === entryId) return;
+    previousEntryRef.current = entryId;
+    updateSettings({
+      ...settings,
+      state: availableStates.includes("default")
+        ? "default"
+        : (availableStates[0] ?? "default"),
+    });
+  }, [availableStates, entryId, settings, updateSettings]);
+
+  React.useEffect(() => {
+    storePreviewPreferences(settings);
+  }, [settings.brand, settings.direction, settings.mode, settings.width]);
+
   React.useEffect(() => {
     if (availableStates.includes(settings.state)) return;
     updateSettings({ ...settings, state: availableStates[0] ?? "default" });
-  }, [availableStates, settings]);
-
-  const updateSettings = (next: PreviewSettings) => {
-    if (!controlledSettings) setInternalSettings(next);
-    onSettingsChange?.(next);
-  };
+  }, [availableStates, settings, updateSettings]);
 
   let content: React.ReactNode;
   if (result.status === "loading") {
@@ -220,7 +303,8 @@ export function LivePreview({
   return (
     <section
       className={`space-y-3 ${className}`}
-      aria-label={title ?? "Live preview"}
+      aria-label={thumbnail ? undefined : (title ?? "Live preview")}
+      aria-hidden={thumbnail || undefined}
       data-preview-entry={entryId}
       data-preview-kind={kind}
       data-preview-status={result.status}
@@ -237,6 +321,9 @@ export function LivePreview({
         sessionKey={sessionKey}
         ready={result.status === "ready"}
         label={title ? `${title} interactive preview` : undefined}
+        presentation={presentation ?? getPreviewPresentation(entryId)}
+        compact={thumbnail}
+        inert={thumbnail}
       >
         {content}
       </PreviewCanvas>

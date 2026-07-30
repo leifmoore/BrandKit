@@ -112,7 +112,7 @@ function LineChartExample() {
           <YAxis tick={{ ...axisStyle, fontSize: 10 }} axisLine={false} tickLine={false} />
           <Tooltip
             cursor={{ stroke: MIST }}
-            contentStyle={{ fontSize: 11, fontFamily: 'Inter, sans-serif', border: '1px solid hsl(var(--border))', borderRadius: 8, background: 'hsl(var(--background))' }}
+            contentStyle={{ fontSize: 11, fontFamily: 'Inter, sans-serif', border: '1px solid var(--border)', borderRadius: 8, background: 'var(--background)' }}
             labelStyle={{ color: NAVY, fontWeight: 600 }}
           />
           <Line
@@ -156,7 +156,7 @@ function HorizontalBarExample() {
           />
           <Tooltip
             cursor={{ fill: MIST, fillOpacity: 0.3 }}
-            contentStyle={{ fontSize: 11, fontFamily: 'Inter, sans-serif', border: '1px solid hsl(var(--border))', borderRadius: 8, background: 'hsl(var(--background))' }}
+            contentStyle={{ fontSize: 11, fontFamily: 'Inter, sans-serif', border: '1px solid var(--border)', borderRadius: 8, background: 'var(--background)' }}
           />
           <Bar dataKey="bookings" fill={NAVY} radius={[0, 3, 3, 0]} />
         </BarChart>
@@ -185,7 +185,7 @@ function StackedBarExample() {
           <YAxis tick={{ ...axisStyle, fontSize: 10 }} axisLine={false} tickLine={false} />
           <Tooltip
             cursor={{ fill: MIST, fillOpacity: 0.2 }}
-            contentStyle={{ fontSize: 11, fontFamily: 'Inter, sans-serif', border: '1px solid hsl(var(--border))', borderRadius: 8, background: 'hsl(var(--background))' }}
+            contentStyle={{ fontSize: 11, fontFamily: 'Inter, sans-serif', border: '1px solid var(--border)', borderRadius: 8, background: 'var(--background)' }}
           />
           <Legend
             iconType="square"
@@ -226,8 +226,8 @@ function DonutChartExample() {
               ))}
             </Pie>
             <Tooltip
-              contentStyle={{ fontSize: 11, fontFamily: 'Inter, sans-serif', border: '1px solid hsl(var(--border))', borderRadius: 8, background: 'hsl(var(--background))' }}
-              formatter={(value: number, name: string) => [`${value}%`, name]}
+              contentStyle={{ fontSize: 11, fontFamily: 'Inter, sans-serif', border: '1px solid var(--border)', borderRadius: 8, background: 'var(--background)' }}
+              formatter={(value, name) => [`${Number(value ?? 0)}%`, String(name)]}
             />
           </PieChart>
         </ResponsiveContainer>

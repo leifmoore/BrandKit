@@ -77,9 +77,18 @@ function CodeBlock({ code, label }: { code: string; label: string }) {
     <div className="rounded-xl border border-border overflow-hidden">
       <div className="flex items-center justify-between px-4 py-2 bg-muted border-b border-border">
         <span className="font-mono text-xs text-muted-foreground">{label}</span>
-        <CopyButton value={code} label="Copy" size="sm" />
+        <CopyButton
+          value={code}
+          label="Copy"
+          accessibleLabel={`Copy ${label}`}
+          size="sm"
+        />
       </div>
-      <pre className="p-4 text-xs font-mono text-foreground overflow-x-auto leading-relaxed bg-card">
+      <pre
+        tabIndex={0}
+        aria-label={`${label} code`}
+        className="p-4 text-xs font-mono text-foreground overflow-x-auto leading-relaxed bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring"
+      >
         {code}
       </pre>
     </div>
@@ -97,7 +106,7 @@ export function Downloads() {
 
       {/* Logos */}
       <section className="mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-6">Logos</h2>
+        <h2 className="font-display font-bold text-2xl text-foreground mb-6">Logos</h2>
         <div className="grid sm:grid-cols-3 gap-4">
           {[
             { title: 'Solid — Deep Navy', file: 'scudamores-logo-navy.svg', src: '/logos/logo-navy.svg', bg: '#fefefd', desc: 'SVG · Light backgrounds' },
@@ -113,7 +122,11 @@ export function Downloads() {
                   <p className="font-sans font-semibold text-sm text-foreground">{logo.title}</p>
                   <p className="font-sans text-xs text-muted-foreground">{logo.desc}</p>
                 </div>
-                <DownloadButton href={logo.src} filename={logo.file} />
+                <DownloadButton
+                  href={logo.src}
+                  filename={logo.file}
+                  accessibleLabel={`Download ${logo.title} SVG`}
+                />
               </div>
             </div>
           ))}
@@ -124,7 +137,7 @@ export function Downloads() {
 
       {/* Colour tokens */}
       <section className="mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-2">Colour Tokens</h2>
+        <h2 className="font-display font-bold text-2xl text-foreground mb-2">Colour Tokens</h2>
         <p className="font-sans text-sm text-muted-foreground mb-6">Copy the token format that matches your stack — CSS custom properties, JSON, or SCSS variables.</p>
         <div className="space-y-6">
           <CodeBlock code={CSS_VARIABLES} label="CSS Custom Properties" />
@@ -137,7 +150,7 @@ export function Downloads() {
 
       {/* Typography */}
       <section className="mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-2">Typography</h2>
+        <h2 className="font-display font-bold text-2xl text-foreground mb-2">Typography</h2>
         <div className="grid sm:grid-cols-2 gap-6">
           {[
             {
@@ -162,12 +175,17 @@ export function Downloads() {
                 <p className="font-mono text-xs text-foreground break-all">{font.stack}</p>
               </div>
               <div className="flex gap-2">
-                <CopyButton value={font.stack} label="Copy stack" size="sm" />
+                <CopyButton
+                  value={font.stack}
+                  label="Copy stack"
+                  accessibleLabel={`Copy ${font.name} font stack`}
+                  size="sm"
+                />
                 <a
                   href={font.googleLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-sans text-xs text-gold-500 dark:text-gold-300 hover:underline self-center"
+                  className="font-sans text-xs text-navy-700 dark:text-gold-300 hover:underline self-center"
                 >
                   {font.googleLabel} ↗
                 </a>

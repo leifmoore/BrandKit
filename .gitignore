@@ -1,0 +1,7 @@
+node_modules/
+dist/
+public/r/
+playwright-report/
+test-results/
+coverage/
+*.tsbuildinfo

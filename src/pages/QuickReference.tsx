@@ -1,20 +1,41 @@
 import { ALL_TOKENS, TYPE_SCALE, WCAG_APPROVED } from '@/lib/tokens'
+import { useState } from 'react'
 import { SectionHeader } from '@/components/shared/SectionHeader'
 import { Separator } from '@/components/ui/separator'
 import { useCopyToClipboard } from '@/hooks/useCopyToClipboard'
 
 function QuickSwatch({ hex, name, alias }: { hex: string; name: string; alias: string }) {
-  const { copy } = useCopyToClipboard()
+  const { copied, copy } = useCopyToClipboard()
+  const [copyFailed, setCopyFailed] = useState(false)
+
+  const handleCopy = async () => {
+    setCopyFailed(false)
+    if (await copy(hex)) return
+    setCopyFailed(true)
+    setTimeout(() => setCopyFailed(false), 2000)
+  }
+
   return (
-    <button
-      onClick={() => copy(hex)}
-      className="flex items-center gap-2 hover:bg-muted/50 rounded px-1 py-0.5 group text-left w-full"
-      title={`Copy ${hex}`}
-    >
-      <span className="w-5 h-5 rounded-sm border border-black/10 shrink-0" style={{ background: hex }} />
-      <span className="font-sans text-xs font-medium text-foreground">{name}</span>
-      <span className="font-mono text-xs text-muted-foreground ml-auto">{hex}</span>
-    </button>
+    <div className="min-w-0">
+      <button
+        type="button"
+        onClick={handleCopy}
+        aria-label={`Copy ${name} (${alias}) hex value ${hex}`}
+        className="flex items-center gap-2 hover:bg-muted/50 rounded px-1 py-0.5 group text-left w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        title={`Copy ${name} (${alias}) — ${hex}`}
+      >
+        <span className="w-5 h-5 rounded-sm border border-black/10 shrink-0" style={{ background: hex }} />
+        <span className="font-sans text-xs font-medium text-foreground">{name}</span>
+        <span className="font-mono text-xs text-muted-foreground ml-auto">{hex}</span>
+      </button>
+      <span className="sr-only" role="status" aria-live="polite" aria-atomic="true">
+        {copied
+          ? `${name} ${hex} copied to the clipboard.`
+          : copyFailed
+            ? `${name} ${hex} could not be copied.`
+            : ''}
+      </span>
+    </div>
   )
 }
 
@@ -70,7 +91,7 @@ export function QuickReference() {
             'Never recolour outside approved palette',
           ].map((rule, i) => (
             <p key={i} className="font-sans text-sm text-foreground flex gap-2">
-              <span className="text-gold-500 dark:text-gold-300 shrink-0">–</span>{rule}
+              <span className="text-accent shrink-0">–</span>{rule}
             </p>
           ))}
         </div>
@@ -117,7 +138,7 @@ export function QuickReference() {
               <p className="font-sans text-xs font-semibold text-foreground mb-2">{group.label}</p>
               {group.items.map((item, i) => (
                 <p key={i} className="font-sans text-sm text-muted-foreground flex gap-2">
-                  <span className="text-gold-500 dark:text-gold-300 shrink-0">–</span>{item}
+                  <span className="text-accent shrink-0">–</span>{item}
                 </p>
               ))}
             </div>

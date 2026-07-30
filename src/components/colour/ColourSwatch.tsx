@@ -52,14 +52,15 @@ export function ColourSwatch({ token, size = 'md' }: ColourSwatchProps) {
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <button
+          type="button"
           className={cn(
-            'group relative rounded-lg overflow-hidden border border-black/10 transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold-500',
+            'group relative rounded-lg overflow-hidden border border-black/10 transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
             size === 'sm' && 'h-16',
             size === 'md' && 'h-24',
             size === 'lg' && 'h-32',
           )}
           style={{ backgroundColor: token.hex }}
-          title={`${token.name} — click to copy`}
+          title={`${token.name} — view and copy formats`}
         >
           <div className={cn('absolute inset-0 flex flex-col justify-end p-2', textColor)}>
             <div className="flex items-end justify-between">
@@ -67,14 +68,18 @@ export function ColourSwatch({ token, size = 'md' }: ColourSwatchProps) {
               <ChevronDown className={cn(
                 'w-3 h-3 opacity-0 group-hover:opacity-70 transition-opacity',
                 copied && 'opacity-70',
-              )} />
+              )} aria-hidden="true" />
             </div>
             <span className="text-xs font-mono opacity-70">{token.hex}</span>
           </div>
         </button>
       </PopoverTrigger>
 
-      <PopoverContent className="w-64 p-2" align="start">
+      <PopoverContent
+        className="w-64 p-2"
+        align="start"
+        aria-label={`${token.name} colour formats`}
+      >
         <div
           className="w-full h-10 rounded-md mb-3 border border-black/10"
           style={{ backgroundColor: token.hex }}
@@ -88,7 +93,7 @@ export function ColourSwatch({ token, size = 'md' }: ColourSwatchProps) {
         </div>
         <div className="space-y-0.5">
           {formats.map(fmt => (
-            <CopyRow key={fmt.label} label={fmt.label} value={fmt.value} copy={copy} copied={copied} />
+            <CopyRow key={fmt.label} label={fmt.label} value={fmt.value} copy={copy} />
           ))}
         </div>
       </PopoverContent>
@@ -100,29 +105,41 @@ function CopyRow({
   label,
   value,
   copy,
-  copied,
 }: {
   label: string
   value: string
-  copy: (v: string) => void
-  copied: boolean
+  copy: (v: string) => Promise<boolean>
 }) {
-  const [thisOne, setThisOne] = useState(false)
+  const [copyState, setCopyState] = useState<'idle' | 'copied' | 'error'>('idle')
 
-  const handleCopy = () => {
-    copy(value)
-    setThisOne(true)
-    setTimeout(() => setThisOne(false), 2000)
+  const handleCopy = async () => {
+    try {
+      setCopyState(await copy(value) ? 'copied' : 'error')
+    } catch {
+      setCopyState('error')
+    }
+    setTimeout(() => setCopyState('idle'), 2000)
   }
 
   return (
-    <button
-      onClick={handleCopy}
-      className="w-full flex items-center gap-2 px-2 py-1.5 rounded hover:bg-muted text-left group"
-    >
-      <span className="font-sans text-xs font-medium text-muted-foreground w-10 shrink-0">{label}</span>
-      <span className="font-mono text-xs text-foreground flex-1 truncate">{value}</span>
-      {thisOne && <Check className="w-3 h-3 text-green-600 shrink-0" />}
-    </button>
+    <div className="relative">
+      <button
+        type="button"
+        onClick={handleCopy}
+        aria-label={`Copy ${label} value ${value}`}
+        className="w-full flex items-center gap-2 px-2 py-1.5 rounded hover:bg-muted text-left group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      >
+        <span className="font-sans text-xs font-medium text-muted-foreground w-10 shrink-0">{label}</span>
+        <span className="font-mono text-xs text-foreground flex-1 truncate">{value}</span>
+        {copyState === 'copied' && <Check className="w-3 h-3 text-green-600 shrink-0" aria-hidden="true" />}
+      </button>
+      <span className="sr-only" role="status" aria-live="polite" aria-atomic="true">
+        {copyState === 'copied'
+          ? `${label} value copied to the clipboard.`
+          : copyState === 'error'
+            ? `${label} value could not be copied.`
+            : ''}
+      </span>
+    </div>
   )
 }

@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import { MainLayout } from '@/components/layout/MainLayout'
 import { Overview } from '@/pages/Overview'
@@ -11,6 +12,16 @@ import { Charts } from '@/pages/Charts'
 import { Applications } from '@/pages/Applications'
 import { QuickReference } from '@/pages/QuickReference'
 import { Downloads } from '@/pages/Downloads'
+
+const DeveloperApp = lazy(() => import('@/features/developer/DeveloperApp'))
+
+function DeveloperFallback() {
+  return (
+    <div className="flex min-h-[50vh] items-center justify-center" role="status">
+      <p className="font-sans text-sm text-muted-foreground">Loading Developer library…</p>
+    </div>
+  )
+}
 
 function Layout({ children }: { children: React.ReactNode }) {
   return <MainLayout>{children}</MainLayout>
@@ -60,5 +71,15 @@ export const router = createBrowserRouter([
   {
     path: '/downloads',
     element: <Layout><Downloads /></Layout>,
+  },
+  {
+    path: '/developer/*',
+    element: (
+      <Layout>
+        <Suspense fallback={<DeveloperFallback />}>
+          <DeveloperApp />
+        </Suspense>
+      </Layout>
+    ),
   },
 ])

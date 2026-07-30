@@ -21,7 +21,7 @@ const SUB_NAV = [
 function SubSection({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
     <section id={id} className="scroll-mt-6 mb-14">
-      <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-6">{title}</h2>
+      <h2 className="font-display font-bold text-2xl text-foreground mb-6">{title}</h2>
       {children}
     </section>
   )
@@ -45,7 +45,7 @@ export function Colour() {
             <div key={token.alias} className="flex flex-col gap-3">
               <ColourSwatch token={token} size="lg" />
               <div>
-                <p className="font-sans font-semibold text-sm text-navy-900 dark:text-cream-50">{token.name}</p>
+                <p className="font-sans font-semibold text-sm text-foreground">{token.name}</p>
                 <p className="font-mono text-xs text-navy-500 dark:text-navy-300">{token.hex} · {token.alias}</p>
                 {token.description && (
                   <p className="font-sans text-xs text-navy-700 dark:text-cream-300 mt-1">{token.description}</p>
@@ -67,7 +67,7 @@ export function Colour() {
           <div className="flex flex-col gap-3">
             <ColourSwatch token={GOLD_RAMP[1]} size="lg" />
             <div>
-              <p className="font-sans font-semibold text-sm text-navy-900 dark:text-cream-50">{GOLD_RAMP[1].name}</p>
+              <p className="font-sans font-semibold text-sm text-foreground">{GOLD_RAMP[1].name}</p>
               <p className="font-mono text-xs text-navy-500 dark:text-navy-300">{GOLD_RAMP[1].hex} · {GOLD_RAMP[1].alias}</p>
               <span className="inline-block mt-2 px-2 py-0.5 rounded-full bg-gold-500/10 dark:bg-gold-300/10 text-gold-700 dark:text-gold-300 text-xs font-sans font-medium">
                 Accent — use sparingly

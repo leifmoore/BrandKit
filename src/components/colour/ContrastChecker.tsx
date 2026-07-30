@@ -8,7 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { Badge } from '@/components/ui/badge'
+import { Label } from '@/components/ui/label'
 import { cn } from '@/lib/utils'
 
 function PassBadge({ pass, label }: { pass: boolean; label: string }) {
@@ -66,13 +66,13 @@ export function ContrastChecker() {
       </div>
 
       {/* Controls */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
-          <label className="font-sans text-xs font-medium text-muted-foreground uppercase tracking-caps block mb-2">
+          <Label htmlFor="contrast-foreground" className="font-sans text-xs font-medium text-muted-foreground uppercase tracking-caps block mb-2">
             Text (foreground)
-          </label>
+          </Label>
           <Select value={fgAlias} onValueChange={setFgAlias}>
-            <SelectTrigger>
+            <SelectTrigger id="contrast-foreground">
               <div className="flex items-center gap-2">
                 <span
                   className="w-4 h-4 rounded-sm border border-black/10 shrink-0"
@@ -99,11 +99,11 @@ export function ContrastChecker() {
         </div>
 
         <div>
-          <label className="font-sans text-xs font-medium text-muted-foreground uppercase tracking-caps block mb-2">
+          <Label htmlFor="contrast-background" className="font-sans text-xs font-medium text-muted-foreground uppercase tracking-caps block mb-2">
             Background
-          </label>
+          </Label>
           <Select value={bgAlias} onValueChange={setBgAlias}>
-            <SelectTrigger>
+            <SelectTrigger id="contrast-background">
               <div className="flex items-center gap-2">
                 <span
                   className="w-4 h-4 rounded-sm border border-black/10 shrink-0"
@@ -131,6 +131,13 @@ export function ContrastChecker() {
       </div>
 
       {/* Ratio + results */}
+      <p className="sr-only" role="status" aria-live="polite" aria-atomic="true">
+        {`${fgToken.name} on ${bgToken.name}: ${result.ratioDisplay} contrast ratio. `}
+        {`AA normal text ${result.normalAA ? 'passes' : 'fails'}. `}
+        {`AAA normal text ${result.normalAAA ? 'passes' : 'fails'}. `}
+        {`AA large text ${result.largeAA ? 'passes' : 'fails'}. `}
+        {`AAA large text ${result.largeAAA ? 'passes' : 'fails'}.`}
+      </p>
       <div className="flex flex-col sm:flex-row items-center gap-4">
         <div className="text-center">
           <div className="font-display font-bold text-5xl text-navy-900 dark:text-cream-50">

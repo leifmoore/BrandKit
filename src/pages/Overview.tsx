@@ -3,7 +3,7 @@ import { NAV_ITEMS } from '@/lib/tokens'
 import * as Icons from 'lucide-react'
 
 function NavIcon({ name }: { name: string }) {
-  const LucideIcon = (Icons as Record<string, React.ComponentType<{ className?: string }>>)[name]
+  const LucideIcon = (Icons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[name]
   if (!LucideIcon) return null
   return <LucideIcon className="w-6 h-6" />
 }
@@ -32,7 +32,7 @@ export function Overview() {
       <div className="mb-14">
         <img src="/logos/logo-navy.svg" alt="Scudamore's" className="h-14 w-auto mb-8 dark:hidden" />
         <img src="/logos/logo-white.svg" alt="Scudamore's" className="h-14 w-auto mb-8 hidden dark:block" />
-        <p className="font-sans text-xs font-medium uppercase tracking-caps text-gold-500 dark:text-gold-300 mb-4 accent-line">
+        <p className="font-sans text-xs font-medium uppercase tracking-caps text-navy-700 dark:text-gold-300 mb-4 accent-line">
           Est. 1910
         </p>
         <h1 className="font-display font-bold text-5xl md:text-6xl text-navy-900 dark:text-cream-50 tracking-display leading-none mb-6">

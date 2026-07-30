@@ -32,9 +32,14 @@ function LogoVariant({ src, alt, title, usage, bg, dark, filename }: LogoVariant
         <img src={src} alt={alt} className="h-16 w-auto max-w-full" />
       </div>
       <div>
-        <p className="font-sans font-semibold text-sm text-navy-900 dark:text-cream-50">{title}</p>
+        <p className="font-sans font-semibold text-sm text-foreground">{title}</p>
         <p className="font-sans text-xs text-navy-700 dark:text-cream-300 mt-0.5 mb-2">{usage}</p>
-        <DownloadButton href={src} filename={filename} label={`Download SVG`} />
+        <DownloadButton
+          href={src}
+          filename={filename}
+          label="Download SVG"
+          accessibleLabel={`Download ${title} SVG`}
+        />
       </div>
     </div>
   )
@@ -76,7 +81,7 @@ export function Logo() {
 
       {/* Variants */}
       <section id="variants" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-6">Logo Variants</h2>
+        <h2 className="font-display font-bold text-2xl text-foreground mb-6">Logo Variants</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <LogoVariant
             src="/logos/logo-navy.svg"
@@ -110,7 +115,7 @@ export function Logo() {
 
       {/* Clear Space */}
       <section id="clear-space" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-6">Clear Space</h2>
+        <h2 className="font-display font-bold text-2xl text-foreground mb-6">Clear Space</h2>
         <p className="font-sans text-sm text-navy-700 dark:text-cream-300 mb-6">
           Maintain a minimum zone of unobstructed space around the logo at all times. This clear space is defined as a fraction of the logo's height.
         </p>
@@ -121,7 +126,7 @@ export function Logo() {
 
       {/* Do's & Don'ts */}
       <section id="dos-donts" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-6">Do's & Don'ts</h2>
+        <h2 className="font-display font-bold text-2xl text-foreground mb-6">Do's & Don'ts</h2>
 
         <div className="mb-6">
           <div className="border border-green-200 dark:border-green-900 rounded-xl overflow-hidden">
@@ -173,7 +178,7 @@ export function Logo() {
 
       {/* Downloads */}
       <section id="downloads" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-6">Downloads</h2>
+        <h2 className="font-display font-bold text-2xl text-foreground mb-6">Downloads</h2>
         <div className="rounded-xl border border-border overflow-hidden">
           <table className="w-full font-sans text-sm">
             <thead className="bg-muted">
@@ -197,7 +202,11 @@ export function Logo() {
                   </td>
                   <td className="px-4 py-3 text-muted-foreground text-xs">{row.use}</td>
                   <td className="px-4 py-3 text-right">
-                    <DownloadButton href={row.src} filename={row.file} />
+                    <DownloadButton
+                      href={row.src}
+                      filename={row.file}
+                      accessibleLabel={`Download ${row.name} SVG`}
+                    />
                   </td>
                 </tr>
               ))}

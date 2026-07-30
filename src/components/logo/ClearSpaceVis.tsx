@@ -12,18 +12,19 @@ export function ClearSpaceVis() {
     <div className="space-y-6">
       <div>
         <div className="flex items-center justify-between mb-2">
-          <label className="font-sans text-xs font-medium text-muted-foreground uppercase tracking-caps">
+          <span id="clear-space-multiplier-label" className="font-sans text-xs font-medium text-muted-foreground uppercase tracking-caps">
             Clear space multiplier
-          </label>
+          </span>
           <span className="font-sans text-sm font-medium text-navy-900 dark:text-cream-50">{label}</span>
         </div>
         <Slider
+          aria-labelledby="clear-space-multiplier-label"
           min={0.25}
           max={0.5}
           step={0.05}
           value={[multiplier]}
           onValueChange={([v]) => setMultiplier(v)}
-          className="w-full max-w-sm"
+          className="w-full max-w-sm [&_[data-slot=slider-track]]:!h-1.5 [&_[data-slot=slider-track]]:!bg-primary/20"
         />
         <div className="flex justify-between text-xs text-muted-foreground mt-1 max-w-sm">
           <span>0.25× minimum</span>

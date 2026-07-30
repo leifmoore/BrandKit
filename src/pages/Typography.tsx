@@ -28,7 +28,7 @@ export function Typography() {
 
       {/* Fonts */}
       <section id="fonts" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-6">Fonts</h2>
+        <h2 className="font-display font-bold text-2xl text-foreground mb-6">Fonts</h2>
         <div className="grid sm:grid-cols-2 gap-6">
           {/* Gill Sans */}
           <div className="rounded-xl border border-border p-6 space-y-4">
@@ -92,7 +92,7 @@ export function Typography() {
 
       {/* Type Scale */}
       <section id="type-scale" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-6">Type Scale</h2>
+        <h2 className="font-display font-bold text-2xl text-foreground mb-6">Type Scale</h2>
         <div className="space-y-0 divide-y divide-border rounded-xl border border-border overflow-hidden">
           {TYPE_SCALE.map((style) => (
             <div key={style.level} className="flex flex-col sm:flex-row sm:items-center gap-3 p-4 hover:bg-muted/40 transition-colors">
@@ -117,9 +117,10 @@ export function Typography() {
 
       {/* Live Preview */}
       <section id="live-preview" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-2">Live Preview</h2>
+        <h2 className="font-display font-bold text-2xl text-foreground mb-2">Live Preview</h2>
         <p className="font-sans text-sm text-muted-foreground mb-6">Type below to preview your copy in all brand type styles at once.</p>
         <Input
+          aria-label="Typography preview text"
           value={previewText}
           onChange={e => setPreviewText(e.target.value)}
           placeholder="Type something…"
@@ -144,7 +145,7 @@ export function Typography() {
 
       {/* Rules */}
       <section id="rules" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-6">Rules</h2>
+        <h2 className="font-display font-bold text-2xl text-foreground mb-6">Rules</h2>
         <div className="grid sm:grid-cols-2 gap-6">
           {[
             {
@@ -201,11 +202,11 @@ export function Typography() {
             },
           ].map(group => (
             <div key={group.title} className="rounded-xl border border-border p-5">
-              <h3 className="font-sans font-semibold text-base text-navy-900 dark:text-cream-50 mb-3">{group.title}</h3>
+              <h3 className="font-sans font-semibold text-base text-foreground mb-3">{group.title}</h3>
               <ul className="space-y-2">
                 {group.rules.map((rule, i) => (
                   <li key={i} className="font-sans text-sm text-navy-700 dark:text-cream-300 flex gap-2">
-                    <span className="text-gold-500 dark:text-gold-300 shrink-0 mt-0.5">–</span>
+                    <span className="text-accent shrink-0 mt-0.5">–</span>
                     <span>{rule}</span>
                   </li>
                 ))}

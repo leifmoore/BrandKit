@@ -6,6 +6,7 @@ interface DownloadButtonProps {
   href: string
   filename: string
   label?: string
+  accessibleLabel?: string
   variant?: 'default' | 'outline' | 'ghost'
   size?: 'sm' | 'default'
   className?: string
@@ -15,6 +16,7 @@ export function DownloadButton({
   href,
   filename,
   label = 'Download',
+  accessibleLabel,
   variant = 'outline',
   size = 'sm',
   className,
@@ -24,10 +26,17 @@ export function DownloadButton({
       variant={variant}
       size={size}
       asChild
-      className={cn(className)}
+      className={cn(
+        'border-input text-xs shadow-sm gap-2 has-[>svg]:px-3 dark:bg-background dark:hover:bg-accent',
+        className,
+      )}
     >
-      <a href={href} download={filename}>
-        <Download className="w-3.5 h-3.5 mr-1.5" />
+      <a
+        href={href}
+        download={filename}
+        aria-label={accessibleLabel ?? `${label} ${filename}`}
+      >
+        <Download className="w-3.5 h-3.5 mr-1.5" aria-hidden="true" />
         {label}
       </a>
     </Button>

@@ -1,29 +1,39 @@
-import { useTheme } from "next-themes"
-import { Toaster as Sonner } from "sonner"
+"use client";
 
-type ToasterProps = React.ComponentProps<typeof Sonner>
+import * as React from "react";
+import {
+  Toaster as Sonner,
+  type ToasterProps as SonnerToasterProps,
+} from "sonner";
 
-const Toaster = ({ ...props }: ToasterProps) => {
-  const { theme = "system" } = useTheme()
+import { useHandoffTheme } from "../../runtime/theme";
+
+export interface ToasterProps extends SonnerToasterProps {}
+export type ToastProps = ToasterProps;
+
+/**
+ * Host-neutral Sonner adapter. An explicit `theme` prop wins; otherwise the
+ * nearest ThemeScope mode is used. Without a scope Sonner's SSR-safe `system`
+ * mode is used. This component never reads app context, storage, or browser globals.
+ */
+const Toaster = ({ theme, style, ...props }: ToasterProps) => {
+  const handoffTheme = useHandoffTheme();
 
   return (
     <Sonner
-      theme={theme as ToasterProps["theme"]}
+      theme={theme ?? handoffTheme?.mode ?? "system"}
       className="toaster group"
-      toastOptions={{
-        classNames: {
-          toast:
-            "group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg",
-          description: "group-[.toast]:text-muted-foreground",
-          actionButton:
-            "group-[.toast]:bg-primary group-[.toast]:text-primary-foreground",
-          cancelButton:
-            "group-[.toast]:bg-muted group-[.toast]:text-muted-foreground",
-        },
-      }}
+      style={
+        {
+          "--normal-bg": "var(--popover)",
+          "--normal-text": "var(--popover-foreground)",
+          "--normal-border": "var(--border)",
+          ...style,
+        } as React.CSSProperties
+      }
       {...props}
     />
-  )
-}
+  );
+};
 
-export { Toaster }
+export { Toaster };

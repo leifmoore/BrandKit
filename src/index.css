@@ -1,133 +1,301 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import '@fontsource/instrument-sans/400.css';
+@import '@fontsource/instrument-sans/500.css';
+@import '@fontsource/instrument-sans/600.css';
+@import 'tailwindcss' source(none);
+@import 'tw-animate-css';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@source './**/*.{js,ts,jsx,tsx}';
+@source '../_comp-lib/react/**/*.{js,ts,jsx,tsx}';
+@source '../_comp-lib/recipes/*/react/**/*.{js,ts,jsx,tsx}';
 
-@layer base {
-  /* ── Light mode (Scudamore's: Cream bg, Navy text, Gold accent) ── */
-  :root {
-    --background:         46 61% 93%;   /* cream-100 #f8f3e3 */
-    --foreground:         218 58% 19%;  /* navy-900  #14284b */
+/*
+ * The Brand Kit and Developer previews share one document. Host dark mode and
+ * preview dark mode therefore have separate selectors; preview-light is an
+ * explicit boundary even when the surrounding application is dark.
+ */
+@custom-variant dark {
+  &:where(.app-dark, .app-dark *):not(.preview-light, .preview-light *),
+  &:where(.preview-dark, .preview-dark *) {
+    @slot;
+  }
+}
 
-    --card:               46 59% 97%;   /* cream-75  #fcfaf3 */
-    --card-foreground:    218 58% 19%;
+/* Programmatic focus cannot reliably trigger :focus-visible in every browser.
+   The state playground marks the target explicitly while retaining real focus. */
+[data-ui-state='focus-visible'] [data-preview-focus-visible='true'] {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
 
-    --popover:            60 33% 99%;   /* cream-50  #fefefd */
-    --popover-foreground: 218 58% 19%;
+@theme {
+  --color-navy-1000: #0a1530;
+  --color-navy-900: #14284b;
+  --color-navy-700: #26467d;
+  --color-navy-500: #3d68b0;
+  --color-navy-300: #7e9bd5;
+  --color-navy-100: #c2d0ec;
+  --color-navy-50: #e7edf8;
 
-    --primary:            218 58% 19%;  /* navy-900 */
-    --primary-foreground: 46 61% 93%;   /* cream-100 */
+  --color-cream-400: #d4c8a6;
+  --color-cream-300: #e6d9b3;
+  --color-cream-200: #f0e8cf;
+  --color-cream-100: #f8f3e3;
+  --color-cream-75: #fcfaf3;
+  --color-cream-50: #fefefd;
 
-    --secondary:          45 51% 80%;   /* cream-300 #e6d9b3 */
-    --secondary-foreground: 218 58% 19%;
+  --color-gold-700: #9c7a2f;
+  --color-gold-500: #c9a24a;
+  --color-gold-300: #e3c277;
 
-    --muted:              46 52% 88%;   /* cream-200 #f0e8cf */
-    --muted-foreground:   218 53% 32%;  /* navy-700  #26467d */
+  --font-display: 'Gill Sans', 'Gill Sans MT', 'Lato', Calibri, 'Trebuchet MS', sans-serif;
+  --font-sans: Inter, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-instrument: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
 
-    --accent:             42 54% 54%;   /* gold-500  #c9a24a */
-    --accent-foreground:  218 58% 19%;
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-fade-in: fade-in 0.3s ease-out;
 
-    --destructive:        0 84% 60%;
-    --destructive-foreground: 60 33% 99%;
-
-    --border:             44 35% 74%;   /* cream-400 #d4c8a6 */
-    --input:              44 35% 74%;
-    --ring:               42 54% 54%;   /* gold-500 */
-
-    --radius: 0.375rem;
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
   }
 
-  /* ── Dark mode (Scudamore's: Navy bg, Cream text, Honey gold accent) ── */
-  .dark {
-    --background:         218 58% 19%;  /* navy-900  #14284b */
-    --foreground:         60 33% 99%;   /* cream-50  #fefefd */
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
 
-    --card:               218 53% 32%;  /* navy-700  #26467d */
-    --card-foreground:    60 33% 99%;
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
 
-    --popover:            218 58% 19%;
-    --popover-foreground: 60 33% 99%;
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-epos-accent: var(--epos-accent);
+  --color-epos-accent-foreground: var(--epos-accent-foreground);
+  --color-status-success: var(--status-success);
+  --color-status-success-foreground: var(--status-success-foreground);
+  --color-status-warning: var(--status-warning);
+  --color-status-warning-foreground: var(--status-warning-foreground);
+  --color-status-danger: var(--status-danger);
+  --color-status-danger-foreground: var(--status-danger-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
 
-    --primary:            60 33% 99%;   /* cream-50 */
-    --primary-foreground: 218 58% 19%;  /* navy-900 */
+@layer base {
+  :root {
+    /* Existing Brand Kit semantics, expressed as complete CSS colours. */
+    --background: hsl(46 61% 93%);
+    --foreground: hsl(218 58% 19%);
+    --card: hsl(46 59% 97%);
+    --card-foreground: hsl(218 58% 19%);
+    --popover: hsl(60 33% 99%);
+    --popover-foreground: hsl(218 58% 19%);
+    --primary: hsl(218 58% 19%);
+    --primary-foreground: hsl(46 61% 93%);
+    --secondary: hsl(45 51% 80%);
+    --secondary-foreground: hsl(218 58% 19%);
+    --muted: hsl(46 52% 88%);
+    --muted-foreground: hsl(218 53% 32%);
+    --accent: hsl(42 54% 54%);
+    --accent-foreground: hsl(218 58% 19%);
+    --destructive: hsl(0 84% 60%);
+    --destructive-foreground: hsl(60 33% 99%);
+    --border: hsl(44 35% 74%);
+    --input: hsl(44 35% 74%);
+    --input-background: hsl(60 33% 99%);
+    --switch-background: hsl(44 35% 74%);
+    --ring: hsl(42 54% 54%);
+    --chart-1: #c9a24a;
+    --chart-2: #3d68b0;
+    --chart-3: #26467d;
+    --chart-4: #e3c277;
+    --chart-5: #7e9bd5;
+    --radius: 0.375rem;
+    --sidebar: #14284b;
+    --sidebar-foreground: #fefefd;
+    --sidebar-primary: #c9a24a;
+    --sidebar-primary-foreground: #14284b;
+    --sidebar-accent: rgb(255 255 255 / 8%);
+    --sidebar-accent-foreground: #fefefd;
+    --sidebar-border: #26467d;
+    --sidebar-ring: #e3c277;
+    --epos-accent: #0d9488;
+    --epos-accent-foreground: #ffffff;
+    --status-success: #16a34a;
+    --status-success-foreground: #166534;
+    --status-warning: #d97706;
+    --status-warning-foreground: #92400e;
+    --status-danger: #dc2626;
+    --status-danger-foreground: #991b1b;
+    --info: #2563eb;
+    --info-foreground: #1e40af;
+  }
 
-    --secondary:          218 53% 32%;  /* navy-700 */
-    --secondary-foreground: 60 33% 99%;
-
-    --muted:              218 53% 32%;  /* navy-700 */
-    --muted-foreground:   45 51% 80%;   /* cream-300 */
-
-    --accent:             42 66% 68%;   /* gold-300  #e3c277 (Honey) */
-    --accent-foreground:  218 58% 19%;
-
-    --destructive:        0 62% 50%;
-    --destructive-foreground: 60 33% 99%;
-
-    --border:             218 53% 32%;  /* navy-700 */
-    --input:              218 53% 32%;
-    --ring:               42 66% 68%;   /* gold-300 */
+  .app-dark {
+    --background: hsl(218 58% 19%);
+    --foreground: hsl(60 33% 99%);
+    --card: hsl(218 53% 32%);
+    --card-foreground: hsl(60 33% 99%);
+    --popover: hsl(218 58% 19%);
+    --popover-foreground: hsl(60 33% 99%);
+    --primary: hsl(60 33% 99%);
+    --primary-foreground: hsl(218 58% 19%);
+    --secondary: hsl(218 53% 32%);
+    --secondary-foreground: hsl(60 33% 99%);
+    --muted: hsl(218 53% 32%);
+    --muted-foreground: hsl(45 51% 80%);
+    --accent: hsl(42 66% 68%);
+    --accent-foreground: hsl(218 58% 19%);
+    --destructive: hsl(0 62% 50%);
+    --destructive-foreground: hsl(60 33% 99%);
+    --border: hsl(218 53% 32%);
+    --input: hsl(218 53% 32%);
+    --input-background: hsl(218 53% 26%);
+    --switch-background: hsl(218 53% 32%);
+    --ring: hsl(42 66% 68%);
+    --chart-1: #e3c277;
+    --chart-2: #7e9bd5;
+    --chart-3: #c2d0ec;
+    --chart-4: #c9a24a;
+    --chart-5: #3d68b0;
+    --sidebar: #0a1530;
+    --sidebar-foreground: #fefefd;
+    --sidebar-primary: #e3c277;
+    --sidebar-primary-foreground: #14284b;
+    --sidebar-accent: rgb(255 255 255 / 8%);
+    --sidebar-accent-foreground: #fefefd;
+    --sidebar-border: #26467d;
+    --sidebar-ring: #e3c277;
+    --status-success-foreground: #86efac;
+    --status-warning-foreground: #fde047;
+    --status-danger-foreground: #fca5a5;
+    --info: #60a5fa;
+    --info-foreground: #bfdbfe;
   }
 
   * {
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground font-sans antialiased;
-  }
-
-  /* Brand typography utilities */
-  .font-display {
-    font-family: 'Gill Sans', 'Gill Sans MT', 'Lato', Calibri, 'Trebuchet MS', sans-serif;
-  }
-
-  /* Lantern Gold link style (light mode) */
-  .prose a {
-    color: #c9a24a;
-    text-decoration: none;
-  }
-  .prose a:hover {
-    text-decoration: underline;
-  }
-  .dark .prose a {
-    color: #e3c277;
-  }
-
-  /* Smooth scrolling for anchor links */
   html {
     scroll-behavior: smooth;
   }
 
-  /* Custom scrollbar (subtle, brand-tinted) */
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  .font-display {
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Lato', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  .prose a {
+    color: #c9a24a;
+    text-decoration: none;
+  }
+
+  .prose a:hover {
+    text-decoration: underline;
+  }
+
+  .app-dark .prose a {
+    color: #e3c277;
+  }
+
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
   }
+
   ::-webkit-scrollbar-track {
     @apply bg-transparent;
   }
+
   ::-webkit-scrollbar-thumb {
-    @apply bg-cream-300 dark:bg-navy-700 rounded-full;
+    @apply rounded-full bg-cream-300 dark:bg-navy-700;
   }
 }
 
 @layer utilities {
-  /* Brand tracking utilities */
-  .tracking-display { letter-spacing: -0.02em; }
-  .tracking-mid     { letter-spacing: -0.01em; }
-  .tracking-caps    { letter-spacing: 0.15em; }
+  .tracking-display {
+    letter-spacing: -0.02em;
+  }
 
-  /* Gold accent line (decorative, per brand guidelines) */
+  .tracking-mid {
+    letter-spacing: -0.01em;
+  }
+
+  .tracking-caps {
+    letter-spacing: 0.15em;
+  }
+
   .accent-line::before {
     content: '';
     display: block;
     width: 2.5rem;
     height: 2px;
-    background: #c9a24a;
     margin-bottom: 0.75rem;
+    background: #c9a24a;
   }
-  .dark .accent-line::before {
+
+  .app-dark .accent-line::before {
     background: #e3c277;
   }
 }

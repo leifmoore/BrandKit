@@ -501,4 +501,10 @@ export const NAV_ITEMS: NavItem[] = [
     icon: 'Download',
     description: 'Logos, colour tokens, CSS variables',
   },
+  {
+    label: 'Developer',
+    path: '/developer',
+    icon: 'Code2',
+    description: 'Interactive components, recipes, foundations, and source',
+  },
 ]

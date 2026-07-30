@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
   CommandDialog,
@@ -9,6 +9,10 @@ import {
   CommandList,
 } from '@/components/ui/command'
 import { NAV_ITEMS, ALL_TOKENS } from '@/lib/tokens'
+
+const DeveloperCommandItems = lazy(
+  () => import('@/features/developer/DeveloperCommandItems'),
+)
 
 interface CommandPaletteProps {
   open: boolean
@@ -32,17 +36,12 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
 
   const go = (path: string, anchor?: string) => {
     onOpenChange(false)
-    navigate(path)
-    if (anchor) {
-      setTimeout(() => {
-        document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth' })
-      }, 100)
-    }
+    navigate({ pathname: path, hash: anchor ? `#${anchor}` : '' })
   }
 
   return (
     <CommandDialog open={open} onOpenChange={onOpenChange}>
-      <CommandInput placeholder="Search brand kit…" />
+      <CommandInput aria-label="Search brand kit" placeholder="Search brand kit…" />
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
 
@@ -86,6 +85,18 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
             </CommandItem>
           ))}
         </CommandGroup>
+
+        {open ? (
+          <Suspense
+            fallback={
+              <CommandGroup heading="Developer library">
+                <CommandItem disabled>Loading component catalogue…</CommandItem>
+              </CommandGroup>
+            }
+          >
+            <DeveloperCommandItems onSelect={(path) => go(path)} />
+          </Suspense>
+        ) : null}
       </CommandList>
     </CommandDialog>
   )

@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, useRef } from 'react'
+import { useState, useCallback, useEffect, useRef, type CSSProperties } from 'react'
 import { Menu, X } from 'lucide-react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { Sidebar } from './Sidebar'
@@ -7,6 +7,9 @@ import { Toaster } from '@/components/ui/sonner'
 import { WORKSPACES, getWorkspaceForPath } from '@/config/workspaces'
 import { useDarkMode } from '@/hooks/useDarkMode'
 import { useWorkspaceMemory } from '@/hooks/useWorkspaceMemory'
+import { mixHex } from '@/features/brand-playground/palette'
+import { getDerivedBrandPlaygroundTokens } from '@/features/brand-playground/playgroundState'
+import { useBrandExpressionPreview } from '@/features/brand-playground/useBrandExpressionPreview'
 import { cn } from '@/lib/utils'
 
 interface MainLayoutProps {
@@ -41,6 +44,25 @@ export function MainLayout({ children }: MainLayoutProps) {
   const workspaceId = getWorkspaceForPath(location.pathname) ?? 'brand'
   const workspace = WORKSPACES[workspaceId]
   const isDesignSystem = workspaceId === 'design-system'
+  const brandExpressionConfig = useBrandExpressionPreview()
+  const brandExpressionTokens = getDerivedBrandPlaygroundTokens(brandExpressionConfig)
+  const brandExpressionActive = workspaceId === 'brand' && brandExpressionConfig.applyToBrandWorkspace
+  const brandExpressionStyle = brandExpressionActive
+    ? {
+        '--primary': brandExpressionTokens.accentSurface,
+        '--primary-foreground': brandExpressionTokens.accentForeground,
+        '--accent': mixHex(brandExpressionTokens.accentSurface, brandExpressionTokens.canvas, 0.86),
+        '--accent-foreground': brandExpressionTokens.navy,
+        '--brand-expression-accent': brandExpressionTokens.accent,
+        '--brand-expression-accent-surface': brandExpressionTokens.accentSurface,
+        '--brand-expression-accent-foreground': brandExpressionTokens.accentForeground,
+        '--brand-expression-accent-gradient': brandExpressionTokens.accentGradient,
+        '--brand-expression-accent-grain': brandExpressionTokens.accentGrainTexture,
+        '--brand-expression-blue': brandExpressionTokens.expressionBlue,
+        '--brand-expression-canvas': brandExpressionTokens.canvas,
+      } as CSSProperties
+    : undefined
+  const isWideBrandPage = location.pathname === '/brand/expression/playground'
   const isHostDesignSystemPage = [
     '/design-system/foundations/accessibility',
     '/design-system/foundations/data-visualisation',
@@ -197,10 +219,10 @@ export function MainLayout({ children }: MainLayoutProps) {
   }, [isDesignSystem, isHostDesignSystemPage, location.hash, location.key])
 
   return (
-    <div className="flex h-screen overflow-hidden bg-background text-foreground">
+    <div className="flex h-dvh min-h-0 overflow-hidden bg-background text-foreground">
       {/* ── Desktop sidebar ── */}
       <aside
-        className="hidden w-64 shrink-0 flex-col border-r border-border bg-card lg:flex"
+        className="hidden min-h-0 w-64 shrink-0 flex-col border-r border-border bg-card lg:flex"
         aria-label={`${workspace.label} workspace`}
       >
         <Sidebar onSearch={openSearch} />
@@ -246,9 +268,9 @@ export function MainLayout({ children }: MainLayoutProps) {
       </aside>
 
       {/* ── Main content ── */}
-      <main id="main-content" ref={mainRef} className="min-w-0 flex-1 overflow-y-auto">
+      <main id="main-content" ref={mainRef} className="min-h-0 min-w-0 flex-1 overscroll-y-contain overflow-y-auto">
         {/* Mobile top bar */}
-        <div className="flex items-center gap-3 border-b border-border bg-card px-4 py-3 lg:hidden">
+        <div className="sticky top-0 z-30 flex items-center gap-3 border-b border-border bg-card/95 px-4 py-3 backdrop-blur lg:hidden">
           <button
             ref={drawerTriggerRef}
             type="button"
@@ -260,15 +282,18 @@ export function MainLayout({ children }: MainLayoutProps) {
           >
             <Menu className="w-5 h-5" aria-hidden="true" />
           </button>
-          <img src="/logos/logo-navy.svg" alt="Scudamore's" className="h-7 w-auto dark:hidden" />
-          <img src="/logos/logo-white.svg" alt="Scudamore's" className="hidden h-7 w-auto dark:block" />
+          <img src="/logos/logo-navy.svg" alt="Scudamore’s" className="h-7 w-auto dark:hidden" />
+          <img src="/logos/logo-white.svg" alt="Scudamore’s" className="hidden h-7 w-auto dark:block" />
           <span className="ml-auto font-sans text-xs font-medium text-muted-foreground">{workspace.label}</span>
         </div>
 
         <div
+          data-brand-expression-preview={brandExpressionActive ? 'active' : 'inactive'}
+          data-brand-expression-accent-treatment={brandExpressionConfig.accentTreatment}
+          style={brandExpressionStyle}
           className={cn(
             'mx-auto min-w-0 px-4 py-10 sm:px-8',
-            isDesignSystem ? 'max-w-[1600px]' : 'max-w-5xl',
+            isDesignSystem || isWideBrandPage ? 'max-w-[1600px]' : 'max-w-5xl',
           )}
         >
           {children ?? <Outlet />}

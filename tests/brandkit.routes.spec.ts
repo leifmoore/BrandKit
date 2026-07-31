@@ -3,12 +3,14 @@ import { expect, test } from '@playwright/test'
 
 const canonicalRoutes = [
   { path: '/brand', heading: 'Scudamore’s Brand' },
+  { path: '/brand/quick-reference', heading: 'Quick Reference' },
   { path: '/brand/identity/colour', heading: 'Colour Palette' },
   { path: '/brand/identity/logo', heading: 'Logo & Usage' },
   { path: '/brand/identity/typography', heading: 'Typography' },
   { path: '/brand/expression/voice', heading: 'Voice & Tone' },
   { path: '/brand/expression/photography', heading: 'Photography' },
   { path: '/brand/expression/graphics', heading: 'Graphics & Icons' },
+  { path: '/brand/expression/playground', heading: 'Brand Playground' },
   { path: '/brand/applications', heading: 'Brand Applications' },
   { path: '/brand/resources', heading: 'Downloads' },
   { path: '/design-system/foundations/themes', heading: 'Themes' },

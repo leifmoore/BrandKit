@@ -3,5 +3,6 @@ dist/
 public/r/
 playwright-report/
 test-results/
+artifacts/brand-visual-audit/
 coverage/
 *.tsbuildinfo

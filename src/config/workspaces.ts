@@ -1,3 +1,5 @@
+import handoffCatalog from '@comp-lib/catalog/catalog.json'
+
 export type WorkspaceId = 'brand' | 'design-system'
 
 export interface WorkspaceNavItem {
@@ -35,6 +37,17 @@ const brandNavigation: readonly WorkspaceNavGroup[] = [
         icon: 'LayoutDashboard',
         description: 'Brand story, principles, and key resources',
       },
+      {
+        label: 'Quick Reference',
+        href: '/brand/quick-reference',
+        icon: 'BookOpenCheck',
+        description: 'Locked identity anchors and the current working expression draft',
+        subsections: [
+          { label: 'Current Draft', anchor: 'current-draft' },
+          { label: 'Typography', anchor: 'quick-type' },
+          { label: 'Essentials', anchor: 'essentials' },
+        ],
+      },
     ],
   },
   {
@@ -59,9 +72,10 @@ const brandNavigation: readonly WorkspaceNavGroup[] = [
         description: 'Identity colours and expressive colour guidance',
         subsections: [
           { label: 'Primary', anchor: 'primary' },
-          { label: 'Navy Ramp', anchor: 'navy-ramp' },
-          { label: 'Cream Ramp', anchor: 'cream-ramp' },
-          { label: 'Accent Colours', anchor: 'accent-colours' },
+          { label: 'Expression Palette', anchor: 'accent-colours' },
+          { label: 'Water Powder Ramp', anchor: 'navy-ramp' },
+          { label: 'Faded Butter Ramp', anchor: 'cream-ramp' },
+          { label: 'WCAG Pairs', anchor: 'wcag-pairs' },
           { label: 'WCAG Checker', anchor: 'wcag-checker' },
           { label: 'Mood Explorer', anchor: 'mood-explorer' },
         ],
@@ -93,6 +107,7 @@ const brandNavigation: readonly WorkspaceNavGroup[] = [
           { label: 'Channel Tones', anchor: 'channels' },
           { label: 'Do’s & Don’ts', anchor: 'dos-donts' },
           { label: 'Scudamore’s-isms', anchor: 'isms' },
+          { label: 'AI Brand Checker', anchor: 'ai-checker' },
         ],
       },
       {
@@ -100,12 +115,36 @@ const brandNavigation: readonly WorkspaceNavGroup[] = [
         href: '/brand/expression/photography',
         icon: 'Camera',
         description: 'Subjects, composition, and editing approach',
+        subsections: [
+          { label: 'Editing', anchor: 'editing' },
+          { label: 'Composition', anchor: 'composition' },
+          { label: 'Subjects', anchor: 'subjects' },
+          { label: 'Aspect Ratios', anchor: 'aspect-ratios' },
+          { label: 'Product Heroes', anchor: 'product-heroes' },
+          { label: 'Consent', anchor: 'consent' },
+        ],
       },
       {
         label: 'Graphics',
         href: '/brand/expression/graphics',
         icon: 'Shapes',
         description: 'Graphic expression, decoration, and illustration',
+        subsections: [
+          { label: 'Icon Libraries', anchor: 'icon-libraries' },
+          { label: 'Decorative Elements', anchor: 'decorative-elements' },
+          { label: 'Illustration', anchor: 'illustration' },
+        ],
+      },
+      {
+        label: 'Brand Playground',
+        href: '/brand/expression/playground',
+        icon: 'FlaskConical',
+        description: 'Workshop palette, gradients, glass, and future website expression',
+        subsections: [
+          { label: 'Workbench', anchor: 'workbench' },
+          { label: 'Saved Candidates', anchor: 'saved-candidates' },
+          { label: 'Export', anchor: 'playground-export' },
+        ],
       },
     ],
   },
@@ -117,12 +156,22 @@ const brandNavigation: readonly WorkspaceNavGroup[] = [
         href: '/brand/applications',
         icon: 'PanelsTopLeft',
         description: 'Digital, print, and social applications',
+        subsections: [
+          { label: 'Digital', anchor: 'digital' },
+          { label: 'Print', anchor: 'print' },
+          { label: 'Social Specs', anchor: 'social-specs' },
+        ],
       },
       {
         label: 'Resources',
         href: '/brand/resources',
         icon: 'Download',
         description: 'Brand assets and identity downloads',
+        subsections: [
+          { label: 'Logos', anchor: 'resource-logos' },
+          { label: 'Colour Tokens', anchor: 'resource-colour-tokens' },
+          { label: 'Typography', anchor: 'resource-typography' },
+        ],
       },
     ],
   },
@@ -265,7 +314,11 @@ export const DESIGN_SYSTEM_STATIC_PATHS = Object.freeze(
   designSystemNavigation.flatMap((group) => group.items.map((item) => item.href)),
 )
 
-const detailRoutePattern = /^\/design-system\/(?:components|patterns|roadmap)\/[a-z0-9]+(?:-[a-z0-9]+)*$/
+const DESIGN_SYSTEM_DETAIL_PATHS = new Set([
+  ...handoffCatalog.components.map(({ id }) => `/design-system/components/${id}`),
+  ...handoffCatalog.recipes.map(({ id }) => `/design-system/patterns/${id}`),
+  ...handoffCatalog.deferredComponents.map(({ id }) => `/design-system/roadmap/${id}`),
+])
 
 export function getWorkspaceForPath(pathname: string): WorkspaceId | undefined {
   if (pathname === '/brand' || pathname.startsWith('/brand/')) return 'brand'
@@ -277,7 +330,7 @@ export function isValidWorkspacePath(pathname: string): boolean {
   const normalizedPath = pathname.replace(/\/+$/, '') || '/'
   return BRAND_CANONICAL_PATHS.includes(normalizedPath)
     || DESIGN_SYSTEM_STATIC_PATHS.includes(normalizedPath)
-    || detailRoutePattern.test(normalizedPath)
+    || DESIGN_SYSTEM_DETAIL_PATHS.has(normalizedPath)
 }
 
 export function isWorkspaceNavItemActive(pathname: string, item: WorkspaceNavItem): boolean {

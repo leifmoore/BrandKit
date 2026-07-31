@@ -11,9 +11,10 @@ import { Card } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart'
 
-// ── Brand palette constants ──────────────────────────────────────────────────
+// ── Governed software data-visualisation palette ─────────────────────────────
+// This stable chart palette is intentionally independent from the authored
+// Brand Water Powder/Faded Butter ramps and Playground expression accents.
 const NAVY    = '#14284b'
-const GOLD    = '#c9a24a'
 const CAM     = '#3d68b0'
 const MIST    = '#c2d0ec'
 
@@ -112,7 +113,7 @@ function ChartDataDisclosure<Row extends object>({
   )
 }
 
-// ── Interactive bar chart (default Scudamore's chart) ────────────────────────
+// ── Interactive bar chart (default Scudamore’s chart) ────────────────────────
 function BrandBarChart() {
   const [highlighted, setHighlighted] = useState(4) // May default
 
@@ -148,7 +149,7 @@ function BrandBarChart() {
             onClick={(_data, index) => setHighlighted(index)}
           >
             {MONTHLY.map((_entry, i) => (
-              <Cell key={i} fill={i === highlighted ? GOLD : NAVY} />
+              <Cell key={i} fill={i === highlighted ? CAM : NAVY} />
             ))}
           </Bar>
         </BarChart>
@@ -171,7 +172,7 @@ function BrandBarChart() {
         Highlighted: {MONTHLY[highlighted].month}, {MONTHLY[highlighted].bookings} bookings.
       </p>
       <p className="mt-3 font-sans text-xs text-muted-foreground">
-        Source: Scudamore's booking system, 2024
+        Source: Scudamore’s booking system, 2024
       </p>
       <ChartDataDisclosure
         label="Monthly chauffeured-tour bookings, January to June 2024"
@@ -212,7 +213,7 @@ function LineChartExample() {
             stroke={NAVY}
             strokeWidth={2}
             dot={{ fill: NAVY, r: 3, strokeWidth: 0 }}
-            activeDot={{ r: 5, fill: GOLD }}
+            activeDot={{ r: 5, fill: CAM }}
           />
         </LineChart>
       </ChartContainer>
@@ -382,33 +383,33 @@ function DonutChartExample() {
 
 // ── Static data tables ────────────────────────────────────────────────────────
 const CHART_TYPES = [
-  { name: 'Line chart', when: 'Change over time — revenue, bookings, occupancy, growth metrics.', rule: 'Single Deep Navy line by default. Add second line in Lantern Gold only for comparing two series. Avoid more than two lines — use small multiples instead.' },
-  { name: 'Bar chart (vertical)', when: 'Comparing values across discrete categories with natural order (months, quarters, tour types).', rule: 'Single colour by default. Use Lantern Gold to highlight one bar ("this month" or "highest performer").' },
+  { name: 'Line chart', when: 'Change over time — revenue, bookings, occupancy, growth metrics.', rule: 'Single Deep Navy line by default. Add a second line in governed Software Blue only for a direct comparison. Avoid more than two lines — use small multiples instead.' },
+  { name: 'Bar chart (vertical)', when: 'Comparing values across discrete categories with natural order (months, quarters, tour types).', rule: 'Single colour by default. Use governed Software Blue to highlight one bar ("this month" or "highest performer").' },
   { name: 'Bar chart (horizontal)', when: 'Comparing values where labels are long — customer feedback themes, source-of-booking, college names.', rule: 'Easier to read than vertical when you have 6+ categories.' },
-  { name: 'Stacked bar', when: 'Showing parts of a whole across categories — tour-type breakdown by month.', rule: 'Use navy ramp sequentially: Deep Navy at bottom, lighter tints as you stack up.' },
+  { name: 'Stacked bar', when: 'Showing parts of a whole across categories — tour-type breakdown by month.', rule: 'Use the governed software blue ramp sequentially: Deep Navy at bottom, lighter tints as you stack up.' },
   { name: 'Pie / donut', when: '3 or fewer slices only.', rule: 'For more than 3, use horizontal bar chart. If donut, put the most important number in the centre.' },
-  { name: 'Heatmap', when: 'Two-dimensional data — occupancy by day-of-week × hour-of-day.', rule: 'Single-hue ramp: Vapour → Mist → Cam Blue → Deep Navy → Midnight. Light = low, dark = high.' },
-  { name: 'Maps', when: 'Geographic data — where customers come from.', rule: 'Navy ramp as choropleth. UK and Cambridge city maps preferred over generic world projections.' },
-  { name: 'Single-stat / gauge', when: 'Headline numbers in dashboards.', rule: 'Big number in Gill Sans Bold or Inter Semibold, Deep Navy. Delta (▲/▼) in Cam Blue (positive) or Brass (negative) below.' },
+  { name: 'Heatmap', when: 'Two-dimensional data — occupancy by day-of-week × hour-of-day.', rule: 'Use the stable single-hue software ramp from pale Software Mist through Software Blue to Deep Navy. Light = low, dark = high.' },
+  { name: 'Maps', when: 'Geographic data — where customers come from.', rule: 'Use the governed software blue ramp as a choropleth. UK and Cambridge city maps are preferred over generic world projections.' },
+  { name: 'Single-stat / gauge', when: 'Headline numbers in dashboards.', rule: 'Big number in Gill Sans Nova Bold or the approved body semibold, Deep Navy. Use semantic status styling for deltas.' },
 ]
 
 const COLOUR_NEEDS = [
-  { need: 'Highlight one data point in a series', approach: 'Keep rest Deep Navy; make highlighted point Lantern Gold (#c9a24a)' },
-  { need: 'Sequential / ordered data (quarters, age brackets)', approach: 'Navy ramp: Deep Navy → Dusk → Cam Blue → Sky → Mist' },
-  { need: 'Categorical data (up to 4 categories)', approach: 'Deep Navy, Lantern Gold, Cam Blue, Stone — in that priority order' },
-  { need: 'Categorical data (5+ categories)', approach: 'Extend with: Deep Navy, Lantern Gold, Cam Blue, Stone, Brass, Sky' },
-  { need: 'Diverging data (positive vs negative, e.g. NPS)', approach: 'Cam Blue (positive), Brass (negative), Stone (neutral)' },
-  { need: 'Comparisons (us vs competitor, this year vs last)', approach: 'Deep Navy for "us / this year"; Mist or Stone for "them / last year"' },
+  { need: 'Highlight one data point in a series', approach: 'Keep the rest Deep Navy; make the highlighted point governed Software Blue (#3d68b0)' },
+  { need: 'Sequential / ordered data (quarters, age brackets)', approach: 'Use the governed software blue ramp; do not import the Brand expression ramps as data semantics' },
+  { need: 'Categorical data (up to 4 categories)', approach: 'Deep Navy and stable software-blue tints in their recorded priority order' },
+  { need: 'Categorical data (5+ categories)', approach: 'Extend the stable software ramp before introducing a reviewed external data palette' },
+  { need: 'Diverging data (positive vs negative, e.g. NPS)', approach: 'Use governed semantic success, danger, and neutral tokens rather than Brand accents' },
+  { need: 'Comparisons (us vs competitor, this year vs last)', approach: 'Deep Navy for "us / this year"; governed Software Mist or a semantic neutral for "them / last year"' },
 ]
 
 const TYPE_IN_CHARTS = [
-  { element: 'Chart title (above chart)', font: 'Gill Sans Bold or Inter Semibold', size: 'H3 or H4', colour: 'Deep Navy' },
-  { element: 'Subtitle / context', font: 'Inter Regular', size: '14pt', colour: 'Dusk' },
-  { element: 'Axis labels', font: 'Inter Medium', size: '12pt', colour: 'Dusk' },
-  { element: 'Tick labels', font: 'Inter Regular (tabular figures)', size: '11pt', colour: 'Dusk' },
-  { element: 'Data labels', font: 'Inter Medium (tabular figures)', size: '11pt', colour: 'Deep Navy' },
-  { element: 'Legend', font: 'Inter Regular', size: '12pt', colour: 'Dusk' },
-  { element: 'Source line', font: 'Inter Regular', size: '11pt', colour: 'Cam Blue' },
+  { element: 'Chart title (above chart)', font: 'Gill Sans Nova Bold or approved body semibold', size: 'H3 or H4', colour: 'Deep Navy' },
+  { element: 'Subtitle / context', font: 'Instrument Sans Regular', size: '14pt', colour: 'Semantic muted foreground' },
+  { element: 'Axis labels', font: 'Instrument Sans Medium', size: '12pt', colour: 'Semantic muted foreground' },
+  { element: 'Tick labels', font: 'Instrument Sans Regular (tabular figures)', size: '11pt', colour: 'Semantic muted foreground' },
+  { element: 'Data labels', font: 'Instrument Sans Medium (tabular figures)', size: '11pt', colour: 'Deep Navy' },
+  { element: 'Legend', font: 'Instrument Sans Regular', size: '12pt', colour: 'Semantic muted foreground' },
+  { element: 'Source line', font: 'Instrument Sans Regular', size: '11pt', colour: 'Semantic muted foreground' },
 ]
 
 // ── Page ──────────────────────────────────────────────────────────────────────
@@ -425,15 +426,15 @@ export function Charts() {
 
       {/* Default chart */}
       <section id="default-chart" className="scroll-mt-6 mb-14">
-        <h2 className="mb-6 font-sans text-2xl font-semibold text-foreground">The Default Scudamore's Chart</h2>
+        <h2 className="mb-6 font-sans text-2xl font-semibold text-foreground">The Default Scudamore’s Chart</h2>
 
         <BrandBarChart />
 
         <div className="grid sm:grid-cols-2 gap-4">
           {[
-            { rule: 'Single colour: Deep Navy', detail: 'For the data. Lantern Gold only to highlight one key bar or data point.' },
+            { rule: 'Single colour: Deep Navy', detail: 'For the data. Governed Software Blue may highlight one key bar or data point.' },
             { rule: 'No chart border', detail: 'No box around the chart area. Title sits in surrounding type using the typography hierarchy.' },
-            { rule: 'Minimal or no gridlines', detail: 'Pale gridlines on y-axis only — Mist (#c2d0ec) at low opacity if needed.' },
+            { rule: 'Minimal or no gridlines', detail: 'Semantic border gridlines on the y-axis only, at low emphasis if needed.' },
             { rule: 'Data labels only when needed', detail: 'Never as decoration. Only if they aid comprehension over the visual alone.' },
             { rule: 'Generous whitespace', detail: 'Around the plot area — charts breathe, they don\'t fill.' },
             { rule: 'Source line always', detail: 'Below the chart in Caption style. Include the date or period the data covers.' },
@@ -451,7 +452,7 @@ export function Charts() {
       {/* Chart type gallery */}
       <section id="chart-types" className="scroll-mt-6 mb-14">
         <h2 className="mb-2 font-sans text-2xl font-semibold text-foreground">Chart Types</h2>
-        <p className="font-sans text-sm text-muted-foreground mb-6">Hover to explore visual tooltips or open each data table for an equivalent keyboard and screen-reader-readable view. Series use the authored Scudamore's chart palette.</p>
+        <p className="font-sans text-sm text-muted-foreground mb-6">Hover to explore visual tooltips or open each data table for an equivalent keyboard and screen-reader-readable view. Series use the authored Scudamore’s chart palette.</p>
 
         <div className="grid sm:grid-cols-2 gap-4 mb-8">
           <LineChartExample />
@@ -517,13 +518,7 @@ export function Charts() {
       {/* Typography in charts */}
       <section id="chart-typography" className="scroll-mt-6 mb-14">
         <h2 className="mb-6 font-sans text-2xl font-semibold text-foreground">Typography in Charts</h2>
-        <div className="mb-6 rounded-lg border border-status-warning/40 bg-status-warning/10 p-4" role="note">
-          <p className="font-sans text-sm font-semibold text-foreground">Typography authority pending</p>
-          <p className="mt-1 font-sans text-sm leading-6 text-muted-foreground">
-            The authored Brand guidance below names Inter, while the documentation application currently uses Instrument Sans and contains no Inter font asset. Treat these rows as review material until the Brand typography decision is recorded; no font package is installed automatically.
-          </p>
-        </div>
-        <GuidanceTable label="Chart typography guidance pending Brand review" className="mb-8" tableClassName="min-w-[46rem]">
+        <GuidanceTable label="Chart typography guidance" className="mb-8" tableClassName="min-w-[46rem]">
             <thead className="bg-muted">
               <tr>
                 <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">Element</th>

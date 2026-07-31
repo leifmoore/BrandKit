@@ -51,6 +51,8 @@ function fileLabel(file: SourceFileViewModel) {
 
 export function SourceActions({ files }: { files: readonly SourceFileViewModel[] }) {
   const actionableFiles = files.filter((file) => file.copyable !== false)
+  const [copyOpen, setCopyOpen] = useState(false)
+  const [downloadOpen, setDownloadOpen] = useState(false)
   const [copiedPath, setCopiedPath] = useState<string>()
   const [copyError, setCopyError] = useState<string>()
   const [downloadError, setDownloadError] = useState<string>()
@@ -60,6 +62,7 @@ export function SourceActions({ files }: { files: readonly SourceFileViewModel[]
       await copySourceText(file.content)
       setCopyError(undefined)
       setCopiedPath(file.path)
+      setCopyOpen(false)
     } catch {
       setCopiedPath(undefined)
       setCopyError(file.path)
@@ -70,6 +73,7 @@ export function SourceActions({ files }: { files: readonly SourceFileViewModel[]
     try {
       downloadSourceFile(file)
       setDownloadError(undefined)
+      setDownloadOpen(false)
     } catch {
       setDownloadError(file.path)
     }
@@ -81,7 +85,13 @@ export function SourceActions({ files }: { files: readonly SourceFileViewModel[]
 
   return (
     <div className="flex items-center gap-2" aria-label="Source file actions">
-      <Popover>
+      <Popover
+        open={copyOpen}
+        onOpenChange={(open) => {
+          setCopyOpen(open)
+          if (open) setDownloadOpen(false)
+        }}
+      >
         <PopoverTrigger asChild>
           <Button type="button" size="sm" variant="outline">
             <Copy aria-hidden="true" />
@@ -104,9 +114,6 @@ export function SourceActions({ files }: { files: readonly SourceFileViewModel[]
               </button>
             ))}
           </div>
-          <span className="sr-only" aria-live="polite">
-            {copiedPath ? `${copiedPath} copied to the clipboard.` : copyError ? `Could not copy ${copyError}. Select its source manually.` : ''}
-          </span>
           {copyError ? (
             <div className="m-1 space-y-2 rounded-md bg-destructive/10 p-2" role="alert">
               <p className="text-xs text-destructive">Copy was blocked. Select the exact source below and copy it manually.</p>
@@ -124,7 +131,13 @@ export function SourceActions({ files }: { files: readonly SourceFileViewModel[]
         </PopoverContent>
       </Popover>
 
-      <Popover>
+      <Popover
+        open={downloadOpen}
+        onOpenChange={(open) => {
+          setDownloadOpen(open)
+          if (open) setCopyOpen(false)
+        }}
+      >
         <PopoverTrigger asChild>
           <Button type="button" size="sm" variant="outline">
             <Download aria-hidden="true" />
@@ -154,6 +167,10 @@ export function SourceActions({ files }: { files: readonly SourceFileViewModel[]
           ) : null}
         </PopoverContent>
       </Popover>
+
+      <span className="sr-only" aria-live="polite">
+        {copiedPath ? `${copiedPath} copied to the clipboard.` : copyError ? `Could not copy ${copyError}. Select its source manually.` : ''}
+      </span>
     </div>
   )
 }

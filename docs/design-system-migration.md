@@ -31,9 +31,10 @@ requires an explicit copy or adapter decision.
 - The shared shell and software documentation use the handoff's neutral
   semantic palette and Instrument Sans. Brand typography and colour remain
   authored content until the Brand migration gate is approved.
-- Official Navy and Off-White remain Brand identity colours. Cream and Gold
-  application roles are unapproved candidates documented in
-  `docs/brand-colour-review.md` and rendered on the Themes foundation page.
+- Official Navy and Off-White remain Brand identity colours. Earlier Cream and
+  Gold application proposals remain unapproved historical comparisons on the
+  Themes foundation page. Toggleable website-expression experiments are owned
+  by the Brand Playground and documented in `docs/brand-colour-review.md`.
 - Generic semantic variables (`background`, `foreground`, `muted`, `accent`,
   status colours, and component surface tokens) back canonical utilities. The
   destination corrects light and dark `muted-foreground` contrast without
@@ -96,6 +97,14 @@ components or framework-parity implementations:
   a semantic `Badge` where status text is present, and ordinary document
   headings. Warning and destructive guidance remains a labelled semantic
   notice rather than borrowing Brand accent colours.
+- The Brand Playground composes canonical controls but deliberately renders its
+  photographic website specimens inside an isolated expressive canvas. Its
+  local drafts and experimental exports cannot change canonical component files
+  or semantic application tokens.
+- Its explicit workspace-preview switch may override Brand-content primary
+  actions and authored accent cues for comparison. The override is scoped below
+  the Brand shell and is removed on every Design System route; status, focus,
+  chart, and immutable component definitions remain governed.
 
 These patterns may enter the copyable component library only after original
 React and Blade sources plus behavioural contracts are reviewed.

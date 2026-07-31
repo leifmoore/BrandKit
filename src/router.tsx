@@ -8,6 +8,7 @@ import { FoundationOverview } from '@/components/workspaces/FoundationOverview'
 import { canonicalizeDeveloperPath } from '@/config/workspaces'
 import { getRememberedEntryRoute } from '@/hooks/useWorkspaceMemory'
 import { Applications } from '@/pages/Applications'
+import { BrandPlayground } from '@/pages/BrandPlayground'
 import { Charts } from '@/pages/Charts'
 import { Colour } from '@/pages/Colour'
 import { Downloads } from '@/pages/Downloads'
@@ -15,6 +16,7 @@ import { Graphics } from '@/pages/Graphics'
 import { Logo } from '@/pages/Logo'
 import { Overview } from '@/pages/Overview'
 import { Photography } from '@/pages/Photography'
+import { QuickReference } from '@/pages/QuickReference'
 import { Typography } from '@/pages/Typography'
 import { Voice } from '@/pages/Voice'
 
@@ -87,7 +89,7 @@ const legacyBrandRedirects = [
   { path: '/graphics', to: '/brand/expression/graphics' },
   { path: '/applications', to: '/brand/applications' },
   { path: '/downloads', to: '/brand/resources' },
-  { path: '/quick-reference', to: '/brand' },
+  { path: '/quick-reference', to: '/brand/quick-reference' },
   { path: '/charts', to: '/design-system/foundations/data-visualisation' },
 ] as const
 
@@ -98,12 +100,14 @@ export const router = createBrowserRouter([
       { path: '/', element: <WorkspaceRootRedirect /> },
 
       { path: '/brand', element: <Overview /> },
+      { path: '/brand/quick-reference', element: <QuickReference /> },
       { path: '/brand/identity/logo', element: <Logo /> },
       { path: '/brand/identity/colour', element: <Colour /> },
       { path: '/brand/identity/typography', element: <Typography /> },
       { path: '/brand/expression/voice', element: <Voice /> },
       { path: '/brand/expression/photography', element: <Photography /> },
       { path: '/brand/expression/graphics', element: <Graphics /> },
+      { path: '/brand/expression/playground', element: <BrandPlayground /> },
       { path: '/brand/applications', element: <Applications /> },
       { path: '/brand/resources', element: <Downloads /> },
 

@@ -49,13 +49,13 @@ export function ClearSpaceVis() {
             {/* Logo */}
             <img
               src="/logos/logo-navy.svg"
-              alt="Scudamore's"
+              alt="Scudamore’s"
               style={{ height: `${logoHeight}px`, width: 'auto' }}
               className="dark:hidden"
             />
             <img
               src="/logos/logo-white.svg"
-              alt="Scudamore's"
+              alt="Scudamore’s"
               style={{ height: `${logoHeight}px`, width: 'auto' }}
               className="hidden dark:block"
             />

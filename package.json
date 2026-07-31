@@ -12,6 +12,8 @@
     "test:production": "playwright test --config playwright.production.config.ts",
     "test:a11y": "playwright test tests/developer.a11y.spec.ts",
     "test:visual": "playwright test tests/developer.visual.spec.ts",
+    "audit:brand:visual": "playwright test --config playwright.brand-audit.config.ts",
+    "generate:brand-images": "node scripts/generate-brand-images.mjs",
     "verify:handoff": "node scripts/verify-handoff.mjs && node _comp-lib/foundations/scripts/generate-css.mjs && node _comp-lib/validation/scripts/validate-recipes.mjs",
     "verify:canonical": "node scripts/verify-canonical-copies.mjs",
     "verify:foundation": "npm run verify:handoff && npm run build",

@@ -9,7 +9,8 @@ import {
   CommandList,
 } from '@/components/ui/command'
 import { WORKSPACES, getWorkspaceForPath } from '@/config/workspaces'
-import { ALL_TOKENS } from '@/lib/tokens'
+import { BRAND_RAMP_TOKENS } from '@/lib/tokens'
+import { PLAYGROUND_ACCENTS } from '@/features/brand-playground/palette'
 
 const DesignSystemCommandItems = lazy(
   () => import('./DesignSystemCommandItems'),
@@ -86,8 +87,8 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
               )}
             </CommandGroup>
 
-            <CommandGroup heading="Identity colours">
-              {ALL_TOKENS.map((token) => (
+            <CommandGroup heading="Brand ramp colours">
+              {BRAND_RAMP_TOKENS.map((token) => (
                 <CommandItem
                   key={token.alias}
                   value={`${token.name} ${token.hex} ${token.alias}`}
@@ -101,6 +102,25 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
                   <span className="font-medium">{token.name}</span>
                   <span className="text-xs text-muted-foreground">{token.hex}</span>
                   <span className="ml-auto text-xs text-muted-foreground">{token.alias}</span>
+                </CommandItem>
+              ))}
+            </CommandGroup>
+
+            <CommandGroup heading="Expression families">
+              {PLAYGROUND_ACCENTS.map((accent) => (
+                <CommandItem
+                  key={accent.id}
+                  value={`${accent.name} ${accent.sourceHex} expression accent ${accent.note}`}
+                  onSelect={() => go('/brand/identity/colour', 'accent-colours')}
+                  className="gap-2"
+                >
+                  <span
+                    className="size-4 shrink-0 rounded-sm border border-black/10"
+                    style={{ background: accent.sourceHex }}
+                  />
+                  <span className="font-medium">{accent.name}</span>
+                  <span className="text-xs text-muted-foreground">{accent.sourceHex}</span>
+                  <span className="ml-auto text-xs text-muted-foreground">Expression</span>
                 </CommandItem>
               ))}
             </CommandGroup>

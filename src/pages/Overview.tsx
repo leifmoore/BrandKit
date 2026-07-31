@@ -43,12 +43,12 @@ export function Overview() {
         <h2 id="brand-statement-heading" className="sr-only">Brand statement</h2>
         <div className="overflow-hidden rounded-lg border border-[#14284b] bg-[#14284b] text-[#fefefd]">
           <div className="max-w-2xl p-6 sm:p-8">
-            <img src="/logos/logo-white.svg" alt="Scudamore's" className="mb-7 h-12 w-auto sm:h-14" />
-            <p className="mb-3 font-sans text-xs font-semibold uppercase tracking-caps text-[#c2d0ec]">Est. 1910</p>
+            <img src="/logos/logo-white.svg" alt="Scudamore’s" className="mb-7 h-12 w-auto sm:h-14" />
+            <p className="mb-3 font-sans text-xs font-semibold uppercase tracking-caps text-navy-100">Est. 1910</p>
             <p className="font-display text-4xl font-bold leading-none tracking-display sm:text-5xl">
               Where Cambridge<br />goes punting.
             </p>
-            <p className="mt-5 max-w-xl font-sans text-base leading-7 text-[#c2d0ec]">
+            <p className="mt-5 max-w-xl font-sans text-base leading-7 text-navy-100">
               Cambridge's oldest punting company, family-run since 1910. We make the river welcoming, memorable, and unmistakably Cambridge.
             </p>
           </div>
@@ -75,11 +75,11 @@ export function Overview() {
       {/* Brand purpose */}
       <section className="rounded-lg bg-[#14284b] p-6 text-[#fefefd] sm:p-8" aria-labelledby="mission-heading">
         <div className="max-w-xl">
-          <p className="mb-4 font-sans text-xs font-semibold uppercase tracking-caps text-[#e6d9b3]">Mission</p>
+          <p className="mb-4 font-sans text-xs font-semibold uppercase tracking-caps text-cream-300">Mission</p>
           <h2 id="mission-heading" className="mb-4 font-display text-2xl font-bold leading-snug">
             To create timeless Cambridge memories.
           </h2>
-          <div className="space-y-2 font-sans text-sm text-[#c2d0ec]">
+          <div className="space-y-2 font-sans text-sm text-navy-100">
             <p>For locals: <span className="font-medium text-[#fefefd]">“Where Cambridge goes punting.”</span></p>
             <p>For visitors: <span className="font-medium text-[#fefefd]">“Where Britain goes punting.”</span></p>
           </div>

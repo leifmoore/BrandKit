@@ -1,9 +1,18 @@
-# Scudamore's Brand Kit
+# Scudamore’s Brand Kit
 
-The Brand Kit is the source of truth for Scudamore's visual and verbal brand
-guidance. It also contains a developer-facing component library at
-`/developer`, built from the immutable Scudamore's UI 0.1.0 handoff in
+The application has two peer workspaces in one shell:
+
+- **Brand** at `/brand` for identity, expression, applications, assets, and the
+  experimental website-expression Playground.
+- **Design System** at `/design-system` for the developer-ready software
+  component library, foundations, patterns, roadmap, resources, and preview
+  review.
+
+The Design System is built from the immutable Scudamore’s UI 0.1.0 handoff in
 [`_comp-lib`](./_comp-lib).
+
+Legacy `/developer/*` links remain replace redirects to `/design-system/*`;
+new links and documentation should use the canonical Design System routes.
 
 ## Runtime and package manager
 
@@ -39,9 +48,9 @@ Installing Chromium through the checked-in local Playwright executable
 downloads the browser matched to the pinned `@playwright/test` version; it does
 not add an npm dependency.
 
-## Developer component library
+## Design System component library
 
-The `/developer` section is catalog-driven and includes:
+The `/design-system` workspace is catalog-driven and includes:
 
 - interactive React previews for supported components and patterns;
 - React and Laravel Blade source displayed as inert, copyable text;
@@ -74,7 +83,7 @@ npm run test:e2e
 ```
 
 `test:production` serves the already-built `dist` directory and verifies both
-the Brand Kit root and a direct Developer deep link with lazy preview and source
+the Brand root and a direct Design System deep link with lazy preview and source
 chunks. Run `npm run build` before invoking it by itself.
 
 The same sequence is available as one command:
@@ -85,6 +94,13 @@ npm run verify:developer
 
 Focused browser lanes are available as `npm run test:a11y` and
 `npm run test:visual`.
+
+The opt-in Brand route contact sheet uses its own one-worker configuration and
+writes only to the git-ignored `artifacts/brand-visual-audit/` directory:
+
+```sh
+npm run audit:brand:visual
+```
 
 ## Visual snapshot policy
 

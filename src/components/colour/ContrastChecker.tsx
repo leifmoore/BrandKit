@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { ALL_TOKENS } from '@/lib/tokens'
+import { BRAND_RAMP_TOKENS } from '@/lib/tokens'
+import { PLAYGROUND_ACCENTS } from '@/features/brand-playground/palette'
 import { checkContrast, hexToRgb } from '@/lib/wcag'
 import {
   Select,
@@ -10,6 +11,15 @@ import {
 } from '@/components/ui/select'
 import { Label } from '@/components/ui/label'
 import { cn } from '@/lib/utils'
+
+const CONTRAST_COLOURS = [
+  ...BRAND_RAMP_TOKENS.map(({ name, alias, hex }) => ({ name, alias, hex })),
+  ...PLAYGROUND_ACCENTS.map((accent) => ({
+    name: accent.name,
+    alias: `expression-${accent.id}-500`,
+    hex: accent.sourceHex,
+  })),
+]
 
 function PassBadge({ pass, label }: { pass: boolean; label: string }) {
   return (
@@ -34,8 +44,8 @@ export function ContrastChecker() {
   const [fgAlias, setFgAlias] = useState('cream-50')
   const [bgAlias, setBgAlias] = useState('navy-900')
 
-  const fgToken = ALL_TOKENS.find(t => t.alias === fgAlias) ?? ALL_TOKENS[0]
-  const bgToken = ALL_TOKENS.find(t => t.alias === bgAlias) ?? ALL_TOKENS[1]
+  const fgToken = CONTRAST_COLOURS.find(t => t.alias === fgAlias) ?? CONTRAST_COLOURS[0]
+  const bgToken = CONTRAST_COLOURS.find(t => t.alias === bgAlias) ?? CONTRAST_COLOURS[1]
   const result = checkContrast(hexToRgb(fgToken.hex), hexToRgb(bgToken.hex))
 
   return (
@@ -55,7 +65,7 @@ export function ContrastChecker() {
           className="font-sans text-base transition-colors duration-300"
           style={{ color: fgToken.hex }}
         >
-          Cambridge's oldest punting company. Founded 1910, family-run ever since.
+          Cambridge’s oldest punting company. Founded 1910, family-run ever since.
         </p>
         <p
           className="font-sans text-sm transition-colors duration-300"
@@ -82,7 +92,7 @@ export function ContrastChecker() {
               </div>
             </SelectTrigger>
             <SelectContent>
-              {ALL_TOKENS.map(t => (
+              {CONTRAST_COLOURS.map(t => (
                 <SelectItem key={t.alias} value={t.alias}>
                   <div className="flex items-center gap-2">
                     <span
@@ -113,7 +123,7 @@ export function ContrastChecker() {
               </div>
             </SelectTrigger>
             <SelectContent>
-              {ALL_TOKENS.map(t => (
+              {CONTRAST_COLOURS.map(t => (
                 <SelectItem key={t.alias} value={t.alias}>
                   <div className="flex items-center gap-2">
                     <span
@@ -154,7 +164,7 @@ export function ContrastChecker() {
       </div>
 
       <p className="font-sans text-xs text-muted-foreground">
-        WCAG 2.1 — AA requires 4.5:1 (normal), 3:1 (large/bold). AAA requires 7:1 (normal), 4.5:1 (large).
+        WCAG 2.2 — AA requires 4.5:1 (normal), 3:1 (large/bold). AAA requires 7:1 (normal), 4.5:1 (large).
       </p>
     </div>
   )

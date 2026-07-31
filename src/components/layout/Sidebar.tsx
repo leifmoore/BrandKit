@@ -53,8 +53,8 @@ export function Sidebar({ onSearch, onClose }: SidebarProps) {
           onClick={onClose}
           className="inline-flex rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
         >
-          <img src="/logos/logo-navy.svg" alt="Scudamore's" className="h-9 w-auto dark:hidden" />
-          <img src="/logos/logo-white.svg" alt="Scudamore's" className="hidden h-9 w-auto dark:block" />
+          <img src="/logos/logo-navy.svg" alt="Scudamore’s" className="h-9 w-auto dark:hidden" />
+          <img src="/logos/logo-white.svg" alt="Scudamore’s" className="hidden h-9 w-auto dark:block" />
         </Link>
         <p className="mt-2 font-sans text-xs text-muted-foreground">Brand Kit</p>
       </div>

@@ -57,8 +57,8 @@ function DontCard({ title, description, style, logoStyle }: DontCardProps) {
   return (
     <div className="border border-red-200 dark:border-red-900 rounded-xl overflow-hidden">
       <div className="h-28 flex items-center justify-center bg-cream-50 dark:bg-navy-700 relative" style={style}>
-        <img src="/logos/logo-navy.svg" alt={`Incorrect Scudamore's logo example: ${title}`} className="h-12 w-auto dark:hidden" style={logoStyle} />
-        <img src="/logos/logo-white.svg" alt={`Incorrect Scudamore's logo example: ${title}`} className="hidden h-12 w-auto dark:block" style={logoStyle} />
+        <img src="/logos/logo-navy.svg" alt={`Incorrect Scudamore’s logo example: ${title}`} className="h-12 w-auto dark:hidden" style={logoStyle} />
+        <img src="/logos/logo-white.svg" alt={`Incorrect Scudamore’s logo example: ${title}`} className="hidden h-12 w-auto dark:block" style={logoStyle} />
         <div className="absolute top-2 left-2 bg-red-600 text-white text-xs font-sans font-medium px-2 py-0.5 rounded">✗ Don't</div>
       </div>
       <div className="p-3 bg-red-50 dark:bg-red-950">
@@ -86,7 +86,7 @@ export function Logo() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <LogoVariant
             src="/logos/logo-navy.svg"
-            alt="Scudamore's logo — solid navy"
+            alt="Scudamore’s logo — solid navy"
             title="Solid — Deep Navy"
             usage="White, off-white, and light cream backgrounds. The primary logo for most use cases."
             bg="#fefefd"
@@ -94,7 +94,7 @@ export function Logo() {
           />
           <LogoVariant
             src="/logos/logo-white.svg"
-            alt="Scudamore's logo — white outline"
+            alt="Scudamore’s logo — white outline"
             title="White Outline"
             usage="Navy and dark backgrounds, over photography. Never on light backgrounds."
             bg="#14284b"
@@ -103,7 +103,7 @@ export function Logo() {
           />
           <LogoVariant
             src="/logos/logo-full.svg"
-            alt="Scudamore's logo — full colour"
+            alt="Scudamore’s logo — full colour"
             title="Full Colour"
             usage="When full-colour reproduction is available and appropriate. Light backgrounds only."
             bg="#fefefd"
@@ -132,8 +132,8 @@ export function Logo() {
         <div className="mb-6">
           <div className="border border-green-200 dark:border-green-900 rounded-xl overflow-hidden">
             <div className="h-28 flex items-center justify-center bg-cream-50 dark:bg-navy-700">
-              <img src="/logos/logo-navy.svg" alt="Correct Scudamore's logo use on an approved background" className="h-12 w-auto dark:hidden" />
-              <img src="/logos/logo-white.svg" alt="Correct Scudamore's logo use on an approved background" className="hidden h-12 w-auto dark:block" />
+              <img src="/logos/logo-navy.svg" alt="Correct Scudamore’s logo use on an approved background" className="h-12 w-auto dark:hidden" />
+              <img src="/logos/logo-white.svg" alt="Correct Scudamore’s logo use on an approved background" className="hidden h-12 w-auto dark:block" />
             </div>
             <div className="p-3 bg-green-50 dark:bg-green-950">
               <p className="font-sans font-medium text-xs text-green-700 dark:text-green-400">✓ Do — use the approved colour on an appropriate background</p>
@@ -144,7 +144,7 @@ export function Logo() {
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           <DontCard
             title="Don't recolour"
-            description="Only use Deep Navy, Off-White, or approved palette colours"
+            description="Use only the supplied Solid Deep Navy, White Outline, or Full Colour artwork"
             logoStyle={{ filter: 'hue-rotate(120deg)' }}
           />
           <DontCard

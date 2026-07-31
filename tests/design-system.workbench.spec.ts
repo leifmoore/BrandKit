@@ -86,7 +86,10 @@ test.describe('Design System component workbench', () => {
     const sourceActions = workbench.locator('[aria-label="Source file actions"]')
 
     await sourceActions.getByRole('button', { name: 'Copy', exact: true }).click()
-    await page.getByRole('button', {
+    const copyMenu = page.getByRole('dialog').filter({
+      has: page.getByText('Copy an exact handoff file', { exact: true }),
+    })
+    await copyMenu.getByRole('button', {
       name: 'React · react/examples/button/basic.tsx',
       exact: true,
     }).click()
@@ -95,8 +98,11 @@ test.describe('Design System component workbench', () => {
 
     await page.keyboard.press('Escape')
     await sourceActions.getByRole('button', { name: 'Download', exact: true }).click()
+    const downloadMenu = page.getByRole('dialog').filter({
+      has: page.getByText('Download an exact handoff file', { exact: true }),
+    })
     const downloadPromise = page.waitForEvent('download')
-    await page.getByRole('button', {
+    await downloadMenu.getByRole('button', {
       name: 'React · react/examples/button/basic.tsx',
       exact: true,
     }).click()

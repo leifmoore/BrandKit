@@ -22,7 +22,7 @@ export function Typography() {
       <SectionHeader
         eyebrow="Brand Typography"
         title="Typography"
-        description="Two typefaces carry the brand. Gill Sans Bold brings the heritage warmth. Inter brings the modern clarity. Together: 1910, still alive today."
+        description="Gill Sans Nova Bold brings the Brand’s heritage warmth. Instrument Sans provides contemporary clarity for body copy and working typography while remaining consistent with the software Design System."
       />
 
       <SectionSubNav items={SUB_NAV} />
@@ -31,7 +31,7 @@ export function Typography() {
       <section id="fonts" className="scroll-mt-6 mb-14">
         <h2 className="mb-6 font-sans text-2xl font-semibold text-foreground">Fonts</h2>
         <div className="grid sm:grid-cols-2 gap-6">
-          {/* Gill Sans */}
+          {/* Gill Sans Nova */}
           <Card className="gap-0">
             <CardContent className="space-y-4 p-6">
             <div>
@@ -39,7 +39,7 @@ export function Typography() {
               <p className="font-display font-bold text-5xl text-navy-900 dark:text-cream-50 tracking-display">Aa</p>
             </div>
             <div>
-              <h3 className="font-display font-bold text-xl text-navy-900 dark:text-cream-50">Gill Sans</h3>
+              <h3 className="font-display font-bold text-xl text-navy-900 dark:text-cream-50">Gill Sans Nova</h3>
               <p className="font-sans text-sm text-muted-foreground mt-1">
                 Headlines, display, brand name, pull quotes. Humanist warmth — carries the heritage character. Bold weight primary.
               </p>
@@ -52,16 +52,16 @@ export function Typography() {
             <div className="pt-2 border-t border-border">
               <p className="font-sans text-xs text-muted-foreground">
                 <strong>Web stack:</strong>{' '}
-                <code className="font-mono text-xs">'Gill Sans', 'Gill Sans MT', 'Lato', Calibri, 'Trebuchet MS', sans-serif</code>
+                <code className="font-mono text-xs">'gill-sans-nova', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif</code>
               </p>
               <p className="font-sans text-xs text-muted-foreground mt-1">
-                Mac users get native Gill Sans. Windows/Linux get Lato (Google Fonts) as the closest free alternative.
+                Licensed for this website through Adobe Fonts kit iia4izu. Regular and Bold are available upright and italic; font files are not self-hosted or packaged here.
               </p>
             </div>
             </CardContent>
           </Card>
 
-          {/* Inter */}
+          {/* Instrument Sans */}
           <Card className="gap-0">
             <CardContent className="space-y-4 p-6">
             <div>
@@ -69,9 +69,9 @@ export function Typography() {
               <p className="font-sans font-normal text-5xl text-navy-900 dark:text-cream-50">Aa</p>
             </div>
             <div>
-              <h3 className="font-sans font-semibold text-xl text-navy-900 dark:text-cream-50">Inter</h3>
+              <h3 className="font-sans font-semibold text-xl text-navy-900 dark:text-cream-50">Instrument Sans</h3>
               <p className="font-sans text-sm text-muted-foreground mt-1">
-                Subheads, body, UI, captions. Contemporary neo-grotesque — excellent on-screen legibility. Free, open-source.
+                Subheads, body, captions, and working typography. Contemporary clarity balances Gill Sans Nova while matching the software Design System.
               </p>
             </div>
             <div className="font-sans text-sm text-navy-700 dark:text-cream-300 space-y-1">
@@ -82,10 +82,10 @@ export function Typography() {
             <div className="pt-2 border-t border-border">
               <p className="font-sans text-xs text-muted-foreground">
                 <strong>Web stack:</strong>{' '}
-                <code className="font-mono text-xs">Inter, -apple-system, 'Segoe UI', sans-serif</code>
+                <code className="font-mono text-xs">'Instrument Sans', ui-sans-serif, system-ui, sans-serif</code>
               </p>
               <p className="font-sans text-xs text-muted-foreground mt-1">
-                Loaded from Google Fonts. Free to use across web, Canva, Figma, and Office.
+                Bundled in this application through the pinned Fontsource package. Use the same family in editable templates where it is available.
               </p>
             </div>
             </CardContent>
@@ -167,7 +167,7 @@ export function Typography() {
                 'Hero / display (40pt+): −2% tracking. Makes headlines feel confident.',
                 'Mid display (24–40pt): −1% tracking.',
                 'Body, UI, subheads: 0 — use defaults.',
-                'Caps (brand name, eyebrows, dividers): +15%. Prevents letterrun-together.',
+                'Caps (brand name, eyebrows, dividers): +15%. Prevents letters running together.',
               ],
             },
             {
@@ -182,10 +182,10 @@ export function Typography() {
             {
               title: 'Links',
               rules: [
-                'Inline links: Lantern Gold (#c9a24a), no underline at rest, underline on hover.',
-                'On dark backgrounds: Honey (#e3c277) for contrast.',
-                'Visited links: Brass (#9c7a2f), same underline behaviour.',
-                'Never rely on colour alone — ensure underline or other visual cue is present.',
+                'Use Deep Navy on light backgrounds and Off-White on dark backgrounds.',
+                'Underline links at rest when they appear inside running copy.',
+                'The active Playground accent may be tested on buttons, but it is not an approved text-link colour.',
+                'Never rely on colour alone — preserve an underline or another visible cue.',
               ],
             },
             {
@@ -193,7 +193,7 @@ export function Typography() {
               rules: [
                 'Em dashes (—) with spaces — like this — used freely. Warmer than parentheses.',
                 'Always curly/smart quotes — never straight ones.',
-                'Brand apostrophe: always "Scudamore\'s" (curly), never straight.',
+                'Brand apostrophe: always “Scudamore’s” (curly), never straight.',
                 'Ellipses: single character (…), not three dots (...).',
               ],
             },

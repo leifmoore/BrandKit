@@ -11,14 +11,6 @@ export interface ColorToken {
   description?: string
 }
 
-export interface MoodPalette {
-  name: string
-  description: string
-  bg: string
-  tokens: ColorToken[]
-  example: string
-}
-
 export interface TypeStyle {
   level: string
   font: 'display' | 'sans'
@@ -58,64 +50,64 @@ export const NAVY_RAMP: ColorToken[] = [
     description: 'Primary brand colour — use for text, hero backgrounds, logo',
   },
   {
-    name: 'Dusk',
+    name: 'River Dusk',
     alias: 'navy-700',
-    hex: '#26467d',
-    rgb: { r: 38, g: 70, b: 125 },
-    hsl: { h: 218, s: 53, l: 32 },
-    cmyk: { c: 70, m: 44, y: 0, k: 51 },
+    hex: '#435e7b',
+    rgb: { r: 67, g: 94, b: 123 },
+    hsl: { h: 211, s: 29, l: 37 },
+    cmyk: { c: 46, m: 24, y: 0, k: 52 },
     cssVar: '--color-navy-700',
     twBg: 'bg-navy-700',
     twText: 'text-navy-700',
-    description: 'Secondary blue — subheadings on dark, card backgrounds in dark mode',
+    description: 'Dark bridge from Deep Navy toward Water Powder — secondary text on light',
   },
   {
-    name: 'Cam Blue',
+    name: 'River Blue',
     alias: 'navy-500',
-    hex: '#3d68b0',
-    rgb: { r: 61, g: 104, b: 176 },
-    hsl: { h: 218, s: 48, l: 47 },
-    cmyk: { c: 65, m: 41, y: 0, k: 31 },
+    hex: '#7295aa',
+    rgb: { r: 114, g: 149, b: 170 },
+    hsl: { h: 203, s: 25, l: 56 },
+    cmyk: { c: 33, m: 12, y: 0, k: 33 },
     cssVar: '--color-navy-500',
     twBg: 'bg-navy-500',
     twText: 'text-navy-500',
-    description: 'Mid blue — links on light bg (near threshold; prefer Deep Navy for body)',
+    description: 'Midpoint toward Water Powder — decorative and large-text use, not body copy on light',
   },
   {
-    name: 'Sky',
+    name: 'Water Powder',
     alias: 'navy-300',
-    hex: '#7e9bd5',
-    rgb: { r: 126, g: 155, b: 213 },
-    hsl: { h: 220, s: 51, l: 67 },
-    cmyk: { c: 41, m: 27, y: 0, k: 16 },
+    hex: '#a2cddb',
+    rgb: { r: 162, g: 205, b: 219 },
+    hsl: { h: 195, s: 44, l: 75 },
+    cmyk: { c: 26, m: 6, y: 0, k: 14 },
     cssVar: '--color-navy-300',
     twBg: 'bg-navy-300',
     twText: 'text-navy-300',
-    description: 'Light blue — subheadings on dark backgrounds (large text only)',
+    description: 'Expression source — river, sky, atmospheric surfaces, and text on Deep Navy',
   },
   {
-    name: 'Mist',
+    name: 'Water Mist',
     alias: 'navy-100',
-    hex: '#c2d0ec',
-    rgb: { r: 194, g: 208, b: 236 },
-    hsl: { h: 220, s: 52, l: 84 },
-    cmyk: { c: 18, m: 12, y: 0, k: 7 },
+    hex: '#d5e8ee',
+    rgb: { r: 213, g: 232, b: 238 },
+    hsl: { h: 194, s: 42, l: 88 },
+    cmyk: { c: 11, m: 3, y: 0, k: 7 },
     cssVar: '--color-navy-100',
     twBg: 'bg-navy-100',
     twText: 'text-navy-100',
-    description: 'Very light blue — decorative, chart gridlines, subtle borders',
+    description: 'Light Water Powder tint — decorative panels and subtle borders',
   },
   {
-    name: 'Vapour',
+    name: 'Water Vapour',
     alias: 'navy-50',
-    hex: '#e7edf8',
-    rgb: { r: 231, g: 237, b: 248 },
-    hsl: { h: 219, s: 56, l: 94 },
-    cmyk: { c: 7, m: 4, y: 0, k: 3 },
+    hex: '#eaf3f6',
+    rgb: { r: 234, g: 243, b: 246 },
+    hsl: { h: 195, s: 40, l: 94 },
+    cmyk: { c: 5, m: 1, y: 0, k: 4 },
     cssVar: '--color-navy-50',
     twBg: 'bg-navy-50',
     twText: 'text-navy-50',
-    description: 'Near-white blue tint — hover states, subtle section backgrounds',
+    description: 'Near-white Water Powder tint — quiet authored Brand surfaces',
   },
 ]
 
@@ -133,103 +125,64 @@ export const CREAM_RAMP: ColorToken[] = [
     description: 'Primary light — backgrounds, logo on dark, body text on dark',
   },
   {
-    name: 'Vellum',
+    name: 'Butter Vellum',
     alias: 'cream-75',
-    hex: '#fcfaf3',
-    rgb: { r: 252, g: 250, b: 243 },
-    hsl: { h: 46, s: 59, l: 97 },
-    cmyk: { c: 0, m: 1, y: 4, k: 1 },
+    hex: '#fefaf4',
+    rgb: { r: 254, g: 250, b: 244 },
+    hsl: { h: 36, s: 83, l: 98 },
+    cmyk: { c: 0, m: 2, y: 4, k: 0 },
     cssVar: '--color-cream-75',
     twBg: 'bg-cream-75',
     twText: 'text-cream-75',
-    description: 'Card backgrounds in light mode',
+    description: 'Barely warm tint derived from Faded Butter',
   },
   {
-    name: 'Cream',
+    name: 'Butter Cream',
     alias: 'cream-100',
-    hex: '#f8f3e3',
-    rgb: { r: 248, g: 243, b: 227 },
-    hsl: { h: 46, s: 61, l: 93 },
-    cmyk: { c: 0, m: 2, y: 8, k: 3 },
+    hex: '#fef7ec',
+    rgb: { r: 254, g: 247, b: 236 },
+    hsl: { h: 37, s: 90, l: 96 },
+    cmyk: { c: 0, m: 3, y: 7, k: 0 },
     cssVar: '--color-cream-100',
     twBg: 'bg-cream-100',
     twText: 'text-cream-100',
-    description: 'Page background in light mode — warm, paper-like',
+    description: 'Light Faded Butter wash — warm, paper-like Brand canvas',
   },
   {
-    name: 'Ivory',
+    name: 'Soft Butter',
     alias: 'cream-200',
-    hex: '#f0e8cf',
-    rgb: { r: 240, g: 232, b: 207 },
-    hsl: { h: 46, s: 52, l: 88 },
-    cmyk: { c: 0, m: 3, y: 14, k: 6 },
+    hex: '#fef2e1',
+    rgb: { r: 254, g: 242, b: 225 },
+    hsl: { h: 35, s: 94, l: 94 },
+    cmyk: { c: 0, m: 5, y: 11, k: 0 },
     cssVar: '--color-cream-200',
     twBg: 'bg-cream-200',
     twText: 'text-cream-200',
-    description: 'Muted backgrounds, divider zones',
+    description: 'Soft warm surface for authored editorial zones',
   },
   {
-    name: 'Parchment',
+    name: 'Butter',
     alias: 'cream-300',
-    hex: '#e6d9b3',
-    rgb: { r: 230, g: 217, b: 179 },
-    hsl: { h: 45, s: 51, l: 80 },
-    cmyk: { c: 0, m: 6, y: 22, k: 10 },
+    hex: '#feeed7',
+    rgb: { r: 254, g: 238, b: 215 },
+    hsl: { h: 35, s: 95, l: 92 },
+    cmyk: { c: 0, m: 6, y: 15, k: 0 },
     cssVar: '--color-cream-300',
     twBg: 'bg-cream-300',
     twText: 'text-cream-300',
-    description: 'Borders, input borders in light mode',
+    description: 'Noticeable warm editorial surface derived from Faded Butter',
   },
   {
-    name: 'Stone',
+    name: 'Faded Butter',
     alias: 'cream-400',
-    hex: '#d4c8a6',
-    rgb: { r: 212, g: 200, b: 166 },
-    hsl: { h: 44, s: 35, l: 74 },
-    cmyk: { c: 0, m: 6, y: 22, k: 17 },
+    hex: '#feeacd',
+    rgb: { r: 254, g: 234, b: 205 },
+    hsl: { h: 36, s: 96, l: 90 },
+    cmyk: { c: 0, m: 8, y: 19, k: 0 },
     cssVar: '--color-cream-400',
     twBg: 'bg-cream-400',
     twText: 'text-cream-400',
-    description: 'Decorative — Wedding & private hire mood palette',
-  },
-]
-
-export const GOLD_RAMP: ColorToken[] = [
-  {
-    name: 'Honey',
-    alias: 'gold-300',
-    hex: '#e3c277',
-    rgb: { r: 227, g: 194, b: 119 },
-    hsl: { h: 42, s: 66, l: 68 },
-    cmyk: { c: 0, m: 15, y: 48, k: 11 },
-    cssVar: '--color-gold-300',
-    twBg: 'bg-gold-300',
-    twText: 'text-gold-300',
-    description: 'Accent on dark backgrounds — links, highlights on navy',
-  },
-  {
-    name: 'Lantern Gold',
-    alias: 'gold-500',
-    hex: '#c9a24a',
-    rgb: { r: 201, g: 162, b: 74 },
-    hsl: { h: 42, s: 54, l: 54 },
-    cmyk: { c: 0, m: 19, y: 63, k: 21 },
-    cssVar: '--color-gold-500',
-    twBg: 'bg-gold-500',
-    twText: 'text-gold-500',
-    description: 'Primary accent — CTAs, links on light bg, interactive states',
-  },
-  {
-    name: 'Brass',
-    alias: 'gold-700',
-    hex: '#9c7a2f',
-    rgb: { r: 156, g: 122, b: 47 },
-    hsl: { h: 41, s: 54, l: 40 },
-    cmyk: { c: 0, m: 22, y: 70, k: 39 },
-    cssVar: '--color-gold-700',
-    twBg: 'bg-gold-700',
-    twText: 'text-gold-700',
-    description: 'Deep gold — visited links, Wedding palette, Heritage moments',
+    description: 'Expression source — family, daytime, hospitality, and editorial emphasis',
   },
 ]
 
@@ -238,70 +191,32 @@ export const PRIMARY_TOKENS: ColorToken[] = [
   CREAM_RAMP[0], // Off-White
 ]
 
-export const ALL_TOKENS: ColorToken[] = [...NAVY_RAMP, ...CREAM_RAMP, ...GOLD_RAMP]
+export const BRAND_RAMP_TOKENS: ColorToken[] = [...NAVY_RAMP, ...CREAM_RAMP]
 
 // ── WCAG approved / forbidden pairs ─────────────────────────────────────────
 
 export const WCAG_APPROVED = [
   { fg: 'cream-50',  bg: 'navy-1000', level: 'AAA', note: 'Body text' },
   { fg: 'cream-50',  bg: 'navy-900',  level: 'AAA', note: 'Body text' },
-  { fg: 'cream-50',  bg: 'navy-700',  level: 'AAA', note: 'Body text' },
+  { fg: 'cream-50',  bg: 'navy-700',  level: 'AA',  note: 'Body text' },
   { fg: 'cream-75',  bg: 'navy-900',  level: 'AAA', note: 'Body text' },
   { fg: 'cream-100', bg: 'navy-900',  level: 'AAA', note: 'Body text' },
   { fg: 'navy-50',   bg: 'navy-900',  level: 'AAA', note: 'Body text' },
-  { fg: 'gold-300',  bg: 'navy-1000', level: 'AAA', note: 'Body text' },
-  { fg: 'gold-300',  bg: 'navy-900',  level: 'AA',  note: 'Body text' },
   { fg: 'navy-900',  bg: 'cream-50',  level: 'AAA', note: 'Body text' },
   { fg: 'navy-900',  bg: 'cream-300', level: 'AAA', note: 'Body text' },
-  { fg: 'navy-900',  bg: 'gold-300',  level: 'AA',  note: 'Body text' },
-  { fg: 'navy-700',  bg: 'cream-50',  level: 'AAA', note: 'Body text' },
-  { fg: 'navy-500',  bg: 'cream-50',  level: 'AA',  note: 'Near threshold — prefer Deep Navy for body' },
-  { fg: 'navy-300',  bg: 'navy-900',  level: 'AA',  note: 'Large text / subheadings only' },
-  { fg: 'gold-700',  bg: 'cream-50',  level: 'AA',  note: 'Large text only (18pt+)' },
+  { fg: 'navy-700',  bg: 'cream-50',  level: 'AA',  note: 'Body text' },
+  { fg: 'navy-500',  bg: 'navy-900',  level: 'AA',  note: 'Near threshold — prefer a lighter tint for body' },
+  { fg: 'navy-300',  bg: 'navy-900',  level: 'AAA', note: 'Body text' },
 ] as const
 
 export const WCAG_FORBIDDEN = [
   { fg: 'navy-300', bg: 'navy-100', reason: 'Insufficient contrast' },
   { fg: 'navy-100', bg: 'cream-50', reason: 'Insufficient contrast' },
   { fg: 'navy-500', bg: 'navy-300', reason: 'Insufficient contrast' },
-  { fg: 'gold-300', bg: 'cream-100', reason: 'Insufficient contrast' },
-  { fg: 'gold-500', bg: 'gold-300', reason: 'Insufficient contrast' },
-  { fg: 'gold-500', bg: 'cream-400', reason: 'Insufficient contrast' },
-  { fg: 'navy-700', bg: 'gold-500', reason: 'Large text only at this ratio' },
+  { fg: 'navy-500', bg: 'cream-50', reason: 'Large text only; use River Dusk or Deep Navy for body' },
+  { fg: 'cream-300', bg: 'cream-50', reason: 'Insufficient contrast' },
+  { fg: 'navy-700', bg: 'navy-900', reason: 'Insufficient contrast' },
 ] as const
-
-// ── Mood Palettes ────────────────────────────────────────────────────────────
-
-export const MOOD_PALETTES: MoodPalette[] = [
-  {
-    name: 'Day Tours',
-    description: "The master palette — classic Scudamore's on a bright Cambridge afternoon.",
-    bg: '#fefefd',
-    tokens: [CREAM_RAMP[0], NAVY_RAMP[1], GOLD_RAMP[1]],
-    example: 'Off-White background · Deep Navy text · Lantern Gold CTAs',
-  },
-  {
-    name: 'Fireworks',
-    description: 'Dramatic evening atmosphere — rich navy depth with golden warmth.',
-    bg: '#14284b',
-    tokens: [NAVY_RAMP[0], NAVY_RAMP[1], GOLD_RAMP[0], GOLD_RAMP[1]],
-    example: 'Midnight / Deep Navy background · Honey & Lantern Gold accents',
-  },
-  {
-    name: 'Weddings',
-    description: 'Warm, romantic — cream stock feel with heritage gold and deep navy.',
-    bg: '#f8f3e3',
-    tokens: [CREAM_RAMP[2], CREAM_RAMP[5], GOLD_RAMP[2], NAVY_RAMP[1]],
-    example: 'Cream background · Stone detail · Brass accent · Deep Navy text',
-  },
-  {
-    name: 'Bat Safari',
-    description: 'Twilight on the Cam — darkest navies with sparing cool mid-tones.',
-    bg: '#0a1530',
-    tokens: [NAVY_RAMP[0], NAVY_RAMP[2], NAVY_RAMP[6], CREAM_RAMP[0]],
-    example: 'Midnight background · Dusk mid-tone · Vapour highlights · Off-White text',
-  },
-]
 
 // ── Typography Scale ─────────────────────────────────────────────────────────
 
@@ -314,7 +229,7 @@ export const TYPE_SCALE: TypeStyle[] = [
     tracking: '-0.02em',
     lineHeight: '1.05',
     twClasses: 'font-display font-bold text-5xl md:text-6xl tracking-display leading-none',
-    description: 'Gill Sans Bold · 56pt · −2% tracking · 1.05 line-height',
+    description: 'Gill Sans Nova Bold · 56pt · −2% tracking · 1.05 line-height',
   },
   {
     level: 'H2 — Section',
@@ -324,7 +239,7 @@ export const TYPE_SCALE: TypeStyle[] = [
     tracking: '-0.01em',
     lineHeight: '1.15',
     twClasses: 'font-display font-bold text-4xl tracking-mid leading-tight',
-    description: 'Gill Sans Bold · 36pt · −1% tracking · 1.15 line-height',
+    description: 'Gill Sans Nova Bold · 36pt · −1% tracking · 1.15 line-height',
   },
   {
     level: 'H3 — Subhead',
@@ -334,7 +249,7 @@ export const TYPE_SCALE: TypeStyle[] = [
     tracking: '0',
     lineHeight: '1.3',
     twClasses: 'font-sans font-semibold text-2xl tracking-normal leading-snug',
-    description: 'Inter Semibold · 22pt · 0 tracking · 1.3 line-height',
+    description: 'Instrument Sans Semibold · 22pt · 0 tracking · 1.3 line-height',
   },
   {
     level: 'H4 — Label',
@@ -344,7 +259,7 @@ export const TYPE_SCALE: TypeStyle[] = [
     tracking: '0',
     lineHeight: '1.4',
     twClasses: 'font-sans font-semibold text-base tracking-normal leading-snug',
-    description: 'Inter Semibold · 16pt · 0 tracking · 1.4 line-height',
+    description: 'Instrument Sans Semibold · 16pt · 0 tracking · 1.4 line-height',
   },
   {
     level: 'Eyebrow / Overline',
@@ -354,7 +269,7 @@ export const TYPE_SCALE: TypeStyle[] = [
     tracking: '0.15em',
     lineHeight: '1.4',
     twClasses: 'font-sans font-medium text-xs uppercase tracking-caps leading-snug',
-    description: 'Inter Medium · 12pt · UPPERCASE · +15% tracking · 1.4 line-height',
+    description: 'Instrument Sans Medium · 12pt · UPPERCASE · +15% tracking · 1.4 line-height',
   },
   {
     level: 'Body Large / Intro',
@@ -364,7 +279,7 @@ export const TYPE_SCALE: TypeStyle[] = [
     tracking: '0',
     lineHeight: '1.6',
     twClasses: 'font-sans font-normal text-lg tracking-normal leading-relaxed',
-    description: 'Inter Regular · 18pt · 0 tracking · 1.6 line-height',
+    description: 'Instrument Sans Regular · 18pt · 0 tracking · 1.6 line-height',
   },
   {
     level: 'Body Default',
@@ -374,7 +289,7 @@ export const TYPE_SCALE: TypeStyle[] = [
     tracking: '0',
     lineHeight: '1.6',
     twClasses: 'font-sans font-normal text-base tracking-normal leading-relaxed',
-    description: 'Inter Regular · 15pt · 0 tracking · 1.6 line-height',
+    description: 'Instrument Sans Regular · 15pt · 0 tracking · 1.6 line-height',
   },
   {
     level: 'Caption / Small',
@@ -384,7 +299,7 @@ export const TYPE_SCALE: TypeStyle[] = [
     tracking: '0',
     lineHeight: '1.5',
     twClasses: 'font-sans font-normal text-xs tracking-normal leading-normal',
-    description: 'Inter Regular · 12pt · 0 tracking · 1.5 line-height',
+    description: 'Instrument Sans Regular · 12pt · 0 tracking · 1.5 line-height',
   },
   {
     level: 'Pull Quote',
@@ -394,117 +309,6 @@ export const TYPE_SCALE: TypeStyle[] = [
     tracking: '0',
     lineHeight: '1.4',
     twClasses: 'font-display font-bold italic text-2xl tracking-normal leading-snug',
-    description: 'Gill Sans Bold Italic · 24pt · 0 tracking · 1.4 line-height',
-  },
-]
-
-// ── Navigation items ─────────────────────────────────────────────────────────
-
-export interface NavItem {
-  label: string
-  path: string
-  icon: string
-  description: string
-  subsections?: { label: string; anchor: string }[]
-}
-
-export const NAV_ITEMS: NavItem[] = [
-  {
-    label: 'Overview',
-    path: '/',
-    icon: 'LayoutDashboard',
-    description: 'Brand story, values, and quick navigation',
-  },
-  {
-    label: 'Colour',
-    path: '/colour',
-    icon: 'Palette',
-    description: 'Full palette, WCAG checker, mood explorer',
-    subsections: [
-      { label: 'Primary', anchor: 'primary' },
-      { label: 'Navy Ramp', anchor: 'navy-ramp' },
-      { label: 'Cream Ramp', anchor: 'cream-ramp' },
-      { label: 'Accent Colours', anchor: 'accent-colours' },
-      { label: 'WCAG Checker', anchor: 'wcag-checker' },
-      { label: 'Mood Explorer', anchor: 'mood-explorer' },
-    ],
-  },
-  {
-    label: 'Logo',
-    path: '/logo',
-    icon: 'Stamp',
-    description: 'Logo variants, usage rules, clear space, downloads',
-    subsections: [
-      { label: 'Variants', anchor: 'variants' },
-      { label: 'Clear Space', anchor: 'clear-space' },
-      { label: 'Do\'s & Don\'ts', anchor: 'dos-donts' },
-      { label: 'Downloads', anchor: 'downloads' },
-    ],
-  },
-  {
-    label: 'Typography',
-    path: '/typography',
-    icon: 'Type',
-    description: 'Fonts, type scale, live preview',
-    subsections: [
-      { label: 'Fonts', anchor: 'fonts' },
-      { label: 'Type Scale', anchor: 'type-scale' },
-      { label: 'Live Preview', anchor: 'live-preview' },
-      { label: 'Rules', anchor: 'rules' },
-    ],
-  },
-  {
-    label: 'Voice & Tone',
-    path: '/voice',
-    icon: 'MessageSquare',
-    description: 'Brand voice traits, channel tones, do\'s & don\'ts',
-    subsections: [
-      { label: 'Traits', anchor: 'traits' },
-      { label: 'Channel Tones', anchor: 'channels' },
-      { label: 'Do\'s & Don\'ts', anchor: 'dos-donts' },
-      { label: 'Scudamore\'s-isms', anchor: 'isms' },
-    ],
-  },
-  {
-    label: 'Photography',
-    path: '/photography',
-    icon: 'Camera',
-    description: 'Editing approach, composition, subjects, aspect ratios',
-  },
-  {
-    label: 'Graphics & Icons',
-    path: '/graphics',
-    icon: 'Shapes',
-    description: 'Icon libraries, decorative elements, illustration',
-  },
-  {
-    label: 'Charts',
-    path: '/charts',
-    icon: 'BarChart2',
-    description: 'Chart types, colour rules, typography in charts',
-  },
-  {
-    label: 'Applications',
-    path: '/applications',
-    icon: 'Layout',
-    description: 'Digital, print, and social media templates',
-  },
-  {
-    label: 'Quick Reference',
-    path: '/quick-reference',
-    icon: 'Zap',
-    description: 'All tokens at a glance — cheat sheet',
-  },
-  {
-    label: 'Downloads',
-    path: '/downloads',
-    icon: 'Download',
-    description: 'Logos, colour tokens, CSS variables',
-  },
-  {
-    label: 'Developer',
-    path: '/developer',
-    icon: 'Code2',
-    description: 'Interactive components, recipes, foundations, and source',
+    description: 'Gill Sans Nova Bold Italic · 24pt · 0 tracking · 1.4 line-height',
   },
 ]

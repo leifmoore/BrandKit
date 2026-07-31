@@ -42,7 +42,7 @@ export function CopyButton({
         title={actionLabel}
         className={cn(
           'h-auto gap-1.5 rounded font-sans font-medium transition-colors',
-          'text-navy-700 dark:text-cream-300 hover:bg-transparent dark:hover:bg-transparent hover:text-gold-500 dark:hover:text-gold-300',
+          'text-navy-700 dark:text-cream-300 hover:bg-transparent dark:hover:bg-transparent hover:text-primary dark:hover:text-primary',
           size === 'sm'
             ? 'px-2 py-1 text-xs has-[>svg]:px-2'
             : 'px-3 py-1.5 text-sm has-[>svg]:px-3',

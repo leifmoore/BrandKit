@@ -21,8 +21,8 @@ const ICON_LIBRARIES = [
 
 const DECORATIVE_APPROVED = [
   { element: 'Hairline rules', detail: '0.5px Deep Navy lines for dividing text, separating sections, framing photo captions. Never thicker than 1px.' },
-  { element: 'Lantern Gold accent line', detail: 'Short (40–60mm / ~150–225px) horizontal gold line under section labels or eyebrow text for editorial moments.' },
-  { element: '"Est. 1910" lockup', detail: 'Small-caps text mark for heritage-led pieces. Best in Inter at 10–11pt with +15% tracking.' },
+  { element: 'Experimental accent line', detail: 'Short (40–60mm / ~150–225px) horizontal line under section labels or eyebrow text. Test the active Brand Playground accent before approving it for a channel.' },
+  { element: '"Est. 1910" lockup', detail: 'Small-caps text mark for heritage-led pieces. Best in Instrument Sans at 10–11pt with +15% tracking.' },
   { element: 'Watermark / stamp', detail: 'Icon-only logo at low opacity (10–15%) for letterhead, certificates, formal documents.' },
 ]
 
@@ -30,7 +30,7 @@ const DECORATIVE_AVOID = [
   'Heavy borders or frames around content',
   'Decorative flourishes — curls, scrolls, ornaments. Dates fast and competes with heritage type.',
   'Rounded badges with text ("Since 1910!" in a circle) — fine for fun moments only, never as default brand decoration.',
-  'Drop shadows, glows, or gradients on text or shapes — fights the flat, calm aesthetic.',
+  'Unreviewed drop shadows and glows, or gradients on text, logos, and arbitrary shapes. Grainy gradients belong only on reviewed expression surfaces.',
 ]
 
 export function Graphics() {
@@ -53,7 +53,7 @@ export function Graphics() {
                 <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">Library</th>
                 <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">Best for</th>
                 <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">Notes</th>
-                <th scope="col" aria-label="Status" className="px-4 py-3" />
+                <th scope="col" className="px-4 py-3 text-right text-xs font-medium uppercase tracking-caps text-muted-foreground">Status</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
@@ -78,7 +78,7 @@ export function Graphics() {
             { title: 'Outline by default', detail: 'Solid fills only when the icon needs to read at very small sizes or carry semantic weight (e.g. filled bookmark = saved).' },
             { title: 'Consistent weight within a piece', detail: "Don't mix Phosphor Thin and Phosphor Bold in the same layout." },
             { title: 'Sizing', detail: '16px (UI inline) · 20px (default) · 24px (touch targets, decorative inline) · 32px+ (feature blocks).' },
-            { title: 'Colour', detail: 'Deep Navy by default. Lantern Gold for accent / interactive states. Off-White on dark backgrounds. Never pure black.' },
+            { title: 'Colour', detail: 'Deep Navy by default. Use the active Playground accent only while evaluating expressive cues. Off-White on dark backgrounds. Never pure black.' },
             { title: 'Stroke width', detail: '1.5–2px for outline icons at standard sizes. Never below 1px.' },
           ].map(rule => (
             <Card key={rule.title} className="gap-0">
@@ -106,7 +106,7 @@ export function Graphics() {
                   <h4 className="font-sans font-semibold text-sm text-foreground mb-1">{item.element}</h4>
                   <p className="font-sans text-sm text-muted-foreground">{item.detail}</p>
                   {item.element === 'Hairline rules' && <div className="mt-3 border-t border-navy-900/20 dark:border-cream-50/20" style={{ borderTopWidth: '0.5px' }} />}
-                  {item.element === 'Lantern Gold accent line' && <div className="mt-3 h-0.5 w-20 bg-gold-500 dark:bg-gold-300 rounded" />}
+                  {item.element === 'Experimental accent line' && <div className="brand-expression-accent-surface mt-3 h-0.5 w-20 rounded" />}
                   {item.element === '"Est. 1910" lockup' && <p className="mt-3 font-sans font-medium text-xs uppercase tracking-caps text-navy-700 dark:text-cream-300" style={{ fontVariant: 'small-caps' }}>Est. 1910</p>}
                 </CardContent>
               </Card>
@@ -136,17 +136,17 @@ export function Graphics() {
           <CardContent className="p-8">
             <Badge variant="outline" className="mb-4">Pending — style to be defined</Badge>
             <p className="font-sans text-sm text-muted-foreground max-w-md mx-auto">
-              We use illustration occasionally but don't have a documented style yet. Until we do, illustration commissions and uses should be reviewed case-by-case.
+              We use illustration occasionally but don’t have a documented style yet. Until we do, illustration commissions and uses should be reviewed case-by-case.
             </p>
             <div className="mt-6 text-left max-w-sm mx-auto space-y-2">
               <p className="font-sans text-xs font-semibold text-foreground">Working principles when we do illustrate:</p>
               {[
-                'Photography does the heavy lifting — illustration supplements, doesn\'t replace',
+                'Photography does the heavy lifting — illustration supplements, doesn’t replace',
                 'Heritage-leaning — hand-drawn warmth (engraved/etched/linocut feel) over flat vector clip-art',
-                'Two-tone where possible — Deep Navy + Cream, or Deep Navy + Lantern Gold',
+                'Two-tone where possible — Deep Navy + Off-White, or Deep Navy + a reviewed experimental accent',
               ].map((p, i) => (
                 <p key={i} className="font-sans text-sm text-muted-foreground flex gap-2">
-                  <span className="text-gold-500 dark:text-gold-300 shrink-0">–</span>
+                  <span className="shrink-0 text-brand-expression-accent">–</span>
                   {p}
                 </p>
               ))}

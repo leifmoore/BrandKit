@@ -26,42 +26,42 @@ function StatusBadge({ status }: { status: AppStatus }) {
 const DIGITAL_APPS = [
   { application: 'Website — homepage', needed: 'Hero with tagline, product category cards, seasonal hero rotation', status: 'live' as AppStatus },
   { application: 'Website — product pages', needed: 'One template applied across chauffeured, hire, experiences, groups', status: 'needs-review' as AppStatus },
-  { application: 'Website — booking flow', needed: 'Forms, date pickers, basket, confirmation. Lucide icons via shadcn.', status: 'needs-review' as AppStatus },
+  { application: 'Website — booking flow', needed: 'Canonical Design System forms, date pickers, basket, confirmation, and Lucide icons.', status: 'needs-review' as AppStatus },
   { application: 'Email — newsletter template', needed: 'Header, hero image (16:9), section blocks, product cards, footer', status: 'to-produce' as AppStatus },
   { application: 'Email — booking confirmation', needed: 'Tabular figures for booking ref/date/time; warm closing line', status: 'to-produce' as AppStatus },
   { application: 'Email — transactional', needed: 'Reminders, post-trip thank-you, gift voucher delivery', status: 'to-produce' as AppStatus },
   { application: 'Instagram — feed (1:1)', needed: 'Hero photography, product launches, seasonal moments', status: 'needs-review' as AppStatus },
-  { application: 'Instagram — Stories & Reels (9:16)', needed: 'Vertical-first photography, lower-third typography in Inter', status: 'to-produce' as AppStatus },
+  { application: 'Instagram — Stories & Reels (9:16)', needed: 'Vertical-first photography, lower-third typography in Instrument Sans', status: 'to-produce' as AppStatus },
   { application: 'YouTube — channel art', needed: 'Hero shot of the Cam, brand mark, tagline (2560×1440 master)', status: 'needs-review' as AppStatus },
-  { application: 'YouTube — thumbnails (16:9)', needed: 'Strong hero photography, large legible Gill Sans Bold title', status: 'to-produce' as AppStatus },
-  { application: 'Digital ads — paid social', needed: '1:1, 4:5, 9:16. Hero photography, Gill Sans headline, Gold CTA.', status: 'to-produce' as AppStatus },
-  { application: 'Internal — dashboards', needed: 'shadcn defaults extended with brand palette per Charts section', status: 'live' as AppStatus },
+  { application: 'YouTube — thumbnails (16:9)', needed: 'Strong hero photography, large legible Gill Sans Nova Bold title', status: 'to-produce' as AppStatus },
+  { application: 'Digital ads — paid social', needed: '1:1, 4:5, 9:16. Hero photography, Gill Sans Nova headline, reviewed CTA treatment.', status: 'to-produce' as AppStatus },
+  { application: 'Internal — dashboards', needed: 'Canonical software components with the separately governed chart palette; never inherit Brand expression accents.', status: 'live' as AppStatus },
   { application: 'Internal — slide template', needed: 'Title, section divider, content, chart, image, closing slides', status: 'to-produce' as AppStatus },
 ]
 
 const PRINT_APPS = [
-  { application: 'Letterhead (A4)', needed: 'Navy mark, Mill Lane address, Inter body', status: 'to-produce' as AppStatus },
-  { application: 'Business cards (85×55mm)', needed: 'Navy front with mark and Gold accent, cream reverse with details', status: 'to-produce' as AppStatus },
-  { application: 'Gift vouchers', needed: 'Premium feel: cream stock, Brass + Deep Navy, Gill Sans display', status: 'needs-review' as AppStatus },
-  { application: 'Posters — product (A2/A3)', needed: 'One per product line. Hero photography + Gill Sans headline.', status: 'to-produce' as AppStatus },
+  { application: 'Letterhead (A4)', needed: 'Navy mark, Mill Lane address, Instrument Sans body', status: 'to-produce' as AppStatus },
+  { application: 'Business cards (85×55mm)', needed: 'Navy front with mark; light reverse with details. Accent treatment needs review.', status: 'to-produce' as AppStatus },
+  { application: 'Gift vouchers', needed: 'Premium feel: light stock, Deep Navy, Gill Sans Nova display; accent treatment needs review.', status: 'needs-review' as AppStatus },
+  { application: 'Posters — product (A2/A3)', needed: 'One per product line. Hero photography + Gill Sans Nova headline.', status: 'to-produce' as AppStatus },
   { application: 'Posters — event / seasonal', needed: 'May Bumps, Fireworks, Bat Safari, Champagne, Christmas vouchers', status: 'to-produce' as AppStatus },
   { application: 'Signage — boatyard & Mill Lane', needed: 'Wayfinding, pricing boards, opening times', status: 'needs-review' as AppStatus },
   { application: 'Visitor brochures / leaflets', needed: 'A5 or DL, product overview, map of the Backs, opening times', status: 'to-produce' as AppStatus },
   { application: 'Flyers / postcards (A6)', needed: 'Tour promotions, events, takeaway menus. 105 × 148mm.', status: 'to-produce' as AppStatus },
   { application: 'Print banner — large format (242.49 × 62.49 cm)', needed: '~3.9:1. Outdoor events, regattas, festivals. CMYK, 3mm bleed, 300 dpi.', status: 'to-produce' as AppStatus },
   { application: 'B2B partnership materials', needed: 'A4 portrait, products + group offers + case studies', status: 'to-produce' as AppStatus },
-  { application: 'Certificates', needed: 'A4, watermark, Gill Sans display, room for handwritten name and date', status: 'to-produce' as AppStatus },
+  { application: 'Certificates', needed: 'A4, watermark, Gill Sans Nova display, room for handwritten name and date', status: 'to-produce' as AppStatus },
 ]
 
 const SOCIAL_SPECS = [
   { platform: 'Instagram Feed', format: '1:1 Square', size: '1080 × 1080px', notes: 'Centre-crop of horizontal master' },
   { platform: 'Instagram Portrait', format: '4:5', size: '1080 × 1350px', notes: 'Preferred feed format — more screen real estate' },
-  { platform: 'Instagram Stories / Reels', format: '9:16', size: '1080 × 1920px', notes: 'Shoot deliberately vertical — don\'t rotate horizontal' },
-  { platform: 'YouTube Thumbnail', format: '16:9', size: '1280 × 720px', notes: 'Strong hero photography, large legible Gill Sans title' },
+  { platform: 'Instagram Stories / Reels', format: '9:16', size: '1080 × 1920px', notes: 'Shoot deliberately vertical — don’t rotate horizontal' },
+  { platform: 'YouTube Thumbnail', format: '16:9', size: '1280 × 720px', notes: 'Strong hero photography, large legible Gill Sans Nova title' },
   { platform: 'YouTube Channel Art', format: '16:9', size: '2560 × 1440px', notes: 'Design safe area: 1546 × 423px centre' },
   { platform: 'Email Header', format: '3:1', size: '600 × 200px', notes: 'Crop from widest take; consider dark mode rendering' },
   { platform: 'Print Poster (A2)', format: '√2:1', size: '420 × 594mm', notes: 'Shoot vertical with crop margin for bleeds' },
-  { platform: 'Google Display Ad', format: 'Various', size: '300×250, 728×90, 300×600', notes: 'Brand mark, photography, single clear headline, Gold CTA' },
+  { platform: 'Google Display Ad', format: 'Various', size: '300×250, 728×90, 300×600', notes: 'Brand mark, photography, single clear headline, reviewed CTA treatment' },
 ]
 
 function AppTable({ label, rows }: { label: string; rows: { application: string; needed: string; status: AppStatus }[] }) {
@@ -70,7 +70,7 @@ function AppTable({ label, rows }: { label: string; rows: { application: string;
         <thead className="bg-muted">
           <tr>
             <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">Application</th>
-            <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">What's needed</th>
+            <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">What’s needed</th>
             <th scope="col" className="px-4 py-3 text-right text-xs font-medium uppercase tracking-caps text-muted-foreground">Status</th>
           </tr>
         </thead>
@@ -93,18 +93,22 @@ export function Applications() {
       <SectionHeader
         eyebrow="Brand Applications"
         title="Brand Applications"
-        description="Before designing anything new, check here — there may already be a template or precedent. When you produce a new on-brand asset, update its status to Live."
+        description="Use this working inventory before designing anything new. Confirm the source file and owner before reuse, then update the recorded status when the asset is verified."
       />
 
       <SectionSubNav items={SUB_NAV} />
 
       {/* Status legend */}
-      <div className="flex flex-wrap gap-2 mb-10">
-        <StatusBadge status="live" />
-        <StatusBadge status="to-produce" />
-        <StatusBadge status="needs-review" />
-        <StatusBadge status="pending" />
-        <span className="font-sans text-xs text-muted-foreground self-center">— track status as you build or audit assets</span>
+      <div className="mb-10 space-y-3">
+        <div className="flex flex-wrap gap-2">
+          <StatusBadge status="live" />
+          <StatusBadge status="to-produce" />
+          <StatusBadge status="needs-review" />
+          <StatusBadge status="pending" />
+        </div>
+        <p className="font-sans text-xs leading-5 text-muted-foreground" role="note">
+          Planning metadata only: even a Live label must be checked against a current source file and accountable owner before reuse.
+        </p>
       </div>
 
       {/* Digital */}
@@ -127,7 +131,7 @@ export function Applications() {
       <section id="social-specs" className="scroll-mt-6 mb-14">
         <h2 className="mb-2 font-sans text-2xl font-semibold text-foreground">Social Media & Format Specs</h2>
         <p className="font-sans text-sm text-muted-foreground mb-6">
-          Every key shot should exist in a horizontal AND vertical master. If it doesn't, schedule a reshoot.
+          Every key shot should exist in a horizontal AND vertical master. If it doesn’t, schedule a reshoot. Platform requirements can change; confirm delivery specifications before final export.
         </p>
         <GuidanceTable label="Social media and format specifications" tableClassName="min-w-[48rem]">
             <thead className="bg-muted">

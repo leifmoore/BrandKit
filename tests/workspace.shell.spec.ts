@@ -12,7 +12,7 @@ const legacyRoutes = [
   { from: '/graphics', to: '/brand/expression/graphics', heading: 'Graphics & Icons' },
   { from: '/applications', to: '/brand/applications', heading: 'Brand Applications' },
   { from: '/downloads', to: '/brand/resources', heading: 'Downloads' },
-  { from: '/quick-reference', to: '/brand', heading: 'Scudamore’s Brand' },
+  { from: '/quick-reference', to: '/brand/quick-reference', heading: 'Quick Reference' },
   { from: '/charts', to: '/design-system/foundations/data-visualisation', heading: 'Charts' },
   { from: '/developer', to: '/design-system', heading: "Scudamore's UI" },
   { from: '/developer/components', to: '/design-system/components', heading: 'Components' },
@@ -68,6 +68,11 @@ test('the first root visit opens Brand and later root visits restore the last va
   await expect(page.getByRole('heading', { name: 'Design System page not found' })).toBeVisible()
   await page.goto('/')
   await expect(page).toHaveURL('/design-system/components/button')
+
+  await page.goto('/design-system/components/not-a-real-component')
+  await expect(page.getByRole('heading', { name: 'Design System page not found' })).toBeVisible()
+  await page.goto('/')
+  await expect(page).toHaveURL('/design-system/components/button')
 })
 
 test('malformed or stale workspace memory falls back safely to the Brand overview', async ({ page }) => {
@@ -82,7 +87,7 @@ test('malformed or stale workspace memory falls back safely to the Brand overvie
       lastWorkspace: 'design-system',
       routes: {
         brand: '/brand/not-a-real-page',
-        'design-system': '/design-system/not-a-real-page',
+        'design-system': '/design-system/components/not-a-real-component',
       },
     }))
   }, WORKSPACE_STORAGE_KEY)
@@ -124,6 +129,10 @@ test('Command search is scoped to the active workspace', async ({ page }) => {
   await page.keyboard.press('Control+k')
 
   const brandSearch = page.getByRole('combobox', { name: 'Search Brand' })
+  await brandSearch.fill('River coral')
+  await expect(page.getByRole('dialog').getByText('River coral', { exact: true })).toBeVisible()
+  await brandSearch.fill('Lantern Gold')
+  await expect(page.getByText('No results found in Brand.')).toBeVisible()
   await brandSearch.fill('Button')
   await expect(page.getByText('No results found in Brand.')).toBeVisible()
   await page.keyboard.press('Escape')
@@ -135,6 +144,46 @@ test('Command search is scoped to the active workspace', async ({ page }) => {
   await designSystemSearch.fill('Button')
   await page.getByRole('dialog').getByText('Button', { exact: true }).click()
   await expect(page).toHaveURL('/design-system/components/button')
+})
+
+test('route scrolling stays inside the content pane without moving the shell into blank space', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 })
+  await page.goto('/brand/identity/colour')
+
+  const main = page.locator('#main-content')
+  await main.evaluate((element) => {
+    element.scrollTop = element.scrollHeight
+  })
+  const mainBox = await main.boundingBox()
+  expect(mainBox).not.toBeNull()
+  await page.mouse.move(mainBox!.x + mainBox!.width / 2, mainBox!.y + mainBox!.height / 2)
+  await page.mouse.wheel(0, 5000)
+
+  const desktopMetrics = await page.evaluate(() => ({
+    windowScrollY: window.scrollY,
+    viewportHeight: document.documentElement.clientHeight,
+    rootHeight: document.getElementById('root')!.getBoundingClientRect().height,
+    mainHeight: document.getElementById('main-content')!.getBoundingClientRect().height,
+    bodyOverflow: getComputedStyle(document.body).overflow,
+    rootOverflow: getComputedStyle(document.getElementById('root')!).overflow,
+  }))
+  expect(desktopMetrics).toEqual({
+    windowScrollY: 0,
+    viewportHeight: 900,
+    rootHeight: 900,
+    mainHeight: 900,
+    bodyOverflow: 'hidden',
+    rootOverflow: 'hidden',
+  })
+  await expect(page.locator('aside[aria-label="Brand workspace"]')).toBeVisible()
+
+  await page.setViewportSize({ width: 360, height: 800 })
+  await main.evaluate((element) => {
+    element.scrollTop = element.scrollHeight
+  })
+  await page.mouse.wheel(0, 5000)
+  expect(await page.evaluate(() => window.scrollY)).toBe(0)
+  await expect(page.getByRole('button', { name: 'Open navigation' })).toBeVisible()
 })
 
 test('the mobile workspace drawer is modal, traps focus, restores its trigger, and closes after switching workspace', async ({ page }) => {

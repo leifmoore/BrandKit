@@ -30,24 +30,20 @@
 @theme {
   --color-navy-1000: #0a1530;
   --color-navy-900: #14284b;
-  --color-navy-700: #26467d;
-  --color-navy-500: #3d68b0;
-  --color-navy-300: #7e9bd5;
-  --color-navy-100: #c2d0ec;
-  --color-navy-50: #e7edf8;
+  --color-navy-700: #435e7b;
+  --color-navy-500: #7295aa;
+  --color-navy-300: #a2cddb;
+  --color-navy-100: #d5e8ee;
+  --color-navy-50: #eaf3f6;
 
-  --color-cream-400: #d4c8a6;
-  --color-cream-300: #e6d9b3;
-  --color-cream-200: #f0e8cf;
-  --color-cream-100: #f8f3e3;
-  --color-cream-75: #fcfaf3;
+  --color-cream-400: #feeacd;
+  --color-cream-300: #feeed7;
+  --color-cream-200: #fef2e1;
+  --color-cream-100: #fef7ec;
+  --color-cream-75: #fefaf4;
   --color-cream-50: #fefefd;
 
-  --color-gold-700: #9c7a2f;
-  --color-gold-500: #c9a24a;
-  --color-gold-300: #e3c277;
-
-  --font-display: 'Gill Sans', 'Gill Sans MT', 'Lato', Calibri, 'Trebuchet MS', sans-serif;
+  --font-display: 'gill-sans-nova', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
   --font-instrument: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
@@ -131,6 +127,11 @@
   --color-status-danger-foreground: var(--status-danger-foreground);
   --color-info: var(--info);
   --color-info-foreground: var(--info-foreground);
+  --color-brand-expression-accent: var(--brand-expression-accent, #14284b);
+  --color-brand-expression-accent-surface: var(--brand-expression-accent-surface, #a2cddb);
+  --color-brand-expression-accent-foreground: var(--brand-expression-accent-foreground, #fefefd);
+  --color-brand-expression-blue: var(--brand-expression-blue, #a2cddb);
+  --color-brand-expression-canvas: var(--brand-expression-canvas, #fefefd);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -138,6 +139,13 @@
 }
 
 @layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+    overflow: hidden;
+  }
+
   :root {
     /* Canonical application semantics from the immutable UI handoff. */
     --background: #ffffff;
@@ -241,6 +249,7 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    overscroll-behavior: none;
   }
 
   [data-route-focus]:focus {
@@ -248,7 +257,7 @@
   }
 
   .font-display {
-    font-family: 'Gill Sans', 'Gill Sans MT', 'Lato', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'gill-sans-nova', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
 
   .prose a {
@@ -288,16 +297,23 @@
     letter-spacing: 0.15em;
   }
 
-  .accent-line::before {
-    content: '';
-    display: block;
-    width: 2.5rem;
-    height: 2px;
-    margin-bottom: 0.75rem;
-    background: #c9a24a;
+  .brand-expression-accent-surface {
+    background-color: var(--brand-expression-accent-surface, var(--brand-expression-accent));
+    color: var(--brand-expression-accent-foreground);
   }
 
-  .app-dark .accent-line::before {
-    background: #e3c277;
+  [data-brand-expression-preview='active'][data-brand-expression-accent-treatment='grainy-gradient'] [data-slot='button'].bg-primary,
+  [data-brand-expression-preview='active'][data-brand-expression-accent-treatment='grainy-gradient'] [data-slot='badge'].bg-primary,
+  [data-brand-expression-preview='active'][data-brand-expression-accent-treatment='grainy-gradient'] .brand-expression-accent-surface {
+    background-color: var(--brand-expression-accent-surface);
+    background-image: var(--brand-expression-accent-grain), var(--brand-expression-accent-gradient);
+    background-position: center;
+    background-size: 140px 140px, 100% 100%;
+    background-blend-mode: soft-light, normal;
+    color: var(--brand-expression-accent-foreground);
+  }
+
+  [data-brand-expression-preview='active'][data-brand-expression-accent-treatment='grainy-gradient'] [data-slot='button'].bg-primary:hover {
+    filter: brightness(0.97) saturate(1.04);
   }
 }

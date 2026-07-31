@@ -1,28 +1,6 @@
 import { expect, test } from '@playwright/test'
 import { readFile } from 'node:fs/promises'
 
-function parseRgb(value: string) {
-  const channels = value.match(/[\d.]+/g)?.slice(0, 3).map(Number)
-  if (!channels || channels.length !== 3) throw new Error(`Unable to parse colour: ${value}`)
-  return channels
-}
-
-function contrastRatio(foreground: string, background: string) {
-  const luminance = (value: string) => {
-    const [red, green, blue] = parseRgb(value).map(channel => {
-      const normalized = channel / 255
-      return normalized <= 0.04045
-        ? normalized / 12.92
-        : ((normalized + 0.055) / 1.055) ** 2.4
-    })
-    return 0.2126 * red + 0.7152 * green + 0.0722 * blue
-  }
-  const foregroundLuminance = luminance(foreground)
-  const backgroundLuminance = luminance(background)
-  return (Math.max(foregroundLuminance, backgroundLuminance) + 0.05)
-    / (Math.min(foregroundLuminance, backgroundLuminance) + 0.05)
-}
-
 test.beforeEach(async ({ page }) => {
   await page.addInitScript(() => {
     localStorage.setItem('scud-dark-mode', 'false')
@@ -107,33 +85,66 @@ test('Brand guidance pages share canonical page framing and in-page navigation',
   await expect(checkerButton).toBeFocused()
 })
 
-test('Mood Explorer keeps every palette label readable and every swatch measurable', async ({ page }) => {
+test('Mood Explorer renders compact anchored recipes and hands a context to the Playground', async ({ page }) => {
   await page.goto('/brand/identity/colour')
 
-  for (const moodName of ['Day Tours', 'Fireworks', 'Weddings', 'Bat Safari']) {
-    await page.getByRole('button', { name: moodName, pressed: false }).or(
-      page.getByRole('button', { name: moodName, pressed: true }),
-    ).click()
+  const lightGlassMoods = new Set(['Day Tours', 'Weddings', 'Riverside'])
+  for (const moodName of ['Day Tours', 'Private Tours', 'Weddings', 'Summer', 'Riverside', 'Twilight']) {
+    await page.getByRole('button', { name: moodName, exact: true }).click()
 
-    const preview = page.getByText(`${moodName} palette`, { exact: true }).locator('xpath=../..')
-    const background = await preview.evaluate(element => getComputedStyle(element).backgroundColor)
-    const labels = preview.locator(':scope > div').first().locator('p')
-    await expect(labels).toHaveCount(3)
+    const preview = page.getByRole('region', { name: `${moodName} expression preview` })
+    const panel = preview.locator('[data-mood-copy]')
+    await expect(panel).toHaveCSS(
+      'color',
+      lightGlassMoods.has(moodName) ? 'rgb(20, 40, 75)' : 'rgb(254, 254, 253)',
+    )
 
-    for (const label of await labels.all()) {
-      const foreground = await label.evaluate(element => getComputedStyle(element).color)
-      expect(contrastRatio(foreground, background), `${moodName} text contrast`).toBeGreaterThanOrEqual(4.5)
-    }
-
-    const swatches = preview.getByRole('button', { name: /View and copy colour formats/ })
-    expect(await swatches.count()).toBeGreaterThan(0)
+    const swatches = page.locator('[data-mood-swatch]')
+    await expect(swatches).toHaveCount(4)
     for (const swatch of await swatches.all()) {
       const box = await swatch.boundingBox()
-      expect(box?.width, `${moodName} swatch width`).toBeGreaterThanOrEqual(120)
+      expect(box?.width, `${moodName} swatch width`).toBeGreaterThanOrEqual(40)
     }
+    await expect(page.locator('[data-mood-ramp-step]')).toHaveCount(5)
   }
 
+  await page.getByRole('button', { name: 'Load Twilight in Playground' }).click()
+  await expect(page).toHaveURL('/brand/expression/playground')
+  await expect(page.getByRole('button', { name: 'Dusk violet, #a69de2' })).toHaveAttribute('aria-pressed', 'true')
+  await expect(page.getByRole('button', { name: 'Navy glass' })).toHaveAttribute('aria-pressed', 'true')
+  await expect(page.getByRole('button', { name: 'Grainy gradient' })).toHaveAttribute('aria-pressed', 'true')
   await expect(page.locator('h1:empty, h2:empty, h3:empty, h4:empty, h5:empty, h6:empty')).toHaveCount(0)
+})
+
+test('Brand ramps preserve the locked anchors and export compact expression scales', async ({ page }) => {
+  await page.goto('/brand/identity/colour')
+
+  await expect(page.getByText('#14284b · navy-900', { exact: true })).toBeVisible()
+  await expect(page.getByText('#fefefd · cream-50', { exact: true })).toBeVisible()
+  await expect(page.getByText('#a2cddb', { exact: true }).first()).toBeVisible()
+  await expect(page.getByText('#feeacd', { exact: true }).first()).toBeVisible()
+
+  const expressionRamps = page.locator('[data-expression-ramp]')
+  await expect(expressionRamps).toHaveCount(9)
+  for (const ramp of await expressionRamps.all()) {
+    await expect(ramp.locator('[data-expression-ramp-step]')).toHaveCount(5)
+  }
+
+  await page.goto('/brand/resources')
+  const cssTokens = page.getByLabel('CSS Custom Properties code')
+  await expect(cssTokens).toContainText('--color-navy-900:  #14284b')
+  await expect(cssTokens).toContainText('--color-cream-50:  #fefefd')
+  await expect(cssTokens).toContainText('--color-navy-300:  #a2cddb')
+  await expect(cssTokens).toContainText('--color-cream-400: #feeacd')
+  await expect(cssTokens).toContainText('--color-expression-violet-700:')
+  const codeMetrics = await cssTokens.evaluate((element) => ({
+    clientHeight: element.clientHeight,
+    scrollHeight: element.scrollHeight,
+    overflowY: getComputedStyle(element).overflowY,
+  }))
+  expect(codeMetrics.clientHeight).toBeLessThanOrEqual(320)
+  expect(codeMetrics.scrollHeight).toBeGreaterThan(codeMetrics.clientHeight)
+  expect(codeMetrics.overflowY).toBe('auto')
 })
 
 test('guidance tables preserve labelled content and keyboard scrolling at mobile width', async ({ page }) => {
@@ -141,7 +152,7 @@ test('guidance tables preserve labelled content and keyboard scrolling at mobile
 
   await page.goto('/brand/applications')
   const applications = page.getByRole('region', { name: 'Digital applications and production status' })
-  await expect(applications.getByRole('columnheader', { name: "What's needed" })).toBeVisible()
+  await expect(applications.getByRole('columnheader', { name: 'What’s needed' })).toBeVisible()
   await expect(applications.getByText('Hero with tagline, product category cards, seasonal hero rotation')).toBeVisible()
   await applications.focus()
   await page.keyboard.press('ArrowRight')
@@ -156,6 +167,56 @@ test('guidance tables preserve labelled content and keyboard scrolling at mobile
   const photography = page.getByRole('region', { name: 'Required photography aspect ratios' })
   await expect(photography.getByRole('columnheader', { name: 'Notes' })).toBeVisible()
   await expect(photography.getByText('Shoot wide, crop after')).toBeVisible()
+})
+
+test('Expression guidance keeps experiments and unapproved policy explicit', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 })
+
+  await page.goto('/brand/expression/voice')
+  await expect(page.getByRole('heading', { name: 'Scudamore’s-isms' })).toBeVisible()
+  await expect(page.getByText(/The provider, evaluation criteria, privacy handling/)).toBeVisible()
+  await expect(page.getByText(/Powered by Claude/)).toHaveCount(0)
+
+  await page.goto('/brand/expression/graphics')
+  const libraries = page.getByRole('region', { name: 'Approved and candidate icon libraries' })
+  await expect(libraries.getByRole('columnheader', { name: 'Status' })).toBeVisible()
+  await expect(page.getByText(/Grainy gradients belong only on reviewed expression surfaces/)).toBeVisible()
+
+  await page.goto('/brand/expression/photography')
+  const consent = page.locator('#consent')
+  await expect(consent.getByText('Operational draft')).toBeVisible()
+  await expect(consent.getByText(/not legal sign-off/)).toBeVisible()
+  await expect(consent.getByText(/Do not assume the location alone grants marketing permission/)).toBeVisible()
+
+  const productHeroes = page.locator('#product-heroes')
+  const titleBox = await productHeroes.getByRole('heading', { name: 'Product Hero Images' }).boundingBox()
+  const introductionBox = await productHeroes.locator(':scope > p').boundingBox()
+  expect(titleBox).not.toBeNull()
+  expect(introductionBox).not.toBeNull()
+  expect(introductionBox!.y).toBeGreaterThanOrEqual(titleBox!.y + titleBox!.height)
+})
+
+test('Activation guidance distinguishes working inventory, software semantics, and exported ramps', async ({ page }) => {
+  await page.goto('/brand/applications')
+
+  await expect(page.getByRole('note')).toContainText('Planning metadata only')
+  const digital = page.getByRole('region', { name: 'Digital applications and production status' })
+  const dashboards = digital.getByRole('row').filter({ hasText: 'Internal — dashboards' })
+  await expect(dashboards).toContainText('separately governed chart palette')
+  await expect(dashboards).toContainText('never inherit Brand expression accents')
+  await expect(dashboards).not.toContainText('shadcn defaults')
+  await expect(page.getByText(/Platform requirements can change/)).toBeVisible()
+
+  await page.goto('/brand/resources')
+  const resourceNavigation = page.getByRole('navigation', { name: 'On this page' })
+  await expect(resourceNavigation.getByRole('button')).toHaveCount(3)
+  await expect(page.getByText(/documented context-led expression ramps/)).toBeVisible()
+  await expect(page.getByText(/A ramp does not approve a composition/)).toBeVisible()
+
+  const typographyButton = resourceNavigation.getByRole('button', { name: 'Typography' })
+  await typographyButton.click()
+  await expect(typographyButton).toHaveAttribute('aria-current', 'location')
+  await expect(typographyButton).toBeFocused()
 })
 
 test('Charts exposes keyboard highlighting, theme-aware axes, and equivalent data tables', async ({ page }) => {
@@ -183,7 +244,10 @@ test('Charts exposes keyboard highlighting, theme-aware axes, and equivalent dat
   await page.getByRole('button', { name: 'Switch to dark mode' }).click()
   const darkFill = await firstAxisTick.evaluate(element => getComputedStyle(element).fill)
   expect(darkFill).not.toBe(lightFill)
-  await expect(main.getByRole('note')).toContainText('Typography authority pending')
+  await expect(main.getByRole('note')).toHaveCount(0)
+  const chartTypography = main.getByRole('region', { name: 'Chart typography guidance' })
+  await expect(chartTypography).toContainText('Gill Sans Nova Bold')
+  await expect(chartTypography).toContainText('Instrument Sans Regular')
 })
 
 test('Colour controls use labelled canonical Select and Popover at mobile width', async ({ page }) => {
@@ -202,6 +266,8 @@ test('Colour controls use labelled canonical Select and Popover at mobile width'
 
   await foreground.click()
   await expect(page.getByRole('listbox')).toBeVisible()
+  await expect(page.getByRole('option', { name: /River coral/ })).toBeVisible()
+  await expect(page.getByRole('option', { name: /Legacy Lantern Gold/ })).toHaveCount(0)
   await page.keyboard.press('Escape')
 
   await page.getByTitle(/view and copy formats/).first().click()
@@ -220,6 +286,9 @@ test('Colour controls use labelled canonical Select and Popover at mobile width'
 
 test('Logo slider keeps the approved thin track and has an accessible name', async ({ page }) => {
   await page.goto('/brand/identity/logo')
+
+  await expect(page.getByText('Use only the supplied Solid Deep Navy, White Outline, or Full Colour artwork'))
+    .toBeVisible()
 
   const slider = page.getByRole('slider', { name: 'Clear space multiplier' })
   await expect(slider).toHaveAttribute('aria-valuenow', '0.5')

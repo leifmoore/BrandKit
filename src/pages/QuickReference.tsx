@@ -1,167 +1,199 @@
-import { ALL_TOKENS, TYPE_SCALE, WCAG_APPROVED } from '@/lib/tokens'
-import { useState } from 'react'
-import { SectionHeader } from '@/components/shared/SectionHeader'
-import { Separator } from '@/components/ui/separator'
-import { useCopyToClipboard } from '@/hooks/useCopyToClipboard'
+import { type CSSProperties } from 'react'
+import { ArrowRight, FlaskConical } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { SectionSubNav } from '@/components/layout/SectionSubNav'
+import { CopyButton } from '@/components/shared/CopyButton'
+import { PageHeader } from '@/components/shared/PageHeader'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
+import { getAccent } from '@/features/brand-playground/palette'
+import { getDerivedBrandPlaygroundTokens } from '@/features/brand-playground/playgroundState'
+import { useBrandExpressionPreview } from '@/features/brand-playground/useBrandExpressionPreview'
+import { checkContrast, hexToRgb } from '@/lib/wcag'
 
-function QuickSwatch({ hex, name, alias }: { hex: string; name: string; alias: string }) {
-  const { copied, copy } = useCopyToClipboard()
-  const [copyFailed, setCopyFailed] = useState(false)
+const SUB_NAV = [
+  { label: 'Current draft', anchor: 'current-draft' },
+  { label: 'Typography', anchor: 'quick-type' },
+  { label: 'Essentials', anchor: 'essentials' },
+]
 
-  const handleCopy = async () => {
-    setCopyFailed(false)
-    if (await copy(hex)) return
-    setCopyFailed(true)
-    setTimeout(() => setCopyFailed(false), 2000)
-  }
-
+function QuickSwatch({
+  name,
+  value,
+  displayValue,
+  swatchStyle,
+  status,
+}: {
+  name: string
+  value: string
+  displayValue?: string
+  swatchStyle?: CSSProperties
+  status: 'Locked' | 'Expression' | 'Experimental'
+}) {
   return (
-    <div className="min-w-0">
-      <button
-        type="button"
-        onClick={handleCopy}
-        aria-label={`Copy ${name} (${alias}) hex value ${hex}`}
-        className="flex items-center gap-2 hover:bg-muted/50 rounded px-1 py-0.5 group text-left w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-        title={`Copy ${name} (${alias}) — ${hex}`}
-      >
-        <span className="w-5 h-5 rounded-sm border border-black/10 shrink-0" style={{ background: hex }} />
-        <span className="font-sans text-xs font-medium text-foreground">{name}</span>
-        <span className="font-mono text-xs text-muted-foreground ml-auto">{hex}</span>
-      </button>
-      <span className="sr-only" role="status" aria-live="polite" aria-atomic="true">
-        {copied
-          ? `${name} ${hex} copied to the clipboard.`
-          : copyFailed
-            ? `${name} ${hex} could not be copied.`
-            : ''}
-      </span>
-    </div>
+    <Card className="gap-0">
+      <CardContent className="p-3">
+        <span
+          aria-hidden="true"
+          className="block h-14 rounded-md border border-black/10"
+          style={swatchStyle ?? { backgroundColor: value }}
+        />
+        <div className="mt-3 flex items-start justify-between gap-2">
+          <div>
+            <p className="font-sans text-sm font-semibold leading-5 text-foreground">{name}</p>
+            <p className="mt-0.5 font-mono text-xs text-muted-foreground">{displayValue ?? value}</p>
+          </div>
+          <CopyButton
+            value={value}
+            accessibleLabel={`Copy ${name} ${value}`}
+            size="sm"
+          />
+        </div>
+        <Badge
+          variant={status === 'Locked' ? 'outline' : status === 'Expression' ? 'secondary' : 'warning'}
+          className="mt-3"
+        >
+          {status}
+        </Badge>
+      </CardContent>
+    </Card>
   )
 }
 
 export function QuickReference() {
+  const config = useBrandExpressionPreview()
+  const tokens = getDerivedBrandPlaygroundTokens(config)
+  const accent = getAccent(config.accentId)
+  const navyOnAccent = checkContrast(hexToRgb(tokens.navy), hexToRgb(tokens.accentSurface))
+
+  const accentSurfaceStyle = config.accentTreatment === 'grainy-gradient'
+    ? {
+        backgroundColor: tokens.accentSurface,
+        backgroundImage: `${tokens.accentGrainTexture}, ${tokens.accentGradient}`,
+        backgroundBlendMode: 'soft-light, normal',
+        backgroundSize: '140px 140px, 100% 100%',
+      } as CSSProperties
+    : { backgroundColor: tokens.accentSurface }
+
+  const swatches = [
+    { name: 'Deep Navy', value: tokens.navy, status: 'Locked' as const },
+    { name: 'Off-White', value: tokens.white, status: 'Locked' as const },
+    { name: accent.name, value: tokens.accent, status: 'Expression' as const },
+    {
+      name: config.accentTreatment === 'grainy-gradient' ? 'Grainy gradient' : 'Accent surface',
+      value: config.accentTreatment === 'grainy-gradient' ? tokens.accentGradient : tokens.accentSurface,
+      displayValue: config.accentTreatment === 'grainy-gradient'
+        ? `${tokens.accentSurface} → ${tokens.accentGradientEnd}`
+        : tokens.accentSurface,
+      swatchStyle: accentSurfaceStyle,
+      status: 'Experimental' as const,
+    },
+    { name: 'Expression blue', value: tokens.expressionBlue, status: 'Experimental' as const },
+    { name: 'Canvas', value: tokens.canvas, status: 'Experimental' as const },
+  ]
+
   return (
     <div>
-      <SectionHeader
-        eyebrow="Cheat Sheet"
+      <PageHeader
+        eyebrow="Brand essentials"
         title="Quick Reference"
-        description="All brand tokens at a glance. Click any colour to copy its hex. For full specs, navigate to the relevant section."
+        description="Locked identity anchors, the working expression family, and the current local Playground treatment in one concise view. Draft settings update automatically without becoming production website tokens."
+        badges={(
+          <>
+            <Badge variant="outline">2 locked anchors</Badge>
+            <Badge variant={config.applyToBrandWorkspace ? 'success' : 'warning'} dot>
+              Workspace preview {config.applyToBrandWorkspace ? 'on' : 'off'}
+            </Badge>
+          </>
+        )}
       />
 
-      {/* Colours */}
-      <section className="mb-10">
-        <h2 className="font-sans font-semibold text-base text-muted-foreground uppercase tracking-caps mb-3">Colours</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
-          {ALL_TOKENS.map(t => <QuickSwatch key={t.alias} hex={t.hex} name={t.name} alias={t.alias} />)}
-        </div>
-      </section>
+      <SectionSubNav items={SUB_NAV} />
 
-      <Separator className="mb-10" />
-
-      {/* Type scale */}
-      <section className="mb-10">
-        <h2 className="font-sans font-semibold text-base text-muted-foreground uppercase tracking-caps mb-3">Type Scale</h2>
-        <div className="space-y-2">
-          {TYPE_SCALE.map(s => (
-            <div key={s.level} className="flex items-baseline gap-3 py-1.5 border-b border-border last:border-0">
-              <span className="font-sans text-xs text-muted-foreground w-40 shrink-0">{s.level}</span>
-              <span
-                className="font-sans text-foreground truncate"
-                style={{ fontSize: Math.min(parseFloat(s.size) * 14, 28) + 'px', fontFamily: s.font === 'display' ? 'Gill Sans, Lato, sans-serif' : 'Inter, sans-serif', fontWeight: s.weight, letterSpacing: s.tracking }}
-              >
-                Where Cambridge goes punting.
-              </span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <Separator className="mb-10" />
-
-      {/* Logo rules */}
-      <section className="mb-10">
-        <h2 className="font-sans font-semibold text-base text-muted-foreground uppercase tracking-caps mb-3">Logo</h2>
-        <div className="grid sm:grid-cols-2 gap-2">
-          {[
-            'Clear space: 0.5× preferred, 0.25× minimum (of logo height)',
-            'Digital minimum: 90px width',
-            'Print minimum: 25mm width',
-            'Solid navy (#14284b) — light backgrounds only',
-            'White outline — dark backgrounds, photography overlays',
-            'Never recolour outside approved palette',
-          ].map((rule, i) => (
-            <p key={i} className="font-sans text-sm text-foreground flex gap-2">
-              <span className="shrink-0 text-muted-foreground">–</span>{rule}
+      <section id="current-draft" className="scroll-mt-6" aria-labelledby="current-draft-heading">
+        <div className="mb-5 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h2 id="current-draft-heading" className="font-sans text-2xl font-semibold text-foreground">Identity + current draft</h2>
+            <p className="mt-1 font-sans text-sm leading-6 text-muted-foreground">
+              {accent.name} expression family at {config.accentIntensity}% intensity · {config.accentTreatment === 'grainy-gradient' ? 'grainy gradient' : 'solid'} draft treatment · {config.glassTone === 'white' ? 'White' : 'Navy'} glass · Navy-on-surface contrast {navyOnAccent.ratioDisplay}.
             </p>
-          ))}
+          </div>
+          <Button asChild variant="outline">
+            <Link to="/brand/expression/playground">
+              <FlaskConical aria-hidden="true" /> Open Playground
+            </Link>
+          </Button>
+        </div>
+
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+          {swatches.map((swatch) => <QuickSwatch key={swatch.name} {...swatch} />)}
+        </div>
+
+        <div className="mt-5 rounded-lg border border-border bg-muted/30 p-4" role="note">
+          <p className="font-sans text-sm font-semibold text-foreground">What “workspace preview” changes</p>
+          <p className="mt-1 font-sans text-sm leading-6 text-muted-foreground">
+            When enabled in the Playground, the current accent and its solid or grainy-gradient treatment drive Brand primary actions and authored accent cues. Design System components, status colours, focus semantics, charts, and the immutable handoff keep their governed values.
+          </p>
         </div>
       </section>
 
-      <Separator className="mb-10" />
-
-      {/* WCAG quick pairs */}
-      <section className="mb-10">
-        <h2 className="font-sans font-semibold text-base text-muted-foreground uppercase tracking-caps mb-3">Key WCAG Pairs</h2>
-        <div className="grid sm:grid-cols-2 gap-1">
-          {WCAG_APPROVED.slice(0, 8).map((pair, i) => {
-            const fgToken = ALL_TOKENS.find(t => t.alias === pair.fg)
-            const bgToken = ALL_TOKENS.find(t => t.alias === pair.bg)
-            return (
-              <div key={i} className="flex items-center gap-2 py-1.5 border-b border-border last:border-0">
-                <div className="flex gap-1">
-                  <span className="w-3.5 h-3.5 rounded-sm border border-black/10" style={{ background: fgToken?.hex }} />
-                  <span className="w-3.5 h-3.5 rounded-sm border border-black/10" style={{ background: bgToken?.hex }} />
-                </div>
-                <span className="font-sans text-xs text-foreground">{pair.fg} on {pair.bg}</span>
-                <span className={`ml-auto font-sans text-xs font-medium px-1.5 py-0.5 rounded ${pair.level === 'AAA' ? 'text-green-700 dark:text-green-400' : 'text-yellow-700 dark:text-yellow-400'}`}>{pair.level}</span>
-              </div>
-            )
-          })}
+      <section id="quick-type" className="scroll-mt-6 pt-14" aria-labelledby="quick-type-heading">
+        <h2 id="quick-type-heading" className="font-sans text-2xl font-semibold text-foreground">Typography</h2>
+        <div className="mt-5 grid gap-4 sm:grid-cols-2">
+          <Card className="gap-0">
+            <CardContent className="p-5">
+              <Badge variant="outline">Display</Badge>
+              <p className="mt-5 font-display text-4xl font-bold leading-none tracking-display text-navy-900 dark:text-cream-50">
+                Gill Sans Nova Bold
+              </p>
+              <p className="mt-4 font-sans text-sm leading-6 text-muted-foreground">
+                Brand headlines, pull quotes, and authored display moments. Served through licensed Adobe Fonts kit <span className="font-mono">iia4izu</span>.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="gap-0">
+            <CardContent className="p-5">
+              <Badge variant="outline">Body & interface</Badge>
+              <p className="mt-5 font-sans text-3xl font-semibold tracking-tight text-foreground">Instrument Sans</p>
+              <p className="mt-4 font-sans text-sm leading-6 text-muted-foreground">
+                Body copy, subheads, captions, controls, and working typography. Bundled through the existing pinned Fontsource package.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
-      <Separator className="mb-10" />
-
-      {/* Voice sniff test */}
-      <section className="mb-10">
-        <h2 className="font-sans font-semibold text-base text-muted-foreground uppercase tracking-caps mb-3">Voice — The Sniff Test</h2>
-        <div className="rounded-xl bg-navy-900 dark:bg-navy-1000 p-6 text-cream-50 mb-4">
-          <p className="font-display font-bold text-xl">"Where Cambridge goes punting."</p>
-          <p className="font-sans text-sm text-navy-100 mt-2">Could a competitor publish this sentence verbatim? If yes, rewrite it.</p>
-        </div>
-        <div className="grid sm:grid-cols-2 gap-2">
+      <section id="essentials" className="scroll-mt-6 pt-14" aria-labelledby="essentials-heading">
+        <h2 id="essentials-heading" className="font-sans text-2xl font-semibold text-foreground">Essential guidance</h2>
+        <div className="mt-5 grid gap-4 md:grid-cols-3">
           {[
-            { label: 'Never say:', items: ['"Let\'s go punting"', '"Cam River"', '"Glide along the river"', '"Unforgettable experience"'] },
-            { label: 'Voice is:', items: ['Warm (informed friend)', 'Quietly confident (1910, no shouting)', 'Knowledgeable (name the bridges)', 'Unfussy (short sentences, plain words)'] },
-          ].map(group => (
-            <div key={group.label}>
-              <p className="font-sans text-xs font-semibold text-foreground mb-2">{group.label}</p>
-              {group.items.map((item, i) => (
-                <p key={i} className="font-sans text-sm text-muted-foreground flex gap-2">
-                  <span className="shrink-0 text-muted-foreground">–</span>{item}
-                </p>
-              ))}
-            </div>
+            {
+              title: 'Logo',
+              detail: 'Use Deep Navy on light backgrounds and the White Outline mark on dark or photographic backgrounds.',
+              to: '/brand/identity/logo',
+            },
+            {
+              title: 'Voice',
+              detail: 'Warm, quietly confident, knowledgeable, unfussy, and specific enough that a competitor could not say it.',
+              to: '/brand/expression/voice',
+            },
+            {
+              title: 'Photography',
+              detail: 'Natural edits, real movement, named Cambridge places, and both landscape and portrait masters for key shots.',
+              to: '/brand/expression/photography',
+            },
+          ].map((item) => (
+            <Card key={item.title} className="gap-0">
+              <CardContent className="flex h-full flex-col p-5">
+                <h3 className="font-sans text-lg font-semibold text-foreground">{item.title}</h3>
+                <p className="mt-2 flex-1 font-sans text-sm leading-6 text-muted-foreground">{item.detail}</p>
+                <Button asChild variant="link" className="mt-4 h-auto justify-start px-0">
+                  <Link to={item.to}>Read full guidance <ArrowRight aria-hidden="true" /></Link>
+                </Button>
+              </CardContent>
+            </Card>
           ))}
-        </div>
-      </section>
-
-      <Separator className="mb-10" />
-
-      {/* Fonts quick ref */}
-      <section className="mb-10">
-        <h2 className="font-sans font-semibold text-base text-muted-foreground uppercase tracking-caps mb-3">Fonts</h2>
-        <div className="grid sm:grid-cols-2 gap-4">
-          <div>
-            <p className="font-sans text-xs font-semibold text-muted-foreground mb-1">Display / Headlines</p>
-            <p className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50">Gill Sans Bold</p>
-            <p className="font-mono text-xs text-muted-foreground mt-1">'Gill Sans', 'Gill Sans MT', 'Lato', Calibri</p>
-          </div>
-          <div>
-            <p className="font-sans text-xs font-semibold text-muted-foreground mb-1">Body / Working Type</p>
-            <p className="font-sans font-normal text-2xl text-navy-900 dark:text-cream-50">Inter Regular</p>
-            <p className="font-mono text-xs text-muted-foreground mt-1">Inter, -apple-system, 'Segoe UI'</p>
-          </div>
         </div>
       </section>
     </div>

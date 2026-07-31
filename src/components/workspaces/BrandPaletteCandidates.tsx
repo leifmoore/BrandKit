@@ -120,9 +120,14 @@ export function BrandPaletteCandidates() {
       </div>
       <div className="flex items-start gap-3 rounded-lg border border-border bg-muted/30 p-4">
         <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-muted-foreground" aria-hidden="true" />
-        <p className="font-sans text-sm leading-6 text-muted-foreground">
-          These are applied comparison candidates, not approved tokens. Review the four treatments and record one of: neutral boundary, cream canvas, gold editorial cue, or cream + gold expression. No choice changes component semantics or the shared shell.
-        </p>
+        <div className="space-y-3">
+          <p className="font-sans text-sm leading-6 text-muted-foreground">
+            These four comparisons record the original review gate; they are not approved tokens. The Brand Playground now supports broader blue intensity, sampled accent, gradient, grain, and frosted-glass exploration without changing component semantics or the shared shell.
+          </p>
+          <Button asChild size="sm" variant="outline">
+            <Link to="/brand/expression/playground">Open Brand Playground</Link>
+          </Button>
+        </div>
       </div>
     </div>
   )

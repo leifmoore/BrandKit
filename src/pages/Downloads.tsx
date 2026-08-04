@@ -1,88 +1,127 @@
 import { SectionHeader } from '@/components/shared/SectionHeader'
+import { SectionSubNav } from '@/components/layout/SectionSubNav'
 import { Separator } from '@/components/ui/separator'
 import { DownloadButton } from '@/components/shared/DownloadButton'
 import { CopyButton } from '@/components/shared/CopyButton'
+import { Card, CardContent } from '@/components/ui/card'
+import { PLAYGROUND_ACCENTS, deriveExpressionRamp } from '@/features/brand-playground/palette'
 
-const CSS_VARIABLES = `/* Scudamore's Brand Colour Tokens — CSS Custom Properties */
+const SUB_NAV = [
+  { label: 'Logos', anchor: 'resource-logos' },
+  { label: 'Colour Tokens', anchor: 'resource-colour-tokens' },
+  { label: 'Typography', anchor: 'resource-typography' },
+]
+
+const EXPRESSION_RAMPS = Object.fromEntries(
+  PLAYGROUND_ACCENTS.map((accent) => [
+    accent.id,
+    Object.fromEntries(deriveExpressionRamp(accent.sourceHex).map((tone) => [tone.step, tone.hex])),
+  ]),
+)
+
+const EXPRESSION_CSS = PLAYGROUND_ACCENTS.flatMap((accent) => (
+  deriveExpressionRamp(accent.sourceHex).map((tone) => (
+    `  --color-expression-${accent.id}-${tone.step}: ${tone.hex};`
+  ))
+)).join('\n')
+
+const EXPRESSION_SCSS = PLAYGROUND_ACCENTS.flatMap((accent) => (
+  deriveExpressionRamp(accent.sourceHex).map((tone) => (
+    `$expression-${accent.id}-${tone.step}: ${tone.hex};`
+  ))
+)).join('\n')
+
+const CSS_VARIABLES = `/* Scudamore’s Brand Colour Tokens — CSS Custom Properties */
 :root {
   /* Navy Ramp */
   --color-navy-1000: #0a1530;
   --color-navy-900:  #14284b;
-  --color-navy-700:  #26467d;
-  --color-navy-500:  #3d68b0;
-  --color-navy-300:  #7e9bd5;
-  --color-navy-100:  #c2d0ec;
-  --color-navy-50:   #e7edf8;
+  --color-navy-700:  #435e7b;
+  --color-navy-500:  #7295aa;
+  --color-navy-300:  #a2cddb;
+  --color-navy-100:  #d5e8ee;
+  --color-navy-50:   #eaf3f6;
 
   /* Cream Ramp */
   --color-cream-50:  #fefefd;
-  --color-cream-75:  #fcfaf3;
-  --color-cream-100: #f8f3e3;
-  --color-cream-200: #f0e8cf;
-  --color-cream-300: #e6d9b3;
-  --color-cream-400: #d4c8a6;
+  --color-cream-75:  #fefaf4;
+  --color-cream-100: #fef7ec;
+  --color-cream-200: #fef2e1;
+  --color-cream-300: #feeed7;
+  --color-cream-400: #feeacd;
 
-  /* Gold Accent */
-  --color-gold-300: #e3c277;
-  --color-gold-500: #c9a24a;
-  --color-gold-700: #9c7a2f;
+  /* Context-led expression ramps. Use one dominant family per composition. */
+${EXPRESSION_CSS}
+
+  /* Solid/gradient treatment remains composition-specific.
+     Export a reviewed treatment from the Brand Playground. */
 }
 
 /* Font stacks */
 .font-display {
-  font-family: 'Gill Sans', 'Gill Sans MT', 'Lato', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'gill-sans-nova', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .font-body {
-  font-family: Inter, -apple-system, 'Segoe UI', sans-serif;
+  font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
 }`.trim()
 
 const JSON_TOKENS = JSON.stringify({
   color: {
-    navy: { 1000: '#0a1530', 900: '#14284b', 700: '#26467d', 500: '#3d68b0', 300: '#7e9bd5', 100: '#c2d0ec', 50: '#e7edf8' },
-    cream: { 50: '#fefefd', 75: '#fcfaf3', 100: '#f8f3e3', 200: '#f0e8cf', 300: '#e6d9b3', 400: '#d4c8a6' },
-    gold: { 300: '#e3c277', 500: '#c9a24a', 700: '#9c7a2f' },
+    navy: { 1000: '#0a1530', 900: '#14284b', 700: '#435e7b', 500: '#7295aa', 300: '#a2cddb', 100: '#d5e8ee', 50: '#eaf3f6' },
+    cream: { 50: '#fefefd', 75: '#fefaf4', 100: '#fef7ec', 200: '#fef2e1', 300: '#feeed7', 400: '#feeacd' },
+    expression: EXPRESSION_RAMPS,
   },
   font: {
-    display: '"Gill Sans", "Gill Sans MT", "Lato", Calibri, "Trebuchet MS", sans-serif',
-    body: 'Inter, -apple-system, "Segoe UI", sans-serif',
+    display: '"gill-sans-nova", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif',
+    body: '"Instrument Sans", ui-sans-serif, system-ui, sans-serif',
   },
 }, null, 2)
 
-const SCSS_VARIABLES = `// Scudamore's Brand Colour Tokens — SCSS Variables
+const SCSS_VARIABLES = `// Scudamore’s Brand Colour Tokens — SCSS Variables
 
 // Navy Ramp
 $navy-1000: #0a1530;
 $navy-900:  #14284b;
-$navy-700:  #26467d;
-$navy-500:  #3d68b0;
-$navy-300:  #7e9bd5;
-$navy-100:  #c2d0ec;
-$navy-50:   #e7edf8;
+$navy-700:  #435e7b;
+$navy-500:  #7295aa;
+$navy-300:  #a2cddb;
+$navy-100:  #d5e8ee;
+$navy-50:   #eaf3f6;
 
 // Cream Ramp
 $cream-50:  #fefefd;
-$cream-75:  #fcfaf3;
-$cream-100: #f8f3e3;
-$cream-200: #f0e8cf;
-$cream-300: #e6d9b3;
-$cream-400: #d4c8a6;
+$cream-75:  #fefaf4;
+$cream-100: #fef7ec;
+$cream-200: #fef2e1;
+$cream-300: #feeed7;
+$cream-400: #feeacd;
 
-// Gold Accent
-$gold-300: #e3c277;
-$gold-500: #c9a24a;
-$gold-700: #9c7a2f;`.trim()
+// Context-led expression ramps. Use one dominant family per composition.
+${EXPRESSION_SCSS}
+
+// Solid/gradient treatment remains composition-specific.
+// Export a reviewed treatment from the Brand Playground.`.trim()
 
 function CodeBlock({ code, label }: { code: string; label: string }) {
   return (
-    <div className="rounded-xl border border-border overflow-hidden">
+    <Card className="gap-0 overflow-hidden">
       <div className="flex items-center justify-between px-4 py-2 bg-muted border-b border-border">
         <span className="font-mono text-xs text-muted-foreground">{label}</span>
-        <CopyButton value={code} label="Copy" size="sm" />
+        <CopyButton
+          value={code}
+          label="Copy"
+          accessibleLabel={`Copy ${label}`}
+          size="sm"
+        />
       </div>
-      <pre className="p-4 text-xs font-mono text-foreground overflow-x-auto leading-relaxed bg-card">
+      <pre
+        tabIndex={0}
+        aria-label={`${label} code`}
+        className="max-h-80 overflow-auto bg-card p-4 font-mono text-xs leading-relaxed text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring"
+      >
         {code}
       </pre>
-    </div>
+    </Card>
   )
 }
 
@@ -95,27 +134,33 @@ export function Downloads() {
         description="All brand assets in one place. Download logos in SVG format or copy design tokens for your stack."
       />
 
+      <SectionSubNav items={SUB_NAV} />
+
       {/* Logos */}
-      <section className="mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-6">Logos</h2>
+      <section id="resource-logos" className="scroll-mt-6 mb-14">
+        <h2 className="mb-6 font-sans text-2xl font-semibold text-foreground">Logos</h2>
         <div className="grid sm:grid-cols-3 gap-4">
           {[
             { title: 'Solid — Deep Navy', file: 'scudamores-logo-navy.svg', src: '/logos/logo-navy.svg', bg: '#fefefd', desc: 'SVG · Light backgrounds' },
             { title: 'White Outline', file: 'scudamores-logo-white.svg', src: '/logos/logo-white.svg', bg: '#14284b', desc: 'SVG · Dark backgrounds' },
             { title: 'Full Colour', file: 'scudamores-logo-full.svg', src: '/logos/logo-full.svg', bg: '#fefefd', desc: 'SVG · Full-colour reproduction' },
           ].map(logo => (
-            <div key={logo.file} className="rounded-xl border border-border overflow-hidden">
+            <Card key={logo.file} className="gap-0 overflow-hidden">
               <div className="h-28 flex items-center justify-center p-4" style={{ backgroundColor: logo.bg }}>
                 <img src={logo.src} alt={logo.title} className="h-12 w-auto max-w-full" />
               </div>
-              <div className="p-4 flex items-start justify-between gap-2">
+              <CardContent className="flex items-start justify-between gap-2 p-4">
                 <div>
                   <p className="font-sans font-semibold text-sm text-foreground">{logo.title}</p>
                   <p className="font-sans text-xs text-muted-foreground">{logo.desc}</p>
                 </div>
-                <DownloadButton href={logo.src} filename={logo.file} />
-              </div>
-            </div>
+                <DownloadButton
+                  href={logo.src}
+                  filename={logo.file}
+                  accessibleLabel={`Download ${logo.title} SVG`}
+                />
+              </CardContent>
+            </Card>
           ))}
         </div>
       </section>
@@ -123,9 +168,9 @@ export function Downloads() {
       <Separator className="mb-14" />
 
       {/* Colour tokens */}
-      <section className="mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-2">Colour Tokens</h2>
-        <p className="font-sans text-sm text-muted-foreground mb-6">Copy the token format that matches your stack — CSS custom properties, JSON, or SCSS variables.</p>
+      <section id="resource-colour-tokens" className="scroll-mt-6 mb-14">
+        <h2 className="mb-2 font-sans text-2xl font-semibold text-foreground">Colour Tokens</h2>
+        <p className="font-sans text-sm text-muted-foreground mb-6">Copy the locked Navy and Off-White anchors, supporting ramps, and documented context-led expression ramps in the format that matches your stack. A ramp does not approve a composition; export solid or grainy-gradient treatment settings from the Brand Playground and review them in context.</p>
         <div className="space-y-6">
           <CodeBlock code={CSS_VARIABLES} label="CSS Custom Properties" />
           <CodeBlock code={JSON_TOKENS} label="JSON Tokens" />
@@ -136,43 +181,50 @@ export function Downloads() {
       <Separator className="mb-14" />
 
       {/* Typography */}
-      <section className="mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-2">Typography</h2>
+      <section id="resource-typography" className="scroll-mt-6 mb-14">
+        <h2 className="mb-2 font-sans text-2xl font-semibold text-foreground">Typography</h2>
         <div className="grid sm:grid-cols-2 gap-6">
           {[
             {
-              name: 'Gill Sans',
-              note: 'System font on macOS. For web, Lato (Google Fonts) is the closest free alternative.',
-              stack: '"Gill Sans", "Gill Sans MT", "Lato", Calibri, "Trebuchet MS", sans-serif',
-              googleLink: 'https://fonts.google.com/specimen/Lato',
-              googleLabel: 'Get Lato (free web fallback)',
+              name: 'Gill Sans Nova',
+              note: 'Brand display face. Served through the licensed Adobe Fonts web project; do not copy or self-host Adobe font files.',
+              stack: '"gill-sans-nova", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif',
+              googleLink: 'https://fonts.adobe.com/',
+              googleLabel: 'Manage in Adobe Fonts',
             },
             {
-              name: 'Inter',
-              note: 'Free, open-source via Google Fonts. Use across web, Canva, Figma, and Office.',
-              stack: 'Inter, -apple-system, "Segoe UI", sans-serif',
-              googleLink: 'https://fonts.google.com/specimen/Inter',
-              googleLabel: 'Get Inter from Google Fonts',
+              name: 'Instrument Sans',
+              note: 'Brand body and software interface face. Bundled in this application through the pinned Fontsource package.',
+              stack: '"Instrument Sans", ui-sans-serif, system-ui, sans-serif',
+              googleLink: 'https://fonts.google.com/specimen/Instrument+Sans',
+              googleLabel: 'View Instrument Sans',
             },
           ].map(font => (
-            <div key={font.name} className="rounded-xl border border-border p-5">
-              <p className="font-sans font-semibold text-base text-foreground mb-1">{font.name}</p>
-              <p className="font-sans text-sm text-muted-foreground mb-3">{font.note}</p>
-              <div className="rounded-md bg-muted p-3 mb-3">
-                <p className="font-mono text-xs text-foreground break-all">{font.stack}</p>
-              </div>
-              <div className="flex gap-2">
-                <CopyButton value={font.stack} label="Copy stack" size="sm" />
-                <a
-                  href={font.googleLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-sans text-xs text-gold-500 dark:text-gold-300 hover:underline self-center"
-                >
-                  {font.googleLabel} ↗
-                </a>
-              </div>
-            </div>
+            <Card key={font.name} className="gap-0">
+              <CardContent className="p-5">
+                <h3 className="font-sans font-semibold text-base text-foreground mb-1">{font.name}</h3>
+                <p className="font-sans text-sm text-muted-foreground mb-3">{font.note}</p>
+                <div className="rounded-md bg-muted p-3 mb-3">
+                  <p className="font-mono text-xs text-foreground break-all">{font.stack}</p>
+                </div>
+                <div className="flex gap-2">
+                  <CopyButton
+                    value={font.stack}
+                    label="Copy stack"
+                    accessibleLabel={`Copy ${font.name} font stack`}
+                    size="sm"
+                  />
+                  <a
+                    href={font.googleLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="self-center font-sans text-xs text-navy-700 underline-offset-2 hover:underline dark:text-navy-100"
+                  >
+                    {font.googleLabel} ↗
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </section>

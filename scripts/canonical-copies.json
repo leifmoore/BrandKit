@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "handoffRoot": "_comp-lib",
+  "copies": [
+    {
+      "cohort": "A",
+      "source": "react/components/ui/card.tsx",
+      "destination": "src/components/ui/card.tsx"
+    },
+    {
+      "cohort": "A",
+      "source": "react/components/ui/label.tsx",
+      "destination": "src/components/ui/label.tsx"
+    },
+    {
+      "cohort": "A",
+      "source": "react/components/ui/separator.tsx",
+      "destination": "src/components/ui/separator.tsx"
+    },
+    {
+      "cohort": "A",
+      "source": "react/components/ui/tooltip.tsx",
+      "destination": "src/components/ui/tooltip.tsx"
+    },
+    {
+      "cohort": "A",
+      "source": "react/components/ui/utils.ts",
+      "destination": "src/components/ui/utils.ts"
+    },
+    {
+      "cohort": "B",
+      "source": "react/components/ui/button.tsx",
+      "destination": "src/components/ui/button.tsx"
+    },
+    {
+      "cohort": "B",
+      "source": "react/components/ui/tabs.tsx",
+      "destination": "src/components/ui/tabs.tsx"
+    },
+    {
+      "cohort": "C",
+      "source": "react/components/ui/dialog.tsx",
+      "destination": "src/components/ui/dialog.tsx"
+    },
+    {
+      "cohort": "D",
+      "source": "react/components/ui/badge.tsx",
+      "destination": "src/components/ui/badge.tsx"
+    },
+    {
+      "cohort": "D",
+      "source": "react/components/ui/input.tsx",
+      "destination": "src/components/ui/input.tsx"
+    },
+    {
+      "cohort": "D",
+      "source": "react/components/ui/popover.tsx",
+      "destination": "src/components/ui/popover.tsx"
+    },
+    {
+      "cohort": "D",
+      "source": "react/components/ui/select.tsx",
+      "destination": "src/components/ui/select.tsx"
+    },
+    {
+      "cohort": "E",
+      "source": "react/components/ui/scroll-area.tsx",
+      "destination": "src/components/ui/scroll-area.tsx"
+    },
+    {
+      "cohort": "F",
+      "source": "react/runtime/theme.tsx",
+      "destination": "src/runtime/theme.tsx"
+    },
+    {
+      "cohort": "F",
+      "source": "react/components/ui/sonner.tsx",
+      "destination": "src/components/ui/sonner.tsx"
+    },
+    {
+      "cohort": "G",
+      "source": "react/components/ui/slider.tsx",
+      "destination": "src/components/ui/slider.tsx"
+    }
+  ],
+  "adapters": [
+    {
+      "destination": "src/components/ui/chart.tsx",
+      "reason": "Brand Kit chart adapter preserves Recharts series data, chart configuration, and host tooltip/legend behavior; Chart is deferred in the 0.1.0 handoff."
+    },
+    {
+      "destination": "src/components/ui/command.tsx",
+      "reason": "Brand Kit global-search adapter composes canonical Dialog while preserving cmdk navigation; Command Palette is deferred in the 0.1.0 handoff."
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
 interface SubNavItem {
@@ -35,25 +36,36 @@ export function SectionSubNav({ items }: SectionSubNavProps) {
 
   const scrollTo = (anchor: string) => {
     const el = document.getElementById(anchor)
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    if (!el) return
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' })
   }
 
   return (
-    <nav className="flex flex-wrap gap-1 mb-8 p-1 bg-cream-200 dark:bg-navy-700 rounded-lg">
-      {items.map(item => (
-        <button
-          key={item.anchor}
-          onClick={() => scrollTo(item.anchor)}
-          className={cn(
-            'px-3 py-1.5 rounded-md text-xs font-sans font-medium transition-colors',
-            active === item.anchor
-              ? 'bg-navy-900 dark:bg-navy-900 text-cream-50'
-              : 'text-navy-700 dark:text-cream-300 hover:bg-cream-300 dark:hover:bg-navy-900',
-          )}
-        >
-          {item.label}
-        </button>
-      ))}
+    <nav aria-label="On this page" className="mb-8 overflow-x-auto rounded-xl border border-border bg-muted p-[3px]">
+      <div className="flex w-max min-w-full gap-1">
+        {items.map(item => {
+          const isActive = active === item.anchor
+
+          return (
+            <Button
+              key={item.anchor}
+              variant="ghost"
+              size="sm"
+              aria-current={isActive ? 'location' : undefined}
+              aria-controls={item.anchor}
+              onClick={() => scrollTo(item.anchor)}
+              className={cn(
+                'flex-none rounded-lg px-3 font-sans text-xs',
+                isActive && 'bg-card text-foreground shadow-sm hover:bg-card dark:bg-input/30 dark:hover:bg-input/30',
+              )}
+            >
+              {item.label}
+            </Button>
+          )
+        })}
+      </div>
     </nav>
   )
 }

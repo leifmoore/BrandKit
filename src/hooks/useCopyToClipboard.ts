@@ -8,6 +8,7 @@ export function useCopyToClipboard(resetMs = 2000) {
       await navigator.clipboard.writeText(text)
       setCopied(true)
       setTimeout(() => setCopied(false), resetMs)
+      return true
     } catch {
       // fallback for older browsers
       const el = document.createElement('textarea')
@@ -15,11 +16,18 @@ export function useCopyToClipboard(resetMs = 2000) {
       el.style.position = 'fixed'
       el.style.opacity = '0'
       document.body.appendChild(el)
-      el.select()
-      document.execCommand('copy')
-      document.body.removeChild(el)
-      setCopied(true)
-      setTimeout(() => setCopied(false), resetMs)
+      try {
+        el.select()
+        const fallbackCopied = document.execCommand('copy')
+        if (!fallbackCopied) return false
+        setCopied(true)
+        setTimeout(() => setCopied(false), resetMs)
+        return true
+      } catch {
+        return false
+      } finally {
+        document.body.removeChild(el)
+      }
     }
   }, [resetMs])
 

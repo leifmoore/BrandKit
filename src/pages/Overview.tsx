@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom'
-import { NAV_ITEMS } from '@/lib/tokens'
 import * as Icons from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
+import { PageHeader } from '@/components/shared/PageHeader'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { WORKSPACES } from '@/config/workspaces'
 
 function NavIcon({ name }: { name: string }) {
-  const LucideIcon = (Icons as Record<string, React.ComponentType<{ className?: string }>>)[name]
+  const LucideIcon = (Icons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[name]
   if (!LucideIcon) return null
-  return <LucideIcon className="w-6 h-6" />
+  return <LucideIcon className="size-5" aria-hidden="true" />
 }
 
 const CORE_VALUES = [
@@ -24,74 +27,91 @@ const CORE_VALUES = [
 ]
 
 export function Overview() {
-  const sections = NAV_ITEMS.filter(item => item.path !== '/')
+  const sections = WORKSPACES.brand.navigation
+    .flatMap((group) => group.items)
+    .filter((item) => item.href !== WORKSPACES.brand.home)
 
   return (
-    <div>
-      {/* Hero */}
-      <div className="mb-14">
-        <img src="/logos/logo-navy.svg" alt="Scudamore's" className="h-14 w-auto mb-8 dark:hidden" />
-        <img src="/logos/logo-white.svg" alt="Scudamore's" className="h-14 w-auto mb-8 hidden dark:block" />
-        <p className="font-sans text-xs font-medium uppercase tracking-caps text-gold-500 dark:text-gold-300 mb-4 accent-line">
-          Est. 1910
-        </p>
-        <h1 className="font-display font-bold text-5xl md:text-6xl text-navy-900 dark:text-cream-50 tracking-display leading-none mb-6">
-          Where Cambridge<br />goes punting.
-        </h1>
-        <p className="font-sans text-lg text-navy-700 dark:text-cream-300 max-w-xl leading-relaxed">
-          Cambridge's oldest punting company, family-run since 1910. This brand kit contains everything needed to create work that looks, sounds, and feels like Scudamore's — for designers, developers, writers, and the whole team.
-        </p>
-      </div>
+    <div className="space-y-12">
+      <PageHeader
+        eyebrow="Brand workspace"
+        title="Scudamore’s Brand"
+        description="Identity, expression, applications, and approved assets for work that looks, sounds, and feels unmistakably Scudamore’s."
+      />
 
-      {/* Core values */}
-      <div className="mb-14">
-        <h2 className="font-sans font-semibold text-xs uppercase tracking-caps text-muted-foreground mb-6">Core values</h2>
-        <div className="grid sm:grid-cols-3 gap-4">
-          {CORE_VALUES.map(value => (
-            <div key={value.title} className="rounded-xl border border-border bg-card p-5">
-              <div className="w-1 h-8 bg-gold-500 dark:bg-gold-300 rounded-full mb-4" />
-              <h3 className="font-display font-bold text-lg text-navy-900 dark:text-cream-50 mb-2">{value.title}</h3>
-              <p className="font-sans text-sm text-navy-700 dark:text-cream-300">{value.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Brand purpose */}
-      <div className="rounded-xl bg-navy-900 dark:bg-navy-1000 p-8 mb-14">
-        <div className="max-w-xl">
-          <p className="font-sans text-xs uppercase tracking-caps text-cream-300 mb-4">Mission</p>
-          <p className="font-display font-bold text-2xl text-cream-50 mb-4 leading-snug">
-            To create timeless Cambridge memories.
-          </p>
-          <div className="space-y-2 text-navy-100 font-sans text-sm">
-            <p>For locals: <span className="text-cream-50 font-medium">"Where Cambridge goes punting."</span></p>
-            <p>For visitors: <span className="text-cream-50 font-medium">"Where Britain goes punting."</span></p>
+      <section aria-labelledby="brand-statement-heading">
+        <h2 id="brand-statement-heading" className="sr-only">Brand statement</h2>
+        <div className="overflow-hidden rounded-lg border border-[#14284b] bg-[#14284b] text-[#fefefd]">
+          <div className="max-w-2xl p-6 sm:p-8">
+            <img src="/logos/logo-white.svg" alt="Scudamore’s" className="mb-7 h-12 w-auto sm:h-14" />
+            <p className="mb-3 font-sans text-xs font-semibold uppercase tracking-caps text-navy-100">Est. 1910</p>
+            <p className="font-display text-4xl font-bold leading-none tracking-display sm:text-5xl">
+              Where Cambridge<br />goes punting.
+            </p>
+            <p className="mt-5 max-w-xl font-sans text-base leading-7 text-navy-100">
+              Cambridge's oldest punting company, family-run since 1910. We make the river welcoming, memorable, and unmistakably Cambridge.
+            </p>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Core values */}
+      <section aria-labelledby="core-values-heading">
+        <h2 id="core-values-heading" className="mb-4 font-sans text-lg font-semibold text-foreground">Core values</h2>
+        <div className="grid gap-4 sm:grid-cols-3">
+          {CORE_VALUES.map(value => (
+            <Card key={value.title}>
+              <CardHeader>
+                <h3 className="font-sans text-base font-semibold text-foreground">{value.title}</h3>
+              </CardHeader>
+              <CardContent>
+                <p className="font-sans text-sm leading-6 text-muted-foreground">{value.description}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Brand purpose */}
+      <section className="rounded-lg bg-[#14284b] p-6 text-[#fefefd] sm:p-8" aria-labelledby="mission-heading">
+        <div className="max-w-xl">
+          <p className="mb-4 font-sans text-xs font-semibold uppercase tracking-caps text-cream-300">Mission</p>
+          <h2 id="mission-heading" className="mb-4 font-display text-2xl font-bold leading-snug">
+            To create timeless Cambridge memories.
+          </h2>
+          <div className="space-y-2 font-sans text-sm text-navy-100">
+            <p>For locals: <span className="font-medium text-[#fefefd]">“Where Cambridge goes punting.”</span></p>
+            <p>For visitors: <span className="font-medium text-[#fefefd]">“Where Britain goes punting.”</span></p>
+          </div>
+        </div>
+      </section>
 
       {/* Section cards */}
-      <div>
-        <h2 className="font-sans font-semibold text-xs uppercase tracking-caps text-muted-foreground mb-6">Brand kit sections</h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      <section aria-labelledby="brand-sections-heading">
+        <h2 id="brand-sections-heading" className="mb-4 font-sans text-lg font-semibold text-foreground">Explore the Brand workspace</h2>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {sections.map(item => (
             <Link
-              key={item.path}
-              to={item.path}
-              className="group flex items-start gap-4 rounded-xl border border-border bg-card hover:border-navy-500 dark:hover:border-cream-200 hover:shadow-sm p-5 transition-all"
+              key={item.href}
+              to={item.href}
+              className="group rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
-              <div className="w-10 h-10 rounded-lg bg-navy-900 dark:bg-cream-50 text-cream-50 dark:text-navy-900 flex items-center justify-center shrink-0 group-hover:bg-navy-700 dark:group-hover:bg-cream-200 transition-colors">
-                <NavIcon name={item.icon} />
-              </div>
-              <div>
-                <p className="font-sans font-semibold text-sm text-foreground transition-colors">{item.label}</p>
-                <p className="font-sans text-xs text-muted-foreground mt-0.5">{item.description}</p>
-              </div>
+              <Card className="h-full gap-0 transition-colors group-hover:bg-accent">
+                <CardHeader className="grid-cols-[auto_1fr_auto] items-center gap-3">
+                  <span className="flex size-9 items-center justify-center rounded-md bg-primary text-primary-foreground">
+                    <NavIcon name={item.icon} />
+                  </span>
+                  <div className="min-w-0">
+                    <h3 className="font-sans text-sm font-semibold text-foreground">{item.label}</h3>
+                    <p className="mt-1 font-sans text-xs leading-5 text-muted-foreground">{item.description}</p>
+                  </div>
+                  <ArrowRight className="size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                </CardHeader>
+              </Card>
             </Link>
           ))}
         </div>
-      </div>
+      </section>
     </div>
   )
 }

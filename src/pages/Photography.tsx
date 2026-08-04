@@ -1,6 +1,9 @@
 import { SectionHeader } from '@/components/shared/SectionHeader'
+import { GuidanceTable } from '@/components/shared/GuidanceTable'
 import { SectionSubNav } from '@/components/layout/SectionSubNav'
 import { Separator } from '@/components/ui/separator'
+import { Card, CardContent } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
 
 const SUB_NAV = [
@@ -36,6 +39,55 @@ const PRODUCT_HEROES = [
   { name: 'Romantic & Wedding Tours', ratio: '4:5', note: 'Couple close-up, flowers, soft tones' },
 ]
 
+const HERO_IMAGES = {
+  landscape: {
+    src: '/images/brand/heroes/kings-private-landscape-960.jpg',
+    srcSet: '/images/brand/heroes/kings-private-landscape-960.jpg 960w, /images/brand/heroes/kings-private-landscape-1600.jpg 1600w',
+  },
+  portrait: {
+    src: '/images/brand/heroes/kings-private-portrait-720.jpg',
+    srcSet: '/images/brand/heroes/kings-private-portrait-720.jpg 720w, /images/brand/heroes/kings-private-portrait-1080.jpg 1080w',
+  },
+} as const
+
+function ResponsiveHeroImage({ className = '', eager = false }: { className?: string; eager?: boolean }) {
+  return (
+    <picture>
+      <source
+        media="(max-width: 639px)"
+        srcSet={HERO_IMAGES.portrait.srcSet}
+        sizes="100vw"
+      />
+      <img
+        src={HERO_IMAGES.landscape.src}
+        srcSet={HERO_IMAGES.landscape.srcSet}
+        sizes="(min-width: 1024px) 960px, 100vw"
+        alt="A Scudamore’s chauffeur punting customers past King’s College Chapel"
+        loading={eager ? 'eager' : 'lazy'}
+        decoding="async"
+        className={className}
+      />
+    </picture>
+  )
+}
+
+function ProductPlaceholderImage({ ratio }: { ratio: string }) {
+  const portrait = ratio === '4:5'
+  const image = portrait ? HERO_IMAGES.portrait : HERO_IMAGES.landscape
+
+  return (
+    <img
+      src={image.src}
+      srcSet={image.srcSet}
+      sizes="(min-width: 1024px) 280px, (min-width: 640px) 45vw, 100vw"
+      alt=""
+      loading="lazy"
+      decoding="async"
+      className="h-full w-full object-cover"
+    />
+  )
+}
+
 function AspectPreview({ w, h, ratio }: { w: number; h: number; ratio: string }) {
   const maxW = 80
   const maxH = 80
@@ -63,7 +115,7 @@ export function Photography() {
 
       {/* Editing */}
       <section id="editing" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-6">Editing & Colour Grade</h2>
+        <h2 className="mb-6 font-sans text-2xl font-semibold text-foreground">Editing & Colour Grade</h2>
         <div className="grid sm:grid-cols-2 gap-4">
           {[
             { ok: true,  title: 'Natural', detail: 'Minimal colour grading, true to what the eye saw. Slight lifts to saturation and contrast where images need them.' },
@@ -71,17 +123,19 @@ export function Photography() {
             { ok: false, title: 'No heavy filters', detail: 'No "tourism teal-and-orange", no fashion-style grades. Looks processed and dates fast.' },
             { ok: false, title: 'Reshoot, don\'t rescue', detail: 'If a photo needs heavy editing to work, the shoot was the problem. Reshoot rather than rescue.' },
           ].map(item => (
-            <div key={item.title} className={cn(
-              'rounded-xl border p-4',
+            <Card key={item.title} className={cn(
+              'gap-0',
               item.ok ? 'border-green-200 dark:border-green-900 bg-green-50 dark:bg-green-950/30' : 'border-red-200 dark:border-red-900 bg-red-50 dark:bg-red-950/30',
             )}>
-              <p className={cn(
-                'font-sans text-xs font-medium uppercase tracking-caps mb-1',
-                item.ok ? 'text-green-700 dark:text-green-400' : 'text-red-600 dark:text-red-400',
-              )}>{item.ok ? '✓ Do' : '✗ Don\'t'}</p>
-              <p className="font-sans font-semibold text-sm text-foreground">{item.title}</p>
-              <p className="font-sans text-sm text-muted-foreground mt-1">{item.detail}</p>
-            </div>
+              <CardContent className="p-4">
+                <p className={cn(
+                  'font-sans text-xs font-medium uppercase tracking-caps mb-1',
+                  item.ok ? 'text-green-700 dark:text-green-400' : 'text-red-600 dark:text-red-400',
+                )}>{item.ok ? '✓ Do' : '✗ Don\'t'}</p>
+                <h3 className="font-sans font-semibold text-sm text-foreground">{item.title}</h3>
+                <p className="font-sans text-sm text-muted-foreground mt-1">{item.detail}</p>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </section>
@@ -90,7 +144,7 @@ export function Photography() {
 
       {/* Composition */}
       <section id="composition" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-6">Composition</h2>
+        <h2 className="mb-6 font-sans text-2xl font-semibold text-foreground">Composition</h2>
         <div className="space-y-4 mb-6">
           {[
             { rule: 'Shoot wide, crop in', detail: 'Always shoot too wide at highest quality. Cropping in later is easier than missing the frame.' },
@@ -100,7 +154,7 @@ export function Photography() {
             { rule: 'Capture movement', detail: 'The Cam is moving. Static, posed shots feel like stock. Capture the punt mid-stroke, water trailing off the pole, ripples breaking the reflection.' },
           ].map(item => (
             <div key={item.rule} className="flex gap-4 py-3 border-b border-border last:border-0">
-              <span className="text-gold-500 dark:text-gold-300 shrink-0 mt-0.5">–</span>
+              <span className="mt-0.5 shrink-0 text-brand-expression-accent">–</span>
               <div>
                 <p className="font-sans font-semibold text-sm text-foreground">{item.rule}</p>
                 <p className="font-sans text-sm text-muted-foreground mt-0.5">{item.detail}</p>
@@ -114,7 +168,7 @@ export function Photography() {
 
       {/* Subjects */}
       <section id="subjects" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-6">Subjects</h2>
+        <h2 className="mb-6 font-sans text-2xl font-semibold text-foreground">Subjects</h2>
         <div className="grid sm:grid-cols-3 gap-6">
           {[
             {
@@ -130,17 +184,19 @@ export function Photography() {
               items: ['King\'s College Chapel and Bridge of Sighs from the river', 'Named colleges — King\'s, Trinity, St John\'s, Clare, Queens\'', 'Named bridges — Mathematical Bridge, Clare Bridge, Magdalene Bridge', 'Hidden Cambridge — quiet stretches, the Backs in winter, dawn on the Cam'],
             },
           ].map(group => (
-            <div key={group.category} className="rounded-xl border border-border p-5">
-              <h3 className="font-sans font-semibold text-base text-navy-900 dark:text-cream-50 mb-3">{group.category}</h3>
-              <ul className="space-y-2">
-                {group.items.map((item, i) => (
-                  <li key={i} className="font-sans text-sm text-muted-foreground flex gap-2">
-                    <span className="text-gold-500 dark:text-gold-300 shrink-0">–</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <Card key={group.category} className="gap-0">
+              <CardContent className="p-5">
+                <h3 className="mb-3 font-sans text-base font-semibold text-foreground">{group.category}</h3>
+                <ul className="space-y-2">
+                  {group.items.map((item, i) => (
+                    <li key={i} className="font-sans text-sm text-muted-foreground flex gap-2">
+                      <span className="shrink-0 text-brand-expression-accent">–</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </section>
@@ -149,16 +205,15 @@ export function Photography() {
 
       {/* Aspect Ratios */}
       <section id="aspect-ratios" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-2">Required Aspect Ratios</h2>
+        <h2 className="mb-2 font-sans text-2xl font-semibold text-foreground">Required Aspect Ratios</h2>
         <p className="font-sans text-sm text-muted-foreground mb-6">Every key shot should exist in both a horizontal AND vertical master. If it doesn't, schedule a reshoot.</p>
-        <div className="rounded-xl border border-border overflow-hidden">
-          <table className="w-full font-sans text-sm">
+        <GuidanceTable label="Required photography aspect ratios" tableClassName="min-w-[44rem]">
             <thead className="bg-muted">
               <tr>
-                <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-caps">Preview</th>
-                <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-caps">Use</th>
-                <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-caps">Ratio</th>
-                <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-caps hidden sm:table-cell">Notes</th>
+                <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">Preview</th>
+                <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">Use</th>
+                <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">Ratio</th>
+                <th scope="col" className="px-4 py-3 text-left text-xs font-medium uppercase tracking-caps text-muted-foreground">Notes</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
@@ -169,39 +224,56 @@ export function Photography() {
                   </td>
                   <td className="px-4 py-3 text-foreground">{row.use}</td>
                   <td className="px-4 py-3 font-mono text-muted-foreground">{row.ratio}</td>
-                  <td className="px-4 py-3 text-muted-foreground text-xs hidden sm:table-cell">{row.notes}</td>
+                  <td className="min-w-64 px-4 py-3 text-xs text-muted-foreground">{row.notes}</td>
                 </tr>
               ))}
             </tbody>
-          </table>
-        </div>
+        </GuidanceTable>
       </section>
 
       <Separator className="mb-14" />
 
       {/* Product Heroes */}
       <section id="product-heroes" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-2">Product Hero Images</h2>
+        <h2 className="mb-2 font-sans text-2xl font-semibold text-foreground">Product Hero Images</h2>
         <p className="font-sans text-sm text-muted-foreground mb-6">
-          Each product line needs a dedicated hero image. Placeholder cards mark what's still to be photographed — replace with the master file once shot.
+          Each product line needs a dedicated hero image. The current landscape and portrait pair is shared across the placeholders below so layouts can be designed and tested now; replace each one with its product-specific master once approved.
         </p>
+
+        <Card className="mb-6 gap-0 overflow-hidden">
+          <figure>
+            <div className="aspect-[4/5] overflow-hidden bg-navy-900 sm:aspect-[16/9]">
+              <ResponsiveHeroImage className="h-full w-full object-cover" eager />
+            </div>
+            <figcaption className="flex flex-col gap-3 border-t border-border p-4 sm:flex-row sm:items-start sm:justify-between">
+              <div>
+                <h3 className="font-sans text-base font-semibold text-foreground">Current shared hero pair</h3>
+                <p className="mt-1 max-w-2xl font-sans text-sm leading-6 text-muted-foreground">
+                  Use the landscape master for wide website compositions and the portrait master for narrow/mobile art direction. Preserve King’s College Chapel, the punt, and the chauffeur rather than deriving the portrait by cropping the landscape file.
+                </p>
+              </div>
+              <Badge variant="outline" className="w-fit shrink-0">Temporary source</Badge>
+            </figcaption>
+          </figure>
+        </Card>
+
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {PRODUCT_HEROES.map(product => (
-            <div key={product.name} className="rounded-xl border border-border overflow-hidden">
+            <Card key={product.name} className="gap-0 overflow-hidden">
               <div
-                className="bg-navy-900 dark:bg-navy-1000 flex items-center justify-center"
+                className="overflow-hidden bg-navy-900"
                 style={{ aspectRatio: product.ratio.replace(':', '/') }}
               >
-                <div className="text-center p-4">
-                  <p className="font-mono text-xs text-navy-300 mb-1">{product.ratio}</p>
-                  <p className="font-sans text-xs text-navy-400 italic">Photo placeholder</p>
+                <ProductPlaceholderImage ratio={product.ratio} />
+              </div>
+              <CardContent className="p-3">
+                <div className="flex items-start justify-between gap-2">
+                  <h3 className="font-sans font-semibold text-sm text-foreground">{product.name}</h3>
+                  <Badge variant="secondary" className="shrink-0">Placeholder</Badge>
                 </div>
-              </div>
-              <div className="p-3">
-                <p className="font-sans font-semibold text-sm text-foreground">{product.name}</p>
                 <p className="font-sans text-xs text-muted-foreground mt-0.5">{product.note}</p>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </section>
@@ -210,17 +282,26 @@ export function Photography() {
 
       {/* Consent */}
       <section id="consent" className="scroll-mt-6 mb-14">
-        <h2 className="font-display font-bold text-2xl text-navy-900 dark:text-cream-50 mb-6">Consent & Rights</h2>
+        <h2 className="mb-6 font-sans text-2xl font-semibold text-foreground">Consent & Rights</h2>
+        <div className="mb-5 rounded-lg border border-status-warning/35 bg-status-warning/10 p-4" role="note">
+          <div className="flex flex-wrap items-center gap-2">
+            <Badge variant="warning">Operational draft</Badge>
+            <p className="font-sans text-sm font-semibold text-foreground">Confirm with the company’s legal, privacy, and HR owners.</p>
+          </div>
+          <p className="mt-2 font-sans text-sm leading-6 text-muted-foreground">
+            These are conservative working practices, not legal sign-off. Use the approved release process and retention policy before commissioning, publishing, or storing identifiable photography.
+          </p>
+        </div>
         <div className="space-y-3">
           {[
-            { title: 'Chauffeurs and staff', detail: 'Photographed in detail. Employment contracts should cover image rights for company marketing — confirm with HR or use a signed release.' },
-            { title: 'Customers — default', detail: 'Photographed anonymously (back-of-head, silhouettes, hands, wide environmental shots). River is public space; incidental presence is fine.' },
-            { title: 'Identifiable customers', detail: 'If a customer is the clear subject, ask on the day and get a signed release covering name, date, image reference, and scope.' },
-            { title: 'Children', detail: 'Anyone under 18 needs parental/guardian consent for commercial use. No explicit consent = no publish.' },
-            { title: 'Records', detail: 'Keep all signed releases on file with corresponding image reference for GDPR compliance.' },
+            { title: 'Chauffeurs and staff', detail: 'Confirm the applicable employment terms with HR or secure an approved signed release before using identifiable staff photography.' },
+            { title: 'Customers — default', detail: 'Prefer anonymous framing: back-of-head, silhouettes, hands, and wide environmental shots. Do not assume the location alone grants marketing permission.' },
+            { title: 'Identifiable customers', detail: 'If a customer is a clear subject, use the approved release process and record the image reference and agreed scope.' },
+            { title: 'Children', detail: 'Do not publish identifiable children without recorded parent or guardian permission and the required internal review.' },
+            { title: 'Records', detail: 'Store releases and image references only through the approved privacy and retention process.' },
           ].map(item => (
             <div key={item.title} className="flex gap-4 py-3 border-b border-border last:border-0">
-              <span className="text-gold-500 dark:text-gold-300 shrink-0 mt-0.5">–</span>
+              <span className="mt-0.5 shrink-0 text-brand-expression-accent">–</span>
               <div>
                 <p className="font-sans font-semibold text-sm text-foreground">{item.title}</p>
                 <p className="font-sans text-sm text-muted-foreground mt-0.5">{item.detail}</p>

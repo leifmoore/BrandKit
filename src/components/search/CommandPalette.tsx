@@ -1,5 +1,5 @@
-import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { lazy, Suspense, useEffect } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import {
   CommandDialog,
   CommandEmpty,
@@ -8,7 +8,13 @@ import {
   CommandItem,
   CommandList,
 } from '@/components/ui/command'
-import { NAV_ITEMS, ALL_TOKENS } from '@/lib/tokens'
+import { WORKSPACES, getWorkspaceForPath } from '@/config/workspaces'
+import { BRAND_RAMP_TOKENS } from '@/lib/tokens'
+import { PLAYGROUND_ACCENTS } from '@/features/brand-playground/palette'
+
+const DesignSystemCommandItems = lazy(
+  () => import('./DesignSystemCommandItems'),
+)
 
 interface CommandPaletteProps {
   open: boolean
@@ -17,12 +23,14 @@ interface CommandPaletteProps {
 
 export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
   const navigate = useNavigate()
+  const location = useLocation()
+  const workspaceId = getWorkspaceForPath(location.pathname) ?? 'brand'
+  const workspace = WORKSPACES[workspaceId]
 
-  // Wire ⌘K
   useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-        e.preventDefault()
+    const handler = (event: KeyboardEvent) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
+        event.preventDefault()
         onOpenChange(!open)
       }
     }
@@ -32,60 +40,102 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
 
   const go = (path: string, anchor?: string) => {
     onOpenChange(false)
-    navigate(path)
-    if (anchor) {
-      setTimeout(() => {
-        document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth' })
-      }, 100)
-    }
+    navigate({ pathname: path, hash: anchor ? `#${anchor}` : '' })
   }
+
+  const sectionItems = workspace.navigation.flatMap((group) =>
+    group.items.map((item) => ({ ...item, group: group.label })),
+  )
 
   return (
     <CommandDialog open={open} onOpenChange={onOpenChange}>
-      <CommandInput placeholder="Search brand kit…" />
+      <CommandInput
+        aria-label={`Search ${workspace.label}`}
+        placeholder={`Search ${workspace.label.toLowerCase()}…`}
+      />
       <CommandList>
-        <CommandEmpty>No results found.</CommandEmpty>
+        <CommandEmpty>No results found in {workspace.label}.</CommandEmpty>
 
-        <CommandGroup heading="Sections">
-          {NAV_ITEMS.map(item => (
-            <CommandItem key={item.path} onSelect={() => go(item.path)}>
+        <CommandGroup heading={`${workspace.label} sections`}>
+          {sectionItems.map((item) => (
+            <CommandItem
+              key={item.href}
+              value={`${item.label} ${item.description} ${item.group}`}
+              onSelect={() => go(item.href)}
+            >
               <span className="font-medium">{item.label}</span>
               <span className="ml-2 text-xs text-muted-foreground">{item.description}</span>
+              <span className="ml-auto text-xs text-muted-foreground">{item.group}</span>
             </CommandItem>
           ))}
         </CommandGroup>
 
-        <CommandGroup heading="Subsections">
-          {NAV_ITEMS.flatMap(item =>
-            (item.subsections ?? []).map(sub => (
-              <CommandItem
-                key={`${item.path}#${sub.anchor}`}
-                onSelect={() => go(item.path, sub.anchor)}
-              >
-                <span className="text-muted-foreground mr-1">{item.label} /</span>
-                {sub.label}
-              </CommandItem>
-            )),
-          )}
-        </CommandGroup>
+        {workspaceId === 'brand' ? (
+          <>
+            <CommandGroup heading="Page sections">
+              {sectionItems.flatMap((item) =>
+                (item.subsections ?? []).map((subsection) => (
+                  <CommandItem
+                    key={`${item.href}#${subsection.anchor}`}
+                    value={`${item.label} ${subsection.label}`}
+                    onSelect={() => go(item.href, subsection.anchor)}
+                  >
+                    <span className="text-muted-foreground">{item.label} /</span>
+                    <span>{subsection.label}</span>
+                  </CommandItem>
+                )),
+              )}
+            </CommandGroup>
 
-        <CommandGroup heading="Colours">
-          {ALL_TOKENS.map(token => (
-            <CommandItem
-              key={token.alias}
-              onSelect={() => go('/colour')}
-              className="gap-2"
-            >
-              <span
-                className="w-4 h-4 rounded-sm border border-black/10 shrink-0"
-                style={{ background: token.hex }}
-              />
-              <span className="font-medium">{token.name}</span>
-              <span className="text-xs text-muted-foreground">{token.hex}</span>
-              <span className="text-xs text-muted-foreground ml-auto">{token.alias}</span>
-            </CommandItem>
-          ))}
-        </CommandGroup>
+            <CommandGroup heading="Brand ramp colours">
+              {BRAND_RAMP_TOKENS.map((token) => (
+                <CommandItem
+                  key={token.alias}
+                  value={`${token.name} ${token.hex} ${token.alias}`}
+                  onSelect={() => go('/brand/identity/colour')}
+                  className="gap-2"
+                >
+                  <span
+                    className="size-4 shrink-0 rounded-sm border border-black/10"
+                    style={{ background: token.hex }}
+                  />
+                  <span className="font-medium">{token.name}</span>
+                  <span className="text-xs text-muted-foreground">{token.hex}</span>
+                  <span className="ml-auto text-xs text-muted-foreground">{token.alias}</span>
+                </CommandItem>
+              ))}
+            </CommandGroup>
+
+            <CommandGroup heading="Expression families">
+              {PLAYGROUND_ACCENTS.map((accent) => (
+                <CommandItem
+                  key={accent.id}
+                  value={`${accent.name} ${accent.sourceHex} expression accent ${accent.note}`}
+                  onSelect={() => go('/brand/identity/colour', 'accent-colours')}
+                  className="gap-2"
+                >
+                  <span
+                    className="size-4 shrink-0 rounded-sm border border-black/10"
+                    style={{ background: accent.sourceHex }}
+                  />
+                  <span className="font-medium">{accent.name}</span>
+                  <span className="text-xs text-muted-foreground">{accent.sourceHex}</span>
+                  <span className="ml-auto text-xs text-muted-foreground">Expression</span>
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          </>
+        ) : open ? (
+          <Suspense
+            fallback={
+              <CommandGroup heading="Components and patterns">
+                <CommandItem disabled>Loading component catalogue…</CommandItem>
+              </CommandGroup>
+            }
+          >
+            <DesignSystemCommandItems onSelect={(path) => go(path)} />
+          </Suspense>
+        ) : null}
       </CommandList>
     </CommandDialog>
   )

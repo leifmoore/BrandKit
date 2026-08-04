@@ -1,0 +1,38 @@
+{
+  "caption": "Example bookings",
+  "primaryColumnId": "customer",
+  "secondaryColumnId": "reference",
+  "actionLabel": "View",
+  "columns": [
+    { "id": "customer", "label": "Customer" },
+    { "id": "date", "label": "Date" },
+    { "id": "reference", "label": "Reference" },
+    { "id": "source", "label": "Source" },
+    { "id": "status", "label": "Status" },
+    { "id": "total", "label": "Total", "align": "right" }
+  ],
+  "items": [
+    {
+      "id": "record-101",
+      "cells": {
+        "customer": { "text": "Alex Taylor", "detail": "alex.taylor@example.test" },
+        "date": { "text": "18 September 2026", "detail": "10:30" },
+        "reference": { "text": "DEMO-101", "mono": true },
+        "source": { "text": "Online" },
+        "status": { "text": "Active", "badgeVariant": "success" },
+        "total": { "text": "£84.00" }
+      }
+    },
+    {
+      "id": "record-102",
+      "cells": {
+        "customer": { "text": "Morgan Lee", "detail": "morgan.lee@example.test" },
+        "date": { "text": "19 September 2026", "detail": "14:00" },
+        "reference": { "text": "DEMO-102", "mono": true },
+        "source": { "text": "Counter" },
+        "status": { "text": "Rescheduled", "badgeVariant": "warning" },
+        "total": { "text": "£126.00" }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1867 @@
+{
+  "schemaVersion": "1.0.0",
+  "version": "0.1.0",
+  "generatedAt": "2026-08-04T00:00:00.000Z",
+  "sourceDateEpoch": 1785801600,
+  "rootSha256": "5e11f66f5f2b3f4384779dbbd09817e8f1d258ba98ab33e7f4e8c7fdf37d4abe",
+  "excludedDirectories": [
+    ".cache",
+    ".git",
+    ".next",
+    ".nuxt",
+    ".parcel-cache",
+    ".svelte-kit",
+    ".turbo",
+    ".vite",
+    "build",
+    "cache",
+    "coverage",
+    "dist",
+    "node_modules",
+    "out",
+    "releases",
+    "storage",
+    "tmp",
+    "vendor"
+  ],
+  "excludedFileSuffixes": [
+    ".previous"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 98,
+      "sha256": "61dc4b42ccc69033c1470bd29b8ffd0e66e1ec3ea60da3bbd25863e2d540702f"
+    },
+    {
+      "path": "blade/dependencies.json",
+      "bytes": 496,
+      "sha256": "78a36d45ae46d5492faf58149c03be79e317f8bb213dd85fd5a933fe0d9503c6"
+    },
+    {
+      "path": "blade/INSTALL.md",
+      "bytes": 825,
+      "sha256": "017c93cce7ff520d5f07e739b5cb285777ab811b8635c9cdbc50257b73c1260d"
+    },
+    {
+      "path": "blade/styles/tailwind.css",
+      "bytes": 526,
+      "sha256": "848e13f155f0170ada1dd861a5d35b8d6c4e595723fb31d581894fc49b466c37"
+    },
+    {
+      "path": "catalog/base-library.json",
+      "bytes": 528,
+      "sha256": "c28a0d80181b8dc73f0aac8110adc7cdc8a2ed54923a7152731af8abce272c9c"
+    },
+    {
+      "path": "catalog/catalog.json",
+      "bytes": 13997,
+      "sha256": "d5e4a42c34a530018c34bea5b56ac2a585c4e44c6ae73e78d17232cf8328840d"
+    },
+    {
+      "path": "catalog/catalog.schema.json",
+      "bytes": 1496,
+      "sha256": "bbbfefa6d5f6bf2b64734d50e66d0ed449a6ee85b9e2e66f3c3cad6acb306931"
+    },
+    {
+      "path": "catalog/combined-catalog.json",
+      "bytes": 34732,
+      "sha256": "5106e7c61820353cf76a930435d050cf59f2bc85d0ed104dc6563aa2c708bd7e"
+    },
+    {
+      "path": "catalog/pattern.schema.json",
+      "bytes": 5561,
+      "sha256": "ce18726369a993336e9d09fa57bdd6314d232d29eaa8aa3337a0636b2100adf6"
+    },
+    {
+      "path": "catalog/recipes/availability-time-picker.json",
+      "bytes": 3561,
+      "sha256": "818b59e468709bc5fc8ceff39abb8712052f591416dcb485ffbd0ed7fca1efe0"
+    },
+    {
+      "path": "catalog/recipes/booking-criteria-panel.json",
+      "bytes": 3903,
+      "sha256": "ea0744c3ebf0e2801f8af8108983b5ab55e8454a5025cbbcce0f184d102b66cc"
+    },
+    {
+      "path": "catalog/recipes/booking-progress-indicator.json",
+      "bytes": 2810,
+      "sha256": "f9548eb34e71b7682d26425b3163b026d4ae682bc5955f0e55ff6d512b9b1433"
+    },
+    {
+      "path": "catalog/recipes/booking-review-summary.json",
+      "bytes": 2994,
+      "sha256": "b65a4efac848b5b94aa87d6104c42b3b1fae98002726b191db20aaf182e14561"
+    },
+    {
+      "path": "catalog/recipes/capacity-product-selector.json",
+      "bytes": 3783,
+      "sha256": "cd76b006767949b101aa382799c18ad2f918189a408933b97bc974e9fe4e4751"
+    },
+    {
+      "path": "catalog/recipes/checkout-details-panel.json",
+      "bytes": 3391,
+      "sha256": "a5ceed8c912424d63e4469bf3dfb11b99dfb38b876f5c1bb5d1e4dd1c4251cb8"
+    },
+    {
+      "path": "catalog/recipes/collection-state-panel.json",
+      "bytes": 3698,
+      "sha256": "7c1b37d4ae884e204c10d2e717521832b725cdd0b6c216526c3466c35428a28b"
+    },
+    {
+      "path": "catalog/recipes/collection-toolbar.json",
+      "bytes": 4122,
+      "sha256": "750e8af86ac74e36db006d160bd42bd692ba84aa85cefdc09800fa7d63e6e710"
+    },
+    {
+      "path": "catalog/recipes/configuration-workbench.json",
+      "bytes": 4024,
+      "sha256": "e4662856964e89811fb0bcf298988ae118611645491a62e15783a4f23c6c18d7"
+    },
+    {
+      "path": "catalog/recipes/contextual-action-dock.json",
+      "bytes": 3185,
+      "sha256": "6691f99b54eef1a8a7a0893f74f04126d228a4e473ec0a965e9b6ea92e692b82"
+    },
+    {
+      "path": "catalog/recipes/customer-booking-journey.json",
+      "bytes": 4822,
+      "sha256": "3ea2963e84a1e07cc0d55bac73690c9074058d76f5f6c7114724c2edb52a886f"
+    },
+    {
+      "path": "catalog/recipes/discount-builder.json",
+      "bytes": 3348,
+      "sha256": "efa95666018617b9a4602d8075e8751dde0afcaf76689e3d2beb2a378dd7fdb9"
+    },
+    {
+      "path": "catalog/recipes/epos-booking-journey.json",
+      "bytes": 4876,
+      "sha256": "e5c3e4f04228df9cf8a6cbceeb5a5d08554232b0ae71abdb08ddd1fd3917334b"
+    },
+    {
+      "path": "catalog/recipes/grouped-results-table.json",
+      "bytes": 3454,
+      "sha256": "5c3e2821f43102f8e10049ed805182bd8e34f8599a18acdb97d34ea0456016ae"
+    },
+    {
+      "path": "catalog/recipes/kpi-stat-grid.json",
+      "bytes": 2821,
+      "sha256": "ab585df4e6a037d77796e5b5e96127afdc61186665de19d2728473446c28a97e"
+    },
+    {
+      "path": "catalog/recipes/mobile-bottom-navigation.json",
+      "bytes": 3579,
+      "sha256": "2bf0999cdc5ad0203a58733deb6e3242db324f499df76175008af4eba442c6bf"
+    },
+    {
+      "path": "catalog/recipes/multi-query-manager.json",
+      "bytes": 3703,
+      "sha256": "21fb0a1e901f3d3f3d7960a34960307dab73bc87a61a704a2b6f16b58c3fd732"
+    },
+    {
+      "path": "catalog/recipes/quote-builder.json",
+      "bytes": 3324,
+      "sha256": "8ddc741238fdad7da9f645e401001e989276279e9c3a4707503d383e19410960"
+    },
+    {
+      "path": "catalog/recipes/quote-lookup.json",
+      "bytes": 3433,
+      "sha256": "9a4b688aae6849b4fa0b4eab47911148fd7cdcd52b3c677e8af3fa9aaf61aeb1"
+    },
+    {
+      "path": "catalog/recipes/reference-redemption-journey.json",
+      "bytes": 4484,
+      "sha256": "6f9676313e3ca415728cdc8609ffa266bbe7580b6ac6079e31af625d1012f9d4"
+    },
+    {
+      "path": "catalog/recipes/report-breakdown-table.json",
+      "bytes": 3221,
+      "sha256": "c99e82f396fd655790985ca75be715cebe9394928b762754cb7a85461c3a15e3"
+    },
+    {
+      "path": "catalog/recipes/report-filter-builder.json",
+      "bytes": 4314,
+      "sha256": "c1742394c7e39cd74c28c79bba0d9f2c3c930b619d58b2b5cd16bbb9d23ad992"
+    },
+    {
+      "path": "catalog/recipes/report-workspace-tabs.json",
+      "bytes": 3098,
+      "sha256": "ea02b36042d04c35b9f32ae8e5c330cd6db4d91fd530984f43f6db53d7ebfd22"
+    },
+    {
+      "path": "catalog/recipes/responsive-data-collection.json",
+      "bytes": 3546,
+      "sha256": "3cd045d6d09c7c05d91e74234ebbec57f127bd96c319ff542307affa868fcf20"
+    },
+    {
+      "path": "catalog/recipes/visit-time-heat-map.json",
+      "bytes": 3813,
+      "sha256": "f70022261899536aae0ef5eed77943ff655bbf431e7f7e298a94558931137c33"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 246,
+      "sha256": "4b19cc5ebfae05d483e4c03fc2609c8fc6fd1af8bb5e5bfcd94aac13f0b82e4e"
+    },
+    {
+      "path": "docs/ACCESSIBILITY.md",
+      "bytes": 3858,
+      "sha256": "7978a4d8fd8b549fe78ad632af75818d9608f28597bc2d5aa573c3ae52f8575c"
+    },
+    {
+      "path": "docs/AUTHORING.md",
+      "bytes": 935,
+      "sha256": "fb71ebf3d7e16c058c1eaa81f0454255c218bfc68cee05a19d6e052c9e2b8b91"
+    },
+    {
+      "path": "docs/BRAND-KIT-INTEGRATION.md",
+      "bytes": 1534,
+      "sha256": "230f2a6799bbb3be83f6dc1004af8cbb9d8a1f6cd7f36af7031e5f1a4c194805"
+    },
+    {
+      "path": "docs/RELEASES.md",
+      "bytes": 378,
+      "sha256": "8b42b2cf701a97d4613331b12c2d0f2f77decbcb7be49d7199d7b18e1067e873"
+    },
+    {
+      "path": "docs/TRANSFER.md",
+      "bytes": 2799,
+      "sha256": "1cec4e488011371ed0b8a47d4db27a72754f3736d1c03fe8cb35b76779c8fb83"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1281,
+      "sha256": "25befb170f3a8a7c960caa4659963ba415cf13aaaf42dc6dddc21242d5f25b31"
+    },
+    {
+      "path": "provenance/decisions.md",
+      "bytes": 683,
+      "sha256": "92f1bb13a9edc9e6c9d0857107eafc7e634d2f14cfa375737056cc5a5995d88d"
+    },
+    {
+      "path": "provenance/excluded.json",
+      "bytes": 705,
+      "sha256": "37c25e0a9002455585f031f5cdc2f93c80eb7f00f6f2f52a87ff8c048079dd8d"
+    },
+    {
+      "path": "provenance/source-lock.json",
+      "bytes": 950,
+      "sha256": "e7959d4ed33b2dc8ad37e79ba4e435c39a877fdbfb75c5af5d0e4f65817e4573"
+    },
+    {
+      "path": "react/dependencies.json",
+      "bytes": 437,
+      "sha256": "aa9e3a07903cc99cd696c929c743950c9a28468cc78b387312f7c0e53f55c1a6"
+    },
+    {
+      "path": "react/preview-registry.tsx",
+      "bytes": 11199,
+      "sha256": "bee657c9def165da714a35cc8fbce9d4dafc6b6eac3fa5f8b81571d57904b419"
+    },
+    {
+      "path": "react/styles/index.css",
+      "bytes": 521,
+      "sha256": "895bdd8ca9f2493237864ae2648bd9d16d65cbbdcf1faebad09e950c3d52de1c"
+    },
+    {
+      "path": "react/styles/tailwind.css",
+      "bytes": 179,
+      "sha256": "c0211d9f54aa9d810dc2ad4a6554d6957cb5c5992fa32fa9d72adb148247ad81"
+    },
+    {
+      "path": "react/types.ts",
+      "bytes": 2319,
+      "sha256": "1df9a9452531183e4e0f794fd8edbf6fa69bff61d3e73104dc3c956a88a591a5"
+    },
+    {
+      "path": "recipes/availability-time-picker/blade/availability-time-picker.blade.php",
+      "bytes": 7096,
+      "sha256": "67afde097e7443c34c7da5f83ae3e9f06cdc15cbc25821a37c81a6056a9626fd"
+    },
+    {
+      "path": "recipes/availability-time-picker/fixtures/basic.json",
+      "bytes": 1694,
+      "sha256": "4f2fb7af0399804f8a8fd991174c8c589460b15016e1002fbcfac6d1fff71177"
+    },
+    {
+      "path": "recipes/availability-time-picker/react/AvailabilityTimePicker.tsx",
+      "bytes": 8108,
+      "sha256": "29f6b7517839242216b586c4c41ff11082a0c52cb7e6631ef761ee785b4152f5"
+    },
+    {
+      "path": "recipes/availability-time-picker/README.md",
+      "bytes": 810,
+      "sha256": "9bc0b459f9d4130f807778fab28130af5e49b25291ea1da51b509fd173d4b9cd"
+    },
+    {
+      "path": "recipes/booking-criteria-panel/blade/booking-criteria-panel.blade.php",
+      "bytes": 5199,
+      "sha256": "e5d32c07bfb1f1a3efd37ad4617ce21c323a14b56767ab7644e256738d8ed8b4"
+    },
+    {
+      "path": "recipes/booking-criteria-panel/fixtures/basic.json",
+      "bytes": 636,
+      "sha256": "377800c87cab100254c091756e7c354b1433946ce9df2dbfd87683281e705dd3"
+    },
+    {
+      "path": "recipes/booking-criteria-panel/react/BookingCriteriaPanel.tsx",
+      "bytes": 6582,
+      "sha256": "74e07d57803b82629f49a5d83884bee6b3ecf630b85d91ea6d1f49a174bfc36b"
+    },
+    {
+      "path": "recipes/booking-criteria-panel/README.md",
+      "bytes": 792,
+      "sha256": "b04a450da0b0753503d6522dae702b61463e621a458ae61ee2c6773a677d0971"
+    },
+    {
+      "path": "recipes/booking-progress-indicator/blade/booking-progress-indicator.blade.php",
+      "bytes": 3235,
+      "sha256": "89eea256378ea83aa983fd365bad5d2fe012dd940a70013319e2e4764a1890fb"
+    },
+    {
+      "path": "recipes/booking-progress-indicator/fixtures/basic.json",
+      "bytes": 255,
+      "sha256": "d8329f72d0bca10fcf8bb14e2ce8457062298d9112b48cd86f01ec6cb0d8d6f0"
+    },
+    {
+      "path": "recipes/booking-progress-indicator/react/BookingProgressIndicator.tsx",
+      "bytes": 3966,
+      "sha256": "25bd138399a8740ddf9976b63b407f3b8b57636308bee7d2423c00be3c8b8439"
+    },
+    {
+      "path": "recipes/booking-progress-indicator/README.md",
+      "bytes": 799,
+      "sha256": "d76066783ac67cebe9971461278f04fe514af18260fa63b000446489e1cf01a4"
+    },
+    {
+      "path": "recipes/booking-review-summary/blade/booking-review-summary.blade.php",
+      "bytes": 4447,
+      "sha256": "7a4131d188867d2e8562e1fa2a6e604132bfaf65817ec183952105a646bbd336"
+    },
+    {
+      "path": "recipes/booking-review-summary/fixtures/basic.json",
+      "bytes": 602,
+      "sha256": "3c4a2de336c7217d642189c67d757325e121d3ddcd40fe1a51fb4882295efa32"
+    },
+    {
+      "path": "recipes/booking-review-summary/fixtures/collapsed.json",
+      "bytes": 391,
+      "sha256": "c3f66445d5ef256eca82d8e40a0e1dda19a2185126c44f699b64d4c9672ff1f8"
+    },
+    {
+      "path": "recipes/booking-review-summary/react/BookingReviewSummaryRecipe.tsx",
+      "bytes": 5291,
+      "sha256": "512ac68037ed3db5bb52377a9f8ee0a047c09e47c7a71c640c9952defa07a62a"
+    },
+    {
+      "path": "recipes/booking-review-summary/README.md",
+      "bytes": 426,
+      "sha256": "d4c1e38fde8707cac2e890eea536edcfa6fb0536dea13df490ab496e911bd26a"
+    },
+    {
+      "path": "recipes/capacity-product-selector/blade/capacity-product-selector.blade.php",
+      "bytes": 7606,
+      "sha256": "0dcb97c880ce00cfa11dea472b75947ee11a1d1508ae52aa4255880eeee9aee7"
+    },
+    {
+      "path": "recipes/capacity-product-selector/fixtures/basic.json",
+      "bytes": 948,
+      "sha256": "b7c6339102d6446ad2ec6e5f2400133b29c6059b7336948c9d00c0e7f25f92e2"
+    },
+    {
+      "path": "recipes/capacity-product-selector/react/CapacityProductSelector.tsx",
+      "bytes": 8525,
+      "sha256": "17ae71907a07120d0567395b9377090ff0322d98d4aa72119a731a48fd8e46cc"
+    },
+    {
+      "path": "recipes/capacity-product-selector/README.md",
+      "bytes": 871,
+      "sha256": "fa7ffece5f7e1349b5221841183cc43eb87f46665927f35c412a0f296e882869"
+    },
+    {
+      "path": "recipes/checkout-details-panel/blade/checkout-details-panel.blade.php",
+      "bytes": 4121,
+      "sha256": "1545472bdac6fd32835cf7e10a7e09d9897af93f0dae084b3e60d061dcdde787"
+    },
+    {
+      "path": "recipes/checkout-details-panel/fixtures/basic.json",
+      "bytes": 622,
+      "sha256": "6739155462a6486f285a5d9e888047a3bbd7a5acda8e5f790c9c817b13a1406a"
+    },
+    {
+      "path": "recipes/checkout-details-panel/fixtures/invalid.json",
+      "bytes": 555,
+      "sha256": "8554746404c244103685e5821a41b9af8c8c6cab004965eb02deadc46600282d"
+    },
+    {
+      "path": "recipes/checkout-details-panel/react/CheckoutDetailsPanelRecipe.tsx",
+      "bytes": 6841,
+      "sha256": "45e35da7839d8c589de63f343b8bc1321e636089e359a9a97f1c4dada6f8bfaa"
+    },
+    {
+      "path": "recipes/checkout-details-panel/README.md",
+      "bytes": 529,
+      "sha256": "10dd0efc8660221046bc863a2de4d5ec5af5465c7234c30dcfc27ba8899f8e94"
+    },
+    {
+      "path": "recipes/collection-state-panel/blade/collection-state-panel.blade.php",
+      "bytes": 2529,
+      "sha256": "e8e9376916bd83307e8ffea850674c6311e92987984988d2156390d5fe09745f"
+    },
+    {
+      "path": "recipes/collection-state-panel/fixtures/empty.json",
+      "bytes": 158,
+      "sha256": "191389853f7b62db1a8075b532fbab330809470f97ba15532e67abb11af7a30a"
+    },
+    {
+      "path": "recipes/collection-state-panel/fixtures/error.json",
+      "bytes": 194,
+      "sha256": "3f4399c65e5ab11770282f86f60f2ada939057bf188afff67945c884a845840d"
+    },
+    {
+      "path": "recipes/collection-state-panel/fixtures/loading.json",
+      "bytes": 105,
+      "sha256": "78a4953b1c0c683b7e15a4f9020274344dcadccf26b3e267ec1658e4be506a51"
+    },
+    {
+      "path": "recipes/collection-state-panel/fixtures/restricted.json",
+      "bytes": 140,
+      "sha256": "e3c6306ec5a293d363f9881f9fdb8a77e563558ac58ca6cf106bc6ce594cbc6b"
+    },
+    {
+      "path": "recipes/collection-state-panel/react/CollectionStatePanelRecipe.tsx",
+      "bytes": 3392,
+      "sha256": "1a2ec8c5a5a04a317ac5613a763bd5d9887d3030379bbaa6dea9b237b417c1f6"
+    },
+    {
+      "path": "recipes/collection-state-panel/README.md",
+      "bytes": 707,
+      "sha256": "86b4581bbfef9a4855732257417df6488f915c253c8b6f1c55eb3010779b51c0"
+    },
+    {
+      "path": "recipes/collection-toolbar/blade/collection-toolbar.blade.php",
+      "bytes": 4011,
+      "sha256": "34463644a22cf0b1b777aee34820337c64c5a8abdf000350f839c0c586b1e5ea"
+    },
+    {
+      "path": "recipes/collection-toolbar/fixtures/basic.json",
+      "bytes": 986,
+      "sha256": "3daae6630b657670dcf2cf5ccb6021af3499027538d8ee74ca819c69f07dd5f5"
+    },
+    {
+      "path": "recipes/collection-toolbar/fixtures/filtered.json",
+      "bytes": 656,
+      "sha256": "499a93b63c9789625647952317e4672f9412b701ac6e6a90c57b83b641206f8a"
+    },
+    {
+      "path": "recipes/collection-toolbar/react/CollectionToolbarRecipe.tsx",
+      "bytes": 6327,
+      "sha256": "a04b86ff15c3dcd76d3e83d62b6dbce48a29bcb6d6b1ec0f82d490a05dba8e3a"
+    },
+    {
+      "path": "recipes/collection-toolbar/README.md",
+      "bytes": 844,
+      "sha256": "6e6aee92cebfeb4235aa4f1a0f8aaa18352f211e019da23e9fee1e23c2294ad9"
+    },
+    {
+      "path": "recipes/configuration-workbench/blade/configuration-workbench.blade.php",
+      "bytes": 5847,
+      "sha256": "4f13e722d28a152556b927e88c40cf9332a48e78270ed673c45ab49e3a835aa5"
+    },
+    {
+      "path": "recipes/configuration-workbench/fixtures/basic.json",
+      "bytes": 571,
+      "sha256": "971f5fc4bcb7394e882ff29750e9e7b6c3084d57cacdeddc954eec1e5e969d88"
+    },
+    {
+      "path": "recipes/configuration-workbench/fixtures/draft.json",
+      "bytes": 552,
+      "sha256": "76fa121dce769e04ea0d3af219a0389578c0577b61552837c76eeaa2942f2303"
+    },
+    {
+      "path": "recipes/configuration-workbench/react/ConfigurationWorkbenchRecipe.tsx",
+      "bytes": 7366,
+      "sha256": "37a97ff6ed99799c42c6d10bb5fa5432c9ce6aaf8db85c31c764cc08217bda3f"
+    },
+    {
+      "path": "recipes/configuration-workbench/README.md",
+      "bytes": 988,
+      "sha256": "3695e592c0a89aae82ce75f810418d977b14f83b24334f5b5e6a2f1589fbc3e6"
+    },
+    {
+      "path": "recipes/contextual-action-dock/blade/contextual-action-dock.blade.php",
+      "bytes": 2311,
+      "sha256": "54cda98c4577f6f2849fb7ff43cfba78ff245e49d1c3f0b38cf25c77b05b072a"
+    },
+    {
+      "path": "recipes/contextual-action-dock/fixtures/basic.json",
+      "bytes": 211,
+      "sha256": "0bd949f2757e121f426c70c8b73dac156ab1734feb8667933036b02c5619510f"
+    },
+    {
+      "path": "recipes/contextual-action-dock/fixtures/multiple-actions.json",
+      "bytes": 262,
+      "sha256": "afab23461cb896365d4ea8658ef0810fd3b756a41c40ed6c77ade23fd1185d85"
+    },
+    {
+      "path": "recipes/contextual-action-dock/react/ContextualActionDockRecipe.tsx",
+      "bytes": 3137,
+      "sha256": "7065cfc0eb353ad69c3f242c48f96e66befb690294fc11c9e40c493e7ccc37ba"
+    },
+    {
+      "path": "recipes/contextual-action-dock/README.md",
+      "bytes": 634,
+      "sha256": "a67551a2352b621cc143bfdb3f152f6771a9cba8d92142dce28261ddf0bd5280"
+    },
+    {
+      "path": "recipes/customer-booking-journey/blade/customer-booking-journey.blade.php",
+      "bytes": 9549,
+      "sha256": "61390ddafd53c16e463d580d1da2fd5098ba0b6de1a7557360e39c53d99eb46e"
+    },
+    {
+      "path": "recipes/customer-booking-journey/fixtures/basic.json",
+      "bytes": 1243,
+      "sha256": "2e024733af8316330793275c48d6b7c1d324ce9a990843f0d18d515ada44b0df"
+    },
+    {
+      "path": "recipes/customer-booking-journey/fixtures/checkout.json",
+      "bytes": 963,
+      "sha256": "19c61dd5f7cbb0bb18065c28f259091a726043ad08e06f466c4a20b18e9c8ad5"
+    },
+    {
+      "path": "recipes/customer-booking-journey/fixtures/error.json",
+      "bytes": 851,
+      "sha256": "15dfb3c1796f6e0f996227e7f4ed936d3dec1669808aea78ef0fd01694523b1d"
+    },
+    {
+      "path": "recipes/customer-booking-journey/react/CustomerBookingJourneyRecipe.tsx",
+      "bytes": 14221,
+      "sha256": "1f687ac0efbb0412534751172342e40113444bd682456aa1fbd5fe407b001614"
+    },
+    {
+      "path": "recipes/customer-booking-journey/README.md",
+      "bytes": 1064,
+      "sha256": "7d050b02d1afb522e5d2548e7af12b6d5a070978e4ef727ee60e952f4508b864"
+    },
+    {
+      "path": "recipes/discount-builder/blade/discount-builder.blade.php",
+      "bytes": 8467,
+      "sha256": "39d59dac0caece69b17d67e4cb1e822aaaf065109c3da940e7f15030416d063e"
+    },
+    {
+      "path": "recipes/discount-builder/fixtures/basic.json",
+      "bytes": 256,
+      "sha256": "a1a3bbb92f07961e5da09b7ec51e63470deb52da20baa4eb53185bf492df6d80"
+    },
+    {
+      "path": "recipes/discount-builder/react/DiscountBuilder.tsx",
+      "bytes": 8578,
+      "sha256": "874e0cfd84231782872678651d67077c246de658353b57b7fd1fe283ee2d2809"
+    },
+    {
+      "path": "recipes/discount-builder/README.md",
+      "bytes": 837,
+      "sha256": "ae1aaf93bfce05a0ed3f75b91ae581bf2650a38dea2577ab4915a94bd65183c7"
+    },
+    {
+      "path": "recipes/epos-booking-journey/blade/epos-booking-journey.blade.php",
+      "bytes": 15745,
+      "sha256": "2652bcbf47608c9048a5ef984354470cad655807978eade8f5c60ba13646ccdd"
+    },
+    {
+      "path": "recipes/epos-booking-journey/fixtures/basic.json",
+      "bytes": 5504,
+      "sha256": "9aae6c10e86395f608f5ecd0e8e66c8230ac696e86f8f5ef31f6fcc00ccb2af8"
+    },
+    {
+      "path": "recipes/epos-booking-journey/react/EposBookingJourney.tsx",
+      "bytes": 10614,
+      "sha256": "0b134fdb7bd08fbc06347d1b5e1c2bdf09231e98b4c732fa59d30e184dc1b601"
+    },
+    {
+      "path": "recipes/epos-booking-journey/README.md",
+      "bytes": 1367,
+      "sha256": "51ff7bec28f431fe444a56ae60ae17441723a7d5bfd066acf4dbdf492cc19ac8"
+    },
+    {
+      "path": "recipes/grouped-results-table/blade/grouped-results-table.blade.php",
+      "bytes": 6515,
+      "sha256": "1761f1d329ffec2b16ccda9f95d3ad67792ead9182ebd73450bc77b0bd72b13e"
+    },
+    {
+      "path": "recipes/grouped-results-table/fixtures/basic.json",
+      "bytes": 4288,
+      "sha256": "0ca847e6483cb382e9c4d71a4e0202be0a9430b569757293d43dad30a2ff8ea7"
+    },
+    {
+      "path": "recipes/grouped-results-table/fixtures/empty.json",
+      "bytes": 478,
+      "sha256": "11f9f2bdb3091940df42e2e7ef593518592c0729aaa2ca01d767cc688ee50010"
+    },
+    {
+      "path": "recipes/grouped-results-table/react/GroupedResultsTable.tsx",
+      "bytes": 6620,
+      "sha256": "cb9843f89e3607af92691615ee42c0e013462d78f90c5fa3568386fd42ff352f"
+    },
+    {
+      "path": "recipes/grouped-results-table/README.md",
+      "bytes": 1016,
+      "sha256": "84d91813b916d340489c750fb75a6c171e55efcbd5ddda22a16d73fc840c9988"
+    },
+    {
+      "path": "recipes/kpi-stat-grid/blade/kpi-stat-grid.blade.php",
+      "bytes": 1887,
+      "sha256": "e2a49e3520cf5eb0333a8907c8f4ef32d41131edc749b80856a1e6f07e09931c"
+    },
+    {
+      "path": "recipes/kpi-stat-grid/fixtures/basic.json",
+      "bytes": 1076,
+      "sha256": "34dcc1d5640057ed282594535884c62962775a1c78f9e4395d817abad33afc4a"
+    },
+    {
+      "path": "recipes/kpi-stat-grid/react/KpiStatGrid.tsx",
+      "bytes": 2327,
+      "sha256": "007287207e2d9b6c796dc0d03c54d9d0e48ae4f82feccc4170993b5205f3942a"
+    },
+    {
+      "path": "recipes/kpi-stat-grid/README.md",
+      "bytes": 785,
+      "sha256": "185dfd3a7577a0684d4a272f6344396d398a153608684e944c4e627c722beb29"
+    },
+    {
+      "path": "recipes/mobile-bottom-navigation/blade/mobile-bottom-navigation.blade.php",
+      "bytes": 4039,
+      "sha256": "16e2d917cd45dfc22ab8d2f6b89133725b9935444a481df972cf9d56f0cdc789"
+    },
+    {
+      "path": "recipes/mobile-bottom-navigation/fixtures/basic.json",
+      "bytes": 356,
+      "sha256": "6eeae2b4568d8cf230f0ded1b98b8d22fe2350ceb833e1e32498ae223e10993c"
+    },
+    {
+      "path": "recipes/mobile-bottom-navigation/fixtures/with-overflow.json",
+      "bytes": 438,
+      "sha256": "256ad7c8947de2521dfc2521107fc797c1b357ecaf45e86f00413b78dbc1a8d5"
+    },
+    {
+      "path": "recipes/mobile-bottom-navigation/react/MobileBottomNavigationRecipe.tsx",
+      "bytes": 6571,
+      "sha256": "2bc457a3b73d956c107c6b2beccecb09eda21757b7c149d3075821a77d13cbe5"
+    },
+    {
+      "path": "recipes/mobile-bottom-navigation/README.md",
+      "bytes": 1294,
+      "sha256": "0b11593f0d0f20c36582f3a88ff0ed23cef13f9bbae707d8b53044fb0ca5c9f0"
+    },
+    {
+      "path": "recipes/multi-query-manager/blade/multi-query-manager.blade.php",
+      "bytes": 4535,
+      "sha256": "342df6899d64153a77a442f26ccd94e418039bdb4848e059f9d7f8dbd16a70b5"
+    },
+    {
+      "path": "recipes/multi-query-manager/fixtures/basic.json",
+      "bytes": 313,
+      "sha256": "e11a7ae853fce30f96ac49936a487c4cae9035b6deb29356313bee783f8a59fc"
+    },
+    {
+      "path": "recipes/multi-query-manager/react/MultiQueryManager.tsx",
+      "bytes": 6008,
+      "sha256": "f5094830c39b235d13e2e88e15d2d9f52017a6d2c2800d821d29614ba5782bb1"
+    },
+    {
+      "path": "recipes/multi-query-manager/README.md",
+      "bytes": 839,
+      "sha256": "492ee0871089018110af2d40aa9f968f7ba853ec1e7b44b2b2822f6baaf2caf3"
+    },
+    {
+      "path": "recipes/quote-builder/blade/quote-builder.blade.php",
+      "bytes": 6482,
+      "sha256": "0fe2fbfc20940b31e1bf294fe39e276b209db649cd5f49e687efab6b2b2bdc59"
+    },
+    {
+      "path": "recipes/quote-builder/fixtures/basic.json",
+      "bytes": 1161,
+      "sha256": "87c5d849a095b47db56b9ea052945659d27ffe2847f847a8c7b5c2b7ba74ae5a"
+    },
+    {
+      "path": "recipes/quote-builder/react/QuoteBuilder.tsx",
+      "bytes": 7584,
+      "sha256": "f52b725730bf1279248c6e246da9acc720451c175f79238d789783da47d272b8"
+    },
+    {
+      "path": "recipes/quote-builder/README.md",
+      "bytes": 858,
+      "sha256": "2398a269acdaa9a8d9b6c2640ab32b5c539f3e8d85a46c40e6ef520e5910f076"
+    },
+    {
+      "path": "recipes/quote-lookup/blade/quote-lookup.blade.php",
+      "bytes": 4469,
+      "sha256": "3b221d8a97e5b175616cbc4ed182c82675188e88071da538257804ab837515c2"
+    },
+    {
+      "path": "recipes/quote-lookup/fixtures/basic.json",
+      "bytes": 938,
+      "sha256": "0c0bf279ed7e1ce2171358b33232c4917b3900286fe416548fd9be4399586aa8"
+    },
+    {
+      "path": "recipes/quote-lookup/react/QuoteLookup.tsx",
+      "bytes": 6537,
+      "sha256": "8ea05f64ad63e9aedfee62848beb06140563a3a4b97463c682358caf58ec4732"
+    },
+    {
+      "path": "recipes/quote-lookup/README.md",
+      "bytes": 845,
+      "sha256": "8b06e377a5b61a573437c5b5b56b0d1ae7000dd01fa6ca0c6702ca05af77d24a"
+    },
+    {
+      "path": "recipes/reference-redemption-journey/blade/reference-redemption-journey.blade.php",
+      "bytes": 6188,
+      "sha256": "efdb167d334d1e3b10e055f182998cd7bab95c1481b7a963174bb6fd93774cdf"
+    },
+    {
+      "path": "recipes/reference-redemption-journey/fixtures/basic.json",
+      "bytes": 821,
+      "sha256": "af441742fcdba432d77b1f32a459b54ea5408264903aaffe03154eafe20a6165"
+    },
+    {
+      "path": "recipes/reference-redemption-journey/fixtures/complete.json",
+      "bytes": 295,
+      "sha256": "375ddf04c1349dafa454089a6b1700d54e3e57b7cefbba75b2aca41bdd0dfa83"
+    },
+    {
+      "path": "recipes/reference-redemption-journey/fixtures/expired.json",
+      "bytes": 139,
+      "sha256": "894c538b8fbab125c2320661b152bb40f96586df62e6fd11afca547840493638"
+    },
+    {
+      "path": "recipes/reference-redemption-journey/fixtures/not-found.json",
+      "bytes": 138,
+      "sha256": "44704493f2a22fbf2bbc3dc8fd79a78d44975ad4a5c5995f14d0d0e6d499b511"
+    },
+    {
+      "path": "recipes/reference-redemption-journey/react/ReferenceRedemptionJourneyRecipe.tsx",
+      "bytes": 8509,
+      "sha256": "739d87f174a66bdb54f87e7de4eef9c3ca8d9ae54401e30b50c22100f94bd51c"
+    },
+    {
+      "path": "recipes/reference-redemption-journey/README.md",
+      "bytes": 1040,
+      "sha256": "06ba97b7165e3dd8135d239a3fceb82c0423f879222d3a939071ef81c93c6273"
+    },
+    {
+      "path": "recipes/report-breakdown-table/blade/report-breakdown-table.blade.php",
+      "bytes": 3534,
+      "sha256": "556aca872d1fce38f6381c117ae8bb133c91087680e68a5e2d86389174341bc4"
+    },
+    {
+      "path": "recipes/report-breakdown-table/fixtures/basic.json",
+      "bytes": 4016,
+      "sha256": "ac51c35e3c1f8b2bf9aaa440e8bd8ff4f3ef70e9af0114213418ae865a24a10c"
+    },
+    {
+      "path": "recipes/report-breakdown-table/react/ReportBreakdownTable.tsx",
+      "bytes": 4280,
+      "sha256": "16be33743061fbaf308ee4a82428c86441dd44cf3ec83cf825d9100b5e949f0b"
+    },
+    {
+      "path": "recipes/report-breakdown-table/README.md",
+      "bytes": 914,
+      "sha256": "6d06a9c1e0df35c00e714c2ecd7a912cc6fb11fa1649f453698799022160a68b"
+    },
+    {
+      "path": "recipes/report-filter-builder/blade/report-filter-builder.blade.php",
+      "bytes": 7074,
+      "sha256": "dccd06ca6f76741e660eebf8b93e11ae4e21d193800e0fbc7b6c051c9094cef1"
+    },
+    {
+      "path": "recipes/report-filter-builder/fixtures/basic.json",
+      "bytes": 1349,
+      "sha256": "6f6eaef6f682ff3a11d03c5057d8df968bae54f3aecf8c5429cad9a3ffadddd1"
+    },
+    {
+      "path": "recipes/report-filter-builder/fixtures/stale.json",
+      "bytes": 1184,
+      "sha256": "4c12556ee7066ae85fe401481924eee9f83d1b5de5565ca2944722993dfadf0b"
+    },
+    {
+      "path": "recipes/report-filter-builder/react/ReportFilterBuilder.tsx",
+      "bytes": 8421,
+      "sha256": "f305bee6fc9996bb10551fe609857e5b034db21404f499698ab3c57db92a3752"
+    },
+    {
+      "path": "recipes/report-filter-builder/README.md",
+      "bytes": 1478,
+      "sha256": "38b4708a2cca61eb7480710d4e70cdc17a12c4f09e1f7aa16b7becd89f0e8653"
+    },
+    {
+      "path": "recipes/report-workspace-tabs/blade/report-workspace-tabs.blade.php",
+      "bytes": 1646,
+      "sha256": "2b3cabd6cfe183f390df97358eead1cefc951ce583769bce4cbfa34b9670f8be"
+    },
+    {
+      "path": "recipes/report-workspace-tabs/fixtures/basic.json",
+      "bytes": 1113,
+      "sha256": "9afecec3576d61006e4c2818ac45993b293cd2e03601ef9702a91456db45937c"
+    },
+    {
+      "path": "recipes/report-workspace-tabs/react/ReportWorkspaceTabs.tsx",
+      "bytes": 2935,
+      "sha256": "a03287eb3eb07dc3e2d4fbc43964182eed5d3b492fa34feff7d00d6e59e2f5e2"
+    },
+    {
+      "path": "recipes/report-workspace-tabs/README.md",
+      "bytes": 922,
+      "sha256": "ba31336e0bc7b68b6c8cb8be4c6c731d693bbace1a78f66491786c1d4f326f3f"
+    },
+    {
+      "path": "recipes/responsive-data-collection/blade/responsive-data-collection.blade.php",
+      "bytes": 5959,
+      "sha256": "50d387c6779e787faa19ecba691ea4605047d3263efd4c1eb7bdba3cca5f4542"
+    },
+    {
+      "path": "recipes/responsive-data-collection/fixtures/basic.json",
+      "bytes": 1295,
+      "sha256": "2fa118b92671f8499a044619b8854deea3d198ac2d2e7fe9dd214bc7195e5b7c"
+    },
+    {
+      "path": "recipes/responsive-data-collection/fixtures/empty.json",
+      "bytes": 331,
+      "sha256": "1c0bdfa33091b483ed4c22feeb3c2cf156b2f79218d2feae10f3daedc605c8fb"
+    },
+    {
+      "path": "recipes/responsive-data-collection/react/ResponsiveDataCollectionRecipe.tsx",
+      "bytes": 6033,
+      "sha256": "33360df712dbe99d537768fa541bb4e3d90c51ec9c6a3b037ecc994710010ba1"
+    },
+    {
+      "path": "recipes/responsive-data-collection/README.md",
+      "bytes": 808,
+      "sha256": "915370654c85ffde991b23260116e3d21ad015eae326f2e5d739c488ff118120"
+    },
+    {
+      "path": "recipes/visit-time-heat-map/blade/visit-time-heat-map.blade.php",
+      "bytes": 6820,
+      "sha256": "6a424841c3b261b410d5fd2e855e8e1da52bb439e4eedd051556937a52b4fd04"
+    },
+    {
+      "path": "recipes/visit-time-heat-map/fixtures/basic.json",
+      "bytes": 1300,
+      "sha256": "5d1725c82e51e48063440cfe6c9d09f6ab88d30fe67fb7997943fbd96c96e8c1"
+    },
+    {
+      "path": "recipes/visit-time-heat-map/react/VisitTimeHeatMap.tsx",
+      "bytes": 7679,
+      "sha256": "f08e738cd66165af7fbf6796b529a4142ccacca5d5799b2006bccdf57dfbcbcf"
+    },
+    {
+      "path": "recipes/visit-time-heat-map/README.md",
+      "bytes": 988,
+      "sha256": "ec5908118ccece7c17cdc4713103708bfab456fb4a1a2c987e691bd9e65c222d"
+    },
+    {
+      "path": "START-HERE.md",
+      "bytes": 1195,
+      "sha256": "3b70c31a4937783c5a31808f563bdce45ab3c1281c1eecbfee095a861a15f037"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 515,
+      "sha256": "d3871941890dd38e96121917c2e368d1732d542268e314d47acbbe993d5f160c"
+    },
+    {
+      "path": "validation/baselines/react/availability-time-picker/dark-1280.png",
+      "bytes": 26937,
+      "sha256": "c836ce8c88daaa3c9519f404cf24074698b3db3bb3a728a538a440e6abe0ed17"
+    },
+    {
+      "path": "validation/baselines/react/availability-time-picker/dark-360.png",
+      "bytes": 22829,
+      "sha256": "5018ba38fe6f81f31387645ce983f18a2fb862d3a49de3bbb735e45da6ba3a05"
+    },
+    {
+      "path": "validation/baselines/react/availability-time-picker/dark-768.png",
+      "bytes": 24975,
+      "sha256": "be11a3620e8313a7375c63c14055db4751b44def387b915febb42b42f38b118f"
+    },
+    {
+      "path": "validation/baselines/react/availability-time-picker/light-1280.png",
+      "bytes": 26751,
+      "sha256": "e37fd060a0c7f20ca3c50312ffdbd790908db2a477abb41b9f6696e146daf31a"
+    },
+    {
+      "path": "validation/baselines/react/availability-time-picker/light-360.png",
+      "bytes": 22667,
+      "sha256": "9a6dccd59261b6d28810171df68f771b3588ea167f4949456c5ec9c992ffcd5f"
+    },
+    {
+      "path": "validation/baselines/react/availability-time-picker/light-768.png",
+      "bytes": 24810,
+      "sha256": "0a6fe0927b3d834768a582aabba558d2bc5237b32caa1430e86685bc866c1e7a"
+    },
+    {
+      "path": "validation/baselines/react/booking-criteria-panel/dark-1280.png",
+      "bytes": 18759,
+      "sha256": "c202976261945f1b45b36ba6392a70db1f3a2ff8c32599bf73953eec157f4fb1"
+    },
+    {
+      "path": "validation/baselines/react/booking-criteria-panel/dark-360.png",
+      "bytes": 15991,
+      "sha256": "c0087aff740391239bbef50639a0eb0c854d7936a719200bc2144d4082639a7d"
+    },
+    {
+      "path": "validation/baselines/react/booking-criteria-panel/dark-768.png",
+      "bytes": 17438,
+      "sha256": "1016cf14375343b03e8ca441c72a538b12c3724bd6133423bc8d992a276fee3e"
+    },
+    {
+      "path": "validation/baselines/react/booking-criteria-panel/light-1280.png",
+      "bytes": 18849,
+      "sha256": "47bf300a256404a469656c9d2ebf7d5c8db2b0bdef1472cbf0c597b149c6a8bb"
+    },
+    {
+      "path": "validation/baselines/react/booking-criteria-panel/light-360.png",
+      "bytes": 16072,
+      "sha256": "f6598bd60bc3aae164fec823d15f6d624727455efaa7ab21e207dbfbdb8726b3"
+    },
+    {
+      "path": "validation/baselines/react/booking-criteria-panel/light-768.png",
+      "bytes": 17488,
+      "sha256": "9bcf22838b293a017741810e78ba3f2944ff2c063cb97e40abc47db2b712ea47"
+    },
+    {
+      "path": "validation/baselines/react/booking-progress-indicator/dark-1280.png",
+      "bytes": 13372,
+      "sha256": "d4ecc9f0f7bdf56c0bc206180d0c27627f4e695116e96bbe67ef0ebe2b3105a9"
+    },
+    {
+      "path": "validation/baselines/react/booking-progress-indicator/dark-360.png",
+      "bytes": 6298,
+      "sha256": "0cdba4e4bee3c221373782c5669bfcd980d6449bda4159614e4456c3c3117986"
+    },
+    {
+      "path": "validation/baselines/react/booking-progress-indicator/dark-768.png",
+      "bytes": 11922,
+      "sha256": "86997f01e6f916de4b1e2181e150d561d65e80bfb031e041e6b134d1580f9504"
+    },
+    {
+      "path": "validation/baselines/react/booking-progress-indicator/light-1280.png",
+      "bytes": 13321,
+      "sha256": "a7d2a05d5cef3eee23f2d2d2cd37dc37c4b482d7fcc020cdec33491e5b4828d0"
+    },
+    {
+      "path": "validation/baselines/react/booking-progress-indicator/light-360.png",
+      "bytes": 6280,
+      "sha256": "317e663b178d7964fe0fa69cc6db2fba52d01bee3b23b948bf77921db324f42f"
+    },
+    {
+      "path": "validation/baselines/react/booking-progress-indicator/light-768.png",
+      "bytes": 11869,
+      "sha256": "f79c8b059990e360c337c30a8808491805b132724a0512f2056cf3d41b6093b9"
+    },
+    {
+      "path": "validation/baselines/react/booking-review-summary/dark-1280.png",
+      "bytes": 39049,
+      "sha256": "0937320fc0e6fb5433a61a6d77b5c6e890097ab4a299254a5559f045496bba43"
+    },
+    {
+      "path": "validation/baselines/react/booking-review-summary/dark-360.png",
+      "bytes": 34945,
+      "sha256": "719ec8e281d554121100f7a979d689d0dda384adbc764c05751c26f6686d57f1"
+    },
+    {
+      "path": "validation/baselines/react/booking-review-summary/dark-768.png",
+      "bytes": 37600,
+      "sha256": "de81e7d29bcf6268fdea60d0ceb77e1a6e48e36e431c89ea6b96961ae7f26248"
+    },
+    {
+      "path": "validation/baselines/react/booking-review-summary/light-1280.png",
+      "bytes": 37945,
+      "sha256": "94346fc30f4b23864aa2732cc1035e3e7c9827673f8ea91f554986d5a61926af"
+    },
+    {
+      "path": "validation/baselines/react/booking-review-summary/light-360.png",
+      "bytes": 33768,
+      "sha256": "c36e4d773f29c64c4f9c701d1d7bd292adfcd4e52c24177c5f5bb07502f9a3e9"
+    },
+    {
+      "path": "validation/baselines/react/booking-review-summary/light-768.png",
+      "bytes": 36305,
+      "sha256": "69cc0727e7df0acac7892c35df3bf6ca806058c0d263dc910bf4ce3b92861397"
+    },
+    {
+      "path": "validation/baselines/react/capacity-product-selector/dark-1280.png",
+      "bytes": 25704,
+      "sha256": "71ac403134d023421922d4bba33b876ed8a8b7ad82b026bddbd0a64e3aa1c50c"
+    },
+    {
+      "path": "validation/baselines/react/capacity-product-selector/dark-360.png",
+      "bytes": 22360,
+      "sha256": "a4a3e10266e72d049bc2798c0abf8ded22441a3c84ded25ed40b40edbc016046"
+    },
+    {
+      "path": "validation/baselines/react/capacity-product-selector/dark-768.png",
+      "bytes": 24013,
+      "sha256": "a5303fbe45d7cd533579a8f0da7c96a305cbb78114f3a4c62839984e09e58e6e"
+    },
+    {
+      "path": "validation/baselines/react/capacity-product-selector/light-1280.png",
+      "bytes": 25535,
+      "sha256": "6f1dae63cfddc8fdc654619dec1f828bb432d912ab71b8d598daa07c2dcc82b2"
+    },
+    {
+      "path": "validation/baselines/react/capacity-product-selector/light-360.png",
+      "bytes": 22046,
+      "sha256": "c802d29f02f034b4c56f2c33b2476a90ca73f23052f69f50eb18407a54d49793"
+    },
+    {
+      "path": "validation/baselines/react/capacity-product-selector/light-768.png",
+      "bytes": 23868,
+      "sha256": "63eb1b87d658bb1748cff9d3c3ff29cbe239292e763aaee2d9893775506802f8"
+    },
+    {
+      "path": "validation/baselines/react/checkout-details-panel/dark-1280.png",
+      "bytes": 35996,
+      "sha256": "5f7b5a79a843398a348e1b72462e4226ce083135c05f71e1c361499fd3d6a494"
+    },
+    {
+      "path": "validation/baselines/react/checkout-details-panel/dark-360.png",
+      "bytes": 34972,
+      "sha256": "5c94de39fb41eb3abed27ede3e9a64ade1da0bd49e9e27ae8c4229a5eafbe060"
+    },
+    {
+      "path": "validation/baselines/react/checkout-details-panel/dark-768.png",
+      "bytes": 34379,
+      "sha256": "9c4802aecb32cecdad3ef5f58734cdce8d3723ed1853cd36815797b0f290fcbd"
+    },
+    {
+      "path": "validation/baselines/react/checkout-details-panel/light-1280.png",
+      "bytes": 35316,
+      "sha256": "e351f19b8f635865605b41d6420d26128cd0fad1d45007dc8da0849164968817"
+    },
+    {
+      "path": "validation/baselines/react/checkout-details-panel/light-360.png",
+      "bytes": 34247,
+      "sha256": "222eeba159cc82e16f56eadda92cbb4b365242e0a4aa20071ce862c1f8398194"
+    },
+    {
+      "path": "validation/baselines/react/checkout-details-panel/light-768.png",
+      "bytes": 33640,
+      "sha256": "6f9b1d6ad38d29296908e4ff0701fc5e145258eca37c7b69c7086d30b23e734e"
+    },
+    {
+      "path": "validation/baselines/react/collection-state-panel/dark-1280.png",
+      "bytes": 6948,
+      "sha256": "37652c67740f6583227c3adc89b7dd2fa8c6b05243f12760e96fd668bec00dfb"
+    },
+    {
+      "path": "validation/baselines/react/collection-state-panel/dark-360.png",
+      "bytes": 4403,
+      "sha256": "f8e04ccb9507f4fe03fad9f53d93a086bd435fc65245d748965bbfaa1eca79b0"
+    },
+    {
+      "path": "validation/baselines/react/collection-state-panel/dark-768.png",
+      "bytes": 5639,
+      "sha256": "0363906daa5f784f151bfff32bde36dcf135b0f8c1e47e7a8449032fa7683699"
+    },
+    {
+      "path": "validation/baselines/react/collection-state-panel/light-1280.png",
+      "bytes": 6810,
+      "sha256": "efb62f7c6928279e2dbe2d4cc6abdbaf8647cb4bfc7187ae47affcd9d45b9c05"
+    },
+    {
+      "path": "validation/baselines/react/collection-state-panel/light-360.png",
+      "bytes": 4224,
+      "sha256": "3e812f3c012d587594123e74d9c7f0fbc74bda3af7e28bcb7f11226d4ec4e75a"
+    },
+    {
+      "path": "validation/baselines/react/collection-state-panel/light-768.png",
+      "bytes": 5468,
+      "sha256": "c11bb403d806851de055fbac5214361783416278110f1297ef723523b4a70d29"
+    },
+    {
+      "path": "validation/baselines/react/collection-toolbar/dark-1280.png",
+      "bytes": 17562,
+      "sha256": "d79213939567d90938d32fabcb3d072eb2019442cbbf840481ea5d0e7a2101ad"
+    },
+    {
+      "path": "validation/baselines/react/collection-toolbar/dark-360.png",
+      "bytes": 16974,
+      "sha256": "9322866b7b56d7dfeb7a2b3325c69dcf1d5e8410669cc84f9bdab3f47e70a045"
+    },
+    {
+      "path": "validation/baselines/react/collection-toolbar/dark-768.png",
+      "bytes": 16873,
+      "sha256": "552420c8798f2e3e0d4c2e031943989a4fb5839a19681df810d8ea56d25872f9"
+    },
+    {
+      "path": "validation/baselines/react/collection-toolbar/light-1280.png",
+      "bytes": 17129,
+      "sha256": "f7ea68769aaae812af9c31dbe2a7bdbef10a975adc1e5df5feee9645818e7e2c"
+    },
+    {
+      "path": "validation/baselines/react/collection-toolbar/light-360.png",
+      "bytes": 16669,
+      "sha256": "a4636ad6e61ce293c0059a003454e03c19cf73289ce96bbbd7da2e65ef7ddad5"
+    },
+    {
+      "path": "validation/baselines/react/collection-toolbar/light-768.png",
+      "bytes": 16657,
+      "sha256": "7552617ba14b5422539ffc6d532d644c50be9421bdec373b083ace7e3acb9786"
+    },
+    {
+      "path": "validation/baselines/react/configuration-workbench/dark-1280.png",
+      "bytes": 35026,
+      "sha256": "21e750b2ba518b23937406e29218ca359854094c7259d7deb9a8627e8121d4fb"
+    },
+    {
+      "path": "validation/baselines/react/configuration-workbench/dark-360.png",
+      "bytes": 34510,
+      "sha256": "07c795e41643aa4d438dc64b293f855a1d7fcb2c7f280c6349bb050369f9aaca"
+    },
+    {
+      "path": "validation/baselines/react/configuration-workbench/dark-768.png",
+      "bytes": 33058,
+      "sha256": "e612c932f964465db402f2eea8cd5d14c28034f0293426ecf8d51bb341123644"
+    },
+    {
+      "path": "validation/baselines/react/configuration-workbench/light-1280.png",
+      "bytes": 34453,
+      "sha256": "8593a87a0e44cf7a592ad74a6c77af72e79c7f070599264db586cde59c9bc43f"
+    },
+    {
+      "path": "validation/baselines/react/configuration-workbench/light-360.png",
+      "bytes": 34013,
+      "sha256": "f6d0473934a5a317fba6afa4913ec9a4e55dede3a3190dde90657f0de12c7016"
+    },
+    {
+      "path": "validation/baselines/react/configuration-workbench/light-768.png",
+      "bytes": 32388,
+      "sha256": "2496a78d35646d714c8f03ea19b11f0230bb7c9dec0125d3de0302c76e370eb6"
+    },
+    {
+      "path": "validation/baselines/react/contextual-action-dock/dark-1280.png",
+      "bytes": 14337,
+      "sha256": "92e0ba539abaa98cb10818777ec683b4fff6f27bfc2c255944f7bb725c10a9b8"
+    },
+    {
+      "path": "validation/baselines/react/contextual-action-dock/dark-360.png",
+      "bytes": 11581,
+      "sha256": "7d6ba9836b8599ed9f0b6b271af1e969ed22467a4c711f922f3c63dab9cefe7a"
+    },
+    {
+      "path": "validation/baselines/react/contextual-action-dock/dark-768.png",
+      "bytes": 12903,
+      "sha256": "7522d36fbb529c500bec128ffddebd71a338a4f8917c44f715b822304cb32f07"
+    },
+    {
+      "path": "validation/baselines/react/contextual-action-dock/light-1280.png",
+      "bytes": 14463,
+      "sha256": "2928785d9620eecc3e216d2443321c67580107f29d3df6c31d3d633a8d522ad4"
+    },
+    {
+      "path": "validation/baselines/react/contextual-action-dock/light-360.png",
+      "bytes": 11726,
+      "sha256": "82998b78abfeb1343cb603677dea7d9400a7b17e0511ee171413bd4394296a11"
+    },
+    {
+      "path": "validation/baselines/react/contextual-action-dock/light-768.png",
+      "bytes": 13043,
+      "sha256": "ac2e9ce271a27acd226791159b44331abbeaabb08a0291b0032092f3abcb12f2"
+    },
+    {
+      "path": "validation/baselines/react/customer-booking-journey/dark-1280.png",
+      "bytes": 41161,
+      "sha256": "5531bfc8770813bd90bc81eb926c673c9a525eab62f7b5b1e609093ef30a2f9d"
+    },
+    {
+      "path": "validation/baselines/react/customer-booking-journey/dark-360.png",
+      "bytes": 38157,
+      "sha256": "1c652301318ba1895770a60692d9063d19edd1e9607f99c162bb8b25c401c6b3"
+    },
+    {
+      "path": "validation/baselines/react/customer-booking-journey/dark-768.png",
+      "bytes": 39546,
+      "sha256": "f7b6466b9a3631591e880583b9afc915cfdd87a5094036d3dd09d8514c6c361c"
+    },
+    {
+      "path": "validation/baselines/react/customer-booking-journey/light-1280.png",
+      "bytes": 41207,
+      "sha256": "42d10c0fa6d721de0afa7c9a369b767e51f34bfa1e8139e14353544f84657367"
+    },
+    {
+      "path": "validation/baselines/react/customer-booking-journey/light-360.png",
+      "bytes": 37896,
+      "sha256": "6dc8ad207b0c7123380fe4e1e88e8973b6700e4c7bf65460d44c60b0533fb79b"
+    },
+    {
+      "path": "validation/baselines/react/customer-booking-journey/light-768.png",
+      "bytes": 39493,
+      "sha256": "ec4f62173e41ee476cdae70c3cd2e3a20f7f0a471abc9122a92999de191a0a16"
+    },
+    {
+      "path": "validation/baselines/react/discount-builder/dark-1280.png",
+      "bytes": 7836,
+      "sha256": "30316fae39b5e3365be2915703e21372778fe9427f7b6840c747041facadd614"
+    },
+    {
+      "path": "validation/baselines/react/discount-builder/dark-360.png",
+      "bytes": 5239,
+      "sha256": "01136ceb8431eccaadfe9b5df6effa6aeba5daa9c66708676975beffc8d8e79e"
+    },
+    {
+      "path": "validation/baselines/react/discount-builder/dark-768.png",
+      "bytes": 6469,
+      "sha256": "da35c418bf31fd85e5e00987d3edaf682152caea716f80692a65edda2140a916"
+    },
+    {
+      "path": "validation/baselines/react/discount-builder/light-1280.png",
+      "bytes": 7833,
+      "sha256": "a9368b7c74e18b46029e9a2a1cd8d2b8a8f0d9927039d09168a9cb1ab5c08e6b"
+    },
+    {
+      "path": "validation/baselines/react/discount-builder/light-360.png",
+      "bytes": 5243,
+      "sha256": "30132cea884b6ad94d11639874d4204bf1f3dd321296ec4f66ee5e30966e0d20"
+    },
+    {
+      "path": "validation/baselines/react/discount-builder/light-768.png",
+      "bytes": 6479,
+      "sha256": "5d29d6f67e5fe0645e7ab5f26f9f1133cb07dd1d0d0970030a53ac3f0e25b8dd"
+    },
+    {
+      "path": "validation/baselines/react/epos-booking-journey/dark-1280.png",
+      "bytes": 76961,
+      "sha256": "6146753996fe87634b09766519a2d03acdebd353cafafd70b705d9eb104627d8"
+    },
+    {
+      "path": "validation/baselines/react/epos-booking-journey/dark-360.png",
+      "bytes": 65516,
+      "sha256": "0e986b466b8482aeaeb8418aa0cf0f394762f4508b9b06d3835e340980058b34"
+    },
+    {
+      "path": "validation/baselines/react/epos-booking-journey/dark-768.png",
+      "bytes": 74071,
+      "sha256": "712354ffcec5a6559b1bff85f7c88aae6a31ef7d37ababc3b7394ee207089e1d"
+    },
+    {
+      "path": "validation/baselines/react/epos-booking-journey/light-1280.png",
+      "bytes": 76984,
+      "sha256": "0535dfa633e5032f17749cd257209608f25814a09044f6608f4fbac2f7c2b286"
+    },
+    {
+      "path": "validation/baselines/react/epos-booking-journey/light-360.png",
+      "bytes": 65553,
+      "sha256": "60d19b7f9c07b6aa99ab99a51ca7c122e85a7a3e5b2ad7e0c410a5c9cc83c1bf"
+    },
+    {
+      "path": "validation/baselines/react/epos-booking-journey/light-768.png",
+      "bytes": 74003,
+      "sha256": "973a6c987b079d57ddf87c4d62eac8b520c365077cf2f68d34c6eef8f9679a73"
+    },
+    {
+      "path": "validation/baselines/react/grouped-results-table/dark-1280.png",
+      "bytes": 51554,
+      "sha256": "a586c623f4ed592c3b1e397efc9175402a84509b6092b7df7684628c1c39bdb6"
+    },
+    {
+      "path": "validation/baselines/react/grouped-results-table/dark-360.png",
+      "bytes": 27481,
+      "sha256": "549bef22788586775e2b2b0a83ee90899851183b145e83d1eea7d3f9578fc1c5"
+    },
+    {
+      "path": "validation/baselines/react/grouped-results-table/dark-768.png",
+      "bytes": 50023,
+      "sha256": "a4c2524ddc0ee1eb5d250c766d6d7e027cdb4ac23392b9f8826c5e902cd277ad"
+    },
+    {
+      "path": "validation/baselines/react/grouped-results-table/light-1280.png",
+      "bytes": 51906,
+      "sha256": "36a45518ff98fbd67f30ed2179fcd2df2c24a811098c57329a702409bccbb8e0"
+    },
+    {
+      "path": "validation/baselines/react/grouped-results-table/light-360.png",
+      "bytes": 27571,
+      "sha256": "b14fb4bf00e7d911e5012fadc150b4c3d9cd69a13c5bbaa7c89fc1aafda472bc"
+    },
+    {
+      "path": "validation/baselines/react/grouped-results-table/light-768.png",
+      "bytes": 50681,
+      "sha256": "23de9535491f64271c3f17b07c529ec0489316e5579c14c60b600a93eda32f37"
+    },
+    {
+      "path": "validation/baselines/react/kpi-stat-grid/dark-1280.png",
+      "bytes": 26087,
+      "sha256": "f3eae67e146026bab58cd2b72d86f4ada203ed655e1e22946ed629dd7afbb1c5"
+    },
+    {
+      "path": "validation/baselines/react/kpi-stat-grid/dark-360.png",
+      "bytes": 25697,
+      "sha256": "20d28fc3f6754b60dbf9d0419390dd471e04bd4ad6522267732021a8356092b2"
+    },
+    {
+      "path": "validation/baselines/react/kpi-stat-grid/dark-768.png",
+      "bytes": 28610,
+      "sha256": "4911278cc569d127907792015f641be0f56d18a8e8f345fa8b12dc5b572b5630"
+    },
+    {
+      "path": "validation/baselines/react/kpi-stat-grid/light-1280.png",
+      "bytes": 25720,
+      "sha256": "a022fcfa8be6b8c6cc9be9fd75ff7dd239929279de1ce94e151534da81cccc65"
+    },
+    {
+      "path": "validation/baselines/react/kpi-stat-grid/light-360.png",
+      "bytes": 25208,
+      "sha256": "bf6149fa5c8c56811bdc178e1382d5e031bde716e47f5be5d2e2389602b51c5a"
+    },
+    {
+      "path": "validation/baselines/react/kpi-stat-grid/light-768.png",
+      "bytes": 28279,
+      "sha256": "fb0bc01749c57f97a61edd006ff40be8465b518c506b1535bb2a3f36fd98a5e9"
+    },
+    {
+      "path": "validation/baselines/react/mobile-bottom-navigation/dark-1280.png",
+      "bytes": 10821,
+      "sha256": "081b354f289420fcaf7a54e50f6417a167273895acd8be141db0d061d1b6fba6"
+    },
+    {
+      "path": "validation/baselines/react/mobile-bottom-navigation/dark-360.png",
+      "bytes": 8174,
+      "sha256": "0dbed93b9512f959b690deb06052a0c823d62c43dbe9ec000a7756e4f669c5d3"
+    },
+    {
+      "path": "validation/baselines/react/mobile-bottom-navigation/dark-768.png",
+      "bytes": 9450,
+      "sha256": "31e44b6b06c1a697030106c16f87e9adddfabb8c7a8a4034422a96f931b8c6cc"
+    },
+    {
+      "path": "validation/baselines/react/mobile-bottom-navigation/light-1280.png",
+      "bytes": 10799,
+      "sha256": "ab0f7c7bddabcdca6d522a6b7fa20286a64df1adc485165c9c044bb0a0b36c22"
+    },
+    {
+      "path": "validation/baselines/react/mobile-bottom-navigation/light-360.png",
+      "bytes": 8164,
+      "sha256": "070c81c01022f82ccc26791433c012b3a91397fe8bf514e9a24391c20dad7bb8"
+    },
+    {
+      "path": "validation/baselines/react/mobile-bottom-navigation/light-768.png",
+      "bytes": 9430,
+      "sha256": "c6029a9fc4e3f55739a8c22bbf2583886971bcf0a6c6ff3f8a98f45c0b91842c"
+    },
+    {
+      "path": "validation/baselines/react/multi-query-manager/dark-1280.png",
+      "bytes": 18505,
+      "sha256": "38c10fece65824a3ea072b39f682cef9b7eeab50b4e254c53a361c2174f171c8"
+    },
+    {
+      "path": "validation/baselines/react/multi-query-manager/dark-360.png",
+      "bytes": 8613,
+      "sha256": "cdfadf72dffd47a65b037b30bd8fb0806fbb171d28df56c7d4f8b6ad4eb96452"
+    },
+    {
+      "path": "validation/baselines/react/multi-query-manager/dark-768.png",
+      "bytes": 16272,
+      "sha256": "06c845882e1b544b25285ecb2856f7e2be52248db40f9e7cf9b4c1293e3f5ab0"
+    },
+    {
+      "path": "validation/baselines/react/multi-query-manager/light-1280.png",
+      "bytes": 17954,
+      "sha256": "8b83fefc5e6546697e8f83f47094beef1fb9f8be289872e11d8cbde3bc836913"
+    },
+    {
+      "path": "validation/baselines/react/multi-query-manager/light-360.png",
+      "bytes": 8245,
+      "sha256": "e47c979ee83f3f00c3909ab5f79d52eb597000e5f37c0495c5c7bb28fab2808c"
+    },
+    {
+      "path": "validation/baselines/react/multi-query-manager/light-768.png",
+      "bytes": 15738,
+      "sha256": "b3f7682cb08ea505d969048fcc4ab93fc00267857cd445f35c124d1fdfedd9b4"
+    },
+    {
+      "path": "validation/baselines/react/quote-builder/dark-1280.png",
+      "bytes": 7231,
+      "sha256": "5d4ec004abf057e3df68eef8606f502f92694be61fa79ebff3b8b454253242ab"
+    },
+    {
+      "path": "validation/baselines/react/quote-builder/dark-360.png",
+      "bytes": 4633,
+      "sha256": "48d3f0bb532794d876c7c62b3b9be344a0f4b0676d727d3a669e61c09fe97380"
+    },
+    {
+      "path": "validation/baselines/react/quote-builder/dark-768.png",
+      "bytes": 5876,
+      "sha256": "95bdc0bdfb6aaab3a08679c1a0ab1897e9e80c81c755675b97a0a5d47625fbf6"
+    },
+    {
+      "path": "validation/baselines/react/quote-builder/light-1280.png",
+      "bytes": 7236,
+      "sha256": "58b091f667ba19c6b5c62dd01d912205d0bd25059442da2a335319c960d6655b"
+    },
+    {
+      "path": "validation/baselines/react/quote-builder/light-360.png",
+      "bytes": 4626,
+      "sha256": "01c836136b2f7760b38b00f3090fdc574dc4860a17126bbb57caf3b62f8b734e"
+    },
+    {
+      "path": "validation/baselines/react/quote-builder/light-768.png",
+      "bytes": 5877,
+      "sha256": "6d36e94a4a6a04a632152a4bafbc7377c2c91edc8f270727a4be3c172673a7de"
+    },
+    {
+      "path": "validation/baselines/react/quote-lookup/dark-1280.png",
+      "bytes": 7640,
+      "sha256": "b35b9471afd3f082efb4064c84b83f9e3fb231dba5cb7fbe81e82313065d955d"
+    },
+    {
+      "path": "validation/baselines/react/quote-lookup/dark-360.png",
+      "bytes": 5048,
+      "sha256": "2cbb44fcb56803aa406659179ae494bea03914bc14e3efa9507be261ee0648ca"
+    },
+    {
+      "path": "validation/baselines/react/quote-lookup/dark-768.png",
+      "bytes": 6290,
+      "sha256": "2f231ba4d33361b5b05a8be4bbb0853ad9debe0bcbe2719af06fa3d887c419c8"
+    },
+    {
+      "path": "validation/baselines/react/quote-lookup/light-1280.png",
+      "bytes": 7475,
+      "sha256": "94df8033ade2d5d812aa68700737c1a7926885d7bebbda763b0591d71b0cc428"
+    },
+    {
+      "path": "validation/baselines/react/quote-lookup/light-360.png",
+      "bytes": 4883,
+      "sha256": "0a7ed25ba6a96770ecbe47868a8abc8624e5f6b9c57728439a0d26a89d4239a2"
+    },
+    {
+      "path": "validation/baselines/react/quote-lookup/light-768.png",
+      "bytes": 6134,
+      "sha256": "61e9796bdfb158288c102396fdc406a2f6c482fa9458136dccb888690c89b5d6"
+    },
+    {
+      "path": "validation/baselines/react/reference-redemption-journey/dark-1280.png",
+      "bytes": 28101,
+      "sha256": "c00784c74ace8ea16e715d2e0e0141cce6f05d319318782c6fb9ad31a8c69a95"
+    },
+    {
+      "path": "validation/baselines/react/reference-redemption-journey/dark-360.png",
+      "bytes": 24904,
+      "sha256": "ee511585d690da0f766dc0ebf8db41658e79a39c99c1d0326aaa0a10087d3ea0"
+    },
+    {
+      "path": "validation/baselines/react/reference-redemption-journey/dark-768.png",
+      "bytes": 26274,
+      "sha256": "da831413b7ff06d61ce790b2fcfbbd94f21373028a1b372b7bd732aa377d1e12"
+    },
+    {
+      "path": "validation/baselines/react/reference-redemption-journey/light-1280.png",
+      "bytes": 28047,
+      "sha256": "977eaae23f7b1ab59cc31518b818a4a3f1e1e000c01a9d095692878f348a0eed"
+    },
+    {
+      "path": "validation/baselines/react/reference-redemption-journey/light-360.png",
+      "bytes": 24802,
+      "sha256": "898bfba80783d815ddaff5d49a2807327c44356477701c9b8c1713af77a19ad7"
+    },
+    {
+      "path": "validation/baselines/react/reference-redemption-journey/light-768.png",
+      "bytes": 26209,
+      "sha256": "1a18197e8a9fb90cbe948ee5a21ce185dee05ee76af6fa6a6d7517d9e4f9e4c5"
+    },
+    {
+      "path": "validation/baselines/react/report-breakdown-table/dark-1280.png",
+      "bytes": 60719,
+      "sha256": "b8d48562c69c4558d6c1915aa39feb265f3904f55a5cece3eb5fd99a05f9cb2c"
+    },
+    {
+      "path": "validation/baselines/react/report-breakdown-table/dark-360.png",
+      "bytes": 26284,
+      "sha256": "85d90b5a50bc14eb0e5c6072805b0bb2555960737752c07fb93e853b77197af1"
+    },
+    {
+      "path": "validation/baselines/react/report-breakdown-table/dark-768.png",
+      "bytes": 57061,
+      "sha256": "c367c618cf11b4738158943698c6029cdcf0d18ca10a48648c1bb4c2caf0f7dd"
+    },
+    {
+      "path": "validation/baselines/react/report-breakdown-table/light-1280.png",
+      "bytes": 60557,
+      "sha256": "eaebdb3668cf60ba7be72bb0e1537589c603579aad7823d3154b86219f77df01"
+    },
+    {
+      "path": "validation/baselines/react/report-breakdown-table/light-360.png",
+      "bytes": 26414,
+      "sha256": "eee739fb89d7f2ae5c1af3ccea9a20c4faed0ad3df632535417518eab25f63d4"
+    },
+    {
+      "path": "validation/baselines/react/report-breakdown-table/light-768.png",
+      "bytes": 56950,
+      "sha256": "0962ee562f5327e9a73a991dcf311d2147d27425bf225d0f3b027c3777039262"
+    },
+    {
+      "path": "validation/baselines/react/report-filter-builder/dark-1280.png",
+      "bytes": 29311,
+      "sha256": "abbbb0b3cdc00834d58fec21e5999813874fc6c0072558dbf0e8f640b72ffde9"
+    },
+    {
+      "path": "validation/baselines/react/report-filter-builder/dark-360.png",
+      "bytes": 26174,
+      "sha256": "82b78f3d390ca28533f404298b16eafdc21c6478023a65429ac8c2f6b1da3eb6"
+    },
+    {
+      "path": "validation/baselines/react/report-filter-builder/dark-768.png",
+      "bytes": 28230,
+      "sha256": "45e919d3212cd3694707c825a6a72163ec2f463681dd01cf13d9df95173add8c"
+    },
+    {
+      "path": "validation/baselines/react/report-filter-builder/light-1280.png",
+      "bytes": 28944,
+      "sha256": "b2ce49bd7aaf82a8602ce8472b9b2a9e2a127648f58030ae7334d02d98e03321"
+    },
+    {
+      "path": "validation/baselines/react/report-filter-builder/light-360.png",
+      "bytes": 25781,
+      "sha256": "04cfe8d35d98ddf7a45a8293d1cc9b917c2e428387825f23075dc700c5a90fb3"
+    },
+    {
+      "path": "validation/baselines/react/report-filter-builder/light-768.png",
+      "bytes": 27827,
+      "sha256": "ed5cdc732d64df11562a189ebe953cf8098c6707dd668480c90ac29bb9d57e19"
+    },
+    {
+      "path": "validation/baselines/react/report-workspace-tabs/dark-1280.png",
+      "bytes": 21810,
+      "sha256": "848c2da1438b19688f2d229cac194e044837ffd4ff92615c01a27c17834e7d47"
+    },
+    {
+      "path": "validation/baselines/react/report-workspace-tabs/dark-360.png",
+      "bytes": 14950,
+      "sha256": "b8cfa8d438eaf3cd3d22866c9b7cc6fcb85991cd32673749dceb675aeb8034ab"
+    },
+    {
+      "path": "validation/baselines/react/report-workspace-tabs/dark-768.png",
+      "bytes": 20353,
+      "sha256": "f76121092db66bad0bc2a53b5a63096e05b4251113222937f4f208ab221e7446"
+    },
+    {
+      "path": "validation/baselines/react/report-workspace-tabs/light-1280.png",
+      "bytes": 21071,
+      "sha256": "044c9b82ae7c5e3df1b2cefad4d1cfea424ce37c77d5c859c5cae1e8abb5fc46"
+    },
+    {
+      "path": "validation/baselines/react/report-workspace-tabs/light-360.png",
+      "bytes": 14437,
+      "sha256": "5071a75078696aa3eefe65ac951799730181506227c17ccd527e22abb48f4536"
+    },
+    {
+      "path": "validation/baselines/react/report-workspace-tabs/light-768.png",
+      "bytes": 19638,
+      "sha256": "cea6bc1e381e2425bfbec2d0c5356764dacbff93568d4d48f7e524e7fc575d56"
+    },
+    {
+      "path": "validation/baselines/react/responsive-data-collection/dark-1280.png",
+      "bytes": 39749,
+      "sha256": "30a898aa5647efd860ef2bc6412986a3960557408d4846f32a088d0195e521e6"
+    },
+    {
+      "path": "validation/baselines/react/responsive-data-collection/dark-360.png",
+      "bytes": 37828,
+      "sha256": "e758178c0bebacc8cc3b7cfae2edf0c2f480ff454181c409b55552cf21c47716"
+    },
+    {
+      "path": "validation/baselines/react/responsive-data-collection/dark-768.png",
+      "bytes": 35844,
+      "sha256": "21bde839e8209aa5acea924ddd071bfcf83fab7135541e856f0ba5c2cf550b06"
+    },
+    {
+      "path": "validation/baselines/react/responsive-data-collection/light-1280.png",
+      "bytes": 39591,
+      "sha256": "61009e68342f7248409ac44e43a17eb23fa0cd814c7c8bdba65631b48015b74f"
+    },
+    {
+      "path": "validation/baselines/react/responsive-data-collection/light-360.png",
+      "bytes": 37789,
+      "sha256": "0bf75f6d77bf576f46f6f990f76e81dea3e7115807c0f22bb7657f0d68feb0b7"
+    },
+    {
+      "path": "validation/baselines/react/responsive-data-collection/light-768.png",
+      "bytes": 35827,
+      "sha256": "616dab6949b5fa38d3a366410c2eb3ad5ecf19c572f288dc6eb5cc0713576a17"
+    },
+    {
+      "path": "validation/baselines/react/visit-time-heat-map/dark-1280.png",
+      "bytes": 37653,
+      "sha256": "dba93e6a8b574e97320dab2c23f9c6a03b0c14f05e12713723631afa9a0f74ab"
+    },
+    {
+      "path": "validation/baselines/react/visit-time-heat-map/dark-360.png",
+      "bytes": 25216,
+      "sha256": "dbffde4d10c79bba2324be8f54ec2033bed1f6f94eb06241ad849cb6829ff8f6"
+    },
+    {
+      "path": "validation/baselines/react/visit-time-heat-map/dark-768.png",
+      "bytes": 33895,
+      "sha256": "4f26989bebe98431c0adb96aaceee69cbfcafe37d3fd3cd0635f6b046f34cc50"
+    },
+    {
+      "path": "validation/baselines/react/visit-time-heat-map/light-1280.png",
+      "bytes": 37311,
+      "sha256": "5a3002c9571196b7ac189d7bb4243831f094b3bd87808bbb87332026822d1c59"
+    },
+    {
+      "path": "validation/baselines/react/visit-time-heat-map/light-360.png",
+      "bytes": 24818,
+      "sha256": "69fc40617e7c78f9d5186786dba88120616889b1fff0eb888ad15d27f5484d7b"
+    },
+    {
+      "path": "validation/baselines/react/visit-time-heat-map/light-768.png",
+      "bytes": 33537,
+      "sha256": "d38174b17c3d05cabae721fa46eaf62d2bf0710df7dfc7956d861962273bed5b"
+    },
+    {
+      "path": "validation/blade-fixture/.gitignore",
+      "bytes": 154,
+      "sha256": "d7a72d7ff1ff50197375f7d973625dd976fe0e98d52bd1e2562c9de90c7454d3"
+    },
+    {
+      "path": "validation/blade-fixture/app/Providers/PatternLibraryServiceProvider.php",
+      "bytes": 3577,
+      "sha256": "af9c718778c9f24fa864609380e0a52ecdcba74ec90b30dcd6502121e4c9dc5b"
+    },
+    {
+      "path": "validation/blade-fixture/app/View/Components/PhosphorIcon.php",
+      "bytes": 304,
+      "sha256": "4ca0c19b44bbe0c8fbea45db6da16b0b6414e95b703aa545787ce5c3080773f7"
+    },
+    {
+      "path": "validation/blade-fixture/artisan",
+      "bytes": 558,
+      "sha256": "8c6ec4c761783088bcac3e012d65f24e0dcb17c34881f488b3e35d06c4c1f800"
+    },
+    {
+      "path": "validation/blade-fixture/bootstrap/app.php",
+      "bytes": 1360,
+      "sha256": "d6bbba7a2fe7892eaf52f358accf206f6a3083dfdbc8ef2c4f3e0e7a93dd19b8"
+    },
+    {
+      "path": "validation/blade-fixture/bootstrap/providers.php",
+      "bytes": 45,
+      "sha256": "0eaabf128aaac2446c78759b36db129010fef54603c7e18ec859b84a239903b8"
+    },
+    {
+      "path": "validation/blade-fixture/composer.json",
+      "bytes": 416,
+      "sha256": "3c31e4266cfae18164d89f1aff711461492e027da4dc82369362b41cd62c8bef"
+    },
+    {
+      "path": "validation/blade-fixture/config/app.php",
+      "bytes": 565,
+      "sha256": "3dedffa586e243fe0191315058127475e59a08c2169359d0b4810e0114f5e130"
+    },
+    {
+      "path": "validation/blade-fixture/config/cache.php",
+      "bytes": 245,
+      "sha256": "bde038dad0046f4236bc267df03324cbeceb5c75ceb8795719f37a125988a0e3"
+    },
+    {
+      "path": "validation/blade-fixture/config/session.php",
+      "bytes": 491,
+      "sha256": "f6531326085ae7464db769a2d7fac7a4ff26aead61971eaa7411542ad2f834a0"
+    },
+    {
+      "path": "validation/blade-fixture/config/view.php",
+      "bytes": 347,
+      "sha256": "cfbadca7da956e006342ee136a305d1310b6402e2898871e9c422f9cef299149"
+    },
+    {
+      "path": "validation/blade-fixture/README.md",
+      "bytes": 1359,
+      "sha256": "7c88d9683e273d00a97d0b78cb123a863a8664b190820cd62f5ba0a0a3424d75"
+    },
+    {
+      "path": "validation/blade-fixture/resources/views/components/phosphor-icon.blade.php",
+      "bytes": 332,
+      "sha256": "013644b055b8622bc379b6d9398dd97359105f445eb5ae5c13a989a8be9f9ecb"
+    },
+    {
+      "path": "validation/blade-fixture/routes/console.php",
+      "bytes": 96,
+      "sha256": "515058b9df2dd1cb60f7713102703cff6dfc701fde29d8be2473dae70c6be2ba"
+    },
+    {
+      "path": "validation/blade-fixture/routes/web.php",
+      "bytes": 190,
+      "sha256": "6b71e77b00c9b24dfb477388a0dec8284488024c872fb0bf10530a48d027efcb"
+    },
+    {
+      "path": "validation/composer.json",
+      "bytes": 301,
+      "sha256": "f02e8bfe6c7efa0fb582a0241289063d0ad10411c3b5d145e54b78b5135ca2b7"
+    },
+    {
+      "path": "validation/composer.lock",
+      "bytes": 215376,
+      "sha256": "e1f53438bd27df6d99bee2eb63e369efe7e5eab25017c557ea69a8f227de1c7a"
+    },
+    {
+      "path": "validation/package-lock.json",
+      "bytes": 89621,
+      "sha256": "9008fc8dd55cf48fc31d7bb8d50a7654983c5cd2ed3946fbf6182135f19b2f7d"
+    },
+    {
+      "path": "validation/package.json",
+      "bytes": 558,
+      "sha256": "c823a2d7924ed188d476bb1a16a83042dbc45c8a18695bdb8c9d09ab58fc209c"
+    },
+    {
+      "path": "validation/reports/accessibility-review.json",
+      "bytes": 8043,
+      "sha256": "f2cd628a03970c02218f14dd33b8b09400b170644577e60f8923aa1f544862c0"
+    },
+    {
+      "path": "validation/reports/blade-compile.json",
+      "bytes": 3823,
+      "sha256": "ca0aeaa4032e45bba48fd6b5b59eb4320e33831803ce6fdef611d2479250b4b6"
+    },
+    {
+      "path": "validation/reports/blade-render.json",
+      "bytes": 22179,
+      "sha256": "f592d9ef32b4ebcfcfa0f8000b069cd577fdbc732af31af568d376c05c4bf448"
+    },
+    {
+      "path": "validation/reports/blade-static.json",
+      "bytes": 6222,
+      "sha256": "2bb75012fb43ab324c48f85d83912d1f71d44becbf1f59bbcf1065a5bc7abe9b"
+    },
+    {
+      "path": "validation/reports/dependency-audit.json",
+      "bytes": 975,
+      "sha256": "e99729e1133219e33dfbb9eeece21f5d7a1fbd1af511c0375e5d69eeac674ddf"
+    },
+    {
+      "path": "validation/reports/interactions.json",
+      "bytes": 1287,
+      "sha256": "12441fe345339a69adcc9b26b13e7a738f200629aa56806b5793131750549295"
+    },
+    {
+      "path": "validation/reports/react.json",
+      "bytes": 145123,
+      "sha256": "2894b8f6159c273795d159f329ead1f18bed745dbf5971f8b1fad2d4bfb44777"
+    },
+    {
+      "path": "validation/reports/README.md",
+      "bytes": 255,
+      "sha256": "52c57e47fa0def334ca96f8830c9e034c14a39e30c9ebcc3259728737cc6b4b2"
+    },
+    {
+      "path": "validation/reports/release-readiness.md",
+      "bytes": 2007,
+      "sha256": "4becc8cbde16aa1599d7674ed26c170e7f059af37e9e09e55a41f1bfce08d0a7"
+    },
+    {
+      "path": "validation/reports/validation-summary.json",
+      "bytes": 2113,
+      "sha256": "8004a0dfd908a3552c2aff2abb2086be8042ddb68e9674284dc38afe95b8418b"
+    },
+    {
+      "path": "validation/reports/visual-baselines.json",
+      "bytes": 55743,
+      "sha256": "69a90ddb733af232873afc8296eddf4ffb252cc5b176e0999d273dd0d2bed0a6"
+    },
+    {
+      "path": "validation/scripts/capture-visual-baselines.mjs",
+      "bytes": 8629,
+      "sha256": "48e1d1942e381117203637fadb755588216c88c5ba826d5cd252d9a1c018efb9"
+    },
+    {
+      "path": "validation/scripts/compile-blade.php",
+      "bytes": 3347,
+      "sha256": "0b07d136f832e7ec491a0348346fdb46ddca8c78c0e8f5b6d607d97a882aceb2"
+    },
+    {
+      "path": "validation/scripts/generate-catalog.mjs",
+      "bytes": 2578,
+      "sha256": "8efd7dcf87701fd2737fd91b86e0ee4b97bd7cd4755892832cda141e491f1626"
+    },
+    {
+      "path": "validation/scripts/generate-file-inventory.mjs",
+      "bytes": 2960,
+      "sha256": "052762239b3d28d2ae7554ee79baa668184dda928e94aa5586f86b6e87aa22aa"
+    },
+    {
+      "path": "validation/scripts/generate-preview-registry.mjs",
+      "bytes": 2030,
+      "sha256": "5892482b47a86e6dbbd873f2047ee53c4364b7a590ed430b21320fe1234824fe"
+    },
+    {
+      "path": "validation/scripts/generate-validation-summary.mjs",
+      "bytes": 3464,
+      "sha256": "2322eb33a269f97302b0235372d01a4849a333e73e0df08c066ff757644d31ea"
+    },
+    {
+      "path": "validation/scripts/release.sh",
+      "bytes": 5879,
+      "sha256": "fc51a07844332ce285decba89278f5e3eeb2ab24dc821bcd6e4b1654dcd49895"
+    },
+    {
+      "path": "validation/scripts/review-accessibility.mjs",
+      "bytes": 7114,
+      "sha256": "ae086d756ca384d7cdda88bd335bab446e57a0939659afedb6993b1ce61b0caf"
+    },
+    {
+      "path": "validation/scripts/validate-blade-render.php",
+      "bytes": 9025,
+      "sha256": "08f300133df62782aea893b39954b7b68fa94515e876f657fb9129c7657533a7"
+    },
+    {
+      "path": "validation/scripts/validate-blade.mjs",
+      "bytes": 2159,
+      "sha256": "90238a4960fc2336e16ba7a4549e5fb8f33b896e32d635044a6b1906b5701aed"
+    },
+    {
+      "path": "validation/scripts/validate-imports.mjs",
+      "bytes": 1640,
+      "sha256": "2933da98efd00e3dc8736164a2c7e8133070f0a2d78b121c93b8d7526f924bd1"
+    },
+    {
+      "path": "validation/scripts/validate-interactions.mjs",
+      "bytes": 11447,
+      "sha256": "227353baa8c3284b306f6d1829e90d907c143e783e6e9667c7167013dc590da5"
+    },
+    {
+      "path": "validation/scripts/validate-react.mjs",
+      "bytes": 8550,
+      "sha256": "9cb28321fcf8d6740d3432d0cfbaa92275c6f60ecaba0fe98992cdc7415447de"
+    },
+    {
+      "path": "validation/scripts/validate-schemas.mjs",
+      "bytes": 1505,
+      "sha256": "957b47d7dea52e7a6f2b0ca9c66980c8bda996373712b88bb6e55d6de2595789"
+    },
+    {
+      "path": "validation/scripts/validate-structure.mjs",
+      "bytes": 4837,
+      "sha256": "f4f7b91f64711ed591e830b367ff6c5cc3f84076871082d7df911df36c4fafee"
+    },
+    {
+      "path": "validation/scripts/validate-visual-baselines.mjs",
+      "bytes": 2414,
+      "sha256": "87ed6284e782a96e0b68a76024da730809b6c77871a0b00f04921fc852af8857"
+    },
+    {
+      "path": "validation/scripts/verify-boundary.sh",
+      "bytes": 1281,
+      "sha256": "1090bd610ea09dbe263c466599fd7764b36db59179a8ada6096f99adc12e4ce3"
+    },
+    {
+      "path": "validation/tsconfig.json",
+      "bytes": 1023,
+      "sha256": "bbea96a976541b537d97268727ca9cd168219449abf027a57c522defaafd9daf"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "customer": {
+    "firstName": "",
+    "lastName": "Morgan",
+    "email": "not-an-email",
+    "phone": "",
+    "notes": ""
+  },
+  "metadataExpanded": true,
+  "metadata": [
+    { "id": "payment-type", "label": "Payment type", "type": "select", "value": "", "required": true, "options": [{ "value": "card", "label": "Card" }, { "value": "cash", "label": "Cash" }] }
+  ],
+  "errors": {
+    "firstName": "Enter a first name.",
+    "email": "Enter a valid email address.",
+    "metadata.payment-type": "Choose a payment type."
+  },
+  "submitting": false
+}

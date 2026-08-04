@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scudamores.example/schemas/pattern.schema.json",
+  "title": "Scudamore's pattern manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion", "id", "title", "description", "category", "maturity",
+    "kind", "searchTerms", "fixture", "documentation", "scenarios", "react",
+    "blade", "contract", "dependencies", "responsiveBehavior",
+    "accessibility", "parity", "source"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "id": { "$ref": "#/$defs/slug" },
+    "title": { "type": "string", "minLength": 1 },
+    "description": { "type": "string", "minLength": 1 },
+    "category": { "type": "string", "minLength": 1 },
+    "maturity": { "const": "beta" },
+    "kind": { "const": "recipe" },
+    "searchTerms": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string" } },
+    "fixture": { "$ref": "#/$defs/path" },
+    "documentation": { "$ref": "#/$defs/path" },
+    "scenarios": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "title", "fixture"],
+        "properties": {
+          "id": { "$ref": "#/$defs/slug" },
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "fixture": { "$ref": "#/$defs/path" },
+          "states": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+          "defaultViewport": { "enum": ["360", "768", "1280", "fluid"] }
+        }
+      }
+    },
+    "react": {
+      "type": "object", "additionalProperties": false,
+      "required": ["files", "entry", "export", "exampleData"],
+      "properties": {
+        "files": { "$ref": "#/$defs/paths" },
+        "entry": { "$ref": "#/$defs/path" },
+        "export": { "type": "string", "pattern": "^[A-Za-z_$][A-Za-z0-9_$]*$" },
+        "exampleData": { "$ref": "#/$defs/path" }
+      }
+    },
+    "blade": {
+      "type": "object", "additionalProperties": false,
+      "required": ["files", "exampleData"],
+      "properties": {
+        "files": { "$ref": "#/$defs/paths" },
+        "exampleData": { "$ref": "#/$defs/path" },
+        "events": { "type": "array", "items": { "type": "string", "pattern": "^ui:[a-z0-9-]+:(change|action)$" }, "uniqueItems": true }
+      }
+    },
+    "contract": {
+      "type": "object", "additionalProperties": false,
+      "required": ["support", "standaloneApi", "fixturePolicy", "hostResponsibilities"],
+      "properties": {
+        "support": { "const": "composition-recipe" },
+        "standaloneApi": { "const": false },
+        "fixturePolicy": { "const": "neutral DTOs only" },
+        "hostResponsibilities": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "inputs": { "type": "array", "items": { "$ref": "#/$defs/contractMember" } },
+        "callbacks": { "type": "array", "items": { "$ref": "#/$defs/contractMember" } }
+      }
+    },
+    "dependencies": {
+      "type": "object", "additionalProperties": false,
+      "required": ["internal", "npm", "bladeRuntime"],
+      "properties": {
+        "internal": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "npm": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "bladeRuntime": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+      }
+    },
+    "responsiveBehavior": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "accessibility": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "findings"],
+      "properties": {
+        "status": { "enum": ["pending", "passed", "passed-with-findings"] },
+        "findings": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "parity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["classification", "differences"],
+      "properties": {
+        "classification": { "enum": ["framework-equivalent", "intentional-difference"] },
+        "differences": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["commit", "verifiedAt", "files", "decisionReferences"],
+      "properties": {
+        "commit": { "const": "d1511e224305585680723101a0b76be93eb9f2f0" },
+        "verifiedAt": { "type": "string", "format": "date" },
+        "files": {
+          "type": "array", "minItems": 1,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": { "type": "string" },
+              "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+            }
+          }
+        },
+        "decisionReferences": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  },
+  "$defs": {
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "path": { "type": "string", "pattern": "^(?!/)(?!.*\\.\\.).+" },
+    "paths": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/path" } },
+    "contractMember": {
+      "type": "object", "additionalProperties": false,
+      "required": ["name", "type", "required"],
+      "properties": {
+        "name": { "type": "string" },
+        "type": { "type": "string" },
+        "required": { "type": "boolean" },
+        "description": { "type": "string" }
+      }
+    }
+  }
+}

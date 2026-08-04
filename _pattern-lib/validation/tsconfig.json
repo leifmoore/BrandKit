@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "baseUrl": "..",
+    "paths": {
+      "@scudamores/ui/*": ["../_comp-lib/react/*"],
+      "react": ["validation/node_modules/@types/react/index.d.ts"],
+      "react/jsx-runtime": ["validation/node_modules/@types/react/jsx-runtime.d.ts"],
+      "react/jsx-dev-runtime": ["validation/node_modules/@types/react/jsx-dev-runtime.d.ts"],
+      "react-dom": ["validation/node_modules/@types/react-dom/index.d.ts"]
+    },
+    "typeRoots": ["./node_modules/@types"],
+    "types": ["react", "react-dom"]
+  },
+  "include": [
+    "../react/**/*.ts",
+    "../react/**/*.tsx",
+    "../recipes/**/*.ts",
+    "../recipes/**/*.tsx"
+  ]
+}

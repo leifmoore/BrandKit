@@ -23,9 +23,11 @@ flowchart TD
   DeveloperApp --> Catalogue[catalog + viewModels + route resolver]
   Catalogue --> Workbench[Preview-first Workbench]
   Workbench --> PreviewRuntime[LivePreview + portal bridge + controls]
-  Catalogue --> Handoff[_comp-lib immutable handoff]
+  Catalogue --> BaseHandoff[_comp-lib immutable base handoff]
+  Catalogue --> PatternHandoff[_pattern-lib immutable add-on]
 
-  Handoff --> Verifiers[verify:handoff + verify:canonical]
+  BaseHandoff --> Verifiers[verify:handoff + verify:canonical]
+  PatternHandoff --> Verifiers
   CanonicalUI --> Verifiers
   Router --> BrowserTests[tests/*.spec.ts]
   PreviewRuntime --> BrowserTests
@@ -39,18 +41,21 @@ flowchart TD
 
 | Concern | Authority | Notes |
 |---|---|---|
-| Workspace IDs, labels, navigation and remembered routes | `src/config/workspaces.ts` | Add a canonical page here as well as in the router. Dynamic Design System memory is validated against `_comp-lib/catalog/catalog.json`, not a permissive URL pattern. |
+| Workspace IDs, labels, navigation and remembered routes | `src/config/workspaces.ts` | Add a canonical page here as well as in the router. Dynamic Design System memory is validated against the merged `_comp-lib` and `_pattern-lib` catalogues, not a permissive URL pattern. |
 | Route components and legacy redirects | `src/router.tsx` | Brand routes are explicit; catalogue detail routes resolve inside `DeveloperApp`. |
 | Shared application shell, focus handoff and responsive drawer | `src/components/layout/MainLayout.tsx` | Brand and Design System share one shell. |
 | Sidebar workspace switcher and navigation | `src/components/layout/Sidebar.tsx` | Driven entirely by workspace config. |
 | Brand pages | `src/pages/*.tsx` | Authored guidance and expression; may compose canonical UI. |
 | Design System pages | `src/features/developer/pages/*` | Derived from maintained catalogue/view models. |
-| Manual component review | `src/features/review/*` | Personal browser state; 45-entry sequential queue. |
+| Manual component review | `src/features/review/*` | Personal browser state; 70-entry sequential queue. |
 
 ## Component ownership boundary
 
 - `_comp-lib/` is the immutable `scudamores-ui` 0.1.0 handoff. Never edit it to
   fix the host application.
+- `_pattern-lib/` is the immutable additive pattern handoff. Keep it beside the
+  base library; do not overlay it, parse Markdown as catalogue data, or patch it
+  to solve a host integration problem.
 - `src/components/ui/` contains exact canonical copies unless a file is an
   explicitly classified host adapter. `scripts/canonical-copies.json` and
   `npm run verify:canonical` enforce the boundary.
@@ -89,20 +94,21 @@ Colour sources contextual expression families from
 Water Powder/Faded Butter supporting ramps. Mood Explorer loads explicit
 recipes into the same persisted Playground draft rather than maintaining a
 parallel theme state. The live contrast checker and Brand command search draw
-from these current sources; Lantern Gold exists only in historical Theme
-comparisons and must not be reintroduced into runtime Brand tokens.
+from these current sources; Lantern Gold is not part of runtime Brand tokens or
+the Design System Themes page.
 
 ## Design System data flow
 
-1. `_comp-lib/catalog/catalog.json` and maintained handoff sources define the
-   inventory and source contracts.
+1. `_comp-lib/catalog/catalog.json`, `_pattern-lib/catalog/catalog.json`, and
+   their maintained manifests define the merged inventory and source contracts.
 2. `src/features/developer/catalog/*` imports, validates and searches that data.
 3. `src/features/developer/viewModels.ts` builds page-ready models.
 4. `src/features/developer/DeveloperApp.tsx` resolves collection/detail routes.
 5. Page components render the preview-first workbench, documentation sheet and
    exact React/Blade source actions.
 6. `src/features/developer/preview/*` owns scoped themes, widths, directions,
-   manifest states and preview portals.
+   manifest states, add-on fixture scenarios, and preview portals. Add-on live
+   previews are loaded through `_pattern-lib/react/preview-registry.tsx`.
 
 ## Photography asset flow
 
@@ -135,12 +141,13 @@ comparisons and must not be reintroduced into runtime Brand tokens.
 | Scoped portals | `tests/developer.portals.spec.ts` |
 | Full catalogue WCAG sweep | `tests/developer.a11y.spec.ts` |
 | Visual baselines | `tests/developer.visual.spec.ts` |
-| 45-entry manual review workflow | `tests/preview-review.spec.ts` |
+| 70-entry manual review workflow | `tests/preview-review.spec.ts` |
+| Pattern add-on catalogue, source, scenarios and retained findings | `tests/pattern-library.integration.spec.ts` |
 | Built SPA root and deep link | `tests/production.smoke.ts` |
 
 Run browser suites serially with one worker in the 2-core Codespace.
 
-The final human gates are the 45-entry queue at
+The final human gates are the 70-entry queue at
 `/design-system/review/previews`, a live Brand route pass, and selection of a
 saved Playground treatment. Automated evidence supports those reviews but does
 not replace them.

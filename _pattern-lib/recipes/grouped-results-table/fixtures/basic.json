@@ -1,0 +1,53 @@
+{
+  "title": "Transaction detail",
+  "caption": "Transactions with optional seller grouping and host-calculated totals",
+  "initialGroupBy": "seller",
+  "groupOptions": [
+    { "id": "none", "label": "None" },
+    { "id": "seller", "label": "Seller" }
+  ],
+  "columns": [
+    { "id": "reference", "label": "Ref." },
+    { "id": "seller", "label": "Seller" },
+    { "id": "product", "label": "Product" },
+    { "id": "quantity", "label": "Qty", "align": "right" },
+    { "id": "sale", "label": "Sale price", "align": "right" },
+    { "id": "commission", "label": "Commission", "align": "right" },
+    { "id": "channel", "label": "Channel" }
+  ],
+  "views": {
+    "none": [
+      {
+        "id": "all",
+        "rows": [
+          { "id": "sale-1001", "cells": { "reference": { "displayValue": "BK-1001" }, "seller": { "displayValue": "Ava Reed" }, "product": { "displayValue": "Riverside Tour" }, "quantity": { "displayValue": "4", "numericValue": 4 }, "sale": { "displayValue": "£128.00", "valueMinor": 12800, "currency": "GBP" }, "commission": { "displayValue": "£20.48", "valueMinor": 2048, "currency": "GBP" }, "channel": { "displayValue": "EPOS", "tone": "badge" } } },
+          { "id": "sale-1002", "cells": { "reference": { "displayValue": "BK-1002" }, "seller": { "displayValue": "Ava Reed" }, "product": { "displayValue": "Private Charter" }, "quantity": { "displayValue": "1", "numericValue": 1 }, "sale": { "displayValue": "£225.00", "valueMinor": 22500, "currency": "GBP" }, "commission": { "displayValue": "£36.00", "valueMinor": 3600, "currency": "GBP" }, "channel": { "displayValue": "Widget", "tone": "badge" } } },
+          { "id": "sale-1003", "cells": { "reference": { "displayValue": "BK-1003" }, "seller": { "displayValue": "Noah Lane" }, "product": { "displayValue": "Riverside Tour" }, "quantity": { "displayValue": "2", "numericValue": 2 }, "sale": { "displayValue": "£64.00", "valueMinor": 6400, "currency": "GBP" }, "commission": { "displayValue": "£10.24", "valueMinor": 1024, "currency": "GBP" }, "channel": { "displayValue": "EPOS", "tone": "badge" } } }
+        ]
+      }
+    ],
+    "seller": [
+      {
+        "id": "seller-ava",
+        "label": "Ava Reed",
+        "rows": [
+          { "id": "sale-1001", "cells": { "reference": { "displayValue": "BK-1001" }, "seller": { "displayValue": "Ava Reed" }, "product": { "displayValue": "Riverside Tour" }, "quantity": { "displayValue": "4", "numericValue": 4 }, "sale": { "displayValue": "£128.00", "valueMinor": 12800, "currency": "GBP" }, "commission": { "displayValue": "£20.48", "valueMinor": 2048, "currency": "GBP" }, "channel": { "displayValue": "EPOS", "tone": "badge" } } },
+          { "id": "sale-1002", "cells": { "reference": { "displayValue": "BK-1002" }, "seller": { "displayValue": "Ava Reed" }, "product": { "displayValue": "Private Charter" }, "quantity": { "displayValue": "1", "numericValue": 1 }, "sale": { "displayValue": "£225.00", "valueMinor": 22500, "currency": "GBP" }, "commission": { "displayValue": "£36.00", "valueMinor": 3600, "currency": "GBP" }, "channel": { "displayValue": "Widget", "tone": "badge" } } }
+        ],
+        "subtotal": { "sale": { "displayValue": "£353.00", "valueMinor": 35300, "currency": "GBP" }, "commission": { "displayValue": "£56.48", "valueMinor": 5648, "currency": "GBP" } }
+      },
+      {
+        "id": "seller-noah",
+        "label": "Noah Lane",
+        "rows": [
+          { "id": "sale-1003", "cells": { "reference": { "displayValue": "BK-1003" }, "seller": { "displayValue": "Noah Lane" }, "product": { "displayValue": "Riverside Tour" }, "quantity": { "displayValue": "2", "numericValue": 2 }, "sale": { "displayValue": "£64.00", "valueMinor": 6400, "currency": "GBP" }, "commission": { "displayValue": "£10.24", "valueMinor": 1024, "currency": "GBP" }, "channel": { "displayValue": "EPOS", "tone": "badge" } } }
+        ],
+        "subtotal": { "sale": { "displayValue": "£64.00", "valueMinor": 6400, "currency": "GBP" }, "commission": { "displayValue": "£10.24", "valueMinor": 1024, "currency": "GBP" } }
+      }
+    ]
+  },
+  "grandTotal": {
+    "sale": { "displayValue": "£417.00", "valueMinor": 41700, "currency": "GBP" },
+    "commission": { "displayValue": "£66.72", "valueMinor": 6672, "currency": "GBP" }
+  }
+}

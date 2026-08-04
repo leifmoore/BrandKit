@@ -1,0 +1,22 @@
+{
+  "name": "@scudamores/patterns-handoff",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node validation/scripts/generate-catalog.mjs && node validation/scripts/generate-preview-registry.mjs && node validation/scripts/generate-file-inventory.mjs",
+    "typecheck": "npm --prefix validation run typecheck",
+    "visual:refresh": "node validation/scripts/capture-visual-baselines.mjs",
+    "validate": "node validation/scripts/validate-schemas.mjs && node validation/scripts/validate-structure.mjs && node validation/scripts/validate-imports.mjs && node validation/scripts/validate-blade.mjs && php validation/scripts/validate-blade-render.php && npm run typecheck && node validation/scripts/validate-react.mjs && node validation/scripts/validate-interactions.mjs && node validation/scripts/review-accessibility.mjs && node validation/scripts/validate-visual-baselines.mjs && bash validation/scripts/verify-boundary.sh && node validation/scripts/generate-validation-summary.mjs",
+    "release": "bash validation/scripts/release.sh"
+  },
+  "peerDependencies": {
+    "@scudamores/ui-handoff": "0.1.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "dependencies": {
+    "date-fns": "3.6.0",
+    "lucide-react": "0.487.0"
+  }
+}

@@ -10,8 +10,11 @@ import type {
   DeferredCatalogEntry,
   DeveloperCatalogEntry,
   FoundationCatalogEntry,
+  HandoffPackage,
   HandoffCatalogIndex,
   ParitySummary,
+  PatternHandoffCatalogIndex,
+  PatternRecipeManifest,
   RecipeCatalogEntry,
   RecipeManifest,
   UtilityCatalogEntry,
@@ -30,8 +33,14 @@ function parseRawJson<T>(raw: string | undefined, path: string): T {
   }
 }
 
-function readManifest<T>(handoffPath: string): T {
-  return parseRawJson<T>(getBundledManifestRawSource(handoffPath), handoffPath)
+function readManifest<T>(
+  handoffPath: string,
+  sourcePackage: HandoffPackage = 'component-library',
+): T {
+  return parseRawJson<T>(
+    getBundledManifestRawSource(handoffPath, sourcePackage),
+    `${sourcePackage}:${handoffPath}`,
+  )
 }
 
 const notApplicableAccessibility = Object.freeze<AccessibilitySummary>({
@@ -69,6 +78,15 @@ export const handoffCatalog = Object.freeze(
   readManifest<HandoffCatalogIndex>('catalog/catalog.json'),
 )
 
+export const patternHandoffCatalog = Object.freeze(
+  readManifest<PatternHandoffCatalogIndex>(
+    'catalog/catalog.json',
+    'pattern-library',
+  ),
+)
+
+export const catalogVersion = `${handoffCatalog.version}+patterns-${patternHandoffCatalog.version}`
+
 const parsedComponentManifests = Object.fromEntries(
   handoffCatalog.components.map((indexEntry) => {
     const manifest = readManifest<ComponentManifest>(indexEntry.manifest)
@@ -83,23 +101,49 @@ const parsedRecipeManifests = Object.fromEntries(
   }),
 ) as Record<string, RecipeManifest>
 
+const parsedPatternRecipeManifests = Object.fromEntries(
+  patternHandoffCatalog.patterns.map((indexEntry) => {
+    const manifest = readManifest<PatternRecipeManifest>(
+      indexEntry.manifest,
+      'pattern-library',
+    )
+    return [manifest.id, Object.freeze(manifest)]
+  }),
+) as Record<string, PatternRecipeManifest>
+
+const duplicateRecipeIds = handoffCatalog.recipes
+  .map((entry) => entry.id)
+  .filter((id) => Object.prototype.hasOwnProperty.call(parsedPatternRecipeManifests, id))
+
+if (duplicateRecipeIds.length > 0) {
+  throw new Error(
+    `Duplicate recipe IDs across component and pattern handoffs: ${duplicateRecipeIds.join(', ')}`,
+  )
+}
+
 export const componentManifests: Readonly<Record<string, ComponentManifest>> =
   Object.freeze(parsedComponentManifests)
 
-export const recipeManifests: Readonly<Record<string, RecipeManifest>> =
-  Object.freeze(parsedRecipeManifests)
+export const recipeManifests: Readonly<
+  Record<string, RecipeManifest | PatternRecipeManifest>
+> =
+  Object.freeze({ ...parsedRecipeManifests, ...parsedPatternRecipeManifests })
 
 export const manifestsByPath: Readonly<
-  Record<string, ComponentManifest | RecipeManifest>
+  Record<string, ComponentManifest | RecipeManifest | PatternRecipeManifest>
 > = Object.freeze(
   Object.fromEntries([
     ...handoffCatalog.components.map((entry) => [
-      entry.manifest,
+      `component-library:${entry.manifest}`,
       parsedComponentManifests[entry.id],
     ]),
     ...handoffCatalog.recipes.map((entry) => [
-      entry.manifest,
+      `component-library:${entry.manifest}`,
       parsedRecipeManifests[entry.id],
+    ]),
+    ...patternHandoffCatalog.patterns.map((entry) => [
+      `pattern-library:${entry.manifest}`,
+      parsedPatternRecipeManifests[entry.id],
     ]),
   ]),
 )
@@ -124,6 +168,7 @@ export const components: readonly ComponentCatalogEntry[] = Object.freeze(
       searchTerms: Object.freeze([...manifest.searchTerms]),
       route: getDeveloperRoute('component', indexEntry.id),
       copyable: true,
+      sourcePackage: 'component-library',
       accessibility: Object.freeze({
         applicable: true,
         target: manifest.accessibility.wcagTarget,
@@ -142,7 +187,7 @@ export const components: readonly ComponentCatalogEntry[] = Object.freeze(
   }),
 )
 
-export const recipes: readonly RecipeCatalogEntry[] = Object.freeze(
+const baseRecipes: readonly RecipeCatalogEntry[] = Object.freeze(
   handoffCatalog.recipes.map((indexEntry): RecipeCatalogEntry => {
     const manifest = parsedRecipeManifests[indexEntry.id]
     if (!manifest) {
@@ -162,6 +207,7 @@ export const recipes: readonly RecipeCatalogEntry[] = Object.freeze(
       searchTerms: Object.freeze([...manifest.searchTerms]),
       route: getDeveloperRoute('recipe', indexEntry.id),
       copyable: true,
+      sourcePackage: 'component-library',
       accessibility: notAuditedAccessibility,
       parity: Object.freeze({
         applicable: true,
@@ -175,6 +221,54 @@ export const recipes: readonly RecipeCatalogEntry[] = Object.freeze(
     })
   }),
 )
+
+const addOnRecipes: readonly RecipeCatalogEntry[] = Object.freeze(
+  patternHandoffCatalog.patterns.map((indexEntry): RecipeCatalogEntry => {
+    const manifest = parsedPatternRecipeManifests[indexEntry.id]
+    if (!manifest) {
+      throw new Error(`Missing add-on pattern manifest for ${indexEntry.id}`)
+    }
+
+    return Object.freeze({
+      key: `recipe:${indexEntry.id}`,
+      id: indexEntry.id,
+      title: manifest.title,
+      description: manifest.description,
+      category: manifest.category,
+      kind: 'recipe',
+      maturity: manifest.maturity,
+      availability: 'supported',
+      frameworks: pairedFrameworks,
+      searchTerms: Object.freeze([...manifest.searchTerms]),
+      route: getDeveloperRoute('recipe', indexEntry.id),
+      copyable: true,
+      sourcePackage: 'pattern-library',
+      accessibility: Object.freeze({
+        applicable: true,
+        target: 'WCAG 2.2 AA',
+        status: manifest.accessibility.status,
+        findings: Object.freeze([]),
+        note: manifest.accessibility.findings.join(' '),
+      }),
+      parity: Object.freeze({
+        applicable: true,
+        classification: manifest.parity.classification === 'intentional-difference'
+          ? 'documented-exception'
+          : manifest.parity.classification,
+        intentionalDifferences: Object.freeze([...manifest.parity.differences]),
+      }),
+      manifestPath: indexEntry.manifest,
+      documentationPath: manifest.documentation,
+      fixturePath: manifest.fixture,
+      manifest,
+    })
+  }),
+)
+
+export const recipes: readonly RecipeCatalogEntry[] = Object.freeze([
+  ...baseRecipes,
+  ...addOnRecipes,
+])
 
 export const foundations: readonly FoundationCatalogEntry[] = Object.freeze(
   handoffCatalog.foundations.map((indexEntry): FoundationCatalogEntry =>
@@ -196,6 +290,7 @@ export const foundations: readonly FoundationCatalogEntry[] = Object.freeze(
       ]),
       route: getDeveloperRoute('foundation', indexEntry.id),
       copyable: indexEntry.data.length > 0,
+      sourcePackage: 'component-library',
       accessibility: notApplicableAccessibility,
       parity: notApplicableParity,
       documentationPath: indexEntry.documentation,
@@ -224,6 +319,7 @@ export const deferredComponents: readonly DeferredCatalogEntry[] = Object.freeze
       ]),
       route: getDeveloperRoute('deferred', indexEntry.id),
       copyable: false,
+      sourcePackage: 'component-library',
       accessibility: notApplicableAccessibility,
       parity: notApplicableParity,
       documentationPath: `docs/components/${indexEntry.id}.md`,
@@ -249,6 +345,7 @@ export const utilities: readonly UtilityCatalogEntry[] = Object.freeze(
       searchTerms: Object.freeze([...indexEntry.searchTerms]),
       route: getDeveloperRoute('utility', indexEntry.id),
       copyable: false,
+      sourcePackage: 'component-library',
       accessibility: notApplicableAccessibility,
       parity: unassessedParity,
       manifestPath: indexEntry.manifest,
@@ -315,6 +412,8 @@ export const catalogCategories = Object.freeze({
 
 export const handoffCounts = Object.freeze({ ...handoffCatalog.counts })
 
+export const patternHandoffCounts = Object.freeze({ ...patternHandoffCatalog.counts })
+
 export const catalogCounts = Object.freeze({
   components: components.length,
   paired: components.length,
@@ -364,12 +463,15 @@ export function getComponentManifest(id: string): ComponentManifest | undefined 
   return componentManifests[id]
 }
 
-export function getRecipeManifest(id: string): RecipeManifest | undefined {
+export function getRecipeManifest(
+  id: string,
+): RecipeManifest | PatternRecipeManifest | undefined {
   return recipeManifests[id]
 }
 
 export function getManifestByPath(
   path: string,
-): ComponentManifest | RecipeManifest | undefined {
-  return manifestsByPath[path]
+  sourcePackage: HandoffPackage = 'component-library',
+): ComponentManifest | RecipeManifest | PatternRecipeManifest | undefined {
+  return manifestsByPath[`${sourcePackage}:${path}`]
 }

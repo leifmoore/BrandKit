@@ -4,6 +4,7 @@ import type {
   DeveloperCatalogEntry,
   EntrySourcePaths,
   HandoffSource,
+  PatternRecipeManifest,
   RecipeCatalogEntry,
 } from './types'
 
@@ -31,6 +32,10 @@ function componentSourcePaths(entry: ComponentCatalogEntry): EntrySourcePaths {
 }
 
 function recipeSourcePaths(entry: RecipeCatalogEntry): EntrySourcePaths {
+  const scenarioFixtures = entry.sourcePackage === 'pattern-library'
+    ? (entry.manifest as PatternRecipeManifest).scenarios.map((scenario) => scenario.fixture)
+    : []
+
   return Object.freeze({
     manifest: Object.freeze([entry.manifestPath]),
     documentation: Object.freeze([entry.documentationPath]),
@@ -40,6 +45,7 @@ function recipeSourcePaths(entry: RecipeCatalogEntry): EntrySourcePaths {
       entry.fixturePath,
       entry.manifest.react.exampleData,
       entry.manifest.blade.exampleData,
+      ...scenarioFixtures,
     ]),
     data: emptyPaths,
   })
@@ -95,17 +101,20 @@ export function flattenEntrySourcePaths(paths: EntrySourcePaths): readonly strin
 export async function getEntrySources(
   entry: DeveloperCatalogEntry,
 ): Promise<readonly HandoffSource[]> {
-  return getHandoffSources(flattenEntrySourcePaths(getEntrySourcePaths(entry)))
+  return getHandoffSources(
+    flattenEntrySourcePaths(getEntrySourcePaths(entry)),
+    entry.sourcePackage,
+  )
 }
 
 export async function getManifestSource(
   entry: ComponentCatalogEntry | RecipeCatalogEntry,
 ): Promise<HandoffSource> {
-  return requireHandoffSource(entry.manifestPath)
+  return requireHandoffSource(entry.manifestPath, entry.sourcePackage)
 }
 
 export async function getDocumentationSource(
   entry: Exclude<DeveloperCatalogEntry, { kind: 'utility' }>,
 ): Promise<HandoffSource> {
-  return requireHandoffSource(entry.documentationPath)
+  return requireHandoffSource(entry.documentationPath, entry.sourcePackage)
 }

@@ -72,13 +72,6 @@ Brand primary actions and authored cues. It never crosses into the Design
 System or changes status, focus, chart, or canonical component definitions.
 Quick Reference reflects the same draft.
 
-## Historical comparisons
-
-`/design-system/foundations/themes#brand-workspace-candidates` retains four
-early neutral/Cream/Gold treatments for migration history. Lantern Gold remains
-an unapproved historical proposal and is not part of the contextual expression
-family.
-
 ## Remaining decision gate
 
 The palette family and ramp direction are settled enough to use in the current

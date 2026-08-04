@@ -1,0 +1,1834 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-08-04",
+  "status": "passed",
+  "framework": "react",
+  "sourceCommit": "d1511e224305585680723101a0b76be93eb9f2f0",
+  "coverage": {
+    "patterns": 25,
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "viewportWidths": [
+      360,
+      768,
+      1280
+    ],
+    "screenshots": 150
+  },
+  "environment": {
+    "browser": "Chromium via Playwright 1.61.1",
+    "deviceScaleFactor": 1,
+    "locale": "en-GB",
+    "timezone": "UTC",
+    "reducedMotion": "reduce"
+  },
+  "records": [
+    {
+      "pattern": "availability-time-picker",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/availability-time-picker/light-360.png",
+      "bytes": 22667,
+      "sha256": "9a6dccd59261b6d28810171df68f771b3588ea167f4949456c5ec9c992ffcd5f"
+    },
+    {
+      "pattern": "availability-time-picker",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/availability-time-picker/light-768.png",
+      "bytes": 24810,
+      "sha256": "0a6fe0927b3d834768a582aabba558d2bc5237b32caa1430e86685bc866c1e7a"
+    },
+    {
+      "pattern": "availability-time-picker",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/availability-time-picker/light-1280.png",
+      "bytes": 26751,
+      "sha256": "e37fd060a0c7f20ca3c50312ffdbd790908db2a477abb41b9f6696e146daf31a"
+    },
+    {
+      "pattern": "availability-time-picker",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/availability-time-picker/dark-360.png",
+      "bytes": 22829,
+      "sha256": "5018ba38fe6f81f31387645ce983f18a2fb862d3a49de3bbb735e45da6ba3a05"
+    },
+    {
+      "pattern": "availability-time-picker",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/availability-time-picker/dark-768.png",
+      "bytes": 24975,
+      "sha256": "be11a3620e8313a7375c63c14055db4751b44def387b915febb42b42f38b118f"
+    },
+    {
+      "pattern": "availability-time-picker",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/availability-time-picker/dark-1280.png",
+      "bytes": 26937,
+      "sha256": "c836ce8c88daaa3c9519f404cf24074698b3db3bb3a728a538a440e6abe0ed17"
+    },
+    {
+      "pattern": "booking-criteria-panel",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/booking-criteria-panel/light-360.png",
+      "bytes": 16072,
+      "sha256": "f6598bd60bc3aae164fec823d15f6d624727455efaa7ab21e207dbfbdb8726b3"
+    },
+    {
+      "pattern": "booking-criteria-panel",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/booking-criteria-panel/light-768.png",
+      "bytes": 17488,
+      "sha256": "9bcf22838b293a017741810e78ba3f2944ff2c063cb97e40abc47db2b712ea47"
+    },
+    {
+      "pattern": "booking-criteria-panel",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/booking-criteria-panel/light-1280.png",
+      "bytes": 18849,
+      "sha256": "47bf300a256404a469656c9d2ebf7d5c8db2b0bdef1472cbf0c597b149c6a8bb"
+    },
+    {
+      "pattern": "booking-criteria-panel",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/booking-criteria-panel/dark-360.png",
+      "bytes": 15991,
+      "sha256": "c0087aff740391239bbef50639a0eb0c854d7936a719200bc2144d4082639a7d"
+    },
+    {
+      "pattern": "booking-criteria-panel",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/booking-criteria-panel/dark-768.png",
+      "bytes": 17438,
+      "sha256": "1016cf14375343b03e8ca441c72a538b12c3724bd6133423bc8d992a276fee3e"
+    },
+    {
+      "pattern": "booking-criteria-panel",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/booking-criteria-panel/dark-1280.png",
+      "bytes": 18759,
+      "sha256": "c202976261945f1b45b36ba6392a70db1f3a2ff8c32599bf73953eec157f4fb1"
+    },
+    {
+      "pattern": "booking-progress-indicator",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/booking-progress-indicator/light-360.png",
+      "bytes": 6280,
+      "sha256": "317e663b178d7964fe0fa69cc6db2fba52d01bee3b23b948bf77921db324f42f"
+    },
+    {
+      "pattern": "booking-progress-indicator",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/booking-progress-indicator/light-768.png",
+      "bytes": 11869,
+      "sha256": "f79c8b059990e360c337c30a8808491805b132724a0512f2056cf3d41b6093b9"
+    },
+    {
+      "pattern": "booking-progress-indicator",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/booking-progress-indicator/light-1280.png",
+      "bytes": 13321,
+      "sha256": "a7d2a05d5cef3eee23f2d2d2cd37dc37c4b482d7fcc020cdec33491e5b4828d0"
+    },
+    {
+      "pattern": "booking-progress-indicator",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/booking-progress-indicator/dark-360.png",
+      "bytes": 6298,
+      "sha256": "0cdba4e4bee3c221373782c5669bfcd980d6449bda4159614e4456c3c3117986"
+    },
+    {
+      "pattern": "booking-progress-indicator",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/booking-progress-indicator/dark-768.png",
+      "bytes": 11922,
+      "sha256": "86997f01e6f916de4b1e2181e150d561d65e80bfb031e041e6b134d1580f9504"
+    },
+    {
+      "pattern": "booking-progress-indicator",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/booking-progress-indicator/dark-1280.png",
+      "bytes": 13372,
+      "sha256": "d4ecc9f0f7bdf56c0bc206180d0c27627f4e695116e96bbe67ef0ebe2b3105a9"
+    },
+    {
+      "pattern": "booking-review-summary",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/booking-review-summary/light-360.png",
+      "bytes": 33768,
+      "sha256": "c36e4d773f29c64c4f9c701d1d7bd292adfcd4e52c24177c5f5bb07502f9a3e9"
+    },
+    {
+      "pattern": "booking-review-summary",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/booking-review-summary/light-768.png",
+      "bytes": 36305,
+      "sha256": "69cc0727e7df0acac7892c35df3bf6ca806058c0d263dc910bf4ce3b92861397"
+    },
+    {
+      "pattern": "booking-review-summary",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/booking-review-summary/light-1280.png",
+      "bytes": 37945,
+      "sha256": "94346fc30f4b23864aa2732cc1035e3e7c9827673f8ea91f554986d5a61926af"
+    },
+    {
+      "pattern": "booking-review-summary",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/booking-review-summary/dark-360.png",
+      "bytes": 34945,
+      "sha256": "719ec8e281d554121100f7a979d689d0dda384adbc764c05751c26f6686d57f1"
+    },
+    {
+      "pattern": "booking-review-summary",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/booking-review-summary/dark-768.png",
+      "bytes": 37600,
+      "sha256": "de81e7d29bcf6268fdea60d0ceb77e1a6e48e36e431c89ea6b96961ae7f26248"
+    },
+    {
+      "pattern": "booking-review-summary",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/booking-review-summary/dark-1280.png",
+      "bytes": 39049,
+      "sha256": "0937320fc0e6fb5433a61a6d77b5c6e890097ab4a299254a5559f045496bba43"
+    },
+    {
+      "pattern": "capacity-product-selector",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/capacity-product-selector/light-360.png",
+      "bytes": 22046,
+      "sha256": "c802d29f02f034b4c56f2c33b2476a90ca73f23052f69f50eb18407a54d49793"
+    },
+    {
+      "pattern": "capacity-product-selector",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/capacity-product-selector/light-768.png",
+      "bytes": 23868,
+      "sha256": "63eb1b87d658bb1748cff9d3c3ff29cbe239292e763aaee2d9893775506802f8"
+    },
+    {
+      "pattern": "capacity-product-selector",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/capacity-product-selector/light-1280.png",
+      "bytes": 25535,
+      "sha256": "6f1dae63cfddc8fdc654619dec1f828bb432d912ab71b8d598daa07c2dcc82b2"
+    },
+    {
+      "pattern": "capacity-product-selector",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/capacity-product-selector/dark-360.png",
+      "bytes": 22360,
+      "sha256": "a4a3e10266e72d049bc2798c0abf8ded22441a3c84ded25ed40b40edbc016046"
+    },
+    {
+      "pattern": "capacity-product-selector",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/capacity-product-selector/dark-768.png",
+      "bytes": 24013,
+      "sha256": "a5303fbe45d7cd533579a8f0da7c96a305cbb78114f3a4c62839984e09e58e6e"
+    },
+    {
+      "pattern": "capacity-product-selector",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/capacity-product-selector/dark-1280.png",
+      "bytes": 25704,
+      "sha256": "71ac403134d023421922d4bba33b876ed8a8b7ad82b026bddbd0a64e3aa1c50c"
+    },
+    {
+      "pattern": "checkout-details-panel",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/checkout-details-panel/light-360.png",
+      "bytes": 34247,
+      "sha256": "222eeba159cc82e16f56eadda92cbb4b365242e0a4aa20071ce862c1f8398194"
+    },
+    {
+      "pattern": "checkout-details-panel",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/checkout-details-panel/light-768.png",
+      "bytes": 33640,
+      "sha256": "6f9b1d6ad38d29296908e4ff0701fc5e145258eca37c7b69c7086d30b23e734e"
+    },
+    {
+      "pattern": "checkout-details-panel",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/checkout-details-panel/light-1280.png",
+      "bytes": 35316,
+      "sha256": "e351f19b8f635865605b41d6420d26128cd0fad1d45007dc8da0849164968817"
+    },
+    {
+      "pattern": "checkout-details-panel",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/checkout-details-panel/dark-360.png",
+      "bytes": 34972,
+      "sha256": "5c94de39fb41eb3abed27ede3e9a64ade1da0bd49e9e27ae8c4229a5eafbe060"
+    },
+    {
+      "pattern": "checkout-details-panel",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/checkout-details-panel/dark-768.png",
+      "bytes": 34379,
+      "sha256": "9c4802aecb32cecdad3ef5f58734cdce8d3723ed1853cd36815797b0f290fcbd"
+    },
+    {
+      "pattern": "checkout-details-panel",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/checkout-details-panel/dark-1280.png",
+      "bytes": 35996,
+      "sha256": "5f7b5a79a843398a348e1b72462e4226ce083135c05f71e1c361499fd3d6a494"
+    },
+    {
+      "pattern": "collection-state-panel",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/collection-state-panel/light-360.png",
+      "bytes": 4224,
+      "sha256": "3e812f3c012d587594123e74d9c7f0fbc74bda3af7e28bcb7f11226d4ec4e75a"
+    },
+    {
+      "pattern": "collection-state-panel",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/collection-state-panel/light-768.png",
+      "bytes": 5468,
+      "sha256": "c11bb403d806851de055fbac5214361783416278110f1297ef723523b4a70d29"
+    },
+    {
+      "pattern": "collection-state-panel",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/collection-state-panel/light-1280.png",
+      "bytes": 6810,
+      "sha256": "efb62f7c6928279e2dbe2d4cc6abdbaf8647cb4bfc7187ae47affcd9d45b9c05"
+    },
+    {
+      "pattern": "collection-state-panel",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/collection-state-panel/dark-360.png",
+      "bytes": 4403,
+      "sha256": "f8e04ccb9507f4fe03fad9f53d93a086bd435fc65245d748965bbfaa1eca79b0"
+    },
+    {
+      "pattern": "collection-state-panel",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/collection-state-panel/dark-768.png",
+      "bytes": 5639,
+      "sha256": "0363906daa5f784f151bfff32bde36dcf135b0f8c1e47e7a8449032fa7683699"
+    },
+    {
+      "pattern": "collection-state-panel",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/collection-state-panel/dark-1280.png",
+      "bytes": 6948,
+      "sha256": "37652c67740f6583227c3adc89b7dd2fa8c6b05243f12760e96fd668bec00dfb"
+    },
+    {
+      "pattern": "collection-toolbar",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/collection-toolbar/light-360.png",
+      "bytes": 16669,
+      "sha256": "a4636ad6e61ce293c0059a003454e03c19cf73289ce96bbbd7da2e65ef7ddad5"
+    },
+    {
+      "pattern": "collection-toolbar",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/collection-toolbar/light-768.png",
+      "bytes": 16657,
+      "sha256": "7552617ba14b5422539ffc6d532d644c50be9421bdec373b083ace7e3acb9786"
+    },
+    {
+      "pattern": "collection-toolbar",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/collection-toolbar/light-1280.png",
+      "bytes": 17129,
+      "sha256": "f7ea68769aaae812af9c31dbe2a7bdbef10a975adc1e5df5feee9645818e7e2c"
+    },
+    {
+      "pattern": "collection-toolbar",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/collection-toolbar/dark-360.png",
+      "bytes": 16974,
+      "sha256": "9322866b7b56d7dfeb7a2b3325c69dcf1d5e8410669cc84f9bdab3f47e70a045"
+    },
+    {
+      "pattern": "collection-toolbar",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/collection-toolbar/dark-768.png",
+      "bytes": 16873,
+      "sha256": "552420c8798f2e3e0d4c2e031943989a4fb5839a19681df810d8ea56d25872f9"
+    },
+    {
+      "pattern": "collection-toolbar",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/collection-toolbar/dark-1280.png",
+      "bytes": 17562,
+      "sha256": "d79213939567d90938d32fabcb3d072eb2019442cbbf840481ea5d0e7a2101ad"
+    },
+    {
+      "pattern": "configuration-workbench",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/configuration-workbench/light-360.png",
+      "bytes": 34013,
+      "sha256": "f6d0473934a5a317fba6afa4913ec9a4e55dede3a3190dde90657f0de12c7016"
+    },
+    {
+      "pattern": "configuration-workbench",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/configuration-workbench/light-768.png",
+      "bytes": 32388,
+      "sha256": "2496a78d35646d714c8f03ea19b11f0230bb7c9dec0125d3de0302c76e370eb6"
+    },
+    {
+      "pattern": "configuration-workbench",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/configuration-workbench/light-1280.png",
+      "bytes": 34453,
+      "sha256": "8593a87a0e44cf7a592ad74a6c77af72e79c7f070599264db586cde59c9bc43f"
+    },
+    {
+      "pattern": "configuration-workbench",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/configuration-workbench/dark-360.png",
+      "bytes": 34510,
+      "sha256": "07c795e41643aa4d438dc64b293f855a1d7fcb2c7f280c6349bb050369f9aaca"
+    },
+    {
+      "pattern": "configuration-workbench",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/configuration-workbench/dark-768.png",
+      "bytes": 33058,
+      "sha256": "e612c932f964465db402f2eea8cd5d14c28034f0293426ecf8d51bb341123644"
+    },
+    {
+      "pattern": "configuration-workbench",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/configuration-workbench/dark-1280.png",
+      "bytes": 35026,
+      "sha256": "21e750b2ba518b23937406e29218ca359854094c7259d7deb9a8627e8121d4fb"
+    },
+    {
+      "pattern": "contextual-action-dock",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/contextual-action-dock/light-360.png",
+      "bytes": 11726,
+      "sha256": "82998b78abfeb1343cb603677dea7d9400a7b17e0511ee171413bd4394296a11"
+    },
+    {
+      "pattern": "contextual-action-dock",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/contextual-action-dock/light-768.png",
+      "bytes": 13043,
+      "sha256": "ac2e9ce271a27acd226791159b44331abbeaabb08a0291b0032092f3abcb12f2"
+    },
+    {
+      "pattern": "contextual-action-dock",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/contextual-action-dock/light-1280.png",
+      "bytes": 14463,
+      "sha256": "2928785d9620eecc3e216d2443321c67580107f29d3df6c31d3d633a8d522ad4"
+    },
+    {
+      "pattern": "contextual-action-dock",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/contextual-action-dock/dark-360.png",
+      "bytes": 11581,
+      "sha256": "7d6ba9836b8599ed9f0b6b271af1e969ed22467a4c711f922f3c63dab9cefe7a"
+    },
+    {
+      "pattern": "contextual-action-dock",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/contextual-action-dock/dark-768.png",
+      "bytes": 12903,
+      "sha256": "7522d36fbb529c500bec128ffddebd71a338a4f8917c44f715b822304cb32f07"
+    },
+    {
+      "pattern": "contextual-action-dock",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/contextual-action-dock/dark-1280.png",
+      "bytes": 14337,
+      "sha256": "92e0ba539abaa98cb10818777ec683b4fff6f27bfc2c255944f7bb725c10a9b8"
+    },
+    {
+      "pattern": "customer-booking-journey",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/customer-booking-journey/light-360.png",
+      "bytes": 37896,
+      "sha256": "6dc8ad207b0c7123380fe4e1e88e8973b6700e4c7bf65460d44c60b0533fb79b"
+    },
+    {
+      "pattern": "customer-booking-journey",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/customer-booking-journey/light-768.png",
+      "bytes": 39493,
+      "sha256": "ec4f62173e41ee476cdae70c3cd2e3a20f7f0a471abc9122a92999de191a0a16"
+    },
+    {
+      "pattern": "customer-booking-journey",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/customer-booking-journey/light-1280.png",
+      "bytes": 41207,
+      "sha256": "42d10c0fa6d721de0afa7c9a369b767e51f34bfa1e8139e14353544f84657367"
+    },
+    {
+      "pattern": "customer-booking-journey",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/customer-booking-journey/dark-360.png",
+      "bytes": 38157,
+      "sha256": "1c652301318ba1895770a60692d9063d19edd1e9607f99c162bb8b25c401c6b3"
+    },
+    {
+      "pattern": "customer-booking-journey",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/customer-booking-journey/dark-768.png",
+      "bytes": 39546,
+      "sha256": "f7b6466b9a3631591e880583b9afc915cfdd87a5094036d3dd09d8514c6c361c"
+    },
+    {
+      "pattern": "customer-booking-journey",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/customer-booking-journey/dark-1280.png",
+      "bytes": 41161,
+      "sha256": "5531bfc8770813bd90bc81eb926c673c9a525eab62f7b5b1e609093ef30a2f9d"
+    },
+    {
+      "pattern": "discount-builder",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/discount-builder/light-360.png",
+      "bytes": 5243,
+      "sha256": "30132cea884b6ad94d11639874d4204bf1f3dd321296ec4f66ee5e30966e0d20"
+    },
+    {
+      "pattern": "discount-builder",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/discount-builder/light-768.png",
+      "bytes": 6479,
+      "sha256": "5d29d6f67e5fe0645e7ab5f26f9f1133cb07dd1d0d0970030a53ac3f0e25b8dd"
+    },
+    {
+      "pattern": "discount-builder",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/discount-builder/light-1280.png",
+      "bytes": 7833,
+      "sha256": "a9368b7c74e18b46029e9a2a1cd8d2b8a8f0d9927039d09168a9cb1ab5c08e6b"
+    },
+    {
+      "pattern": "discount-builder",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/discount-builder/dark-360.png",
+      "bytes": 5239,
+      "sha256": "01136ceb8431eccaadfe9b5df6effa6aeba5daa9c66708676975beffc8d8e79e"
+    },
+    {
+      "pattern": "discount-builder",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/discount-builder/dark-768.png",
+      "bytes": 6469,
+      "sha256": "da35c418bf31fd85e5e00987d3edaf682152caea716f80692a65edda2140a916"
+    },
+    {
+      "pattern": "discount-builder",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/discount-builder/dark-1280.png",
+      "bytes": 7836,
+      "sha256": "30316fae39b5e3365be2915703e21372778fe9427f7b6840c747041facadd614"
+    },
+    {
+      "pattern": "epos-booking-journey",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/epos-booking-journey/light-360.png",
+      "bytes": 65553,
+      "sha256": "60d19b7f9c07b6aa99ab99a51ca7c122e85a7a3e5b2ad7e0c410a5c9cc83c1bf"
+    },
+    {
+      "pattern": "epos-booking-journey",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/epos-booking-journey/light-768.png",
+      "bytes": 74003,
+      "sha256": "973a6c987b079d57ddf87c4d62eac8b520c365077cf2f68d34c6eef8f9679a73"
+    },
+    {
+      "pattern": "epos-booking-journey",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/epos-booking-journey/light-1280.png",
+      "bytes": 76984,
+      "sha256": "0535dfa633e5032f17749cd257209608f25814a09044f6608f4fbac2f7c2b286"
+    },
+    {
+      "pattern": "epos-booking-journey",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/epos-booking-journey/dark-360.png",
+      "bytes": 65516,
+      "sha256": "0e986b466b8482aeaeb8418aa0cf0f394762f4508b9b06d3835e340980058b34"
+    },
+    {
+      "pattern": "epos-booking-journey",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/epos-booking-journey/dark-768.png",
+      "bytes": 74071,
+      "sha256": "712354ffcec5a6559b1bff85f7c88aae6a31ef7d37ababc3b7394ee207089e1d"
+    },
+    {
+      "pattern": "epos-booking-journey",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/epos-booking-journey/dark-1280.png",
+      "bytes": 76961,
+      "sha256": "6146753996fe87634b09766519a2d03acdebd353cafafd70b705d9eb104627d8"
+    },
+    {
+      "pattern": "grouped-results-table",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/grouped-results-table/light-360.png",
+      "bytes": 27571,
+      "sha256": "b14fb4bf00e7d911e5012fadc150b4c3d9cd69a13c5bbaa7c89fc1aafda472bc"
+    },
+    {
+      "pattern": "grouped-results-table",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/grouped-results-table/light-768.png",
+      "bytes": 50681,
+      "sha256": "23de9535491f64271c3f17b07c529ec0489316e5579c14c60b600a93eda32f37"
+    },
+    {
+      "pattern": "grouped-results-table",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/grouped-results-table/light-1280.png",
+      "bytes": 51906,
+      "sha256": "36a45518ff98fbd67f30ed2179fcd2df2c24a811098c57329a702409bccbb8e0"
+    },
+    {
+      "pattern": "grouped-results-table",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/grouped-results-table/dark-360.png",
+      "bytes": 27481,
+      "sha256": "549bef22788586775e2b2b0a83ee90899851183b145e83d1eea7d3f9578fc1c5"
+    },
+    {
+      "pattern": "grouped-results-table",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/grouped-results-table/dark-768.png",
+      "bytes": 50023,
+      "sha256": "a4c2524ddc0ee1eb5d250c766d6d7e027cdb4ac23392b9f8826c5e902cd277ad"
+    },
+    {
+      "pattern": "grouped-results-table",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/grouped-results-table/dark-1280.png",
+      "bytes": 51554,
+      "sha256": "a586c623f4ed592c3b1e397efc9175402a84509b6092b7df7684628c1c39bdb6"
+    },
+    {
+      "pattern": "kpi-stat-grid",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/kpi-stat-grid/light-360.png",
+      "bytes": 25208,
+      "sha256": "bf6149fa5c8c56811bdc178e1382d5e031bde716e47f5be5d2e2389602b51c5a"
+    },
+    {
+      "pattern": "kpi-stat-grid",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/kpi-stat-grid/light-768.png",
+      "bytes": 28279,
+      "sha256": "fb0bc01749c57f97a61edd006ff40be8465b518c506b1535bb2a3f36fd98a5e9"
+    },
+    {
+      "pattern": "kpi-stat-grid",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/kpi-stat-grid/light-1280.png",
+      "bytes": 25720,
+      "sha256": "a022fcfa8be6b8c6cc9be9fd75ff7dd239929279de1ce94e151534da81cccc65"
+    },
+    {
+      "pattern": "kpi-stat-grid",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/kpi-stat-grid/dark-360.png",
+      "bytes": 25697,
+      "sha256": "20d28fc3f6754b60dbf9d0419390dd471e04bd4ad6522267732021a8356092b2"
+    },
+    {
+      "pattern": "kpi-stat-grid",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/kpi-stat-grid/dark-768.png",
+      "bytes": 28610,
+      "sha256": "4911278cc569d127907792015f641be0f56d18a8e8f345fa8b12dc5b572b5630"
+    },
+    {
+      "pattern": "kpi-stat-grid",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/kpi-stat-grid/dark-1280.png",
+      "bytes": 26087,
+      "sha256": "f3eae67e146026bab58cd2b72d86f4ada203ed655e1e22946ed629dd7afbb1c5"
+    },
+    {
+      "pattern": "mobile-bottom-navigation",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/mobile-bottom-navigation/light-360.png",
+      "bytes": 8164,
+      "sha256": "070c81c01022f82ccc26791433c012b3a91397fe8bf514e9a24391c20dad7bb8"
+    },
+    {
+      "pattern": "mobile-bottom-navigation",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/mobile-bottom-navigation/light-768.png",
+      "bytes": 9430,
+      "sha256": "c6029a9fc4e3f55739a8c22bbf2583886971bcf0a6c6ff3f8a98f45c0b91842c"
+    },
+    {
+      "pattern": "mobile-bottom-navigation",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/mobile-bottom-navigation/light-1280.png",
+      "bytes": 10799,
+      "sha256": "ab0f7c7bddabcdca6d522a6b7fa20286a64df1adc485165c9c044bb0a0b36c22"
+    },
+    {
+      "pattern": "mobile-bottom-navigation",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/mobile-bottom-navigation/dark-360.png",
+      "bytes": 8174,
+      "sha256": "0dbed93b9512f959b690deb06052a0c823d62c43dbe9ec000a7756e4f669c5d3"
+    },
+    {
+      "pattern": "mobile-bottom-navigation",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/mobile-bottom-navigation/dark-768.png",
+      "bytes": 9450,
+      "sha256": "31e44b6b06c1a697030106c16f87e9adddfabb8c7a8a4034422a96f931b8c6cc"
+    },
+    {
+      "pattern": "mobile-bottom-navigation",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/mobile-bottom-navigation/dark-1280.png",
+      "bytes": 10821,
+      "sha256": "081b354f289420fcaf7a54e50f6417a167273895acd8be141db0d061d1b6fba6"
+    },
+    {
+      "pattern": "multi-query-manager",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/multi-query-manager/light-360.png",
+      "bytes": 8245,
+      "sha256": "e47c979ee83f3f00c3909ab5f79d52eb597000e5f37c0495c5c7bb28fab2808c"
+    },
+    {
+      "pattern": "multi-query-manager",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/multi-query-manager/light-768.png",
+      "bytes": 15738,
+      "sha256": "b3f7682cb08ea505d969048fcc4ab93fc00267857cd445f35c124d1fdfedd9b4"
+    },
+    {
+      "pattern": "multi-query-manager",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/multi-query-manager/light-1280.png",
+      "bytes": 17954,
+      "sha256": "8b83fefc5e6546697e8f83f47094beef1fb9f8be289872e11d8cbde3bc836913"
+    },
+    {
+      "pattern": "multi-query-manager",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/multi-query-manager/dark-360.png",
+      "bytes": 8613,
+      "sha256": "cdfadf72dffd47a65b037b30bd8fb0806fbb171d28df56c7d4f8b6ad4eb96452"
+    },
+    {
+      "pattern": "multi-query-manager",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/multi-query-manager/dark-768.png",
+      "bytes": 16272,
+      "sha256": "06c845882e1b544b25285ecb2856f7e2be52248db40f9e7cf9b4c1293e3f5ab0"
+    },
+    {
+      "pattern": "multi-query-manager",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/multi-query-manager/dark-1280.png",
+      "bytes": 18505,
+      "sha256": "38c10fece65824a3ea072b39f682cef9b7eeab50b4e254c53a361c2174f171c8"
+    },
+    {
+      "pattern": "quote-builder",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/quote-builder/light-360.png",
+      "bytes": 4626,
+      "sha256": "01c836136b2f7760b38b00f3090fdc574dc4860a17126bbb57caf3b62f8b734e"
+    },
+    {
+      "pattern": "quote-builder",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/quote-builder/light-768.png",
+      "bytes": 5877,
+      "sha256": "6d36e94a4a6a04a632152a4bafbc7377c2c91edc8f270727a4be3c172673a7de"
+    },
+    {
+      "pattern": "quote-builder",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/quote-builder/light-1280.png",
+      "bytes": 7236,
+      "sha256": "58b091f667ba19c6b5c62dd01d912205d0bd25059442da2a335319c960d6655b"
+    },
+    {
+      "pattern": "quote-builder",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/quote-builder/dark-360.png",
+      "bytes": 4633,
+      "sha256": "48d3f0bb532794d876c7c62b3b9be344a0f4b0676d727d3a669e61c09fe97380"
+    },
+    {
+      "pattern": "quote-builder",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/quote-builder/dark-768.png",
+      "bytes": 5876,
+      "sha256": "95bdc0bdfb6aaab3a08679c1a0ab1897e9e80c81c755675b97a0a5d47625fbf6"
+    },
+    {
+      "pattern": "quote-builder",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/quote-builder/dark-1280.png",
+      "bytes": 7231,
+      "sha256": "5d4ec004abf057e3df68eef8606f502f92694be61fa79ebff3b8b454253242ab"
+    },
+    {
+      "pattern": "quote-lookup",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/quote-lookup/light-360.png",
+      "bytes": 4883,
+      "sha256": "0a7ed25ba6a96770ecbe47868a8abc8624e5f6b9c57728439a0d26a89d4239a2"
+    },
+    {
+      "pattern": "quote-lookup",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/quote-lookup/light-768.png",
+      "bytes": 6134,
+      "sha256": "61e9796bdfb158288c102396fdc406a2f6c482fa9458136dccb888690c89b5d6"
+    },
+    {
+      "pattern": "quote-lookup",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/quote-lookup/light-1280.png",
+      "bytes": 7475,
+      "sha256": "94df8033ade2d5d812aa68700737c1a7926885d7bebbda763b0591d71b0cc428"
+    },
+    {
+      "pattern": "quote-lookup",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/quote-lookup/dark-360.png",
+      "bytes": 5048,
+      "sha256": "2cbb44fcb56803aa406659179ae494bea03914bc14e3efa9507be261ee0648ca"
+    },
+    {
+      "pattern": "quote-lookup",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/quote-lookup/dark-768.png",
+      "bytes": 6290,
+      "sha256": "2f231ba4d33361b5b05a8be4bbb0853ad9debe0bcbe2719af06fa3d887c419c8"
+    },
+    {
+      "pattern": "quote-lookup",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/quote-lookup/dark-1280.png",
+      "bytes": 7640,
+      "sha256": "b35b9471afd3f082efb4064c84b83f9e3fb231dba5cb7fbe81e82313065d955d"
+    },
+    {
+      "pattern": "reference-redemption-journey",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/reference-redemption-journey/light-360.png",
+      "bytes": 24802,
+      "sha256": "898bfba80783d815ddaff5d49a2807327c44356477701c9b8c1713af77a19ad7"
+    },
+    {
+      "pattern": "reference-redemption-journey",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/reference-redemption-journey/light-768.png",
+      "bytes": 26209,
+      "sha256": "1a18197e8a9fb90cbe948ee5a21ce185dee05ee76af6fa6a6d7517d9e4f9e4c5"
+    },
+    {
+      "pattern": "reference-redemption-journey",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/reference-redemption-journey/light-1280.png",
+      "bytes": 28047,
+      "sha256": "977eaae23f7b1ab59cc31518b818a4a3f1e1e000c01a9d095692878f348a0eed"
+    },
+    {
+      "pattern": "reference-redemption-journey",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/reference-redemption-journey/dark-360.png",
+      "bytes": 24904,
+      "sha256": "ee511585d690da0f766dc0ebf8db41658e79a39c99c1d0326aaa0a10087d3ea0"
+    },
+    {
+      "pattern": "reference-redemption-journey",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/reference-redemption-journey/dark-768.png",
+      "bytes": 26274,
+      "sha256": "da831413b7ff06d61ce790b2fcfbbd94f21373028a1b372b7bd732aa377d1e12"
+    },
+    {
+      "pattern": "reference-redemption-journey",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/reference-redemption-journey/dark-1280.png",
+      "bytes": 28101,
+      "sha256": "c00784c74ace8ea16e715d2e0e0141cce6f05d319318782c6fb9ad31a8c69a95"
+    },
+    {
+      "pattern": "report-breakdown-table",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/report-breakdown-table/light-360.png",
+      "bytes": 26414,
+      "sha256": "eee739fb89d7f2ae5c1af3ccea9a20c4faed0ad3df632535417518eab25f63d4"
+    },
+    {
+      "pattern": "report-breakdown-table",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/report-breakdown-table/light-768.png",
+      "bytes": 56950,
+      "sha256": "0962ee562f5327e9a73a991dcf311d2147d27425bf225d0f3b027c3777039262"
+    },
+    {
+      "pattern": "report-breakdown-table",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/report-breakdown-table/light-1280.png",
+      "bytes": 60557,
+      "sha256": "eaebdb3668cf60ba7be72bb0e1537589c603579aad7823d3154b86219f77df01"
+    },
+    {
+      "pattern": "report-breakdown-table",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/report-breakdown-table/dark-360.png",
+      "bytes": 26284,
+      "sha256": "85d90b5a50bc14eb0e5c6072805b0bb2555960737752c07fb93e853b77197af1"
+    },
+    {
+      "pattern": "report-breakdown-table",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/report-breakdown-table/dark-768.png",
+      "bytes": 57061,
+      "sha256": "c367c618cf11b4738158943698c6029cdcf0d18ca10a48648c1bb4c2caf0f7dd"
+    },
+    {
+      "pattern": "report-breakdown-table",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/report-breakdown-table/dark-1280.png",
+      "bytes": 60719,
+      "sha256": "b8d48562c69c4558d6c1915aa39feb265f3904f55a5cece3eb5fd99a05f9cb2c"
+    },
+    {
+      "pattern": "report-filter-builder",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/report-filter-builder/light-360.png",
+      "bytes": 25781,
+      "sha256": "04cfe8d35d98ddf7a45a8293d1cc9b917c2e428387825f23075dc700c5a90fb3"
+    },
+    {
+      "pattern": "report-filter-builder",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/report-filter-builder/light-768.png",
+      "bytes": 27827,
+      "sha256": "ed5cdc732d64df11562a189ebe953cf8098c6707dd668480c90ac29bb9d57e19"
+    },
+    {
+      "pattern": "report-filter-builder",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/report-filter-builder/light-1280.png",
+      "bytes": 28944,
+      "sha256": "b2ce49bd7aaf82a8602ce8472b9b2a9e2a127648f58030ae7334d02d98e03321"
+    },
+    {
+      "pattern": "report-filter-builder",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/report-filter-builder/dark-360.png",
+      "bytes": 26174,
+      "sha256": "82b78f3d390ca28533f404298b16eafdc21c6478023a65429ac8c2f6b1da3eb6"
+    },
+    {
+      "pattern": "report-filter-builder",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/report-filter-builder/dark-768.png",
+      "bytes": 28230,
+      "sha256": "45e919d3212cd3694707c825a6a72163ec2f463681dd01cf13d9df95173add8c"
+    },
+    {
+      "pattern": "report-filter-builder",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/report-filter-builder/dark-1280.png",
+      "bytes": 29311,
+      "sha256": "abbbb0b3cdc00834d58fec21e5999813874fc6c0072558dbf0e8f640b72ffde9"
+    },
+    {
+      "pattern": "report-workspace-tabs",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/report-workspace-tabs/light-360.png",
+      "bytes": 14437,
+      "sha256": "5071a75078696aa3eefe65ac951799730181506227c17ccd527e22abb48f4536"
+    },
+    {
+      "pattern": "report-workspace-tabs",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/report-workspace-tabs/light-768.png",
+      "bytes": 19638,
+      "sha256": "cea6bc1e381e2425bfbec2d0c5356764dacbff93568d4d48f7e524e7fc575d56"
+    },
+    {
+      "pattern": "report-workspace-tabs",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/report-workspace-tabs/light-1280.png",
+      "bytes": 21071,
+      "sha256": "044c9b82ae7c5e3df1b2cefad4d1cfea424ce37c77d5c859c5cae1e8abb5fc46"
+    },
+    {
+      "pattern": "report-workspace-tabs",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/report-workspace-tabs/dark-360.png",
+      "bytes": 14950,
+      "sha256": "b8cfa8d438eaf3cd3d22866c9b7cc6fcb85991cd32673749dceb675aeb8034ab"
+    },
+    {
+      "pattern": "report-workspace-tabs",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/report-workspace-tabs/dark-768.png",
+      "bytes": 20353,
+      "sha256": "f76121092db66bad0bc2a53b5a63096e05b4251113222937f4f208ab221e7446"
+    },
+    {
+      "pattern": "report-workspace-tabs",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/report-workspace-tabs/dark-1280.png",
+      "bytes": 21810,
+      "sha256": "848c2da1438b19688f2d229cac194e044837ffd4ff92615c01a27c17834e7d47"
+    },
+    {
+      "pattern": "responsive-data-collection",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/responsive-data-collection/light-360.png",
+      "bytes": 37789,
+      "sha256": "0bf75f6d77bf576f46f6f990f76e81dea3e7115807c0f22bb7657f0d68feb0b7"
+    },
+    {
+      "pattern": "responsive-data-collection",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/responsive-data-collection/light-768.png",
+      "bytes": 35827,
+      "sha256": "616dab6949b5fa38d3a366410c2eb3ad5ecf19c572f288dc6eb5cc0713576a17"
+    },
+    {
+      "pattern": "responsive-data-collection",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/responsive-data-collection/light-1280.png",
+      "bytes": 39591,
+      "sha256": "61009e68342f7248409ac44e43a17eb23fa0cd814c7c8bdba65631b48015b74f"
+    },
+    {
+      "pattern": "responsive-data-collection",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/responsive-data-collection/dark-360.png",
+      "bytes": 37828,
+      "sha256": "e758178c0bebacc8cc3b7cfae2edf0c2f480ff454181c409b55552cf21c47716"
+    },
+    {
+      "pattern": "responsive-data-collection",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/responsive-data-collection/dark-768.png",
+      "bytes": 35844,
+      "sha256": "21bde839e8209aa5acea924ddd071bfcf83fab7135541e856f0ba5c2cf550b06"
+    },
+    {
+      "pattern": "responsive-data-collection",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/responsive-data-collection/dark-1280.png",
+      "bytes": 39749,
+      "sha256": "30a898aa5647efd860ef2bc6412986a3960557408d4846f32a088d0195e521e6"
+    },
+    {
+      "pattern": "visit-time-heat-map",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/visit-time-heat-map/light-360.png",
+      "bytes": 24818,
+      "sha256": "69fc40617e7c78f9d5186786dba88120616889b1fff0eb888ad15d27f5484d7b"
+    },
+    {
+      "pattern": "visit-time-heat-map",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/visit-time-heat-map/light-768.png",
+      "bytes": 33537,
+      "sha256": "d38174b17c3d05cabae721fa46eaf62d2bf0710df7dfc7956d861962273bed5b"
+    },
+    {
+      "pattern": "visit-time-heat-map",
+      "framework": "react",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/visit-time-heat-map/light-1280.png",
+      "bytes": 37311,
+      "sha256": "5a3002c9571196b7ac189d7bb4243831f094b3bd87808bbb87332026822d1c59"
+    },
+    {
+      "pattern": "visit-time-heat-map",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "path": "validation/baselines/react/visit-time-heat-map/dark-360.png",
+      "bytes": 25216,
+      "sha256": "dbffde4d10c79bba2324be8f54ec2033bed1f6f94eb06241ad849cb6829ff8f6"
+    },
+    {
+      "pattern": "visit-time-heat-map",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "validation/baselines/react/visit-time-heat-map/dark-768.png",
+      "bytes": 33895,
+      "sha256": "4f26989bebe98431c0adb96aaceee69cbfcafe37d3fd3cd0635f6b046f34cc50"
+    },
+    {
+      "pattern": "visit-time-heat-map",
+      "framework": "react",
+      "theme": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "validation/baselines/react/visit-time-heat-map/dark-1280.png",
+      "bytes": 37653,
+      "sha256": "dba93e6a8b574e97320dab2c23f9c6a03b0c14f05e12713723631afa9a0f74ab"
+    }
+  ],
+  "limitations": [
+    "These images lock the extracted React render for downstream review; they do not claim pixel identity with a separately deployed application shell.",
+    "Blade remains code/documentation-only in the external playground. Its source is server-rendered in Laravel and shares the locked tokens, but browser screenshots require the consumer's Alpine, font and asset integration.",
+    "Host-provided content, translated strings and non-default scenarios require consumer-level visual regression coverage."
+  ]
+}

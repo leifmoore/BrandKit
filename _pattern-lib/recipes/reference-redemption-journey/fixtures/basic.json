@@ -1,0 +1,21 @@
+{
+  "initialState": "lookup",
+  "initialReference": "DEMO-QUOTE-204",
+  "lookupOutcome": "found",
+  "quote": {
+    "reference": "DEMO-QUOTE-204",
+    "customerName": "Alex Taylor",
+    "customerEmail": "alex.taylor@example.test",
+    "expiresLabel": "30 September 2026",
+    "items": [
+      { "id": "item-1", "dateLabel": "18 September 2026", "timeLabel": "10:30", "description": "City river experience", "partyLabel": "3 people" },
+      { "id": "item-2", "dateLabel": "20 September 2026", "timeLabel": "14:00", "description": "Private river experience", "partyLabel": "4 people" }
+    ],
+    "totalMinor": 18600,
+    "currency": "GBP"
+  },
+  "result": {
+    "bookingReferences": ["DEMO-BOOKING-105", "DEMO-BOOKING-106"],
+    "message": "The host can now send confirmation details to the supplied email address."
+  }
+}

@@ -1,3 +1,5 @@
+@import '../_comp-lib/react/styles/index.css';
+@import '../_pattern-lib/react/styles/index.css';
 @import '@fontsource/instrument-sans/400.css';
 @import '@fontsource/instrument-sans/500.css';
 @import '@fontsource/instrument-sans/600.css';
@@ -7,6 +9,7 @@
 @source './**/*.{js,ts,jsx,tsx}';
 @source '../_comp-lib/react/**/*.{js,ts,jsx,tsx}';
 @source '../_comp-lib/recipes/*/react/**/*.{js,ts,jsx,tsx}';
+@source '../_pattern-lib/recipes/*/react/**/*.{js,ts,jsx,tsx}';
 
 /*
  * The Brand Kit and Developer previews share one document. Host dark mode and
@@ -145,9 +148,12 @@
     height: 100%;
     overflow: hidden;
   }
+}
 
-  :root {
-    /* Canonical application semantics from the immutable UI handoff. */
+:root {
+  /* Canonical application semantics from the immutable UI handoff. These host
+     overrides are intentionally unlayered so the add-on's required, later
+     base-library import cannot replace application theme state. */
     --background: #ffffff;
     --foreground: oklch(0.373 0.034 259.733);
     --card: #ffffff;
@@ -194,9 +200,9 @@
     --status-danger-foreground: oklch(0.444 0.177 26.899);
     --info: oklch(0.546 0.245 262.881);
     --info-foreground: oklch(0.424 0.199 265.638);
-  }
+}
 
-  .app-dark {
+.app-dark {
     --background: oklch(0.278 0.033 256.848);
     --foreground: oklch(0.872 0.01 258.338);
     --card: oklch(0.278 0.033 256.848);
@@ -237,8 +243,9 @@
     --status-danger-foreground: oklch(0.808 0.114 19.571);
     --info: oklch(0.707 0.165 254.624);
     --info-foreground: oklch(0.809 0.105 251.813);
-  }
+}
 
+@layer base {
   * {
     @apply border-border;
   }

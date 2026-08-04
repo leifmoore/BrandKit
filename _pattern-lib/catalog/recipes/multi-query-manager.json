@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "multi-query-manager",
+  "title": "Multi-query Manager",
+  "description": "Scrollable booking-query pills with add, remove, and clear actions.",
+  "category": "booking",
+  "maturity": "beta",
+  "kind": "recipe",
+  "searchTerms": ["booking", "query", "tabs", "dates", "party", "clear"],
+  "fixture": "recipes/multi-query-manager/fixtures/basic.json",
+  "documentation": "recipes/multi-query-manager/README.md",
+  "scenarios": [{ "id": "basic", "title": "Three booking queries", "fixture": "recipes/multi-query-manager/fixtures/basic.json", "states": ["selected", "scrollable", "destructive-confirmation"], "defaultViewport": "768" }],
+  "react": { "files": ["recipes/multi-query-manager/react/MultiQueryManager.tsx"], "entry": "recipes/multi-query-manager/react/MultiQueryManager.tsx", "export": "MultiQueryManagerPreview", "exampleData": "recipes/multi-query-manager/fixtures/basic.json" },
+  "blade": { "files": ["recipes/multi-query-manager/blade/multi-query-manager.blade.php"], "exampleData": "recipes/multi-query-manager/fixtures/basic.json", "events": ["ui:multi-query-manager:change", "ui:multi-query-manager:action"] },
+  "contract": {
+    "support": "composition-recipe", "standaloneApi": false, "fixturePolicy": "neutral DTOs only",
+    "hostResponsibilities": ["Create, validate, persist, and delete query data", "Choose the selected-query fallback and journey navigation after clear"],
+    "inputs": [{ "name": "queries", "type": "BookingQuerySummary[]", "required": true }, { "name": "selectedQueryId", "type": "string | null", "required": true }, { "name": "maxQueries", "type": "number", "required": false }],
+    "callbacks": [{ "name": "onSelectQuery", "type": "(queryId: string) => void", "required": true }, { "name": "onAddQuery", "type": "() => void", "required": true }, { "name": "onDeleteQuery", "type": "(queryId: string) => void", "required": true }, { "name": "onClearAll", "type": "() => void", "required": true }]
+  },
+  "dependencies": { "internal": ["alert-dialog", "button"], "npm": ["lucide-react@0.487.0"], "bladeRuntime": ["Alpine.js 3", "Alpine Focus", "Phosphor Icons"] },
+  "responsiveBehavior": ["Query pills remain on one line and scroll horizontally at narrow widths.", "Add and clear actions remain reachable after the query list."],
+  "accessibility": { "status": "passed-with-findings", "findings": ["The 14px selected-query pill measures 3.66:1 in both themes, below WCAG AA 4.5:1. The approved styling is retained for visual parity; selection is also exposed through aria-pressed. Hosts must place focus predictably after deleting the active query."] },
+  "parity": { "classification": "framework-equivalent", "differences": ["React receives all mutations through controlled callbacks; Blade optimistically updates a local draft before dispatching host events.", "Icon paths differ between Lucide and Phosphor."] },
+  "source": { "commit": "d1511e224305585680723101a0b76be93eb9f2f0", "verifiedAt": "2026-08-04", "files": [{ "path": "src/app/epos/components/QueryTabs.tsx", "sha256": "30bc0996d62f67386b8297824353c1f17b32503e68da4d966bee74a7fcb80f05" }, { "path": "src/app/epos/components/Step2.tsx", "sha256": "93e6e9e8d7f440c456720edb2891d3e1ce252d6a1403339771c91ca333290e4d" }, { "path": "_style-reference/multi-channel-sales-platform-main 2/resources/views/booking/epos.blade.php", "sha256": "12c86cb1fe6cb7ec963714322da14e732e8544e61fb731ad3be709095691dfd1" }, { "path": "_style-reference/multi-channel-sales-platform-main 2/public/js/booking/epos.js", "sha256": "94fc9e33bb13e6cf999cf32a34bd8a102f2f59625f9e5a6d597a0156e693f3b3" }], "decisionReferences": ["provenance/decisions.md#approved-pattern-catalogue"] }
+}

@@ -47,12 +47,35 @@ function entryTerms(entry: DeveloperCatalogEntry): readonly string[] {
         ]),
       ])
     case 'recipe':
-      return compact([
-        ...common,
-        entry.manifest.contract.support,
-        entry.manifest.contract.fixturePolicy,
-        entry.manifest.contract.parity,
-      ])
+      return entry.sourcePackage === 'pattern-library' && 'scenarios' in entry.manifest
+        ? compact([
+            ...common,
+            entry.manifest.contract.support,
+            entry.manifest.contract.fixturePolicy,
+            ...entry.manifest.contract.hostResponsibilities,
+            ...(entry.manifest.contract.inputs ?? []).flatMap((input) => [input.name, input.type]),
+            ...(entry.manifest.contract.callbacks ?? []).flatMap((callback) => [callback.name, callback.type]),
+            ...entry.manifest.dependencies.internal,
+            ...entry.manifest.dependencies.npm,
+            ...entry.manifest.dependencies.bladeRuntime,
+            ...entry.manifest.responsiveBehavior,
+            ...entry.manifest.scenarios.flatMap((scenario) => [
+              scenario.id,
+              scenario.title,
+              scenario.description,
+              ...(scenario.states ?? []),
+            ]),
+            entry.manifest.accessibility.status,
+            ...entry.manifest.accessibility.findings,
+            entry.manifest.parity.classification,
+            ...entry.manifest.parity.differences,
+          ])
+        : compact([
+            ...common,
+            entry.manifest.contract.support,
+            entry.manifest.contract.fixturePolicy,
+            'parity' in entry.manifest.contract ? entry.manifest.contract.parity : undefined,
+          ])
     case 'foundation':
       return compact([
         ...common,

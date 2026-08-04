@@ -9,6 +9,12 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src'),
       '@comp-lib': path.resolve(__dirname, './_comp-lib'),
+      '@scudamores/ui': path.resolve(__dirname, './_comp-lib/react'),
+      '@scudamores/patterns': path.resolve(__dirname, './_pattern-lib'),
+      'pattern-preview-registry-runtime': path.resolve(
+        __dirname,
+        './_pattern-lib/react/preview-registry.tsx',
+      ),
     },
   },
 })

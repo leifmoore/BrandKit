@@ -58,6 +58,7 @@ test.describe('Design System catalogue routes', () => {
       await expect(workbenchTabs.getByRole('tab', { name: 'Preview', exact: true })).toHaveAttribute('aria-selected', 'true')
       await expect(workbenchTabs.getByRole('tab', { name: 'React', exact: true })).toBeVisible()
       await expect(workbenchTabs.getByRole('tab', { name: 'Blade', exact: true })).toBeVisible()
+      await expect(workbenchTabs.getByRole('tab', { name: 'Fixture / example', exact: true })).toBeVisible()
       await expect(workbench.getByRole('button', { name: 'Copy', exact: true })).toBeVisible()
       await expect(workbench.getByRole('button', { name: 'Download', exact: true })).toBeVisible()
       await expect(workbench.getByRole('button', { name: 'Documentation', exact: true })).toBeVisible()
@@ -135,5 +136,23 @@ test.describe('Design System catalogue routes', () => {
 
     await page.goto('/design-system/not-a-real-route')
     await expect(page.getByText('Design System page not found', { exact: true })).toBeVisible()
+  })
+
+  test('provides back and cyclic sibling navigation on component and pattern details', async ({ page }) => {
+    await openDeveloperRoute(page, componentRoutes[0]!.route, componentRoutes[0]!.title)
+    const componentNavigation = page.getByRole('navigation', { name: 'Component navigation' })
+    await expect(componentNavigation.getByRole('link', { name: 'Back to all components' })).toHaveAttribute('href', '/design-system/components')
+    await expect(componentNavigation.getByRole('link', { name: /^Previous:/ })).toHaveAttribute('href', /^\/design-system\/components\//)
+    const nextComponent = componentNavigation.getByRole('link', { name: /^Next:/ })
+    const nextComponentHref = await nextComponent.getAttribute('href')
+    expect(nextComponentHref).not.toBe(componentRoutes[0]!.route)
+    await nextComponent.click()
+    await expect(page).toHaveURL(new RegExp(`${nextComponentHref!.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`))
+
+    await openDeveloperRoute(page, recipeRoutes[0]!.route, recipeRoutes[0]!.title)
+    const patternNavigation = page.getByRole('navigation', { name: 'Pattern navigation' })
+    await expect(patternNavigation.getByRole('link', { name: 'Back to all patterns' })).toHaveAttribute('href', '/design-system/patterns')
+    await expect(patternNavigation.getByRole('link', { name: /^Previous:/ })).toHaveAttribute('href', /^\/design-system\/patterns\//)
+    await expect(patternNavigation.getByRole('link', { name: /^Next:/ })).toHaveAttribute('href', /^\/design-system\/patterns\//)
   })
 })

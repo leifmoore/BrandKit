@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "configuration-workbench",
+  "title": "Configuration Workbench",
+  "description": "A task shell combining configuration fields, options, live preview, and implementation handoff.",
+  "category": "configuration",
+  "maturity": "beta",
+  "kind": "recipe",
+  "searchTerms": ["configuration", "workbench", "editor", "preview", "embed", "handoff", "settings"],
+  "fixture": "recipes/configuration-workbench/fixtures/basic.json",
+  "documentation": "recipes/configuration-workbench/README.md",
+  "scenarios": [
+    { "id": "basic", "title": "Active configuration", "fixture": "recipes/configuration-workbench/fixtures/basic.json", "states": ["editing", "preview", "handoff", "saved"], "defaultViewport": "1280" },
+    { "id": "draft", "title": "Incomplete draft", "fixture": "recipes/configuration-workbench/fixtures/draft.json", "states": ["draft", "disabled preview", "unsaved"], "defaultViewport": "768" }
+  ],
+  "react": {
+    "files": ["recipes/configuration-workbench/react/ConfigurationWorkbenchRecipe.tsx"],
+    "entry": "recipes/configuration-workbench/react/ConfigurationWorkbenchRecipe.tsx",
+    "export": "ConfigurationWorkbenchPreview",
+    "exampleData": "recipes/configuration-workbench/fixtures/basic.json"
+  },
+  "blade": {
+    "files": ["recipes/configuration-workbench/blade/configuration-workbench.blade.php"],
+    "exampleData": "recipes/configuration-workbench/fixtures/basic.json",
+    "events": ["ui:configuration-workbench:change", "ui:configuration-workbench:action"]
+  },
+  "contract": {
+    "support": "composition-recipe",
+    "standaloneApi": false,
+    "fixturePolicy": "neutral DTOs only",
+    "hostResponsibilities": ["Own validation and persistence", "Authorize configuration actions", "Compute preview data", "Validate generated handoff snippets", "Perform clipboard operations", "Apply archive and restore policy"],
+    "inputs": [
+      { "name": "activeTab", "type": "ConfigurationWorkbenchTab", "required": true },
+      { "name": "details", "type": "ReactNode or Blade slot", "required": true },
+      { "name": "options", "type": "ReactNode or Blade slot", "required": false },
+      { "name": "preview", "type": "ReactNode or Blade slot", "required": true },
+      { "name": "handoff", "type": "ReactNode or Blade slot", "required": true },
+      { "name": "dirty", "type": "boolean", "required": false }
+    ],
+    "callbacks": [
+      { "name": "onTabChange", "type": "(tab: ConfigurationWorkbenchTab) => void", "required": true },
+      { "name": "onSave", "type": "() => void", "required": false },
+      { "name": "onBack", "type": "() => void", "required": false }
+    ]
+  },
+  "dependencies": {
+    "internal": ["badge", "button", "card", "input", "label", "switch", "tabs"],
+    "npm": ["lucide-react@0.487.0"],
+    "bladeRuntime": ["Alpine.js 3", "Phosphor Icons"]
+  },
+  "responsiveBehavior": ["Header actions wrap below identity copy at narrow widths", "The tab rail scrolls horizontally", "Fields move from two columns to one", "The host controls preview dimensions inside the bounded panel"],
+  "accessibility": { "status": "passed-with-findings", "findings": ["Host integrations must announce dirty and clipboard states, explain unavailable previews, and provide an accessible unsaved-navigation dialog; production tab labels require overflow and zoom testing."] },
+  "parity": { "classification": "framework-equivalent", "differences": ["React receives content as React nodes; Blade receives named slots.", "React uses Lucide glyphs and Blade uses Phosphor glyphs."] },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-08-04",
+    "files": [
+      { "path": "src/app/pages/Widgets.tsx", "sha256": "f0b2d571ef174527da4532000013548a7131ea8e0b645d6583ec0a4c65920e14" },
+      { "path": "src/app/pages/EposConfig.tsx", "sha256": "418ff32ffea45a54c601edb01db2caa815fb55ca089a711fdf5de7bdafb57832" }
+    ],
+    "decisionReferences": ["provenance/decisions.md#approved-pattern-catalogue"]
+  }
+}

@@ -1,0 +1,108 @@
+{
+    "schemaVersion": "1.0.0",
+    "generatedAt": "2026-08-04",
+    "framework": "Laravel 12.64.0",
+    "compiledFiles": 25,
+    "records": [
+        {
+            "path": "recipes/availability-time-picker/blade/availability-time-picker.blade.php",
+            "compiledBytes": 13351
+        },
+        {
+            "path": "recipes/booking-criteria-panel/blade/booking-criteria-panel.blade.php",
+            "compiledBytes": 35133
+        },
+        {
+            "path": "recipes/booking-progress-indicator/blade/booking-progress-indicator.blade.php",
+            "compiledBytes": 9029
+        },
+        {
+            "path": "recipes/booking-review-summary/blade/booking-review-summary.blade.php",
+            "compiledBytes": 22118
+        },
+        {
+            "path": "recipes/capacity-product-selector/blade/capacity-product-selector.blade.php",
+            "compiledBytes": 15123
+        },
+        {
+            "path": "recipes/checkout-details-panel/blade/checkout-details-panel.blade.php",
+            "compiledBytes": 33856
+        },
+        {
+            "path": "recipes/collection-state-panel/blade/collection-state-panel.blade.php",
+            "compiledBytes": 25515
+        },
+        {
+            "path": "recipes/collection-toolbar/blade/collection-toolbar.blade.php",
+            "compiledBytes": 26134
+        },
+        {
+            "path": "recipes/configuration-workbench/blade/configuration-workbench.blade.php",
+            "compiledBytes": 44648
+        },
+        {
+            "path": "recipes/contextual-action-dock/blade/contextual-action-dock.blade.php",
+            "compiledBytes": 9763
+        },
+        {
+            "path": "recipes/customer-booking-journey/blade/customer-booking-journey.blade.php",
+            "compiledBytes": 55834
+        },
+        {
+            "path": "recipes/discount-builder/blade/discount-builder.blade.php",
+            "compiledBytes": 32024
+        },
+        {
+            "path": "recipes/epos-booking-journey/blade/epos-booking-journey.blade.php",
+            "compiledBytes": 96226
+        },
+        {
+            "path": "recipes/grouped-results-table/blade/grouped-results-table.blade.php",
+            "compiledBytes": 16871
+        },
+        {
+            "path": "recipes/kpi-stat-grid/blade/kpi-stat-grid.blade.php",
+            "compiledBytes": 12076
+        },
+        {
+            "path": "recipes/mobile-bottom-navigation/blade/mobile-bottom-navigation.blade.php",
+            "compiledBytes": 23837
+        },
+        {
+            "path": "recipes/multi-query-manager/blade/multi-query-manager.blade.php",
+            "compiledBytes": 24355
+        },
+        {
+            "path": "recipes/quote-builder/blade/quote-builder.blade.php",
+            "compiledBytes": 26323
+        },
+        {
+            "path": "recipes/quote-lookup/blade/quote-lookup.blade.php",
+            "compiledBytes": 23406
+        },
+        {
+            "path": "recipes/reference-redemption-journey/blade/reference-redemption-journey.blade.php",
+            "compiledBytes": 36049
+        },
+        {
+            "path": "recipes/report-breakdown-table/blade/report-breakdown-table.blade.php",
+            "compiledBytes": 35067
+        },
+        {
+            "path": "recipes/report-filter-builder/blade/report-filter-builder.blade.php",
+            "compiledBytes": 29104
+        },
+        {
+            "path": "recipes/report-workspace-tabs/blade/report-workspace-tabs.blade.php",
+            "compiledBytes": 10956
+        },
+        {
+            "path": "recipes/responsive-data-collection/blade/responsive-data-collection.blade.php",
+            "compiledBytes": 33611
+        },
+        {
+            "path": "recipes/visit-time-heat-map/blade/visit-time-heat-map.blade.php",
+            "compiledBytes": 15712
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+/* Pattern recipes extend the locked base Tailwind graph without owning theme state. */
+@import "./tailwind.css";
+
+/* Contrast-safe neutral foregrounds; approved semantic colour exceptions remain unchanged. */
+.dark [data-pattern="configuration-workbench"] [data-slot="tabs-trigger"],
+.dark [data-pattern="report-workspace-tabs"] [data-slot="tabs-trigger"],
+.dark [data-pattern="report-workspace-tabs"] [data-slot="badge"],
+.dark [data-contrast-action] {
+  color: var(--foreground) !important;
+  opacity: 1 !important;
+}

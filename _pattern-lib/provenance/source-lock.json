@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0.0",
+  "verifiedAt": "2026-08-04",
+  "applicationSource": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "aggregateSha256": "82b55ce6513ce99a55146a1fcc81533b7ecf5e53200a088135b0e8313afc1b6d",
+    "fileCount": 253,
+    "scopes": [
+      "src",
+      "docs/design-system",
+      "_style-reference/multi-channel-sales-platform-main 2/resources/views/components",
+      "_style-reference/multi-channel-sales-platform-main 2/app/View/Components"
+    ]
+  },
+  "baseLibrary": {
+    "version": "0.1.0",
+    "archiveSha256": "3c0bd84a09952c5d261a9b5cca3289830bb5f236abedd004fe05255b2b3a1e4d",
+    "treeSha256": "50c4b09bb6ac1d25191e884057129d9ef5e9890b2cb3d52cab52876a1ca3cfea"
+  },
+  "repositoryHeadAtStart": "b56aa6d93b7923d4061ac3c5f8f57b2c1a5d748d",
+  "mutationBoundary": {
+    "allowed": ["_pattern-lib/**"],
+    "forbidden": ["_comp-lib/**", "src/**", "docs/**", "_style-reference/**", "all other paths"]
+  }
+}

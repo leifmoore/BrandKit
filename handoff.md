@@ -1,6 +1,6 @@
 # Brand Kit next-generation UI handoff
 
-Last updated: 2026-07-31
+Last updated: 2026-08-04
 
 ## Objective
 
@@ -42,6 +42,8 @@ page migration, and final module-by-module audit are finished and evidenced.
   was installed during this migration.
 - `_comp-lib` is the immutable scudamores-ui 0.1.0 handoff authority. Never edit
   it. `npm run verify:handoff` checks its inventory and hashes.
+- `_pattern-lib` is an immutable additive 0.1.0 pattern handoff. Keep it as a
+  sibling of `_comp-lib`; host integration changes belong outside both packages.
 - Canonical UI copies are governed by `scripts/canonical-copies.json` and
   `npm run verify:canonical`.
 - The worktree contains the active migration and is intentionally dirty. Do not
@@ -52,10 +54,10 @@ page migration, and final module-by-module audit are finished and evidenced.
 1. Completed — namespaced routing and shared workspace shell.
 2. Completed — preview-first workbench, source actions/docs, and intrinsic-width
    Calendar preview.
-3. Completed — 45-entry sequential preview-review workflow (39 components and
-   6 patterns).
+3. Completed — 70-entry sequential preview-review workflow (39 components and
+   31 patterns).
 4. Completed — searchable Components collection with URL-addressable List/Card
-   views and lazy compact component previews.
+   views and lazy compact component previews; Card view is the default.
 5. Completed — establish the working contextual expression palette, rebuild
    the supporting Brand ramps toward Water Powder/Faded Butter, and keep Deep
    Navy/Off-White locked.
@@ -77,11 +79,21 @@ page migration, and final module-by-module audit are finished and evidenced.
   resources, and preview review.
 - Workbench with persistent Preview/React/Blade selection, exact-file Copy and
   Download actions, and URL-addressed documentation.
-- Components collection defaults to an alphabetized “All Components” List view,
-  structurally following https://ui.shadcn.com/docs/components. Search and
-  List/Card layout use `q` and `layout` URL parameters. Card thumbnails are
+- Components collection defaults to an alphabetized “All Components” Card view.
+  Search and List/Card layout use `q` and `layout` URL parameters. Card thumbnails are
   compact, inert, and virtualized near the viewport so all 39 previews never
   mount together.
+- The read-only `_pattern-lib` add-on contributes 25 manifest-driven recipes to
+  the six base recipes. All 31 patterns are searchable and use lazy card
+  previews; detail pages expose declared scenarios, exact React/Blade/fixture
+  source, API/dependency/accessibility/parity notes, and collection-specific
+  back/previous/next navigation.
+- The two approved visual-parity accessibility findings from the add-on are
+  visibly retained on the collection and affected details; their source styles
+  have not been changed.
+- Recipe previews contain viewport-fixed descendants inside their own canvas,
+  preventing Mobile Bottom Navigation or action docks from becoming global host
+  chrome in detail or card previews.
 - Framework-source guardrail: absent source stays deferred or explicitly
   framework-specific; no inferred parity or copy action.
 - Brand Playground at `/brand/expression/playground` for two adaptive website
@@ -93,9 +105,9 @@ page migration, and final module-by-module audit are finished and evidenced.
 - On desktop, the live preview—not the long control card—is sticky within the
   workbench. Its height is viewport-aware and it releases before Saved
   Candidates/Export; mobile retains ordinary document flow.
-- Four earlier Brand colour treatments remain on the Themes page only as
-  historical comparisons. Lantern Gold is explicitly unapproved and is not
-  presented as the current Brand palette.
+- Earlier Cream/Gold application proposals are not shown on the Themes page or
+  presented as app-ready colours. Lantern Gold remains outside the runtime
+  Brand palette.
 - Brand supporting ramps now hold Deep Navy `#14284b` and Off-White `#fefefd`
   byte-for-byte while transitioning lighter blues toward Water Powder
   `#a2cddb` and warm lights toward Faded Butter `#feeacd`. Downloads expose the
@@ -234,6 +246,14 @@ effect of Brand expression.
 
 ## Validation evidence so far
 
+- Pattern add-on integration checkpoint (2026-08-04) — both immutable handoff
+  verifiers pass (494 base files and 367 add-on release files), with 25 add-on
+  patterns / 31 combined patterns and exactly two retained findings. Typecheck,
+  production build, built-SPA smoke, and the final one-worker browser suite pass;
+  the browser result is 77 passed with the opt-in Brand capture intentionally
+  skipped. The suite covers all 25 generated add-on previews, manifest scenarios,
+  exact React/Blade/fixture sources, 70 review entries, cyclic detail navigation,
+  fixed-pattern containment, dark mode, and the full catalogue axe sweep.
 - `npm run verify:canonical` — passed: 16 exact canonical files, 2 classified
   host adapters.
 - `npm run verify:handoff` — passed: 494 immutable files, 39 components,
@@ -262,8 +282,8 @@ effect of Brand expression.
 - Mobile GuidanceTable regression — passed across Applications, Voice, and
   Photography, including keyboard horizontal scrolling and formerly hidden
   columns.
-- Components collection — 4 focused tests passed for alphabetized List view,
-  URL search/empty recovery, lazy Card previews, and WCAG A/AA in both layouts.
+- Components collection — 4 focused tests passed for alphabetized default Card
+  view, URL search/empty recovery, lazy previews, and WCAG A/AA in both layouts.
 - Virtualized component-card regression — passed after changing previews to
   unmount again when they leave the extended viewport.
 - Existing collection-route/navigation compatibility check — passed after the
@@ -278,7 +298,7 @@ effect of Brand expression.
   worker after the shared-header/navigation change (1.9 minutes).
 - Resumed cross-workspace completion lane — 31 passed with one worker (2.6
   minutes): Brand migration, responsive/a11y routes, Calendar intrinsic width,
-  component collection, workbench, 45-entry review queue, and workspace shell.
+  component collection, workbench, the then-current review queue, and workspace shell.
 - Complete catalogue behaviour lane — 23 passed with one worker (2.7 minutes):
   all supported components, recipes, foundations, roadmap records, source
   fidelity, preview states, 13 interaction fixtures, 6 recipe callbacks, and 9
@@ -360,7 +380,7 @@ checkpoint and passed all 31 tests. No long-running process was left behind.
   until after human findings so the two-core Codespace is not used twice for
   the same final gate.
 - Resume with `docs/human-review-checklist.md`: review Brand routes, choose and
-  save a Playground treatment, then work through the 45-entry Design System
+  save a Playground treatment, then work through the 70-entry Design System
   queue. Fix flagged modules before the final complete serial rerun.
 - The active goal is not complete. Human colour-treatment selection and
   module-by-module review remain explicit completion gates.
@@ -369,7 +389,7 @@ checkpoint and passed all 31 tests. No long-running process was left behind.
 
 1. Run the remaining final Brand and Design System browser lanes serially with
    one worker, including the full catalogue accessibility and visual suites.
-2. Use `/design-system/review/previews` for the user-led 45-entry component and
+2. Use `/design-system/review/previews` for the user-led 70-entry component and
    pattern review; record/fix every flagged defect module by module.
 3. Review `/brand`, `/brand/quick-reference`, Identity, Expression, Activation,
    and Resources using the contact sheet and live routes.

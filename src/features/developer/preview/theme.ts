@@ -90,6 +90,7 @@ export const DEFAULT_PREVIEW_SETTINGS: PreviewSettings = {
   brand: "default",
   direction: "ltr",
   width: "fluid",
+  scenario: "default",
   state: "default",
 };
 

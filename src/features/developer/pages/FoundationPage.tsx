@@ -1,7 +1,6 @@
 import { DocSection, DeveloperPageHeader, MetadataList, PageState } from '../docs/PageScaffold'
 import { SafeMarkdown } from '../docs/SafeMarkdown'
 import { SourceViewer } from '../docs/SourceViewer'
-import { BrandPaletteCandidates } from '@/components/workspaces/BrandPaletteCandidates'
 import type { DeveloperPageContentProps, FoundationDetailViewModel } from '../docs/types'
 
 export interface FoundationPageProps extends DeveloperPageContentProps {
@@ -25,16 +24,6 @@ export function FoundationPage({ foundation, preview, sources = [] }: Foundation
           />
         }
       />
-
-      {foundation.id === 'themes' ? (
-        <DocSection
-          id="brand-workspace-candidates"
-          title="Brand workspace colour candidates"
-          description="Compare proposed Brand-content treatments in an otherwise neutral Design System frame before approving Cream or Gold for the application."
-        >
-          <BrandPaletteCandidates />
-        </DocSection>
-      ) : null}
 
       <DocSection id="overview" title="Overview" description="Canonical guidance from the handoff; raw HTML is displayed as text and is never injected into the Brand Kit.">
         <SafeMarkdown markdown={foundation.documentation ?? foundation.description} />

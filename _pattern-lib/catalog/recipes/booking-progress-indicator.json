@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "booking-progress-indicator",
+  "title": "Booking Progress Indicator",
+  "description": "Complete, current, and upcoming states for a short booking journey.",
+  "category": "booking",
+  "maturity": "beta",
+  "kind": "recipe",
+  "searchTerms": ["booking", "progress", "steps", "journey", "wizard"],
+  "fixture": "recipes/booking-progress-indicator/fixtures/basic.json",
+  "documentation": "recipes/booking-progress-indicator/README.md",
+  "scenarios": [{ "id": "basic", "title": "Second step", "fixture": "recipes/booking-progress-indicator/fixtures/basic.json", "states": ["complete", "current", "upcoming"], "defaultViewport": "fluid" }],
+  "react": { "files": ["recipes/booking-progress-indicator/react/BookingProgressIndicator.tsx"], "entry": "recipes/booking-progress-indicator/react/BookingProgressIndicator.tsx", "export": "BookingProgressIndicatorPreview", "exampleData": "recipes/booking-progress-indicator/fixtures/basic.json" },
+  "blade": { "files": ["recipes/booking-progress-indicator/blade/booking-progress-indicator.blade.php"], "exampleData": "recipes/booking-progress-indicator/fixtures/basic.json", "events": ["ui:booking-progress-indicator:change", "ui:booking-progress-indicator:action"] },
+  "contract": {
+    "support": "composition-recipe",
+    "standaloneApi": false,
+    "fixturePolicy": "neutral DTOs only",
+    "hostResponsibilities": ["Own step navigation and validation", "Supply localised labels"],
+    "inputs": [{ "name": "steps", "type": "BookingProgressStep[]", "required": true }, { "name": "currentStepId", "type": "string", "required": true }],
+    "callbacks": [{ "name": "onStepSelect", "type": "(stepId: string) => void", "required": false }, { "name": "onBack", "type": "() => void", "required": false }]
+  },
+  "dependencies": { "internal": [], "npm": ["lucide-react@0.487.0"], "bladeRuntime": ["Alpine.js 3", "Phosphor Icons"] },
+  "responsiveBehavior": ["Step labels hide below the small breakpoint while numbered markers remain visible.", "Spacing contracts from 64px to 32px at narrow widths."],
+  "accessibility": { "status": "passed", "findings": [] },
+  "parity": { "classification": "framework-equivalent", "differences": ["React uses Lucide glyphs and Blade uses semantically equivalent Phosphor glyphs."] },
+  "source": { "commit": "d1511e224305585680723101a0b76be93eb9f2f0", "verifiedAt": "2026-08-04", "files": [{ "path": "src/app/epos/components/ProgressIndicator.tsx", "sha256": "bf504b4b67a7d72194c024ee6cee1dab5081e78041b129ac0493b3dcc6974e39" }, { "path": "_style-reference/multi-channel-sales-platform-main 2/resources/views/booking/epos.blade.php", "sha256": "12c86cb1fe6cb7ec963714322da14e732e8544e61fb731ad3be709095691dfd1" }], "decisionReferences": ["provenance/decisions.md#approved-pattern-catalogue"] }
+}

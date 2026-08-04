@@ -1,0 +1,13 @@
+{
+  "title": "Summer sales channel",
+  "description": "Configure details, check the live preview, and hand implementation to a host site.",
+  "status": "Active",
+  "fields": [
+    { "id": "name", "label": "Configuration name", "value": "Summer sales channel" },
+    { "id": "location", "label": "Default location", "value": "Central departure point" }
+  ],
+  "enabled": true,
+  "previewTitle": "Reserve your experience",
+  "previewDescription": "Choose a date and group size to see available times.",
+  "handoffCode": "<div data-example-channel=\"summer-demo\"></div>"
+}

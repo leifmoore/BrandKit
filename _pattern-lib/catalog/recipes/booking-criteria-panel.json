@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "booking-criteria-panel",
+  "title": "Booking Criteria Panel",
+  "description": "Date, party composition, and accessibility criteria for the start of a booking journey.",
+  "category": "booking",
+  "maturity": "beta",
+  "kind": "recipe",
+  "searchTerms": ["booking", "date", "party", "people", "accessibility", "criteria"],
+  "fixture": "recipes/booking-criteria-panel/fixtures/basic.json",
+  "documentation": "recipes/booking-criteria-panel/README.md",
+  "scenarios": [{ "id": "basic", "title": "Date and party", "fixture": "recipes/booking-criteria-panel/fixtures/basic.json", "states": ["selected", "popover", "minimum-date"], "defaultViewport": "768" }],
+  "react": { "files": ["recipes/booking-criteria-panel/react/BookingCriteriaPanel.tsx"], "entry": "recipes/booking-criteria-panel/react/BookingCriteriaPanel.tsx", "export": "BookingCriteriaPanelPreview", "exampleData": "recipes/booking-criteria-panel/fixtures/basic.json" },
+  "blade": { "files": ["recipes/booking-criteria-panel/blade/booking-criteria-panel.blade.php"], "exampleData": "recipes/booking-criteria-panel/fixtures/basic.json", "events": ["ui:booking-criteria-panel:change"] },
+  "contract": {
+    "support": "composition-recipe", "standaloneApi": false, "fixturePolicy": "neutral DTOs only",
+    "hostResponsibilities": ["Validate dates and party constraints", "Apply eligibility, availability, pricing, and persistence rules"],
+    "inputs": [{ "name": "date", "type": "string | null", "required": true }, { "name": "party", "type": "BookingPartyCategory[]", "required": true }, { "name": "accessibilityAccess", "type": "boolean", "required": true }],
+    "callbacks": [{ "name": "onDateChange", "type": "(date: string | null) => void", "required": true }, { "name": "onPartyChange", "type": "(categoryId: string, count: number) => void", "required": true }, { "name": "onAccessibilityChange", "type": "(required: boolean) => void", "required": true }]
+  },
+  "dependencies": { "internal": ["button", "calendar", "card", "checkbox", "label", "popover", "stepper"], "npm": ["date-fns@3.6.0", "lucide-react@0.487.0"], "bladeRuntime": ["Alpine.js 3", "Floating UI", "Phosphor Icons"] },
+  "responsiveBehavior": ["Selectors stack at 360px and become two columns at the small breakpoint.", "Party controls remain in a fixed-width popover with viewport-aware Floating UI positioning."],
+  "accessibility": { "status": "passed-with-findings", "findings": ["React passed isolated light/dark axe scans. Blade calendar and popover behavior is server-rendered only in this handoff, so the destination must verify Alpine keyboard operation, focus return, and zoom/reflow with production content."] },
+  "parity": { "classification": "intentional-difference", "differences": ["React formats the trigger date for display; Blade exposes the ISO value while retaining a native form submission value.", "React uses Lucide glyphs and Blade uses Phosphor glyphs."] },
+  "source": { "commit": "d1511e224305585680723101a0b76be93eb9f2f0", "verifiedAt": "2026-08-04", "files": [{ "path": "src/app/epos/components/DateSelector.tsx", "sha256": "543283ee9e9eecc77236607a310a28af1c59f57da97cda004b8e16fa4f13f5e5" }, { "path": "src/app/epos/components/PeopleSelector.tsx", "sha256": "481270ac433f3ce40ca1ee722a3d3808a846cce1a6f74366a004a1cc629d7257" }, { "path": "src/app/epos/components/Step1.tsx", "sha256": "3dd0de790718105d38a02b03b86bcdc7081173219d534b249e53537e7bcbbf6e" }, { "path": "_style-reference/multi-channel-sales-platform-main 2/resources/views/booking/epos.blade.php", "sha256": "12c86cb1fe6cb7ec963714322da14e732e8544e61fb731ad3be709095691dfd1" }, { "path": "_style-reference/multi-channel-sales-platform-main 2/public/js/booking/epos.js", "sha256": "94fc9e33bb13e6cf999cf32a34bd8a102f2f59625f9e5a6d597a0156e693f3b3" }], "decisionReferences": ["provenance/decisions.md#approved-pattern-catalogue"] }
+}

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "collection-state-panel",
+  "title": "Collection State Panel",
+  "description": "Consistent loading, empty, error, and restricted states for collection surfaces.",
+  "category": "collections",
+  "maturity": "beta",
+  "kind": "recipe",
+  "searchTerms": ["collection", "loading", "empty", "error", "restricted", "access denied", "skeleton"],
+  "fixture": "recipes/collection-state-panel/fixtures/loading.json",
+  "documentation": "recipes/collection-state-panel/README.md",
+  "scenarios": [
+    { "id": "loading", "title": "Loading", "fixture": "recipes/collection-state-panel/fixtures/loading.json", "states": ["loading", "busy"], "defaultViewport": "fluid" },
+    { "id": "empty", "title": "Empty results", "fixture": "recipes/collection-state-panel/fixtures/empty.json", "states": ["empty", "action"], "defaultViewport": "fluid" },
+    { "id": "error", "title": "Recoverable error", "fixture": "recipes/collection-state-panel/fixtures/error.json", "states": ["error", "retry"], "defaultViewport": "fluid" },
+    { "id": "restricted", "title": "Access restricted", "fixture": "recipes/collection-state-panel/fixtures/restricted.json", "states": ["restricted"], "defaultViewport": "fluid" }
+  ],
+  "react": {
+    "files": ["recipes/collection-state-panel/react/CollectionStatePanelRecipe.tsx"],
+    "entry": "recipes/collection-state-panel/react/CollectionStatePanelRecipe.tsx",
+    "export": "CollectionStatePanelPreview",
+    "exampleData": "recipes/collection-state-panel/fixtures/loading.json"
+  },
+  "blade": {
+    "files": ["recipes/collection-state-panel/blade/collection-state-panel.blade.php"],
+    "exampleData": "recipes/collection-state-panel/fixtures/loading.json",
+    "events": ["ui:collection-state-panel:action"]
+  },
+  "contract": {
+    "support": "composition-recipe",
+    "standaloneApi": false,
+    "fixturePolicy": "neutral DTOs only",
+    "hostResponsibilities": ["Own fetching and retry logic", "Decide access on the server", "Supply safe user-facing copy", "Prevent repeated live-region announcements"],
+    "inputs": [{ "name": "state", "type": "loading | empty | error | restricted", "required": true }, { "name": "title", "type": "string", "required": false }, { "name": "description", "type": "string", "required": false }],
+    "callbacks": [{ "name": "onAction", "type": "() => void", "required": false }]
+  },
+  "dependencies": {
+    "internal": ["button", "card", "skeleton"],
+    "npm": ["lucide-react@0.487.0"],
+    "bladeRuntime": ["Alpine.js 3", "Phosphor Icons"]
+  },
+  "responsiveBehavior": ["Message width remains bounded and centered", "Loading skeletons use one column at narrow widths and three above the small breakpoint", "Actions remain below explanatory copy"],
+  "accessibility": { "status": "passed-with-findings", "findings": ["Polling hosts must avoid repeatedly announcing unchanged status; retry integrations must announce the result once and retain or deliberately move focus."] },
+  "parity": { "classification": "framework-equivalent", "differences": ["React uses Lucide glyphs and Blade uses Phosphor glyphs."] },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-08-04",
+    "files": [
+      { "path": "src/app/pages/Tickets.tsx", "sha256": "c26da79ce4ff74d902796ebc5f0d259ab807d6c56f949b07a7db35a5a9103151" },
+      { "path": "src/app/pages/Widgets.tsx", "sha256": "f0b2d571ef174527da4532000013548a7131ea8e0b645d6583ec0a4c65920e14" },
+      { "path": "src/app/pages/EposConfig.tsx", "sha256": "418ff32ffea45a54c601edb01db2caa815fb55ca089a711fdf5de7bdafb57832" }
+    ],
+    "decisionReferences": ["provenance/decisions.md#approved-pattern-catalogue"]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "steps": [
+    { "id": "products", "label": "Select Products" },
+    { "id": "time", "label": "Choose Time" },
+    { "id": "details", "label": "Booking Details" }
+  ],
+  "currentStepId": "time",
+  "ariaLabel": "Booking progress",
+  "showBack": true
+}

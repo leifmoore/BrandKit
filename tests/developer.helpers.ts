@@ -15,6 +15,10 @@ interface HandoffCatalog {
   foundations: CatalogIndexEntry[]
 }
 
+interface PatternHandoffCatalog {
+  patterns: CatalogIndexEntry[]
+}
+
 interface ComponentManifestPreview {
   states: string[]
 }
@@ -25,9 +29,13 @@ interface ComponentManifest {
 
 export const workspaceRoot = resolve(process.cwd())
 export const handoffRoot = resolve(workspaceRoot, '_comp-lib')
+export const patternHandoffRoot = resolve(workspaceRoot, '_pattern-lib')
 export const catalog = JSON.parse(
   readFileSync(resolve(handoffRoot, 'catalog/catalog.json'), 'utf8'),
 ) as HandoffCatalog
+export const patternCatalog = JSON.parse(
+  readFileSync(resolve(patternHandoffRoot, 'catalog/catalog.json'), 'utf8'),
+) as PatternHandoffCatalog
 
 export const componentRoutes = catalog.components.map((entry) => {
   const manifest = JSON.parse(readHandoffFile(entry.manifest!)) as ComponentManifest
@@ -43,10 +51,13 @@ export const deferredRoutes = catalog.deferredComponents.map((entry) => ({
   route: `/design-system/roadmap/${entry.id}`,
 }))
 
-export const recipeRoutes = catalog.recipes.map((entry) => ({
-  ...entry,
-  route: `/design-system/patterns/${entry.id}`,
-}))
+export const recipeRoutes = [
+  ...catalog.recipes.map((entry) => ({ ...entry, sourcePackage: 'component-library' as const })),
+  ...patternCatalog.patterns.map((entry) => ({ ...entry, sourcePackage: 'pattern-library' as const })),
+].map((entry) => ({
+    ...entry,
+    route: `/design-system/patterns/${entry.id}`,
+  }))
 
 export const foundationRoutes = catalog.foundations.map((entry) => ({
   ...entry,

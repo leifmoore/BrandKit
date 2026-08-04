@@ -1,0 +1,11 @@
+/* Load the `_comp-lib` Blade Tailwind entrypoint before this file. */
+@source "../../recipes/*/blade/**/*.blade.php";
+
+/* Contrast-safe neutral foregrounds; approved semantic colour exceptions remain unchanged. */
+.dark [data-pattern="configuration-workbench"] [data-slot="tabs-trigger"],
+.dark [data-pattern="report-workspace-tabs"] [data-slot="tabs-trigger"],
+.dark [data-pattern="report-workspace-tabs"] [data-slot="badge"],
+.dark [data-contrast-action] {
+  color: var(--foreground) !important;
+  opacity: 1 !important;
+}

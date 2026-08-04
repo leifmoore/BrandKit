@@ -1,0 +1,168 @@
+{
+  "title": "Create a booking",
+  "steps": [
+    { "id": "criteria", "label": "Booking criteria" },
+    { "id": "availability", "label": "Choose a time" },
+    { "id": "checkout", "label": "Review and book" }
+  ],
+  "initialStepId": "criteria",
+  "queries": {
+    "queries": [
+      { "id": "query-1", "partyLabel": "3 people", "dateLabel": "15 Aug 2026" },
+      { "id": "query-2", "partyLabel": "2 people", "dateLabel": "16 Aug 2026" }
+    ],
+    "selectedQueryId": "query-1",
+    "maxQueries": 5
+  },
+  "criteria": {
+    "date": "2026-08-15",
+    "minimumDate": "2026-08-04",
+    "party": [
+      { "id": "adults", "label": "Adults", "description": "Ages 16 and over", "count": 2, "min": 1, "max": 12 },
+      { "id": "children", "label": "Children", "description": "Ages 3 to 15", "count": 1, "min": 0, "max": 12 },
+      { "id": "infants", "label": "Infants", "description": "Under 3", "count": 0, "min": 0, "max": 6 },
+      { "id": "pets", "label": "Dogs", "description": "Assistance and pet dogs", "count": 0, "min": 0, "max": 4 }
+    ],
+    "accessibilityAccess": false,
+    "title": "Plan your visit",
+    "description": "Choose a date and tell us who is coming."
+  },
+  "products": {
+    "products": [
+      {
+        "id": "shared-tour",
+        "label": "Shared river tour",
+        "description": "Book places by boat capacity.",
+        "tiers": [
+          { "id": "four-seat", "label": "Four-seat boat", "capacityPerUnit": 4, "maxQuantity": 4 },
+          { "id": "six-seat", "label": "Six-seat boat", "capacityPerUnit": 6, "maxQuantity": 3 }
+        ]
+      },
+      {
+        "id": "self-hire",
+        "label": "Self-hire add-on",
+        "description": "Quantity-based option without party coverage.",
+        "tiers": [
+          { "id": "standard", "label": "Standard", "capacityPerUnit": null, "maxQuantity": 5 },
+          { "id": "extended", "label": "Extended", "capacityPerUnit": null, "maxQuantity": 5 }
+        ]
+      }
+    ],
+    "selectedProductIds": ["shared-tour"],
+    "selections": [
+      { "productId": "shared-tour", "lines": [{ "tierId": "four-seat", "quantity": 1 }] },
+      { "productId": "self-hire", "lines": [] }
+    ],
+    "targetCapacity": 3
+  },
+  "availability": {
+    "locations": [
+      { "id": "quayside", "label": "Quayside" },
+      { "id": "riverside", "label": "Riverside" },
+      { "id": "city-centre", "label": "City centre" }
+    ],
+    "selectedLocationId": "quayside",
+    "pricingModes": [
+      { "id": "area", "label": "Per Area" },
+      { "id": "head", "label": "Per Head" }
+    ],
+    "selectedPricingModeId": "area",
+    "timeBands": [
+      {
+        "id": "morning",
+        "label": "Morning",
+        "available": true,
+        "currency": "GBP",
+        "priceMinor": 9600,
+        "discountedPriceMinor": 8600,
+        "perPersonPriceMinor": 2900,
+        "times": [
+          { "id": "0900", "label": "09:00", "available": true },
+          { "id": "0930", "label": "09:30", "available": true },
+          { "id": "1000", "label": "10:00", "available": true },
+          { "id": "1030", "label": "10:30", "available": false }
+        ]
+      },
+      {
+        "id": "midday",
+        "label": "Midday",
+        "available": true,
+        "currency": "GBP",
+        "priceMinor": 11200,
+        "discountedPriceMinor": null,
+        "perPersonPriceMinor": 3700,
+        "times": [
+          { "id": "1100", "label": "11:00", "available": true },
+          { "id": "1130", "label": "11:30", "available": true },
+          { "id": "1200", "label": "12:00", "available": true },
+          { "id": "1230", "label": "12:30", "available": true }
+        ]
+      },
+      {
+        "id": "afternoon",
+        "label": "Afternoon",
+        "available": true,
+        "currency": "GBP",
+        "priceMinor": 12400,
+        "discountedPriceMinor": null,
+        "perPersonPriceMinor": 4100,
+        "times": [
+          { "id": "1300", "label": "13:00", "available": true },
+          { "id": "1330", "label": "13:30", "available": true },
+          { "id": "1400", "label": "14:00", "available": true },
+          { "id": "1430", "label": "14:30", "available": true }
+        ]
+      }
+    ],
+    "selectedTimeId": "0930",
+    "defaultExpandedBandId": "morning",
+    "locale": "en-GB"
+  },
+  "review": {
+    "title": "Booking summary",
+    "expanded": true,
+    "currency": "GBP",
+    "lines": [
+      {
+        "id": "line-1",
+        "title": "Shared river tour",
+        "description": "2 adults, 1 child · Quayside",
+        "date": "2026-08-15",
+        "time": "09:30",
+        "amountMinor": 9600,
+        "status": "Selected"
+      }
+    ],
+    "subtotalMinor": 9600,
+    "discountMinor": 1000,
+    "totalMinor": 8600
+  },
+  "checkout": {
+    "customer": {
+      "firstName": "Alex",
+      "lastName": "Morgan",
+      "email": "alex@example.test",
+      "phone": "+44 7700 900000",
+      "notes": "Step-free access requested."
+    },
+    "metadataExpanded": false,
+    "metadata": [
+      { "id": "seller-code", "label": "Seller code", "type": "text", "value": "RIVER-01", "required": false },
+      {
+        "id": "payment-type",
+        "label": "Payment type",
+        "type": "select",
+        "value": "card",
+        "required": true,
+        "options": [
+          { "value": "card", "label": "Card" },
+          { "value": "cash", "label": "Cash" },
+          { "value": "invoice", "label": "Invoice" }
+        ]
+      }
+    ],
+    "errors": {},
+    "submitting": false,
+    "submitLabel": "Confirm booking"
+  }
+}

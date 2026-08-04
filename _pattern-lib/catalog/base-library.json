@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0.0",
+  "name": "scudamores-ui",
+  "directory": "_comp-lib",
+  "version": "0.1.0",
+  "release": {
+    "archive": "scudamores-ui-0.1.0.zip",
+    "sha256": "3c0bd84a09952c5d261a9b5cca3289830bb5f236abedd004fe05255b2b3a1e4d"
+  },
+  "tree": {
+    "scope": "all files excluding _comp-lib/releases/**",
+    "sha256": "50c4b09bb6ac1d25191e884057129d9ef5e9890b2cb3d52cab52876a1ca3cfea"
+  },
+  "catalog": "_comp-lib/catalog/catalog.json",
+  "reactImportAlias": "@scudamores/ui/*",
+  "bladeComponentPrefix": "ui"
+}

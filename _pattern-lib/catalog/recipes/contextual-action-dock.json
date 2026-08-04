@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "contextual-action-dock",
+  "title": "Contextual Action Dock",
+  "description": "Safe-area-aware mobile workflow actions with an optional summary and total.",
+  "category": "mobile",
+  "maturity": "beta",
+  "kind": "recipe",
+  "searchTerms": ["action dock", "mobile", "floating footer", "workflow", "safe area"],
+  "fixture": "recipes/contextual-action-dock/fixtures/basic.json",
+  "documentation": "recipes/contextual-action-dock/README.md",
+  "scenarios": [
+    { "id": "basic", "title": "Single action", "fixture": "recipes/contextual-action-dock/fixtures/basic.json", "states": ["default", "disabled", "loading"], "defaultViewport": "360" },
+    { "id": "multiple-actions", "title": "Summary with two actions", "fixture": "recipes/contextual-action-dock/fixtures/multiple-actions.json", "states": ["default"], "defaultViewport": "360" }
+  ],
+  "react": {
+    "files": ["recipes/contextual-action-dock/react/ContextualActionDockRecipe.tsx"],
+    "entry": "recipes/contextual-action-dock/react/ContextualActionDockRecipe.tsx",
+    "export": "ContextualActionDockPreview",
+    "exampleData": "recipes/contextual-action-dock/fixtures/basic.json"
+  },
+  "blade": {
+    "files": ["recipes/contextual-action-dock/blade/contextual-action-dock.blade.php"],
+    "exampleData": "recipes/contextual-action-dock/fixtures/basic.json",
+    "events": ["ui:contextual-action-dock:action"]
+  },
+  "contract": {
+    "support": "composition-recipe",
+    "standaloneApi": false,
+    "fixturePolicy": "neutral DTOs only",
+    "hostResponsibilities": ["Reserve page-bottom space", "Prevent simultaneous bottom navigation", "Handle action IDs", "Supply validated totals"],
+    "inputs": [
+      { "name": "primaryAction", "type": "ContextualDockAction", "required": true },
+      { "name": "secondaryAction", "type": "ContextualDockAction | null", "required": false },
+      { "name": "amountMinor", "type": "number", "required": false }
+    ],
+    "callbacks": [{ "name": "onAction", "type": "(id: string) => void", "required": false }]
+  },
+  "dependencies": { "internal": ["button", "card"], "npm": [], "bladeRuntime": ["alpinejs"] },
+  "responsiveBehavior": ["Stacks actions at narrow widths", "Uses a bounded horizontal layout above the mobile breakpoint", "Honours env(safe-area-inset-bottom) in fixed mode"],
+  "accessibility": { "status": "passed-with-findings", "findings": ["Host content must include sufficient safe-area and bottom padding so the fixed dock does not obscure focus targets."] },
+  "parity": { "classification": "framework-equivalent", "differences": [] },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-08-04",
+    "files": [
+      { "path": "src/app/epos/components/Step1.tsx", "sha256": "3dd0de790718105d38a02b03b86bcdc7081173219d534b249e53537e7bcbbf6e" },
+      { "path": "src/app/epos/components/Step2.tsx", "sha256": "93e6e9e8d7f440c456720edb2891d3e1ce252d6a1403339771c91ca333290e4d" },
+      { "path": "src/app/epos/components/Step3.tsx", "sha256": "67880e7cddcaaea9ee79288fe3c2f1f3c3622fc09c1954222fd377a53f5bb5cc" }
+    ],
+    "decisionReferences": ["provenance/decisions.md"]
+  }
+}

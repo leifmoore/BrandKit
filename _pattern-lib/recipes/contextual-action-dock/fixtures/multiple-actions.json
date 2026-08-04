@@ -1,0 +1,8 @@
+{
+  "summary": "Basket total",
+  "amountMinor": 12800,
+  "currency": "GBP",
+  "primaryAction": { "id": "book", "label": "Book now", "disabled": false },
+  "secondaryAction": { "id": "quote", "label": "Get quote", "disabled": false },
+  "position": "contained"
+}

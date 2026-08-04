@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { PreviewCanvas } from "./PreviewCanvas";
 import { PreviewControls } from "./PreviewControls";
-import { hasPreview, loadPreview } from "./registry";
+import { getRegisteredPreviewScenarios, hasPreview, loadPreview } from "./registry";
 import {
   DEFAULT_PREVIEW_SETTINGS,
   getPreviewPresentation,
@@ -15,7 +15,9 @@ import type {
   PreviewKind,
   PreviewLoadResult,
   PreviewPresentation,
+  PreviewScenario,
   PreviewSettings,
+  PreviewWidth,
 } from "./types";
 
 export interface LivePreviewProps {
@@ -25,6 +27,7 @@ export interface LivePreviewProps {
   showControls?: boolean;
   settings?: PreviewSettings;
   defaultSettings?: Partial<PreviewSettings>;
+  scenarios?: readonly PreviewScenario[];
   states?: readonly string[];
   onSettingsChange?: (settings: PreviewSettings) => void;
   className?: string;
@@ -158,9 +161,10 @@ export function PreviewStatus({
 function useLoadedPreview(
   kind: PreviewKind,
   entryId: string,
+  scenarioId: string,
   retryNonce: number,
 ): PreviewLoadResult {
-  const requestKey = `${kind}:${entryId}:${retryNonce}`;
+  const requestKey = `${kind}:${entryId}:${scenarioId}:${retryNonce}`;
   const initialResult: PreviewLoadResult = hasPreview(kind, entryId)
     ? { status: "loading" }
     : { status: "unsupported" };
@@ -179,7 +183,7 @@ function useLoadedPreview(
     }
 
     setRequest({ key: requestKey, result: { status: "loading" } });
-    void loadPreview(kind, entryId)
+    void loadPreview(kind, entryId, scenarioId)
       .then((preview) => {
         if (!active) return;
         setRequest({
@@ -203,7 +207,7 @@ function useLoadedPreview(
     return () => {
       active = false;
     };
-  }, [entryId, kind, requestKey, retryNonce]);
+  }, [entryId, kind, requestKey, retryNonce, scenarioId]);
 
   if (request.key !== requestKey) {
     return hasPreview(kind, entryId)
@@ -220,6 +224,7 @@ export function LivePreview({
   showControls = true,
   settings: controlledSettings,
   defaultSettings,
+  scenarios = [],
   states = [],
   onSettingsChange,
   className = "",
@@ -237,28 +242,74 @@ export function LivePreview({
   const previousEntryRef = React.useRef(entryId);
   const [retryNonce, setRetryNonce] = React.useState(0);
   const settings = controlledSettings ?? internalSettings;
-  const result = useLoadedPreview(kind, entryId, retryNonce);
-  const availableStates = React.useMemo(
-    () => [...new Set(states.length > 0 ? states : ["default"])],
-    [states],
+  const availableScenarios = React.useMemo(
+    () => scenarios.length > 0
+      ? [...scenarios]
+      : [...getRegisteredPreviewScenarios(kind, entryId)],
+    [entryId, kind, scenarios],
   );
-  const sessionKey = `${kind}:${entryId}:${settings.state}:${retryNonce}`;
+  const selectedScenario = availableScenarios.find(
+    (scenario) => scenario.id === settings.scenario,
+  );
+  const activeScenario = selectedScenario ?? availableScenarios[0];
+  const result = useLoadedPreview(
+    kind,
+    entryId,
+    activeScenario?.id ?? settings.scenario,
+    retryNonce,
+  );
+  const availableStates = React.useMemo(
+    () => [...new Set(
+      states.length > 0
+        ? states
+        : activeScenario?.states?.length
+          ? activeScenario.states
+          : ["default"],
+    )],
+    [activeScenario, states],
+  );
+  const sessionKey = `${kind}:${entryId}:${activeScenario?.id ?? settings.scenario}:${settings.state}:${retryNonce}`;
 
   const updateSettings = React.useCallback((next: PreviewSettings) => {
-    if (!controlledSettings) setInternalSettings(next);
-    onSettingsChange?.(next);
-  }, [controlledSettings, onSettingsChange]);
+    let normalized = next;
+    if (next.scenario !== settings.scenario) {
+      const nextScenario = availableScenarios.find(
+        (scenario) => scenario.id === next.scenario,
+      );
+      const defaultWidth: Record<NonNullable<PreviewScenario["defaultViewport"]>, PreviewWidth> = {
+        "360": "mobile",
+        "768": "tablet",
+        "1280": "desktop",
+        fluid: "fluid",
+      };
+      normalized = {
+        ...next,
+        width: nextScenario?.defaultViewport
+          ? defaultWidth[nextScenario.defaultViewport]
+          : next.width,
+        state: nextScenario?.states?.[0] ?? "default",
+      };
+    }
+    if (!controlledSettings) setInternalSettings(normalized);
+    onSettingsChange?.(normalized);
+  }, [availableScenarios, controlledSettings, onSettingsChange, settings.scenario]);
 
   React.useEffect(() => {
     if (previousEntryRef.current === entryId) return;
     previousEntryRef.current = entryId;
     updateSettings({
       ...settings,
+      scenario: availableScenarios[0]?.id ?? "default",
       state: availableStates.includes("default")
         ? "default"
         : (availableStates[0] ?? "default"),
     });
-  }, [availableStates, entryId, settings, updateSettings]);
+  }, [availableScenarios, availableStates, entryId, settings, updateSettings]);
+
+  React.useEffect(() => {
+    if (availableScenarios.length === 0 || selectedScenario) return;
+    updateSettings({ ...settings, scenario: availableScenarios[0]?.id ?? "default" });
+  }, [availableScenarios, selectedScenario, settings, updateSettings]);
 
   React.useEffect(() => {
     storePreviewPreferences(settings);
@@ -312,7 +363,8 @@ export function LivePreview({
       {showControls ? (
         <PreviewControls
           settings={settings}
-          states={states}
+          scenarios={availableScenarios}
+          states={availableStates}
           onChange={updateSettings}
         />
       ) : null}
@@ -324,6 +376,7 @@ export function LivePreview({
         presentation={presentation ?? getPreviewPresentation(entryId)}
         compact={thumbnail}
         inert={thumbnail}
+        containViewportPositionedChildren={kind === "recipe"}
       >
         {content}
       </PreviewCanvas>

@@ -1,0 +1,13 @@
+{
+  "date": "2026-08-15",
+  "minimumDate": "2026-08-04",
+  "party": [
+    { "id": "adults", "label": "Adults", "description": "Ages 16 and over", "count": 2, "min": 1, "max": 12 },
+    { "id": "children", "label": "Children", "description": "Ages 3 to 15", "count": 1, "min": 0, "max": 12 },
+    { "id": "infants", "label": "Infants", "description": "Under 3", "count": 0, "min": 0, "max": 6 },
+    { "id": "pets", "label": "Dogs", "description": "Assistance and pet dogs", "count": 0, "min": 0, "max": 4 }
+  ],
+  "accessibilityAccess": false,
+  "title": "Plan your visit",
+  "description": "Choose a date and tell us who is coming."
+}

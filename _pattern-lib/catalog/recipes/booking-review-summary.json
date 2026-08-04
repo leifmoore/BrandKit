@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "booking-review-summary",
+  "title": "Booking Review Summary",
+  "description": "Expandable booking lines, editable actions and host-calculated totals.",
+  "category": "bookings",
+  "maturity": "beta",
+  "kind": "recipe",
+  "searchTerms": ["booking summary", "basket", "review", "total", "checkout"],
+  "fixture": "recipes/booking-review-summary/fixtures/basic.json",
+  "documentation": "recipes/booking-review-summary/README.md",
+  "scenarios": [
+    { "id": "basic", "title": "Expanded summary", "fixture": "recipes/booking-review-summary/fixtures/basic.json", "states": ["expanded", "edit", "remove"], "defaultViewport": "768" },
+    { "id": "collapsed", "title": "Compact summary", "fixture": "recipes/booking-review-summary/fixtures/collapsed.json", "states": ["collapsed"], "defaultViewport": "360" }
+  ],
+  "react": {
+    "files": ["recipes/booking-review-summary/react/BookingReviewSummaryRecipe.tsx"],
+    "entry": "recipes/booking-review-summary/react/BookingReviewSummaryRecipe.tsx",
+    "export": "BookingReviewSummaryPreview",
+    "exampleData": "recipes/booking-review-summary/fixtures/basic.json"
+  },
+  "blade": {
+    "files": ["recipes/booking-review-summary/blade/booking-review-summary.blade.php"],
+    "exampleData": "recipes/booking-review-summary/fixtures/basic.json",
+    "events": ["ui:booking-review-summary:change", "ui:booking-review-summary:action"]
+  },
+  "contract": {
+    "support": "composition-recipe",
+    "standaloneApi": false,
+    "fixturePolicy": "neutral DTOs only",
+    "hostResponsibilities": ["Calculate prices and discounts", "Handle edit/remove actions", "Confirm destructive removal when required"],
+    "inputs": [
+      { "name": "lines", "type": "BookingReviewLine[]", "required": true },
+      { "name": "totalMinor", "type": "number", "required": true },
+      { "name": "expanded", "type": "boolean", "required": true }
+    ],
+    "callbacks": [
+      { "name": "onExpandedChange", "type": "(expanded: boolean) => void", "required": false },
+      { "name": "onEdit", "type": "(lineId: string) => void", "required": false },
+      { "name": "onRemove", "type": "(lineId: string) => void", "required": false }
+    ]
+  },
+  "dependencies": { "internal": ["badge", "button", "card", "collapsible", "separator"], "npm": ["lucide-react"], "bladeRuntime": ["alpinejs", "@alpinejs/collapse"] },
+  "responsiveBehavior": ["Line actions move below content on narrow screens", "Collapsed header retains count and total", "Totals remain right aligned with tabular figures"],
+  "accessibility": { "status": "passed", "findings": [] },
+  "parity": { "classification": "framework-equivalent", "differences": [] },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-08-04",
+    "files": [{ "path": "src/app/epos/components/Step3.tsx", "sha256": "67880e7cddcaaea9ee79288fe3c2f1f3c3622fc09c1954222fd377a53f5bb5cc" }],
+    "decisionReferences": ["provenance/decisions.md"]
+  }
+}

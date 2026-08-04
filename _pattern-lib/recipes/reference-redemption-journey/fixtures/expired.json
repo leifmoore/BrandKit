@@ -1,0 +1,7 @@
+{
+  "initialState": "expired",
+  "initialReference": "DEMO-EXPIRED-100",
+  "lookupOutcome": "expired",
+  "quote": null,
+  "result": null
+}

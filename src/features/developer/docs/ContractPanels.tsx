@@ -216,7 +216,7 @@ export function DependenciesPanel({ dependencies }: { dependencies: readonly Dep
   )
 }
 
-const findingStyles: Record<AccessibilityFindingViewModel['severity'], string> = {
+const findingStyles: Record<NonNullable<AccessibilityFindingViewModel['severity']>, string> = {
   minor: 'border-sky-600/20 bg-sky-600/5',
   moderate: 'border-amber-600/20 bg-amber-500/5',
   serious: 'border-orange-600/20 bg-orange-500/5',
@@ -241,7 +241,7 @@ export function AccessibilityPanel({ accessibility }: { accessibility: Accessibi
       ) : (
         <ul className="space-y-3">
           {accessibility.findings.map((finding) => (
-            <li key={finding.id} className={cn('rounded-lg border p-4', findingStyles[finding.severity])}>
+            <li key={finding.id} className={cn('rounded-lg border p-4', finding.severity ? findingStyles[finding.severity] : 'border-amber-600/20 bg-amber-500/5')}>
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                 <div className="flex min-w-0 items-start gap-3">
                   <CircleAlert className="mt-0.5 size-5 shrink-0 text-muted-foreground" aria-hidden="true" />
@@ -251,12 +251,16 @@ export function AccessibilityPanel({ accessibility }: { accessibility: Accessibi
                   </div>
                 </div>
                 <div className="flex shrink-0 flex-wrap gap-1.5 pl-8 sm:pl-0">
-                  <span className="rounded bg-background/75 px-2 py-0.5 font-sans text-xs font-semibold capitalize text-muted-foreground">
-                    {finding.severity}
-                  </span>
-                  <span className="rounded bg-background/75 px-2 py-0.5 font-sans text-xs font-semibold capitalize text-muted-foreground">
-                    {finding.status}
-                  </span>
+                  {finding.severity ? (
+                    <span className="rounded bg-background/75 px-2 py-0.5 font-sans text-xs font-semibold capitalize text-muted-foreground">
+                      {finding.severity}
+                    </span>
+                  ) : null}
+                  {finding.status ? (
+                    <span className="rounded bg-background/75 px-2 py-0.5 font-sans text-xs font-semibold capitalize text-muted-foreground">
+                      {finding.status}
+                    </span>
+                  ) : null}
                 </div>
               </div>
             </li>

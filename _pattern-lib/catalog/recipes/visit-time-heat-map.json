@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "visit-time-heat-map",
+  "title": "Visit Time Heat Map",
+  "description": "A day-by-hour distribution with paired controls, peak summary and accessible data table.",
+  "category": "reporting",
+  "maturity": "beta",
+  "kind": "recipe",
+  "searchTerms": ["report", "heat map", "visit time", "transaction time", "bookings", "revenue"],
+  "fixture": "recipes/visit-time-heat-map/fixtures/basic.json",
+  "documentation": "recipes/visit-time-heat-map/README.md",
+  "scenarios": [
+    { "id": "default", "title": "Visit bookings", "description": "Interactive axis and measure controls over host-aggregated matrices.", "fixture": "recipes/visit-time-heat-map/fixtures/basic.json", "states": ["visit", "transaction", "bookings", "revenue", "table alternative"], "defaultViewport": "1280" }
+  ],
+  "react": {
+    "files": ["recipes/visit-time-heat-map/react/VisitTimeHeatMap.tsx"],
+    "entry": "recipes/visit-time-heat-map/react/VisitTimeHeatMap.tsx",
+    "export": "VisitTimeHeatMapPreview",
+    "exampleData": "recipes/visit-time-heat-map/fixtures/basic.json"
+  },
+  "blade": {
+    "files": ["recipes/visit-time-heat-map/blade/visit-time-heat-map.blade.php"],
+    "exampleData": "recipes/visit-time-heat-map/fixtures/basic.json",
+    "events": ["ui:visit-time-heat-map:change"]
+  },
+  "contract": {
+    "support": "composition-recipe",
+    "standaloneApi": false,
+    "fixturePolicy": "neutral DTOs only",
+    "hostResponsibilities": ["Aggregate all matrices", "Supply integer minor-unit revenue", "Validate rectangular finite data", "Supply locale and currency formatting policy", "Authorise source records before aggregation"],
+    "inputs": [
+      { "name": "datasets", "type": "HeatMapDataset[]", "required": true, "description": "Host-aggregated matrices for each axis and measure pair." },
+      { "name": "days", "type": "string[]", "required": true },
+      { "name": "hours", "type": "string[]", "required": true },
+      { "name": "axis", "type": "HeatMapAxis", "required": true },
+      { "name": "valueMode", "type": "HeatMapValueMode", "required": true }
+    ],
+    "callbacks": [
+      { "name": "onAxisChange", "type": "(axis: HeatMapAxis) => void", "required": true },
+      { "name": "onValueModeChange", "type": "(mode: HeatMapValueMode) => void", "required": true },
+      { "name": "formatValue", "type": "(value: number, mode: HeatMapValueMode) => string", "required": false }
+    ]
+  },
+  "dependencies": {
+    "internal": ["button", "card", "table"],
+    "npm": ["react@18.3.1"],
+    "bladeRuntime": ["Alpine.js 3"]
+  },
+  "responsiveBehavior": ["Controls wrap above the visualisation", "The heat map and alternative table scroll inside their card", "The grid preserves readable cells with a 640px minimum canvas"],
+  "accessibility": {
+    "status": "passed-with-findings",
+    "findings": ["The data table remains the authoritative non-colour alternative. Hosts that alter the heat-map scale, labels, or semantic tokens must repeat contrast testing for every supported theme and brand."]
+  },
+  "parity": {
+    "classification": "framework-equivalent",
+    "differences": ["React may receive a formatter callback; Blade uses the host-provided locale and currency with browser Intl."]
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-08-04",
+    "files": [
+      { "path": "src/app/pages/Reporting.tsx", "sha256": "08d14439134b2f9e390179370c7547c5635deea67246acd663bb5383c3be3f8e" },
+      { "path": "_style-reference/multi-channel-sales-platform-main 2/resources/views/reporting/index.blade.php", "sha256": "08ecd8d57f479a931f5cf54c1663b21d5f6a10def9d57be1674ff1891a83d643" }
+    ],
+    "decisionReferences": ["approved-plan#reporting", "provenance/decisions.md#accessibility-over-source-defects"]
+  }
+}

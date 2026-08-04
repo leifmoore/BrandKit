@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { ThemeScope } from "@comp-lib/react/runtime/theme";
+import { ThemeScope } from "@scudamores/ui/runtime/theme";
 
 import { usePreviewPortalBridge } from "./portalBridge";
 import { createPreviewTheme, getPreviewWidth } from "./theme";
@@ -16,6 +16,7 @@ export interface PreviewCanvasProps {
   presentation?: PreviewPresentation;
   compact?: boolean;
   inert?: boolean;
+  containViewportPositionedChildren?: boolean;
 }
 
 export function PreviewCanvas({
@@ -28,6 +29,7 @@ export function PreviewCanvas({
   presentation = { layout: "fluid", alignment: "center" },
   compact = false,
   inert = false,
+  containViewportPositionedChildren = false,
 }: PreviewCanvasProps) {
   const rootRef = React.useRef<HTMLDivElement>(null);
   const theme = React.useMemo(
@@ -53,6 +55,8 @@ export function PreviewCanvas({
   return (
     <div
       className={`${compact ? "h-full overflow-hidden bg-muted/50 p-2" : `overflow-x-auto rounded-xl border border-border bg-muted/50 ${intrinsic ? "p-0 sm:p-5" : "p-3 sm:p-5"}`} ${className}`}
+      tabIndex={compact ? undefined : 0}
+      aria-label={compact ? undefined : `${label} canvas`}
     >
       <div
         className={compact ? "mx-auto h-full" : "mx-auto transition-[width] duration-200"}
@@ -69,8 +73,11 @@ export function PreviewCanvas({
           data-ui-width={settings.width}
           data-ui-state={settings.state}
           data-preview-layout={presentation.layout}
-          className={`${theme.className} ${compact ? "h-full min-h-36 p-3" : `min-h-56 ${intrinsic ? "p-2 sm:p-8" : "p-6 sm:p-8"} shadow-sm`} w-full overflow-hidden rounded-lg border border-border text-foreground`}
-          style={theme.style}
+          data-preview-viewport-containment={containViewportPositionedChildren || undefined}
+          className={`${theme.className} ${containViewportPositionedChildren ? "relative isolate" : ""} ${compact ? "h-full min-h-36 p-3" : `min-h-56 ${intrinsic ? "p-2 sm:p-8" : "p-6 sm:p-8"} shadow-sm`} w-full overflow-hidden rounded-lg border border-border text-foreground`}
+          style={containViewportPositionedChildren
+            ? { ...theme.style, transform: "translateZ(0)" }
+            : theme.style}
           aria-label={inert ? undefined : label}
         >
           <ThemeScope

@@ -1,0 +1,41 @@
+{
+  "value": {
+    "from": "2026-07-01",
+    "to": "2026-07-31",
+    "selections": {
+      "channel": ["widget"],
+      "staff": ["staff-ava", "staff-mia"]
+    }
+  },
+  "presets": [
+    { "id": "today", "label": "Today", "from": "2026-07-28", "to": "2026-07-28" },
+    { "id": "this-week", "label": "This week", "from": "2026-07-27", "to": "2026-07-28" },
+    { "id": "this-month", "label": "This month", "from": "2026-07-01", "to": "2026-07-31" },
+    { "id": "last-twelve-months", "label": "Last 12 months", "from": "2025-07-28", "to": "2026-07-28" }
+  ],
+  "filters": [
+    {
+      "id": "channel",
+      "label": "Channel",
+      "emptySelectionBehavior": "include-all",
+      "options": [
+        { "id": "epos", "label": "EPOS" },
+        { "id": "widget", "label": "Widget" },
+        { "id": "partner", "label": "Partner" }
+      ]
+    },
+    {
+      "id": "staff",
+      "label": "Staff",
+      "emptySelectionBehavior": "include-all",
+      "options": [
+        { "id": "staff-ava", "label": "Ava" },
+        { "id": "staff-noah", "label": "Noah" },
+        { "id": "staff-mia", "label": "Mia" }
+      ]
+    }
+  ],
+  "matchCount": 27,
+  "stale": true,
+  "locale": "en-GB"
+}

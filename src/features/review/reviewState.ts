@@ -1,6 +1,6 @@
 import {
   components,
-  handoffCatalog,
+  catalogVersion,
   recipes,
   type ComponentCatalogEntry,
   type RecipeCatalogEntry,
@@ -19,6 +19,13 @@ export interface PreviewReviewEntry {
   readonly kind: 'component' | 'recipe'
   readonly route: string
   readonly states: readonly string[]
+  readonly scenarios?: readonly {
+    readonly id: string
+    readonly title: string
+    readonly description?: string
+    readonly states?: readonly string[]
+    readonly defaultViewport?: '360' | '768' | '1280' | 'fluid'
+  }[]
 }
 
 export interface SavedPreviewReview {
@@ -39,7 +46,7 @@ const NOTE_LIMIT = 240
 const REVIEW_SCHEMA_VERSION = 1 as const
 
 export const PREVIEW_REVIEW_STORAGE_KEY =
-  `scudamores.design-system.preview-review.v${REVIEW_SCHEMA_VERSION}.${handoffCatalog.version}`
+  `scudamores.design-system.preview-review.v${REVIEW_SCHEMA_VERSION}.${catalogVersion}`
 
 function toComponentReviewEntry(entry: ComponentCatalogEntry): PreviewReviewEntry {
   return Object.freeze({
@@ -55,6 +62,9 @@ function toComponentReviewEntry(entry: ComponentCatalogEntry): PreviewReviewEntr
 }
 
 function toRecipeReviewEntry(entry: RecipeCatalogEntry): PreviewReviewEntry {
+  const scenarios = entry.sourcePackage === 'pattern-library' && 'scenarios' in entry.manifest
+    ? entry.manifest.scenarios
+    : undefined
   return Object.freeze({
     key: entry.key,
     id: entry.id,
@@ -64,6 +74,7 @@ function toRecipeReviewEntry(entry: RecipeCatalogEntry): PreviewReviewEntry {
     kind: 'recipe',
     route: entry.route,
     states: Object.freeze([]),
+    scenarios,
   })
 }
 
@@ -111,7 +122,7 @@ export function readPreviewReviewRecords(): PreviewReviewRecords {
     const parsed = JSON.parse(raw) as unknown
     if (!isRecord(parsed)) return Object.freeze({})
     if (parsed.schemaVersion !== REVIEW_SCHEMA_VERSION) return Object.freeze({})
-    if (parsed.catalogVersion !== handoffCatalog.version) return Object.freeze({})
+    if (parsed.catalogVersion !== catalogVersion) return Object.freeze({})
     if (!isRecord(parsed.entries)) return Object.freeze({})
 
     const validEntries: Record<string, SavedPreviewReview> = {}
@@ -130,7 +141,7 @@ export function readPreviewReviewRecords(): PreviewReviewRecords {
 export function storePreviewReviewRecords(records: PreviewReviewRecords): boolean {
   const state: StoredPreviewReviewState = {
     schemaVersion: REVIEW_SCHEMA_VERSION,
-    catalogVersion: handoffCatalog.version,
+    catalogVersion,
     entries: records,
   }
 
@@ -215,7 +226,7 @@ function escapeMarkdownCell(value: string): string {
 export function createPreviewReviewMarkdown(records: PreviewReviewRecords): string {
   const counts = getPreviewReviewCounts(records)
   const lines = [
-    `# Preview review — Scudamore's UI ${handoffCatalog.version}`,
+    `# Preview review — Scudamore's Design System ${catalogVersion}`,
     '',
     `Exported: ${new Date().toISOString()}`,
     '',
@@ -243,7 +254,7 @@ export function createPreviewReviewJson(records: PreviewReviewRecords): string {
   const counts = getPreviewReviewCounts(records)
   const exportValue = {
     schemaVersion: REVIEW_SCHEMA_VERSION,
-    catalogVersion: handoffCatalog.version,
+    catalogVersion,
     exportedAt: new Date().toISOString(),
     summary: counts,
     entries: previewReviewQueue.map((entry, index) => ({

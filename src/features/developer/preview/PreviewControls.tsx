@@ -1,7 +1,7 @@
 import { ChevronDown, Monitor, Moon, Sun } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
-import type { PreviewSettings } from "./types";
+import type { PreviewScenario, PreviewSettings } from "./types";
 import {
   PREVIEW_BRANDS,
   PREVIEW_DIRECTIONS,
@@ -12,6 +12,7 @@ import {
 export interface PreviewControlsProps {
   settings: PreviewSettings;
   onChange: (settings: PreviewSettings) => void;
+  scenarios?: readonly PreviewScenario[];
   states?: readonly string[];
   className?: string;
 }
@@ -22,6 +23,7 @@ const selectClassName =
 export function PreviewControls({
   settings,
   onChange,
+  scenarios = [],
   states = [],
   className = "",
 }: PreviewControlsProps) {
@@ -92,6 +94,25 @@ export function PreviewControls({
           </button>
         </PopoverTrigger>
         <PopoverContent align="end" sideOffset={8} collisionPadding={12} className="grid w-[min(18rem,calc(100vw-1.5rem))] gap-3 p-3">
+          {scenarios.length > 0 ? (
+            <label className="grid gap-1 text-xs font-medium text-muted-foreground">
+              Scenario
+              <select
+                className={selectClassName}
+                value={scenarios.some((scenario) => scenario.id === settings.scenario)
+                  ? settings.scenario
+                  : scenarios[0]?.id}
+                onChange={(event) => patch("scenario", event.currentTarget.value)}
+              >
+                {scenarios.map((scenario) => (
+                  <option key={scenario.id} value={scenario.id}>
+                    {scenario.title}
+                  </option>
+                ))}
+              </select>
+            </label>
+          ) : null}
+
           {states.length > 0 ? (
             <label className="grid gap-1 text-xs font-medium text-muted-foreground">
               State

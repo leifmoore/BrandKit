@@ -52,13 +52,16 @@ export function ComponentPreviewCard({
 
   return (
     <article
-      data-component-preview-card={entry.id}
+      data-catalog-preview-card={entry.id}
+      data-component-preview-card={entry.kind === 'component' ? entry.id : undefined}
+      data-pattern-preview-card={entry.kind === 'recipe' ? entry.id : undefined}
       className="group relative overflow-hidden rounded-xl border border-border bg-card shadow-sm transition hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2"
     >
       <div ref={targetRef} className="h-44 overflow-hidden border-b border-border bg-muted/30" data-card-preview={entry.id}>
         {nearViewport ? (
           <LivePreview
             entryId={entry.id}
+            kind={entry.kind === 'recipe' ? 'recipe' : 'component'}
             title={`${entry.title} thumbnail`}
             showControls={false}
             thumbnail
@@ -96,7 +99,7 @@ export function ComponentPreviewCard({
           <ArrowRight className="mt-1 size-4 shrink-0 text-muted-foreground transition group-hover:translate-x-1 group-hover:text-primary" aria-hidden="true" />
         </div>
         <p className="mt-2 line-clamp-2 font-sans text-sm leading-6 text-muted-foreground">
-          {entry.description ?? `Open the ${entry.title} component documentation.`}
+          {entry.description ?? `Open the ${entry.title} documentation.`}
         </p>
       </div>
     </article>

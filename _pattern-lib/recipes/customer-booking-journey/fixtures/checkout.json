@@ -1,0 +1,22 @@
+{
+  "title": "Reserve your experience",
+  "description": "Review your selection and complete the host payment step.",
+  "currency": "GBP",
+  "locale": "en-GB",
+  "minDate": "2026-09-01",
+  "initialStep": "checkout",
+  "products": [
+    { "id": "adult", "label": "Adult", "description": "Ages 16 and over", "unitPriceMinor": 2400, "maxQuantity": 8 },
+    { "id": "child", "label": "Child", "description": "Ages 5 to 15", "unitPriceMinor": 1400, "maxQuantity": 8 }
+  ],
+  "locations": [{ "id": "central", "label": "Central departure point" }],
+  "times": [{ "id": "time-1030", "label": "10:30", "description": "Good availability" }],
+  "value": {
+    "date": "2026-09-18",
+    "quantities": { "adult": 2, "child": 1 },
+    "locationId": "central",
+    "timeId": "time-1030",
+    "customer": { "firstName": "Alex", "lastName": "Taylor", "email": "alex.taylor@example.test", "phone": "", "marketingConsent": false }
+  },
+  "completionReference": "DEMO-BOOKING-104"
+}

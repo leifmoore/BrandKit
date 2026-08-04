@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "checkout-details-panel",
+  "title": "Checkout Details Panel",
+  "description": "Customer contact fields, validation and optional operational metadata.",
+  "category": "bookings",
+  "maturity": "beta",
+  "kind": "recipe",
+  "searchTerms": ["checkout", "customer details", "metadata", "trackables", "form"],
+  "fixture": "recipes/checkout-details-panel/fixtures/basic.json",
+  "documentation": "recipes/checkout-details-panel/README.md",
+  "scenarios": [
+    { "id": "basic", "title": "Customer details", "fixture": "recipes/checkout-details-panel/fixtures/basic.json", "states": ["default", "metadata-collapsed", "submitting"], "defaultViewport": "768" },
+    { "id": "invalid", "title": "Validation errors", "fixture": "recipes/checkout-details-panel/fixtures/invalid.json", "states": ["invalid", "metadata-expanded"], "defaultViewport": "768" }
+  ],
+  "react": {
+    "files": ["recipes/checkout-details-panel/react/CheckoutDetailsPanelRecipe.tsx"],
+    "entry": "recipes/checkout-details-panel/react/CheckoutDetailsPanelRecipe.tsx",
+    "export": "CheckoutDetailsPanelPreview",
+    "exampleData": "recipes/checkout-details-panel/fixtures/basic.json"
+  },
+  "blade": {
+    "files": ["recipes/checkout-details-panel/blade/checkout-details-panel.blade.php"],
+    "exampleData": "recipes/checkout-details-panel/fixtures/basic.json",
+    "events": ["ui:checkout-details-panel:change", "ui:checkout-details-panel:action"]
+  },
+  "contract": {
+    "support": "composition-recipe",
+    "standaloneApi": false,
+    "fixturePolicy": "neutral DTOs only",
+    "hostResponsibilities": ["Validate and persist customer data", "Supply metadata definitions", "Handle submission and errors", "Protect personal data"],
+    "inputs": [
+      { "name": "customer", "type": "CheckoutCustomer", "required": true },
+      { "name": "metadata", "type": "CheckoutMetadataField[]", "required": false },
+      { "name": "errors", "type": "Record<string, string>", "required": false }
+    ],
+    "callbacks": [
+      { "name": "onCustomerChange", "type": "(field, value) => void", "required": false },
+      { "name": "onMetadataChange", "type": "(id, value) => void", "required": false },
+      { "name": "onSubmit", "type": "() => void", "required": false }
+    ]
+  },
+  "dependencies": { "internal": ["button", "card", "collapsible", "form", "input", "label", "select", "textarea"], "npm": ["lucide-react"], "bladeRuntime": ["alpinejs", "@alpinejs/collapse"] },
+  "responsiveBehavior": ["Fields use one column on mobile and two columns at wider widths", "Metadata disclosure remains full width", "Submit action remains last in focus order"],
+  "accessibility": { "status": "passed-with-findings", "findings": ["After server validation, the host must move focus to the first invalid field and preserve the supplied error association."] },
+  "parity": { "classification": "intentional-difference", "differences": ["React selection fields are controlled client components; Blade uses server-reliable named form controls and old-value restoration from the base library."] },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-08-04",
+    "files": [{ "path": "src/app/epos/components/Step3.tsx", "sha256": "67880e7cddcaaea9ee79288fe3c2f1f3c3622fc09c1954222fd377a53f5bb5cc" }],
+    "decisionReferences": ["provenance/decisions.md"]
+  }
+}

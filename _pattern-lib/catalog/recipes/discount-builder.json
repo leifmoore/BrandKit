@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "discount-builder",
+  "title": "Discount Builder",
+  "description": "Discount entry with presets, live price preview, limits, and approval guidance.",
+  "category": "booking",
+  "maturity": "beta",
+  "kind": "recipe",
+  "searchTerms": ["booking", "discount", "price", "percentage", "approval", "seller"],
+  "fixture": "recipes/discount-builder/fixtures/basic.json",
+  "documentation": "recipes/discount-builder/README.md",
+  "scenarios": [{ "id": "basic", "title": "Discount draft", "fixture": "recipes/discount-builder/fixtures/basic.json", "states": ["amount", "percentage", "approval", "invalid"], "defaultViewport": "768" }],
+  "react": { "files": ["recipes/discount-builder/react/DiscountBuilder.tsx"], "entry": "recipes/discount-builder/react/DiscountBuilder.tsx", "export": "DiscountBuilderPreview", "exampleData": "recipes/discount-builder/fixtures/basic.json" },
+  "blade": { "files": ["recipes/discount-builder/blade/discount-builder.blade.php"], "exampleData": "recipes/discount-builder/fixtures/basic.json", "events": ["ui:discount-builder:change", "ui:discount-builder:action"] },
+  "contract": {
+    "support": "composition-recipe", "standaloneApi": false, "fixturePolicy": "neutral DTOs only",
+    "hostResponsibilities": ["Authorise access and approval", "Recalculate, validate, and persist the authoritative price"],
+    "inputs": [{ "name": "subtotalMinor", "type": "number", "required": true }, { "name": "currency", "type": "string", "required": true }, { "name": "currentDiscount", "type": "DiscountValue | null", "required": true }],
+    "callbacks": [{ "name": "onApply", "type": "(discount: DiscountValue, metadata: { requiresApproval: boolean }) => void", "required": true }, { "name": "onRemove", "type": "() => void", "required": true }]
+  },
+  "dependencies": { "internal": ["button", "dialog", "input", "label", "tabs"], "npm": ["lucide-react@0.487.0"], "bladeRuntime": ["Alpine.js 3", "Alpine Focus", "Phosphor Icons"] },
+  "responsiveBehavior": ["The modal stays within a 32px viewport gutter and uses a compact five-column preset grid.", "Primary and remove actions share available width at narrow sizes."],
+  "accessibility": { "status": "passed-with-findings", "findings": ["If discount validation becomes asynchronous, the host must announce warnings once and preserve focus and field-error associations. Blade dialog focus behavior must be verified after Alpine integration."] },
+  "parity": { "classification": "framework-equivalent", "differences": ["React uses Tabs for segmented controls; Blade uses equivalent pressed-button groups.", "Icon paths differ between Lucide and Phosphor."] },
+  "source": { "commit": "d1511e224305585680723101a0b76be93eb9f2f0", "verifiedAt": "2026-08-04", "files": [{ "path": "src/app/epos/components/DiscountDialog.tsx", "sha256": "b285ba71a8c45b40f5755c63f1c8487bae9ac67a88c5aa16d7647feeb08d8c47" }, { "path": "_style-reference/multi-channel-sales-platform-main 2/resources/views/booking/epos.blade.php", "sha256": "12c86cb1fe6cb7ec963714322da14e732e8544e61fb731ad3be709095691dfd1" }, { "path": "_style-reference/multi-channel-sales-platform-main 2/public/js/booking/epos.js", "sha256": "94fc9e33bb13e6cf999cf32a34bd8a102f2f59625f9e5a6d597a0156e693f3b3" }], "decisionReferences": ["provenance/decisions.md#approved-pattern-catalogue"] }
+}

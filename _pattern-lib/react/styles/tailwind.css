@@ -1,0 +1,3 @@
+/* Complete Tailwind graph: locked base library plus add-on recipe sources. */
+@import "@scudamores/ui/styles/tailwind.css";
+@source "../../recipes/*/react/**/*.{js,ts,jsx,tsx}";

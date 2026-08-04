@@ -10,12 +10,14 @@ import {
 } from '../docs/ContractPanels'
 import { Workbench, type DocumentationSection } from '../docs/Workbench'
 import type { ComponentDetailViewModel, DeveloperPageContentProps } from '../docs/types'
+import { CollectionNavigation, type CollectionNavigationViewModel } from './CollectionNavigation'
 
 export interface ComponentPageProps extends DeveloperPageContentProps {
   component: ComponentDetailViewModel
+  navigation: CollectionNavigationViewModel
 }
 
-export function ComponentPage({ component, preview, sources = [] }: ComponentPageProps) {
+export function ComponentPage({ component, navigation, preview, sources = [] }: ComponentPageProps) {
   const documentation: DocumentationSection[] = [
     {
       id: 'guidance',
@@ -64,6 +66,7 @@ export function ComponentPage({ component, preview, sources = [] }: ComponentPag
 
   return (
     <article>
+      <CollectionNavigation navigation={navigation} />
       <DeveloperPageHeader
         eyebrow={`Design System · ${component.category}`}
         title={component.title}

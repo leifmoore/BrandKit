@@ -117,6 +117,14 @@ test.describe('Preview portal integration', () => {
         await previewRoot.evaluate((element) => getComputedStyle(element).getPropertyValue('--primary')),
       )
 
+      // Radix tooltips can close while the assertions above move execution
+      // away from their trigger. Re-establish hover immediately before axe so
+      // the transient portal is present for the scoped scan.
+      if (portalCase.id === 'people-popover-content') {
+        await previewRoot.getByRole('button', { name: 'About accessibility access' }).hover()
+        await expect(owned.first()).toBeVisible()
+      }
+
       const results = await new AxeBuilder({ page })
         .include('[data-ds-preview-portal]')
         .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'])

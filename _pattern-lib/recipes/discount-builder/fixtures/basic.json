@@ -1,0 +1,11 @@
+{
+  "subtotalMinor": 18500,
+  "currency": "GBP",
+  "currentDiscount": null,
+  "effectivePersonUnits": 2.5,
+  "maximumPercentage": 30,
+  "approvalThresholdPercentage": 20,
+  "minimumTotalMinor": 12000,
+  "locale": "en-GB",
+  "triggerLabel": "Amend price"
+}

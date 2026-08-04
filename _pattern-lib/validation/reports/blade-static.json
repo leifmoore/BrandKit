@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-08-04",
+  "files": [
+    {
+      "path": "recipes/availability-time-picker/blade/availability-time-picker.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/availability-time-picker/blade/availability-time-picker.blade.php"
+    },
+    {
+      "path": "recipes/booking-criteria-panel/blade/booking-criteria-panel.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/booking-criteria-panel/blade/booking-criteria-panel.blade.php"
+    },
+    {
+      "path": "recipes/booking-progress-indicator/blade/booking-progress-indicator.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/booking-progress-indicator/blade/booking-progress-indicator.blade.php"
+    },
+    {
+      "path": "recipes/booking-review-summary/blade/booking-review-summary.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/booking-review-summary/blade/booking-review-summary.blade.php"
+    },
+    {
+      "path": "recipes/capacity-product-selector/blade/capacity-product-selector.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/capacity-product-selector/blade/capacity-product-selector.blade.php"
+    },
+    {
+      "path": "recipes/checkout-details-panel/blade/checkout-details-panel.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/checkout-details-panel/blade/checkout-details-panel.blade.php"
+    },
+    {
+      "path": "recipes/collection-state-panel/blade/collection-state-panel.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/collection-state-panel/blade/collection-state-panel.blade.php"
+    },
+    {
+      "path": "recipes/collection-toolbar/blade/collection-toolbar.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/collection-toolbar/blade/collection-toolbar.blade.php"
+    },
+    {
+      "path": "recipes/configuration-workbench/blade/configuration-workbench.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/configuration-workbench/blade/configuration-workbench.blade.php"
+    },
+    {
+      "path": "recipes/contextual-action-dock/blade/contextual-action-dock.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/contextual-action-dock/blade/contextual-action-dock.blade.php"
+    },
+    {
+      "path": "recipes/customer-booking-journey/blade/customer-booking-journey.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/customer-booking-journey/blade/customer-booking-journey.blade.php"
+    },
+    {
+      "path": "recipes/discount-builder/blade/discount-builder.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/discount-builder/blade/discount-builder.blade.php"
+    },
+    {
+      "path": "recipes/epos-booking-journey/blade/epos-booking-journey.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/epos-booking-journey/blade/epos-booking-journey.blade.php"
+    },
+    {
+      "path": "recipes/grouped-results-table/blade/grouped-results-table.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/grouped-results-table/blade/grouped-results-table.blade.php"
+    },
+    {
+      "path": "recipes/kpi-stat-grid/blade/kpi-stat-grid.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/kpi-stat-grid/blade/kpi-stat-grid.blade.php"
+    },
+    {
+      "path": "recipes/mobile-bottom-navigation/blade/mobile-bottom-navigation.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/mobile-bottom-navigation/blade/mobile-bottom-navigation.blade.php"
+    },
+    {
+      "path": "recipes/multi-query-manager/blade/multi-query-manager.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/multi-query-manager/blade/multi-query-manager.blade.php"
+    },
+    {
+      "path": "recipes/quote-builder/blade/quote-builder.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/quote-builder/blade/quote-builder.blade.php"
+    },
+    {
+      "path": "recipes/quote-lookup/blade/quote-lookup.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/quote-lookup/blade/quote-lookup.blade.php"
+    },
+    {
+      "path": "recipes/reference-redemption-journey/blade/reference-redemption-journey.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/reference-redemption-journey/blade/reference-redemption-journey.blade.php"
+    },
+    {
+      "path": "recipes/report-breakdown-table/blade/report-breakdown-table.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/report-breakdown-table/blade/report-breakdown-table.blade.php"
+    },
+    {
+      "path": "recipes/report-filter-builder/blade/report-filter-builder.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/report-filter-builder/blade/report-filter-builder.blade.php"
+    },
+    {
+      "path": "recipes/report-workspace-tabs/blade/report-workspace-tabs.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/report-workspace-tabs/blade/report-workspace-tabs.blade.php"
+    },
+    {
+      "path": "recipes/responsive-data-collection/blade/responsive-data-collection.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/responsive-data-collection/blade/responsive-data-collection.blade.php"
+    },
+    {
+      "path": "recipes/visit-time-heat-map/blade/visit-time-heat-map.blade.php",
+      "lint": "No syntax errors detected in /workspaces/Partners/_pattern-lib/recipes/visit-time-heat-map/blade/visit-time-heat-map.blade.php"
+    }
+  ],
+  "failures": []
+}

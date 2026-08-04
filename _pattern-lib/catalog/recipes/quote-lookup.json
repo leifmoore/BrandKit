@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "quote-lookup",
+  "title": "Quote Lookup",
+  "description": "Reference lookup with ready, not-found, expired, and redeemed result states.",
+  "category": "booking",
+  "maturity": "beta",
+  "kind": "recipe",
+  "searchTerms": ["booking", "quote", "lookup", "reference", "expired", "redeem"],
+  "fixture": "recipes/quote-lookup/fixtures/basic.json",
+  "documentation": "recipes/quote-lookup/README.md",
+  "scenarios": [{ "id": "basic", "title": "Fixture-backed lookup", "fixture": "recipes/quote-lookup/fixtures/basic.json", "states": ["searching", "found", "not-found", "expired", "redeemed"], "defaultViewport": "768" }],
+  "react": { "files": ["recipes/quote-lookup/react/QuoteLookup.tsx"], "entry": "recipes/quote-lookup/react/QuoteLookup.tsx", "export": "QuoteLookupPreview", "exampleData": "recipes/quote-lookup/fixtures/basic.json" },
+  "blade": { "files": ["recipes/quote-lookup/blade/quote-lookup.blade.php"], "exampleData": "recipes/quote-lookup/fixtures/basic.json", "events": ["ui:quote-lookup:action"] },
+  "contract": {
+    "support": "composition-recipe", "standaloneApi": false, "fixturePolicy": "neutral DTOs only",
+    "hostResponsibilities": ["Scope, authorise, normalise, rate-limit, and execute lookup", "Protect customer data and own redemption/recovery behavior"],
+    "inputs": [{ "name": "initialReference", "type": "string", "required": false }, { "name": "initialResult", "type": "QuoteLookupResult | null", "required": false }],
+    "callbacks": [{ "name": "onLookup", "type": "(reference: string) => QuoteLookupResult | Promise<QuoteLookupResult>", "required": true }, { "name": "onSelect", "type": "(quote: QuoteLookupRecord) => void", "required": true }]
+  },
+  "dependencies": { "internal": ["badge", "button", "dialog", "input", "label"], "npm": ["lucide-react@0.487.0"], "bladeRuntime": ["Alpine.js 3", "Alpine Focus", "Laravel form handling", "Phosphor Icons"] },
+  "responsiveBehavior": ["The lookup and result summary remain single-column within a narrow modal.", "Long booking labels wrap while the reference and status remain visible."],
+  "accessibility": { "status": "passed-with-findings", "findings": ["The destination must announce async lookup status without exposing sensitive data, preserve error associations, and move focus deliberately when lookup replaces the result region."] },
+  "parity": { "classification": "intentional-difference", "differences": ["React supports an asynchronous in-place lookup; Blade defaults to a progressively enhanced server request or host event.", "React localises currency with Intl; the dependency-free Blade example formats GBP, EUR, and USD symbols with two decimal places.", "Icon paths differ between Lucide and Phosphor."] },
+  "source": { "commit": "d1511e224305585680723101a0b76be93eb9f2f0", "verifiedAt": "2026-08-04", "files": [{ "path": "src/app/epos/components/LookUpQuoteDialog.tsx", "sha256": "8767406f0cb8a9b4fbeb647e0659e4089f7c7c2cd413e9e7f0e63dc5be4854c5" }, { "path": "_style-reference/multi-channel-sales-platform-main 2/resources/views/booking/epos.blade.php", "sha256": "12c86cb1fe6cb7ec963714322da14e732e8544e61fb731ad3be709095691dfd1" }, { "path": "_style-reference/multi-channel-sales-platform-main 2/public/js/booking/epos.js", "sha256": "94fc9e33bb13e6cf999cf32a34bd8a102f2f59625f9e5a6d597a0156e693f3b3" }], "decisionReferences": ["provenance/decisions.md#approved-pattern-catalogue"] }
+}

@@ -46,7 +46,7 @@ export function FrameworkBadge({
     <span
       className={cn(
         badgeBase,
-        'border-border bg-muted text-muted-foreground',
+        'border-border bg-muted text-foreground',
         className,
       )}
     >
@@ -105,7 +105,7 @@ export function ParityBadge({
     <span
       className={cn(
         badgeBase,
-        'border-border bg-muted text-muted-foreground',
+        'border-border bg-muted text-foreground',
         className,
       )}
     >

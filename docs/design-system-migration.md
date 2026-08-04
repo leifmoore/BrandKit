@@ -24,6 +24,26 @@ Two host-owned adapters remain by design:
 These exceptions are classified by the verifier; adding another local UI file
 requires an explicit copy or adapter decision.
 
+## Pattern-library add-on boundary
+
+`_pattern-lib` is a read-only sibling of `_comp-lib`, not an overlay. Its JSON
+catalogue and individual recipe manifests add 25 patterns to the six base
+recipes for 31 combined patterns. The host uses manifest data—not Markdown
+parsing—for navigation, search, maturity, dependencies, scenarios, states,
+accessibility, and parity. Exact declared React, Blade, and fixture files back
+the workbench source tabs.
+
+The generated `_pattern-lib/react/preview-registry.tsx` remains the live React
+preview authority. The host resolves `@scudamores/ui/*` to `_comp-lib/react/*`
+and `@scudamores/patterns/*` to `_pattern-lib/*`, and loads base styles before
+the pattern add-on stylesheet. Blade remains copyable source only; PHP is not
+executed in the browser. `scripts/verify-pattern-handoff.mjs` verifies the
+released add-on inventory and hashes without writing into the package.
+
+The add-on validation summary records two approved visual-parity accessibility
+findings. They are reported on the Patterns collection and affected detail
+pages without silently changing the handed-off pattern styling.
+
 ## Host integration decisions
 
 - Existing import paths remain stable (`@/components/ui/*`).
@@ -32,8 +52,8 @@ requires an explicit copy or adapter decision.
   semantic palette and Instrument Sans. Brand typography and colour remain
   authored content until the Brand migration gate is approved.
 - Official Navy and Off-White remain Brand identity colours. Earlier Cream and
-  Gold application proposals remain unapproved historical comparisons on the
-  Themes foundation page. Toggleable website-expression experiments are owned
+  Gold application proposals are not exposed as app-ready theme candidates.
+  Toggleable website-expression experiments are owned
   by the Brand Playground and documented in `docs/brand-colour-review.md`.
 - Generic semantic variables (`background`, `foreground`, `muted`, `accent`,
   status colours, and component surface tokens) back canonical utilities. The
@@ -53,11 +73,15 @@ requires an explicit copy or adapter decision.
 - The preview-first workbench keeps Preview, React, and Blade at the top of
   component and pattern pages; detailed guidance opens in a URL-addressable
   documentation sheet.
-- The Components collection defaults to a compact, alphabetized “All
-  Components” index following the structural precedent of shadcn/ui's
-  Components page. Search and List/Card layout are URL-addressable; Card view
-  virtualizes inert compact previews near the viewport to protect host runtime
-  and Codespace compute.
+- The Components collection defaults to alphabetized Card view, with a compact
+  List view available through the URL-addressable layout control. Component and
+  pattern cards virtualize inert previews near the viewport to protect host
+  runtime and Codespace compute.
+- Component and pattern detail pages include a collection back link plus
+  wraparound previous/next sibling navigation.
+- Recipe canvases establish their own viewport-positioning boundary, so fixed
+  pattern chrome such as Mobile Bottom Navigation and contextual action docks
+  cannot escape into the host application or neighbouring catalogue cards.
 - Copy and Download actions operate on a selected exact handoff file. Deferred
   roadmap records expose neither action.
 - The sequential preview-review queue mounts one preview at a time, stores
@@ -121,5 +145,6 @@ Run these serially when Codespace CPU capacity allows:
    all original Brand Kit routes at 360px
 6. Design System route, workbench, review, Calendar, portal, accessibility, and visual suites
 
-The immutable `_comp-lib` directory is never edited during destination
-migration; `npm run verify:handoff` validates its supplied inventory and hashes.
+The immutable `_comp-lib` and `_pattern-lib` directories are never edited during
+destination migration; `npm run verify:handoff` validates both supplied
+inventories and hashes.

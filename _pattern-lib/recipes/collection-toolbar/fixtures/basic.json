@@ -1,0 +1,39 @@
+{
+  "search": "",
+  "searchLabel": "Search bookings",
+  "searchPlaceholder": "Search name, email, or reference…",
+  "filters": [
+    {
+      "id": "status",
+      "label": "Filter by status",
+      "value": "all",
+      "options": [
+        { "value": "all", "label": "All statuses" },
+        { "value": "active", "label": "Active" },
+        { "value": "cancelled", "label": "Cancelled" }
+      ]
+    },
+    {
+      "id": "source",
+      "label": "Filter by source",
+      "value": "all",
+      "options": [
+        { "value": "all", "label": "All sources" },
+        { "value": "counter", "label": "Counter" },
+        { "value": "online", "label": "Online" }
+      ]
+    }
+  ],
+  "sort": {
+    "value": "date",
+    "direction": "desc",
+    "options": [
+      { "value": "date", "label": "Date" },
+      { "value": "reference", "label": "Reference" },
+      { "value": "status", "label": "Status" }
+    ]
+  },
+  "layout": "list",
+  "resultCount": 12,
+  "resultLabel": "bookings"
+}

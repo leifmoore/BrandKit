@@ -4,12 +4,18 @@ import { SafeMarkdown } from '../docs/SafeMarkdown'
 import { Workbench, type DocumentationSection } from '../docs/Workbench'
 import { FrameworkBadge, MaturityBadge, StatusBadge } from '../docs/StatusBadges'
 import type { DeveloperPageContentProps, RecipeDetailViewModel } from '../docs/types'
+import { CollectionNavigation, type CollectionNavigationViewModel } from './CollectionNavigation'
 
 export interface RecipePageProps extends DeveloperPageContentProps {
   recipe: RecipeDetailViewModel
+  navigation: CollectionNavigationViewModel
 }
 
-export function RecipePage({ recipe, preview, sources = [] }: RecipePageProps) {
+export function RecipePage({ recipe, navigation, preview, sources = [] }: RecipePageProps) {
+  const hostResponsibilities = recipe.contractDetails?.hostResponsibilities ?? []
+  const retainedVisualFinding = recipe.accessibility?.findings.some(
+    (finding) => finding.summary.toLowerCase().includes('retained for visual parity'),
+  ) ?? false
   const contractFacts = [
     recipe.contractDetails?.support
       ? { label: 'Support model', value: recipe.contractDetails.support }
@@ -37,6 +43,18 @@ export function RecipePage({ recipe, preview, sources = [] }: RecipePageProps) {
         <>
           {contractFacts.length > 0 ? <MetadataList items={contractFacts} className="mb-5" /> : null}
           <PropsTable props={recipe.contract ?? []} />
+          {hostResponsibilities.length > 0 ? (
+            <div className="mt-5 rounded-lg border border-border bg-muted/25 p-4">
+              <h3 className="font-sans text-sm font-semibold text-foreground">Host responsibilities</h3>
+              <ul className="mt-3 space-y-2">
+                {hostResponsibilities.map((responsibility) => (
+                  <li key={responsibility} className="font-sans text-sm leading-6 text-muted-foreground">
+                    {responsibility}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
         </>
       ),
     },
@@ -51,7 +69,14 @@ export function RecipePage({ recipe, preview, sources = [] }: RecipePageProps) {
       label: 'Accessibility',
       description: 'Recorded recipe-level behaviour and audit findings.',
       content: recipe.accessibility ? (
-        <AccessibilityPanel accessibility={recipe.accessibility} />
+        <div>
+          {retainedVisualFinding ? (
+            <p className="mb-4 rounded-lg border border-amber-600/30 bg-amber-500/10 px-4 py-3 font-sans text-sm leading-6 text-foreground" role="note">
+              Retained visual-parity accessibility finding. The handoff styling is intentionally unchanged; use the documented non-colour cue and disposition below.
+            </p>
+          ) : null}
+          <AccessibilityPanel accessibility={recipe.accessibility} />
+        </div>
       ) : (
         <p className="rounded-lg border border-dashed border-border bg-muted/30 px-4 py-5 font-sans text-sm leading-6 text-muted-foreground">
           No separate recipe audit is declared. Apply every composed component contract and verify the interaction as a whole.
@@ -74,6 +99,7 @@ export function RecipePage({ recipe, preview, sources = [] }: RecipePageProps) {
 
   return (
     <article>
+      <CollectionNavigation navigation={navigation} />
       <DeveloperPageHeader
         eyebrow={`Design System pattern · ${recipe.category}`}
         title={recipe.title}
@@ -96,6 +122,16 @@ export function RecipePage({ recipe, preview, sources = [] }: RecipePageProps) {
         <div className="rounded-xl border border-border bg-card p-5">
           <p className="font-sans text-sm leading-6 text-muted-foreground">{recipe.description}</p>
           {contractFacts.length > 0 ? <MetadataList items={contractFacts} className="mt-5" /> : null}
+          {recipe.responsiveBehavior?.length ? (
+            <div className="mt-5 border-t border-border pt-5">
+              <h3 className="font-sans text-sm font-semibold text-foreground">Responsive behaviour</h3>
+              <ul className="mt-3 space-y-2">
+                {recipe.responsiveBehavior.map((item) => (
+                  <li key={item} className="font-sans text-sm leading-6 text-muted-foreground">{item}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
         </div>
       </DocSection>
     </article>

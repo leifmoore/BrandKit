@@ -1,0 +1,28 @@
+{
+  "search": "Taylor",
+  "searchLabel": "Search records",
+  "searchPlaceholder": "Search records…",
+  "filters": [
+    {
+      "id": "status",
+      "label": "Filter by status",
+      "value": "active",
+      "options": [
+        { "value": "all", "label": "All statuses" },
+        { "value": "active", "label": "Active" },
+        { "value": "archived", "label": "Archived" }
+      ]
+    }
+  ],
+  "sort": {
+    "value": "name",
+    "direction": "asc",
+    "options": [
+      { "value": "name", "label": "Name" },
+      { "value": "updated", "label": "Updated" }
+    ]
+  },
+  "layout": "grid",
+  "resultCount": 3,
+  "resultLabel": "matching records"
+}

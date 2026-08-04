@@ -3,7 +3,7 @@ import AxeBuilder from '@axe-core/playwright'
 import { componentRoutes, observeRuntimeErrors, expectNoRuntimeErrors } from './developer.helpers'
 
 test.describe('Components collection discovery', () => {
-  test('defaults to a compact alphabetized All Components list', async ({ page }) => {
+  test('defaults to alphabetized lazy preview cards', async ({ page }) => {
     const runtimeErrors = observeRuntimeErrors(page)
     await page.setViewportSize({ width: 1440, height: 900 })
     await page.goto('/design-system/components')
@@ -13,19 +13,19 @@ test.describe('Components collection discovery', () => {
     await expect(page.getByRole('searchbox', { name: 'Search components' })).toBeVisible()
 
     const view = page.getByRole('group', { name: 'Component view' })
-    await expect(view.getByRole('button', { name: 'List view' })).toHaveAttribute('aria-pressed', 'true')
-    await expect(view.getByRole('button', { name: 'Card view' })).toHaveAttribute('aria-pressed', 'false')
+    await expect(view.getByRole('button', { name: 'List view' })).toHaveAttribute('aria-pressed', 'false')
+    await expect(view.getByRole('button', { name: 'Card view' })).toHaveAttribute('aria-pressed', 'true')
 
-    const links = page.getByRole('list', { name: 'All components' }).getByRole('link')
+    const links = page.locator('[data-component-card-grid]').getByRole('link')
     await expect(links).toHaveCount(componentRoutes.length)
-    const labels = await links.evaluateAll(elements => elements.map(element => element.querySelector('span')?.textContent?.trim() ?? ''))
+    const labels = await links.evaluateAll(elements => elements.map(element => element.textContent?.trim() ?? ''))
     expect(labels).toEqual([...labels].sort((left, right) => left.localeCompare(right)))
-    await expect(page.locator('[data-component-card-grid]')).toHaveCount(0)
+    await expect(page.locator('[data-component-preview-card]')).toHaveCount(componentRoutes.length)
     expectNoRuntimeErrors(runtimeErrors, '/design-system/components')
   })
 
   test('filters from the URL and provides a recoverable empty state', async ({ page }) => {
-    await page.goto('/design-system/components')
+    await page.goto('/design-system/components?layout=list')
     const search = page.getByRole('searchbox', { name: 'Search components' })
 
     await search.fill('calendar')
@@ -43,13 +43,12 @@ test.describe('Components collection discovery', () => {
     await expect(page.getByRole('list', { name: 'All components' }).getByRole('link')).toHaveCount(componentRoutes.length)
   })
 
-  test('switches to lazy compact preview cards without mounting the full catalogue', async ({ page }) => {
+  test('keeps compact preview cards lazy and allows switching layouts', async ({ page }) => {
     const runtimeErrors = observeRuntimeErrors(page)
     await page.setViewportSize({ width: 1440, height: 900 })
     await page.goto('/design-system/components')
 
-    await page.getByRole('group', { name: 'Component view' }).getByRole('button', { name: 'Card view' }).click()
-    await expect(page).toHaveURL(/[?&]layout=cards(?:&|$)/)
+    await expect(page).not.toHaveURL(/[?&]layout=/)
     await expect(page.locator('[data-component-preview-card]')).toHaveCount(componentRoutes.length)
 
     const loadedThumbnails = page.locator('[data-component-card-grid] section[data-preview-entry]')
@@ -63,9 +62,13 @@ test.describe('Components collection discovery', () => {
     const previewBox = await loadedThumbnails.first().locator('..').boundingBox()
     expect(previewBox?.height).toBeLessThanOrEqual(176)
 
+    await page.getByRole('group', { name: 'Component view' }).getByRole('button', { name: 'List view' }).click()
+    await expect(page).toHaveURL(/[?&]layout=list(?:&|$)/)
+    await page.getByRole('group', { name: 'Component view' }).getByRole('button', { name: 'Card view' }).click()
+    await expect(page).not.toHaveURL(/[?&]layout=/)
     await page.reload()
     await expect(page.getByRole('group', { name: 'Component view' }).getByRole('button', { name: 'Card view' })).toHaveAttribute('aria-pressed', 'true')
-    expectNoRuntimeErrors(runtimeErrors, '/design-system/components?layout=cards')
+    expectNoRuntimeErrors(runtimeErrors, '/design-system/components')
   })
 
   test('keeps both collection layouts free of unexpected WCAG A/AA findings', async ({ page }) => {
@@ -75,6 +78,7 @@ test.describe('Components collection discovery', () => {
       .analyze()
     expect(results.violations).toEqual([])
 
+    await page.getByRole('button', { name: 'List view' }).click()
     await page.getByRole('button', { name: 'Card view' }).click()
     await expect(page.locator('[data-component-card-grid] section[data-preview-entry]').first()).toHaveAttribute('data-preview-status', 'ready')
     results = await new AxeBuilder({ page })

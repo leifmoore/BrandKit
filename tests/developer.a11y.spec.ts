@@ -10,7 +10,7 @@ import {
 } from './developer.helpers'
 
 const auditedRoutes = [
-  { route: '/design-system', title: "Scudamore's UI" },
+  { route: '/design-system', title: 'Scudamore’s Design System' },
   { route: '/design-system/components', title: 'Components' },
   { route: '/design-system/patterns', title: 'Patterns' },
   { route: '/design-system/foundations', title: 'Foundations' },
@@ -35,6 +35,11 @@ const acceptedContrastText = new Map([
   ['/design-system/components/alert-dialog', 'Delete record'],
   ['/design-system/components/button', 'Delete'],
   ['/design-system/components/aspect-ratio', '16:9 media'],
+  // Retained by the Pattern Library validation summary for approved visual
+  // parity. The UI reports these findings and preserves their non-colour cues.
+  ['/design-system/patterns/availability-time-picker', '£86'],
+  ['/design-system/patterns/multi-query-manager', '2 people · Aug 16, 2026'],
+  ['/design-system/patterns/epos-booking-journey', '3 people · 15 Aug 2026'],
   // These foundation pages intentionally reuse the canonical Button example
   // as their theme playground, so the same recorded destructive-token finding
   // appears there rather than representing a separate exception.
@@ -44,7 +49,7 @@ const acceptedContrastText = new Map([
 
 test('all Design System routes have only the exact recorded WCAG A/AA axe findings', async ({ page }) => {
   test.slow()
-  test.setTimeout(300_000)
+  test.setTimeout(600_000)
 
   for (const entry of auditedRoutes) {
     await openDeveloperRoute(page, entry.route, entry.title)

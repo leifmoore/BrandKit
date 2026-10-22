@@ -1,0 +1,11 @@
+{
+  "items": [
+    { "id": "home", "label": "Home", "icon": "house" },
+    { "id": "sell", "label": "Sell", "icon": "shopping-cart" },
+    { "id": "bookings", "label": "Bookings", "icon": "ticket", "badge": "2" },
+    { "id": "profile", "label": "Profile", "icon": "user" }
+  ],
+  "activeId": "home",
+  "overflowItems": [],
+  "hideForFinePointer": false
+}

@@ -25,7 +25,7 @@ export interface SourceFileViewModel {
   path: string
   content: string
   framework: SourceFramework
-  kind?: 'implementation' | 'example' | 'data' | 'documentation'
+  kind?: 'implementation' | 'example' | 'fixture' | 'data' | 'documentation'
   language?: string
   label?: string
   downloadName?: string
@@ -68,8 +68,8 @@ export interface FrameworkContractViewModel {
 
 export interface AccessibilityFindingViewModel {
   id: string
-  severity: 'minor' | 'moderate' | 'serious' | 'critical'
-  status: 'open' | 'accepted' | 'fixed'
+  severity?: 'minor' | 'moderate' | 'serious' | 'critical'
+  status?: 'open' | 'accepted' | 'fixed'
   summary: string
   detail?: string
 }
@@ -158,8 +158,10 @@ export interface RecipeDetailViewModel {
     support?: string
     standaloneApi?: boolean
     fixturePolicy?: string
+    hostResponsibilities?: readonly string[]
   }
   dependencies?: readonly DependencyViewModel[]
+  responsiveBehavior?: readonly string[]
   accessibility?: AccessibilityViewModel
   parity?: ParityViewModel
 }

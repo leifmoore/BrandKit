@@ -1,7 +1,8 @@
 import * as React from "react";
+import { patternPreviewRegistry } from "pattern-preview-registry-runtime";
 
 import { RecipeDemo } from "./recipeDemos";
-import type { LoadedPreview, PreviewKind } from "./types";
+import type { LoadedPreview, PreviewKind, PreviewScenario } from "./types";
 
 type ModuleImporter = () => Promise<Record<string, unknown>>;
 type FixtureImporter = () => Promise<{ default: unknown }>;
@@ -41,12 +42,13 @@ function indexById<T>(
 const componentIndex = indexById(componentModules, "examples");
 const recipeIndex = indexById(recipeModules, "recipes");
 const fixtureIndex = indexById(recipeFixtures, "recipes");
+const addOnRecipeIds = Object.keys(patternPreviewRegistry);
 
 export const COMPONENT_PREVIEW_IDS = Object.freeze(
   [...componentIndex.keys()].sort(),
 );
 export const RECIPE_PREVIEW_IDS = Object.freeze(
-  [...recipeIndex.keys()].sort(),
+  [...new Set([...recipeIndex.keys(), ...addOnRecipeIds])].sort(),
 );
 export const PREVIEW_REGISTRY_COUNTS = Object.freeze({
   components: COMPONENT_PREVIEW_IDS.length,
@@ -70,12 +72,35 @@ function findComponent(
 }
 
 export function hasPreview(kind: PreviewKind, id: string): boolean {
-  return (kind === "component" ? componentIndex : recipeIndex).has(id);
+  return kind === "component"
+    ? componentIndex.has(id)
+    : recipeIndex.has(id) || Object.prototype.hasOwnProperty.call(patternPreviewRegistry, id);
+}
+
+export function getRegisteredPreviewScenarios(
+  kind: PreviewKind,
+  id: string,
+): readonly PreviewScenario[] {
+  if (kind !== "recipe") return Object.freeze([]);
+
+  const registration = patternPreviewRegistry[id as keyof typeof patternPreviewRegistry];
+  if (registration) {
+    return Object.freeze(
+      Object.entries(registration.scenarios).map(([scenarioId, scenario]) =>
+        Object.freeze({ id: scenarioId, title: scenario.title }),
+      ),
+    );
+  }
+
+  return recipeIndex.has(id)
+    ? Object.freeze([Object.freeze({ id: "basic", title: "Basic" })])
+    : Object.freeze([]);
 }
 
 export async function loadPreview(
   kind: PreviewKind,
   id: string,
+  scenarioId = "default",
 ): Promise<LoadedPreview | null> {
   if (kind === "component") {
     const record = componentIndex.get(id);
@@ -84,6 +109,29 @@ export async function loadPreview(
     const module = await record.value();
     const Component = findComponent(module, "Example", id);
     return { Component, sourcePath: record.path };
+  }
+
+  const addOnRegistration = patternPreviewRegistry[id as keyof typeof patternPreviewRegistry];
+  if (addOnRegistration) {
+    const scenarios = Object.entries(addOnRegistration.scenarios);
+    const selected = scenarios.find(([id]) => id === scenarioId)?.[1]
+      ?? scenarios[0]?.[1];
+    if (!selected) return null;
+
+    const Component = addOnRegistration.Component;
+    function LoadedAddOnPatternPreview() {
+      const fixture = selected.fixture;
+      if (!fixture || typeof fixture !== "object" || Array.isArray(fixture)) {
+        throw new Error(`The ${id}/${scenarioId} fixture must be a JSON object.`);
+      }
+      return <Component {...fixture as Record<string, unknown>} />;
+    }
+
+    LoadedAddOnPatternPreview.displayName = `${id}-${scenarioId}Preview`;
+    return {
+      Component: LoadedAddOnPatternPreview,
+      sourcePath: `/_pattern-lib/react/preview-registry.tsx#${id}:${scenarioId}`,
+    };
   }
 
   const recipeRecord = recipeIndex.get(id);

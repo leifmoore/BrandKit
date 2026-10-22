@@ -1,0 +1,8 @@
+{
+  "summary": "2 selections",
+  "amountMinor": 6400,
+  "currency": "GBP",
+  "primaryAction": { "id": "continue", "label": "Continue", "disabled": false },
+  "secondaryAction": null,
+  "position": "contained"
+}

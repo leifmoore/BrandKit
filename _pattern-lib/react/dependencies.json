@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0.0",
+  "baseLibrary": {
+    "name": "scudamores-ui",
+    "version": "0.1.0",
+    "importAlias": "@scudamores/ui/*"
+  },
+  "peerDependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "dependencies": {
+    "date-fns": "3.6.0",
+    "lucide-react": "0.487.0"
+  },
+  "forbidden": [
+    "sql.js",
+    "AppContext",
+    "application routes",
+    "application types",
+    "mock application data"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "scudamores/pattern-library-blade-fixture",
+  "description": "Disposable Laravel 12 fixture for server-rendering the Blade pattern handoff",
+  "type": "project",
+  "require": {
+    "php": ">=8.2",
+    "laravel/framework": "12.64.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "PatternValidation\\BladeFixture\\": "app/"
+    }
+  },
+  "config": {
+    "allow-plugins": false,
+    "sort-packages": true
+  }
+}
+

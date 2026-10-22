@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "availability-time-picker",
+  "title": "Availability Time Picker",
+  "description": "Location, pricing-view, time-band, and exact-time selection for a booking.",
+  "category": "booking",
+  "maturity": "beta",
+  "kind": "recipe",
+  "searchTerms": ["booking", "availability", "time", "location", "price", "slot"],
+  "fixture": "recipes/availability-time-picker/fixtures/basic.json",
+  "documentation": "recipes/availability-time-picker/README.md",
+  "scenarios": [{ "id": "basic", "title": "Seller pricing view", "fixture": "recipes/availability-time-picker/fixtures/basic.json", "states": ["expanded", "selected", "discounted", "unavailable"], "defaultViewport": "768" }],
+  "react": { "files": ["recipes/availability-time-picker/react/AvailabilityTimePicker.tsx"], "entry": "recipes/availability-time-picker/react/AvailabilityTimePicker.tsx", "export": "AvailabilityTimePickerPreview", "exampleData": "recipes/availability-time-picker/fixtures/basic.json" },
+  "blade": { "files": ["recipes/availability-time-picker/blade/availability-time-picker.blade.php"], "exampleData": "recipes/availability-time-picker/fixtures/basic.json", "events": ["ui:availability-time-picker:change"] },
+  "contract": {
+    "support": "composition-recipe", "standaloneApi": false, "fixturePolicy": "neutral DTOs only",
+    "hostResponsibilities": ["Supply authorised locations and calculated prices", "Revalidate live availability and reserve the selected time"],
+    "inputs": [{ "name": "locations", "type": "AvailabilityLocation[]", "required": true }, { "name": "timeBands", "type": "AvailabilityBand[]", "required": true }, { "name": "selectedTimeId", "type": "string | null", "required": true }],
+    "callbacks": [{ "name": "onLocationChange", "type": "(locationId: string) => void", "required": true }, { "name": "onPricingModeChange", "type": "(modeId: string) => void", "required": false }, { "name": "onTimeChange", "type": "(timeId: string | null, bandId: string) => void", "required": true }]
+  },
+  "dependencies": { "internal": ["button", "card"], "npm": ["lucide-react@0.487.0"], "bladeRuntime": ["Alpine.js 3", "Phosphor Icons"] },
+  "responsiveBehavior": ["Time bands retain the approved three-column layout at all documented viewport widths.", "Exact times use four compact columns and wrap within the available width.", "Location chips wrap without horizontal clipping."],
+  "accessibility": { "status": "passed-with-findings", "findings": ["The 12px discounted-price text using --epos-accent measures 3.66:1 in light mode and 4.01:1 in dark mode, below WCAG AA 4.5:1. The approved colour is retained for visual parity; the original-and-discounted price treatment ensures discount meaning is not conveyed by colour alone."] },
+  "parity": { "classification": "framework-equivalent", "differences": ["Icon paths differ between Lucide and Phosphor."] },
+  "source": { "commit": "d1511e224305585680723101a0b76be93eb9f2f0", "verifiedAt": "2026-08-04", "files": [{ "path": "src/app/epos/components/Step2.tsx", "sha256": "93e6e9e8d7f440c456720edb2891d3e1ce252d6a1403339771c91ca333290e4d" }, { "path": "_style-reference/multi-channel-sales-platform-main 2/resources/views/booking/epos.blade.php", "sha256": "12c86cb1fe6cb7ec963714322da14e732e8544e61fb731ad3be709095691dfd1" }, { "path": "_style-reference/multi-channel-sales-platform-main 2/public/js/booking/epos.js", "sha256": "94fc9e33bb13e6cf999cf32a34bd8a102f2f59625f9e5a6d597a0156e693f3b3" }], "decisionReferences": ["provenance/decisions.md#approved-pattern-catalogue"] }
+}

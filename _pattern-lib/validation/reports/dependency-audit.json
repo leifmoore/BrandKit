@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-08-04",
+  "status": "passed",
+  "npm": {
+    "scope": "validation/package-lock.json",
+    "command": "npm audit --prefix _pattern-lib/validation --json",
+    "dependenciesAudited": 172,
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "remediation": [
+      "ajv was updated from 8.17.1 to 8.20.0.",
+      "vite was updated from 6.3.5 to 6.4.3."
+    ]
+  },
+  "composer": {
+    "scope": "validation/composer.lock",
+    "command": "composer audit --working-dir=_pattern-lib/validation --format=json",
+    "advisories": 0,
+    "abandonedPackages": 0
+  },
+  "notes": [
+    "These are development-only handoff validation dependencies, not runtime dependencies copied into a consumer application.",
+    "Advisory data changes over time; consumers should rerun both audits when installing or upgrading the validation fixture."
+  ]
+}

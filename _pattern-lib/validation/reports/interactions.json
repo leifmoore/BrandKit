@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-08-04",
+  "framework": "react",
+  "status": "passed",
+  "mountedPatterns": 25,
+  "checks": [
+    {
+      "name": "progress indicator returns to the prior step",
+      "pattern": "booking-progress-indicator",
+      "status": "passed"
+    },
+    {
+      "name": "EPOS journey advances and returns without losing progress semantics",
+      "pattern": "epos-booking-journey",
+      "status": "passed"
+    },
+    {
+      "name": "mobile More sheet closes on Escape and restores trigger focus",
+      "pattern": "mobile-bottom-navigation",
+      "status": "passed"
+    },
+    {
+      "name": "configuration workbench selects the requested tab and panel",
+      "pattern": "configuration-workbench",
+      "status": "passed"
+    },
+    {
+      "name": "report workspace selects a report view and its panel",
+      "pattern": "report-workspace-tabs",
+      "status": "passed"
+    },
+    {
+      "name": "discount dialog closes on Escape and restores trigger focus",
+      "pattern": "discount-builder",
+      "status": "passed"
+    },
+    {
+      "name": "multi-query selection updates pressed state and arrow-key focus",
+      "pattern": "multi-query-manager",
+      "status": "passed"
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": []
+}

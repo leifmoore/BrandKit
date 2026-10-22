@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "1.0.0",
+  "referenceOnly": [
+    { "id": "seller-pin-gate", "reason": "Authentication, timeout and identity-switching policy belongs to the host." },
+    { "id": "progressive-sign-in-recovery", "reason": "Authentication and account-enumeration behavior requires a real identity provider contract." }
+  ],
+  "excluded": [
+    { "id": "application-database-logic", "reason": "SQL, persistence and audit writes are not presentation patterns." },
+    { "id": "payment-provider-implementation", "reason": "Customer journeys expose a host payment slot." },
+    { "id": "report-chart-runtime", "reason": "Charts remain host supplied under the external Data Visualisation guidance." }
+  ]
+}

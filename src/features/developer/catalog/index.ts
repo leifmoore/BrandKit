@@ -2,6 +2,7 @@ export {
   allCatalogEntries,
   catalogCategories,
   catalogCounts,
+  catalogVersion,
   componentCategories,
   componentManifests,
   components,
@@ -23,6 +24,8 @@ export {
   recipeCategories,
   recipeManifests,
   recipes,
+  patternHandoffCatalog,
+  patternHandoffCounts,
   utilities,
 } from './data'
 

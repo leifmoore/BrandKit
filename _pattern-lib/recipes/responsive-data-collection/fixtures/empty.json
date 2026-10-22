@@ -1,0 +1,12 @@
+{
+  "caption": "Example bookings",
+  "primaryColumnId": "customer",
+  "secondaryColumnId": "reference",
+  "columns": [
+    { "id": "customer", "label": "Customer" },
+    { "id": "reference", "label": "Reference" },
+    { "id": "status", "label": "Status" }
+  ],
+  "items": [],
+  "emptyMessage": "No records match these filters."
+}

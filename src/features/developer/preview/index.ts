@@ -14,6 +14,7 @@ export {
   COMPONENT_PREVIEW_IDS,
   PREVIEW_REGISTRY_COUNTS,
   RECIPE_PREVIEW_IDS,
+  getRegisteredPreviewScenarios,
   hasPreview,
   loadPreview,
 } from "./registry";
@@ -39,6 +40,7 @@ export type {
   PreviewLoadResult,
   PreviewMode,
   PreviewSettings,
+  PreviewScenario,
   PreviewPresentation,
   PreviewTheme,
   PreviewWidth,

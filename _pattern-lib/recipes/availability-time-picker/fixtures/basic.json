@@ -1,0 +1,30 @@
+{
+  "locations": [
+    { "id": "quayside", "label": "Quayside" },
+    { "id": "riverside", "label": "Riverside" },
+    { "id": "city-centre", "label": "City centre" }
+  ],
+  "selectedLocationId": "quayside",
+  "pricingModes": [
+    { "id": "area", "label": "Per Area" },
+    { "id": "head", "label": "Per Head" }
+  ],
+  "selectedPricingModeId": "area",
+  "timeBands": [
+    {
+      "id": "morning", "label": "Morning", "available": true, "currency": "GBP", "priceMinor": 9600, "discountedPriceMinor": 8600, "perPersonPriceMinor": 2900,
+      "times": [{ "id": "0900", "label": "09:00", "available": true }, { "id": "0930", "label": "09:30", "available": true }, { "id": "1000", "label": "10:00", "available": true }, { "id": "1030", "label": "10:30", "available": false }]
+    },
+    {
+      "id": "midday", "label": "Midday", "available": true, "currency": "GBP", "priceMinor": 11200, "discountedPriceMinor": null, "perPersonPriceMinor": 3700,
+      "times": [{ "id": "1100", "label": "11:00", "available": true }, { "id": "1130", "label": "11:30", "available": true }, { "id": "1200", "label": "12:00", "available": true }, { "id": "1230", "label": "12:30", "available": true }]
+    },
+    {
+      "id": "afternoon", "label": "Afternoon", "available": true, "currency": "GBP", "priceMinor": 12400, "discountedPriceMinor": null, "perPersonPriceMinor": 4100,
+      "times": [{ "id": "1300", "label": "13:00", "available": true }, { "id": "1330", "label": "13:30", "available": true }, { "id": "1400", "label": "14:00", "available": true }, { "id": "1430", "label": "14:30", "available": true }]
+    }
+  ],
+  "selectedTimeId": "0930",
+  "defaultExpandedBandId": "morning",
+  "locale": "en-GB"
+}

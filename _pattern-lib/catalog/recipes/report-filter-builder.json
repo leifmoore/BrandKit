@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "report-filter-builder",
+  "title": "Report Filter Builder",
+  "description": "Draft and apply date and dimension filters with explicit empty-selection semantics.",
+  "category": "reporting",
+  "maturity": "beta",
+  "kind": "recipe",
+  "searchTerms": ["report", "filters", "date range", "generate", "channel", "staff"],
+  "fixture": "recipes/report-filter-builder/fixtures/basic.json",
+  "documentation": "recipes/report-filter-builder/README.md",
+  "scenarios": [
+    {
+      "id": "default",
+      "title": "Applied filters",
+      "description": "An applied monthly range with a channel dimension.",
+      "fixture": "recipes/report-filter-builder/fixtures/basic.json",
+      "states": ["applied", "filtered"],
+      "defaultViewport": "1280"
+    },
+    {
+      "id": "stale",
+      "title": "Draft differs from report",
+      "description": "Pending edits require an explicit Generate action.",
+      "fixture": "recipes/report-filter-builder/fixtures/stale.json",
+      "states": ["draft", "stale"],
+      "defaultViewport": "768"
+    }
+  ],
+  "react": {
+    "files": ["recipes/report-filter-builder/react/ReportFilterBuilder.tsx"],
+    "entry": "recipes/report-filter-builder/react/ReportFilterBuilder.tsx",
+    "export": "ReportFilterBuilderPreview",
+    "exampleData": "recipes/report-filter-builder/fixtures/basic.json"
+  },
+  "blade": {
+    "files": ["recipes/report-filter-builder/blade/report-filter-builder.blade.php"],
+    "exampleData": "recipes/report-filter-builder/fixtures/basic.json",
+    "events": ["ui:report-filter-builder:change", "ui:report-filter-builder:action"]
+  },
+  "contract": {
+    "support": "composition-recipe",
+    "standaloneApi": false,
+    "fixturePolicy": "neutral DTOs only",
+    "hostResponsibilities": ["Provide available filter options", "Interpret each emptySelectionBehavior", "Validate and apply the query", "Compute match counts and stale state", "Own fetching and exports"],
+    "inputs": [
+      { "name": "value", "type": "ReportFilterValue", "required": true, "description": "ISO date interval and selections keyed by filter ID." },
+      { "name": "filters", "type": "ReportFilterDefinition[]", "required": true, "description": "Each definition includes its emptySelectionBehavior." },
+      { "name": "presets", "type": "ReportDatePreset[]", "required": true },
+      { "name": "matchCount", "type": "number", "required": false },
+      { "name": "stale", "type": "boolean", "required": false },
+      { "name": "locale", "type": "string", "required": false, "description": "BCP 47 locale used for the compact date-range label." }
+    ],
+    "callbacks": [
+      { "name": "onChange", "type": "(value: ReportFilterValue) => void", "required": true },
+      { "name": "onApply", "type": "(value: ReportFilterValue) => void", "required": true },
+      { "name": "onClear", "type": "(value: ReportFilterValue) => void", "required": false }
+    ]
+  },
+  "dependencies": {
+    "internal": ["badge", "button", "calendar", "card", "popover"],
+    "npm": ["date-fns@3.6.0", "lucide-react@0.487.0", "react@18.3.1"],
+    "bladeRuntime": ["Alpine.js 3", "Floating UI", "Phosphor Icons for Blade"]
+  },
+  "responsiveBehavior": ["Preset and option chips wrap without horizontal clipping", "Filter dimensions form one, two or three columns by viewport", "Status and action rows wrap independently at narrow widths"],
+  "accessibility": {
+    "status": "passed-with-findings",
+    "findings": ["The destination must verify native date-input behavior in its supported browser and zoom matrix."]
+  },
+  "parity": {
+    "classification": "framework-equivalent",
+    "differences": ["Blade communicates through Alpine CustomEvents while React uses controlled callbacks."]
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-08-04",
+    "files": [
+      { "path": "src/app/pages/Reporting.tsx", "sha256": "08d14439134b2f9e390179370c7547c5635deea67246acd663bb5383c3be3f8e" },
+      { "path": "_style-reference/multi-channel-sales-platform-main 2/resources/views/reporting/index.blade.php", "sha256": "08ecd8d57f479a931f5cf54c1663b21d5f6a10def9d57be1674ff1891a83d643" }
+    ],
+    "decisionReferences": ["approved-plan#reporting", "provenance/decisions.md#host-owned-reporting-behavior"]
+  }
+}

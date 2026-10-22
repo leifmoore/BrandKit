@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "mobile-bottom-navigation",
+  "title": "Mobile Bottom Navigation",
+  "description": "Safe-area-aware primary destinations with optional focus-trapped More-sheet overflow.",
+  "category": "mobile",
+  "maturity": "beta",
+  "kind": "recipe",
+  "searchTerms": ["mobile", "bottom navigation", "menu", "more sheet", "safe area", "app navigation"],
+  "fixture": "recipes/mobile-bottom-navigation/fixtures/basic.json",
+  "documentation": "recipes/mobile-bottom-navigation/README.md",
+  "scenarios": [
+    { "id": "basic", "title": "Four destinations", "fixture": "recipes/mobile-bottom-navigation/fixtures/basic.json", "states": ["active", "badge"], "defaultViewport": "360" },
+    { "id": "with-overflow", "title": "Three destinations and More", "fixture": "recipes/mobile-bottom-navigation/fixtures/with-overflow.json", "states": ["active overflow", "more sheet"], "defaultViewport": "360" }
+  ],
+  "react": {
+    "files": ["recipes/mobile-bottom-navigation/react/MobileBottomNavigationRecipe.tsx"],
+    "entry": "recipes/mobile-bottom-navigation/react/MobileBottomNavigationRecipe.tsx",
+    "export": "MobileBottomNavigationPreview",
+    "exampleData": "recipes/mobile-bottom-navigation/fixtures/basic.json"
+  },
+  "blade": {
+    "files": ["recipes/mobile-bottom-navigation/blade/mobile-bottom-navigation.blade.php"],
+    "exampleData": "recipes/mobile-bottom-navigation/fixtures/basic.json",
+    "events": ["ui:mobile-bottom-navigation:change"]
+  },
+  "contract": {
+    "support": "composition-recipe",
+    "standaloneApi": false,
+    "fixturePolicy": "neutral DTOs only",
+    "hostResponsibilities": ["Map item IDs to navigation", "Filter destinations before rendering", "Choose between bottom navigation and contextual action dock", "Reserve safe-area page padding"],
+    "inputs": [
+      { "name": "items", "type": "three or four MobileNavigationItem values", "required": true },
+      { "name": "activeId", "type": "string", "required": true },
+      { "name": "overflowItems", "type": "MobileNavigationItem[]", "required": false },
+      { "name": "actionDockActive", "type": "boolean", "required": false }
+    ],
+    "callbacks": [{ "name": "onNavigate", "type": "(id: string) => void", "required": true }]
+  },
+  "dependencies": {
+    "internal": ["badge", "button", "sheet"],
+    "npm": ["lucide-react@0.487.0"],
+    "bladeRuntime": ["Alpine.js 3", "Alpine Focus", "Phosphor Icons"]
+  },
+  "responsiveBehavior": ["Uses the bottom safe area at coarse-pointer mobile widths", "Each destination shares available width and keeps a 48px minimum target", "More destinations move into a bottom sheet"],
+  "accessibility": { "status": "passed-with-findings", "findings": ["The destination must verify Blade focus return after Alpine integration and test translated labels at zoom; host layout must preserve safe-area spacing around the fixed navigation."] },
+  "parity": { "classification": "framework-equivalent", "differences": ["React uses Lucide glyphs and Blade uses semantically matched Phosphor glyphs."] },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-08-04",
+    "files": [
+      { "path": "src/app/components/navigation/MobileNav.tsx", "sha256": "d9ef93cf375b561601c4a9bf1e0fbd4cfb8fd9792d2ee033c6af0a9dcba6d9b0" },
+      { "path": "src/app/components/Header.tsx", "sha256": "2a7508a934aa6097935259c04c9b35b2f1dfcb1db572061cecdec195ada5ae30" }
+    ],
+    "decisionReferences": ["provenance/decisions.md#approved-pattern-catalogue", "docs/INTEGRATION.md#bottom-edge-exclusion"]
+  }
+}

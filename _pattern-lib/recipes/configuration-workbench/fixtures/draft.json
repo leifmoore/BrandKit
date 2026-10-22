@@ -1,0 +1,13 @@
+{
+  "title": "New sales channel",
+  "description": "A draft configuration with preview and handoff kept in the same work surface.",
+  "status": "Draft",
+  "fields": [
+    { "id": "name", "label": "Configuration name", "value": "New sales channel" },
+    { "id": "location", "label": "Default location", "value": "" }
+  ],
+  "enabled": false,
+  "previewTitle": "Preview unavailable",
+  "previewDescription": "Complete the required fields and enable this configuration.",
+  "handoffCode": "<!-- Save this configuration to generate a host snippet. -->"
+}

@@ -1,0 +1,10 @@
+{
+  "initialState": "complete",
+  "initialReference": "DEMO-QUOTE-204",
+  "lookupOutcome": "found",
+  "quote": null,
+  "result": {
+    "bookingReferences": ["DEMO-BOOKING-105", "DEMO-BOOKING-106"],
+    "message": "The host can now send confirmation details to the supplied email address."
+  }
+}

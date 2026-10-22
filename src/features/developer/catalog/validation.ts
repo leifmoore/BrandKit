@@ -5,6 +5,7 @@ import {
   deferredComponents,
   foundations,
   handoffCatalog,
+  patternHandoffCatalog,
   recipes,
   utilities,
 } from './data'
@@ -72,7 +73,7 @@ function validateBundledSources(
 ): void {
   const paths = flattenEntrySourcePaths(getEntrySourcePaths(entry))
   for (const path of paths) {
-    if (!hasHandoffSource(path)) {
+    if (!hasHandoffSource(path, entry.sourcePackage)) {
       addIssue(
         issues,
         'source-not-bundled',
@@ -88,7 +89,7 @@ export function validateDeveloperCatalog(): CatalogValidationResult {
 
   validateExpectedCount(issues, 'components', components.length, 39)
   validateExpectedCount(issues, 'deferred', deferredComponents.length, 10)
-  validateExpectedCount(issues, 'recipes', recipes.length, 6)
+  validateExpectedCount(issues, 'recipes', recipes.length, 31)
   validateExpectedCount(issues, 'foundations', foundations.length, 6)
   validateExpectedCount(issues, 'utilities', utilities.length, 1)
   validateExpectedCount(issues, 'stable', catalogCounts.stable, 30)
@@ -108,6 +109,14 @@ export function validateDeveloperCatalog(): CatalogValidationResult {
       'handoff-count-mismatch',
       'The handoff deferred count does not match normalized deferred components.',
       'catalog/catalog.json',
+    )
+  }
+  if (patternHandoffCatalog.counts.patterns !== 25) {
+    addIssue(
+      issues,
+      'handoff-count-mismatch',
+      'The add-on handoff must declare exactly 25 patterns.',
+      '_pattern-lib/catalog/catalog.json',
     )
   }
 
@@ -190,7 +199,9 @@ export function validateDeveloperCatalog(): CatalogValidationResult {
   }
 
   for (const entry of recipes) {
-    const indexEntry = handoffCatalog.recipes.find((item) => item.id === entry.id)
+    const indexEntry = entry.sourcePackage === 'pattern-library'
+      ? patternHandoffCatalog.patterns.find((item) => item.id === entry.id)
+      : handoffCatalog.recipes.find((item) => item.id === entry.id)
     if (!indexEntry) {
       addIssue(
         issues,
@@ -231,6 +242,25 @@ export function validateDeveloperCatalog(): CatalogValidationResult {
         `Recipe ${entry.id} is not marked as a composition recipe.`,
         entry.manifestPath,
       )
+    }
+    if (entry.sourcePackage === 'pattern-library') {
+      const manifest = entry.manifest
+      if (!('scenarios' in manifest) || manifest.scenarios.length === 0) {
+        addIssue(
+          issues,
+          'recipe-scenarios-missing',
+          `Add-on pattern ${entry.id} has no declared preview scenarios.`,
+          entry.manifestPath,
+        )
+      }
+      if (!('accessibility' in manifest) || manifest.accessibility.status === 'pending') {
+        addIssue(
+          issues,
+          'recipe-a11y-missing',
+          `Add-on pattern ${entry.id} has no released accessibility result.`,
+          entry.manifestPath,
+        )
+      }
     }
     validateBundledSources(issues, entry)
   }

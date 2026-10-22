@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "collection-toolbar",
+  "title": "Collection Toolbar",
+  "description": "Wrapping search, filters, sorting, layout controls, result count, and host actions.",
+  "category": "collections",
+  "maturity": "beta",
+  "kind": "recipe",
+  "searchTerms": ["collection", "toolbar", "search", "filter", "sort", "list", "grid"],
+  "fixture": "recipes/collection-toolbar/fixtures/basic.json",
+  "documentation": "recipes/collection-toolbar/README.md",
+  "scenarios": [
+    { "id": "basic", "title": "Search, filter, and sort", "fixture": "recipes/collection-toolbar/fixtures/basic.json", "states": ["default", "list layout"], "defaultViewport": "1280" },
+    { "id": "filtered", "title": "Active query and grid", "fixture": "recipes/collection-toolbar/fixtures/filtered.json", "states": ["filtered", "grid layout", "reset"], "defaultViewport": "768" }
+  ],
+  "react": {
+    "files": ["recipes/collection-toolbar/react/CollectionToolbarRecipe.tsx"],
+    "entry": "recipes/collection-toolbar/react/CollectionToolbarRecipe.tsx",
+    "export": "CollectionToolbarPreview",
+    "exampleData": "recipes/collection-toolbar/fixtures/basic.json"
+  },
+  "blade": {
+    "files": ["recipes/collection-toolbar/blade/collection-toolbar.blade.php"],
+    "exampleData": "recipes/collection-toolbar/fixtures/basic.json",
+    "events": ["ui:collection-toolbar:change", "ui:collection-toolbar:action"]
+  },
+  "contract": {
+    "support": "composition-recipe",
+    "standaloneApi": false,
+    "fixturePolicy": "neutral DTOs only",
+    "hostResponsibilities": ["Filter and sort the collection", "Own query and URL synchronization", "Debounce remote searches", "Provide accurate settled result counts", "Authorize supplied actions"],
+    "inputs": [
+      { "name": "search", "type": "string", "required": true },
+      { "name": "filters", "type": "CollectionToolbarFilter[]", "required": false },
+      { "name": "sort", "type": "CollectionToolbarSort", "required": false },
+      { "name": "layout", "type": "list | grid", "required": false }
+    ],
+    "callbacks": [
+      { "name": "onSearchChange", "type": "(value: string) => void", "required": true },
+      { "name": "onFilterChange", "type": "(id: string, value: string) => void", "required": false },
+      { "name": "onSortChange", "type": "(value: string, direction: asc | desc) => void", "required": false },
+      { "name": "onLayoutChange", "type": "(layout: list | grid) => void", "required": false },
+      { "name": "onReset", "type": "() => void", "required": false }
+    ]
+  },
+  "dependencies": {
+    "internal": ["button", "input", "select"],
+    "npm": ["lucide-react@0.487.0"],
+    "bladeRuntime": ["Alpine.js 3", "Phosphor Icons"]
+  },
+  "responsiveBehavior": ["Search expands to available width", "Selects stack at 360px and use compact widths above the small breakpoint", "Controls wrap without changing their logical order"],
+  "accessibility": { "status": "passed-with-findings", "findings": ["When filters update results asynchronously, the host must announce the result count once. Translated labels and production option lengths require destination zoom/reflow testing."] },
+  "parity": { "classification": "intentional-difference", "differences": ["React Select uses Radix UI; Blade uses styled native selects for form reliability.", "React uses Lucide glyphs and Blade uses Phosphor glyphs."] },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-08-04",
+    "files": [
+      { "path": "src/app/pages/Tickets.tsx", "sha256": "c26da79ce4ff74d902796ebc5f0d259ab807d6c56f949b07a7db35a5a9103151" },
+      { "path": "src/app/components/user-management/UsersTab.tsx", "sha256": "c507a7babac8590dd826e80503ca31935a4d3ce50458fd82be3b6b82ef566dbf" },
+      { "path": "src/app/pages/Widgets.tsx", "sha256": "f0b2d571ef174527da4532000013548a7131ea8e0b645d6583ec0a4c65920e14" },
+      { "path": "src/app/pages/EposConfig.tsx", "sha256": "418ff32ffea45a54c601edb01db2caa815fb55ca089a711fdf5de7bdafb57832" }
+    ],
+    "decisionReferences": ["provenance/decisions.md#approved-pattern-catalogue"]
+  }
+}

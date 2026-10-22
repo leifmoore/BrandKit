@@ -1,0 +1,538 @@
+{
+  "schemaVersion": "1.0.0",
+  "version": "0.1.0",
+  "name": "Scudamore's Pattern Library",
+  "baseLibrary": "catalog/base-library.json",
+  "patterns": [
+    {
+      "id": "availability-time-picker",
+      "title": "Availability Time Picker",
+      "description": "Location, pricing-view, time-band, and exact-time selection for a booking.",
+      "category": "booking",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/availability-time-picker.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "booking",
+        "availability",
+        "time",
+        "location",
+        "price",
+        "slot"
+      ]
+    },
+    {
+      "id": "booking-criteria-panel",
+      "title": "Booking Criteria Panel",
+      "description": "Date, party composition, and accessibility criteria for the start of a booking journey.",
+      "category": "booking",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/booking-criteria-panel.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "booking",
+        "date",
+        "party",
+        "people",
+        "accessibility",
+        "criteria"
+      ]
+    },
+    {
+      "id": "booking-progress-indicator",
+      "title": "Booking Progress Indicator",
+      "description": "Complete, current, and upcoming states for a short booking journey.",
+      "category": "booking",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/booking-progress-indicator.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "booking",
+        "progress",
+        "steps",
+        "journey",
+        "wizard"
+      ]
+    },
+    {
+      "id": "booking-review-summary",
+      "title": "Booking Review Summary",
+      "description": "Expandable booking lines, editable actions and host-calculated totals.",
+      "category": "bookings",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/booking-review-summary.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "booking summary",
+        "basket",
+        "review",
+        "total",
+        "checkout"
+      ]
+    },
+    {
+      "id": "capacity-product-selector",
+      "title": "Capacity Product Selector",
+      "description": "Expandable products with tier quantities and party-capacity feedback.",
+      "category": "booking",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/capacity-product-selector.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "booking",
+        "product",
+        "capacity",
+        "tier",
+        "quantity",
+        "coverage"
+      ]
+    },
+    {
+      "id": "checkout-details-panel",
+      "title": "Checkout Details Panel",
+      "description": "Customer contact fields, validation and optional operational metadata.",
+      "category": "bookings",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/checkout-details-panel.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "checkout",
+        "customer details",
+        "metadata",
+        "trackables",
+        "form"
+      ]
+    },
+    {
+      "id": "collection-state-panel",
+      "title": "Collection State Panel",
+      "description": "Consistent loading, empty, error, and restricted states for collection surfaces.",
+      "category": "collections",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/collection-state-panel.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "collection",
+        "loading",
+        "empty",
+        "error",
+        "restricted",
+        "access denied",
+        "skeleton"
+      ]
+    },
+    {
+      "id": "collection-toolbar",
+      "title": "Collection Toolbar",
+      "description": "Wrapping search, filters, sorting, layout controls, result count, and host actions.",
+      "category": "collections",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/collection-toolbar.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "collection",
+        "toolbar",
+        "search",
+        "filter",
+        "sort",
+        "list",
+        "grid"
+      ]
+    },
+    {
+      "id": "configuration-workbench",
+      "title": "Configuration Workbench",
+      "description": "A task shell combining configuration fields, options, live preview, and implementation handoff.",
+      "category": "configuration",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/configuration-workbench.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "configuration",
+        "workbench",
+        "editor",
+        "preview",
+        "embed",
+        "handoff",
+        "settings"
+      ]
+    },
+    {
+      "id": "contextual-action-dock",
+      "title": "Contextual Action Dock",
+      "description": "Safe-area-aware mobile workflow actions with an optional summary and total.",
+      "category": "mobile",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/contextual-action-dock.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "action dock",
+        "mobile",
+        "floating footer",
+        "workflow",
+        "safe area"
+      ]
+    },
+    {
+      "id": "customer-booking-journey",
+      "title": "Customer Booking Journey",
+      "description": "A public ticket, date, time, customer-details, host-payment, and confirmation flow.",
+      "category": "customer-booking",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/customer-booking-journey.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "customer booking",
+        "widget",
+        "tickets",
+        "time slot",
+        "checkout",
+        "payment slot",
+        "confirmation"
+      ]
+    },
+    {
+      "id": "discount-builder",
+      "title": "Discount Builder",
+      "description": "Discount entry with presets, live price preview, limits, and approval guidance.",
+      "category": "booking",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/discount-builder.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "booking",
+        "discount",
+        "price",
+        "percentage",
+        "approval",
+        "seller"
+      ]
+    },
+    {
+      "id": "epos-booking-journey",
+      "title": "EPOS Booking Journey",
+      "description": "Three-stage orchestration for booking criteria, availability, review and checkout.",
+      "category": "bookings",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/epos-booking-journey.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "epos",
+        "booking journey",
+        "checkout",
+        "availability",
+        "step flow",
+        "query"
+      ]
+    },
+    {
+      "id": "grouped-results-table",
+      "title": "Grouped Results Table",
+      "description": "A host-aggregated results table with groups, subtotals, totals and empty state.",
+      "category": "reporting",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/grouped-results-table.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "report",
+        "results",
+        "table",
+        "group by",
+        "subtotal",
+        "transactions"
+      ]
+    },
+    {
+      "id": "kpi-stat-grid",
+      "title": "KPI Stat Grid",
+      "description": "Responsive report summary cards with machine-safe values and host-supplied trends.",
+      "category": "reporting",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/kpi-stat-grid.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "report",
+        "kpi",
+        "stat",
+        "metric",
+        "summary",
+        "trend"
+      ]
+    },
+    {
+      "id": "mobile-bottom-navigation",
+      "title": "Mobile Bottom Navigation",
+      "description": "Safe-area-aware primary destinations with optional focus-trapped More-sheet overflow.",
+      "category": "mobile",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/mobile-bottom-navigation.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "mobile",
+        "bottom navigation",
+        "menu",
+        "more sheet",
+        "safe area",
+        "app navigation"
+      ]
+    },
+    {
+      "id": "multi-query-manager",
+      "title": "Multi-query Manager",
+      "description": "Scrollable booking-query pills with add, remove, and clear actions.",
+      "category": "booking",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/multi-query-manager.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "booking",
+        "query",
+        "tabs",
+        "dates",
+        "party",
+        "clear"
+      ]
+    },
+    {
+      "id": "quote-builder",
+      "title": "Quote Builder",
+      "description": "Recipient, offered-time, price-range, and expiry composition for a quote draft.",
+      "category": "booking",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/quote-builder.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "booking",
+        "quote",
+        "email",
+        "expiry",
+        "time band",
+        "price range"
+      ]
+    },
+    {
+      "id": "quote-lookup",
+      "title": "Quote Lookup",
+      "description": "Reference lookup with ready, not-found, expired, and redeemed result states.",
+      "category": "booking",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/quote-lookup.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "booking",
+        "quote",
+        "lookup",
+        "reference",
+        "expired",
+        "redeem"
+      ]
+    },
+    {
+      "id": "reference-redemption-journey",
+      "title": "Reference Redemption Journey",
+      "description": "Lookup, not-found, expired, review, confirm, and completion states for a saved reference.",
+      "category": "customer-booking",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/reference-redemption-journey.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "reference",
+        "redemption",
+        "quote",
+        "lookup",
+        "expired",
+        "review",
+        "confirmation"
+      ]
+    },
+    {
+      "id": "report-breakdown-table",
+      "title": "Report Breakdown Table",
+      "description": "A host-aggregated hierarchy of reporting groups, child items and totals.",
+      "category": "reporting",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/report-breakdown-table.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "report",
+        "breakdown",
+        "product",
+        "hierarchy",
+        "group",
+        "table"
+      ]
+    },
+    {
+      "id": "report-filter-builder",
+      "title": "Report Filter Builder",
+      "description": "Draft and apply date and dimension filters with explicit empty-selection semantics.",
+      "category": "reporting",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/report-filter-builder.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "report",
+        "filters",
+        "date range",
+        "generate",
+        "channel",
+        "staff"
+      ]
+    },
+    {
+      "id": "report-workspace-tabs",
+      "title": "Report Workspace Tabs",
+      "description": "A responsive, scrollable tab rail for switching analytical report views.",
+      "category": "reporting",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/report-workspace-tabs.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "report",
+        "tabs",
+        "workspace",
+        "analytics",
+        "scrollable navigation"
+      ]
+    },
+    {
+      "id": "responsive-data-collection",
+      "title": "Responsive Data Collection",
+      "description": "The same neutral records rendered as a semantic desktop table and mobile cards.",
+      "category": "collections",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/responsive-data-collection.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "responsive",
+        "collection",
+        "table",
+        "cards",
+        "records",
+        "mobile"
+      ]
+    },
+    {
+      "id": "visit-time-heat-map",
+      "title": "Visit Time Heat Map",
+      "description": "A day-by-hour distribution with paired controls, peak summary and accessible data table.",
+      "category": "reporting",
+      "maturity": "beta",
+      "kind": "recipe",
+      "manifest": "catalog/recipes/visit-time-heat-map.json",
+      "frameworks": [
+        "react",
+        "blade"
+      ],
+      "searchTerms": [
+        "report",
+        "heat map",
+        "visit time",
+        "transaction time",
+        "bookings",
+        "revenue"
+      ]
+    }
+  ],
+  "counts": {
+    "patterns": 25,
+    "react": 25,
+    "blade": 25
+  }
+}

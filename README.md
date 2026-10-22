@@ -8,8 +8,10 @@ The application has two peer workspaces in one shell:
   component library, foundations, patterns, roadmap, resources, and preview
   review.
 
-The Design System is built from the immutable Scudamore’s UI 0.1.0 handoff in
-[`_comp-lib`](./_comp-lib).
+The Design System is built from two immutable sibling handoffs: Scudamore’s UI
+0.1.0 in [`_comp-lib`](./_comp-lib) and the additive Scudamore’s Pattern Library
+0.1.0 in [`_pattern-lib`](./_pattern-lib). The pattern package adds 25 patterns
+to the six supplied by the base library, producing one 31-pattern catalogue.
 
 Legacy `/developer/*` links remain replace redirects to `/design-system/*`;
 new links and documentation should use the canonical Design System routes.
@@ -54,14 +56,17 @@ The `/design-system` workspace is catalog-driven and includes:
 
 - interactive React previews for supported components and patterns;
 - React and Laravel Blade source displayed as inert, copyable text;
+- manifest-declared fixture/example source and scenario controls for patterns;
 - foundations, seven preview-only brand themes, responsive widths, direction,
   scenario states, search, accessibility findings, and parity contracts;
 - explicit deferred inventory with no preview, copy, download, or install
   actions.
 
 Version 1 is copy-only. It has no hosted shadcn registry, remote code execution,
-Blade/PHP runtime, or preview iframe. `_comp-lib` is immutable input; edit the
-Brand Kit integration instead and run the handoff verifier to detect drift.
+Blade/PHP runtime, or preview iframe. `_comp-lib` and `_pattern-lib` remain
+separate immutable inputs; edit the Brand Kit integration instead and run the
+handoff verifier to detect drift. React previews are live, while Blade is
+copyable source and documentation only.
 
 The full destination contract is in
 [`_comp-lib/docs/DEVELOPER-SECTION-CONTRACT.md`](./_comp-lib/docs/DEVELOPER-SECTION-CONTRACT.md).

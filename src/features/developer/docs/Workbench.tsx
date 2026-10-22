@@ -1,5 +1,5 @@
 import { useMemo, useState, type ReactNode } from 'react'
-import { Eye, FileCode2 } from 'lucide-react'
+import { Eye, FileCode2, FileJson2 } from 'lucide-react'
 import { useSearchParams } from 'react-router-dom'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { SourceActions } from './SourceActions'
@@ -9,10 +9,10 @@ import type { SourceFileViewModel, SourceFramework } from './types'
 
 export type { DocumentationSection } from './DocumentationSheet'
 
-type WorkbenchView = 'preview' | 'react' | 'blade'
+type WorkbenchView = 'preview' | 'react' | 'blade' | 'fixture'
 
 const WORKBENCH_VIEW_KEY = 'scudamores.design-system.workbench-view.v1'
-const workbenchViews = new Set<WorkbenchView>(['preview', 'react', 'blade'])
+const workbenchViews = new Set<WorkbenchView>(['preview', 'react', 'blade', 'fixture'])
 
 function readStoredView(): WorkbenchView {
   try {
@@ -63,9 +63,16 @@ export interface WorkbenchProps {
 export function Workbench({ title, preview, sources, documentation }: WorkbenchProps) {
   const [searchParams, setSearchParams] = useSearchParams()
   const [storedView, setStoredView] = useState<WorkbenchView>(readStoredView)
-  const activeView = parseView(searchParams.get('view')) ?? storedView
   const reactSources = useMemo(() => frameworkSources(sources, 'react'), [sources])
   const bladeSources = useMemo(() => frameworkSources(sources, 'blade'), [sources])
+  const fixtureSources = useMemo(
+    () => sources.filter((file) => file.kind === 'fixture'),
+    [sources],
+  )
+  const requestedView = parseView(searchParams.get('view')) ?? storedView
+  const activeView = requestedView === 'fixture' && fixtureSources.length === 0
+    ? 'preview'
+    : requestedView
 
   const changeView = (value: string) => {
     const view = parseView(value)
@@ -94,6 +101,12 @@ export function Workbench({ title, preview, sources, documentation }: WorkbenchP
               <FileCode2 aria-hidden="true" />
               Blade
             </TabsTrigger>
+            {fixtureSources.length > 0 ? (
+              <TabsTrigger value="fixture">
+                <FileJson2 aria-hidden="true" />
+                Fixture / example
+              </TabsTrigger>
+            ) : null}
           </TabsList>
           <div className="flex flex-wrap items-center gap-2">
             <SourceActions files={sources} />
@@ -116,6 +129,14 @@ export function Workbench({ title, preview, sources, documentation }: WorkbenchP
           <p className="mb-3 text-xs leading-5 text-muted-foreground">Usage examples appear before implementation files. Source is displayed exactly as supplied.</p>
           <SourceViewer files={bladeSources} allowActions={false} />
         </TabsContent>
+        {fixtureSources.length > 0 ? (
+          <TabsContent value="fixture" className="m-0 p-3 sm:p-4">
+            <p className="mb-3 text-xs leading-5 text-muted-foreground">
+              Scenario fixtures are displayed exactly from the files declared by the pattern manifest.
+            </p>
+            <SourceViewer files={fixtureSources} allowActions={false} />
+          </TabsContent>
+        ) : null}
       </Tabs>
     </section>
   )

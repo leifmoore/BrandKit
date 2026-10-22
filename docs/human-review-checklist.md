@@ -60,14 +60,19 @@ Record the selected candidate name and intended contexts in `handoff.md`.
 ## Design System module pass
 
 1. Open `/design-system/components`; check search plus List and Card layouts.
-2. Open `/design-system/review/previews`; work through all 45 component and
+2. Open `/design-system/review/previews`; work through all 70 component and
    pattern entries, recording Pass or Flagged notes. The queue stores progress
    in the current browser and can export Markdown or JSON.
 3. For flagged modules, note the theme, viewport, direction, state, and exact
    interaction that failed.
-4. Spot-check Preview/React/Blade, Documentation, Copy, and Download on a
-   supported component. Source must remain byte-exact.
+4. Spot-check Preview/React/Blade, Fixture/example, Documentation, Copy, and
+   Download on a supported pattern. Source must remain byte-exact, scenario
+   controls must follow its manifest, and Blade must remain source-only.
 5. Confirm Calendar hugs its content on desktop and remains bounded on mobile.
+6. Confirm component and pattern details return to their respective collection
+   and cycle through siblings with Previous/Next controls.
+7. Confirm the Patterns list visibly reports both retained visual-parity
+   accessibility findings without changing their handed-off styling.
 
 ## Finding format
 

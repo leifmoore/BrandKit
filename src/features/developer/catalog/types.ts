@@ -1,5 +1,7 @@
 export type Framework = 'react' | 'blade'
 
+export type HandoffPackage = 'component-library' | 'pattern-library'
+
 export type ComponentCategory =
   | 'actions'
   | 'data-display'
@@ -203,6 +205,70 @@ export interface RecipeManifest {
   readonly source: SourceProvenance
 }
 
+export interface PatternScenario {
+  readonly id: string
+  readonly title: string
+  readonly description?: string
+  readonly fixture: string
+  readonly states?: readonly string[]
+  readonly defaultViewport?: '360' | '768' | '1280' | 'fluid'
+}
+
+export interface PatternContractMember {
+  readonly name: string
+  readonly type: string
+  readonly required: boolean
+  readonly description?: string
+}
+
+export interface PatternRecipeManifest {
+  readonly schemaVersion: '1.0.0'
+  readonly id: string
+  readonly title: string
+  readonly description: string
+  readonly category: string
+  readonly maturity: 'beta'
+  readonly kind: 'recipe'
+  readonly searchTerms: readonly string[]
+  readonly fixture: string
+  readonly documentation: string
+  readonly scenarios: readonly PatternScenario[]
+  readonly react: {
+    readonly files: readonly string[]
+    readonly entry: string
+    readonly export: string
+    readonly exampleData: string
+  }
+  readonly blade: {
+    readonly files: readonly string[]
+    readonly exampleData: string
+    readonly events?: readonly string[]
+  }
+  readonly contract: {
+    readonly support: 'composition-recipe'
+    readonly standaloneApi: false
+    readonly fixturePolicy: 'neutral DTOs only'
+    readonly hostResponsibilities: readonly string[]
+    readonly inputs?: readonly PatternContractMember[]
+    readonly callbacks?: readonly PatternContractMember[]
+  }
+  readonly dependencies: {
+    readonly internal: readonly string[]
+    readonly npm: readonly string[]
+    readonly bladeRuntime: readonly string[]
+  }
+  readonly responsiveBehavior: readonly string[]
+  readonly accessibility: {
+    readonly status: 'pending' | 'passed' | 'passed-with-findings'
+    readonly findings: readonly string[]
+  }
+  readonly parity: {
+    readonly classification: 'framework-equivalent' | 'intentional-difference'
+    readonly differences: readonly string[]
+  }
+  readonly source: SourceProvenance
+}
+
 export interface CatalogIndexEntry {
   readonly id: string
   readonly title: string
@@ -249,6 +315,19 @@ export interface HandoffCatalogIndex {
   }
 }
 
+export interface PatternHandoffCatalogIndex {
+  readonly schemaVersion: '1.0.0'
+  readonly version: '0.1.0'
+  readonly name: string
+  readonly baseLibrary: string
+  readonly patterns: readonly CatalogIndexEntry[]
+  readonly counts: {
+    readonly patterns: number
+    readonly react: number
+    readonly blade: number
+  }
+}
+
 export interface CatalogEntryBase {
   readonly key: string
   readonly id: string
@@ -262,6 +341,7 @@ export interface CatalogEntryBase {
   readonly searchTerms: readonly string[]
   readonly route: string
   readonly copyable: boolean
+  readonly sourcePackage: HandoffPackage
   readonly accessibility: AccessibilitySummary
   readonly parity: ParitySummary
 }
@@ -284,7 +364,7 @@ export interface RecipeCatalogEntry extends CatalogEntryBase {
   readonly manifestPath: string
   readonly documentationPath: string
   readonly fixturePath: string
-  readonly manifest: RecipeManifest
+  readonly manifest: RecipeManifest | PatternRecipeManifest
 }
 
 export interface FoundationCatalogEntry extends CatalogEntryBase {

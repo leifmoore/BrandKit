@@ -1,0 +1,9 @@
+{
+  "queries": [
+    { "id": "query-1", "partyLabel": "3 people", "dateLabel": "Aug 15, 2026" },
+    { "id": "query-2", "partyLabel": "2 people", "dateLabel": "Aug 16, 2026" },
+    { "id": "query-3", "partyLabel": "4 people", "dateLabel": "Aug 22, 2026" }
+  ],
+  "selectedQueryId": "query-2",
+  "maxQueries": 5
+}

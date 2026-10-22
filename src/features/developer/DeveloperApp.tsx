@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState, type RefObject } from 'react'
 import { Link, Navigate, Route, Routes, useLocation, useNavigate, useParams } from 'react-router-dom'
+import patternValidationSummary from '@scudamores/patterns/validation/reports/validation-summary.json'
 import {
   COMPONENT_PREVIEW_IDS,
+  getRegisteredPreviewScenarios,
   LivePreview,
   RECIPE_PREVIEW_IDS,
 } from './preview'
@@ -9,6 +11,7 @@ import {
   allCatalogEntries,
   assertDeveloperCatalogValid,
   catalogCounts,
+  catalogVersion,
   components,
   deferredComponents,
   foundations,
@@ -21,6 +24,7 @@ import {
   getHandoffSources,
   getRecipe,
   handoffCatalog,
+  patternHandoffCatalog,
   recipes,
   type ComponentCatalogEntry,
   type FoundationCatalogEntry,
@@ -34,6 +38,7 @@ import {
   DeferredPage,
   FoundationPage,
   RecipePage,
+  type CollectionNavigationViewModel,
 } from './pages'
 import { PageState, type CatalogEntryViewModel } from './docs'
 import {
@@ -53,6 +58,18 @@ type DocumentedEntry =
 
 const buttonPreviewStates = getComponent('button')?.manifest.previews[0]?.states ?? ['default']
 
+const retainedPatternFindings = Object.freeze(
+  patternValidationSummary.retainedFindings.map((finding) => ({
+    finding: `${finding.use} measures ${finding.measuredContrast.light}:1 in light mode and ${finding.measuredContrast.dark}:1 in dark mode against a required ${finding.requiredContrast}:1. ${finding.disposition}`,
+    entries: Object.freeze(
+      finding.patterns.flatMap((id) => {
+        const entry = getRecipe(id)
+        return entry ? [entry] : []
+      }),
+    ),
+  })),
+)
+
 function assertPreviewRegistryCoverage() {
   const componentIds = new Set(components.map((entry) => entry.id))
   const recipeIds = new Set(recipes.map((entry) => entry.id))
@@ -70,6 +87,25 @@ function assertPreviewRegistryCoverage() {
   if (missing.length || unexpected.length) {
     throw new Error(
       `Design System preview registry does not match the catalog. Missing: ${missing.join(', ') || 'none'}. Unexpected: ${unexpected.join(', ') || 'none'}.`,
+    )
+  }
+
+  const scenarioMismatches = recipes.flatMap((entry) => {
+    if (entry.sourcePackage !== 'pattern-library' || !('scenarios' in entry.manifest)) {
+      return []
+    }
+    const declared = entry.manifest.scenarios.map((scenario) => scenario.id).sort()
+    const registered = getRegisteredPreviewScenarios('recipe', entry.id)
+      .map((scenario) => scenario.id)
+      .sort()
+    return JSON.stringify(declared) === JSON.stringify(registered)
+      ? []
+      : [`${entry.id} (declared: ${declared.join(', ')}; registered: ${registered.join(', ')})`]
+  })
+
+  if (scenarioMismatches.length > 0) {
+    throw new Error(
+      `Pattern preview scenarios do not match the generated registry: ${scenarioMismatches.join('; ')}`,
     )
   }
 }
@@ -192,6 +228,11 @@ function SupportedComponentRoute({ entry }: { entry: ComponentCatalogEntry }) {
       {({ documentation, sources }) => (
         <ComponentPage
           component={toComponentViewModel(entry, documentation)}
+          navigation={createCollectionNavigation(
+            entry,
+            [...components].sort((left, right) => left.title.localeCompare(right.title)),
+            'components',
+          )}
           preview={
             <LivePreview
               key={entry.key}
@@ -216,17 +257,59 @@ function RecipeRoute() {
 
 function SupportedRecipeRoute({ entry }: { entry: RecipeCatalogEntry }) {
   const resources = useEntryResources(entry)
+  const scenarios = entry.sourcePackage === 'pattern-library' && 'scenarios' in entry.manifest
+    ? entry.manifest.scenarios
+    : undefined
   return (
     <ResourceState state={resources}>
       {({ documentation, sources }) => (
         <RecipePage
           recipe={toRecipeViewModel(entry, documentation)}
-          preview={<LivePreview key={entry.key} kind="recipe" entryId={entry.id} title={entry.title} />}
+          navigation={createCollectionNavigation(
+            entry,
+            [...recipes].sort((left, right) => (
+              left.category.localeCompare(right.category)
+              || left.title.localeCompare(right.title)
+            )),
+            'patterns',
+          )}
+          preview={(
+            <LivePreview
+              key={entry.key}
+              kind="recipe"
+              entryId={entry.id}
+              title={entry.title}
+              scenarios={scenarios}
+            />
+          )}
           sources={toSourceViewModels(sources, entry.copyable)}
         />
       )}
     </ResourceState>
   )
+}
+
+function createCollectionNavigation(
+  current: ComponentCatalogEntry | RecipeCatalogEntry,
+  collection: readonly (ComponentCatalogEntry | RecipeCatalogEntry)[],
+  kind: 'components' | 'patterns',
+): CollectionNavigationViewModel {
+  const currentIndex = collection.findIndex((entry) => entry.key === current.key)
+  if (currentIndex < 0 || collection.length === 0) {
+    throw new Error(`Unable to build ${kind} navigation for ${current.key}.`)
+  }
+
+  const previous = collection[(currentIndex - 1 + collection.length) % collection.length]!
+  const next = collection[(currentIndex + 1) % collection.length]!
+  const singular = kind === 'components' ? 'component' : 'pattern'
+
+  return {
+    label: `${singular[0]!.toUpperCase()}${singular.slice(1)} navigation`,
+    backHref: `/design-system/${kind}`,
+    backLabel: `Back to all ${kind}`,
+    previous: { href: previous.route, title: previous.title },
+    next: { href: next.route, title: next.title },
+  }
 }
 
 function FoundationRoute() {
@@ -268,9 +351,18 @@ function OverviewRoute() {
 
   useEffect(() => {
     let active = true
-    void getHandoffSources(['START-HERE.md'])
-      .then((sources) => {
-        if (active) setInstallation(sources[0]?.content)
+    void Promise.all([
+      getHandoffSources(['START-HERE.md']),
+      getHandoffSources(['START-HERE.md'], 'pattern-library'),
+    ])
+      .then(([baseSources, patternSources]) => {
+        if (active) {
+          setInstallation(
+            [baseSources[0]?.content, patternSources[0]?.content]
+              .filter(Boolean)
+              .join('\n\n'),
+          )
+        }
       })
       .catch(() => {
         // Installation guidance is optional on the overview. Entry routes
@@ -285,8 +377,8 @@ function OverviewRoute() {
   const catalog = toCatalogOverviewViewModel(
     allCatalogEntries,
     catalogCounts,
-    handoffCatalog.version,
-    handoffCatalog.name,
+    catalogVersion,
+    'Scudamore’s Design System',
     installation,
   )
 
@@ -318,6 +410,28 @@ function CollectionRoute({ kind }: { kind: 'components' | 'patterns' | 'foundati
     roadmap: ['Roadmap', 'Inventoried candidates that remain unavailable until their production and design evidence is complete.'],
   } as const
 
+  const notice = kind === 'patterns' && retainedPatternFindings.length > 0 ? (
+    <aside className="mb-8 rounded-xl border border-amber-600/30 bg-amber-500/10 p-5" aria-labelledby="retained-pattern-findings-title">
+      <h2 id="retained-pattern-findings-title" className="font-sans text-base font-semibold text-foreground">
+        {retainedPatternFindings.length} retained visual-parity accessibility findings
+      </h2>
+      <p className="mt-1 font-sans text-sm leading-6 text-muted-foreground">
+        These approved handoff exceptions remain visible and unchanged. Review their non-colour cues and dispositions before adoption.
+      </p>
+      <ol className="mt-4 space-y-3">
+        {retainedPatternFindings.map(({ finding, entries: findingEntries }, index) => (
+          <li key={finding} className="font-sans text-sm leading-6 text-foreground">
+            <span className="font-semibold">Finding {index + 1}.</span>{' '}{finding}{' '}
+            <span className="text-muted-foreground">
+              Patterns:{' '}
+              {findingEntries.map((entry) => entry.title).join(', ')}
+            </span>
+          </li>
+        ))}
+      </ol>
+    </aside>
+  ) : undefined
+
   return (
     <CollectionPage
       eyebrow={kind === 'roadmap' ? 'Design System roadmap' : 'Design System catalogue'}
@@ -325,6 +439,7 @@ function CollectionRoute({ kind }: { kind: 'components' | 'patterns' | 'foundati
       description={content[kind][1]}
       entries={entries.map(toCatalogEntryViewModel)}
       kind={kind}
+      notice={notice}
       onEntryNavigate={(entry) => navigate(entry.href)}
     />
   )
@@ -410,7 +525,8 @@ export default function DeveloperApp() {
         </Routes>
         <footer className="mt-12 border-t border-border pt-6 font-sans text-xs text-muted-foreground">
           <Link to="/design-system" className="font-medium text-foreground hover:underline">Scudamore&apos;s UI {handoffCatalog.version}</Link>
-          {' · '}Copy-only distribution · React previews · Blade source
+          {' + '}{patternHandoffCatalog.name} {patternHandoffCatalog.version}
+          {' · '}Copy-only distribution · Live React previews · Blade source
         </footer>
       </div>
     </div>

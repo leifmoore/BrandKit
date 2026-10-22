@@ -27,7 +27,16 @@ export interface PreviewSettings {
   brand: PreviewBrand;
   direction: PreviewDirection;
   width: PreviewWidth;
+  scenario: string;
   state: string;
+}
+
+export interface PreviewScenario {
+  id: string;
+  title: string;
+  description?: string;
+  states?: readonly string[];
+  defaultViewport?: "360" | "768" | "1280" | "fluid";
 }
 
 export interface PreviewTheme {

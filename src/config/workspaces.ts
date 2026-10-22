@@ -1,4 +1,5 @@
 import handoffCatalog from '@comp-lib/catalog/catalog.json'
+import patternHandoffCatalog from '@scudamores/patterns/catalog/catalog.json'
 
 export type WorkspaceId = 'brand' | 'design-system'
 
@@ -317,6 +318,7 @@ export const DESIGN_SYSTEM_STATIC_PATHS = Object.freeze(
 const DESIGN_SYSTEM_DETAIL_PATHS = new Set([
   ...handoffCatalog.components.map(({ id }) => `/design-system/components/${id}`),
   ...handoffCatalog.recipes.map(({ id }) => `/design-system/patterns/${id}`),
+  ...patternHandoffCatalog.patterns.map(({ id }) => `/design-system/patterns/${id}`),
   ...handoffCatalog.deferredComponents.map(({ id }) => `/design-system/roadmap/${id}`),
 ])
 

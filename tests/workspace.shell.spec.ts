@@ -14,7 +14,7 @@ const legacyRoutes = [
   { from: '/downloads', to: '/brand/resources', heading: 'Downloads' },
   { from: '/quick-reference', to: '/brand/quick-reference', heading: 'Quick Reference' },
   { from: '/charts', to: '/design-system/foundations/data-visualisation', heading: 'Charts' },
-  { from: '/developer', to: '/design-system', heading: "Scudamore's UI" },
+  { from: '/developer', to: '/design-system', heading: 'Scudamore’s Design System' },
   { from: '/developer/components', to: '/design-system/components', heading: 'Components' },
   { from: '/developer/components/button', to: '/design-system/components/button', heading: 'Button' },
   { from: '/developer/patterns', to: '/design-system/patterns', heading: 'Patterns' },
@@ -114,13 +114,12 @@ test('workspace links restore each workspace last route', async ({ page }) => {
 })
 
 test('Design System foundation deep links focus and reveal their destination', async ({ page }) => {
-  await page.goto('/design-system/foundations/themes#brand-workspace-candidates')
+  await page.goto('/design-system/foundations/themes#overview')
 
-  const candidates = page.locator('#brand-workspace-candidates')
-  await expect(candidates).toBeFocused()
-  await expect(candidates).toHaveCSS('outline-style', 'none')
-  await expect(candidates.getByRole('heading', { name: 'Brand workspace colour candidates' })).toBeVisible()
-  await expect(candidates.getByText('Candidate · unapproved')).toHaveCount(3)
+  const overview = page.locator('#overview')
+  await expect(overview).toBeFocused()
+  await expect(overview).toHaveCSS('outline-style', 'none')
+  await expect(overview.getByRole('heading', { name: 'Overview' })).toBeVisible()
 })
 
 test('Command search is scoped to the active workspace', async ({ page }) => {

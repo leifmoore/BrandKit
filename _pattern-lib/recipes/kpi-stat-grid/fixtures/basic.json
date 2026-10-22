@@ -1,0 +1,39 @@
+{
+  "label": "July report summary",
+  "metrics": [
+    {
+      "id": "total-sales",
+      "label": "Total sales",
+      "displayValue": "£48,260.00",
+      "valueMinor": 4826000,
+      "currency": "GBP",
+      "icon": "sales",
+      "trend": { "direction": "up", "displayValue": "+8.4%", "label": "from previous period" }
+    },
+    {
+      "id": "total-bookings",
+      "label": "Total bookings",
+      "displayValue": "184",
+      "numericValue": 184,
+      "icon": "bookings",
+      "trend": { "direction": "up", "displayValue": "+12", "label": "from previous period" }
+    },
+    {
+      "id": "average-booking-value",
+      "label": "Avg booking value",
+      "displayValue": "£262.28",
+      "valueMinor": 26228,
+      "currency": "GBP",
+      "icon": "average",
+      "trend": { "direction": "flat", "displayValue": "+0.3%", "label": "from previous period" }
+    },
+    {
+      "id": "total-commission",
+      "label": "Total commission",
+      "displayValue": "£7,812.50",
+      "valueMinor": 781250,
+      "currency": "GBP",
+      "icon": "commission"
+    }
+  ]
+}

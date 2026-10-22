@@ -1,0 +1,28 @@
+{
+  "title": "Booking summary",
+  "expanded": true,
+  "currency": "GBP",
+  "lines": [
+    {
+      "id": "line-1",
+      "title": "River experience",
+      "description": "2 adults · Central departure",
+      "date": "2026-08-12",
+      "time": "14:30",
+      "amountMinor": 7200,
+      "status": "Confirmed"
+    },
+    {
+      "id": "line-2",
+      "title": "Private add-on",
+      "description": "One group",
+      "date": "2026-08-12",
+      "time": "15:30",
+      "amountMinor": 5600,
+      "status": "Selected"
+    }
+  ],
+  "subtotalMinor": 12800,
+  "discountMinor": 1000,
+  "totalMinor": 11800
+}

@@ -1,4 +1,4 @@
-import { useDeferredValue, useMemo, type MouseEvent } from 'react'
+import { useDeferredValue, useMemo, type MouseEvent, type ReactNode } from 'react'
 import { LayoutGrid, List, Search, X } from 'lucide-react'
 import { useSearchParams } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
@@ -34,7 +34,7 @@ function ComponentCollection({
   const [searchParams, setSearchParams] = useSearchParams()
   const searchValue = searchParams.get('q') ?? ''
   const deferredQuery = useDeferredValue(searchValue.trim().toLocaleLowerCase())
-  const layout: ComponentLayout = searchParams.get('layout') === 'cards' ? 'cards' : 'list'
+  const layout: ComponentLayout = searchParams.get('layout') === 'list' ? 'list' : 'cards'
   const sortedEntries = useMemo(
     () => [...entries].sort((left, right) => left.title.localeCompare(right.title)),
     [entries],
@@ -113,7 +113,7 @@ function ComponentCollection({
               size="sm"
               aria-label="Card view"
               aria-pressed={layout === 'cards'}
-              onClick={() => updateParam('layout', 'cards')}
+              onClick={() => updateParam('layout')}
               className={layout === 'cards' ? 'bg-card shadow-sm hover:bg-card' : undefined}
             >
               <LayoutGrid aria-hidden="true" />
@@ -175,19 +175,67 @@ function ComponentCollection({
 function GenericCollection({
   entries,
   onEntryNavigate,
+  searchable = false,
 }: {
   entries: readonly CatalogEntryViewModel[]
   onEntryNavigate?: (entry: CatalogEntryViewModel) => void
+  searchable?: boolean
 }) {
-  const categories = [...new Set(entries.map((entry) => entry.category))]
+  const [searchParams, setSearchParams] = useSearchParams()
+  const searchValue = searchable ? (searchParams.get('q') ?? '') : ''
+  const deferredQuery = useDeferredValue(searchValue.trim().toLocaleLowerCase())
+  const visibleEntries = entries.filter((entry) => matchesQuery(entry, deferredQuery))
+  const categories = [...new Set(visibleEntries.map((entry) => entry.category))]
     .sort()
     .map((category) => ({
       category,
-      entries: entries.filter((entry) => entry.category === category),
+      entries: visibleEntries.filter((entry) => entry.category === category),
     }))
 
-  return categories.length > 0 ? (
-    <div className="space-y-9">
+  return (
+    <div>
+      {searchable ? (
+        <div className="mb-8 flex flex-col gap-3 rounded-xl border border-border bg-card p-3 sm:flex-row sm:items-center">
+          <div className="relative min-w-0 flex-1">
+            <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
+            <Input
+              type="search"
+              value={searchValue}
+              onChange={(event) => {
+                const next = new URLSearchParams(searchParams)
+                if (event.target.value) next.set('q', event.target.value)
+                else next.delete('q')
+                setSearchParams(next, { replace: true })
+              }}
+              placeholder="Search patterns…"
+              aria-label="Search patterns"
+              className="pl-9 pr-9"
+            />
+            {searchValue ? (
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon"
+                aria-label="Clear pattern search"
+                onClick={() => {
+                  const next = new URLSearchParams(searchParams)
+                  next.delete('q')
+                  setSearchParams(next, { replace: true })
+                }}
+                className="absolute right-0 top-0 size-9 text-muted-foreground"
+              >
+                <X aria-hidden="true" />
+              </Button>
+            ) : null}
+          </div>
+          <p className="font-sans text-xs text-muted-foreground" role="status" aria-live="polite">
+            {visibleEntries.length} of {entries.length} patterns
+          </p>
+        </div>
+      ) : null}
+
+      {categories.length > 0 ? (
+        <div className="space-y-9">
       {categories.map((group) => (
         <section key={group.category} aria-labelledby={`collection-${group.category}`}>
           <div className="mb-4 flex items-baseline justify-between gap-4">
@@ -196,16 +244,31 @@ function GenericCollection({
             </h2>
             <span className="text-xs text-muted-foreground">{group.entries.length} entries</span>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+          <div
+            className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3"
+            data-pattern-card-grid={searchable || undefined}
+          >
             {group.entries.map((entry) => (
-              <CatalogEntryCard key={`${entry.kind}-${entry.id}`} entry={entry} onNavigate={onEntryNavigate} />
+              searchable ? (
+                <ComponentPreviewCard key={`${entry.kind}-${entry.id}`} entry={entry} onNavigate={onEntryNavigate} />
+              ) : (
+                <CatalogEntryCard key={`${entry.kind}-${entry.id}`} entry={entry} onNavigate={onEntryNavigate} />
+              )
             ))}
           </div>
         </section>
       ))}
+        </div>
+      ) : (
+        <PageState
+          kind="empty"
+          title={searchable ? 'No patterns found' : 'No entries available'}
+          description={searchable
+            ? `No pattern matches “${searchValue.trim()}”. Try a name, category, maturity, dependency, state, or catalogue keyword.`
+            : 'This Design System collection does not contain any catalogue entries.'}
+        />
+      )}
     </div>
-  ) : (
-    <PageState kind="empty" title="No entries available" description="This Design System collection does not contain any catalogue entries." />
   )
 }
 
@@ -215,6 +278,7 @@ export function CollectionPage({
   description,
   entries,
   kind,
+  notice,
   onEntryNavigate,
 }: {
   eyebrow?: string
@@ -222,15 +286,21 @@ export function CollectionPage({
   description: string
   entries: readonly CatalogEntryViewModel[]
   kind: CollectionKind
+  notice?: ReactNode
   onEntryNavigate?: (entry: CatalogEntryViewModel) => void
 }) {
   return (
     <article>
       <DeveloperPageHeader eyebrow={eyebrow} title={title} description={description} compact />
+      {notice}
       {kind === 'components' ? (
         <ComponentCollection entries={entries} onEntryNavigate={onEntryNavigate} />
       ) : (
-        <GenericCollection entries={entries} onEntryNavigate={onEntryNavigate} />
+        <GenericCollection
+          entries={entries}
+          onEntryNavigate={onEntryNavigate}
+          searchable={kind === 'patterns'}
+        />
       )}
     </article>
   )

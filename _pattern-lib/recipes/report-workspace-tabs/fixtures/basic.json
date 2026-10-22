@@ -1,0 +1,11 @@
+{
+  "initialValue": "overview",
+  "tabs": [
+    { "id": "overview", "label": "Overview", "description": "Summary metrics and host chart slots.", "content": "A generated snapshot using the last applied filters." },
+    { "id": "year-on-year", "label": "Year on year", "description": "Period comparison view.", "content": "A reactive comparison using the current draft range." },
+    { "id": "transactions", "label": "Transactions", "description": "Detailed grouped results.", "content": "Detailed rows are supplied and paginated by the host." },
+    { "id": "visit-time", "label": "Visit time", "description": "Time-distribution heat map.", "content": "An accessible time distribution for the applied report." },
+    { "id": "products", "label": "Products", "description": "Product hierarchy and totals.", "content": "Product groups and child rows are host-aggregated." },
+    { "id": "trackables", "label": "Trackables", "description": "Configured reporting dimensions.", "content": "Optional dimensions appear only when the host supplies them.", "status": { "label": "Optional", "variant": "secondary" } }
+  ]
+}

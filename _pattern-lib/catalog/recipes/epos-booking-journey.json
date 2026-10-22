@@ -1,0 +1,106 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "epos-booking-journey",
+  "title": "EPOS Booking Journey",
+  "description": "Three-stage orchestration for booking criteria, availability, review and checkout.",
+  "category": "bookings",
+  "maturity": "beta",
+  "kind": "recipe",
+  "searchTerms": ["epos", "booking journey", "checkout", "availability", "step flow", "query"],
+  "fixture": "recipes/epos-booking-journey/fixtures/basic.json",
+  "documentation": "recipes/epos-booking-journey/README.md",
+  "scenarios": [
+    {
+      "id": "basic",
+      "title": "Interactive three-step journey",
+      "description": "A complete in-memory walkthrough from criteria to local confirmation.",
+      "fixture": "recipes/epos-booking-journey/fixtures/basic.json",
+      "states": ["criteria", "availability", "checkout", "complete"],
+      "defaultViewport": "1280"
+    }
+  ],
+  "react": {
+    "files": ["recipes/epos-booking-journey/react/EposBookingJourney.tsx"],
+    "entry": "recipes/epos-booking-journey/react/EposBookingJourney.tsx",
+    "export": "EposBookingJourneyPreview",
+    "exampleData": "recipes/epos-booking-journey/fixtures/basic.json"
+  },
+  "blade": {
+    "files": ["recipes/epos-booking-journey/blade/epos-booking-journey.blade.php"],
+    "exampleData": "recipes/epos-booking-journey/fixtures/basic.json",
+    "events": ["ui:epos-booking-journey:change", "ui:epos-booking-journey:action"]
+  },
+  "contract": {
+    "support": "composition-recipe",
+    "standaloneApi": false,
+    "fixturePolicy": "neutral DTOs only",
+    "hostResponsibilities": [
+      "Fetch catalogue and availability data",
+      "Enforce capacity, pricing and discount rules",
+      "Validate and persist customer and booking data",
+      "Own authorization, payment and error recovery",
+      "Restore focus when the active step changes"
+    ],
+    "inputs": [
+      { "name": "steps", "type": "BookingProgressStep[]", "required": true },
+      { "name": "criteria", "type": "BookingCriteriaPanelPreviewProps", "required": true },
+      { "name": "products", "type": "CapacityProductSelectorPreviewProps", "required": true },
+      { "name": "availability", "type": "AvailabilityTimePickerPreviewProps", "required": true },
+      { "name": "review", "type": "BookingReviewSummaryProps", "required": true },
+      { "name": "checkout", "type": "CheckoutDetailsPanelProps", "required": true }
+    ],
+    "callbacks": [
+      { "name": "onComplete", "type": "() => void", "required": false, "description": "Receives the preview completion action; the host performs persistence." }
+    ]
+  },
+  "dependencies": {
+    "internal": [
+      "availability-time-picker",
+      "booking-criteria-panel",
+      "booking-progress-indicator",
+      "booking-review-summary",
+      "button",
+      "capacity-product-selector",
+      "card",
+      "checkout-details-panel",
+      "contextual-action-dock",
+      "form",
+      "input",
+      "label",
+      "multi-query-manager",
+      "separator",
+      "stepper",
+      "textarea"
+    ],
+    "npm": ["date-fns", "lucide-react"],
+    "bladeRuntime": ["alpinejs"]
+  },
+  "responsiveBehavior": [
+    "Steps and actions stack on narrow screens while progress labels hide below the small breakpoint",
+    "Review and customer details form a two-column workspace at the large breakpoint",
+    "Query and location controls scroll or wrap without clipping",
+    "The documentation preview uses a contained dock; host products may select its safe-area fixed variant"
+  ],
+  "accessibility": {
+    "status": "passed-with-findings",
+    "findings": ["The 14px selected-query pill measures 3.66:1 in both themes, below WCAG AA 4.5:1. The approved styling is retained for visual parity; selection is also exposed through aria-pressed."]
+  },
+  "parity": {
+    "classification": "intentional-difference",
+    "differences": [
+      "The Blade orchestration example uses a native date field; its dedicated booking-criteria-panel pattern supplies the library calendar composition.",
+      "React composes the controlled subpattern exports directly, while Blade exposes the same handoff boundaries through Alpine events and progressive enhancement."
+    ]
+  },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-08-04",
+    "files": [
+      { "path": "src/app/epos/components/Step1.tsx", "sha256": "3dd0de790718105d38a02b03b86bcdc7081173219d534b249e53537e7bcbbf6e" },
+      { "path": "src/app/epos/components/Step2.tsx", "sha256": "93e6e9e8d7f440c456720edb2891d3e1ce252d6a1403339771c91ca333290e4d" },
+      { "path": "src/app/epos/components/Step3.tsx", "sha256": "67880e7cddcaaea9ee79288fe3c2f1f3c3622fc09c1954222fd377a53f5bb5cc" },
+      { "path": "src/app/epos/components/EposPreview.tsx", "sha256": "7783634edab994977ed4209e433be660bbb6f8a5bb0cb28feda3262d7cadcab2" }
+    ],
+    "decisionReferences": ["provenance/decisions.md"]
+  }
+}

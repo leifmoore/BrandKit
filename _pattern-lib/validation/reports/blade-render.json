@@ -1,0 +1,460 @@
+{
+    "schemaVersion": "1.0.0",
+    "generatedAt": "2026-08-04T00:00:00Z",
+    "status": "passed",
+    "framework": {
+        "laravel": "12.64.0",
+        "php": "8.4.15",
+        "fixture": "validation/blade-fixture"
+    },
+    "viewCache": {
+        "checks": [
+            {
+                "command": "view:clear",
+                "exitCode": 0,
+                "output": "INFO  Compiled views cleared successfully."
+            },
+            {
+                "command": "view:cache",
+                "exitCode": 0,
+                "output": "INFO  Blade templates cached successfully."
+            }
+        ],
+        "compiledFileCount": 241
+    },
+    "coverage": {
+        "expectedPatterns": 25,
+        "discoveredManifests": 25,
+        "uniquePatternIds": 25,
+        "primaryRenders": 25,
+        "scenarioRenders": 42
+    },
+    "records": [
+        {
+            "patternId": "availability-time-picker",
+            "scenarioId": "primary",
+            "template": "recipes/availability-time-picker/blade/availability-time-picker.blade.php",
+            "fixture": "recipes/availability-time-picker/fixtures/basic.json",
+            "htmlBytes": 13425,
+            "htmlSha256": "6ed790385465858917cda2c56f2ca1053fab714436cebbd403ad924e8e873c7c",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "booking-criteria-panel",
+            "scenarioId": "primary",
+            "template": "recipes/booking-criteria-panel/blade/booking-criteria-panel.blade.php",
+            "fixture": "recipes/booking-criteria-panel/fixtures/basic.json",
+            "htmlBytes": 19946,
+            "htmlSha256": "8feefe4dfc8db50bb8307ec2228cf344c852e07fea6e9ae367bde54f0268f879",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "booking-progress-indicator",
+            "scenarioId": "primary",
+            "template": "recipes/booking-progress-indicator/blade/booking-progress-indicator.blade.php",
+            "fixture": "recipes/booking-progress-indicator/fixtures/basic.json",
+            "htmlBytes": 3806,
+            "htmlSha256": "da4d7451d6355a0f51815ec508d47ef278ade37a3dbf907cc23c8dc61f68842c",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "booking-review-summary",
+            "scenarioId": "primary",
+            "template": "recipes/booking-review-summary/blade/booking-review-summary.blade.php",
+            "fixture": "recipes/booking-review-summary/fixtures/basic.json",
+            "htmlBytes": 8709,
+            "htmlSha256": "c4bca1fc2b030dfa2462daa4eef97ed1e4361542e0f1ac76ccdefa0a39a747e0",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": true
+        },
+        {
+            "patternId": "booking-review-summary",
+            "scenarioId": "collapsed",
+            "template": "recipes/booking-review-summary/blade/booking-review-summary.blade.php",
+            "fixture": "recipes/booking-review-summary/fixtures/collapsed.json",
+            "htmlBytes": 5541,
+            "htmlSha256": "3d3b1a845a982d97008983adddbd91ca669396feb07ab6b629de6b51f1f47241",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": true
+        },
+        {
+            "patternId": "capacity-product-selector",
+            "scenarioId": "primary",
+            "template": "recipes/capacity-product-selector/blade/capacity-product-selector.blade.php",
+            "fixture": "recipes/capacity-product-selector/fixtures/basic.json",
+            "htmlBytes": 16508,
+            "htmlSha256": "99456977e98b25d6b7f4f13a0b48fc59708fc5f4794e054c89d689bc17424556",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": true
+        },
+        {
+            "patternId": "checkout-details-panel",
+            "scenarioId": "primary",
+            "template": "recipes/checkout-details-panel/blade/checkout-details-panel.blade.php",
+            "fixture": "recipes/checkout-details-panel/fixtures/basic.json",
+            "htmlBytes": 5124,
+            "htmlSha256": "eb6bda28c5226f46b245739f23a37a46992281af70e0a88e6f18872f28181cbb",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": true
+        },
+        {
+            "patternId": "checkout-details-panel",
+            "scenarioId": "invalid",
+            "template": "recipes/checkout-details-panel/blade/checkout-details-panel.blade.php",
+            "fixture": "recipes/checkout-details-panel/fixtures/invalid.json",
+            "htmlBytes": 4903,
+            "htmlSha256": "47344ddd0ea7d870d2128f84764b756574d33a3f1ec586faccba968ede70bc94",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": true
+        },
+        {
+            "patternId": "collection-state-panel",
+            "scenarioId": "primary",
+            "template": "recipes/collection-state-panel/blade/collection-state-panel.blade.php",
+            "fixture": "recipes/collection-state-panel/fixtures/loading.json",
+            "htmlBytes": 1023,
+            "htmlSha256": "d63efa19e10a0dee03d20a18d3e02703ad06cfd48e5a32f488285a0e9655a04e",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "collection-state-panel",
+            "scenarioId": "empty",
+            "template": "recipes/collection-state-panel/blade/collection-state-panel.blade.php",
+            "fixture": "recipes/collection-state-panel/fixtures/empty.json",
+            "htmlBytes": 1601,
+            "htmlSha256": "c647705aa12addd94ef9db6a849d6adeb4cae257d8677286bbaf4e7870324930",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "collection-state-panel",
+            "scenarioId": "error",
+            "template": "recipes/collection-state-panel/blade/collection-state-panel.blade.php",
+            "fixture": "recipes/collection-state-panel/fixtures/error.json",
+            "htmlBytes": 1785,
+            "htmlSha256": "8c1410830c1b772da993eeff1a3e08c9981d39e2702f6cee41ad7f5f6d8e4d22",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "collection-state-panel",
+            "scenarioId": "restricted",
+            "template": "recipes/collection-state-panel/blade/collection-state-panel.blade.php",
+            "fixture": "recipes/collection-state-panel/fixtures/restricted.json",
+            "htmlBytes": 838,
+            "htmlSha256": "3ee8ed6ac97dccc69ce62a4c41c1a9236f55c7348317bbe7ee2cb5aeea25e477",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "collection-toolbar",
+            "scenarioId": "primary",
+            "template": "recipes/collection-toolbar/blade/collection-toolbar.blade.php",
+            "fixture": "recipes/collection-toolbar/fixtures/basic.json",
+            "htmlBytes": 4811,
+            "htmlSha256": "9170c383f2dd40559b0e7fa944b97f64e51e1f5cd36de18ced58618bcc09c59b",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "collection-toolbar",
+            "scenarioId": "filtered",
+            "template": "recipes/collection-toolbar/blade/collection-toolbar.blade.php",
+            "fixture": "recipes/collection-toolbar/fixtures/filtered.json",
+            "htmlBytes": 4805,
+            "htmlSha256": "1a376a7808c3f76fd99ebeab23051bb5fea8c889b43233716ad27840534c31ce",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "configuration-workbench",
+            "scenarioId": "primary",
+            "template": "recipes/configuration-workbench/blade/configuration-workbench.blade.php",
+            "fixture": "recipes/configuration-workbench/fixtures/basic.json",
+            "htmlBytes": 13286,
+            "htmlSha256": "9a604f2688c241205dbcd56ac594648e841a898761f72cec57f2daaf85be191e",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": true
+        },
+        {
+            "patternId": "configuration-workbench",
+            "scenarioId": "draft",
+            "template": "recipes/configuration-workbench/blade/configuration-workbench.blade.php",
+            "fixture": "recipes/configuration-workbench/fixtures/draft.json",
+            "htmlBytes": 13252,
+            "htmlSha256": "fd4b0c3ad8b7617e6e4e1672707b9d21d6c59b141bfa5d18eb6d3bcc4d359bed",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": true
+        },
+        {
+            "patternId": "contextual-action-dock",
+            "scenarioId": "primary",
+            "template": "recipes/contextual-action-dock/blade/contextual-action-dock.blade.php",
+            "fixture": "recipes/contextual-action-dock/fixtures/basic.json",
+            "htmlBytes": 1366,
+            "htmlSha256": "dd10bcc354b6a33c76ba097ee4400de09665d0fd88d05bdde8a373cc4ab2b4a5",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": true
+        },
+        {
+            "patternId": "contextual-action-dock",
+            "scenarioId": "multiple-actions",
+            "template": "recipes/contextual-action-dock/blade/contextual-action-dock.blade.php",
+            "fixture": "recipes/contextual-action-dock/fixtures/multiple-actions.json",
+            "htmlBytes": 2118,
+            "htmlSha256": "d69cb0b6e27e56df07d7ecbaa25e1d8a329e2f95e38f8e664d07eb085910ecca",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": true
+        },
+        {
+            "patternId": "customer-booking-journey",
+            "scenarioId": "primary",
+            "template": "recipes/customer-booking-journey/blade/customer-booking-journey.blade.php",
+            "fixture": "recipes/customer-booking-journey/fixtures/basic.json",
+            "htmlBytes": 26971,
+            "htmlSha256": "bc7ce0adf69217eba49df238ff88bdeb86b6d5926f80eb2b6761a949a9318236",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "customer-booking-journey",
+            "scenarioId": "checkout",
+            "template": "recipes/customer-booking-journey/blade/customer-booking-journey.blade.php",
+            "fixture": "recipes/customer-booking-journey/fixtures/checkout.json",
+            "htmlBytes": 23110,
+            "htmlSha256": "297e0d33c8f6b21fe236bf9035941d0b93c2e9fc795385816cf4d507f81ba2b9",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "customer-booking-journey",
+            "scenarioId": "error",
+            "template": "recipes/customer-booking-journey/blade/customer-booking-journey.blade.php",
+            "fixture": "recipes/customer-booking-journey/fixtures/error.json",
+            "htmlBytes": 20678,
+            "htmlSha256": "b2af2336e2b4d3e8ec8c120a415e4c896fe22abf4ffb050c4db3e82257ea1064",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "discount-builder",
+            "scenarioId": "primary",
+            "template": "recipes/discount-builder/blade/discount-builder.blade.php",
+            "fixture": "recipes/discount-builder/fixtures/basic.json",
+            "htmlBytes": 11272,
+            "htmlSha256": "4d5f4790ca0f0db6d549ad1821c5f178a0c880b604ad9ddcbaa0171150e4c169",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "epos-booking-journey",
+            "scenarioId": "primary",
+            "template": "recipes/epos-booking-journey/blade/epos-booking-journey.blade.php",
+            "fixture": "recipes/epos-booking-journey/fixtures/basic.json",
+            "htmlBytes": 44085,
+            "htmlSha256": "e6a9a9552df3e50f56d055fca2213693185b72451e6157b5d6e959cd664a6298",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": true
+        },
+        {
+            "patternId": "grouped-results-table",
+            "scenarioId": "primary",
+            "template": "recipes/grouped-results-table/blade/grouped-results-table.blade.php",
+            "fixture": "recipes/grouped-results-table/fixtures/basic.json",
+            "htmlBytes": 15719,
+            "htmlSha256": "c4ec876bf98902c6373cea5ccd8397ce43bc5b0467058cb6fc4e40fb9f0f3bc3",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "grouped-results-table",
+            "scenarioId": "empty",
+            "template": "recipes/grouped-results-table/blade/grouped-results-table.blade.php",
+            "fixture": "recipes/grouped-results-table/fixtures/empty.json",
+            "htmlBytes": 7184,
+            "htmlSha256": "43ae92f7ea390575ea551421dbf6ae8870ffcbc8f5ea3885c34e6bf348185c2e",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "kpi-stat-grid",
+            "scenarioId": "primary",
+            "template": "recipes/kpi-stat-grid/blade/kpi-stat-grid.blade.php",
+            "fixture": "recipes/kpi-stat-grid/fixtures/basic.json",
+            "htmlBytes": 4821,
+            "htmlSha256": "6c6940f08ba57582ee0a46b931e7eb1bf3b3ceea037886ad56f6c5c0e8ca02b6",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "mobile-bottom-navigation",
+            "scenarioId": "primary",
+            "template": "recipes/mobile-bottom-navigation/blade/mobile-bottom-navigation.blade.php",
+            "fixture": "recipes/mobile-bottom-navigation/fixtures/basic.json",
+            "htmlBytes": 5682,
+            "htmlSha256": "d78e4e136372acca8cd111d27b3469a3fc062149d04a3e5192d3d1707bc27750",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "mobile-bottom-navigation",
+            "scenarioId": "with-overflow",
+            "template": "recipes/mobile-bottom-navigation/blade/mobile-bottom-navigation.blade.php",
+            "fixture": "recipes/mobile-bottom-navigation/fixtures/with-overflow.json",
+            "htmlBytes": 8040,
+            "htmlSha256": "9fe64cbfab945d6b9def6b83ae55f321d0af41d55096d6e0321f8226dd339bc9",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "multi-query-manager",
+            "scenarioId": "primary",
+            "template": "recipes/multi-query-manager/blade/multi-query-manager.blade.php",
+            "fixture": "recipes/multi-query-manager/fixtures/basic.json",
+            "htmlBytes": 7182,
+            "htmlSha256": "2f40e03f7082a78f5191e93f6823bfcd3f32124ffcb8e9c42dba8092d64323ab",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "quote-builder",
+            "scenarioId": "primary",
+            "template": "recipes/quote-builder/blade/quote-builder.blade.php",
+            "fixture": "recipes/quote-builder/fixtures/basic.json",
+            "htmlBytes": 14607,
+            "htmlSha256": "99280f7d8c93fabebde8bc1030a41dfa27ce7e0eb09205077a974719d237fe01",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "quote-lookup",
+            "scenarioId": "primary",
+            "template": "recipes/quote-lookup/blade/quote-lookup.blade.php",
+            "fixture": "recipes/quote-lookup/fixtures/basic.json",
+            "htmlBytes": 3324,
+            "htmlSha256": "0edae8156fadc448c2d4d56c23e9aeca6cbd17a58b7e790eec29c2d5c172e166",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "reference-redemption-journey",
+            "scenarioId": "primary",
+            "template": "recipes/reference-redemption-journey/blade/reference-redemption-journey.blade.php",
+            "fixture": "recipes/reference-redemption-journey/fixtures/basic.json",
+            "htmlBytes": 11761,
+            "htmlSha256": "5a40f1a3c9c6da9c50516b819c41e2817a2405569869ce4e4de2374fef41970b",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "reference-redemption-journey",
+            "scenarioId": "not-found",
+            "template": "recipes/reference-redemption-journey/blade/reference-redemption-journey.blade.php",
+            "fixture": "recipes/reference-redemption-journey/fixtures/not-found.json",
+            "htmlBytes": 4853,
+            "htmlSha256": "40167046bd526efe4f352e6e0f34a9cce9f91004553064dcdbe7f34ec4977f9b",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "reference-redemption-journey",
+            "scenarioId": "expired",
+            "template": "recipes/reference-redemption-journey/blade/reference-redemption-journey.blade.php",
+            "fixture": "recipes/reference-redemption-journey/fixtures/expired.json",
+            "htmlBytes": 4853,
+            "htmlSha256": "40167046bd526efe4f352e6e0f34a9cce9f91004553064dcdbe7f34ec4977f9b",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "reference-redemption-journey",
+            "scenarioId": "complete",
+            "template": "recipes/reference-redemption-journey/blade/reference-redemption-journey.blade.php",
+            "fixture": "recipes/reference-redemption-journey/fixtures/complete.json",
+            "htmlBytes": 6881,
+            "htmlSha256": "946318b4e07965bf31a9bab8fe27364237a0421a3d7b4a0fb43f85603911ff48",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "report-breakdown-table",
+            "scenarioId": "primary",
+            "template": "recipes/report-breakdown-table/blade/report-breakdown-table.blade.php",
+            "fixture": "recipes/report-breakdown-table/fixtures/basic.json",
+            "htmlBytes": 12312,
+            "htmlSha256": "48332c08b784351458984854eae338925c77c762bf88a9b94bb7f1b57dada881",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "report-filter-builder",
+            "scenarioId": "primary",
+            "template": "recipes/report-filter-builder/blade/report-filter-builder.blade.php",
+            "fixture": "recipes/report-filter-builder/fixtures/basic.json",
+            "htmlBytes": 19915,
+            "htmlSha256": "20536c0f11f23ea7bc603a50a03c6319f0608ed4a7f5a83fe9b36087a7d8915b",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "report-filter-builder",
+            "scenarioId": "stale",
+            "template": "recipes/report-filter-builder/blade/report-filter-builder.blade.php",
+            "fixture": "recipes/report-filter-builder/fixtures/stale.json",
+            "htmlBytes": 19752,
+            "htmlSha256": "06782c36532797f215423c5c1299cf78b62a973f0f8ba1597e1f1f61469613bc",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "report-workspace-tabs",
+            "scenarioId": "primary",
+            "template": "recipes/report-workspace-tabs/blade/report-workspace-tabs.blade.php",
+            "fixture": "recipes/report-workspace-tabs/fixtures/basic.json",
+            "htmlBytes": 9244,
+            "htmlSha256": "58efa7cf888ddc9adda08269bb80e955e0e7a15593324d4af5ce96961fba8114",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": true
+        },
+        {
+            "patternId": "responsive-data-collection",
+            "scenarioId": "primary",
+            "template": "recipes/responsive-data-collection/blade/responsive-data-collection.blade.php",
+            "fixture": "recipes/responsive-data-collection/fixtures/basic.json",
+            "htmlBytes": 17320,
+            "htmlSha256": "dc75eaf94b7c99883d7d6d8fe3cb43c530e0defd28b812db8eb890616f5d93d0",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "responsive-data-collection",
+            "scenarioId": "empty",
+            "template": "recipes/responsive-data-collection/blade/responsive-data-collection.blade.php",
+            "fixture": "recipes/responsive-data-collection/fixtures/empty.json",
+            "htmlBytes": 126,
+            "htmlSha256": "e93bd765686f936158782c3e9a8ca4feb5dcfcbba738392391de3bd675d0a317",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        },
+        {
+            "patternId": "visit-time-heat-map",
+            "scenarioId": "primary",
+            "template": "recipes/visit-time-heat-map/blade/visit-time-heat-map.blade.php",
+            "fixture": "recipes/visit-time-heat-map/fixtures/basic.json",
+            "htmlBytes": 7941,
+            "htmlSha256": "32b85d1ba7d0546c3c0ba6b4025d85414ed8a56639f444802816051bf8da4f89",
+            "resolvedComponentTags": true,
+            "containsPatternMarker": false
+        }
+    ],
+    "failures": [],
+    "limitations": [
+        "Phosphor components render through a local SVG stub; production icon path geometry is not compared here.",
+        "This check proves PHP execution, Blade component resolution, fixture compatibility, and view caching. Alpine, focus, keyboard, Floating UI, and browser layout behaviour require the interaction and visual test tracks.",
+        "No production routes, persistence, authentication, authorization, payment, or business services are booted."
+    ]
+}

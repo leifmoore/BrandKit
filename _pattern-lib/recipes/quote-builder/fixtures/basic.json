@@ -1,0 +1,24 @@
+{
+  "summary": {
+    "partyLabel": "3 people",
+    "dateLabel": "Saturday, 15 August 2026",
+    "productLabels": ["Shared river tour", "Four-seat boat × 1"]
+  },
+  "timeBands": [
+    { "id": "morning", "label": "Morning", "available": true, "priceMinor": 9600, "currency": "GBP" },
+    { "id": "midday", "label": "Midday", "available": true, "priceMinor": 11200, "currency": "GBP" },
+    { "id": "afternoon", "label": "Afternoon", "available": true, "priceMinor": 12400, "currency": "GBP" },
+    { "id": "evening", "label": "Evening", "available": false, "priceMinor": 13800, "currency": "GBP" }
+  ],
+  "initialSelectedBandIds": ["morning", "midday"],
+  "expiryOptions": [
+    { "id": "one-hour", "label": "1h", "expiresAt": "2026-08-04T13:00:00Z" },
+    { "id": "six-hours", "label": "6h", "expiresAt": "2026-08-04T18:00:00Z" },
+    { "id": "one-day", "label": "1d", "expiresAt": "2026-08-05T12:00:00Z" },
+    { "id": "three-days", "label": "3d", "expiresAt": "2026-08-07T12:00:00Z" },
+    { "id": "one-week", "label": "1w", "expiresAt": "2026-08-11T12:00:00Z" }
+  ],
+  "defaultExpiryOptionId": "one-day",
+  "locale": "en-GB",
+  "triggerLabel": "Get quote"
+}

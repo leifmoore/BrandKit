@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "reference-redemption-journey",
+  "title": "Reference Redemption Journey",
+  "description": "Lookup, not-found, expired, review, confirm, and completion states for a saved reference.",
+  "category": "customer-booking",
+  "maturity": "beta",
+  "kind": "recipe",
+  "searchTerms": ["reference", "redemption", "quote", "lookup", "expired", "review", "confirmation"],
+  "fixture": "recipes/reference-redemption-journey/fixtures/basic.json",
+  "documentation": "recipes/reference-redemption-journey/README.md",
+  "scenarios": [
+    { "id": "basic", "title": "Successful lookup and redemption", "fixture": "recipes/reference-redemption-journey/fixtures/basic.json", "states": ["lookup", "review", "confirm", "complete"], "defaultViewport": "768" },
+    { "id": "not-found", "title": "Reference not found", "fixture": "recipes/reference-redemption-journey/fixtures/not-found.json", "states": ["not-found", "retry"], "defaultViewport": "360" },
+    { "id": "expired", "title": "Expired reference", "fixture": "recipes/reference-redemption-journey/fixtures/expired.json", "states": ["expired", "restart"], "defaultViewport": "360" },
+    { "id": "complete", "title": "Multiple booking references", "fixture": "recipes/reference-redemption-journey/fixtures/complete.json", "states": ["complete", "multiple references"], "defaultViewport": "360" }
+  ],
+  "react": {
+    "files": ["recipes/reference-redemption-journey/react/ReferenceRedemptionJourneyRecipe.tsx"],
+    "entry": "recipes/reference-redemption-journey/react/ReferenceRedemptionJourneyRecipe.tsx",
+    "export": "ReferenceRedemptionJourneyPreview",
+    "exampleData": "recipes/reference-redemption-journey/fixtures/basic.json"
+  },
+  "blade": {
+    "files": ["recipes/reference-redemption-journey/blade/reference-redemption-journey.blade.php"],
+    "exampleData": "recipes/reference-redemption-journey/fixtures/basic.json",
+    "events": ["ui:reference-redemption-journey:change", "ui:reference-redemption-journey:action"]
+  },
+  "contract": {
+    "support": "composition-recipe",
+    "standaloneApi": false,
+    "fixturePolicy": "neutral DTOs only",
+    "hostResponsibilities": ["Validate signed or opaque references server-side", "Rate-limit lookup", "Avoid leaking unrelated customer data", "Re-check expiry, availability, and amount", "Process payment when required", "Persist redemption atomically", "Return final booking references"],
+    "inputs": [
+      { "name": "state", "type": "ReferenceRedemptionState", "required": true },
+      { "name": "quote", "type": "RedeemableReference | null", "required": false },
+      { "name": "result", "type": "RedemptionResult | null", "required": false }
+    ],
+    "callbacks": [
+      { "name": "onLookup", "type": "(reference: string) => void", "required": true },
+      { "name": "onContinue", "type": "() => void", "required": true },
+      { "name": "onConfirm", "type": "() => void", "required": true },
+      { "name": "onRestart", "type": "() => void", "required": true }
+    ]
+  },
+  "dependencies": {
+    "internal": ["badge", "button", "card", "input", "label", "separator"],
+    "npm": ["lucide-react@0.487.0"],
+    "bladeRuntime": ["Alpine.js 3", "Phosphor Icons"]
+  },
+  "responsiveBehavior": ["Reference form and state panels stay in one bounded card", "Review item metadata wraps below its title", "Confirmation actions stack at 360px", "Multiple resulting references wrap without clipping"],
+  "accessibility": { "status": "passed-with-findings", "findings": ["The destination owns non-sensitive async lookup messages, error focus, loading and completion announcements, and the accessible handoff to its payment provider."] },
+  "parity": { "classification": "framework-equivalent", "differences": ["React uses controlled callbacks while Blade dispatches Alpine events.", "React uses Lucide glyphs and Blade uses Phosphor glyphs."] },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-08-04",
+    "files": [
+      { "path": "src/app/components/quotes/QuoteRedemptionPortal.tsx", "sha256": "866e975c08c01de76624a5d901932632c4be0e15ac31ebe187022da2f2e9d030" },
+      { "path": "_style-reference/multi-channel-sales-platform-main 2/public/cdn/quote-redemption.js", "sha256": "9b330d3c03bbf5e66129218eef1c10d329cc21ff9f44f4d110170ba652cf9a73" }
+    ],
+    "decisionReferences": ["provenance/decisions.md#approved-pattern-catalogue", "provenance/decisions.md#host-owned-redemption"]
+  }
+}

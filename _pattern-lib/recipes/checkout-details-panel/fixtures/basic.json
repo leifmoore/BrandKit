@@ -1,0 +1,16 @@
+{
+  "customer": {
+    "firstName": "Alex",
+    "lastName": "Morgan",
+    "email": "alex@example.test",
+    "phone": "+44 7700 900000",
+    "notes": "Step-free access requested."
+  },
+  "metadataExpanded": false,
+  "metadata": [
+    { "id": "seller-code", "label": "Seller code", "type": "text", "value": "RIVER-01", "required": false },
+    { "id": "payment-type", "label": "Payment type", "type": "select", "value": "card", "required": true, "options": [{ "value": "card", "label": "Card" }, { "value": "cash", "label": "Cash" }, { "value": "invoice", "label": "Invoice" }] }
+  ],
+  "errors": {},
+  "submitting": false
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "quote-builder",
+  "title": "Quote Builder",
+  "description": "Recipient, offered-time, price-range, and expiry composition for a quote draft.",
+  "category": "booking",
+  "maturity": "beta",
+  "kind": "recipe",
+  "searchTerms": ["booking", "quote", "email", "expiry", "time band", "price range"],
+  "fixture": "recipes/quote-builder/fixtures/basic.json",
+  "documentation": "recipes/quote-builder/README.md",
+  "scenarios": [{ "id": "basic", "title": "Two offered time bands", "fixture": "recipes/quote-builder/fixtures/basic.json", "states": ["draft", "unavailable", "price-range"], "defaultViewport": "768" }],
+  "react": { "files": ["recipes/quote-builder/react/QuoteBuilder.tsx"], "entry": "recipes/quote-builder/react/QuoteBuilder.tsx", "export": "QuoteBuilderPreview", "exampleData": "recipes/quote-builder/fixtures/basic.json" },
+  "blade": { "files": ["recipes/quote-builder/blade/quote-builder.blade.php"], "exampleData": "recipes/quote-builder/fixtures/basic.json", "events": ["ui:quote-builder:change", "ui:quote-builder:action"] },
+  "contract": {
+    "support": "composition-recipe", "standaloneApi": false, "fixturePolicy": "neutral DTOs only",
+    "hostResponsibilities": ["Verify recipient, availability, price, expiry, and authorisation", "Deliver, persist, audit, and report the quote outcome"],
+    "inputs": [{ "name": "summary", "type": "QuoteBookingSummary", "required": true }, { "name": "timeBands", "type": "QuoteTimeBand[]", "required": true }, { "name": "expiryOptions", "type": "QuoteExpiryOption[]", "required": true }],
+    "callbacks": [{ "name": "onSubmit", "type": "(draft: QuoteDraft) => void | Promise<void>", "required": true }]
+  },
+  "dependencies": { "internal": ["button", "checkbox", "dialog", "input", "label"], "npm": ["lucide-react@0.487.0"], "bladeRuntime": ["Alpine.js 3", "Alpine Focus", "Phosphor Icons"] },
+  "responsiveBehavior": ["Recipient fields stack at 360px and become two columns at the small breakpoint.", "Time-band options follow the same one-to-two-column transition.", "Expiry chips wrap without clipping."],
+  "accessibility": { "status": "passed-with-findings", "findings": ["The host owns pending-state and server-validation announcements and must focus the first invalid field. Blade dialog focus trapping and return must be verified after Alpine integration."] },
+  "parity": { "classification": "intentional-difference", "differences": ["React can await an asynchronous host callback; Blade emits a host action and can progressively enhance to a Laravel form submission.", "React uses Lucide glyphs and Blade uses Phosphor glyphs."] },
+  "source": { "commit": "d1511e224305585680723101a0b76be93eb9f2f0", "verifiedAt": "2026-08-04", "files": [{ "path": "src/app/epos/components/GetQuoteDialog.tsx", "sha256": "be709345f69588fdb5533a4034a4fd2d6f54543faa0ddca42edab5399d27cfe9" }, { "path": "_style-reference/multi-channel-sales-platform-main 2/resources/views/booking/epos.blade.php", "sha256": "12c86cb1fe6cb7ec963714322da14e732e8544e61fb731ad3be709095691dfd1" }, { "path": "_style-reference/multi-channel-sales-platform-main 2/public/js/booking/epos.js", "sha256": "94fc9e33bb13e6cf999cf32a34bd8a102f2f59625f9e5a6d597a0156e693f3b3" }], "decisionReferences": ["provenance/decisions.md#approved-pattern-catalogue"] }
+}

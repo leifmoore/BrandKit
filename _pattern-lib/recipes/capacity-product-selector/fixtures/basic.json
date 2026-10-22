@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": "shared-tour",
+      "label": "Shared river tour",
+      "description": "Book places by boat capacity.",
+      "tiers": [
+        { "id": "four-seat", "label": "Four-seat boat", "capacityPerUnit": 4, "maxQuantity": 4 },
+        { "id": "six-seat", "label": "Six-seat boat", "capacityPerUnit": 6, "maxQuantity": 3 }
+      ]
+    },
+    {
+      "id": "self-hire",
+      "label": "Self-hire add-on",
+      "description": "Quantity-based option without party coverage.",
+      "tiers": [
+        { "id": "standard", "label": "Standard", "capacityPerUnit": null, "maxQuantity": 5 },
+        { "id": "extended", "label": "Extended", "capacityPerUnit": null, "maxQuantity": 5 }
+      ]
+    }
+  ],
+  "selectedProductIds": ["shared-tour"],
+  "selections": [
+    { "productId": "shared-tour", "lines": [{ "tierId": "four-seat", "quantity": 1 }] },
+    { "productId": "self-hire", "lines": [] }
+  ],
+  "targetCapacity": 5
+}

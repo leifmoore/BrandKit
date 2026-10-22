@@ -1,0 +1,45 @@
+{
+  "title": "Product breakdown",
+  "caption": "Host-aggregated product groups and products",
+  "dimensionLabel": "Product",
+  "columns": [
+    { "id": "bookings", "label": "Bookings", "align": "right" },
+    { "id": "sales", "label": "Total sales", "align": "right" },
+    { "id": "average", "label": "Avg value", "align": "right" },
+    { "id": "commission", "label": "Commission", "align": "right" }
+  ],
+  "groups": [
+    {
+      "id": "public-tours",
+      "label": "Public tours",
+      "values": { "bookings": { "displayValue": "126", "numericValue": 126 }, "sales": { "displayValue": "£24,900.00", "valueMinor": 2490000, "currency": "GBP" }, "average": { "displayValue": "£197.62", "valueMinor": 19762, "currency": "GBP" }, "commission": { "displayValue": "£3,984.00", "valueMinor": 398400, "currency": "GBP" } },
+      "items": [
+        { "id": "riverside", "label": "Riverside Tour", "values": { "bookings": { "displayValue": "84", "numericValue": 84 }, "sales": { "displayValue": "£15,120.00", "valueMinor": 1512000, "currency": "GBP" }, "average": { "displayValue": "£180.00", "valueMinor": 18000, "currency": "GBP" }, "commission": { "displayValue": "£2,419.20", "valueMinor": 241920, "currency": "GBP" } } },
+        { "id": "college-backs", "label": "College Backs Tour", "values": { "bookings": { "displayValue": "42", "numericValue": 42 }, "sales": { "displayValue": "£9,780.00", "valueMinor": 978000, "currency": "GBP" }, "average": { "displayValue": "£232.86", "valueMinor": 23286, "currency": "GBP" }, "commission": { "displayValue": "£1,564.80", "valueMinor": 156480, "currency": "GBP" } } }
+      ]
+    },
+    {
+      "id": "private-tours",
+      "label": "Private tours",
+      "values": { "bookings": { "displayValue": "38", "numericValue": 38 }, "sales": { "displayValue": "£18,050.00", "valueMinor": 1805000, "currency": "GBP" }, "average": { "displayValue": "£475.00", "valueMinor": 47500, "currency": "GBP" }, "commission": { "displayValue": "£2,888.00", "valueMinor": 288800, "currency": "GBP" } },
+      "items": [
+        { "id": "private-charter", "label": "Private Charter", "values": { "bookings": { "displayValue": "26", "numericValue": 26 }, "sales": { "displayValue": "£12,350.00", "valueMinor": 1235000, "currency": "GBP" }, "average": { "displayValue": "£475.00", "valueMinor": 47500, "currency": "GBP" }, "commission": { "displayValue": "£1,976.00", "valueMinor": 197600, "currency": "GBP" } } },
+        { "id": "evening-charter", "label": "Evening Charter", "values": { "bookings": { "displayValue": "12", "numericValue": 12 }, "sales": { "displayValue": "£5,700.00", "valueMinor": 570000, "currency": "GBP" }, "average": { "displayValue": "£475.00", "valueMinor": 47500, "currency": "GBP" }, "commission": { "displayValue": "£912.00", "valueMinor": 91200, "currency": "GBP" } } }
+      ]
+    },
+    {
+      "id": "self-hire",
+      "label": "Self-hire",
+      "values": { "bookings": { "displayValue": "20", "numericValue": 20 }, "sales": { "displayValue": "£5,310.00", "valueMinor": 531000, "currency": "GBP" }, "average": { "displayValue": "£265.50", "valueMinor": 26550, "currency": "GBP" }, "commission": { "displayValue": "£940.50", "valueMinor": 94050, "currency": "GBP" } },
+      "items": [
+        { "id": "hourly-hire", "label": "Hourly Hire", "values": { "bookings": { "displayValue": "20", "numericValue": 20 }, "sales": { "displayValue": "£5,310.00", "valueMinor": 531000, "currency": "GBP" }, "average": { "displayValue": "£265.50", "valueMinor": 26550, "currency": "GBP" }, "commission": { "displayValue": "£940.50", "valueMinor": 94050, "currency": "GBP" } } }
+      ]
+    }
+  ],
+  "total": {
+    "bookings": { "displayValue": "184", "numericValue": 184 },
+    "sales": { "displayValue": "£48,260.00", "valueMinor": 4826000, "currency": "GBP" },
+    "average": { "displayValue": "£262.28", "valueMinor": 26228, "currency": "GBP" },
+    "commission": { "displayValue": "£7,812.50", "valueMinor": 781250, "currency": "GBP" }
+  }
+}

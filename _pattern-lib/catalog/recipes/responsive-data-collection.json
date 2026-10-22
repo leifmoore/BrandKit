@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "responsive-data-collection",
+  "title": "Responsive Data Collection",
+  "description": "The same neutral records rendered as a semantic desktop table and mobile cards.",
+  "category": "collections",
+  "maturity": "beta",
+  "kind": "recipe",
+  "searchTerms": ["responsive", "collection", "table", "cards", "records", "mobile"],
+  "fixture": "recipes/responsive-data-collection/fixtures/basic.json",
+  "documentation": "recipes/responsive-data-collection/README.md",
+  "scenarios": [
+    { "id": "basic", "title": "Table and card records", "fixture": "recipes/responsive-data-collection/fixtures/basic.json", "states": ["table", "cards", "row action"], "defaultViewport": "768" },
+    { "id": "empty", "title": "No matching records", "fixture": "recipes/responsive-data-collection/fixtures/empty.json", "states": ["empty"], "defaultViewport": "360" }
+  ],
+  "react": {
+    "files": ["recipes/responsive-data-collection/react/ResponsiveDataCollectionRecipe.tsx"],
+    "entry": "recipes/responsive-data-collection/react/ResponsiveDataCollectionRecipe.tsx",
+    "export": "ResponsiveDataCollectionPreview",
+    "exampleData": "recipes/responsive-data-collection/fixtures/basic.json"
+  },
+  "blade": {
+    "files": ["recipes/responsive-data-collection/blade/responsive-data-collection.blade.php"],
+    "exampleData": "recipes/responsive-data-collection/fixtures/basic.json",
+    "events": ["ui:responsive-data-collection:action"]
+  },
+  "contract": {
+    "support": "composition-recipe",
+    "standaloneApi": false,
+    "fixturePolicy": "neutral DTOs only",
+    "hostResponsibilities": ["Format and sanitize cell values", "Sort and paginate records", "Keep mobile and desktop data equivalent", "Handle row action IDs", "Authorize every supplied action"],
+    "inputs": [
+      { "name": "columns", "type": "ResponsiveCollectionColumn[]", "required": true },
+      { "name": "items", "type": "ResponsiveCollectionItem[]", "required": true },
+      { "name": "primaryColumnId", "type": "string", "required": true },
+      { "name": "secondaryColumnId", "type": "string", "required": false }
+    ],
+    "callbacks": [{ "name": "onActivate", "type": "(id: string) => void", "required": false }]
+  },
+  "dependencies": {
+    "internal": ["badge", "button", "card", "table"],
+    "npm": ["lucide-react@0.487.0"],
+    "bladeRuntime": ["Alpine.js 3", "Phosphor Icons"]
+  },
+  "responsiveBehavior": ["Renders a horizontally scrollable semantic table from 640px", "Renders heading and description-list cards below 640px", "Actions remain available in both layouts"],
+  "accessibility": { "status": "passed-with-findings", "findings": ["React passed isolated light/dark axe scans, including independently cleared OKLCH status/action contrast. Hosts that change responsive breakpoints must keep only one table/card representation in the accessibility tree and test navigation with production schemas."] },
+  "parity": { "classification": "framework-equivalent", "differences": ["React uses Lucide glyphs and Blade uses Phosphor glyphs."] },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-08-04",
+    "files": [
+      { "path": "src/app/pages/Tickets.tsx", "sha256": "c26da79ce4ff74d902796ebc5f0d259ab807d6c56f949b07a7db35a5a9103151" },
+      { "path": "src/app/components/user-management/UsersTab.tsx", "sha256": "c507a7babac8590dd826e80503ca31935a4d3ce50458fd82be3b6b82ef566dbf" }
+    ],
+    "decisionReferences": ["provenance/decisions.md#approved-pattern-catalogue"]
+  }
+}

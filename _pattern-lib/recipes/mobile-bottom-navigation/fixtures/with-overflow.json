@@ -1,0 +1,14 @@
+{
+  "items": [
+    { "id": "home", "label": "Home", "icon": "house" },
+    { "id": "sell", "label": "Sell", "icon": "shopping-cart" },
+    { "id": "bookings", "label": "Bookings", "icon": "ticket" }
+  ],
+  "activeId": "reports",
+  "overflowItems": [
+    { "id": "reports", "label": "Reports", "icon": "chart-bar" },
+    { "id": "settings", "label": "Settings", "icon": "gear" }
+  ],
+  "moreLabel": "More",
+  "hideForFinePointer": false
+}

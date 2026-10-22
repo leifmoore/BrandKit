@@ -1,0 +1,26 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use Illuminate\Foundation\Application;
+use Symfony\Component\Console\Input\ArgvInput;
+
+define('LARAVEL_START', microtime(true));
+
+$validationRoot = dirname(__DIR__);
+$autoload = $validationRoot.'/vendor/autoload.php';
+
+if (! is_file($autoload)) {
+    fwrite(STDERR, "Install _pattern-lib/validation Composer dependencies first.\n");
+    exit(1);
+}
+
+require $autoload;
+
+/** @var Application $app */
+$app = require __DIR__.'/bootstrap/app.php';
+
+$status = $app->handleCommand(new ArgvInput);
+
+exit($status);

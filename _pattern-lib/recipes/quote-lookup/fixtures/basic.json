@@ -1,0 +1,32 @@
+{
+  "initialReference": "QT-1042",
+  "initialResult": null,
+  "locale": "en-GB",
+  "triggerLabel": "Look up quote",
+  "previewRecords": [
+    {
+      "reference": "QT-1042",
+      "status": "pending",
+      "customerName": "Alex Example",
+      "customerEmail": "alex@example.invalid",
+      "bookingLabel": "3 people · Saturday, 15 August 2026",
+      "productLabels": ["Shared river tour"],
+      "priceFromMinor": 9600,
+      "priceToMinor": 12400,
+      "currency": "GBP",
+      "expiresAtLabel": "5 August 2026 at 13:00"
+    },
+    {
+      "reference": "QT-0999",
+      "status": "expired",
+      "customerName": "Morgan Example",
+      "customerEmail": "morgan@example.invalid",
+      "bookingLabel": "2 people · Friday, 7 August 2026",
+      "productLabels": ["Private river tour"],
+      "priceFromMinor": 14500,
+      "priceToMinor": 14500,
+      "currency": "GBP",
+      "expiresAtLabel": "1 August 2026 at 09:00"
+    }
+  ]
+}

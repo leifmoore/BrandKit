@@ -29,8 +29,9 @@ function sourceFramework(path: string): SourceFramework {
 
 function sourceKind(path: string): SourceFileViewModel['kind'] {
   if (path.endsWith('.md')) return 'documentation'
+  if (/\/fixtures?\//.test(path)) return 'fixture'
   if (/\/examples?\//.test(path)) return 'example'
-  if (/\.(json|css)$/.test(path) || /\/fixtures?\//.test(path)) return 'data'
+  if (/\.(json|css)$/.test(path)) return 'data'
   return 'implementation'
 }
 
@@ -154,6 +155,66 @@ export function toRecipeViewModel(
   entry: RecipeCatalogEntry,
   documentation?: string,
 ): RecipeDetailViewModel {
+  if (entry.sourcePackage === 'pattern-library' && 'scenarios' in entry.manifest) {
+    const manifest = entry.manifest
+    const dependencies: DependencyViewModel[] = [
+      ...manifest.dependencies.internal.map((name) => ({
+        name,
+        framework: 'react' as const,
+        scope: 'internal' as const,
+        purpose: 'Scudamore’s UI component dependency',
+      })),
+      ...manifest.dependencies.npm.map((name) => ({
+        name,
+        framework: 'react' as const,
+        scope: 'npm' as const,
+      })),
+      ...manifest.dependencies.bladeRuntime.map((name) => ({
+        name,
+        framework: 'blade' as const,
+        scope: 'runtime' as const,
+      })),
+    ]
+
+    return {
+      id: entry.id,
+      title: entry.title,
+      description: entry.description,
+      category: entry.category,
+      maturity: entry.maturity,
+      status: 'supported',
+      frameworks: entry.frameworks,
+      documentation,
+      contract: toProps([
+        ...(manifest.contract.inputs ?? []),
+        ...(manifest.contract.callbacks ?? []),
+      ]),
+      contractDetails: {
+        support: manifest.contract.support,
+        standaloneApi: manifest.contract.standaloneApi,
+        fixturePolicy: manifest.contract.fixturePolicy,
+        hostResponsibilities: manifest.contract.hostResponsibilities,
+      },
+      dependencies,
+      responsiveBehavior: manifest.responsiveBehavior,
+      accessibility: {
+        target: 'WCAG 2.2 AA',
+        auditStatus: manifest.accessibility.status,
+        findings: manifest.accessibility.findings.map((finding, index) => ({
+          id: `${manifest.id}-finding-${index + 1}`,
+          summary: finding,
+        })),
+      },
+      parity: {
+        classification: manifest.parity.classification === 'intentional-difference'
+          ? 'documented-exception'
+          : manifest.parity.classification,
+        intentionalDifferences: manifest.parity.differences,
+      },
+    }
+  }
+
+  const baseManifest = entry.manifest
   return {
     id: entry.id,
     title: entry.title,
@@ -165,13 +226,15 @@ export function toRecipeViewModel(
     documentation,
     contract: [],
     contractDetails: {
-      support: entry.manifest.contract.support,
-      standaloneApi: entry.manifest.contract.standaloneApi,
-      fixturePolicy: entry.manifest.contract.fixturePolicy,
+      support: baseManifest.contract.support,
+      standaloneApi: baseManifest.contract.standaloneApi,
+      fixturePolicy: baseManifest.contract.fixturePolicy,
     },
     dependencies: [],
     parity: {
-      classification: entry.manifest.contract.parity,
+      classification: 'parity' in baseManifest.contract
+        ? baseManifest.contract.parity
+        : 'documented-exception',
       intentionalDifferences: [],
     },
   }
@@ -206,6 +269,28 @@ export function toDeferredViewModel(
 
 export function toCatalogEntryViewModel(entry: DeveloperCatalogEntry): CatalogEntryViewModel {
   const kind = entry.kind === 'deferred' ? 'deferred' : entry.kind
+  const searchTerms = entry.kind === 'recipe'
+    && entry.sourcePackage === 'pattern-library'
+    && 'scenarios' in entry.manifest
+    ? [
+        ...entry.searchTerms,
+        ...entry.manifest.contract.hostResponsibilities,
+        ...(entry.manifest.contract.inputs ?? []).flatMap((input) => [input.name, input.type]),
+        ...(entry.manifest.contract.callbacks ?? []).flatMap((callback) => [callback.name, callback.type]),
+        ...entry.manifest.dependencies.internal,
+        ...entry.manifest.dependencies.npm,
+        ...entry.manifest.dependencies.bladeRuntime,
+        ...entry.manifest.responsiveBehavior,
+        ...entry.manifest.accessibility.findings,
+        ...entry.manifest.parity.differences,
+        ...entry.manifest.scenarios.flatMap((scenario) => [
+          scenario.id,
+          scenario.title,
+          scenario.description ?? '',
+          ...(scenario.states ?? []),
+        ]),
+      ]
+    : entry.searchTerms
   return {
     id: entry.id,
     title: entry.title,
@@ -221,7 +306,7 @@ export function toCatalogEntryViewModel(entry: DeveloperCatalogEntry): CatalogEn
         : undefined,
     status: entry.kind === 'deferred' ? 'deferred' : 'supported',
     frameworks: entry.frameworks,
-    searchTerms: entry.searchTerms,
+    searchTerms,
   }
 }
 
@@ -243,8 +328,8 @@ export function toCatalogOverviewViewModel(
     name,
     version,
     description:
-      'Interactive, paired React and Blade documentation generated from the verified Scudamore\'s UI handoff.',
-    releaseStatus: 'Validated handoff',
+      'Interactive, paired React and Blade documentation generated from the verified Scudamore’s UI base handoff and its separate Pattern Library add-on.',
+    releaseStatus: 'Validated sibling handoffs',
     counts: [
       { label: 'Paired components', value: counts.components, description: 'Interactive React previews with matching Blade source.' },
       { label: 'Stable', value: counts.stable, description: 'Supported components ready for product use.' },

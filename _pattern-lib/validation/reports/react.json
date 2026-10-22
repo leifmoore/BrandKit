@@ -1,0 +1,3060 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-08-04",
+  "framework": "react",
+  "renderedPatterns": 25,
+  "status": "passed-with-findings",
+  "consoleErrors": [],
+  "pageErrors": [],
+  "accessibility": {
+    "status": "passed-with-findings",
+    "scans": 50,
+    "patterns": {
+      "availability-time-picker": {
+        "status": "passed-with-findings",
+        "themes": {
+          "light": {
+            "status": "passed-with-findings",
+            "violations": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+                "nodes": [
+                  {
+                    "target": [
+                      ".text-epos-accent"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.66 (foreground color: #009689, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+                    "computed": {
+                      "color": "oklch(0.6 0.118 184.704)",
+                      "backgroundColor": "rgba(0, 0, 0, 0)",
+                      "opacity": "1",
+                      "disabled": null,
+                      "styleAttribute": null,
+                      "ancestors": [
+                        {
+                          "tag": "span",
+                          "className": "font-medium text-epos-accent",
+                          "opacity": "1",
+                          "color": "oklch(0.6 0.118 184.704)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "span",
+                          "className": "text-center text-xs",
+                          "opacity": "1",
+                          "color": "oklch(0.278 0.033 256.848)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "button",
+                          "className": "flex w-full flex-col items-center gap-0.5 p-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring",
+                          "opacity": "1",
+                          "color": "oklch(0.278 0.033 256.848)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "bg-card text-card-foreground flex flex-col gap-6 rounded-lg border border-primary ring-1 ring-primary",
+                          "opacity": "1",
+                          "color": "oklch(0.278 0.033 256.848)",
+                          "backgroundColor": "rgb(255, 255, 255)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "grid grid-cols-3 gap-1.5",
+                          "opacity": "1",
+                          "color": "oklch(0.373 0.034 259.733)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "",
+                          "opacity": "1",
+                          "color": "oklch(0.373 0.034 259.733)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "section",
+                          "className": "space-y-4",
+                          "opacity": "1",
+                          "color": "oklch(0.373 0.034 259.733)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "section",
+                          "className": "mx-auto mb-8 max-w-5xl",
+                          "opacity": "1",
+                          "color": "oklch(0.373 0.034 259.733)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "dark": {
+            "status": "passed-with-findings",
+            "violations": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+                "nodes": [
+                  {
+                    "target": [
+                      ".text-epos-accent"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.99 (foreground color: #009689, background color: #1e2939, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+                    "computed": {
+                      "color": "oklch(0.6 0.118 184.704)",
+                      "backgroundColor": "rgba(0, 0, 0, 0)",
+                      "opacity": "1",
+                      "disabled": null,
+                      "styleAttribute": null,
+                      "ancestors": [
+                        {
+                          "tag": "span",
+                          "className": "font-medium text-epos-accent",
+                          "opacity": "1",
+                          "color": "oklch(0.6 0.118 184.704)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "span",
+                          "className": "text-center text-xs",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "button",
+                          "className": "flex w-full flex-col items-center gap-0.5 p-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "bg-card text-card-foreground flex flex-col gap-6 rounded-lg border border-primary ring-1 ring-primary",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "oklch(0.278 0.033 256.848)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "grid grid-cols-3 gap-1.5",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "section",
+                          "className": "space-y-4",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "section",
+                          "className": "mx-auto mb-8 max-w-5xl",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "booking-criteria-panel": {
+        "status": "passed",
+        "themes": {
+          "light": {
+            "status": "passed",
+            "violations": []
+          },
+          "dark": {
+            "status": "passed",
+            "violations": []
+          }
+        }
+      },
+      "booking-progress-indicator": {
+        "status": "passed",
+        "themes": {
+          "light": {
+            "status": "passed",
+            "violations": []
+          },
+          "dark": {
+            "status": "passed",
+            "violations": []
+          }
+        }
+      },
+      "booking-review-summary": {
+        "status": "passed",
+        "themes": {
+          "light": {
+            "status": "passed",
+            "violations": []
+          },
+          "dark": {
+            "status": "passed",
+            "violations": []
+          }
+        }
+      },
+      "capacity-product-selector": {
+        "status": "passed-with-findings",
+        "themes": {
+          "light": {
+            "status": "passed",
+            "violations": []
+          },
+          "dark": {
+            "status": "passed-with-findings",
+            "violations": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+                "nodes": [
+                  {
+                    "target": [
+                      ".bg-status-danger\\/15"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.75 (foreground color: #da6c69, background color: #462c3b, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+                    "computed": {
+                      "color": "oklch(0.808 0.114 19.571)",
+                      "backgroundColor": "oklab(0.577 0.217662 0.112464 / 0.15)",
+                      "opacity": "1",
+                      "disabled": null,
+                      "styleAttribute": null,
+                      "ancestors": [
+                        {
+                          "tag": "span",
+                          "className": "inline-flex items-center justify-center rounded-full border px-2 py-1 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent bg-status-danger/15 text-status-danger-foreground [a&]:hover:bg-status-danger/20",
+                          "opacity": "1",
+                          "color": "oklch(0.808 0.114 19.571)",
+                          "backgroundColor": "oklab(0.577 0.217662 0.112464 / 0.15)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "mb-3",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "border-t border-primary/20 px-3 pb-3 pt-3",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "section",
+                          "className": "rounded-lg border transition-colors  border-primary bg-primary/5",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.05)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "space-y-2",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "section",
+                          "className": "mx-auto mb-8 max-w-5xl",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "main",
+                          "className": "min-h-screen bg-background p-6 text-foreground",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "oklch(0.278 0.033 256.848)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "",
+                          "opacity": "1",
+                          "color": "rgb(255, 255, 255)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "target": [
+                      "#\\:r9\\:-capacity-product-shared-tour > .mt-3.h-8[data-contrast-action=\"true\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.79 (foreground color: #8e96a2, background color: #313b4a, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+                    "computed": {
+                      "color": "oklch(0.872 0.01 258.338)",
+                      "backgroundColor": "oklab(1 0 0 / 0.03)",
+                      "opacity": "1",
+                      "disabled": false,
+                      "styleAttribute": null,
+                      "ancestors": [
+                        {
+                          "tag": "button",
+                          "className": "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-75 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 mt-3 h-8",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "oklab(1 0 0 / 0.03)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "border-t border-primary/20 px-3 pb-3 pt-3",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "section",
+                          "className": "rounded-lg border transition-colors  border-primary bg-primary/5",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.05)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "space-y-2",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "section",
+                          "className": "mx-auto mb-8 max-w-5xl",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "main",
+                          "className": "min-h-screen bg-background p-6 text-foreground",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "oklch(0.278 0.033 256.848)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "",
+                          "opacity": "1",
+                          "color": "rgb(255, 255, 255)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "body",
+                          "className": "",
+                          "opacity": "1",
+                          "color": "rgb(255, 255, 255)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "checkout-details-panel": {
+        "status": "passed",
+        "themes": {
+          "light": {
+            "status": "passed",
+            "violations": []
+          },
+          "dark": {
+            "status": "passed",
+            "violations": []
+          }
+        }
+      },
+      "collection-state-panel": {
+        "status": "passed",
+        "themes": {
+          "light": {
+            "status": "passed",
+            "violations": []
+          },
+          "dark": {
+            "status": "passed",
+            "violations": []
+          }
+        }
+      },
+      "collection-toolbar": {
+        "status": "passed",
+        "themes": {
+          "light": {
+            "status": "passed",
+            "violations": []
+          },
+          "dark": {
+            "status": "passed",
+            "violations": []
+          }
+        }
+      },
+      "configuration-workbench": {
+        "status": "passed",
+        "themes": {
+          "light": {
+            "status": "passed",
+            "violations": []
+          },
+          "dark": {
+            "status": "passed",
+            "violations": []
+          }
+        }
+      },
+      "contextual-action-dock": {
+        "status": "passed",
+        "themes": {
+          "light": {
+            "status": "passed",
+            "violations": []
+          },
+          "dark": {
+            "status": "passed",
+            "violations": []
+          }
+        }
+      },
+      "customer-booking-journey": {
+        "status": "passed",
+        "themes": {
+          "light": {
+            "status": "passed",
+            "violations": []
+          },
+          "dark": {
+            "status": "passed",
+            "violations": []
+          }
+        }
+      },
+      "discount-builder": {
+        "status": "passed",
+        "themes": {
+          "light": {
+            "status": "passed",
+            "violations": []
+          },
+          "dark": {
+            "status": "passed",
+            "violations": []
+          }
+        }
+      },
+      "epos-booking-journey": {
+        "status": "passed-with-findings",
+        "themes": {
+          "light": {
+            "status": "passed-with-findings",
+            "violations": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+                "nodes": [
+                  {
+                    "target": [
+                      ".space-y-4 > .pb-2.overflow-x-auto[aria-label=\"Manage booking queries\"] > .gap-2[role=\"toolbar\"][aria-label=\"Booking queries\"] > .bg-epos-accent.text-epos-accent-foreground.min-h-10 > .focus-visible\\:ring-2.focus-visible\\:ring-ring[data-query-select=\"true\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.66 (foreground color: #ffffff, background color: #009689, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+                    "computed": {
+                      "color": "rgb(255, 255, 255)",
+                      "backgroundColor": "rgba(0, 0, 0, 0)",
+                      "opacity": "1",
+                      "disabled": false,
+                      "styleAttribute": null,
+                      "ancestors": [
+                        {
+                          "tag": "button",
+                          "className": "rounded-full py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                          "opacity": "1",
+                          "color": "rgb(255, 255, 255)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "flex min-h-10 shrink-0 items-center rounded-full px-1 pl-3 text-sm font-medium transition-colors bg-epos-accent text-epos-accent-foreground",
+                          "opacity": "1",
+                          "color": "rgb(255, 255, 255)",
+                          "backgroundColor": "oklch(0.6 0.118 184.704)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "flex shrink-0 items-center gap-2",
+                          "opacity": "1",
+                          "color": "oklch(0.373 0.034 259.733)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "flex items-center gap-2 overflow-x-auto pb-2",
+                          "opacity": "1",
+                          "color": "oklch(0.373 0.034 259.733)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "space-y-4",
+                          "opacity": "1",
+                          "color": "oklch(0.373 0.034 259.733)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "section",
+                          "className": "mx-auto w-full max-w-5xl space-y-5",
+                          "opacity": "1",
+                          "color": "oklch(0.373 0.034 259.733)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "section",
+                          "className": "mx-auto mb-8 max-w-5xl",
+                          "opacity": "1",
+                          "color": "oklch(0.373 0.034 259.733)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "main",
+                          "className": "min-h-screen bg-background p-6 text-foreground",
+                          "opacity": "1",
+                          "color": "oklch(0.373 0.034 259.733)",
+                          "backgroundColor": "rgb(255, 255, 255)",
+                          "hidden": false
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "dark": {
+            "status": "passed-with-findings",
+            "violations": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+                "nodes": [
+                  {
+                    "target": [
+                      ".space-y-4 > .pb-2.overflow-x-auto[aria-label=\"Manage booking queries\"] > .gap-2[role=\"toolbar\"][aria-label=\"Booking queries\"] > .bg-epos-accent.text-epos-accent-foreground.min-h-10 > .focus-visible\\:ring-2.focus-visible\\:ring-ring[data-query-select=\"true\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.66 (foreground color: #ffffff, background color: #009689, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+                    "computed": {
+                      "color": "rgb(255, 255, 255)",
+                      "backgroundColor": "rgba(0, 0, 0, 0)",
+                      "opacity": "1",
+                      "disabled": false,
+                      "styleAttribute": null,
+                      "ancestors": [
+                        {
+                          "tag": "button",
+                          "className": "rounded-full py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                          "opacity": "1",
+                          "color": "rgb(255, 255, 255)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "flex min-h-10 shrink-0 items-center rounded-full px-1 pl-3 text-sm font-medium transition-colors bg-epos-accent text-epos-accent-foreground",
+                          "opacity": "1",
+                          "color": "rgb(255, 255, 255)",
+                          "backgroundColor": "oklch(0.6 0.118 184.704)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "flex shrink-0 items-center gap-2",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "flex items-center gap-2 overflow-x-auto pb-2",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "space-y-4",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "section",
+                          "className": "mx-auto w-full max-w-5xl space-y-5",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "section",
+                          "className": "mx-auto mb-8 max-w-5xl",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "main",
+                          "className": "min-h-screen bg-background p-6 text-foreground",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "oklch(0.278 0.033 256.848)",
+                          "hidden": false
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "grouped-results-table": {
+        "status": "passed-with-findings",
+        "themes": {
+          "light": {
+            "status": "passed",
+            "violations": []
+          },
+          "dark": {
+            "status": "passed-with-findings",
+            "violations": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+                "nodes": [
+                  {
+                    "target": [
+                      "tbody:nth-child(3) > tr:nth-child(2) > td:nth-child(7) > .\\[a\\&\\]\\:hover\\:bg-accent.\\[a\\&\\]\\:hover\\:text-accent-foreground.\\[\\&\\>svg\\]\\:size-3"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.33 (foreground color: #707987, background color: #1e2939, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+                    "computed": {
+                      "color": "oklch(0.872 0.01 258.338)",
+                      "backgroundColor": "rgba(0, 0, 0, 0)",
+                      "opacity": "1",
+                      "disabled": null,
+                      "styleAttribute": "color: var(--foreground);",
+                      "ancestors": [
+                        {
+                          "tag": "span",
+                          "className": "inline-flex items-center justify-center rounded-full border px-2 py-1 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "td",
+                          "className": "p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "tr",
+                          "className": "hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "tbody",
+                          "className": "[&_tr:last-child]:border-0",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "table",
+                          "className": "w-full caption-bottom text-sm",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "relative w-full overflow-x-auto",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "px-6 [&:last-child]:pb-6",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "bg-card text-card-foreground flex flex-col gap-6 rounded-lg border",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "oklch(0.278 0.033 256.848)",
+                          "hidden": false
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "target": [
+                      "tr:nth-child(3) > td:nth-child(7) > .\\[a\\&\\]\\:hover\\:bg-accent.\\[a\\&\\]\\:hover\\:text-accent-foreground.\\[\\&\\>svg\\]\\:size-3"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.33 (foreground color: #707987, background color: #1e2939, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+                    "computed": {
+                      "color": "oklch(0.872 0.01 258.338)",
+                      "backgroundColor": "rgba(0, 0, 0, 0)",
+                      "opacity": "1",
+                      "disabled": null,
+                      "styleAttribute": "color: var(--foreground);",
+                      "ancestors": [
+                        {
+                          "tag": "span",
+                          "className": "inline-flex items-center justify-center rounded-full border px-2 py-1 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "td",
+                          "className": "p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "tr",
+                          "className": "hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "tbody",
+                          "className": "[&_tr:last-child]:border-0",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "table",
+                          "className": "w-full caption-bottom text-sm",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "relative w-full overflow-x-auto",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "px-6 [&:last-child]:pb-6",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "bg-card text-card-foreground flex flex-col gap-6 rounded-lg border",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "oklch(0.278 0.033 256.848)",
+                          "hidden": false
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "target": [
+                      "tbody:nth-child(4) > tr:nth-child(2) > td:nth-child(7) > .\\[a\\&\\]\\:hover\\:bg-accent.\\[a\\&\\]\\:hover\\:text-accent-foreground.\\[\\&\\>svg\\]\\:size-3"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.33 (foreground color: #707987, background color: #1e2939, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+                    "computed": {
+                      "color": "oklch(0.872 0.01 258.338)",
+                      "backgroundColor": "rgba(0, 0, 0, 0)",
+                      "opacity": "1",
+                      "disabled": null,
+                      "styleAttribute": "color: var(--foreground);",
+                      "ancestors": [
+                        {
+                          "tag": "span",
+                          "className": "inline-flex items-center justify-center rounded-full border px-2 py-1 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "td",
+                          "className": "p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "tr",
+                          "className": "hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "tbody",
+                          "className": "[&_tr:last-child]:border-0",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "table",
+                          "className": "w-full caption-bottom text-sm",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "relative w-full overflow-x-auto",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "px-6 [&:last-child]:pb-6",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "bg-card text-card-foreground flex flex-col gap-6 rounded-lg border",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "oklch(0.278 0.033 256.848)",
+                          "hidden": false
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "kpi-stat-grid": {
+        "status": "passed",
+        "themes": {
+          "light": {
+            "status": "passed",
+            "violations": []
+          },
+          "dark": {
+            "status": "passed",
+            "violations": []
+          }
+        }
+      },
+      "mobile-bottom-navigation": {
+        "status": "passed",
+        "themes": {
+          "light": {
+            "status": "passed",
+            "violations": []
+          },
+          "dark": {
+            "status": "passed",
+            "violations": []
+          }
+        }
+      },
+      "multi-query-manager": {
+        "status": "passed-with-findings",
+        "themes": {
+          "light": {
+            "status": "passed-with-findings",
+            "violations": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+                "nodes": [
+                  {
+                    "target": [
+                      "section[data-pattern-preview=\"multi-query-manager\"] > .pb-2.overflow-x-auto[aria-label=\"Manage booking queries\"] > .gap-2[role=\"toolbar\"][aria-label=\"Booking queries\"] > .bg-epos-accent.text-epos-accent-foreground.min-h-10 > .focus-visible\\:ring-2.focus-visible\\:ring-ring[data-query-select=\"true\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.66 (foreground color: #ffffff, background color: #009689, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+                    "computed": {
+                      "color": "rgb(255, 255, 255)",
+                      "backgroundColor": "rgba(0, 0, 0, 0)",
+                      "opacity": "1",
+                      "disabled": false,
+                      "styleAttribute": null,
+                      "ancestors": [
+                        {
+                          "tag": "button",
+                          "className": "rounded-full py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                          "opacity": "1",
+                          "color": "rgb(255, 255, 255)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "flex min-h-10 shrink-0 items-center rounded-full px-1 pl-3 text-sm font-medium transition-colors bg-epos-accent text-epos-accent-foreground",
+                          "opacity": "1",
+                          "color": "rgb(255, 255, 255)",
+                          "backgroundColor": "oklch(0.6 0.118 184.704)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "flex shrink-0 items-center gap-2",
+                          "opacity": "1",
+                          "color": "oklch(0.373 0.034 259.733)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "flex items-center gap-2 overflow-x-auto pb-2",
+                          "opacity": "1",
+                          "color": "oklch(0.373 0.034 259.733)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "section",
+                          "className": "mx-auto mb-8 max-w-5xl",
+                          "opacity": "1",
+                          "color": "oklch(0.373 0.034 259.733)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "main",
+                          "className": "min-h-screen bg-background p-6 text-foreground",
+                          "opacity": "1",
+                          "color": "oklch(0.373 0.034 259.733)",
+                          "backgroundColor": "rgb(255, 255, 255)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "",
+                          "opacity": "1",
+                          "color": "rgb(0, 0, 0)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "body",
+                          "className": "",
+                          "opacity": "1",
+                          "color": "rgb(0, 0, 0)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "dark": {
+            "status": "passed-with-findings",
+            "violations": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+                "nodes": [
+                  {
+                    "target": [
+                      "section[data-pattern-preview=\"multi-query-manager\"] > .pb-2.overflow-x-auto[aria-label=\"Manage booking queries\"] > .gap-2[role=\"toolbar\"][aria-label=\"Booking queries\"] > .bg-epos-accent.text-epos-accent-foreground.min-h-10 > .focus-visible\\:ring-2.focus-visible\\:ring-ring[data-query-select=\"true\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.66 (foreground color: #ffffff, background color: #009689, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+                    "computed": {
+                      "color": "rgb(255, 255, 255)",
+                      "backgroundColor": "rgba(0, 0, 0, 0)",
+                      "opacity": "1",
+                      "disabled": false,
+                      "styleAttribute": null,
+                      "ancestors": [
+                        {
+                          "tag": "button",
+                          "className": "rounded-full py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                          "opacity": "1",
+                          "color": "rgb(255, 255, 255)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "flex min-h-10 shrink-0 items-center rounded-full px-1 pl-3 text-sm font-medium transition-colors bg-epos-accent text-epos-accent-foreground",
+                          "opacity": "1",
+                          "color": "rgb(255, 255, 255)",
+                          "backgroundColor": "oklch(0.6 0.118 184.704)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "flex shrink-0 items-center gap-2",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "flex items-center gap-2 overflow-x-auto pb-2",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "section",
+                          "className": "mx-auto mb-8 max-w-5xl",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "main",
+                          "className": "min-h-screen bg-background p-6 text-foreground",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "oklch(0.278 0.033 256.848)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "",
+                          "opacity": "1",
+                          "color": "rgb(255, 255, 255)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "body",
+                          "className": "",
+                          "opacity": "1",
+                          "color": "rgb(255, 255, 255)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "quote-builder": {
+        "status": "passed",
+        "themes": {
+          "light": {
+            "status": "passed",
+            "violations": []
+          },
+          "dark": {
+            "status": "passed",
+            "violations": []
+          }
+        }
+      },
+      "quote-lookup": {
+        "status": "passed",
+        "themes": {
+          "light": {
+            "status": "passed",
+            "violations": []
+          },
+          "dark": {
+            "status": "passed",
+            "violations": []
+          }
+        }
+      },
+      "reference-redemption-journey": {
+        "status": "passed",
+        "themes": {
+          "light": {
+            "status": "passed",
+            "violations": []
+          },
+          "dark": {
+            "status": "passed",
+            "violations": []
+          }
+        }
+      },
+      "report-breakdown-table": {
+        "status": "passed",
+        "themes": {
+          "light": {
+            "status": "passed",
+            "violations": []
+          },
+          "dark": {
+            "status": "passed",
+            "violations": []
+          }
+        }
+      },
+      "report-filter-builder": {
+        "status": "passed",
+        "themes": {
+          "light": {
+            "status": "passed",
+            "violations": []
+          },
+          "dark": {
+            "status": "passed",
+            "violations": []
+          }
+        }
+      },
+      "report-workspace-tabs": {
+        "status": "passed-with-findings",
+        "themes": {
+          "light": {
+            "status": "passed",
+            "violations": []
+          },
+          "dark": {
+            "status": "passed-with-findings",
+            "violations": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+                "nodes": [
+                  {
+                    "target": [
+                      ".px-1\\.5"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #a4abb5, background color: #364153, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+                    "computed": {
+                      "color": "oklch(0.872 0.01 258.338)",
+                      "backgroundColor": "oklch(0.373 0.034 259.733)",
+                      "opacity": "1",
+                      "disabled": null,
+                      "styleAttribute": null,
+                      "ancestors": [
+                        {
+                          "tag": "span",
+                          "className": "inline-flex items-center justify-center rounded-full border font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent bg-secondary [a&]:hover:bg-secondary/90 ml-1 px-1.5 py-0 text-[10px] text-foreground",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "oklch(0.373 0.034 259.733)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "button",
+                          "className": "data-[state=active]:bg-card dark:data-[state=active]:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring dark:data-[state=active]:border-input dark:data-[state=active]:bg-input/30 dark:text-muted-foreground inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-xl border border-transparent font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 shrink-0 px-2 py-1.5 text-xs text-foreground/80 data-[state=active]:text-foreground sm:px-3 sm:text-sm",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "bg-muted text-muted-foreground w-fit items-center rounded-xl p-[3px] flex h-auto min-w-max justify-start gap-0",
+                          "opacity": "1",
+                          "color": "oklch(0.707 0.022 261.325)",
+                          "backgroundColor": "oklch(0.373 0.034 259.733)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "max-w-full overflow-x-auto",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "flex flex-col gap-2",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "section",
+                          "className": "mx-auto mb-8 max-w-5xl",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "main",
+                          "className": "min-h-screen bg-background p-6 text-foreground",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "oklch(0.278 0.033 256.848)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "",
+                          "opacity": "1",
+                          "color": "rgb(255, 255, 255)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "responsive-data-collection": {
+        "status": "passed-with-findings",
+        "themes": {
+          "light": {
+            "status": "passed",
+            "violations": []
+          },
+          "dark": {
+            "status": "passed-with-findings",
+            "violations": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+                "nodes": [
+                  {
+                    "target": [
+                      "td:nth-child(5) > .bg-status-success\\/15.text-status-success-foreground.\\[a\\&\\]\\:hover\\:bg-status-success\\/20"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.8 (foreground color: #2a8b4f, background color: #1a3c3a, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+                    "computed": {
+                      "color": "oklch(0.871 0.15 154.449)",
+                      "backgroundColor": "oklab(0.627 -0.166662 0.0992956 / 0.15)",
+                      "opacity": "1",
+                      "disabled": null,
+                      "styleAttribute": null,
+                      "ancestors": [
+                        {
+                          "tag": "span",
+                          "className": "inline-flex items-center justify-center rounded-full border px-2 py-1 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent bg-status-success/15 text-status-success-foreground [a&]:hover:bg-status-success/20",
+                          "opacity": "1",
+                          "color": "oklch(0.871 0.15 154.449)",
+                          "backgroundColor": "oklab(0.627 -0.166662 0.0992956 / 0.15)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "td",
+                          "className": "p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "tr",
+                          "className": "hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "tbody",
+                          "className": "[&_tr:last-child]:border-0",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "table",
+                          "className": "w-full caption-bottom text-sm",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "relative w-full overflow-x-auto",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "hidden overflow-x-auto rounded-lg border sm:block",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "space-y-3",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "target": [
+                      "button[aria-label=\"View Alex Taylor\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.83 (foreground color: #5d6777, background color: #36404e, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+                    "computed": {
+                      "color": "oklch(0.872 0.01 258.338)",
+                      "backgroundColor": "oklab(1 0 0 / 0.03)",
+                      "opacity": "1",
+                      "disabled": false,
+                      "styleAttribute": "color: var(--foreground);",
+                      "ancestors": [
+                        {
+                          "tag": "button",
+                          "className": "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-75 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "oklab(1 0 0 / 0.03)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "td",
+                          "className": "p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-right",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "tr",
+                          "className": "hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "tbody",
+                          "className": "[&_tr:last-child]:border-0",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "table",
+                          "className": "w-full caption-bottom text-sm",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "relative w-full overflow-x-auto",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "hidden overflow-x-auto rounded-lg border sm:block",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "space-y-3",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "target": [
+                      "td:nth-child(5) > .bg-status-warning\\/15.text-status-warning-foreground.\\[a\\&\\]\\:hover\\:bg-status-warning\\/20"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.9 (foreground color: #aa7200, background color: #393730, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+                    "computed": {
+                      "color": "oklch(0.905 0.182 98.111)",
+                      "backgroundColor": "oklab(0.681 0.0396466 0.157074 / 0.15)",
+                      "opacity": "1",
+                      "disabled": null,
+                      "styleAttribute": null,
+                      "ancestors": [
+                        {
+                          "tag": "span",
+                          "className": "inline-flex items-center justify-center rounded-full border px-2 py-1 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent bg-status-warning/15 text-status-warning-foreground [a&]:hover:bg-status-warning/20",
+                          "opacity": "1",
+                          "color": "oklch(0.905 0.182 98.111)",
+                          "backgroundColor": "oklab(0.681 0.0396466 0.157074 / 0.15)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "td",
+                          "className": "p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "tr",
+                          "className": "hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "tbody",
+                          "className": "[&_tr:last-child]:border-0",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "table",
+                          "className": "w-full caption-bottom text-sm",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "relative w-full overflow-x-auto",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "hidden overflow-x-auto rounded-lg border sm:block",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "space-y-3",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "target": [
+                      "button[aria-label=\"View Morgan Lee\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.83 (foreground color: #5d6777, background color: #36404e, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+                    "computed": {
+                      "color": "oklch(0.872 0.01 258.338)",
+                      "backgroundColor": "oklab(1 0 0 / 0.03)",
+                      "opacity": "1",
+                      "disabled": false,
+                      "styleAttribute": "color: var(--foreground);",
+                      "ancestors": [
+                        {
+                          "tag": "button",
+                          "className": "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-75 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "oklab(1 0 0 / 0.03)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "td",
+                          "className": "p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-right",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "tr",
+                          "className": "hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "tbody",
+                          "className": "[&_tr:last-child]:border-0",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "table",
+                          "className": "w-full caption-bottom text-sm",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "relative w-full overflow-x-auto",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "hidden overflow-x-auto rounded-lg border sm:block",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        },
+                        {
+                          "tag": "div",
+                          "className": "space-y-3",
+                          "opacity": "1",
+                          "color": "oklch(0.872 0.01 258.338)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "hidden": false
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "visit-time-heat-map": {
+        "status": "passed",
+        "themes": {
+          "light": {
+            "status": "passed",
+            "violations": []
+          },
+          "dark": {
+            "status": "passed",
+            "violations": []
+          }
+        }
+      }
+    },
+    "violations": [
+      {
+        "pattern": "availability-time-picker",
+        "theme": "light",
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "target": [
+              ".text-epos-accent"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.66 (foreground color: #009689, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "computed": {
+              "color": "oklch(0.6 0.118 184.704)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "opacity": "1",
+              "disabled": null,
+              "styleAttribute": null,
+              "ancestors": [
+                {
+                  "tag": "span",
+                  "className": "font-medium text-epos-accent",
+                  "opacity": "1",
+                  "color": "oklch(0.6 0.118 184.704)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "span",
+                  "className": "text-center text-xs",
+                  "opacity": "1",
+                  "color": "oklch(0.278 0.033 256.848)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "button",
+                  "className": "flex w-full flex-col items-center gap-0.5 p-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring",
+                  "opacity": "1",
+                  "color": "oklch(0.278 0.033 256.848)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "bg-card text-card-foreground flex flex-col gap-6 rounded-lg border border-primary ring-1 ring-primary",
+                  "opacity": "1",
+                  "color": "oklch(0.278 0.033 256.848)",
+                  "backgroundColor": "rgb(255, 255, 255)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "grid grid-cols-3 gap-1.5",
+                  "opacity": "1",
+                  "color": "oklch(0.373 0.034 259.733)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "",
+                  "opacity": "1",
+                  "color": "oklch(0.373 0.034 259.733)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "section",
+                  "className": "space-y-4",
+                  "opacity": "1",
+                  "color": "oklch(0.373 0.034 259.733)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "section",
+                  "className": "mx-auto mb-8 max-w-5xl",
+                  "opacity": "1",
+                  "color": "oklch(0.373 0.034 259.733)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "pattern": "availability-time-picker",
+        "theme": "dark",
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "target": [
+              ".text-epos-accent"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.99 (foreground color: #009689, background color: #1e2939, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "computed": {
+              "color": "oklch(0.6 0.118 184.704)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "opacity": "1",
+              "disabled": null,
+              "styleAttribute": null,
+              "ancestors": [
+                {
+                  "tag": "span",
+                  "className": "font-medium text-epos-accent",
+                  "opacity": "1",
+                  "color": "oklch(0.6 0.118 184.704)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "span",
+                  "className": "text-center text-xs",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "button",
+                  "className": "flex w-full flex-col items-center gap-0.5 p-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "bg-card text-card-foreground flex flex-col gap-6 rounded-lg border border-primary ring-1 ring-primary",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "oklch(0.278 0.033 256.848)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "grid grid-cols-3 gap-1.5",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "section",
+                  "className": "space-y-4",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "section",
+                  "className": "mx-auto mb-8 max-w-5xl",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "pattern": "capacity-product-selector",
+        "theme": "dark",
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "target": [
+              ".bg-status-danger\\/15"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.75 (foreground color: #da6c69, background color: #462c3b, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "computed": {
+              "color": "oklch(0.808 0.114 19.571)",
+              "backgroundColor": "oklab(0.577 0.217662 0.112464 / 0.15)",
+              "opacity": "1",
+              "disabled": null,
+              "styleAttribute": null,
+              "ancestors": [
+                {
+                  "tag": "span",
+                  "className": "inline-flex items-center justify-center rounded-full border px-2 py-1 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent bg-status-danger/15 text-status-danger-foreground [a&]:hover:bg-status-danger/20",
+                  "opacity": "1",
+                  "color": "oklch(0.808 0.114 19.571)",
+                  "backgroundColor": "oklab(0.577 0.217662 0.112464 / 0.15)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "mb-3",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "border-t border-primary/20 px-3 pb-3 pt-3",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "section",
+                  "className": "rounded-lg border transition-colors  border-primary bg-primary/5",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.05)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "space-y-2",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "section",
+                  "className": "mx-auto mb-8 max-w-5xl",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "main",
+                  "className": "min-h-screen bg-background p-6 text-foreground",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "oklch(0.278 0.033 256.848)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "",
+                  "opacity": "1",
+                  "color": "rgb(255, 255, 255)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                }
+              ]
+            }
+          },
+          {
+            "target": [
+              "#\\:r9\\:-capacity-product-shared-tour > .mt-3.h-8[data-contrast-action=\"true\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.79 (foreground color: #8e96a2, background color: #313b4a, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "computed": {
+              "color": "oklch(0.872 0.01 258.338)",
+              "backgroundColor": "oklab(1 0 0 / 0.03)",
+              "opacity": "1",
+              "disabled": false,
+              "styleAttribute": null,
+              "ancestors": [
+                {
+                  "tag": "button",
+                  "className": "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-75 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 mt-3 h-8",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "oklab(1 0 0 / 0.03)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "border-t border-primary/20 px-3 pb-3 pt-3",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "section",
+                  "className": "rounded-lg border transition-colors  border-primary bg-primary/5",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.05)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "space-y-2",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "section",
+                  "className": "mx-auto mb-8 max-w-5xl",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "main",
+                  "className": "min-h-screen bg-background p-6 text-foreground",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "oklch(0.278 0.033 256.848)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "",
+                  "opacity": "1",
+                  "color": "rgb(255, 255, 255)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "body",
+                  "className": "",
+                  "opacity": "1",
+                  "color": "rgb(255, 255, 255)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "pattern": "epos-booking-journey",
+        "theme": "light",
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "target": [
+              ".space-y-4 > .pb-2.overflow-x-auto[aria-label=\"Manage booking queries\"] > .gap-2[role=\"toolbar\"][aria-label=\"Booking queries\"] > .bg-epos-accent.text-epos-accent-foreground.min-h-10 > .focus-visible\\:ring-2.focus-visible\\:ring-ring[data-query-select=\"true\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.66 (foreground color: #ffffff, background color: #009689, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "computed": {
+              "color": "rgb(255, 255, 255)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "opacity": "1",
+              "disabled": false,
+              "styleAttribute": null,
+              "ancestors": [
+                {
+                  "tag": "button",
+                  "className": "rounded-full py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                  "opacity": "1",
+                  "color": "rgb(255, 255, 255)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "flex min-h-10 shrink-0 items-center rounded-full px-1 pl-3 text-sm font-medium transition-colors bg-epos-accent text-epos-accent-foreground",
+                  "opacity": "1",
+                  "color": "rgb(255, 255, 255)",
+                  "backgroundColor": "oklch(0.6 0.118 184.704)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "flex shrink-0 items-center gap-2",
+                  "opacity": "1",
+                  "color": "oklch(0.373 0.034 259.733)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "flex items-center gap-2 overflow-x-auto pb-2",
+                  "opacity": "1",
+                  "color": "oklch(0.373 0.034 259.733)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "space-y-4",
+                  "opacity": "1",
+                  "color": "oklch(0.373 0.034 259.733)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "section",
+                  "className": "mx-auto w-full max-w-5xl space-y-5",
+                  "opacity": "1",
+                  "color": "oklch(0.373 0.034 259.733)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "section",
+                  "className": "mx-auto mb-8 max-w-5xl",
+                  "opacity": "1",
+                  "color": "oklch(0.373 0.034 259.733)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "main",
+                  "className": "min-h-screen bg-background p-6 text-foreground",
+                  "opacity": "1",
+                  "color": "oklch(0.373 0.034 259.733)",
+                  "backgroundColor": "rgb(255, 255, 255)",
+                  "hidden": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "pattern": "epos-booking-journey",
+        "theme": "dark",
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "target": [
+              ".space-y-4 > .pb-2.overflow-x-auto[aria-label=\"Manage booking queries\"] > .gap-2[role=\"toolbar\"][aria-label=\"Booking queries\"] > .bg-epos-accent.text-epos-accent-foreground.min-h-10 > .focus-visible\\:ring-2.focus-visible\\:ring-ring[data-query-select=\"true\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.66 (foreground color: #ffffff, background color: #009689, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "computed": {
+              "color": "rgb(255, 255, 255)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "opacity": "1",
+              "disabled": false,
+              "styleAttribute": null,
+              "ancestors": [
+                {
+                  "tag": "button",
+                  "className": "rounded-full py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                  "opacity": "1",
+                  "color": "rgb(255, 255, 255)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "flex min-h-10 shrink-0 items-center rounded-full px-1 pl-3 text-sm font-medium transition-colors bg-epos-accent text-epos-accent-foreground",
+                  "opacity": "1",
+                  "color": "rgb(255, 255, 255)",
+                  "backgroundColor": "oklch(0.6 0.118 184.704)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "flex shrink-0 items-center gap-2",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "flex items-center gap-2 overflow-x-auto pb-2",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "space-y-4",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "section",
+                  "className": "mx-auto w-full max-w-5xl space-y-5",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "section",
+                  "className": "mx-auto mb-8 max-w-5xl",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "main",
+                  "className": "min-h-screen bg-background p-6 text-foreground",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "oklch(0.278 0.033 256.848)",
+                  "hidden": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "pattern": "grouped-results-table",
+        "theme": "dark",
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "target": [
+              "tbody:nth-child(3) > tr:nth-child(2) > td:nth-child(7) > .\\[a\\&\\]\\:hover\\:bg-accent.\\[a\\&\\]\\:hover\\:text-accent-foreground.\\[\\&\\>svg\\]\\:size-3"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.33 (foreground color: #707987, background color: #1e2939, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "computed": {
+              "color": "oklch(0.872 0.01 258.338)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "opacity": "1",
+              "disabled": null,
+              "styleAttribute": "color: var(--foreground);",
+              "ancestors": [
+                {
+                  "tag": "span",
+                  "className": "inline-flex items-center justify-center rounded-full border px-2 py-1 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "td",
+                  "className": "p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "tr",
+                  "className": "hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "tbody",
+                  "className": "[&_tr:last-child]:border-0",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "table",
+                  "className": "w-full caption-bottom text-sm",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "relative w-full overflow-x-auto",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "px-6 [&:last-child]:pb-6",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "bg-card text-card-foreground flex flex-col gap-6 rounded-lg border",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "oklch(0.278 0.033 256.848)",
+                  "hidden": false
+                }
+              ]
+            }
+          },
+          {
+            "target": [
+              "tr:nth-child(3) > td:nth-child(7) > .\\[a\\&\\]\\:hover\\:bg-accent.\\[a\\&\\]\\:hover\\:text-accent-foreground.\\[\\&\\>svg\\]\\:size-3"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.33 (foreground color: #707987, background color: #1e2939, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "computed": {
+              "color": "oklch(0.872 0.01 258.338)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "opacity": "1",
+              "disabled": null,
+              "styleAttribute": "color: var(--foreground);",
+              "ancestors": [
+                {
+                  "tag": "span",
+                  "className": "inline-flex items-center justify-center rounded-full border px-2 py-1 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "td",
+                  "className": "p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "tr",
+                  "className": "hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "tbody",
+                  "className": "[&_tr:last-child]:border-0",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "table",
+                  "className": "w-full caption-bottom text-sm",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "relative w-full overflow-x-auto",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "px-6 [&:last-child]:pb-6",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "bg-card text-card-foreground flex flex-col gap-6 rounded-lg border",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "oklch(0.278 0.033 256.848)",
+                  "hidden": false
+                }
+              ]
+            }
+          },
+          {
+            "target": [
+              "tbody:nth-child(4) > tr:nth-child(2) > td:nth-child(7) > .\\[a\\&\\]\\:hover\\:bg-accent.\\[a\\&\\]\\:hover\\:text-accent-foreground.\\[\\&\\>svg\\]\\:size-3"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.33 (foreground color: #707987, background color: #1e2939, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "computed": {
+              "color": "oklch(0.872 0.01 258.338)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "opacity": "1",
+              "disabled": null,
+              "styleAttribute": "color: var(--foreground);",
+              "ancestors": [
+                {
+                  "tag": "span",
+                  "className": "inline-flex items-center justify-center rounded-full border px-2 py-1 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "td",
+                  "className": "p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "tr",
+                  "className": "hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "tbody",
+                  "className": "[&_tr:last-child]:border-0",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "table",
+                  "className": "w-full caption-bottom text-sm",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "relative w-full overflow-x-auto",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "px-6 [&:last-child]:pb-6",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "bg-card text-card-foreground flex flex-col gap-6 rounded-lg border",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "oklch(0.278 0.033 256.848)",
+                  "hidden": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "pattern": "multi-query-manager",
+        "theme": "light",
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "target": [
+              "section[data-pattern-preview=\"multi-query-manager\"] > .pb-2.overflow-x-auto[aria-label=\"Manage booking queries\"] > .gap-2[role=\"toolbar\"][aria-label=\"Booking queries\"] > .bg-epos-accent.text-epos-accent-foreground.min-h-10 > .focus-visible\\:ring-2.focus-visible\\:ring-ring[data-query-select=\"true\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.66 (foreground color: #ffffff, background color: #009689, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "computed": {
+              "color": "rgb(255, 255, 255)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "opacity": "1",
+              "disabled": false,
+              "styleAttribute": null,
+              "ancestors": [
+                {
+                  "tag": "button",
+                  "className": "rounded-full py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                  "opacity": "1",
+                  "color": "rgb(255, 255, 255)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "flex min-h-10 shrink-0 items-center rounded-full px-1 pl-3 text-sm font-medium transition-colors bg-epos-accent text-epos-accent-foreground",
+                  "opacity": "1",
+                  "color": "rgb(255, 255, 255)",
+                  "backgroundColor": "oklch(0.6 0.118 184.704)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "flex shrink-0 items-center gap-2",
+                  "opacity": "1",
+                  "color": "oklch(0.373 0.034 259.733)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "flex items-center gap-2 overflow-x-auto pb-2",
+                  "opacity": "1",
+                  "color": "oklch(0.373 0.034 259.733)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "section",
+                  "className": "mx-auto mb-8 max-w-5xl",
+                  "opacity": "1",
+                  "color": "oklch(0.373 0.034 259.733)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "main",
+                  "className": "min-h-screen bg-background p-6 text-foreground",
+                  "opacity": "1",
+                  "color": "oklch(0.373 0.034 259.733)",
+                  "backgroundColor": "rgb(255, 255, 255)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "",
+                  "opacity": "1",
+                  "color": "rgb(0, 0, 0)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "body",
+                  "className": "",
+                  "opacity": "1",
+                  "color": "rgb(0, 0, 0)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "pattern": "multi-query-manager",
+        "theme": "dark",
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "target": [
+              "section[data-pattern-preview=\"multi-query-manager\"] > .pb-2.overflow-x-auto[aria-label=\"Manage booking queries\"] > .gap-2[role=\"toolbar\"][aria-label=\"Booking queries\"] > .bg-epos-accent.text-epos-accent-foreground.min-h-10 > .focus-visible\\:ring-2.focus-visible\\:ring-ring[data-query-select=\"true\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.66 (foreground color: #ffffff, background color: #009689, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "computed": {
+              "color": "rgb(255, 255, 255)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "opacity": "1",
+              "disabled": false,
+              "styleAttribute": null,
+              "ancestors": [
+                {
+                  "tag": "button",
+                  "className": "rounded-full py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                  "opacity": "1",
+                  "color": "rgb(255, 255, 255)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "flex min-h-10 shrink-0 items-center rounded-full px-1 pl-3 text-sm font-medium transition-colors bg-epos-accent text-epos-accent-foreground",
+                  "opacity": "1",
+                  "color": "rgb(255, 255, 255)",
+                  "backgroundColor": "oklch(0.6 0.118 184.704)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "flex shrink-0 items-center gap-2",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "flex items-center gap-2 overflow-x-auto pb-2",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "section",
+                  "className": "mx-auto mb-8 max-w-5xl",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "main",
+                  "className": "min-h-screen bg-background p-6 text-foreground",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "oklch(0.278 0.033 256.848)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "",
+                  "opacity": "1",
+                  "color": "rgb(255, 255, 255)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "body",
+                  "className": "",
+                  "opacity": "1",
+                  "color": "rgb(255, 255, 255)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "pattern": "report-workspace-tabs",
+        "theme": "dark",
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "target": [
+              ".px-1\\.5"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #a4abb5, background color: #364153, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "computed": {
+              "color": "oklch(0.872 0.01 258.338)",
+              "backgroundColor": "oklch(0.373 0.034 259.733)",
+              "opacity": "1",
+              "disabled": null,
+              "styleAttribute": null,
+              "ancestors": [
+                {
+                  "tag": "span",
+                  "className": "inline-flex items-center justify-center rounded-full border font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent bg-secondary [a&]:hover:bg-secondary/90 ml-1 px-1.5 py-0 text-[10px] text-foreground",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "oklch(0.373 0.034 259.733)",
+                  "hidden": false
+                },
+                {
+                  "tag": "button",
+                  "className": "data-[state=active]:bg-card dark:data-[state=active]:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring dark:data-[state=active]:border-input dark:data-[state=active]:bg-input/30 dark:text-muted-foreground inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-xl border border-transparent font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 shrink-0 px-2 py-1.5 text-xs text-foreground/80 data-[state=active]:text-foreground sm:px-3 sm:text-sm",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "bg-muted text-muted-foreground w-fit items-center rounded-xl p-[3px] flex h-auto min-w-max justify-start gap-0",
+                  "opacity": "1",
+                  "color": "oklch(0.707 0.022 261.325)",
+                  "backgroundColor": "oklch(0.373 0.034 259.733)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "max-w-full overflow-x-auto",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "flex flex-col gap-2",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "section",
+                  "className": "mx-auto mb-8 max-w-5xl",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "main",
+                  "className": "min-h-screen bg-background p-6 text-foreground",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "oklch(0.278 0.033 256.848)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "",
+                  "opacity": "1",
+                  "color": "rgb(255, 255, 255)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "pattern": "responsive-data-collection",
+        "theme": "dark",
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "target": [
+              "td:nth-child(5) > .bg-status-success\\/15.text-status-success-foreground.\\[a\\&\\]\\:hover\\:bg-status-success\\/20"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.8 (foreground color: #2a8b4f, background color: #1a3c3a, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "computed": {
+              "color": "oklch(0.871 0.15 154.449)",
+              "backgroundColor": "oklab(0.627 -0.166662 0.0992956 / 0.15)",
+              "opacity": "1",
+              "disabled": null,
+              "styleAttribute": null,
+              "ancestors": [
+                {
+                  "tag": "span",
+                  "className": "inline-flex items-center justify-center rounded-full border px-2 py-1 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent bg-status-success/15 text-status-success-foreground [a&]:hover:bg-status-success/20",
+                  "opacity": "1",
+                  "color": "oklch(0.871 0.15 154.449)",
+                  "backgroundColor": "oklab(0.627 -0.166662 0.0992956 / 0.15)",
+                  "hidden": false
+                },
+                {
+                  "tag": "td",
+                  "className": "p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "tr",
+                  "className": "hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "tbody",
+                  "className": "[&_tr:last-child]:border-0",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "table",
+                  "className": "w-full caption-bottom text-sm",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "relative w-full overflow-x-auto",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "hidden overflow-x-auto rounded-lg border sm:block",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "space-y-3",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                }
+              ]
+            }
+          },
+          {
+            "target": [
+              "button[aria-label=\"View Alex Taylor\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.83 (foreground color: #5d6777, background color: #36404e, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "computed": {
+              "color": "oklch(0.872 0.01 258.338)",
+              "backgroundColor": "oklab(1 0 0 / 0.03)",
+              "opacity": "1",
+              "disabled": false,
+              "styleAttribute": "color: var(--foreground);",
+              "ancestors": [
+                {
+                  "tag": "button",
+                  "className": "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-75 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "oklab(1 0 0 / 0.03)",
+                  "hidden": false
+                },
+                {
+                  "tag": "td",
+                  "className": "p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-right",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "tr",
+                  "className": "hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "tbody",
+                  "className": "[&_tr:last-child]:border-0",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "table",
+                  "className": "w-full caption-bottom text-sm",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "relative w-full overflow-x-auto",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "hidden overflow-x-auto rounded-lg border sm:block",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "space-y-3",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                }
+              ]
+            }
+          },
+          {
+            "target": [
+              "td:nth-child(5) > .bg-status-warning\\/15.text-status-warning-foreground.\\[a\\&\\]\\:hover\\:bg-status-warning\\/20"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.9 (foreground color: #aa7200, background color: #393730, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "computed": {
+              "color": "oklch(0.905 0.182 98.111)",
+              "backgroundColor": "oklab(0.681 0.0396466 0.157074 / 0.15)",
+              "opacity": "1",
+              "disabled": null,
+              "styleAttribute": null,
+              "ancestors": [
+                {
+                  "tag": "span",
+                  "className": "inline-flex items-center justify-center rounded-full border px-2 py-1 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent bg-status-warning/15 text-status-warning-foreground [a&]:hover:bg-status-warning/20",
+                  "opacity": "1",
+                  "color": "oklch(0.905 0.182 98.111)",
+                  "backgroundColor": "oklab(0.681 0.0396466 0.157074 / 0.15)",
+                  "hidden": false
+                },
+                {
+                  "tag": "td",
+                  "className": "p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "tr",
+                  "className": "hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "tbody",
+                  "className": "[&_tr:last-child]:border-0",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "table",
+                  "className": "w-full caption-bottom text-sm",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "relative w-full overflow-x-auto",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "hidden overflow-x-auto rounded-lg border sm:block",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "space-y-3",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                }
+              ]
+            }
+          },
+          {
+            "target": [
+              "button[aria-label=\"View Morgan Lee\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.83 (foreground color: #5d6777, background color: #36404e, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "computed": {
+              "color": "oklch(0.872 0.01 258.338)",
+              "backgroundColor": "oklab(1 0 0 / 0.03)",
+              "opacity": "1",
+              "disabled": false,
+              "styleAttribute": "color: var(--foreground);",
+              "ancestors": [
+                {
+                  "tag": "button",
+                  "className": "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-75 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "oklab(1 0 0 / 0.03)",
+                  "hidden": false
+                },
+                {
+                  "tag": "td",
+                  "className": "p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-right",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "tr",
+                  "className": "hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "tbody",
+                  "className": "[&_tr:last-child]:border-0",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "table",
+                  "className": "w-full caption-bottom text-sm",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "relative w-full overflow-x-auto",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "hidden overflow-x-auto rounded-lg border sm:block",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                },
+                {
+                  "tag": "div",
+                  "className": "space-y-3",
+                  "opacity": "1",
+                  "color": "oklch(0.872 0.01 258.338)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "hidden": false
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

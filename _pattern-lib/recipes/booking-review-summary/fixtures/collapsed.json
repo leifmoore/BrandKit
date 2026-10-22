@@ -1,0 +1,19 @@
+{
+  "title": "Booking summary",
+  "expanded": false,
+  "currency": "GBP",
+  "lines": [
+    {
+      "id": "line-1",
+      "title": "River experience",
+      "description": "2 adults · Central departure",
+      "date": "2026-08-12",
+      "time": "14:30",
+      "amountMinor": 7200,
+      "status": "Confirmed"
+    }
+  ],
+  "subtotalMinor": 7200,
+  "discountMinor": 0,
+  "totalMinor": 7200
+}

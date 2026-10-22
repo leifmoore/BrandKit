@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "customer-booking-journey",
+  "title": "Customer Booking Journey",
+  "description": "A public ticket, date, time, customer-details, host-payment, and confirmation flow.",
+  "category": "customer-booking",
+  "maturity": "beta",
+  "kind": "recipe",
+  "searchTerms": ["customer booking", "widget", "tickets", "time slot", "checkout", "payment slot", "confirmation"],
+  "fixture": "recipes/customer-booking-journey/fixtures/basic.json",
+  "documentation": "recipes/customer-booking-journey/README.md",
+  "scenarios": [
+    { "id": "basic", "title": "Select trip details", "fixture": "recipes/customer-booking-journey/fixtures/basic.json", "states": ["trip details", "quantity", "progress"], "defaultViewport": "768" },
+    { "id": "checkout", "title": "Details and host payment", "fixture": "recipes/customer-booking-journey/fixtures/checkout.json", "states": ["summary", "customer details", "payment slot"], "defaultViewport": "768" },
+    { "id": "error", "title": "Recoverable payment error", "fixture": "recipes/customer-booking-journey/fixtures/error.json", "states": ["error", "retained form", "retry"], "defaultViewport": "360" }
+  ],
+  "react": {
+    "files": ["recipes/customer-booking-journey/react/CustomerBookingJourneyRecipe.tsx"],
+    "entry": "recipes/customer-booking-journey/react/CustomerBookingJourneyRecipe.tsx",
+    "export": "CustomerBookingJourneyPreview",
+    "exampleData": "recipes/customer-booking-journey/fixtures/basic.json"
+  },
+  "blade": {
+    "files": ["recipes/customer-booking-journey/blade/customer-booking-journey.blade.php"],
+    "exampleData": "recipes/customer-booking-journey/fixtures/basic.json",
+    "events": ["ui:customer-booking-journey:change", "ui:customer-booking-journey:action"]
+  },
+  "contract": {
+    "support": "composition-recipe",
+    "standaloneApi": false,
+    "fixturePolicy": "neutral DTOs only",
+    "hostResponsibilities": ["Own locale and translated copy", "Fetch and revalidate availability", "Calculate authoritative prices", "Validate customer input server-side", "Mount and operate the payment provider", "Persist atomically", "Return and send final confirmation"],
+    "inputs": [
+      { "name": "step", "type": "CustomerBookingStep", "required": true },
+      { "name": "value", "type": "CustomerBookingValue", "required": true },
+      { "name": "products", "type": "CustomerBookingProduct[]", "required": true },
+      { "name": "locations", "type": "CustomerBookingOption[]", "required": true },
+      { "name": "times", "type": "CustomerBookingOption[]", "required": true },
+      { "name": "paymentSlot", "type": "ReactNode or Blade slot", "required": false }
+    ],
+    "callbacks": [
+      { "name": "onStepChange", "type": "(step: CustomerBookingStep) => void", "required": true },
+      { "name": "onChange", "type": "(value: CustomerBookingValue) => void", "required": true },
+      { "name": "onSubmit", "type": "(value: CustomerBookingValue) => void", "required": true }
+    ]
+  },
+  "dependencies": {
+    "internal": ["badge", "button", "card", "checkbox", "input", "label", "separator"],
+    "npm": ["lucide-react@0.487.0"],
+    "bladeRuntime": ["Alpine.js 3", "Phosphor Icons"]
+  },
+  "responsiveBehavior": ["Progress labels truncate without hiding stage position", "Ticket and time controls preserve 44px or larger targets", "Checkout fields move from two columns to one", "Actions stack in reverse visual order at 360px"],
+  "accessibility": { "status": "passed-with-findings", "findings": ["The destination owns async availability announcements, error focus, completion messaging, and the accessibility of its payment iframe. Translated production labels must be included in zoom/reflow testing."] },
+  "parity": { "classification": "intentional-difference", "differences": ["React uses controlled callbacks while Blade dispatches Alpine events.", "React uses Intl for currency formatting; Blade uses server-formatted fallback output unless the host supplies localized strings.", "React uses Lucide glyphs and Blade uses Phosphor glyphs."] },
+  "source": {
+    "commit": "d1511e224305585680723101a0b76be93eb9f2f0",
+    "verifiedAt": "2026-08-04",
+    "files": [
+      { "path": "src/app/pages/Widgets.tsx", "sha256": "f0b2d571ef174527da4532000013548a7131ea8e0b645d6583ec0a4c65920e14" },
+      { "path": "_style-reference/multi-channel-sales-platform-main 2/resources/views/booking/widget.blade.php", "sha256": "7d0685d52baccec7c08a4223608d042713b4ccd9b8f8585e1e6897a249370c42" },
+      { "path": "_style-reference/multi-channel-sales-platform-main 2/public/js/booking/widget.js", "sha256": "14beebc7c1c5a1284ca7660e571fb1fe8f05e440cdc49ba99121e19e9716e0de" }
+    ],
+    "decisionReferences": ["provenance/decisions.md#approved-pattern-catalogue", "provenance/decisions.md#host-owned-payment"]
+  }
+}

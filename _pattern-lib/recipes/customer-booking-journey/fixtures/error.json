@@ -1,0 +1,20 @@
+{
+  "title": "Reserve your experience",
+  "description": "Review your selection and complete the host payment step.",
+  "currency": "GBP",
+  "locale": "en-GB",
+  "minDate": "2026-09-01",
+  "initialStep": "checkout",
+  "products": [{ "id": "adult", "label": "Adult", "unitPriceMinor": 2400, "maxQuantity": 8 }],
+  "locations": [{ "id": "central", "label": "Central departure point" }],
+  "times": [{ "id": "time-1030", "label": "10:30" }],
+  "value": {
+    "date": "2026-09-18",
+    "quantities": { "adult": 2 },
+    "locationId": "central",
+    "timeId": "time-1030",
+    "customer": { "firstName": "Alex", "lastName": "Taylor", "email": "alex.taylor@example.test", "phone": "", "marketingConsent": false }
+  },
+  "errorMessage": "The host payment attempt did not complete. No booking has been created.",
+  "completionReference": "DEMO-BOOKING-104"
+}

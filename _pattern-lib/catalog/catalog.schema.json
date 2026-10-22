@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scudamores.example/schemas/pattern-catalog.schema.json",
+  "title": "Scudamore's Pattern Library catalogue",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "version", "name", "baseLibrary", "patterns", "counts"],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "version": { "const": "0.1.0" },
+    "name": { "const": "Scudamore's Pattern Library" },
+    "baseLibrary": { "const": "catalog/base-library.json" },
+    "patterns": {
+      "type": "array", "minItems": 25, "maxItems": 25,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "title", "description", "category", "maturity", "kind", "manifest", "frameworks", "searchTerms"],
+        "properties": {
+          "id": { "type": "string" }, "title": { "type": "string" }, "description": { "type": "string" },
+          "category": { "type": "string" }, "maturity": { "const": "beta" }, "kind": { "const": "recipe" },
+          "manifest": { "type": "string" },
+          "frameworks": { "const": ["react", "blade"] },
+          "searchTerms": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "counts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["patterns", "react", "blade"],
+      "properties": { "patterns": { "const": 25 }, "react": { "const": 25 }, "blade": { "const": 25 } }
+    }
+  }
+}

@@ -366,6 +366,7 @@ export default function PreviewReviewPage() {
               kind={currentEntry.kind}
               entryId={currentEntry.id}
               title={currentEntry.title}
+              scenarios={currentEntry.scenarios}
               states={currentEntry.states}
             />
           </section>

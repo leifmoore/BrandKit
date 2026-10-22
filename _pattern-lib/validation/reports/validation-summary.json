@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-08-04",
+  "version": "0.1.0",
+  "status": "passed-with-findings",
+  "coverage": {
+    "pairedPatterns": 25,
+    "combinedPatterns": 31,
+    "reactMounted": 25,
+    "reactAxeScans": 50,
+    "targetedInteractions": 7,
+    "bladePrimaryRenders": 25,
+    "bladeScenarioRenders": 42,
+    "bladeCachedViews": 241,
+    "visualBaselines": 150,
+    "visualThemes": [
+      "light",
+      "dark"
+    ],
+    "visualViewportWidths": [
+      360,
+      768,
+      1280
+    ]
+  },
+  "gates": {
+    "schemas": "passed",
+    "structureAndCoverage": "passed",
+    "importIsolation": "passed",
+    "bladeStaticAndPhpLint": "passed",
+    "bladeLaravelRenderAndCache": "passed",
+    "reactStrictTypecheck": "passed",
+    "reactBuildAndSmoke": "passed",
+    "reactInteractions": "passed",
+    "accessibility": "passed-with-findings",
+    "visualBaselines": "passed",
+    "npmAdvisories": 0,
+    "composerAdvisories": 0,
+    "mutationBoundary": "passed"
+  },
+  "retainedFindings": [
+    {
+      "patterns": [
+        "availability-time-picker"
+      ],
+      "token": "--epos-accent",
+      "use": "12px discounted-price text",
+      "measuredContrast": {
+        "light": 3.66,
+        "dark": 4.01
+      },
+      "requiredContrast": 4.5,
+      "disposition": "Retained for approved visual parity; do not represent colour alone as the discount state."
+    },
+    {
+      "patterns": [
+        "multi-query-manager",
+        "epos-booking-journey"
+      ],
+      "token": "--epos-accent / --epos-accent-foreground",
+      "use": "14px selected-query pill",
+      "measuredContrast": {
+        "light": 3.66,
+        "dark": 3.66
+      },
+      "requiredContrast": 4.5,
+      "disposition": "Retained for approved visual parity; selection is also exposed through aria-pressed."
+    }
+  ],
+  "evidence": [
+    "validation/reports/blade-render.json",
+    "validation/reports/react.json",
+    "validation/reports/interactions.json",
+    "validation/reports/accessibility-review.json",
+    "validation/reports/visual-baselines.json",
+    "validation/reports/dependency-audit.json"
+  ]
+}

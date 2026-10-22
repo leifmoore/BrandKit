@@ -1,0 +1,207 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-08-04",
+  "status": "passed-with-findings",
+  "scope": {
+    "patterns": 25,
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "scans": 50,
+    "axeVersion": "4.11.0",
+    "tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21a",
+      "wcag21aa",
+      "wcag22aa"
+    ]
+  },
+  "rawAxe": {
+    "status": "passed-with-findings",
+    "violationRecords": 10,
+    "report": "validation/reports/react.json"
+  },
+  "unresolvedFindings": [
+    {
+      "patterns": [
+        "availability-time-picker"
+      ],
+      "token": "--epos-accent",
+      "use": "12px discounted-price text",
+      "measuredContrast": {
+        "light": 3.66,
+        "dark": 4.01
+      },
+      "requiredContrast": 4.5,
+      "disposition": "Retained for approved visual parity; do not represent colour alone as the discount state."
+    },
+    {
+      "patterns": [
+        "multi-query-manager",
+        "epos-booking-journey"
+      ],
+      "token": "--epos-accent / --epos-accent-foreground",
+      "use": "14px selected-query pill",
+      "measuredContrast": {
+        "light": 3.66,
+        "dark": 3.66
+      },
+      "requiredContrast": 4.5,
+      "disposition": "Retained for approved visual parity; selection is also exposed through aria-pressed."
+    }
+  ],
+  "independentlyCleared": [
+    {
+      "patterns": [
+        "capacity-product-selector"
+      ],
+      "rawAxeFinding": "Dark status badge and neutral outline action",
+      "reason": "axe-core 4.11 reports legacy-sRGB values for the OKLCH token/alpha stack instead of the browser's computed colours.",
+      "independentlyCalculatedContrast": {
+        "danger foreground over 15% danger tint": 5.83,
+        "neutral foreground over dark surface": 9.98
+      }
+    },
+    {
+      "patterns": [
+        "grouped-results-table"
+      ],
+      "rawAxeFinding": "Dark outline badges",
+      "reason": "Browser diagnostics resolve the text to --foreground (OKLCH 0.872 0.01 258.338), while axe reports a different foreground.",
+      "independentlyCalculatedContrast": {
+        "foreground over dark card": 9.98
+      }
+    },
+    {
+      "patterns": [
+        "report-workspace-tabs"
+      ],
+      "rawAxeFinding": "Dark secondary status badge",
+      "reason": "Browser diagnostics resolve --foreground against --muted; axe reports a different converted foreground.",
+      "independentlyCalculatedContrast": {
+        "foreground over dark muted surface": 7
+      }
+    },
+    {
+      "patterns": [
+        "responsive-data-collection"
+      ],
+      "rawAxeFinding": "Dark status badges and neutral outline row actions",
+      "reason": "axe-core 4.11 reports legacy-sRGB values for the OKLCH token/alpha stack instead of the browser's computed colours; the retained browser diagnostics resolve the exact semantic tokens.",
+      "independentlyCalculatedContrast": {
+        "success foreground over 15% success tint": 6.84,
+        "warning foreground over 15% warning tint": 6.93,
+        "neutral foreground over dark surface": 9.98
+      }
+    }
+  ],
+  "patternStatus": {
+    "availability-time-picker": {
+      "status": "passed-with-findings",
+      "basis": "axe plus independently confirmed token contrast"
+    },
+    "booking-criteria-panel": {
+      "status": "passed-with-findings",
+      "basis": "isolated axe scans passed in light and dark; consumer integration caveat retained in the manifest"
+    },
+    "booking-progress-indicator": {
+      "status": "passed",
+      "basis": "isolated axe scans passed in light and dark"
+    },
+    "booking-review-summary": {
+      "status": "passed",
+      "basis": "isolated axe scans passed in light and dark"
+    },
+    "capacity-product-selector": {
+      "status": "passed-with-findings",
+      "basis": "axe result independently reviewed against browser computed styles and locked tokens"
+    },
+    "checkout-details-panel": {
+      "status": "passed-with-findings",
+      "basis": "isolated axe scans passed in light and dark; consumer integration caveat retained in the manifest"
+    },
+    "collection-state-panel": {
+      "status": "passed-with-findings",
+      "basis": "isolated axe scans passed in light and dark; consumer integration caveat retained in the manifest"
+    },
+    "collection-toolbar": {
+      "status": "passed-with-findings",
+      "basis": "isolated axe scans passed in light and dark; consumer integration caveat retained in the manifest"
+    },
+    "configuration-workbench": {
+      "status": "passed-with-findings",
+      "basis": "isolated axe scans passed in light and dark; consumer integration caveat retained in the manifest"
+    },
+    "contextual-action-dock": {
+      "status": "passed-with-findings",
+      "basis": "isolated axe scans passed in light and dark; consumer integration caveat retained in the manifest"
+    },
+    "customer-booking-journey": {
+      "status": "passed-with-findings",
+      "basis": "isolated axe scans passed in light and dark; consumer integration caveat retained in the manifest"
+    },
+    "discount-builder": {
+      "status": "passed-with-findings",
+      "basis": "isolated axe scans passed in light and dark; consumer integration caveat retained in the manifest"
+    },
+    "epos-booking-journey": {
+      "status": "passed-with-findings",
+      "basis": "axe plus independently confirmed token contrast"
+    },
+    "grouped-results-table": {
+      "status": "passed-with-findings",
+      "basis": "axe result independently reviewed against browser computed styles and locked tokens"
+    },
+    "kpi-stat-grid": {
+      "status": "passed-with-findings",
+      "basis": "isolated axe scans passed in light and dark; consumer integration caveat retained in the manifest"
+    },
+    "mobile-bottom-navigation": {
+      "status": "passed-with-findings",
+      "basis": "isolated axe scans passed in light and dark; consumer integration caveat retained in the manifest"
+    },
+    "multi-query-manager": {
+      "status": "passed-with-findings",
+      "basis": "axe plus independently confirmed token contrast"
+    },
+    "quote-builder": {
+      "status": "passed-with-findings",
+      "basis": "isolated axe scans passed in light and dark; consumer integration caveat retained in the manifest"
+    },
+    "quote-lookup": {
+      "status": "passed-with-findings",
+      "basis": "isolated axe scans passed in light and dark; consumer integration caveat retained in the manifest"
+    },
+    "reference-redemption-journey": {
+      "status": "passed-with-findings",
+      "basis": "isolated axe scans passed in light and dark; consumer integration caveat retained in the manifest"
+    },
+    "report-breakdown-table": {
+      "status": "passed-with-findings",
+      "basis": "isolated axe scans passed in light and dark; consumer integration caveat retained in the manifest"
+    },
+    "report-filter-builder": {
+      "status": "passed-with-findings",
+      "basis": "isolated axe scans passed in light and dark; consumer integration caveat retained in the manifest"
+    },
+    "report-workspace-tabs": {
+      "status": "passed-with-findings",
+      "basis": "axe result independently reviewed against browser computed styles and locked tokens"
+    },
+    "responsive-data-collection": {
+      "status": "passed-with-findings",
+      "basis": "axe result independently reviewed against browser computed styles and locked tokens"
+    },
+    "visit-time-heat-map": {
+      "status": "passed-with-findings",
+      "basis": "isolated axe scans passed in light and dark; consumer integration caveat retained in the manifest"
+    }
+  },
+  "notes": [
+    "The independently cleared entries are not suppressed: selectors, computed styles and ancestor stacks remain in react.json.",
+    "React automation does not replace consumer testing of translated content, host-provided slots, browser-native date fields or business error/focus flows.",
+    "Blade render/cache evidence is server-side; Alpine and browser behaviour follow the same documented contracts but must also be tested after consumer integration."
+  ]
+}

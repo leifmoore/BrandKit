@@ -6,3 +6,4 @@ test-results/
 artifacts/brand-visual-audit/
 coverage/
 *.tsbuildinfo
+.registry-build/

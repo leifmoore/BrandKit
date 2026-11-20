@@ -98,11 +98,125 @@ for (const [, selector, body] of brands.matchAll(/(\.[\w.-]+)\s*\{([^}]*)\}/g)) 
   }
 }
 
+// Pattern recipes import components through repo-only paths. Rewritten copies
+// go to .registry-build/ (git-ignored) so registry.json can point at real files
+// and the hash-locked handoffs stay untouched. Installed recipes keep the
+// source layout under src/patterns/, so imports between recipes work unchanged.
+const buildDir = resolve(workspaceRoot, ".registry-build");
+const patternPins = (await readJson("_pattern-lib/react/dependencies.json")).dependencies;
+const componentImport = /^(?:@scudamores\/ui|\.\.\/\.\.\/\.\.\/react)\/components\/ui\/([\w-]+)$/;
+const siblingImport = /^\.\.\/\.\.\/([\w-]+)\/react\/\w+$/;
+const allowedPackages = new Set(["react", "lucide-react", "date-fns"]);
+const importToItem = new Map();
+for (const item of items.filter((item) => item.meta?.import)) {
+  if (!importToItem.has(item.meta.import) || item.meta.import.endsWith(`/${item.name}`)) {
+    importToItem.set(item.meta.import, item.name);
+  }
+}
+const itemUrl = (name) => `${productionBase}/r/${name}.json`;
+const sameSet = (a, b) => JSON.stringify([...a].sort()) === JSON.stringify([...b].sort());
+
+await rm(buildDir, { recursive: true, force: true });
+const recipes = [];
+for (const library of ["_comp-lib", "_pattern-lib"]) {
+  const catalogueDir = resolve(workspaceRoot, library, "catalog/recipes");
+  for (const file of (await readdir(catalogueDir)).filter((name) => name.endsWith(".json"))) {
+    const catalogue = JSON.parse(await readFile(resolve(catalogueDir, file), "utf8"));
+    const [entry] = catalogue.react.files;
+    const fileName = entry.split("/").pop();
+    const components = new Set();
+    const siblings = new Set();
+    const packages = new Set();
+    const source = await readFile(resolve(workspaceRoot, library, entry), "utf8");
+    const rewritten = source.replace(/((?:from|import)\s+)(["'])([^"']+)\2/g, (match, keyword, quote, specifier) => {
+      const component = specifier.match(componentImport)?.[1];
+      if (component) {
+        const name = importToItem.get(`@/components/ui/${component}`);
+        if (name) components.add(name);
+        else fail(`${catalogue.id}: imports unknown component ${specifier}`);
+        return `${keyword}${quote}@/components/ui/${component}${quote}`;
+      }
+      const sibling = specifier.match(siblingImport)?.[1];
+      if (sibling) siblings.add(sibling);
+      else if (allowedPackages.has(specifier)) {
+        if (specifier !== "react") packages.add(specifier);
+      } else fail(`${catalogue.id}: unexpected import ${specifier}`);
+      return match;
+    });
+    const buildPath = `.registry-build/patterns/${catalogue.id}/react/${fileName}`;
+    await mkdir(dirname(resolve(workspaceRoot, buildPath)), { recursive: true });
+    await writeFile(resolve(workspaceRoot, buildPath), rewritten);
+    recipes.push({ library, catalogue, fileName, buildPath, components, siblings, packages });
+  }
+}
+
+// Every catalogue recipe must be a pattern-<id> item whose files and
+// dependencies match what its source actually imports.
+const recipeIds = new Set(recipes.map(({ catalogue }) => catalogue.id));
+const patternItems = items.filter((item) => item.name.startsWith("pattern-"));
+for (const item of patternItems) {
+  if (!recipeIds.has(item.name.slice("pattern-".length))) fail(`${item.name}: no catalogue recipe with that id`);
+}
+for (const { library, catalogue, fileName, buildPath, components, siblings, packages } of recipes) {
+  const { id } = catalogue;
+  const item = byName.get(`pattern-${id}`);
+  if (!item) {
+    fail(`Catalogue recipe missing from registry.json: pattern-${id}`);
+    continue;
+  }
+  for (const sibling of siblings) if (!recipeIds.has(sibling)) fail(`${id}: imports unknown recipe ${sibling}`);
+  const fixture = catalogue.fixture.split("/").pop();
+  const expectedFiles = [
+    { path: buildPath, type: "registry:file", target: `src/patterns/${id}/react/${fileName}` },
+    { path: `${library}/${catalogue.fixture}`, type: "registry:file", target: `src/patterns/${id}/fixtures/${fixture}` },
+  ];
+  if (JSON.stringify(item.files) !== JSON.stringify(expectedFiles)) {
+    fail(`${item.name}: files should be ${JSON.stringify(expectedFiles)}`);
+  }
+  const expectedRegistry = ["patterns-base", ...components, ...[...siblings].map((sibling) => `pattern-${sibling}`)].map(itemUrl);
+  if (!sameSet(item.registryDependencies ?? [], expectedRegistry)) {
+    fail(`${item.name}: registryDependencies should be ${expectedRegistry.join(", ")}`);
+  }
+  const expectedPackages = [...packages].map((name) => `${name}@${patternPins[name]}`);
+  if (!sameSet(item.dependencies ?? [], expectedPackages)) {
+    fail(`${item.name}: dependencies should be ${expectedPackages.join(", ")}`);
+  }
+  // The catalogue may list indirect dependencies too, so only check that
+  // nothing imported directly is missing from it.
+  if (library === "_pattern-lib") {
+    const declared = new Set(catalogue.dependencies.internal);
+    const npm = new Set(catalogue.dependencies.npm.map((name) => name.replace(/(?<=.)@.*$/, "")));
+    for (const name of [...components, ...siblings]) if (!declared.has(name)) fail(`${id}: catalogue doesn't declare ${name}`);
+    for (const name of packages) if (!npm.has(name)) fail(`${id}: catalogue doesn't declare ${name}`);
+  }
+}
+const allPatterns = byName.get("all-patterns");
+if (!sameSet(allPatterns?.registryDependencies ?? [], ["patterns-base", ...patternItems.map(({ name }) => name)].map(itemUrl))) {
+  fail("all-patterns: registryDependencies should be patterns-base plus every pattern item");
+}
+
+// patterns-base must carry the pattern stylesheet's rules exactly.
+const patternCss = (await readFile(resolve(workspaceRoot, "_pattern-lib/react/styles/index.css"), "utf8"))
+  .replace(/\/\*[\s\S]*?\*\//g, "");
+const patternRules = Object.fromEntries([...patternCss.matchAll(/([^{};]+)\{([^}]*)\}/g)].map(([, selector, body]) => [
+  selector.split(",").map((part) => part.trim()).join(", "),
+  Object.fromEntries(body.split(";").filter((part) => part.trim()).map((part) => {
+    const colon = part.indexOf(":");
+    return [part.slice(0, colon).trim(), part.slice(colon + 1).trim()];
+  })),
+]));
+if (JSON.stringify(byName.get("patterns-base")?.css) !== JSON.stringify(patternRules)) {
+  fail(`patterns-base: css should be ${JSON.stringify(patternRules)}`);
+}
+
 // Only these folders may be published, so a mistaken path (e.g. .env) can't
 // leak through the public registry.
-const publishableRoots = ["_comp-lib/react/", "registry/"];
+const publishableRoots = ["_comp-lib/react/", "registry/", ".registry-build/"];
 const isPublishable = (path) =>
-  !path.split("/").includes("..") && publishableRoots.some((root) => path.startsWith(root));
+  !path.split("/").includes("..") && (
+    publishableRoots.some((root) => path.startsWith(root))
+    || /^_(comp|pattern)-lib\/recipes\/[\w-]+\/fixtures\/[\w-]+\.json$/.test(path)
+  );
 
 // Inline file contents.
 const built = [];
@@ -148,8 +262,13 @@ const row = (item) => {
   const beta = item.meta?.maturity === "beta" ? " (beta)" : "";
   return `| ${item.name} | ${item.description}${beta} | ${install(item.name)} | ${blade} |`;
 };
-const components = items.filter((item) => item.meta?.blade);
-const foundations = items.filter((item) => !item.meta?.blade && item.name !== "all");
+const components = items.filter((item) => item.meta?.blade && !patternItems.includes(item));
+const bundles = new Set(["all", "all-patterns", "patterns-base"]);
+const foundations = items.filter((item) => !item.meta?.blade && !bundles.has(item.name));
+const patternRow = (item) => {
+  const beta = item.meta.maturity === "beta" ? " (beta)" : "";
+  return `| ${item.name.slice("pattern-".length)} | ${item.description}${beta} | \`${item.meta.import}\` (${item.meta.exports.join(", ")}) |`;
+};
 const importExceptions = components
   .filter((item) => item.meta.import !== `@/components/ui/${item.name}`)
   .map((item) => `${item.name} → \`${item.meta.import}\``);
@@ -178,6 +297,19 @@ ${[...foundations, ...components].map(row).join("\n")}
 
 Blade-only (no React version yet): ${bladeOnly.join(", ")}.
 Icons: React uses lucide-react; Blade uses Phosphor, so icon names differ.
+
+## Scudamore's patterns
+
+Product-shaped compositions (booking journeys, reports, toolbars) built from the components above. Check here before composing a screen from scratch.
+Install with \`npx shadcn@4.23.0 add @scudamores/pattern-<pattern>\`; the components it uses and \`patterns-base\` (dark-mode contrast CSS) come with it. \`@scudamores/all-patterns\` installs every pattern.
+Files land in \`src/patterns/<pattern>/react/\`, with sample data in \`src/patterns/<pattern>/fixtures/\`. Each file exports the recipe component (controlled props and callbacks: use it with real data) and a \`*Preview\` adapter that only wires the sample data to local state.
+Patterns are starting points and may be adapted, but re-adding with \`--overwrite\` replaces local edits. Persistence, routing, permissions and payments stay in the app.
+\`kpi-stat-grid\` has an unused \`import * as React from "react";\` line: delete it if tsconfig sets \`noUnusedLocals\` (the Vite template does).
+Docs and live previews: ${productionBase}/design-system/patterns/<pattern>
+
+| Pattern | Purpose | Import (exports) |
+|---|---|---|
+${patternItems.map(patternRow).join("\n")}
 `;
 await mkdir(dirname(indexPath), { recursive: true });
 await writeFile(indexPath, index);
@@ -193,6 +325,12 @@ const table = [
     return `| \`${item.name}\` | ${item.description} | ${item.meta?.maturity ?? "—"} | ${blade ? `\`${blade.tag}\`` : "—"} | ${blade ? `\`${blade.installPath}\`` : item.meta?.bladeEquivalent ?? "React only"} |`;
   }),
   `| \`all\` | ${byName.get("all").description} | — | — | — |`,
+  "",
+  "| Pattern | Purpose | Maturity | Blade source |",
+  "|---|---|---|---|",
+  ...patternItems.map((item) => `| \`${item.name}\` | ${item.description} | ${item.meta.maturity} | \`${item.meta.blade.source}\` |`),
+  `| \`patterns-base\` | ${byName.get("patterns-base").description} | — | — |`,
+  `| \`all-patterns\` | ${byName.get("all-patterns").description} | — | — |`,
   "",
   `Blade-only components (no React version yet): ${bladeOnly.map((name) => `\`${name}\``).join(", ")}.`,
 ].join("\n");

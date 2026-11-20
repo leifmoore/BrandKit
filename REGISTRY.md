@@ -6,9 +6,8 @@ component's source plus the npm packages and other registry items it needs. Runn
 `npx shadcn add` in another project downloads one item, writes its files into that project and
 installs its dependencies. The installed code is a plain copy of `_comp-lib/react`, unchanged.
 
-The Laravel Blade equivalent of every item is listed below. Blade installs aren't served by the
-registry yet; copy them from `_comp-lib/blade/library/` as described in
-[`_comp-lib/blade/INSTALL.md`](./_comp-lib/blade/INSTALL.md).
+The Laravel Blade equivalent of every item is listed below. The Blade edition ships separately as
+one zip; see [Laravel Blade kit](#laravel-blade-kit).
 
 ## Set up a new React project
 
@@ -90,6 +89,41 @@ npx shadcn@4.23.0 add @scudamores/all-patterns            # every pattern
 - The build copies each recipe to `.registry-build/` (git-ignored) with its repo-only imports
   (`@scudamores/ui/...`, `../../../react/...`) rewritten to `@/components/ui/...`, and fails if a
   recipe imports anything else unexpected or if `registry.json` doesn't match the catalogue.
+
+## Laravel Blade kit
+
+Every Blade component and pattern in one zip, for rebuilding the React prototype as a Laravel 12
+app. The zip is laid out like a Laravel app, so it unpacks in place. From the app root:
+
+```sh
+curl -fsSL https://brand-kit-ashen.vercel.app/blade/scudamores-blade.zip -o scudamores-blade.zip && unzip -o scudamores-blade.zip && rm scudamores-blade.zip
+```
+
+- It adds the library (`app/View/Components/Ui/`, `resources/views/components/ui/`,
+  `resources/js/ui/`, `resources/css/scudamores/`), the 31 patterns as `<x-patterns.<id>>`
+  components, and a `scudamores/` folder holding the agent guide, version, file manifest,
+  dependency pins, examples, fixtures, pattern docs and the compatibility layer for older apps.
+- **The agent guide**, `scudamores/AGENTS.md`, is also at
+  <https://brand-kit-ashen.vercel.app/blade/AGENTS.md>. It covers setup, a React → Blade table for
+  every component and pattern, updating, migrating an existing app, and how to feed changes back
+  to the Brand Kit.
+- The Design System's resources page has the same download button and command.
+- [`scripts/build-blade-kit.mjs`](./scripts/build-blade-kit.mjs) builds it on every deploy (and alone
+  as `npm run build:blade-kit`) into `public/blade/` (git-ignored). It has no dependencies, and the
+  same source always produces a byte-identical zip.
+- **Fixes in the kit's copies:** the handoff Blade has bugs that break Alpine at runtime, and the
+  build fixes them in the kit's copies (never in `_comp-lib` or `_pattern-lib`):
+  - Blade doesn't compile `@js()`/`@json()` inside `<x-…>` tag attributes, so they become
+    `{{ \Illuminate\Support\Js::from() }}`.
+  - Laravel prints `"` in a component attribute as `\"`, which ends the HTML attribute early, so
+    it becomes `&quot;`.
+  - `report-filter-builder` has a `@foreach` inside a component tag. It's replaced with a
+    JavaScript loop by an exact-match patch that fails the build once the handoff fixes it.
+
+  The build fails if a Blade directive is left inside a component tag, or if a library stylesheet
+  path isn't in its rewrite table. These bugs should be fixed upstream in the next handoff.
+- `checkout-details-panel` needs `:errors` passed explicitly (`[]` when empty), because Laravel
+  shares its own `$errors` with every view.
 
 ## Items
 
@@ -188,7 +222,6 @@ Blade-only components (no React version yet): `container`, `error`, `field`, `he
 
 - **Icons:** React components use `lucide-react`; Blade uses Phosphor (`blade-phosphor-icons`), so
   icon names differ between the two.
-- **Pattern Blade** is copy-only for now: take it from the Blade source path in the patterns table.
 - **`ThemeScope`** (`theme-scope`) can force dark mode or a brand accent on a subtree, but it can't
   force light inside a dark `<html>`, because the token variables inherit.
 - **Deferred** in both stacks, metadata only: carousel, chart, command-palette, context-menu,

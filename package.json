@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/build-registry.mjs && tsc -b && vite build",
+    "build": "node scripts/build-registry.mjs && node scripts/build-blade-kit.mjs && tsc -b && vite build",
     "build:registry": "node scripts/build-registry.mjs",
+    "build:blade-kit": "node scripts/build-blade-kit.mjs",
     "preview": "vite preview",
     "typecheck": "tsc -b",
     "test:e2e": "playwright test",

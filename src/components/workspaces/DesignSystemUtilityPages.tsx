@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle2, ClipboardCopy, FileCode2, PackageOpen } from 'lucide-react'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { DownloadButton } from '@/components/shared/DownloadButton'
+
+const bladeKitPath = '/blade/scudamores-blade.zip'
+const bladeGuidePath = '/blade/AGENTS.md'
+const bladeInstallCommand = `curl -fsSL https://brand-kit-ashen.vercel.app${bladeKitPath} -o scudamores-blade.zip && unzip -o scudamores-blade.zip && rm scudamores-blade.zip`
 
 const resourceCards = [
   {
@@ -60,6 +65,36 @@ export function DesignSystemResourcesPage() {
             </Card>
           )
         })}
+      </section>
+
+      <section className="space-y-4 rounded-lg border border-border p-5" aria-labelledby="blade-kit">
+        <div className="space-y-2">
+          <h2 id="blade-kit" className="font-sans text-base font-semibold text-foreground">Laravel Blade kit</h2>
+          <p className="max-w-3xl font-sans text-sm leading-6 text-muted-foreground">
+            Every Blade component and pattern in one zip, laid out to unpack straight into a Laravel 12 app. It includes
+            an agent guide that maps each React import from the prototype to its Blade equivalent, plus setup and update steps.
+          </p>
+        </div>
+        <div className="flex flex-wrap items-center gap-3">
+          <DownloadButton href={bladeKitPath} filename="scudamores-blade.zip" label="Download Blade kit" />
+          <a
+            href={bladeGuidePath}
+            className="inline-flex items-center gap-2 rounded-sm font-sans text-sm font-medium text-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            Read the agent guide
+            <ArrowRight className="size-4" aria-hidden />
+          </a>
+        </div>
+        <div className="space-y-1">
+          <p className="font-sans text-xs text-muted-foreground">Or, from the Laravel app’s root:</p>
+          <code
+            tabIndex={0}
+            aria-label="Blade kit install command"
+            className="block overflow-x-auto whitespace-pre rounded bg-muted px-3 py-2 font-mono text-xs text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            {bladeInstallCommand}
+          </code>
+        </div>
       </section>
 
       <section className="rounded-lg border border-border bg-muted/40 p-5" aria-labelledby="distribution-boundary">

@@ -115,3 +115,16 @@ test('the production build serves static assets as files rather than HTML', asyn
   expect(logoResponse.ok(), 'The public SVG asset should load').toBe(true)
   expect(logoResponse.headers()['content-type']).toContain('image/svg+xml')
 })
+
+test('the production build serves the shadcn registry as JSON', async ({ request }) => {
+  const response = await request.get('/r/button.json')
+  expect(response.ok(), 'The registry item should load').toBe(true)
+  expect(response.headers()['content-type']).toContain('application/json')
+  const item = (await response.json()) as { name: string; files: Array<{ content: string }> }
+  expect(item.name).toBe('button')
+  expect(item.files[0].content).toContain('buttonVariants')
+
+  const index = await request.get('/r/registry.json')
+  expect(index.ok(), 'The registry index should load').toBe(true)
+  expect(((await index.json()) as { name: string }).name).toBe('scudamores')
+})

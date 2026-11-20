@@ -1,0 +1,1749 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "scudamores",
+  "homepage": "https://brand-kit-ashen.vercel.app/design-system",
+  "items": [
+    {
+      "name": "theme",
+      "type": "registry:theme",
+      "title": "Scudamore's theme",
+      "description": "Brand tokens (light and dark), Instrument Sans, radius scale and brand accent classes. Install first.",
+      "dependencies": [
+        "@fontsource/instrument-sans@5.2.8",
+        "tw-animate-css@1.3.8"
+      ],
+      "cssVars": {
+        "theme": {
+          "font-sans": "'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+          "radius-sm": "calc(var(--radius) - 4px)",
+          "radius-md": "calc(var(--radius) - 2px)",
+          "radius-lg": "var(--radius)",
+          "radius-xl": "calc(var(--radius) + 4px)"
+        },
+        "light": {
+          "font-size": "16px",
+          "font-weight-normal": "400",
+          "font-weight-medium": "500",
+          "background": "#ffffff",
+          "foreground": "oklch(0.373 0.034 259.733)",
+          "card": "#ffffff",
+          "card-foreground": "oklch(0.278 0.033 256.848)",
+          "popover": "#ffffff",
+          "popover-foreground": "oklch(0.278 0.033 256.848)",
+          "primary": "oklch(0.278 0.033 256.848)",
+          "primary-foreground": "#ffffff",
+          "secondary": "#ffffff",
+          "secondary-foreground": "oklch(0.278 0.033 256.848)",
+          "muted": "oklch(0.967 0.003 264.542)",
+          "muted-foreground": "oklch(0.551 0.027 264.364)",
+          "accent": "oklch(0.278 0.033 256.848 / 5%)",
+          "accent-foreground": "oklch(0.278 0.033 256.848)",
+          "destructive": "oklch(0.637 0.237 25.331)",
+          "destructive-foreground": "#ffffff",
+          "border": "oklch(0.928 0.006 264.531)",
+          "input": "oklch(0.928 0.006 264.531)",
+          "input-background": "#ffffff",
+          "switch-background": "#cbced4",
+          "ring": "oklch(0.707 0.022 261.325)",
+          "chart-1": "oklch(0.646 0.222 41.116)",
+          "chart-2": "oklch(0.6 0.118 184.704)",
+          "chart-3": "oklch(0.398 0.07 227.392)",
+          "chart-4": "oklch(0.828 0.189 84.429)",
+          "chart-5": "oklch(0.769 0.188 70.08)",
+          "radius": "0.5rem",
+          "sidebar": "oklch(0.985 0.002 247.839)",
+          "sidebar-foreground": "#000000",
+          "sidebar-primary": "oklch(0.278 0.033 256.848)",
+          "sidebar-primary-foreground": "#ffffff",
+          "sidebar-accent": "oklch(0.278 0.033 256.848 / 5%)",
+          "sidebar-accent-foreground": "oklch(0.278 0.033 256.848)",
+          "sidebar-border": "oklch(0.928 0.006 264.531)",
+          "sidebar-ring": "oklch(0.707 0.022 261.325)",
+          "epos-accent": "oklch(0.6 0.118 184.704)",
+          "epos-accent-foreground": "#ffffff",
+          "status-success": "oklch(0.627 0.194 149.214)",
+          "status-success-foreground": "oklch(0.448 0.119 151.328)",
+          "status-warning": "oklch(0.681 0.162 75.834)",
+          "status-warning-foreground": "oklch(0.476 0.114 61.907)",
+          "status-danger": "oklch(0.577 0.245 27.325)",
+          "status-danger-foreground": "oklch(0.444 0.177 26.899)",
+          "info": "oklch(0.546 0.245 262.881)",
+          "info-foreground": "oklch(0.424 0.199 265.638)"
+        },
+        "dark": {
+          "background": "oklch(0.278 0.033 256.848)",
+          "foreground": "oklch(0.872 0.01 258.338)",
+          "card": "oklch(0.278 0.033 256.848)",
+          "card-foreground": "oklch(0.872 0.01 258.338)",
+          "popover": "oklch(0.373 0.034 259.733)",
+          "popover-foreground": "#ffffff",
+          "primary": "#ffffff",
+          "primary-foreground": "oklch(0.278 0.033 256.848)",
+          "secondary": "oklch(0.373 0.034 259.733)",
+          "secondary-foreground": "#ffffff",
+          "muted": "oklch(0.373 0.034 259.733)",
+          "muted-foreground": "oklch(0.707 0.022 261.325)",
+          "accent": "oklch(1 0 0 / 7%)",
+          "accent-foreground": "#ffffff",
+          "destructive": "oklch(0.577 0.245 27.325)",
+          "border": "oklch(0.373 0.034 259.733)",
+          "input": "oklch(1 0 0 / 10%)",
+          "input-background": "oklch(1 0 0 / 10%)",
+          "ring": "oklch(0.551 0.027 264.364)",
+          "chart-1": "oklch(0.488 0.243 264.376)",
+          "chart-2": "oklch(0.696 0.17 162.48)",
+          "chart-3": "oklch(0.769 0.188 70.08)",
+          "chart-4": "oklch(0.627 0.265 303.9)",
+          "chart-5": "oklch(0.645 0.246 16.439)",
+          "sidebar": "oklch(0.21 0.034 264.665)",
+          "sidebar-foreground": "#ffffff",
+          "sidebar-primary": "#ffffff",
+          "sidebar-primary-foreground": "oklch(0.278 0.033 256.848)",
+          "sidebar-accent": "oklch(1 0 0 / 7%)",
+          "sidebar-accent-foreground": "#ffffff",
+          "sidebar-border": "oklch(0.373 0.034 259.733)",
+          "sidebar-ring": "oklch(0.551 0.027 264.364)",
+          "status-success-foreground": "oklch(0.871 0.15 154.449)",
+          "status-warning-foreground": "oklch(0.905 0.182 98.111)",
+          "status-danger-foreground": "oklch(0.808 0.114 19.571)",
+          "info": "oklch(0.707 0.165 254.624)",
+          "info-foreground": "oklch(0.809 0.105 251.813)"
+        }
+      },
+      "css": {
+        "@custom-variant dark (&:where(.dark, .dark *))": {},
+        "@import \"@fontsource/instrument-sans/400.css\"": {},
+        "@import \"@fontsource/instrument-sans/500.css\"": {},
+        "@import \"@fontsource/instrument-sans/600.css\"": {},
+        ".brand-default": {
+          "--primary": "oklch(0.278 0.033 256.848)",
+          "--primary-foreground": "#ffffff",
+          "--ring": "oklch(0.278 0.033 256.848)"
+        },
+        ".brand-blue": {
+          "--primary": "#2563eb",
+          "--primary-foreground": "#ffffff",
+          "--ring": "#2563eb"
+        },
+        ".brand-emerald": {
+          "--primary": "#059669",
+          "--primary-foreground": "#ffffff",
+          "--ring": "#059669"
+        },
+        ".brand-red": {
+          "--primary": "#dc2626",
+          "--primary-foreground": "#ffffff",
+          "--ring": "#dc2626"
+        },
+        ".brand-orange": {
+          "--primary": "#ea580c",
+          "--primary-foreground": "#ffffff",
+          "--ring": "#ea580c"
+        },
+        ".brand-slate": {
+          "--primary": "#0f172a",
+          "--primary-foreground": "#ffffff",
+          "--ring": "#0f172a"
+        },
+        ".brand-violet": {
+          "--primary": "#7c3aed",
+          "--primary-foreground": "#ffffff",
+          "--ring": "#7c3aed"
+        },
+        ".dark.brand-default": {
+          "--primary": "#ffffff",
+          "--primary-foreground": "oklch(0.278 0.033 256.848)",
+          "--ring": "#ffffff"
+        },
+        ".dark.brand-blue": {
+          "--primary": "#60a5fa",
+          "--primary-foreground": "#0b1021",
+          "--ring": "#60a5fa"
+        },
+        ".dark.brand-emerald": {
+          "--primary": "#34d399",
+          "--primary-foreground": "#0b1021",
+          "--ring": "#34d399"
+        },
+        ".dark.brand-red": {
+          "--primary": "#f87171",
+          "--primary-foreground": "#0b1021",
+          "--ring": "#f87171"
+        },
+        ".dark.brand-orange": {
+          "--primary": "#fb923c",
+          "--primary-foreground": "#0b1021",
+          "--ring": "#fb923c"
+        },
+        ".dark.brand-slate": {
+          "--primary": "#cbd5e1",
+          "--primary-foreground": "#0b1021",
+          "--ring": "#cbd5e1"
+        },
+        ".dark.brand-violet": {
+          "--primary": "#c4b5fd",
+          "--primary-foreground": "#0b1021",
+          "--ring": "#c4b5fd"
+        }
+      },
+      "meta": {
+        "source": "_comp-lib/foundations/css",
+        "bladeEquivalent": "resources/css/index.css (imports the same foundations/css tokens)"
+      }
+    },
+    {
+      "name": "theme-provider",
+      "type": "registry:component",
+      "title": "Theme provider",
+      "description": "App-level light/dark/system mode: toggles .dark on the html element and follows the OS setting.",
+      "files": [
+        {
+          "path": "registry/theme-provider.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "utils",
+      "type": "registry:ui",
+      "title": "Class-name utility",
+      "description": "cn() helper (clsx + tailwind-merge) imported by every component as ./utils.",
+      "dependencies": [
+        "clsx@2.1.1",
+        "tailwind-merge@3.2.0"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/utils.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "theme-scope",
+      "type": "registry:file",
+      "title": "Theme scope",
+      "description": "Applies dark mode or a brand accent to one subtree (previews, embedded panels).",
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/runtime/theme.tsx",
+          "type": "registry:file",
+          "target": "src/runtime/theme.tsx"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Expandable sections with optional single or multiple open items.",
+      "dependencies": [
+        "@radix-ui/react-accordion@1.2.3",
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "disclosure"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/components/ui/accordion",
+        "exports": [
+          "Accordion",
+          "AccordionItem",
+          "AccordionTrigger",
+          "AccordionContent"
+        ],
+        "blade": {
+          "tag": "<x-ui.accordion>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/accordion.blade.php",
+          "installPath": "resources/views/components/ui/accordion.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/accordion",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/accordion/basic.tsx"
+      }
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "A modal confirmation surface for consequential actions.",
+      "dependencies": [
+        "@radix-ui/react-alert-dialog@1.1.6"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/alert-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "overlays"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/alert-dialog",
+        "exports": [
+          "AlertDialog",
+          "AlertDialogTrigger",
+          "AlertDialogContent",
+          "AlertDialogHeader",
+          "AlertDialogFooter",
+          "AlertDialogTitle",
+          "AlertDialogDescription",
+          "AlertDialogAction",
+          "AlertDialogCancel"
+        ],
+        "blade": {
+          "tag": "<x-ui.alert-dialog>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/alert-dialog.blade.php",
+          "installPath": "resources/views/components/ui/alert-dialog.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/alert-dialog",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/alert-dialog/basic.tsx"
+      }
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Persistent contextual feedback with semantic variants.",
+      "dependencies": [
+        "class-variance-authority@0.7.1"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "feedback"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/alert",
+        "exports": [
+          "Alert",
+          "AlertTitle",
+          "AlertDescription"
+        ],
+        "blade": {
+          "tag": "<x-ui.alert>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/alert.blade.php",
+          "installPath": "resources/views/components/ui/alert.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/alert",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/alert/basic.tsx"
+      }
+    },
+    {
+      "name": "aspect-ratio",
+      "type": "registry:ui",
+      "title": "Aspect Ratio",
+      "description": "Constrains media or content to a stable aspect ratio.",
+      "dependencies": [
+        "@radix-ui/react-aspect-ratio@1.1.2"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/aspect-ratio.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "layout"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/components/ui/aspect-ratio",
+        "exports": [
+          "AspectRatio"
+        ],
+        "blade": {
+          "tag": "<x-ui.aspect-ratio>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/aspect-ratio.blade.php",
+          "installPath": "resources/views/components/ui/aspect-ratio.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/aspect-ratio",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/aspect-ratio/basic.tsx"
+      }
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "An image with a resilient initials or text fallback.",
+      "dependencies": [
+        "@radix-ui/react-avatar@1.1.3"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/components/ui/avatar",
+        "exports": [
+          "Avatar",
+          "AvatarImage",
+          "AvatarFallback"
+        ],
+        "blade": {
+          "tag": "<x-ui.avatar>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/avatar.blade.php",
+          "installPath": "resources/views/components/ui/avatar.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/avatar",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/avatar/basic.tsx"
+      }
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Compact semantic status or metadata label.",
+      "dependencies": [
+        "@radix-ui/react-slot@1.1.2",
+        "class-variance-authority@0.7.1"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/badge",
+        "exports": [
+          "Badge",
+          "badgeVariants"
+        ],
+        "blade": {
+          "tag": "<x-ui.badge>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/badge.blade.php",
+          "installPath": "resources/views/components/ui/badge.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/badge",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/badge/basic.tsx"
+      }
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "Hierarchical page location and navigation.",
+      "dependencies": [
+        "@radix-ui/react-slot@1.1.2",
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "navigation"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/components/ui/breadcrumb",
+        "exports": [
+          "Breadcrumb",
+          "BreadcrumbList",
+          "BreadcrumbItem",
+          "BreadcrumbLink",
+          "BreadcrumbPage",
+          "BreadcrumbSeparator",
+          "BreadcrumbEllipsis"
+        ],
+        "blade": {
+          "tag": "<x-ui.breadcrumb>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/breadcrumb.blade.php",
+          "installPath": "resources/views/components/ui/breadcrumb.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/breadcrumb",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/breadcrumb/basic.tsx"
+      }
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Primary action primitive with semantic variants and sizes.",
+      "dependencies": [
+        "@radix-ui/react-slot@1.1.2",
+        "class-variance-authority@0.7.1"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "actions"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/button",
+        "exports": [
+          "Button",
+          "buttonVariants"
+        ],
+        "blade": {
+          "tag": "<x-ui.button>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/button.blade.php",
+          "installPath": "resources/views/components/ui/button.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/button",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/button/basic.tsx"
+      }
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "Single-date and date-range calendar selection.",
+      "dependencies": [
+        "date-fns@3.6.0",
+        "lucide-react@0.487.0",
+        "react-day-picker@8.10.1"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/select.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/calendar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/calendar",
+        "exports": [
+          "Calendar"
+        ],
+        "blade": {
+          "tag": "<x-ui.calendar>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/calendar.blade.php",
+          "installPath": "resources/views/components/ui/calendar.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/calendar",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/calendar/basic.tsx"
+      }
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Composable bordered content surface.",
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/card",
+        "exports": [
+          "Card",
+          "CardHeader",
+          "CardFooter",
+          "CardTitle",
+          "CardAction",
+          "CardDescription",
+          "CardContent"
+        ],
+        "blade": {
+          "tag": "<x-ui.card>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/card.blade.php",
+          "installPath": "resources/views/components/ui/card.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/card",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/card/basic.tsx"
+      }
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Checked, unchecked and indeterminate form control.",
+      "dependencies": [
+        "@radix-ui/react-checkbox@1.1.4",
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/checkbox",
+        "exports": [
+          "Checkbox"
+        ],
+        "blade": {
+          "tag": "<x-ui.checkbox>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/checkbox.blade.php",
+          "installPath": "resources/views/components/ui/checkbox.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/checkbox",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/checkbox/basic.tsx"
+      }
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "A single expandable content region.",
+      "dependencies": [
+        "@radix-ui/react-collapsible@1.1.3"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/collapsible.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "disclosure"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/collapsible",
+        "exports": [
+          "Collapsible",
+          "CollapsibleTrigger",
+          "CollapsibleContent"
+        ],
+        "blade": {
+          "tag": "<x-ui.collapsible>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/collapsible.blade.php",
+          "installPath": "resources/views/components/ui/collapsible.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/collapsible",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/collapsible/basic.tsx"
+      }
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Modal content with focus management and composable regions.",
+      "dependencies": [
+        "@radix-ui/react-dialog@1.1.6",
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "overlays"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/dialog",
+        "exports": [
+          "Dialog",
+          "DialogTrigger",
+          "DialogClose",
+          "DialogContent",
+          "DialogHeader",
+          "DialogFooter",
+          "DialogTitle",
+          "DialogDescription"
+        ],
+        "blade": {
+          "tag": "<x-ui.dialog>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/dialog.blade.php",
+          "installPath": "resources/views/components/ui/dialog.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/dialog",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/dialog/basic.tsx"
+      }
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "Keyboard-navigable action and selection menu.",
+      "dependencies": [
+        "@radix-ui/react-dropdown-menu@2.1.6",
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/dropdown-menu.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "overlays"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/dropdown-menu",
+        "exports": [
+          "DropdownMenu",
+          "DropdownMenuTrigger",
+          "DropdownMenuContent",
+          "DropdownMenuItem",
+          "DropdownMenuCheckboxItem",
+          "DropdownMenuRadioGroup",
+          "DropdownMenuRadioItem",
+          "DropdownMenuLabel",
+          "DropdownMenuSeparator",
+          "DropdownMenuShortcut",
+          "DropdownMenuGroup",
+          "DropdownMenuSub",
+          "DropdownMenuSubTrigger",
+          "DropdownMenuSubContent"
+        ],
+        "blade": {
+          "tag": "<x-ui.dropdown-menu>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/dropdown-menu.blade.php",
+          "installPath": "resources/views/components/ui/dropdown-menu.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/dropdown-menu",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/dropdown-menu/basic.tsx"
+      }
+    },
+    {
+      "name": "form",
+      "type": "registry:ui",
+      "title": "Form",
+      "description": "Framework-native form composition and validation messaging.",
+      "dependencies": [
+        "@radix-ui/react-label@2.1.2",
+        "@radix-ui/react-slot@1.1.2",
+        "react-hook-form@7.55.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json",
+        "https://brand-kit-ashen.vercel.app/r/label.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/form.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/components/ui/form",
+        "exports": [
+          "Form",
+          "FormField",
+          "FormItem",
+          "FormLabel",
+          "FormControl",
+          "FormDescription",
+          "FormMessage",
+          "useFormField"
+        ],
+        "blade": {
+          "tag": "<x-ui.form>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/form.blade.php",
+          "installPath": "resources/views/components/ui/form.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/form",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/form/basic.tsx"
+      }
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "title": "Input OTP",
+      "description": "Grouped one-time-code entry slots.",
+      "dependencies": [
+        "input-otp@1.4.2",
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/input-otp.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/input-otp",
+        "exports": [
+          "InputOTP",
+          "InputOTPGroup",
+          "InputOTPSlot",
+          "InputOTPSeparator"
+        ],
+        "blade": {
+          "tag": "<x-ui.input-otp>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/input-otp.blade.php",
+          "installPath": "resources/views/components/ui/input-otp.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/input-otp",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/input-otp/basic.tsx"
+      }
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Text and native input types with semantic invalid states.",
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/input",
+        "exports": [
+          "Input"
+        ],
+        "blade": {
+          "tag": "<x-ui.input>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/input.blade.php",
+          "installPath": "resources/views/components/ui/input.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/input",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/input/basic.tsx"
+      }
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Accessible label for a form control.",
+      "dependencies": [
+        "@radix-ui/react-label@2.1.2"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/label",
+        "exports": [
+          "Label"
+        ],
+        "blade": {
+          "tag": "<x-ui.label>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/label.blade.php",
+          "installPath": "resources/views/components/ui/label.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/label",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/label/basic.tsx"
+      }
+    },
+    {
+      "name": "page-container",
+      "type": "registry:ui",
+      "title": "Page Container",
+      "description": "Canonical responsive page width and gutters.",
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/layout/page-header.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "layout"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/page-header",
+        "exports": [
+          "PageContainer"
+        ],
+        "blade": {
+          "tag": "<x-ui.page-container>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/page-container.blade.php",
+          "installPath": "resources/views/components/ui/page-container.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/page-container",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/page-container/basic.tsx"
+      }
+    },
+    {
+      "name": "page-header",
+      "type": "registry:ui",
+      "title": "Page Header",
+      "description": "Page title, subtitle and responsive action region.",
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/layout/page-header.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "layout"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/page-header",
+        "exports": [
+          "PageHeader"
+        ],
+        "blade": {
+          "tag": "<x-ui.page-header>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/page-header.blade.php",
+          "installPath": "resources/views/components/ui/page-header.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/page-header",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/page-header/basic.tsx"
+      }
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Composable page navigation links and ellipsis.",
+      "dependencies": [
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "navigation"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/components/ui/pagination",
+        "exports": [
+          "Pagination",
+          "PaginationContent",
+          "PaginationItem",
+          "PaginationLink",
+          "PaginationPrevious",
+          "PaginationNext",
+          "PaginationEllipsis"
+        ],
+        "blade": {
+          "tag": "<x-ui.pagination>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/pagination.blade.php",
+          "installPath": "resources/views/components/ui/pagination.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/pagination",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/pagination/basic.tsx"
+      }
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Anchored non-modal floating content.",
+      "dependencies": [
+        "@radix-ui/react-popover@1.1.6"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/popover.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "overlays"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/popover",
+        "exports": [
+          "Popover",
+          "PopoverTrigger",
+          "PopoverContent",
+          "PopoverAnchor"
+        ],
+        "blade": {
+          "tag": "<x-ui.popover>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/popover.blade.php",
+          "installPath": "resources/views/components/ui/popover.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/popover",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/popover/basic.tsx"
+      }
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Determinate progress indicator.",
+      "dependencies": [
+        "@radix-ui/react-progress@1.1.2"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/progress.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "feedback"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/components/ui/progress",
+        "exports": [
+          "Progress"
+        ],
+        "blade": {
+          "tag": "<x-ui.progress>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/progress.blade.php",
+          "installPath": "resources/views/components/ui/progress.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/progress",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/progress/basic.tsx"
+      }
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "Mutually exclusive options with keyboard navigation.",
+      "dependencies": [
+        "@radix-ui/react-radio-group@1.2.3",
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/radio-group",
+        "exports": [
+          "RadioGroup",
+          "RadioGroupItem"
+        ],
+        "blade": {
+          "tag": "<x-ui.radio-group>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/radio-group.blade.php",
+          "installPath": "resources/views/components/ui/radio-group.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/radio-group",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/radio-group/basic.tsx"
+      }
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "Styled overflow region with optional scrollbars.",
+      "dependencies": [
+        "@radix-ui/react-scroll-area@1.2.3"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/scroll-area.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "layout"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/scroll-area",
+        "exports": [
+          "ScrollArea",
+          "ScrollBar"
+        ],
+        "blade": {
+          "tag": "<x-ui.scroll-area>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/scroll-area.blade.php",
+          "installPath": "resources/views/components/ui/scroll-area.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/scroll-area",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/scroll-area/basic.tsx"
+      }
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Single-option selection with reliable framework-native form semantics.",
+      "dependencies": [
+        "@radix-ui/react-select@2.1.6",
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/select.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/select",
+        "exports": [
+          "Select",
+          "SelectTrigger",
+          "SelectValue",
+          "SelectContent",
+          "SelectGroup",
+          "SelectLabel",
+          "SelectItem",
+          "SelectSeparator",
+          "SelectScrollUpButton",
+          "SelectScrollDownButton"
+        ],
+        "blade": {
+          "tag": "<x-ui.select>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/select.blade.php",
+          "installPath": "resources/views/components/ui/select.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/select",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/select/basic.tsx"
+      }
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Horizontal or vertical visual separator.",
+      "dependencies": [
+        "@radix-ui/react-separator@1.1.2"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "layout"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/separator",
+        "exports": [
+          "Separator"
+        ],
+        "blade": {
+          "tag": "<x-ui.separator>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/separator.blade.php",
+          "installPath": "resources/views/components/ui/separator.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/separator",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/separator/basic.tsx"
+      }
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "Modal panel entering from any viewport edge.",
+      "dependencies": [
+        "@radix-ui/react-dialog@1.1.6",
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/sheet.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "overlays"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/sheet",
+        "exports": [
+          "Sheet",
+          "SheetTrigger",
+          "SheetClose",
+          "SheetContent",
+          "SheetHeader",
+          "SheetFooter",
+          "SheetTitle",
+          "SheetDescription"
+        ],
+        "blade": {
+          "tag": "<x-ui.sheet>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/sheet.blade.php",
+          "installPath": "resources/views/components/ui/sheet.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/sheet",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/sheet/basic.tsx"
+      }
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Placeholder surface for loading content.",
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "feedback"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/components/ui/skeleton",
+        "exports": [
+          "Skeleton"
+        ],
+        "blade": {
+          "tag": "<x-ui.skeleton>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/skeleton.blade.php",
+          "installPath": "resources/views/components/ui/skeleton.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/skeleton",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/skeleton/basic.tsx"
+      }
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "Single or ranged numeric input.",
+      "dependencies": [
+        "@radix-ui/react-slider@1.2.3"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/slider.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/components/ui/slider",
+        "exports": [
+          "Slider"
+        ],
+        "blade": {
+          "tag": "<x-ui.slider>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/slider.blade.php",
+          "installPath": "resources/views/components/ui/slider.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/slider",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/slider/basic.tsx"
+      }
+    },
+    {
+      "name": "stepper",
+      "type": "registry:ui",
+      "title": "Stepper",
+      "description": "Bounded numeric increment and decrement control.",
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/stepper.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "navigation"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/stepper",
+        "exports": [
+          "Stepper"
+        ],
+        "blade": {
+          "tag": "<x-ui.stepper>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/stepper.blade.php",
+          "installPath": "resources/views/components/ui/stepper.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/stepper",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/stepper/basic.tsx"
+      }
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Binary setting control.",
+      "dependencies": [
+        "@radix-ui/react-switch@1.1.3"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/switch",
+        "exports": [
+          "Switch"
+        ],
+        "blade": {
+          "tag": "<x-ui.switch>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/switch.blade.php",
+          "installPath": "resources/views/components/ui/switch.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/switch",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/switch/basic.tsx"
+      }
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Composable semantic table primitives.",
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "data-display"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/table",
+        "exports": [
+          "Table",
+          "TableHeader",
+          "TableBody",
+          "TableFooter",
+          "TableHead",
+          "TableRow",
+          "TableCell",
+          "TableCaption"
+        ],
+        "blade": {
+          "tag": "<x-ui.table>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/table.blade.php",
+          "installPath": "resources/views/components/ui/table.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/table",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/table/basic.tsx"
+      }
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Segmented content navigation with keyboard support.",
+      "dependencies": [
+        "@radix-ui/react-tabs@1.1.3"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "navigation"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/tabs",
+        "exports": [
+          "Tabs",
+          "TabsList",
+          "TabsTrigger",
+          "TabsContent"
+        ],
+        "blade": {
+          "tag": "<x-ui.tabs>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/tabs.blade.php",
+          "installPath": "resources/views/components/ui/tabs.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/tabs",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/tabs/basic.tsx"
+      }
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Multi-line text input.",
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "forms"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/textarea",
+        "exports": [
+          "Textarea"
+        ],
+        "blade": {
+          "tag": "<x-ui.textarea>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/textarea.blade.php",
+          "installPath": "resources/views/components/ui/textarea.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/textarea",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/textarea/basic.tsx"
+      }
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast / Sonner",
+      "description": "Host-neutral toast viewport and notification surface.",
+      "dependencies": [
+        "sonner@2.0.3"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/theme-scope.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/sonner.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "feedback"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/sonner",
+        "exports": [
+          "Toaster"
+        ],
+        "blade": {
+          "tag": "<x-ui.toast>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/sonner.blade.php",
+          "installPath": "resources/views/components/ui/sonner.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/toast",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/toast/basic.tsx"
+      }
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "Single- or multiple-selection group of pressed actions.",
+      "dependencies": [
+        "@radix-ui/react-toggle-group@1.1.2",
+        "class-variance-authority@0.7.1"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json",
+        "https://brand-kit-ashen.vercel.app/r/toggle.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/toggle-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "actions"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/toggle-group",
+        "exports": [
+          "ToggleGroup",
+          "ToggleGroupItem"
+        ],
+        "blade": {
+          "tag": "<x-ui.toggle-group>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/toggle-group.blade.php",
+          "installPath": "resources/views/components/ui/toggle-group.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/toggle-group",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/toggle-group/basic.tsx"
+      }
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "Single pressed or unpressed action.",
+      "dependencies": [
+        "@radix-ui/react-toggle@1.1.2",
+        "class-variance-authority@0.7.1"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/toggle.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "actions"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/toggle",
+        "exports": [
+          "Toggle",
+          "toggleVariants"
+        ],
+        "blade": {
+          "tag": "<x-ui.toggle>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/toggle.blade.php",
+          "installPath": "resources/views/components/ui/toggle.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/toggle",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/toggle/basic.tsx"
+      }
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Short non-essential help shown on hover or focus.",
+      "dependencies": [
+        "@radix-ui/react-tooltip@1.1.8"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "_comp-lib/react/components/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "overlays"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/components/ui/tooltip",
+        "exports": [
+          "Tooltip",
+          "TooltipTrigger",
+          "TooltipContent",
+          "TooltipProvider"
+        ],
+        "blade": {
+          "tag": "<x-ui.tooltip>",
+          "source": "_comp-lib/blade/library/resources/views/components/ui/tooltip.blade.php",
+          "installPath": "resources/views/components/ui/tooltip.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/components/tooltip",
+        "example": "https://github.com/leifmoore/BrandKit/blob/main/_comp-lib/react/examples/tooltip/basic.tsx"
+      }
+    },
+    {
+      "name": "all",
+      "type": "registry:item",
+      "title": "Everything",
+      "description": "Theme, theme provider and every component in one install.",
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/theme.json",
+        "https://brand-kit-ashen.vercel.app/r/theme-provider.json",
+        "https://brand-kit-ashen.vercel.app/r/accordion.json",
+        "https://brand-kit-ashen.vercel.app/r/alert-dialog.json",
+        "https://brand-kit-ashen.vercel.app/r/alert.json",
+        "https://brand-kit-ashen.vercel.app/r/aspect-ratio.json",
+        "https://brand-kit-ashen.vercel.app/r/avatar.json",
+        "https://brand-kit-ashen.vercel.app/r/badge.json",
+        "https://brand-kit-ashen.vercel.app/r/breadcrumb.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/calendar.json",
+        "https://brand-kit-ashen.vercel.app/r/card.json",
+        "https://brand-kit-ashen.vercel.app/r/checkbox.json",
+        "https://brand-kit-ashen.vercel.app/r/collapsible.json",
+        "https://brand-kit-ashen.vercel.app/r/dialog.json",
+        "https://brand-kit-ashen.vercel.app/r/dropdown-menu.json",
+        "https://brand-kit-ashen.vercel.app/r/form.json",
+        "https://brand-kit-ashen.vercel.app/r/input-otp.json",
+        "https://brand-kit-ashen.vercel.app/r/input.json",
+        "https://brand-kit-ashen.vercel.app/r/label.json",
+        "https://brand-kit-ashen.vercel.app/r/page-container.json",
+        "https://brand-kit-ashen.vercel.app/r/page-header.json",
+        "https://brand-kit-ashen.vercel.app/r/pagination.json",
+        "https://brand-kit-ashen.vercel.app/r/popover.json",
+        "https://brand-kit-ashen.vercel.app/r/progress.json",
+        "https://brand-kit-ashen.vercel.app/r/radio-group.json",
+        "https://brand-kit-ashen.vercel.app/r/scroll-area.json",
+        "https://brand-kit-ashen.vercel.app/r/select.json",
+        "https://brand-kit-ashen.vercel.app/r/separator.json",
+        "https://brand-kit-ashen.vercel.app/r/sheet.json",
+        "https://brand-kit-ashen.vercel.app/r/skeleton.json",
+        "https://brand-kit-ashen.vercel.app/r/slider.json",
+        "https://brand-kit-ashen.vercel.app/r/stepper.json",
+        "https://brand-kit-ashen.vercel.app/r/switch.json",
+        "https://brand-kit-ashen.vercel.app/r/table.json",
+        "https://brand-kit-ashen.vercel.app/r/tabs.json",
+        "https://brand-kit-ashen.vercel.app/r/textarea.json",
+        "https://brand-kit-ashen.vercel.app/r/toast.json",
+        "https://brand-kit-ashen.vercel.app/r/toggle-group.json",
+        "https://brand-kit-ashen.vercel.app/r/toggle.json",
+        "https://brand-kit-ashen.vercel.app/r/tooltip.json"
+      ]
+    }
+  ]
+}

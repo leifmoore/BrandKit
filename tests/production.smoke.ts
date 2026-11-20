@@ -129,7 +129,7 @@ test('the production build serves the shadcn registry as JSON', async ({ request
   expect(((await index.json()) as { name: string }).name).toBe('scudamores')
 })
 
-test('the production build serves the Blade kit and its agent guide as files', async ({ request }) => {
+test('the production build serves the Blade kit and its guides as files', async ({ request }) => {
   const zip = await request.get('/blade/scudamores-blade.zip')
   expect(zip.ok(), 'The Blade kit should load').toBe(true)
   expect(zip.headers()['content-type']).toContain('application/zip')
@@ -139,4 +139,9 @@ test('the production build serves the Blade kit and its agent guide as files', a
   expect(guide.ok(), 'The agent guide should load').toBe(true)
   expect(guide.headers()['content-type']).not.toContain('text/html')
   expect(await guide.text()).toContain("# Scudamore's Blade kit")
+
+  const readme = await request.get('/blade/README.md')
+  expect(readme.ok(), 'The developer guide should load').toBe(true)
+  expect(readme.headers()['content-type']).not.toContain('text/html')
+  expect(await readme.text()).toContain("# Scudamore's Blade kit: developer guide")
 })

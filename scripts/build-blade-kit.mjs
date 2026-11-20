@@ -1,8 +1,9 @@
 // Builds the Laravel Blade kit served at /blade/: one zip laid out like a
-// Laravel app root (so it unzips in place) plus the agent guide, AGENTS.md,
-// published on its own as well. Source files are read in place, so the
-// hash-locked handoffs stay untouched. Library CSS paths are rewritten from a
-// fixed table and anything unexpected fails the build. The zip is reproducible:
+// Laravel app root (so it unzips in place) plus the agent guide (AGENTS.md) and
+// the developer guide (README.md, from registry/), both published on their own
+// as well. Source files are read in place, so the hash-locked handoffs stay
+// untouched. Library CSS paths are rewritten from a fixed table and anything
+// unexpected fails the build. The zip is reproducible:
 // sorted entries and fixed timestamps, so the same source gives the same bytes.
 
 import { createHash } from "node:crypto";
@@ -111,6 +112,8 @@ add("scudamores/reference/patterns/README.md", await read("_comp-lib/recipes/REA
 add("scudamores/reference/docs/ui-install.md", await read(`${blade}/INSTALL.md`));
 add("scudamores/reference/docs/ui-accessibility.md", await read(`${blade}/ACCESSIBILITY.md`));
 add("scudamores/reference/docs/patterns-install.md", await read("_pattern-lib/blade/INSTALL.md"));
+const readme = await read("registry/blade-kit-README.md");
+add("scudamores/README.md", readme);
 
 // Blade doesn't compile @js()/@json() inside a component tag's attributes
 // (e.g. <x-ui.button x-on:click="… @js($id)">), so the handoff's uses reach the
@@ -261,6 +264,8 @@ React component and pattern in the prototype has a Blade equivalent listed below
 \`resources/views/components/ui/\`, \`resources/js/ui/\`, \`resources/css/scudamores/\`.
 **Adaptable:** \`resources/views/components/patterns/\` are starting points; edit them freely.
 **Reference only:** \`scudamores/\` (this guide, version, manifest, examples, fixtures, docs).
+For people: \`scudamores/README.md\` explains the kit to the app's developers (ownership, wiring
+patterns to the backend, updates). Leave it in place when handing the app over.
 
 ## Install (once)
 
@@ -445,4 +450,5 @@ await rm(outputDir, { recursive: true, force: true });
 await mkdir(outputDir, { recursive: true });
 await writeFile(resolve(outputDir, zipName), zip([...kit.entries()].sort(([a], [b]) => a.localeCompare(b))));
 await writeFile(resolve(outputDir, "AGENTS.md"), guide);
+await writeFile(resolve(outputDir, "README.md"), readme);
 console.log(`Blade kit built: ${kit.size} files → public/blade/${zipName} (${version})`);

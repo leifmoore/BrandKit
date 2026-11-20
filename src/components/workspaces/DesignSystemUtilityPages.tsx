@@ -5,6 +5,7 @@ import { DownloadButton } from '@/components/shared/DownloadButton'
 
 const bladeKitPath = '/blade/scudamores-blade.zip'
 const bladeGuidePath = '/blade/AGENTS.md'
+const bladeReadmePath = '/blade/README.md'
 const bladeInstallCommand = `curl -fsSL https://brand-kit-ashen.vercel.app${bladeKitPath} -o scudamores-blade.zip && unzip -o scudamores-blade.zip && rm scudamores-blade.zip`
 
 const resourceCards = [
@@ -38,7 +39,7 @@ export function DesignSystemResourcesPage() {
         <p className="font-sans text-xs font-semibold uppercase tracking-wide text-muted-foreground">Design System resources</p>
         <h1 className="font-sans text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">Build from the canonical source.</h1>
         <p className="font-sans text-base leading-7 text-muted-foreground sm:text-lg">
-          Scudamore’s UI 0.1.0 is a copy-only handoff. Choose an implementation, review its contract and dependencies, then copy or download the exact source files you need.
+          Scudamore’s UI 0.1.0 comes three ways: copy source from these pages, install React components and patterns from the shadcn registry, or download the Laravel Blade kit. Review each entry’s contract and dependencies before you use it.
         </p>
       </header>
 
@@ -72,7 +73,8 @@ export function DesignSystemResourcesPage() {
           <h2 id="blade-kit" className="font-sans text-base font-semibold text-foreground">Laravel Blade kit</h2>
           <p className="max-w-3xl font-sans text-sm leading-6 text-muted-foreground">
             Every Blade component and pattern in one zip, laid out to unpack straight into a Laravel 12 app. It includes
-            an agent guide that maps each React import from the prototype to its Blade equivalent, plus setup and update steps.
+            an agent guide that maps each React import from the prototype to its Blade equivalent, and a developer guide for
+            connecting the components and patterns to a Laravel backend.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-3">
@@ -82,6 +84,13 @@ export function DesignSystemResourcesPage() {
             className="inline-flex items-center gap-2 rounded-sm font-sans text-sm font-medium text-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             Read the agent guide
+            <ArrowRight className="size-4" aria-hidden />
+          </a>
+          <a
+            href={bladeReadmePath}
+            className="inline-flex items-center gap-2 rounded-sm font-sans text-sm font-medium text-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            Read the developer guide
             <ArrowRight className="size-4" aria-hidden />
           </a>
         </div>
@@ -100,8 +109,8 @@ export function DesignSystemResourcesPage() {
       <section className="rounded-lg border border-border bg-muted/40 p-5" aria-labelledby="distribution-boundary">
         <h2 id="distribution-boundary" className="font-sans text-base font-semibold text-foreground">Distribution boundary</h2>
         <ul className="mt-3 space-y-2 font-sans text-sm leading-6 text-muted-foreground">
-          <li className="flex gap-2"><CheckCircle2 className="mt-1 size-4 shrink-0" aria-hidden />The library performs no install or registry action; consumers review each entry’s declared dependencies before copying it.</li>
-          <li className="flex gap-2"><CheckCircle2 className="mt-1 size-4 shrink-0" aria-hidden />Only files present in the handoff may be presented as canonical copyable source.</li>
+          <li className="flex gap-2"><CheckCircle2 className="mt-1 size-4 shrink-0" aria-hidden />The shadcn registry and the Blade kit only republish source from the handoff; nothing is installed until a consumer runs the command, and installed files should be reviewed like any other change.</li>
+          <li className="flex gap-2"><CheckCircle2 className="mt-1 size-4 shrink-0" aria-hidden />Only files present in the handoff are presented as canonical source. The Blade kit’s copies carry fixes for known handoff bugs, which are listed in its guide.</li>
           <li className="flex gap-2"><CheckCircle2 className="mt-1 size-4 shrink-0" aria-hidden />Missing framework source remains unavailable until its original implementation and behaviour are reviewed.</li>
         </ul>
       </section>

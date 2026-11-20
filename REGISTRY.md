@@ -107,7 +107,13 @@ curl -fsSL https://brand-kit-ashen.vercel.app/blade/scudamores-blade.zip -o scud
   <https://brand-kit-ashen.vercel.app/blade/AGENTS.md>. It covers setup, a React → Blade table for
   every component and pattern, updating, migrating an existing app, and how to feed changes back
   to the Brand Kit.
-- The Design System's resources page has the same download button and command.
+- **The developer guide**, `scudamores/README.md`, is also at
+  <https://brand-kit-ashen.vercel.app/blade/README.md> (source:
+  [`registry/blade-kit-README.md`](./registry/blade-kit-README.md)). It's for the developers who
+  receive the app: what the kit owns, how to connect patterns to the backend (props in, events
+  out), forms and validation, updating, and feeding changes back.
+- The Design System's resources page has the same download button and command, and links to both
+  guides.
 - [`scripts/build-blade-kit.mjs`](./scripts/build-blade-kit.mjs) builds it on every deploy (and alone
   as `npm run build:blade-kit`) into `public/blade/` (git-ignored). It has no dependencies, and the
   same source always produces a byte-identical zip.

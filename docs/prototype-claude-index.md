@@ -59,3 +59,46 @@ Blade paths are relative to the Laravel app root (source: `_comp-lib/blade/libra
 
 Blade-only (no React version yet): container, error, field, heading, link, navlist, radio, search, stats-card, subheading, text.
 Icons: React uses lucide-react; Blade uses Phosphor, so icon names differ.
+
+## Scudamore's patterns
+
+Product-shaped compositions (booking journeys, reports, toolbars) built from the components above. Check here before composing a screen from scratch.
+Install with `npx shadcn@4.23.0 add @scudamores/pattern-<pattern>`; the components it uses and `patterns-base` (dark-mode contrast CSS) come with it. `@scudamores/all-patterns` installs every pattern.
+Files land in `src/patterns/<pattern>/react/`, with sample data in `src/patterns/<pattern>/fixtures/`. Each file exports the recipe component (controlled props and callbacks: use it with real data) and a `*Preview` adapter that only wires the sample data to local state.
+Patterns are starting points and may be adapted, but re-adding with `--overwrite` replaces local edits. Persistence, routing, permissions and payments stay in the app.
+`kpi-stat-grid` has an unused `import * as React from "react";` line: delete it if tsconfig sets `noUnusedLocals` (the Vite template does).
+Docs and live previews: https://brand-kit-ashen.vercel.app/design-system/patterns/<pattern>
+
+| Pattern | Purpose | Import (exports) |
+|---|---|---|
+| availability-time-picker | Location, pricing-view, time-band, and exact-time selection for a booking. (beta) | `@/patterns/availability-time-picker/react/AvailabilityTimePicker` (AvailabilityTimePicker, AvailabilityTimePickerPreview) |
+| availability-toggle-list | Availability switches with one default item. | `@/patterns/availability-toggle-list/react/AvailabilityToggleListRecipe` (AvailabilityToggleListRecipe) |
+| booking-card | Compact booking identity and status card. | `@/patterns/booking-card/react/BookingCardRecipe` (BookingCardRecipe) |
+| booking-criteria-panel | Date, party composition, and accessibility criteria for the start of a booking journey. (beta) | `@/patterns/booking-criteria-panel/react/BookingCriteriaPanel` (BookingCriteriaPanel, BookingCriteriaPanelPreview) |
+| booking-details-dialog | Read and action booking-detail composition. | `@/patterns/booking-details-dialog/react/BookingDetailsDialogRecipe` (BookingDetailsDialogRecipe) |
+| booking-progress-indicator | Complete, current, and upcoming states for a short booking journey. (beta) | `@/patterns/booking-progress-indicator/react/BookingProgressIndicator` (BookingProgressIndicator, BookingProgressIndicatorPreview) |
+| booking-review-summary | Expandable booking lines, editable actions and host-calculated totals. (beta) | `@/patterns/booking-review-summary/react/BookingReviewSummaryRecipe` (BookingReviewSummaryRecipe, BookingReviewSummaryPreview) |
+| capacity-product-selector | Expandable products with tier quantities and party-capacity feedback. (beta) | `@/patterns/capacity-product-selector/react/CapacityProductSelector` (CapacityProductSelector, CapacityProductSelectorPreview) |
+| channel-logo-picker | Host-controlled channel logo selection. | `@/patterns/channel-logo-picker/react/ChannelLogoPickerRecipe` (ChannelLogoPickerRecipe) |
+| checkout-details-panel | Customer contact fields, validation and optional operational metadata. (beta) | `@/patterns/checkout-details-panel/react/CheckoutDetailsPanelRecipe` (CheckoutDetailsPanelRecipe, CheckoutDetailsPanelPreview) |
+| collection-state-panel | Consistent loading, empty, error, and restricted states for collection surfaces. (beta) | `@/patterns/collection-state-panel/react/CollectionStatePanelRecipe` (CollectionStatePanelRecipe, CollectionStatePanelPreview) |
+| collection-toolbar | Wrapping search, filters, sorting, layout controls, result count, and host actions. (beta) | `@/patterns/collection-toolbar/react/CollectionToolbarRecipe` (CollectionToolbarRecipe, CollectionToolbarPreview) |
+| configuration-workbench | A task shell combining configuration fields, options, live preview, and implementation handoff. (beta) | `@/patterns/configuration-workbench/react/ConfigurationWorkbenchRecipe` (ConfigurationWorkbenchRecipe, ConfigurationWorkbenchPreview) |
+| contextual-action-dock | Safe-area-aware mobile workflow actions with an optional summary and total. (beta) | `@/patterns/contextual-action-dock/react/ContextualActionDockRecipe` (ContextualActionDockRecipe, ContextualActionDockPreview) |
+| customer-booking-journey | A public ticket, date, time, customer-details, host-payment, and confirmation flow. (beta) | `@/patterns/customer-booking-journey/react/CustomerBookingJourneyRecipe` (CustomerBookingJourneyRecipe, CustomerBookingJourneyPreview) |
+| discount-builder | Discount entry with presets, live price preview, limits, and approval guidance. (beta) | `@/patterns/discount-builder/react/DiscountBuilder` (DiscountBuilder, DiscountBuilderPreview) |
+| epos-booking-journey | Three-stage orchestration for booking criteria, availability, review and checkout. (beta) | `@/patterns/epos-booking-journey/react/EposBookingJourney` (EposBookingJourneyPreview) |
+| grouped-results-table | A host-aggregated results table with groups, subtotals, totals and empty state. (beta) | `@/patterns/grouped-results-table/react/GroupedResultsTable` (GroupedResultsTable, GroupedResultsTablePreview) |
+| kpi-stat-grid | Responsive report summary cards with machine-safe values and host-supplied trends. (beta) | `@/patterns/kpi-stat-grid/react/KpiStatGrid` (KpiStatGrid, KpiStatGridPreview) |
+| mobile-bottom-navigation | Safe-area-aware primary destinations with optional focus-trapped More-sheet overflow. (beta) | `@/patterns/mobile-bottom-navigation/react/MobileBottomNavigationRecipe` (MobileBottomNavigationRecipe, MobileBottomNavigationPreview) |
+| multi-query-manager | Scrollable booking-query pills with add, remove, and clear actions. (beta) | `@/patterns/multi-query-manager/react/MultiQueryManager` (MultiQueryManager, MultiQueryManagerPreview) |
+| people-popover-content | Party quantities and accessibility selection. | `@/patterns/people-popover-content/react/PeoplePopoverContentRecipe` (PeoplePopoverContentRecipe) |
+| quick-launch | Frequently used destination cards. | `@/patterns/quick-launch/react/QuickLaunchRecipe` (QuickLaunchRecipe) |
+| quote-builder | Recipient, offered-time, price-range, and expiry composition for a quote draft. (beta) | `@/patterns/quote-builder/react/QuoteBuilder` (QuoteBuilder, QuoteBuilderPreview) |
+| quote-lookup | Reference lookup with ready, not-found, expired, and redeemed result states. (beta) | `@/patterns/quote-lookup/react/QuoteLookup` (QuoteLookup, QuoteLookupPreview) |
+| reference-redemption-journey | Lookup, not-found, expired, review, confirm, and completion states for a saved reference. (beta) | `@/patterns/reference-redemption-journey/react/ReferenceRedemptionJourneyRecipe` (ReferenceRedemptionJourneyRecipe, ReferenceRedemptionJourneyPreview) |
+| report-breakdown-table | A host-aggregated hierarchy of reporting groups, child items and totals. (beta) | `@/patterns/report-breakdown-table/react/ReportBreakdownTable` (ReportBreakdownTable, ReportBreakdownTablePreview) |
+| report-filter-builder | Draft and apply date and dimension filters with explicit empty-selection semantics. (beta) | `@/patterns/report-filter-builder/react/ReportFilterBuilder` (ReportFilterBuilder, ReportFilterBuilderPreview) |
+| report-workspace-tabs | A responsive, scrollable tab rail for switching analytical report views. (beta) | `@/patterns/report-workspace-tabs/react/ReportWorkspaceTabs` (ReportWorkspaceTabs, ReportWorkspaceTabsPreview) |
+| responsive-data-collection | The same neutral records rendered as a semantic desktop table and mobile cards. (beta) | `@/patterns/responsive-data-collection/react/ResponsiveDataCollectionRecipe` (ResponsiveDataCollectionRecipe, ResponsiveDataCollectionPreview) |
+| visit-time-heat-map | A day-by-hour distribution with paired controls, peak summary and accessible data table. (beta) | `@/patterns/visit-time-heat-map/react/VisitTimeHeatMap` (VisitTimeHeatMap, VisitTimeHeatMapPreview) |

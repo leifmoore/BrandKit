@@ -67,6 +67,30 @@ npx shadcn@4.23.0 add @scudamores/all         # theme, provider and every compon
 - Re-installing `theme` is safe; it only rewrites the token values in `src/index.css`.
 - Without the namespace, use full URLs: `npx shadcn@4.23.0 add https://brand-kit-ashen.vercel.app/r/button.json`.
 
+## Install patterns
+
+Patterns are the 31 product-shaped recipes (booking journeys, reports, toolbars) from
+`_comp-lib/recipes` and `_pattern-lib/recipes`, built from the components above.
+
+```sh
+npx shadcn@4.23.0 add @scudamores/pattern-quote-builder   # one pattern, plus what it needs
+npx shadcn@4.23.0 add @scudamores/all-patterns            # every pattern
+```
+
+- A pattern lands in `src/patterns/<pattern>/react/`, with its sample data in
+  `src/patterns/<pattern>/fixtures/`. The components it uses and `patterns-base` (a few dark-mode
+  contrast rules, added to `src/index.css`) are installed with it.
+- Each file exports the recipe component, which takes controlled props and callbacks (use it with
+  real data), and a `*Preview` adapter that only wires the sample data to local state.
+- Unlike components, patterns are starting points and may be adapted. Re-adding with
+  `--overwrite` replaces local edits.
+- `kpi-stat-grid` has an unused `import * as React from "react";` line, which fails type-checking
+  when `noUnusedLocals` is on (the Vite template's default). Delete the line after installing;
+  the fix belongs in the next `_pattern-lib` handoff.
+- The build copies each recipe to `.registry-build/` (git-ignored) with its repo-only imports
+  (`@scudamores/ui/...`, `../../../react/...`) rewritten to `@/components/ui/...`, and fails if a
+  recipe imports anything else unexpected or if `registry.json` doesn't match the catalogue.
+
 ## Items
 
 Purpose and Blade paths come from the catalogue (`_comp-lib/catalog/components/*.json`). Blade paths
@@ -121,6 +145,42 @@ are where the file goes in a Laravel app; the source is the same path under
 | `tooltip` | Short non-essential help shown on hover or focus. | stable | `<x-ui.tooltip>` | `resources/views/components/ui/tooltip.blade.php` |
 | `all` | Theme, theme provider and every component in one install. | — | — | — |
 
+| Pattern | Purpose | Maturity | Blade source |
+|---|---|---|---|
+| `pattern-availability-time-picker` | Location, pricing-view, time-band, and exact-time selection for a booking. | beta | `_pattern-lib/recipes/availability-time-picker/blade/availability-time-picker.blade.php` |
+| `pattern-availability-toggle-list` | Availability switches with one default item. | stable | `_comp-lib/recipes/availability-toggle-list/blade/availability-toggle-list.blade.php` |
+| `pattern-booking-card` | Compact booking identity and status card. | stable | `_comp-lib/recipes/booking-card/blade/booking-card.blade.php` |
+| `pattern-booking-criteria-panel` | Date, party composition, and accessibility criteria for the start of a booking journey. | beta | `_pattern-lib/recipes/booking-criteria-panel/blade/booking-criteria-panel.blade.php` |
+| `pattern-booking-details-dialog` | Read and action booking-detail composition. | stable | `_comp-lib/recipes/booking-details-dialog/blade/booking-details-dialog.blade.php` |
+| `pattern-booking-progress-indicator` | Complete, current, and upcoming states for a short booking journey. | beta | `_pattern-lib/recipes/booking-progress-indicator/blade/booking-progress-indicator.blade.php` |
+| `pattern-booking-review-summary` | Expandable booking lines, editable actions and host-calculated totals. | beta | `_pattern-lib/recipes/booking-review-summary/blade/booking-review-summary.blade.php` |
+| `pattern-capacity-product-selector` | Expandable products with tier quantities and party-capacity feedback. | beta | `_pattern-lib/recipes/capacity-product-selector/blade/capacity-product-selector.blade.php` |
+| `pattern-channel-logo-picker` | Host-controlled channel logo selection. | stable | `_comp-lib/recipes/channel-logo-picker/blade/channel-logo-picker.blade.php` |
+| `pattern-checkout-details-panel` | Customer contact fields, validation and optional operational metadata. | beta | `_pattern-lib/recipes/checkout-details-panel/blade/checkout-details-panel.blade.php` |
+| `pattern-collection-state-panel` | Consistent loading, empty, error, and restricted states for collection surfaces. | beta | `_pattern-lib/recipes/collection-state-panel/blade/collection-state-panel.blade.php` |
+| `pattern-collection-toolbar` | Wrapping search, filters, sorting, layout controls, result count, and host actions. | beta | `_pattern-lib/recipes/collection-toolbar/blade/collection-toolbar.blade.php` |
+| `pattern-configuration-workbench` | A task shell combining configuration fields, options, live preview, and implementation handoff. | beta | `_pattern-lib/recipes/configuration-workbench/blade/configuration-workbench.blade.php` |
+| `pattern-contextual-action-dock` | Safe-area-aware mobile workflow actions with an optional summary and total. | beta | `_pattern-lib/recipes/contextual-action-dock/blade/contextual-action-dock.blade.php` |
+| `pattern-customer-booking-journey` | A public ticket, date, time, customer-details, host-payment, and confirmation flow. | beta | `_pattern-lib/recipes/customer-booking-journey/blade/customer-booking-journey.blade.php` |
+| `pattern-discount-builder` | Discount entry with presets, live price preview, limits, and approval guidance. | beta | `_pattern-lib/recipes/discount-builder/blade/discount-builder.blade.php` |
+| `pattern-epos-booking-journey` | Three-stage orchestration for booking criteria, availability, review and checkout. | beta | `_pattern-lib/recipes/epos-booking-journey/blade/epos-booking-journey.blade.php` |
+| `pattern-grouped-results-table` | A host-aggregated results table with groups, subtotals, totals and empty state. | beta | `_pattern-lib/recipes/grouped-results-table/blade/grouped-results-table.blade.php` |
+| `pattern-kpi-stat-grid` | Responsive report summary cards with machine-safe values and host-supplied trends. | beta | `_pattern-lib/recipes/kpi-stat-grid/blade/kpi-stat-grid.blade.php` |
+| `pattern-mobile-bottom-navigation` | Safe-area-aware primary destinations with optional focus-trapped More-sheet overflow. | beta | `_pattern-lib/recipes/mobile-bottom-navigation/blade/mobile-bottom-navigation.blade.php` |
+| `pattern-multi-query-manager` | Scrollable booking-query pills with add, remove, and clear actions. | beta | `_pattern-lib/recipes/multi-query-manager/blade/multi-query-manager.blade.php` |
+| `pattern-people-popover-content` | Party quantities and accessibility selection. | stable | `_comp-lib/recipes/people-popover-content/blade/people-popover-content.blade.php` |
+| `pattern-quick-launch` | Frequently used destination cards. | stable | `_comp-lib/recipes/quick-launch/blade/quick-launch.blade.php` |
+| `pattern-quote-builder` | Recipient, offered-time, price-range, and expiry composition for a quote draft. | beta | `_pattern-lib/recipes/quote-builder/blade/quote-builder.blade.php` |
+| `pattern-quote-lookup` | Reference lookup with ready, not-found, expired, and redeemed result states. | beta | `_pattern-lib/recipes/quote-lookup/blade/quote-lookup.blade.php` |
+| `pattern-reference-redemption-journey` | Lookup, not-found, expired, review, confirm, and completion states for a saved reference. | beta | `_pattern-lib/recipes/reference-redemption-journey/blade/reference-redemption-journey.blade.php` |
+| `pattern-report-breakdown-table` | A host-aggregated hierarchy of reporting groups, child items and totals. | beta | `_pattern-lib/recipes/report-breakdown-table/blade/report-breakdown-table.blade.php` |
+| `pattern-report-filter-builder` | Draft and apply date and dimension filters with explicit empty-selection semantics. | beta | `_pattern-lib/recipes/report-filter-builder/blade/report-filter-builder.blade.php` |
+| `pattern-report-workspace-tabs` | A responsive, scrollable tab rail for switching analytical report views. | beta | `_pattern-lib/recipes/report-workspace-tabs/blade/report-workspace-tabs.blade.php` |
+| `pattern-responsive-data-collection` | The same neutral records rendered as a semantic desktop table and mobile cards. | beta | `_pattern-lib/recipes/responsive-data-collection/blade/responsive-data-collection.blade.php` |
+| `pattern-visit-time-heat-map` | A day-by-hour distribution with paired controls, peak summary and accessible data table. | beta | `_pattern-lib/recipes/visit-time-heat-map/blade/visit-time-heat-map.blade.php` |
+| `patterns-base` | Dark-mode contrast rules shared by the pattern recipes. Installed automatically with any pattern. | — | — |
+| `all-patterns` | Pattern styles and every pattern recipe, with the components they use, in one install. | — | — |
+
 Blade-only components (no React version yet): `container`, `error`, `field`, `heading`, `link`, `navlist`, `radio`, `search`, `stats-card`, `subheading`, `text`.
 <!-- registry-items:end -->
 
@@ -128,8 +188,7 @@ Blade-only components (no React version yet): `container`, `error`, `field`, `he
 
 - **Icons:** React components use `lucide-react`; Blade uses Phosphor (`blade-phosphor-icons`), so
   icon names differ between the two.
-- **Patterns** (the 31 recipes in `_comp-lib/recipes` and `_pattern-lib`) aren't in the registry
-  yet. They're planned as a second phase.
+- **Pattern Blade** is copy-only for now: take it from the Blade source path in the patterns table.
 - **`ThemeScope`** (`theme-scope`) can force dark mode or a brand accent on a subtree, but it can't
   force light inside a dark `<html>`, because the token variables inherit.
 - **Deferred** in both stacks, metadata only: carousel, chart, command-palette, context-menu,

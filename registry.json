@@ -1744,6 +1744,1362 @@
         "https://brand-kit-ashen.vercel.app/r/toggle.json",
         "https://brand-kit-ashen.vercel.app/r/tooltip.json"
       ]
+    },
+    {
+      "name": "patterns-base",
+      "type": "registry:item",
+      "title": "Pattern styles",
+      "description": "Dark-mode contrast rules shared by the pattern recipes. Installed automatically with any pattern.",
+      "css": {
+        ".dark [data-pattern=\"configuration-workbench\"] [data-slot=\"tabs-trigger\"], .dark [data-pattern=\"report-workspace-tabs\"] [data-slot=\"tabs-trigger\"], .dark [data-pattern=\"report-workspace-tabs\"] [data-slot=\"badge\"], .dark [data-contrast-action]": {
+          "color": "var(--foreground) !important",
+          "opacity": "1 !important"
+        }
+      }
+    },
+    {
+      "name": "pattern-availability-time-picker",
+      "type": "registry:block",
+      "title": "Availability Time Picker",
+      "description": "Location, pricing-view, time-band, and exact-time selection for a booking.",
+      "dependencies": [
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/card.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/availability-time-picker/react/AvailabilityTimePicker.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/availability-time-picker/react/AvailabilityTimePicker.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/availability-time-picker/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/availability-time-picker/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "booking"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/availability-time-picker/react/AvailabilityTimePicker",
+        "exports": [
+          "AvailabilityTimePicker",
+          "AvailabilityTimePickerPreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/availability-time-picker/blade/availability-time-picker.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/availability-time-picker"
+      }
+    },
+    {
+      "name": "pattern-availability-toggle-list",
+      "type": "registry:block",
+      "title": "Availability Toggle List",
+      "description": "Availability switches with one default item.",
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/badge.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/switch.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/availability-toggle-list/react/AvailabilityToggleListRecipe.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/availability-toggle-list/react/AvailabilityToggleListRecipe.tsx"
+        },
+        {
+          "path": "_comp-lib/recipes/availability-toggle-list/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/availability-toggle-list/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "channels"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/patterns/availability-toggle-list/react/AvailabilityToggleListRecipe",
+        "exports": [
+          "AvailabilityToggleListRecipe"
+        ],
+        "blade": {
+          "source": "_comp-lib/recipes/availability-toggle-list/blade/availability-toggle-list.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/availability-toggle-list"
+      }
+    },
+    {
+      "name": "pattern-booking-card",
+      "type": "registry:block",
+      "title": "Booking Card",
+      "description": "Compact booking identity and status card.",
+      "dependencies": [
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/badge.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/card.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/booking-card/react/BookingCardRecipe.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/booking-card/react/BookingCardRecipe.tsx"
+        },
+        {
+          "path": "_comp-lib/recipes/booking-card/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/booking-card/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "bookings"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/patterns/booking-card/react/BookingCardRecipe",
+        "exports": [
+          "BookingCardRecipe"
+        ],
+        "blade": {
+          "source": "_comp-lib/recipes/booking-card/blade/booking-card.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/booking-card"
+      }
+    },
+    {
+      "name": "pattern-booking-criteria-panel",
+      "type": "registry:block",
+      "title": "Booking Criteria Panel",
+      "description": "Date, party composition, and accessibility criteria for the start of a booking journey.",
+      "dependencies": [
+        "date-fns@3.6.0",
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/calendar.json",
+        "https://brand-kit-ashen.vercel.app/r/card.json",
+        "https://brand-kit-ashen.vercel.app/r/checkbox.json",
+        "https://brand-kit-ashen.vercel.app/r/label.json",
+        "https://brand-kit-ashen.vercel.app/r/popover.json",
+        "https://brand-kit-ashen.vercel.app/r/stepper.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/booking-criteria-panel/react/BookingCriteriaPanel.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/booking-criteria-panel/react/BookingCriteriaPanel.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/booking-criteria-panel/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/booking-criteria-panel/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "booking"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/booking-criteria-panel/react/BookingCriteriaPanel",
+        "exports": [
+          "BookingCriteriaPanel",
+          "BookingCriteriaPanelPreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/booking-criteria-panel/blade/booking-criteria-panel.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/booking-criteria-panel"
+      }
+    },
+    {
+      "name": "pattern-booking-details-dialog",
+      "type": "registry:block",
+      "title": "Booking Details Dialog",
+      "description": "Read and action booking-detail composition.",
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/badge.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/dialog.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/booking-details-dialog/react/BookingDetailsDialogRecipe.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/booking-details-dialog/react/BookingDetailsDialogRecipe.tsx"
+        },
+        {
+          "path": "_comp-lib/recipes/booking-details-dialog/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/booking-details-dialog/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "bookings"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/patterns/booking-details-dialog/react/BookingDetailsDialogRecipe",
+        "exports": [
+          "BookingDetailsDialogRecipe"
+        ],
+        "blade": {
+          "source": "_comp-lib/recipes/booking-details-dialog/blade/booking-details-dialog.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/booking-details-dialog"
+      }
+    },
+    {
+      "name": "pattern-booking-progress-indicator",
+      "type": "registry:block",
+      "title": "Booking Progress Indicator",
+      "description": "Complete, current, and upcoming states for a short booking journey.",
+      "dependencies": [
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/booking-progress-indicator/react/BookingProgressIndicator.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/booking-progress-indicator/react/BookingProgressIndicator.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/booking-progress-indicator/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/booking-progress-indicator/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "booking"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/booking-progress-indicator/react/BookingProgressIndicator",
+        "exports": [
+          "BookingProgressIndicator",
+          "BookingProgressIndicatorPreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/booking-progress-indicator/blade/booking-progress-indicator.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/booking-progress-indicator"
+      }
+    },
+    {
+      "name": "pattern-booking-review-summary",
+      "type": "registry:block",
+      "title": "Booking Review Summary",
+      "description": "Expandable booking lines, editable actions and host-calculated totals.",
+      "dependencies": [
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/badge.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/card.json",
+        "https://brand-kit-ashen.vercel.app/r/collapsible.json",
+        "https://brand-kit-ashen.vercel.app/r/separator.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/booking-review-summary/react/BookingReviewSummaryRecipe.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/booking-review-summary/react/BookingReviewSummaryRecipe.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/booking-review-summary/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/booking-review-summary/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "bookings"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/booking-review-summary/react/BookingReviewSummaryRecipe",
+        "exports": [
+          "BookingReviewSummaryRecipe",
+          "BookingReviewSummaryPreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/booking-review-summary/blade/booking-review-summary.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/booking-review-summary"
+      }
+    },
+    {
+      "name": "pattern-capacity-product-selector",
+      "type": "registry:block",
+      "title": "Capacity Product Selector",
+      "description": "Expandable products with tier quantities and party-capacity feedback.",
+      "dependencies": [
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/badge.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/select.json",
+        "https://brand-kit-ashen.vercel.app/r/stepper.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/capacity-product-selector/react/CapacityProductSelector.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/capacity-product-selector/react/CapacityProductSelector.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/capacity-product-selector/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/capacity-product-selector/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "booking"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/capacity-product-selector/react/CapacityProductSelector",
+        "exports": [
+          "CapacityProductSelector",
+          "CapacityProductSelectorPreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/capacity-product-selector/blade/capacity-product-selector.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/capacity-product-selector"
+      }
+    },
+    {
+      "name": "pattern-channel-logo-picker",
+      "type": "registry:block",
+      "title": "Channel Logo Picker",
+      "description": "Host-controlled channel logo selection.",
+      "dependencies": [
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/badge.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/label.json",
+        "https://brand-kit-ashen.vercel.app/r/switch.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/channel-logo-picker/react/ChannelLogoPickerRecipe.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/channel-logo-picker/react/ChannelLogoPickerRecipe.tsx"
+        },
+        {
+          "path": "_comp-lib/recipes/channel-logo-picker/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/channel-logo-picker/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "channels"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/patterns/channel-logo-picker/react/ChannelLogoPickerRecipe",
+        "exports": [
+          "ChannelLogoPickerRecipe"
+        ],
+        "blade": {
+          "source": "_comp-lib/recipes/channel-logo-picker/blade/channel-logo-picker.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/channel-logo-picker"
+      }
+    },
+    {
+      "name": "pattern-checkout-details-panel",
+      "type": "registry:block",
+      "title": "Checkout Details Panel",
+      "description": "Customer contact fields, validation and optional operational metadata.",
+      "dependencies": [
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/card.json",
+        "https://brand-kit-ashen.vercel.app/r/collapsible.json",
+        "https://brand-kit-ashen.vercel.app/r/input.json",
+        "https://brand-kit-ashen.vercel.app/r/label.json",
+        "https://brand-kit-ashen.vercel.app/r/select.json",
+        "https://brand-kit-ashen.vercel.app/r/textarea.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/checkout-details-panel/react/CheckoutDetailsPanelRecipe.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/checkout-details-panel/react/CheckoutDetailsPanelRecipe.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/checkout-details-panel/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/checkout-details-panel/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "bookings"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/checkout-details-panel/react/CheckoutDetailsPanelRecipe",
+        "exports": [
+          "CheckoutDetailsPanelRecipe",
+          "CheckoutDetailsPanelPreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/checkout-details-panel/blade/checkout-details-panel.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/checkout-details-panel"
+      }
+    },
+    {
+      "name": "pattern-collection-state-panel",
+      "type": "registry:block",
+      "title": "Collection State Panel",
+      "description": "Consistent loading, empty, error, and restricted states for collection surfaces.",
+      "dependencies": [
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/card.json",
+        "https://brand-kit-ashen.vercel.app/r/skeleton.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/collection-state-panel/react/CollectionStatePanelRecipe.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/collection-state-panel/react/CollectionStatePanelRecipe.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/collection-state-panel/fixtures/loading.json",
+          "type": "registry:file",
+          "target": "src/patterns/collection-state-panel/fixtures/loading.json"
+        }
+      ],
+      "categories": [
+        "collections"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/collection-state-panel/react/CollectionStatePanelRecipe",
+        "exports": [
+          "CollectionStatePanelRecipe",
+          "CollectionStatePanelPreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/collection-state-panel/blade/collection-state-panel.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/collection-state-panel"
+      }
+    },
+    {
+      "name": "pattern-collection-toolbar",
+      "type": "registry:block",
+      "title": "Collection Toolbar",
+      "description": "Wrapping search, filters, sorting, layout controls, result count, and host actions.",
+      "dependencies": [
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/input.json",
+        "https://brand-kit-ashen.vercel.app/r/select.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/collection-toolbar/react/CollectionToolbarRecipe.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/collection-toolbar/react/CollectionToolbarRecipe.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/collection-toolbar/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/collection-toolbar/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "collections"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/collection-toolbar/react/CollectionToolbarRecipe",
+        "exports": [
+          "CollectionToolbarRecipe",
+          "CollectionToolbarPreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/collection-toolbar/blade/collection-toolbar.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/collection-toolbar"
+      }
+    },
+    {
+      "name": "pattern-configuration-workbench",
+      "type": "registry:block",
+      "title": "Configuration Workbench",
+      "description": "A task shell combining configuration fields, options, live preview, and implementation handoff.",
+      "dependencies": [
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/badge.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/card.json",
+        "https://brand-kit-ashen.vercel.app/r/input.json",
+        "https://brand-kit-ashen.vercel.app/r/label.json",
+        "https://brand-kit-ashen.vercel.app/r/switch.json",
+        "https://brand-kit-ashen.vercel.app/r/tabs.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/configuration-workbench/react/ConfigurationWorkbenchRecipe.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/configuration-workbench/react/ConfigurationWorkbenchRecipe.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/configuration-workbench/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/configuration-workbench/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "configuration"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/configuration-workbench/react/ConfigurationWorkbenchRecipe",
+        "exports": [
+          "ConfigurationWorkbenchRecipe",
+          "ConfigurationWorkbenchPreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/configuration-workbench/blade/configuration-workbench.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/configuration-workbench"
+      }
+    },
+    {
+      "name": "pattern-contextual-action-dock",
+      "type": "registry:block",
+      "title": "Contextual Action Dock",
+      "description": "Safe-area-aware mobile workflow actions with an optional summary and total.",
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/card.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/contextual-action-dock/react/ContextualActionDockRecipe.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/contextual-action-dock/react/ContextualActionDockRecipe.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/contextual-action-dock/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/contextual-action-dock/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "mobile"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/contextual-action-dock/react/ContextualActionDockRecipe",
+        "exports": [
+          "ContextualActionDockRecipe",
+          "ContextualActionDockPreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/contextual-action-dock/blade/contextual-action-dock.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/contextual-action-dock"
+      }
+    },
+    {
+      "name": "pattern-customer-booking-journey",
+      "type": "registry:block",
+      "title": "Customer Booking Journey",
+      "description": "A public ticket, date, time, customer-details, host-payment, and confirmation flow.",
+      "dependencies": [
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/badge.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/card.json",
+        "https://brand-kit-ashen.vercel.app/r/checkbox.json",
+        "https://brand-kit-ashen.vercel.app/r/input.json",
+        "https://brand-kit-ashen.vercel.app/r/label.json",
+        "https://brand-kit-ashen.vercel.app/r/separator.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/customer-booking-journey/react/CustomerBookingJourneyRecipe.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/customer-booking-journey/react/CustomerBookingJourneyRecipe.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/customer-booking-journey/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/customer-booking-journey/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "customer-booking"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/customer-booking-journey/react/CustomerBookingJourneyRecipe",
+        "exports": [
+          "CustomerBookingJourneyRecipe",
+          "CustomerBookingJourneyPreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/customer-booking-journey/blade/customer-booking-journey.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/customer-booking-journey"
+      }
+    },
+    {
+      "name": "pattern-discount-builder",
+      "type": "registry:block",
+      "title": "Discount Builder",
+      "description": "Discount entry with presets, live price preview, limits, and approval guidance.",
+      "dependencies": [
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/dialog.json",
+        "https://brand-kit-ashen.vercel.app/r/input.json",
+        "https://brand-kit-ashen.vercel.app/r/label.json",
+        "https://brand-kit-ashen.vercel.app/r/tabs.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/discount-builder/react/DiscountBuilder.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/discount-builder/react/DiscountBuilder.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/discount-builder/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/discount-builder/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "booking"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/discount-builder/react/DiscountBuilder",
+        "exports": [
+          "DiscountBuilder",
+          "DiscountBuilderPreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/discount-builder/blade/discount-builder.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/discount-builder"
+      }
+    },
+    {
+      "name": "pattern-epos-booking-journey",
+      "type": "registry:block",
+      "title": "EPOS Booking Journey",
+      "description": "Three-stage orchestration for booking criteria, availability, review and checkout.",
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/card.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-availability-time-picker.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-booking-criteria-panel.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-booking-progress-indicator.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-booking-review-summary.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-capacity-product-selector.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-checkout-details-panel.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-contextual-action-dock.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-multi-query-manager.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/epos-booking-journey/react/EposBookingJourney.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/epos-booking-journey/react/EposBookingJourney.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/epos-booking-journey/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/epos-booking-journey/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "bookings"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/epos-booking-journey/react/EposBookingJourney",
+        "exports": [
+          "EposBookingJourneyPreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/epos-booking-journey/blade/epos-booking-journey.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/epos-booking-journey"
+      }
+    },
+    {
+      "name": "pattern-grouped-results-table",
+      "type": "registry:block",
+      "title": "Grouped Results Table",
+      "description": "A host-aggregated results table with groups, subtotals, totals and empty state.",
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/badge.json",
+        "https://brand-kit-ashen.vercel.app/r/card.json",
+        "https://brand-kit-ashen.vercel.app/r/label.json",
+        "https://brand-kit-ashen.vercel.app/r/select.json",
+        "https://brand-kit-ashen.vercel.app/r/table.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/grouped-results-table/react/GroupedResultsTable.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/grouped-results-table/react/GroupedResultsTable.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/grouped-results-table/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/grouped-results-table/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "reporting"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/grouped-results-table/react/GroupedResultsTable",
+        "exports": [
+          "GroupedResultsTable",
+          "GroupedResultsTablePreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/grouped-results-table/blade/grouped-results-table.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/grouped-results-table"
+      }
+    },
+    {
+      "name": "pattern-kpi-stat-grid",
+      "type": "registry:block",
+      "title": "KPI Stat Grid",
+      "description": "Responsive report summary cards with machine-safe values and host-supplied trends.",
+      "dependencies": [
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/badge.json",
+        "https://brand-kit-ashen.vercel.app/r/card.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/kpi-stat-grid/react/KpiStatGrid.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/kpi-stat-grid/react/KpiStatGrid.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/kpi-stat-grid/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/kpi-stat-grid/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "reporting"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/kpi-stat-grid/react/KpiStatGrid",
+        "exports": [
+          "KpiStatGrid",
+          "KpiStatGridPreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/kpi-stat-grid/blade/kpi-stat-grid.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/kpi-stat-grid"
+      }
+    },
+    {
+      "name": "pattern-mobile-bottom-navigation",
+      "type": "registry:block",
+      "title": "Mobile Bottom Navigation",
+      "description": "Safe-area-aware primary destinations with optional focus-trapped More-sheet overflow.",
+      "dependencies": [
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/badge.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/sheet.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/mobile-bottom-navigation/react/MobileBottomNavigationRecipe.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/mobile-bottom-navigation/react/MobileBottomNavigationRecipe.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/mobile-bottom-navigation/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/mobile-bottom-navigation/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "mobile"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/mobile-bottom-navigation/react/MobileBottomNavigationRecipe",
+        "exports": [
+          "MobileBottomNavigationRecipe",
+          "MobileBottomNavigationPreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/mobile-bottom-navigation/blade/mobile-bottom-navigation.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/mobile-bottom-navigation"
+      }
+    },
+    {
+      "name": "pattern-multi-query-manager",
+      "type": "registry:block",
+      "title": "Multi-query Manager",
+      "description": "Scrollable booking-query pills with add, remove, and clear actions.",
+      "dependencies": [
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/alert-dialog.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/multi-query-manager/react/MultiQueryManager.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/multi-query-manager/react/MultiQueryManager.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/multi-query-manager/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/multi-query-manager/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "booking"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/multi-query-manager/react/MultiQueryManager",
+        "exports": [
+          "MultiQueryManager",
+          "MultiQueryManagerPreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/multi-query-manager/blade/multi-query-manager.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/multi-query-manager"
+      }
+    },
+    {
+      "name": "pattern-people-popover-content",
+      "type": "registry:block",
+      "title": "People Popover Content",
+      "description": "Party quantities and accessibility selection.",
+      "dependencies": [
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/label.json",
+        "https://brand-kit-ashen.vercel.app/r/switch.json",
+        "https://brand-kit-ashen.vercel.app/r/tooltip.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/people-popover-content/react/PeoplePopoverContentRecipe.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/people-popover-content/react/PeoplePopoverContentRecipe.tsx"
+        },
+        {
+          "path": "_comp-lib/recipes/people-popover-content/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/people-popover-content/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "people"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/patterns/people-popover-content/react/PeoplePopoverContentRecipe",
+        "exports": [
+          "PeoplePopoverContentRecipe"
+        ],
+        "blade": {
+          "source": "_comp-lib/recipes/people-popover-content/blade/people-popover-content.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/people-popover-content"
+      }
+    },
+    {
+      "name": "pattern-quick-launch",
+      "type": "registry:block",
+      "title": "Quick Launch",
+      "description": "Frequently used destination cards.",
+      "dependencies": [
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/card.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/quick-launch/react/QuickLaunchRecipe.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/quick-launch/react/QuickLaunchRecipe.tsx"
+        },
+        {
+          "path": "_comp-lib/recipes/quick-launch/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/quick-launch/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "dashboard"
+      ],
+      "meta": {
+        "maturity": "stable",
+        "import": "@/patterns/quick-launch/react/QuickLaunchRecipe",
+        "exports": [
+          "QuickLaunchRecipe"
+        ],
+        "blade": {
+          "source": "_comp-lib/recipes/quick-launch/blade/quick-launch.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/quick-launch"
+      }
+    },
+    {
+      "name": "pattern-quote-builder",
+      "type": "registry:block",
+      "title": "Quote Builder",
+      "description": "Recipient, offered-time, price-range, and expiry composition for a quote draft.",
+      "dependencies": [
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/checkbox.json",
+        "https://brand-kit-ashen.vercel.app/r/dialog.json",
+        "https://brand-kit-ashen.vercel.app/r/input.json",
+        "https://brand-kit-ashen.vercel.app/r/label.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/quote-builder/react/QuoteBuilder.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/quote-builder/react/QuoteBuilder.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/quote-builder/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/quote-builder/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "booking"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/quote-builder/react/QuoteBuilder",
+        "exports": [
+          "QuoteBuilder",
+          "QuoteBuilderPreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/quote-builder/blade/quote-builder.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/quote-builder"
+      }
+    },
+    {
+      "name": "pattern-quote-lookup",
+      "type": "registry:block",
+      "title": "Quote Lookup",
+      "description": "Reference lookup with ready, not-found, expired, and redeemed result states.",
+      "dependencies": [
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/badge.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/dialog.json",
+        "https://brand-kit-ashen.vercel.app/r/input.json",
+        "https://brand-kit-ashen.vercel.app/r/label.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/quote-lookup/react/QuoteLookup.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/quote-lookup/react/QuoteLookup.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/quote-lookup/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/quote-lookup/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "booking"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/quote-lookup/react/QuoteLookup",
+        "exports": [
+          "QuoteLookup",
+          "QuoteLookupPreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/quote-lookup/blade/quote-lookup.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/quote-lookup"
+      }
+    },
+    {
+      "name": "pattern-reference-redemption-journey",
+      "type": "registry:block",
+      "title": "Reference Redemption Journey",
+      "description": "Lookup, not-found, expired, review, confirm, and completion states for a saved reference.",
+      "dependencies": [
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/badge.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/card.json",
+        "https://brand-kit-ashen.vercel.app/r/input.json",
+        "https://brand-kit-ashen.vercel.app/r/label.json",
+        "https://brand-kit-ashen.vercel.app/r/separator.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/reference-redemption-journey/react/ReferenceRedemptionJourneyRecipe.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/reference-redemption-journey/react/ReferenceRedemptionJourneyRecipe.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/reference-redemption-journey/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/reference-redemption-journey/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "customer-booking"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/reference-redemption-journey/react/ReferenceRedemptionJourneyRecipe",
+        "exports": [
+          "ReferenceRedemptionJourneyRecipe",
+          "ReferenceRedemptionJourneyPreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/reference-redemption-journey/blade/reference-redemption-journey.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/reference-redemption-journey"
+      }
+    },
+    {
+      "name": "pattern-report-breakdown-table",
+      "type": "registry:block",
+      "title": "Report Breakdown Table",
+      "description": "A host-aggregated hierarchy of reporting groups, child items and totals.",
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/card.json",
+        "https://brand-kit-ashen.vercel.app/r/table.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/report-breakdown-table/react/ReportBreakdownTable.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/report-breakdown-table/react/ReportBreakdownTable.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/report-breakdown-table/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/report-breakdown-table/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "reporting"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/report-breakdown-table/react/ReportBreakdownTable",
+        "exports": [
+          "ReportBreakdownTable",
+          "ReportBreakdownTablePreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/report-breakdown-table/blade/report-breakdown-table.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/report-breakdown-table"
+      }
+    },
+    {
+      "name": "pattern-report-filter-builder",
+      "type": "registry:block",
+      "title": "Report Filter Builder",
+      "description": "Draft and apply date and dimension filters with explicit empty-selection semantics.",
+      "dependencies": [
+        "date-fns@3.6.0",
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/badge.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/calendar.json",
+        "https://brand-kit-ashen.vercel.app/r/card.json",
+        "https://brand-kit-ashen.vercel.app/r/popover.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/report-filter-builder/react/ReportFilterBuilder.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/report-filter-builder/react/ReportFilterBuilder.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/report-filter-builder/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/report-filter-builder/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "reporting"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/report-filter-builder/react/ReportFilterBuilder",
+        "exports": [
+          "ReportFilterBuilder",
+          "ReportFilterBuilderPreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/report-filter-builder/blade/report-filter-builder.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/report-filter-builder"
+      }
+    },
+    {
+      "name": "pattern-report-workspace-tabs",
+      "type": "registry:block",
+      "title": "Report Workspace Tabs",
+      "description": "A responsive, scrollable tab rail for switching analytical report views.",
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/badge.json",
+        "https://brand-kit-ashen.vercel.app/r/tabs.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/report-workspace-tabs/react/ReportWorkspaceTabs.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/report-workspace-tabs/react/ReportWorkspaceTabs.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/report-workspace-tabs/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/report-workspace-tabs/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "reporting"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/report-workspace-tabs/react/ReportWorkspaceTabs",
+        "exports": [
+          "ReportWorkspaceTabs",
+          "ReportWorkspaceTabsPreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/report-workspace-tabs/blade/report-workspace-tabs.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/report-workspace-tabs"
+      }
+    },
+    {
+      "name": "pattern-responsive-data-collection",
+      "type": "registry:block",
+      "title": "Responsive Data Collection",
+      "description": "The same neutral records rendered as a semantic desktop table and mobile cards.",
+      "dependencies": [
+        "lucide-react@0.487.0"
+      ],
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/badge.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/card.json",
+        "https://brand-kit-ashen.vercel.app/r/table.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/responsive-data-collection/react/ResponsiveDataCollectionRecipe.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/responsive-data-collection/react/ResponsiveDataCollectionRecipe.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/responsive-data-collection/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/responsive-data-collection/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "collections"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/responsive-data-collection/react/ResponsiveDataCollectionRecipe",
+        "exports": [
+          "ResponsiveDataCollectionRecipe",
+          "ResponsiveDataCollectionPreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/responsive-data-collection/blade/responsive-data-collection.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/responsive-data-collection"
+      }
+    },
+    {
+      "name": "pattern-visit-time-heat-map",
+      "type": "registry:block",
+      "title": "Visit Time Heat Map",
+      "description": "A day-by-hour distribution with paired controls, peak summary and accessible data table.",
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/button.json",
+        "https://brand-kit-ashen.vercel.app/r/card.json",
+        "https://brand-kit-ashen.vercel.app/r/table.json"
+      ],
+      "files": [
+        {
+          "path": ".registry-build/patterns/visit-time-heat-map/react/VisitTimeHeatMap.tsx",
+          "type": "registry:file",
+          "target": "src/patterns/visit-time-heat-map/react/VisitTimeHeatMap.tsx"
+        },
+        {
+          "path": "_pattern-lib/recipes/visit-time-heat-map/fixtures/basic.json",
+          "type": "registry:file",
+          "target": "src/patterns/visit-time-heat-map/fixtures/basic.json"
+        }
+      ],
+      "categories": [
+        "reporting"
+      ],
+      "meta": {
+        "maturity": "beta",
+        "import": "@/patterns/visit-time-heat-map/react/VisitTimeHeatMap",
+        "exports": [
+          "VisitTimeHeatMap",
+          "VisitTimeHeatMapPreview"
+        ],
+        "blade": {
+          "source": "_pattern-lib/recipes/visit-time-heat-map/blade/visit-time-heat-map.blade.php"
+        },
+        "docs": "https://brand-kit-ashen.vercel.app/design-system/patterns/visit-time-heat-map"
+      }
+    },
+    {
+      "name": "all-patterns",
+      "type": "registry:item",
+      "title": "Every pattern",
+      "description": "Pattern styles and every pattern recipe, with the components they use, in one install.",
+      "registryDependencies": [
+        "https://brand-kit-ashen.vercel.app/r/patterns-base.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-availability-time-picker.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-availability-toggle-list.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-booking-card.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-booking-criteria-panel.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-booking-details-dialog.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-booking-progress-indicator.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-booking-review-summary.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-capacity-product-selector.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-channel-logo-picker.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-checkout-details-panel.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-collection-state-panel.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-collection-toolbar.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-configuration-workbench.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-contextual-action-dock.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-customer-booking-journey.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-discount-builder.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-epos-booking-journey.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-grouped-results-table.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-kpi-stat-grid.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-mobile-bottom-navigation.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-multi-query-manager.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-people-popover-content.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-quick-launch.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-quote-builder.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-quote-lookup.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-reference-redemption-journey.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-report-breakdown-table.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-report-filter-builder.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-report-workspace-tabs.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-responsive-data-collection.json",
+        "https://brand-kit-ashen.vercel.app/r/pattern-visit-time-heat-map.json"
+      ]
     }
   ]
 }

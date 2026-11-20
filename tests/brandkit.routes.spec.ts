@@ -66,3 +66,13 @@ test('canonical Brand and Design System routes render responsively without unexp
 
   expect(consoleErrors).toEqual([])
 })
+
+test('the Design System resources page offers the Blade kit download and its guides', async ({ page }) => {
+  await page.goto('/design-system/resources')
+  const section = page.getByRole('region', { name: 'Laravel Blade kit' })
+  await expect(section.getByRole('link', { name: 'Download Blade kit scudamores-blade.zip' }))
+    .toHaveAttribute('href', '/blade/scudamores-blade.zip')
+  await expect(section.getByRole('link', { name: 'Read the agent guide' })).toHaveAttribute('href', '/blade/AGENTS.md')
+  await expect(section.getByRole('link', { name: 'Read the developer guide' })).toHaveAttribute('href', '/blade/README.md')
+  await expect(section.getByLabel('Blade kit install command')).toContainText('brand-kit-ashen.vercel.app/blade/scudamores-blade.zip')
+})

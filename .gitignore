@@ -7,3 +7,4 @@ artifacts/brand-visual-audit/
 coverage/
 *.tsbuildinfo
 .registry-build/
+public/blade/

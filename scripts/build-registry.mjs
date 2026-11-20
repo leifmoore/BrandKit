@@ -310,6 +310,10 @@ Docs and live previews: ${productionBase}/design-system/patterns/<pattern>
 | Pattern | Purpose | Import (exports) |
 |---|---|---|
 ${patternItems.map(patternRow).join("\n")}
+
+## Moving to Laravel Blade
+
+When rebuilding this prototype as a Laravel Blade app, use the Scudamore's Blade kit rather than hand-porting components: ${productionBase}/blade/scudamores-blade.zip. Its guide (${productionBase}/blade/AGENTS.md) maps every \`@/components/ui/*\` and \`@/patterns/*\` import here to a Blade tag. So keep UI in installed components and patterns, and keep data and side effects in callbacks, which map to Blade events.
 `;
 await mkdir(dirname(indexPath), { recursive: true });
 await writeFile(indexPath, index);

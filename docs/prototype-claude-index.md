@@ -102,3 +102,7 @@ Docs and live previews: https://brand-kit-ashen.vercel.app/design-system/pattern
 | report-workspace-tabs | A responsive, scrollable tab rail for switching analytical report views. (beta) | `@/patterns/report-workspace-tabs/react/ReportWorkspaceTabs` (ReportWorkspaceTabs, ReportWorkspaceTabsPreview) |
 | responsive-data-collection | The same neutral records rendered as a semantic desktop table and mobile cards. (beta) | `@/patterns/responsive-data-collection/react/ResponsiveDataCollectionRecipe` (ResponsiveDataCollectionRecipe, ResponsiveDataCollectionPreview) |
 | visit-time-heat-map | A day-by-hour distribution with paired controls, peak summary and accessible data table. (beta) | `@/patterns/visit-time-heat-map/react/VisitTimeHeatMap` (VisitTimeHeatMap, VisitTimeHeatMapPreview) |
+
+## Moving to Laravel Blade
+
+When rebuilding this prototype as a Laravel Blade app, use the Scudamore's Blade kit rather than hand-porting components: https://brand-kit-ashen.vercel.app/blade/scudamores-blade.zip. Its guide (https://brand-kit-ashen.vercel.app/blade/AGENTS.md) maps every `@/components/ui/*` and `@/patterns/*` import here to a Blade tag. So keep UI in installed components and patterns, and keep data and side effects in callbacks, which map to Blade events.

@@ -14,13 +14,8 @@ one zip; see [Laravel Blade kit](#laravel-blade-kit).
 Tested with a fresh `npm create vite` React + TypeScript project (Vite 8, TypeScript 7,
 Tailwind 4.3).
 
-1. **Use React 18.3.1.** The library is pinned to it; `calendar` depends on
-   `react-day-picker@8`, which doesn't support React 19.
-
-   ```sh
-   npm i react@18.3.1 react-dom@18.3.1 && npm i -D @types/react@18.3.28 @types/react-dom@18.3.7
-   ```
-
+1. **Use React 19.** The Vite React template already installs it. Tested with `react@19.3.1`,
+   `react-dom@19.3.1`, `@types/react@19.3.0` and `@types/react-dom@19.3.0`. React 18.3 also works.
 2. **Keep installed versions exact.** Add an `.npmrc` containing `save-exact=true`, so the pinned
    versions from the registry aren't loosened to `^` ranges.
 3. **Add Tailwind v4 and the `@` alias** as in the
@@ -46,9 +41,6 @@ Tailwind 4.3).
 
    Wrap the app in `<ThemeProvider>` (from `@/components/theme-provider`). It applies `.dark` to
    `<html>` for light, dark or system mode and remembers the choice. `useTheme()` reads and sets it.
-7. **If you use `calendar`**, set `"verbatimModuleSyntax": false` in `tsconfig.app.json`. The Vite
-   template enables it, and `calendar.tsx` has one type import without the `type` keyword. It's
-   the only component affected; the fix belongs in the next `_comp-lib` handoff.
 
 ## Install components
 
@@ -228,6 +220,21 @@ Blade-only components (no React version yet): `container`, `error`, `field`, `he
 
 - **Icons:** React components use `lucide-react`; Blade uses Phosphor (`blade-phosphor-icons`), so
   icon names differ between the two.
+- **Calendar is a Brand Kit port.** The handoff calendar uses `react-day-picker@8`, which doesn't
+  support React 19, so the registry serves [`registry/calendar.tsx`](./registry/calendar.tsx)
+  instead: the same look on `react-day-picker@9.14.0`.
+  - **Unchanged for callers:** `showYearMonthDropdowns` and `initialFocus`; `initialFocus` maps to
+    v9's `autoFocus`.
+  - **v9 deprecations:** `fromYear`/`toYear`/`fromDate`/`toDate` are deprecated in favour of
+    `startMonth`/`endMonth`.
+  - **Dropdown year range:** the year menus now default to five years back and five years ahead
+    (previously the last five years up to this one), because v9 also stops the arrows at that range.
+    Pass `startMonth`/`endMonth` to change it.
+  - **Overrides:** `classNames` and `components` overrides use v9's names (e.g. `selected`, not
+    `day_selected`; `Chevron`, not `IconLeft`).
+  - **Dependencies:** v9 brings `date-fns@4` alongside the patterns' `date-fns@3.6.0`.
+  - **Website preview:** the Design System site still runs React 18 and previews the original v8
+    calendar.
 - **`ThemeScope`** (`theme-scope`) can force dark mode or a brand accent on a subtree, but it can't
   force light inside a dark `<html>`, because the token variables inherit.
 - **Deferred** in both stacks, metadata only: carousel, chart, command-palette, context-menu,
@@ -247,7 +254,9 @@ Blade-only components (no React version yet): `container`, `error`, `field`, `he
   `public/r/*.json` (git-ignored, copied to `dist/r/` by Vite), regenerates the item table above and
   [`docs/prototype-claude-index.md`](./docs/prototype-claude-index.md), and fails the build if:
   - a catalogue component is missing from `registry.json`, or its npm packages or versions differ
-    from the catalogue and `_comp-lib/react/dependencies.json`;
+    from the catalogue and `_comp-lib/react/dependencies.json`. Brand Kit replacements (currently
+    `calendar`) are listed in the script's `overrides` table with their own file, pins and reason,
+    and are checked against that instead;
   - the theme's variables, brand classes, dark variant, font or radius differ from
     `_comp-lib/foundations/css`;
   - an item depends on something that isn't one of our items (a bare name like `button` would

@@ -546,9 +546,8 @@
       "title": "Calendar",
       "description": "Single-date and date-range calendar selection.",
       "dependencies": [
-        "date-fns@3.6.0",
         "lucide-react@0.487.0",
-        "react-day-picker@8.10.1"
+        "react-day-picker@9.14.0"
       ],
       "registryDependencies": [
         "https://brand-kit-ashen.vercel.app/r/utils.json",
@@ -557,7 +556,7 @@
       ],
       "files": [
         {
-          "path": "_comp-lib/react/components/ui/calendar.tsx",
+          "path": "registry/calendar.tsx",
           "type": "registry:ui"
         }
       ],

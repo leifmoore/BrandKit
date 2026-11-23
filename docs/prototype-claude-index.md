@@ -2,12 +2,12 @@
 ## Scudamore's components
 
 Install UI from the Scudamore's Brand Kit registry; don't hand-write primitives that exist here.
-Setup (once): React 18.3.1, Tailwind v4, `.npmrc` with `save-exact=true`, `npx shadcn@4.23.0 init`, then add to `components.json`:
+Setup (once): React 19 (18.3 also works), Tailwind v4, `.npmrc` with `save-exact=true`, `npx shadcn@4.23.0 init`, then add to `components.json`:
 `"registries": { "@scudamores": "https://brand-kit-ashen.vercel.app/r/{name}.json" }`.
 Install `theme` first, then `theme-provider` (wrap the app in `<ThemeProvider>`). `@scudamores/all` installs everything.
 Add one component at a time; dependencies come with it. Never edit installed files to restyle; re-add to update.
 Import from `@/components/ui/<name>`, except page-container → `@/components/ui/page-header`, toast → `@/components/ui/sonner`.
-`calendar` needs `"verbatimModuleSyntax": false` in tsconfig.app.json.
+`calendar` is a Brand Kit port to react-day-picker 9: `showYearMonthDropdowns` and `initialFocus` still work, but use v9 names for `classNames`/`components` overrides and `startMonth`/`endMonth` for ranges.
 Docs and live previews: https://brand-kit-ashen.vercel.app/design-system/components/<name>
 Blade paths are relative to the Laravel app root (source: `_comp-lib/blade/library/` in the Brand Kit repo).
 
